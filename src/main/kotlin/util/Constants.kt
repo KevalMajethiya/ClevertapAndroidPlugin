@@ -39,8 +39,8 @@ object Constants {
     const val COLOR_PRIMARY_FROM_ANDROID = "android.R.color.holo_blue_dark"
 
     // Panel
-    //const val MY_FIREBASE_MESSAGING_SERVICE_FCM = "MyFirebaseMessagingService"
-    const val MY_FIREBASE_MESSAGING_SERVICE_FCM = "FcmMessageListenerService"
+    const val MY_FIREBASE_MESSAGING_SERVICE_FCM = "MyFirebaseMessagingService"
+    //const val MY_FIREBASE_MESSAGING_SERVICE_FCM = "FcmMessageListenerService"
     const val FCM_SERVICE_NAME_FCM = "FCM Service Name:"
     const val PENDINGINTENT_ACTIVITY_NAME_FCM = "PendingIntent Activity Name:"
     const val ChannelID_Name_FCM = "Channel ID Name(Mandatory)"

@@ -84,6 +84,7 @@ class abc(private val project: Project)
                     var c = b[1]
                     var d = c.split("\"")
                     packagename = d[1]
+                    return packagename
                     //initapplicationclass(packagename!!)
                 }
             }

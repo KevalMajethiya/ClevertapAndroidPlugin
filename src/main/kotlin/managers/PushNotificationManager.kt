@@ -129,10 +129,9 @@ class PushNotificationManager(private val project: Project) {
     }
 
     fun addnotificationchannel(repository: String) {
-        checkbeforeinsertion()
-       // if(notification_channel_exist==false) {
-            val documentText =
-                launching_activity!!.text.split("\n".toRegex()).dropLastWhile { it.isEmpty() }.toTypedArray()
+      //  checkbeforeinsertion()
+        //if(notification_channel_exist==false) {
+            val documentText =launching_activity!!.text.split("\n".toRegex()).dropLastWhile { it.isEmpty() }.toTypedArray()
             val sb = StringBuilder()
             for (i in documentText.indices) {
                 val line = documentText[i]

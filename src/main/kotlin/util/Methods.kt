@@ -222,7 +222,8 @@ object Methods {
 
 
     fun getAndroidManifestContent(     packageName: String,
-                                       serviceNameText: String
+                                       serviceNameText: String,
+                                       fcm_sender_id:String
     ): String {
         return "\n        <service\n" +
                 "            android:name=\"com.clevertap.android.sdk.pushnotification.fcm"+".$serviceNameText\"\n" +
@@ -238,7 +239,12 @@ object Methods {
                 "        \n" +
                 "        <meta-data\n" +
                 "            android:name=\"firebase_analytics_collection_enabled\"\n" +
-                "            android:value=\"false\" />\n"
+                "            android:value=\"false\" />\n" +
+                "        <meta-data\n" +
+                "            android:name=\"FCM_SENDER_ID\"\n" +
+                "            android:value=\"$fcm_sender_id\" />\n" +
+                "        \n"
+
     }
 
 

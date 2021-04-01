@@ -111,6 +111,7 @@ class NewScreenDialog(var event: AnActionEvent) : DialogWrapper(true), NewScreen
                     panelForFCM.pendingIntentTextField.text,
                     panelForFCM.contentTitleTextField.text,
                     panelForFCM.contentTextTextField.text,
+                    panelForFCM.fcm_sender_id_TextField.text,
                     //panelForFCM.Exclude_filesTextField.text,
                      panelForFCM.dependencyVersionTextField.text,
                     panelForFCM.isNeedReadMeForInstructions.isSelected,

@@ -18,6 +18,7 @@ class ManifestManager_forFCM(private val project: Project) {
     private var fcm_service_name:Boolean=false
     private var firebase_messaging_auto_init_enabled:Boolean=false
     private var firebase_analytics_collection_enabled:Boolean=false
+    private var fcm_sender_id:Boolean=false
 
     @Throws(FileNotFoundException::class)
     fun initAndroidManifest(): Boolean {
@@ -56,16 +57,20 @@ class ManifestManager_forFCM(private val project: Project) {
             {
                 firebase_analytics_collection_enabled=true
             }
+            if(line.contains("FCM_SENDER_ID"))
+            {
+                fcm_sender_id=true
+            }
         }
     }
 
-    fun addMetaDataContent(repository: String,fcmservice_name:String) {
+    fun addMetaDataContent(repository: String,fcmservice_name:String,fcmsenderid:String) {
         checkbeforeinsertion()
         val documentText = androidManifest!!.text.split("\n".toRegex()).dropLastWhile { it.isEmpty() }.toTypedArray()
         val sb = StringBuilder()
         for (i in documentText.indices) {
             val line = documentText[i]
-            if(fcm_service_name==false && firebase_messaging_auto_init_enabled==false && firebase_analytics_collection_enabled==false) {
+            if(fcm_service_name==false && firebase_messaging_auto_init_enabled==false && firebase_analytics_collection_enabled==false && fcm_sender_id==false) {
                 if (line.contains(Constants.APPLICATION)) {
                     if (line.contains("/")) {
                         sb
@@ -120,6 +125,20 @@ class ManifestManager_forFCM(private val project: Project) {
                             .append("         <meta-data")
                             .append("\n")
                             .append("             android:name=\"firebase_analytics_collection_enabled\"")
+                            .append("\n")
+                            .append("             android:value="+fcmsenderid+ "/>")
+                            .append("\n")
+
+                    }
+                }
+            }
+            if(fcm_sender_id==false) {
+                if (line.contains(Constants.APPLICATION)) {
+                    if (line.contains("/")) {
+                        sb
+                            .append("         <meta-data")
+                            .append("\n")
+                            .append("             android:name=\"FCM_SENDER_ID\"")
                             .append("\n")
                             .append("             android:value=\"false\" />")
                             .append("\n")

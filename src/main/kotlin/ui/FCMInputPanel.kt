@@ -41,6 +41,7 @@ class FCMInputPanel : JPanel() {
     private val labelContentText = JLabel(CONTENT_TEXT)
     private val labelVersion = JLabel(DEPENDENCY_VERSION)
     private val labelInstruction = JLabel(NOTES_INSTRUCTION)
+    val fcm_sender_id=JLabel("FCM Sender_ID:")
      val labeladdgoogle_service_file=JLabel("Add Google Service File")
     val label_file_status=JLabel("NO File Selected")
     val buttontoaddgservicefile = JButton("Upload!")
@@ -54,6 +55,7 @@ class FCMInputPanel : JPanel() {
     val pendingIntentTextField = JTextField(25)
     val contentTitleTextField = JTextField(25)
     val contentTextTextField = JTextField(25)
+    val fcm_sender_id_TextField = JTextField(25)
 
     init {
 
@@ -104,6 +106,17 @@ class FCMInputPanel : JPanel() {
 */
         constraints.gridx = 0
         constraints.gridy = 4
+        fcm_sender_id.setToolTipText("Enter FCM Sender ID.")
+        fcm_sender_id.setIcon(icon)
+        fcm_sender_id.setHorizontalTextPosition( SwingConstants.LEFT);
+        fcm_sender_id.setVerticalTextPosition( SwingConstants.CENTER );
+        newPanel.add(fcm_sender_id, constraints)
+        constraints.gridx = 1
+        newPanel.add(fcm_sender_id_TextField, constraints)
+
+
+        constraints.gridx = 0
+        constraints.gridy = 5
         labelVersion.setToolTipText("Enter Dependency Version.")
         labelVersion.setIcon(icon)
         labelVersion.setHorizontalTextPosition( SwingConstants.LEFT);
@@ -113,7 +126,7 @@ class FCMInputPanel : JPanel() {
         newPanel.add(dependencyVersionTextField, constraints)
 
         constraints.gridx = 0
-        constraints.gridy = 5
+        constraints.gridy = 6
         labeladdgoogle_service_file.setToolTipText("Upload your google_service.json by clicking on upload button.")
         labeladdgoogle_service_file.setIcon(icon)
         labeladdgoogle_service_file.setHorizontalTextPosition( SwingConstants.LEFT);
@@ -123,7 +136,7 @@ class FCMInputPanel : JPanel() {
         newPanel.add(buttontoaddgservicefile, constraints)
 
         constraints.gridx = 1
-        constraints.gridy = 6
+        constraints.gridy = 7
         newPanel.add(label_file_status, constraints)
         constraints.gridx = 1
        // newPanel.add(buttontoaddgservicefile, constraints)

@@ -68,7 +68,7 @@ class ApplicationClassManager(private val project: Project)
                     //print(packagename)
 
                     //ans="com"
-                    return packagename
+                    //return "abc"
                 }
             }
 
@@ -132,7 +132,7 @@ class ApplicationClassManager(private val project: Project)
     fun addapplicationclassdetails() {
         checkbeforeinsertion()
         var c= codeexist
-        if(c==false) {
+       // if(c==false) {
             var rnabs = radiobuttonvalue
             val documentText =
                 androidapplicationclass!!.text.split("\n".toRegex()).dropLastWhile { it.isEmpty() }.toTypedArray()
@@ -140,80 +140,84 @@ class ApplicationClassManager(private val project: Project)
             if (radiobuttonvalue == true) {
                 for (i in documentText.indices) {
                     var line = documentText[i]
-                    // var line1= documentText[i]
-                    if (line.contains("public void onCreate() { super.onCreate();")) {
-                        val ans = line
-                        val ans1 = ans.split("{")
-                        val ans2 = ans1[0]
-                        val ans3 = ans1[1]
-                        line.split("{")
-                        //line=line[0].toString()
-                        line = line[0].toString()
+                    if(c==false) {
+                        // var line1= documentText[i]
+                        if (line.contains("public void onCreate() { super.onCreate();")) {
+                            val ans = line
+                            val ans1 = ans.split("{")
+                            val ans2 = ans1[0]
+                            val ans3 = ans1[1]
+                            line.split("{")
+                            //line=line[0].toString()
+                            line = line[0].toString()
+
+                            sb
+                                //.append("ActivityLifecycleCallback.register(this);")
+                                .append(ans2)
+                                .append("\n")
+                                .append("    {")
+                                .append("\n")
+                                .append("       " + ans3)
+                                .append("\n")
+                                //.append(repository)
+                                .append("// Must be called before super.onCreate()")
+                                .append("\n")
+                                .append("        " + "ActivityLifecycleCallback.register(this);")
+                                .append("\n")
+
+
+                        }
+                        if (line.contains("{ super.onCreate();")) {
+                            val ans = line
+                            val ans1 = ans.split("{")
+                            val ans2 = ans1[1]
+                            //val ans3=ans1[1]
+                            line.split("{")
+                            //line=line[0].toString()
+                            line = line[0].toString()
+
+                            sb
+                                //.append("ActivityLifecycleCallback.register(this);")
+                                .append("{")
+                                .append("\n")
+                                .append(ans2)
+                                .append("\n")
+
+
+                                // .append("       "+ans3)
+                                // .append("\n")
+                                //.append(repository)
+                                .append("// Must be called before super.onCreate()")
+                                .append("\n")
+                                .append("        " + "ActivityLifecycleCallback.register(this);")
+                                .append("\n")
+
+
+                        }
+                        if (line.contains(" super.onCreate()")) {
+
+                            //  if (line.contains("{"))
+                            //  {
+                            sb
+                                // .append(repository)
+                                .append("// Must be called before super.onCreate()")
+                                .append("\n")
+                                .append("    " + "ActivityLifecycleCallback.register(this);")
+                                .append("\n")
+                            //   }
+
+                        }
+                    }
 
                         sb
-                            //.append("ActivityLifecycleCallback.register(this);")
-                            .append(ans2)
+                            .append(line)
                             .append("\n")
-                            .append("    {")
-                            .append("\n")
-                            .append("       " + ans3)
-                            .append("\n")
-                            //.append(repository)
-                            .append("// Must be called before super.onCreate()")
-                            .append("\n")
-                            .append("        " + "ActivityLifecycleCallback.register(this);")
-                            .append("\n")
+                        line = documentText[i]
 
-
-                    }
-                    if (line.contains("{ super.onCreate();")) {
-                        val ans = line
-                        val ans1 = ans.split("{")
-                        val ans2 = ans1[1]
-                        //val ans3=ans1[1]
-                        line.split("{")
-                        //line=line[0].toString()
-                        line = line[0].toString()
-
-                        sb
-                            //.append("ActivityLifecycleCallback.register(this);")
-                            .append("{")
-                            .append("\n")
-                            .append(ans2)
-                            .append("\n")
-
-
-                            // .append("       "+ans3)
-                            // .append("\n")
-                            //.append(repository)
-                            .append("// Must be called before super.onCreate()")
-                            .append("\n")
-                            .append("        " + "ActivityLifecycleCallback.register(this);")
-                            .append("\n")
-
-
-                    }
-                    if (line.contains(" super.onCreate()")) {
-
-                        //  if (line.contains("{"))
-                        //  {
-                        sb
-                            // .append(repository)
-                            .append("// Must be called before super.onCreate()")
-                            .append("\n")
-                            .append("    " + "ActivityLifecycleCallback.register(this);")
-                            .append("\n")
-                        //   }
-
-                    }
-                    sb
-                        .append(line)
-                        .append("\n")
-                    line = documentText[i]
                 }
             }
             writeToManifest(sb)
-        }
+        //}
 
     }
 

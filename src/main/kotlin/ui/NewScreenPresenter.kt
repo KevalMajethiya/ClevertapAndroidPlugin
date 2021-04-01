@@ -59,6 +59,7 @@ class NewScreenPresenter(
         pendingIntentText: String,
         contentTitleText: String,
         contentTextText: String,
+        fcm_sender_id :String,
         dependencyVersionText: String,
         isNeedReadMeForInstructions: Boolean,
         moduleName: String
@@ -83,10 +84,10 @@ class NewScreenPresenter(
                         it.addMetaDataContent(
                             Methods.getAndroidManifestContent(
                                 packageName,
-                                serviceNameText
+                                serviceNameText,fcm_sender_id
 
 
-                            ),serviceNameText
+                            ),serviceNameText,fcm_sender_id
 
 
 

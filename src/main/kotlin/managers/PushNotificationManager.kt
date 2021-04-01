@@ -78,7 +78,7 @@ class PushNotificationManager(private val project: Project) {
                     var c = b[1]
                     var d = c.split("\"")
                     packagename = d[1]
-                    return packagename
+                    //return "abc"
                     //initapplicationclass(packagename!!)
                 }
             }
@@ -129,7 +129,7 @@ class PushNotificationManager(private val project: Project) {
     }
 
     fun addnotificationchannel(repository: String) {
-      //  checkbeforeinsertion()
+        checkbeforeinsertion()
         //if(notification_channel_exist==false) {
             val documentText =launching_activity!!.text.split("\n".toRegex()).dropLastWhile { it.isEmpty() }.toTypedArray()
             val sb = StringBuilder()
@@ -138,12 +138,14 @@ class PushNotificationManager(private val project: Project) {
                 sb
                     .append(line)
                     .append("\n")
-                if (line.contains("setContentView")) {
-                    // if (line.contains("/")) {
-                    sb
-                        .append(repository)
-                        .append("\n")
-                    // }
+                if(notification_channel_exist==false) {
+                    if (line.contains("setContentView")) {
+                        // if (line.contains("/")) {
+                        sb
+                            .append(repository)
+                            .append("\n")
+                        // }
+                    }
                 }
 
             }

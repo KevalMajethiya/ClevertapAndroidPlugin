@@ -84,7 +84,7 @@ class abc(private val project: Project)
                     var c = b[1]
                     var d = c.split("\"")
                     packagename = d[1]
-                    return packagename
+                    //return "abc"
                     //initapplicationclass(packagename!!)
                 }
             }
@@ -162,7 +162,7 @@ class abc(private val project: Project)
     fun initiateclevertap() {
         checkinsertion()
         var c= codeexist
-        if(c==false) {
+       // if(c==false) {
             // val opp=launchingactivityname
             val documentText =
                 androidapplicationclass!!.text.split("\n".toRegex()).dropLastWhile { it.isEmpty() }.toTypedArray()
@@ -172,28 +172,32 @@ class abc(private val project: Project)
                 sb
                     .append(line)
                     .append("\n")
+                if(c==false) {
 
-                if (line.contains("setContentView")) {
-                    //if (line.contains("class" +" " + opp )) {
+                    if (line.contains("setContentView")) {
+                        //if (line.contains("class" +" " + opp )) {
 
 
-                    // if (line.contains("{")) {
-                    sb
+                        // if (line.contains("{")) {
+                        sb
 
+                            //.append("\n")
+                            .append("        CleverTapAPI clevertapDefaultInstance = CleverTapAPI.getDefaultInstance(getApplicationContext());")
+                            .append("   //Initializing the CleverTap SDK")
+                            .append("\n")
+                        //.append("CleverTapAPI.createNotificationChannel(getApplicationContext(),\"3131\",\"mychannel\",\"lDescription\",NotificationManager.IMPORTANCE_MAX,true);")
                         //.append("\n")
-                        .append("        CleverTapAPI clevertapDefaultInstance = CleverTapAPI.getDefaultInstance(getApplicationContext());")
-                        .append("   //Initializing the CleverTap SDK")
-                        .append("\n")
-                    //.append("CleverTapAPI.createNotificationChannel(getApplicationContext(),\"3131\",\"mychannel\",\"lDescription\",NotificationManager.IMPORTANCE_MAX,true);")
-                    //.append("\n")
+                    }
                 }
 
 
                 // }
 
             }
+
             writeToManifest(sb)
-        }
+       // }
+
     }
 
 

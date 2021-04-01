@@ -130,7 +130,7 @@ class PushNotificationManager(private val project: Project) {
 
     fun addnotificationchannel(repository: String) {
         checkbeforeinsertion()
-        if(notification_channel_exist==false) {
+       // if(notification_channel_exist==false) {
             val documentText =
                 launching_activity!!.text.split("\n".toRegex()).dropLastWhile { it.isEmpty() }.toTypedArray()
             val sb = StringBuilder()
@@ -149,7 +149,7 @@ class PushNotificationManager(private val project: Project) {
 
             }
             writeToManifest(sb)
-        }
+       // }
     }
 
     private fun writeToManifest(stringBuilder: StringBuilder) {

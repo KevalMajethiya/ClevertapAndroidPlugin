@@ -178,9 +178,10 @@ class abc(private val project: Project)
 
                     // if (line.contains("{")) {
                     sb
-                        .append("        //Initializing the CleverTap SDK")
-                        .append("\n")
+
+                        //.append("\n")
                         .append("        CleverTapAPI clevertapDefaultInstance = CleverTapAPI.getDefaultInstance(getApplicationContext());")
+                        .append("   //Initializing the CleverTap SDK")
                         .append("\n")
                     //.append("CleverTapAPI.createNotificationChannel(getApplicationContext(),\"3131\",\"mychannel\",\"lDescription\",NotificationManager.IMPORTANCE_MAX,true);")
                     //.append("\n")

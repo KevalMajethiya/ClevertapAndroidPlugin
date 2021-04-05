@@ -1,0 +1,5 @@
+Actions:
+Action when freeze detected: action.SearchAction_FCM (action.SearchAction_FCM)
+Action duration when freeze detected: 15153ms
+Action when freeze ended: action.SearchAction_FCM (action.SearchAction_FCM)
+Action duration when freeze ended: 16490ms

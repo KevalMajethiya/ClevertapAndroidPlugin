@@ -1,0 +1,115 @@
+<application>
+  <component name="RecentProjectsManager">
+    <option name="additionalInfo">
+      <map>
+        <entry key="$USER_HOME$/AndroidStudioProjects/sdkintegration_demo">
+          <value>
+            <RecentProjectMetaInfo projectWorkspaceId="1oBvCtWfHTFPzzRrAC0n00XC24j">
+              <option name="binFolder" value="$APPLICATION_HOME_DIR$/bin" />
+              <option name="build" value="AI-201.8743.12.41.7042882" />
+              <option name="buildTimestamp" value="1608424751228" />
+              <option name="productionCode" value="AI" />
+              <option name="projectOpenTimestamp" value="1615183887650" />
+            </RecentProjectMetaInfo>
+          </value>
+        </entry>
+        <entry key="$USER_HOME$/AndroidStudioProjects/mydemoapp">
+          <value>
+            <RecentProjectMetaInfo projectWorkspaceId="1pvFRTbwFZyR2CuX5XvMlYK5ytI">
+              <option name="binFolder" value="$APPLICATION_HOME_DIR$/bin" />
+              <option name="build" value="AI-201.8743.12.41.7042882" />
+              <option name="buildTimestamp" value="1608424773330" />
+              <frame x="0" y="23" width="1280" height="716" />
+              <option name="productionCode" value="AI" />
+              <option name="projectOpenTimestamp" value="1616135568745" />
+            </RecentProjectMetaInfo>
+          </value>
+        </entry>
+        <entry key="$USER_HOME$/AndroidStudioProjects/PluginTesting">
+          <value>
+            <RecentProjectMetaInfo projectWorkspaceId="1qI6LftT7rsJeEt1KXcDEUV7gL5">
+              <option name="binFolder" value="$APPLICATION_HOME_DIR$/bin" />
+              <option name="build" value="AI-201.8743.12.41.7042882" />
+              <option name="buildTimestamp" value="1608424746990" />
+              <frame x="0" y="0" width="1280" height="800" />
+              <option name="productionCode" value="AI" />
+              <option name="projectOpenTimestamp" value="1617261161401" />
+            </RecentProjectMetaInfo>
+          </value>
+        </entry>
+        <entry key="$USER_HOME$/AndroidStudioProjects/TestApp">
+          <value>
+            <RecentProjectMetaInfo projectWorkspaceId="1qW1ivHNeRMMjmwFCiSQT5fAUVY">
+              <option name="binFolder" value="$APPLICATION_HOME_DIR$/bin" />
+              <option name="build" value="AI-201.8743.12.41.7042882" />
+              <option name="buildTimestamp" value="1608424748225" />
+              <option name="productionCode" value="AI" />
+              <option name="projectOpenTimestamp" value="1617261454522" />
+            </RecentProjectMetaInfo>
+          </value>
+        </entry>
+        <entry key="$USER_HOME$/AndroidStudioProjects/AndroidPlugin">
+          <value>
+            <RecentProjectMetaInfo projectWorkspaceId="1qYhiTkG52e6qXxT1PTINfSIx9O">
+              <option name="binFolder" value="$APPLICATION_HOME_DIR$/bin" />
+              <option name="build" value="AI-201.8743.12.41.7042882" />
+              <option name="buildTimestamp" value="1608424786668" />
+              <frame x="0" y="0" width="1280" height="800" />
+              <option name="productionCode" value="AI" />
+              <option name="projectOpenTimestamp" value="1617263937788" />
+            </RecentProjectMetaInfo>
+          </value>
+        </entry>
+        <entry key="$USER_HOME$/AndroidStudioProjects/MF">
+          <value>
+            <RecentProjectMetaInfo projectWorkspaceId="1qZ1JNw4yxO6Q95vlIowa66k3in">
+              <option name="binFolder" value="$APPLICATION_HOME_DIR$/bin" />
+              <option name="build" value="AI-201.8743.12.41.7042882" />
+              <option name="buildTimestamp" value="1608424789981" />
+              <frame x="0" y="0" width="1280" height="800" />
+              <option name="productionCode" value="AI" />
+              <option name="projectOpenTimestamp" value="1617272638886" />
+            </RecentProjectMetaInfo>
+          </value>
+        </entry>
+        <entry key="$USER_HOME$/AndroidStudioProjects/NewApp">
+          <value>
+            <RecentProjectMetaInfo projectWorkspaceId="1qZ2PqnfiEXHtu1GCeRGPoc5k6W">
+              <option name="binFolder" value="$APPLICATION_HOME_DIR$/bin" />
+              <option name="build" value="AI-201.8743.12.41.7042882" />
+              <option name="buildTimestamp" value="1608424783193" />
+              <frame x="0" y="23" width="1280" height="715" />
+              <option name="productionCode" value="AI" />
+              <option name="projectOpenTimestamp" value="1617275574311" />
+            </RecentProjectMetaInfo>
+          </value>
+        </entry>
+        <entry key="$USER_HOME$/AndroidStudioProjects/FinalTesting">
+          <value>
+            <RecentProjectMetaInfo projectWorkspaceId="1qZ9fYFonWoWeLVix4N3d9SbQgv">
+              <option name="binFolder" value="$APPLICATION_HOME_DIR$/bin" />
+              <option name="build" value="AI-201.8743.12.41.7042882" />
+              <option name="buildTimestamp" value="1608424796383" />
+              <frame x="0" y="0" width="1280" height="800" />
+              <option name="productionCode" value="AI" />
+              <option name="projectOpenTimestamp" value="1617276494399" />
+            </RecentProjectMetaInfo>
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="lastProjectLocation" value="$USER_HOME$/AndroidStudioProjects" />
+    <option name="recentPaths">
+      <list>
+        <option value="$USER_HOME$/AndroidStudioProjects/FinalTesting" />
+        <option value="$USER_HOME$/AndroidStudioProjects/NewApp" />
+        <option value="$USER_HOME$/AndroidStudioProjects/MF" />
+        <option value="$USER_HOME$/AndroidStudioProjects/AndroidPlugin" />
+        <option value="$USER_HOME$/AndroidStudioProjects/TestApp" />
+        <option value="$USER_HOME$/AndroidStudioProjects/PluginTesting" />
+        <option value="$USER_HOME$/AndroidStudioProjects/mydemoapp" />
+        <option value="$USER_HOME$/AndroidStudioProjects/sdkintegration_demo" />
+      </list>
+    </option>
+  </component>
+</application>

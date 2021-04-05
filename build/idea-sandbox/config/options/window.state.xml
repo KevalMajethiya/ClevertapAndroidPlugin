@@ -1,0 +1,66 @@
+<application>
+  <component name="DimensionService">
+    <location key="WELCOME_SCREEN.0.0.1600.900" x="799" y="380" />
+    <location key="com.intellij.ide.util.TipDialog.0.0.1600.900" x="422" y="259" />
+    <location key="SettingsEditor.0.0.1600.900" x="294" y="76" />
+    <location key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog.0.0.1600.900" x="538" y="181" />
+    <location key="#org.jetbrains.kotlin.idea.refactoring.move.moveDeclarations.ui.MoveKotlinTopLevelDeclarationsDialog.0.0.1600.900" x="574" y="104" />
+    <location key="new project wizard.0.0.1600.900" x="368" y="50" />
+    <location key="IDE.errors.dialog.0.0.1600.900" x="361" y="127" />
+    <location key="FileChooserDialogImpl.0.0.1600.900" x="588" y="142" />
+    <location key="ProcessPopupWindow.0.0.1600.900" x="1173" y="708" />
+    <location key="WELCOME_SCREEN.0.0.1440.900" x="720" y="300" />
+    <size key="IDE.errors.dialog.0.0.1600.900" width="878" height="632" />
+    <size key="ProcessPopupWindow.0.0.1600.900" width="400" height="108" />
+    <size key="GridCell.Tab.0.left.0.0.1280.800" width="1238" height="212" />
+    <size key="GridCell.Tab.0.center.0.0.1280.800" width="1238" height="212" />
+    <size key="GridCell.Tab.0.right.0.0.1280.800" width="1238" height="212" />
+    <size key="GridCell.Tab.0.bottom.0.0.1280.800" width="1238" height="212" />
+  </component>
+  <component name="WindowManager">
+    <frame x="0" y="0" width="1280" height="800" />
+    <layout>
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info content_ui="combo" id="Project" order="0" weight="0.25" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info id="Structure" order="1" weight="0.25" />
+      <window_info anchor="bottom" id="Run" order="2" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+    </layout>
+  </component>
+  <component name="WindowStateApplicationService">
+    <state x="451" y="134" key="FileChooserDialogImpl" timestamp="1617276491997">
+      <screen x="0" y="23" width="1280" height="726" />
+    </state>
+    <state x="451" y="132" key="FileChooserDialogImpl/0.23.1280.715" timestamp="1617273342516" />
+    <state x="451" y="132" key="FileChooserDialogImpl/0.23.1280.716" timestamp="1617265763992" />
+    <state x="451" y="133" key="FileChooserDialogImpl/0.23.1280.721" timestamp="1617272328328" />
+    <state x="451" y="133" key="FileChooserDialogImpl/0.23.1280.723" timestamp="1617261766491" />
+    <state x="451" y="133" key="FileChooserDialogImpl/0.23.1280.724" timestamp="1615811337218" />
+    <state x="451" y="134" key="FileChooserDialogImpl/0.23.1280.726" timestamp="1617276491997" />
+    <state x="228" y="99" key="IDE.errors.dialog" timestamp="1616776353637">
+      <screen x="0" y="23" width="1280" height="715" />
+    </state>
+    <state x="228" y="99" key="IDE.errors.dialog/0.23.1280.715" timestamp="1616776353637" />
+    <state x="921" y="559" width="356" height="158" key="ProcessPopupWindow" timestamp="1616745854575">
+      <screen x="0" y="23" width="1280" height="721" />
+    </state>
+    <state x="921" y="555" width="356" height="156" key="ProcessPopupWindow/0.23.1280.716" timestamp="1616155760329" />
+    <state x="921" y="559" width="356" height="158" key="ProcessPopupWindow/0.23.1280.721" timestamp="1616745854575" />
+    <state x="639" y="352" key="WELCOME_SCREEN" timestamp="1617277104107">
+      <screen x="0" y="23" width="1280" height="724" />
+    </state>
+    <state x="639" y="349" key="WELCOME_SCREEN/0.23.1280.715" timestamp="1617275649079" />
+    <state x="639" y="349" key="WELCOME_SCREEN/0.23.1280.716" timestamp="1617271827995" />
+    <state x="639" y="351" key="WELCOME_SCREEN/0.23.1280.721" timestamp="1617272736714" />
+    <state x="639" y="351" key="WELCOME_SCREEN/0.23.1280.723" timestamp="1617261388773" />
+    <state x="639" y="352" key="WELCOME_SCREEN/0.23.1280.724" timestamp="1617277104107" />
+    <state x="719" y="392" key="WELCOME_SCREEN/0.25.1440.831" timestamp="1610481224025" />
+  </component>
+</application>

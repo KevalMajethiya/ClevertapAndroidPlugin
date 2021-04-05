@@ -1,0 +1,12 @@
+finaltesting.c73ccabc
+newapp.a11290e3
+mf.a10dbafb
+tt.a10dbbe2
+t.d3a59ab2
+androidplugin.d771efc0
+myplugin.20a07c01
+testapp.be830fed
+plugintesting.8963989b
+testingapp.59fce173
+testing.be83a5ce
+demoapp1.857cbe75

@@ -1,0 +1,5 @@
+Actions:
+Action when freeze detected: action.SearchAction (CleanPlugin.ID)
+Action duration when freeze detected: 10088ms
+Action when freeze ended: action.SearchAction (CleanPlugin.ID)
+Action duration when freeze ended: 10135ms

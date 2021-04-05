@@ -1,0 +1,73 @@
+<conversion>
+  <applied-converters>
+    <converter id="kotlin-non-jvm-source-roots" />
+    <converter id="android-sdk-library" />
+    <converter id="android-module-to-java-module" />
+    <converter id="android-proguard-options" />
+    <converter id="junit-to-android-junit-configurations" />
+    <converter id="android-native-run-configurations" />
+  </applied-converters>
+  <project-files>
+    <file path="/Users/kevalmajethiya/AndroidStudioProjects/Testing/.idea/libraries/Gradle__junit_junit_4_12.xml" timestamp="1616775749995" />
+    <file path="/Users/kevalmajethiya/AndroidStudioProjects/Testing/.idea/libraries/Gradle__com_google_android_material_material_1_3_0_aar.xml" timestamp="1617082195720" />
+    <file path="/Users/kevalmajethiya/AndroidStudioProjects/Testing/.idea/libraries/Gradle__androidx_cardview_cardview_1_0_0_aar.xml" timestamp="1617082195578" />
+    <file path="/Users/kevalmajethiya/AndroidStudioProjects/Testing/.idea/libraries/Gradle__androidx_legacy_legacy_support_core_utils_1_0_0_aar.xml" timestamp="1617082195619" />
+    <file path="/Users/kevalmajethiya/AndroidStudioProjects/Testing/.idea/libraries/Gradle__androidx_viewpager_viewpager_1_0_0_aar.xml" timestamp="1617082195715" />
+    <file path="/Users/kevalmajethiya/AndroidStudioProjects/Testing/.idea/libraries/Gradle__androidx_lifecycle_lifecycle_viewmodel_2_1_0_aar.xml" timestamp="1617082195640" />
+    <file path="/Users/kevalmajethiya/AndroidStudioProjects/Testing/.idea/libraries/Gradle__androidx_print_print_1_0_0_aar.xml" timestamp="1617082195651" />
+    <file path="/Users/kevalmajethiya/AndroidStudioProjects/Testing/.idea/libraries/Gradle__androidx_viewpager2_viewpager2_1_0_0_aar.xml" timestamp="1617082195711" />
+    <file path="/Users/kevalmajethiya/AndroidStudioProjects/Testing/.idea/libraries/Gradle__androidx_localbroadcastmanager_localbroadcastmanager_1_0_0_aar.xml" timestamp="1617082195646" />
+    <file path="/Users/kevalmajethiya/AndroidStudioProjects/Testing/.idea/libraries/Gradle__androidx_collection_collection_1_1_0.xml" timestamp="1616775749547" />
+    <file path="/Users/kevalmajethiya/AndroidStudioProjects/Testing/.idea/libraries/Gradle__androidx_lifecycle_lifecycle_livedata_2_0_0_aar.xml" timestamp="1617082195623" />
+    <file path="/Users/kevalmajethiya/AndroidStudioProjects/Testing/.idea/libraries/Gradle__org_hamcrest_hamcrest_integration_1_3.xml" timestamp="1616775750019" />
+    <file path="/Users/kevalmajethiya/AndroidStudioProjects/Testing/.idea/misc.xml" timestamp="1617088380259" />
+    <file path="/Users/kevalmajethiya/AndroidStudioProjects/Testing/.idea/libraries/Gradle__com_squareup_javawriter_2_1_1.xml" timestamp="1616775749975" />
+    <file path="/Users/kevalmajethiya/AndroidStudioProjects/Testing/.idea/workspace.xml" timestamp="1617088638099" />
+    <file path="/Users/kevalmajethiya/AndroidStudioProjects/Testing/.idea/libraries/Gradle__androidx_fragment_fragment_1_1_0_aar.xml" timestamp="1617082195612" />
+    <file path="/Users/kevalmajethiya/AndroidStudioProjects/Testing/.idea/libraries/Gradle__androidx_test_espresso_espresso_idling_resource_3_3_0_aar.xml" timestamp="1617082195672" />
+    <file path="/Users/kevalmajethiya/AndroidStudioProjects/Testing/.idea/libraries/Gradle__androidx_test_core_1_3_0_aar.xml" timestamp="1617082195664" />
+    <file path="/Users/kevalmajethiya/AndroidStudioProjects/Testing/.idea/libraries/Gradle__androidx_appcompat_appcompat_1_2_0_aar.xml" timestamp="1617082195564" />
+    <file path="/Users/kevalmajethiya/AndroidStudioProjects/Testing/.idea/libraries/Gradle__junit_junit_4_13_2.xml" timestamp="1617028941315" />
+    <file path="/Users/kevalmajethiya/AndroidStudioProjects/Testing/.idea/libraries/Gradle__androidx_annotation_annotation_1_1_0.xml" timestamp="1616775749474" />
+    <file path="/Users/kevalmajethiya/AndroidStudioProjects/Testing/.idea/libraries/Gradle__androidx_lifecycle_lifecycle_runtime_2_1_0_aar.xml" timestamp="1617082195635" />
+    <file path="/Users/kevalmajethiya/AndroidStudioProjects/Testing/.idea/libraries/Gradle__androidx_constraintlayout_constraintlayout_solver_2_0_4.xml" timestamp="1616775749586" />
+    <file path="/Users/kevalmajethiya/AndroidStudioProjects/Testing/.idea/libraries/Gradle__org_hamcrest_hamcrest_library_1_3.xml" timestamp="1616775750027" />
+    <file path="/Users/kevalmajethiya/AndroidStudioProjects/Testing/.idea/libraries/Gradle__androidx_test_espresso_espresso_core_3_3_0_aar.xml" timestamp="1617082195668" />
+    <file path="/Users/kevalmajethiya/AndroidStudioProjects/Testing/.idea/libraries/Gradle__androidx_lifecycle_lifecycle_livedata_core_2_0_0_aar.xml" timestamp="1617082195632" />
+    <file path="/Users/kevalmajethiya/AndroidStudioProjects/Testing/.idea/libraries/Gradle__androidx_interpolator_interpolator_1_0_0_aar.xml" timestamp="1617082195615" />
+    <file path="/Users/kevalmajethiya/AndroidStudioProjects/Testing/.idea/libraries/Gradle__androidx_lifecycle_lifecycle_common_2_1_0.xml" timestamp="1616775749700" />
+    <file path="/Users/kevalmajethiya/AndroidStudioProjects/Testing/.idea/modules/app/Testing.app.iml" timestamp="1617082684690" />
+    <file path="/Users/kevalmajethiya/AndroidStudioProjects/Testing/.idea/libraries/Gradle__androidx_vectordrawable_vectordrawable_animated_1_1_0_aar.xml" timestamp="1617082195704" />
+    <file path="/Users/kevalmajethiya/AndroidStudioProjects/Testing/.idea/libraries/Gradle__androidx_test_ext_junit_1_1_2_aar.xml" timestamp="1617082195678" />
+    <file path="/Users/kevalmajethiya/AndroidStudioProjects/Testing/.idea/libraries/Gradle__androidx_arch_core_core_common_2_1_0.xml" timestamp="1616775749515" />
+    <file path="/Users/kevalmajethiya/AndroidStudioProjects/Testing/.idea/libraries/Gradle__androidx_versionedparcelable_versionedparcelable_1_1_0_aar.xml" timestamp="1617082195707" />
+    <file path="/Users/kevalmajethiya/AndroidStudioProjects/Testing/.idea/libraries/Gradle__androidx_cursoradapter_cursoradapter_1_0_0_aar.xml" timestamp="1617082195592" />
+    <file path="/Users/kevalmajethiya/AndroidStudioProjects/Testing/.idea/libraries/Gradle__androidx_transition_transition_1_2_0_aar.xml" timestamp="1617082195693" />
+    <file path="/Users/kevalmajethiya/AndroidStudioProjects/Testing/.idea/libraries/Gradle__androidx_dynamicanimation_dynamicanimation_1_0_0_aar.xml" timestamp="1617082195608" />
+    <file path="/Users/kevalmajethiya/AndroidStudioProjects/Testing/.idea/libraries/Gradle__androidx_appcompat_appcompat_resources_1_2_0_aar.xml" timestamp="1617082195569" />
+    <file path="/Users/kevalmajethiya/AndroidStudioProjects/Testing/.idea/libraries/Gradle__androidx_test_runner_1_3_0_aar.xml" timestamp="1617082195688" />
+    <file path="/Users/kevalmajethiya/AndroidStudioProjects/Testing/.idea/gradle.xml" timestamp="1617082119440" />
+    <file path="/Users/kevalmajethiya/AndroidStudioProjects/Testing/.idea/libraries/Gradle__androidx_annotation_annotation_experimental_1_0_0_aar.xml" timestamp="1617082195560" />
+    <file path="/Users/kevalmajethiya/AndroidStudioProjects/Testing/.idea/libraries/Gradle__androidx_vectordrawable_vectordrawable_1_1_0_aar.xml" timestamp="1617082195699" />
+    <file path="/Users/kevalmajethiya/AndroidStudioProjects/Testing/.idea/libraries/Gradle__androidx_loader_loader_1_0_0_aar.xml" timestamp="1617082195643" />
+    <file path="/Users/kevalmajethiya/AndroidStudioProjects/Testing/.idea/libraries/Gradle__androidx_arch_core_core_runtime_2_0_0_aar.xml" timestamp="1617082195574" />
+    <file path="/Users/kevalmajethiya/AndroidStudioProjects/Testing/.idea/libraries/Gradle__androidx_drawerlayout_drawerlayout_1_0_0_aar.xml" timestamp="1617082195604" />
+    <file path="/Users/kevalmajethiya/AndroidStudioProjects/Testing/.idea/libraries/Gradle__androidx_core_core_1_3_1_aar.xml" timestamp="1617082195589" />
+    <file path="/Users/kevalmajethiya/AndroidStudioProjects/Testing/.idea/libraries/Gradle__javax_inject_javax_inject_1.xml" timestamp="1616775749985" />
+    <file path="/Users/kevalmajethiya/AndroidStudioProjects/Testing/.idea/libraries/Gradle__androidx_constraintlayout_constraintlayout_2_0_4_aar.xml" timestamp="1617082195582" />
+    <file path="/Users/kevalmajethiya/AndroidStudioProjects/Testing/.idea/libraries/Gradle__androidx_coordinatorlayout_coordinatorlayout_1_1_0_aar.xml" timestamp="1617082195586" />
+    <file path="/Users/kevalmajethiya/AndroidStudioProjects/Testing/.idea/libraries/Gradle__androidx_documentfile_documentfile_1_0_0_aar.xml" timestamp="1617082195600" />
+    <file path="/Users/kevalmajethiya/AndroidStudioProjects/Testing/.idea/libraries/Gradle__com_google_code_findbugs_jsr305_2_0_1.xml" timestamp="1616775749962" />
+    <file path="/Users/kevalmajethiya/AndroidStudioProjects/Testing/.idea/libraries/Gradle__androidx_activity_activity_1_0_0_aar.xml" timestamp="1617082195555" />
+    <file path="/Users/kevalmajethiya/AndroidStudioProjects/Testing/.idea/modules/Testing.iml" timestamp="1616775749396" />
+    <file path="/Users/kevalmajethiya/AndroidStudioProjects/Testing/.idea/libraries/Gradle__androidx_customview_customview_1_0_0_aar.xml" timestamp="1617082195596" />
+    <file path="/Users/kevalmajethiya/AndroidStudioProjects/Testing/.idea/modules.xml" timestamp="1616775749431" />
+    <file path="/Users/kevalmajethiya/AndroidStudioProjects/Testing/.idea/jarRepositories.xml" timestamp="1616775749442" />
+    <file path="/Users/kevalmajethiya/AndroidStudioProjects/Testing/.idea/libraries/Gradle__com_clevertap_android_clevertap_android_sdk_4_0_2_aar.xml" timestamp="1617082336827" />
+    <file path="/Users/kevalmajethiya/AndroidStudioProjects/Testing/.idea/libraries/Gradle__org_hamcrest_hamcrest_core_1_3.xml" timestamp="1616775750011" />
+    <file path="/Users/kevalmajethiya/AndroidStudioProjects/Testing/.idea/libraries/Gradle__androidx_savedstate_savedstate_1_0_0_aar.xml" timestamp="1617082195659" />
+    <file path="/Users/kevalmajethiya/AndroidStudioProjects/Testing/.idea/libraries/Gradle__androidx_test_monitor_1_3_0_aar.xml" timestamp="1617082195683" />
+    <file path="/Users/kevalmajethiya/AndroidStudioProjects/Testing/.idea/compiler.xml" timestamp="1616776391280" />
+    <file path="/Users/kevalmajethiya/AndroidStudioProjects/Testing/.idea/libraries/Gradle__androidx_recyclerview_recyclerview_1_1_0_aar.xml" timestamp="1617082195655" />
+  </project-files>
+</conversion>

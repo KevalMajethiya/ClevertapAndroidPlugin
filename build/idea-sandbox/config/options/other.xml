@@ -1,0 +1,85 @@
+<application>
+  <component name="PropertiesComponent">
+    <property name="ATTACHED_TOOL_WINDOW.DEFAULT.Layout Inspector.PROPERTIES.AUTO_HIDE" value="false" />
+    <property name="ATTACHED_TOOL_WINDOW.DEFAULT.Layout Inspector.PROPERTIES.LEFT" value="false" />
+    <property name="ATTACHED_TOOL_WINDOW.DEFAULT.Layout Inspector.PROPERTIES.MINIMIZED" value="false" />
+    <property name="ATTACHED_TOOL_WINDOW.DEFAULT.Layout Inspector.PROPERTIES.SPLIT" value="false" />
+    <property name="ATTACHED_TOOL_WINDOW.DEFAULT.Layout Inspector.TOOL_ORDER" value="TREE,PROPERTIES" />
+    <property name="ATTACHED_TOOL_WINDOW.DEFAULT.Layout Inspector.TREE.AUTO_HIDE" value="false" />
+    <property name="ATTACHED_TOOL_WINDOW.DEFAULT.Layout Inspector.TREE.LEFT" value="true" />
+    <property name="ATTACHED_TOOL_WINDOW.DEFAULT.Layout Inspector.TREE.MINIMIZED" value="false" />
+    <property name="ATTACHED_TOOL_WINDOW.DEFAULT.Layout Inspector.TREE.SPLIT" value="false" />
+    <property name="ATTACHED_TOOL_WINDOW.DEFAULT.NELE_EDITOR.COMPONENT_TREE.AUTO_HIDE" value="false" />
+    <property name="ATTACHED_TOOL_WINDOW.DEFAULT.NELE_EDITOR.COMPONENT_TREE.FULL.AUTO_HIDE" value="false" />
+    <property name="ATTACHED_TOOL_WINDOW.DEFAULT.NELE_EDITOR.COMPONENT_TREE.FULL.LEFT" value="true" />
+    <property name="ATTACHED_TOOL_WINDOW.DEFAULT.NELE_EDITOR.COMPONENT_TREE.FULL.MINIMIZED" value="false" />
+    <property name="ATTACHED_TOOL_WINDOW.DEFAULT.NELE_EDITOR.COMPONENT_TREE.FULL.SPLIT" value="true" />
+    <property name="ATTACHED_TOOL_WINDOW.DEFAULT.NELE_EDITOR.COMPONENT_TREE.LEFT" value="true" />
+    <property name="ATTACHED_TOOL_WINDOW.DEFAULT.NELE_EDITOR.COMPONENT_TREE.SPLIT" value="true" />
+    <property name="ATTACHED_TOOL_WINDOW.DEFAULT.NELE_EDITOR.PALETTE.AUTO_HIDE" value="false" />
+    <property name="ATTACHED_TOOL_WINDOW.DEFAULT.NELE_EDITOR.PALETTE.FULL.AUTO_HIDE" value="false" />
+    <property name="ATTACHED_TOOL_WINDOW.DEFAULT.NELE_EDITOR.PALETTE.FULL.LEFT" value="true" />
+    <property name="ATTACHED_TOOL_WINDOW.DEFAULT.NELE_EDITOR.PALETTE.FULL.MINIMIZED" value="false" />
+    <property name="ATTACHED_TOOL_WINDOW.DEFAULT.NELE_EDITOR.PALETTE.FULL.SPLIT" value="false" />
+    <property name="ATTACHED_TOOL_WINDOW.DEFAULT.NELE_EDITOR.PALETTE.LEFT" value="true" />
+    <property name="ATTACHED_TOOL_WINDOW.DEFAULT.NELE_EDITOR.PALETTE.SPLIT" value="false" />
+    <property name="ATTACHED_TOOL_WINDOW.DEFAULT.NELE_EDITOR.PROPERTIES.AUTO_HIDE" value="false" />
+    <property name="ATTACHED_TOOL_WINDOW.DEFAULT.NELE_EDITOR.PROPERTIES.FULL.AUTO_HIDE" value="false" />
+    <property name="ATTACHED_TOOL_WINDOW.DEFAULT.NELE_EDITOR.PROPERTIES.FULL.LEFT" value="false" />
+    <property name="ATTACHED_TOOL_WINDOW.DEFAULT.NELE_EDITOR.PROPERTIES.FULL.MINIMIZED" value="false" />
+    <property name="ATTACHED_TOOL_WINDOW.DEFAULT.NELE_EDITOR.PROPERTIES.FULL.SPLIT" value="false" />
+    <property name="ATTACHED_TOOL_WINDOW.DEFAULT.NELE_EDITOR.PROPERTIES.LEFT" value="false" />
+    <property name="ATTACHED_TOOL_WINDOW.DEFAULT.NELE_EDITOR.PROPERTIES.SPLIT" value="false" />
+    <property name="ATTACHED_TOOL_WINDOW.DEFAULT.NELE_EDITOR.TOOL_ORDER" value="PALETTE,PROPERTIES,COMPONENT_TREE" />
+    <property name="ATTACHED_TOOL_WINDOW.Layout Inspector.TOOL_ORDER" value="TREE,PROPERTIES" />
+    <property name="ATTACHED_TOOL_WINDOW.Layout Inspector.TREE.LEFT" value="true" />
+    <property name="ATTACHED_TOOL_WINDOW.NELE_EDITOR.COMPONENT_TREE.FULL.LEFT" value="true" />
+    <property name="ATTACHED_TOOL_WINDOW.NELE_EDITOR.COMPONENT_TREE.FULL.SPLIT" value="true" />
+    <property name="ATTACHED_TOOL_WINDOW.NELE_EDITOR.COMPONENT_TREE.LEFT" value="true" />
+    <property name="ATTACHED_TOOL_WINDOW.NELE_EDITOR.COMPONENT_TREE.SPLIT" value="true" />
+    <property name="ATTACHED_TOOL_WINDOW.NELE_EDITOR.PALETTE.FULL.LEFT" value="true" />
+    <property name="ATTACHED_TOOL_WINDOW.NELE_EDITOR.PALETTE.LEFT" value="true" />
+    <property name="ATTACHED_TOOL_WINDOW.NELE_EDITOR.TOOL_ORDER" value="PALETTE,PROPERTIES,COMPONENT_TREE" />
+    <property name="AndroidInitConfigurator.V1" value="true" />
+    <property name="AndroidInitConfigurator.V3" value="true" />
+    <property name="AndroidInitConfigurator.V5" value="true" />
+    <property name="BuildView.Splitter.Proportion" value="0.30934656" />
+    <property name="Default.SavedEditorTheme" value="_@user_Default" />
+    <property name="ExpandBeforeRunStepsPanel" value="true" />
+    <property name="ExpandRunDashboardTypesPanel" value="false" />
+    <property name="FileTemplates.SelectedTemplate" value="HTML File" />
+    <property name="MarketplacePluginsSearchHistory" value="firebase&#10;fire&#10;f&#10;fc&#10;fcm" />
+    <property name="MemberChooser.copyJavadoc" value="false" />
+    <property name="MemberChooser.showClasses" value="true" />
+    <property name="PROJECT_STRUCTURE_NOTIFICATION_LAST_HIDDEN_TIMESTAMP" value="1616132246867" />
+    <property name="PluginConfigurable.selectionTab" value="1" />
+    <property name="SAVED_ANDROID_NPW_ASKED_LANGUAGE" value="true" />
+    <property name="SAVED_ANDROID_NPW_LANGUAGE" value="Java" />
+    <property name="SAVED_ANDROID_PACKAGE" value="com.example" />
+    <property name="SAVED_RENDER_LANGUAGE" value="Java" />
+    <property name="WebStorm.enableDefaultTooltipFixes" value="true" />
+    <property name="WebStorm.enableSmartQuotes" value="true" />
+    <property name="WebStorm.initialConfigurationShown" value="true" />
+    <property name="android-component-compatibility-check" value="1572519534568" />
+    <property name="build.toolwindow.Build Output.selection.state" value="com.intellij.build.BuildTreeConsoleView" />
+    <property name="build.toolwindow.Sync.selection.state" value="com.intellij.build.BuildTreeConsoleView" />
+    <property name="build.toolwindow.run.selection.state" value="com.intellij.build.BuildTreeConsoleView" />
+    <property name="defaultJdkConfigured" value="true" />
+    <property name="file.chooser.recent.files" value="$USER_HOME$/AndroidStudioProjects/FinalTesting&#10;/Users/kevalmajethiya/AndroidStudioProjects/NewApp&#10;/Users/kevalmajethiya/AndroidStudioProjects/MF&#10;/Users/kevalmajethiya/AndroidStudioProjects/TT&#10;/Users/kevalmajethiya/AndroidStudioProjects/T&#10;/Users/kevalmajethiya/AndroidStudioProjects/AndroidPlugin&#10;/Users/kevalmajethiya/AndroidStudioProjects/MyPlugin&#10;/Users/kevalmajethiya/AndroidStudioProjects/TestApp&#10;/Users/kevalmajethiya/AndroidStudioProjects/TestingApp&#10;/Users/kevalmajethiya/AndroidStudioProjects/Testing&#10;/Users/kevalmajethiya/AndroidStudioProjects/demoapp1&#10;/Users/kevalmajethiya/AndroidStudioProjects/demo1&#10;/Users/kevalmajethiya/AndroidStudioProjects/PluginTesting&#10;/Users/kevalmajethiya/AndroidStudioProjects/demoapp&#10;/Users/kevalmajethiya/AndroidStudioProjects/mydemoapp&#10;/Users/kevalmajethiya/AndroidStudioProjects/myapp&#10;/Users/kevalmajethiya/AndroidStudioProjects/myapp1&#10;/Users/kevalmajethiya/AndroidStudioProjects/demo6&#10;/Users/kevalmajethiya/AndroidStudioProjects/demo4&#10;/Users/kevalmajethiya/AndroidStudioProjects/demo3&#10;/Users/kevalmajethiya/AndroidStudioProjects/Demo&#10;/Users/kevalmajethiya/AndroidStudioProjects/sdkintegration_demo&#10;/Users/kevalmajethiya/AndroidStudioProjects/MyApplication&#10;/Users/kevalmajethiya/AndroidStudioProjects/myproject&#10;/Users/kevalmajethiya/AndroidStudioProjects/MyApplication/gradle/wrapper&#10;/Users/kevalmajethiya/AndroidStudioProjects/MyApplication/gradle/wrapper/gradle-wrapper.properties&#10;/Users/kevalmajethiya/AndroidStudioProjects/MyApplication/gradle.properties&#10;/Users/kevalmajethiya/AndroidStudioProjects/MyApplication/build.gradle&#10;/Users/kevalmajethiya/AndroidStudioProjects/TestApplication&#10;/Users/jidesh/AndroidStudioProjects/MyApplication" />
+    <property name="file.gist.reindex.count" value="1541" />
+    <property name="fileTypeChangedCounter" value="1" />
+    <property name="ide.memory.adjusted" value="true" />
+    <property name="installed.kotlin.plugin.version" value="1.3.72-release-Studio4.1-5" />
+    <property name="kotlin-gradle-user-dirs" value="$USER_HOME$/.gradle" />
+    <property name="kotlin.lastUpdateCheck" value="1614343613371" />
+    <property name="kotlin.plugin.releaseDate" value="1.3.72-release-Studio4.1-5:2020-06-17" />
+    <property name="lastTip" value="12" />
+    <property name="last_opened_file_path" value="$USER_HOME$/AndroidStudioProjects/FinalTesting" />
+    <property name="memory.settings.last.check.timestamp" value="1572607101648" />
+    <property name="memory.settings.postsync.do.not.show.again" value="true" />
+    <property name="project.wizard.group" value="com.android.tools.idea.npw.ideahost.AndroidModuleBuilder" />
+    <property name="studio.activity.count" value="9" />
+    <property name="tasks.pass.word.conversion.enforced" value="true" />
+    <property name="ts.lib.d.ts.version" value="3.4.1" />
+  </component>
+</application>

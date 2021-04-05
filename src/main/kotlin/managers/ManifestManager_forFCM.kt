@@ -79,6 +79,7 @@ class ManifestManager_forFCM(private val project: Project) {
                         fcm_service_name=true
                         firebase_messaging_auto_init_enabled=true
                         firebase_analytics_collection_enabled=true
+                        fcm_sender_id=true
                     }
                 }
             }
@@ -126,7 +127,7 @@ class ManifestManager_forFCM(private val project: Project) {
                             .append("\n")
                             .append("             android:name=\"firebase_analytics_collection_enabled\"")
                             .append("\n")
-                            .append("             android:value="+fcmsenderid+ "/>")
+                            .append("             android:value="+false+ "/>")
                             .append("\n")
 
                     }
@@ -140,7 +141,7 @@ class ManifestManager_forFCM(private val project: Project) {
                             .append("\n")
                             .append("             android:name=\"FCM_SENDER_ID\"")
                             .append("\n")
-                            .append("             android:value=\"false\" />")
+                            .append("             android:value="+fcmsenderid+" />")
                             .append("\n")
 
                     }

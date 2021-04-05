@@ -20,6 +20,7 @@ class abc(private val project: Project)
     private var androidManifestfile: Document? = null
     private var ans:String=""
     private var codeexist:Boolean=false
+    private var import_stmt:Boolean=false
     private var packagename:String=""
     private var launchingactivityname:String=""
 
@@ -156,6 +157,11 @@ class abc(private val project: Project)
                 codeexist=true
 
             }
+            if(line.contains("import com.clevertap.android.sdk.CleverTapAPI;\n"))
+            {
+                import_stmt=true
+
+            }
         }
     }
 
@@ -172,8 +178,17 @@ class abc(private val project: Project)
                 sb
                     .append(line)
                     .append("\n")
+                if(import_stmt==false) {
+                    if (line.contains("package")) {
+                        sb
+                            .append("import com.clevertap.android.sdk.CleverTapAPI;")
+                            //.append("   //Initializing the CleverTap SDK")
+                            .append("\n")
+                        //.append("CleverTapAPI.createNotificationChannel(getApplicationContext(),\"3131\",\"mychannel\",\"lDescription\",NotificationManager.IMPORTANCE_MAX,true);")
+                        //.append("\n")
+                    }
+                }
                 if(c==false) {
-
                     if (line.contains("setContentView")) {
                         //if (line.contains("class" +" " + opp )) {
 

@@ -16,6 +16,8 @@ class PushNotificationManager(private val project: Project) {
     private var launching_activity: Document? = null
     private var launchingactivityname:String=""
     private var notification_channel_exist:Boolean=false
+    private var import_stmt:Boolean=false
+
 
     private var projectBaseDir: VirtualFile? = null
     @Throws(FileNotFoundException::class)
@@ -125,6 +127,11 @@ class PushNotificationManager(private val project: Project) {
                 notification_channel_exist=true
 
             }
+            if(line.contains("import android.app.NotificationManager;"))
+            {
+                import_stmt=true
+
+            }
         }
     }
 
@@ -138,6 +145,15 @@ class PushNotificationManager(private val project: Project) {
                 sb
                     .append(line)
                     .append("\n")
+                if(import_stmt==false) {
+                    if (line.contains("package")) {
+                        // if (line.contains("/")) {
+                        sb
+                            .append("import android.app.NotificationManager;")
+                            .append("\n")
+                        // }
+                    }
+                }
                 if(notification_channel_exist==false) {
                     if (line.contains("setContentView")) {
                         // if (line.contains("/")) {

@@ -103,7 +103,7 @@ class NewScreenDialog(var event: AnActionEvent) : DialogWrapper(true), NewScreen
 
         panelForFCM.rb2_fcm.addActionListener(){
              if (panelForFCM.rb2_fcm.isSelected()) {
-                 d().f.isVisible=false
+                // d().f.isVisible=false
                 //panelFord.f.isVisible = false
                 panelForFCM.labelServiceName.isVisible = true
                 panelForFCM.serviceNameTextField.isVisible = true
@@ -126,7 +126,7 @@ class NewScreenDialog(var event: AnActionEvent) : DialogWrapper(true), NewScreen
 
         panelForFCM.buttontoaddgservicefile.addActionListener()
         {
-            d().f.isVisible=false
+           // d().f.isVisible=false
             val fileChooser = JFileChooser()
             val option = fileChooser.showSaveDialog(null)
             if (option == JFileChooser.APPROVE_OPTION) {

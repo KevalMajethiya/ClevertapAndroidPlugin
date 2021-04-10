@@ -6,7 +6,6 @@ import com.intellij.openapi.actionSystem.AnActionEvent
 import ui.JoptionPaneCopy
 import ui.demo1
 import ui.*
-import ui.d
 
 class Demo : AnAction() {
     override fun actionPerformed(event: AnActionEvent) {

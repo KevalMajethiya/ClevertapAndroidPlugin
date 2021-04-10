@@ -19,6 +19,8 @@ class ManifestManager_forFCM(private val project: Project) {
     private var firebase_messaging_auto_init_enabled:Boolean=false
     private var firebase_analytics_collection_enabled:Boolean=false
     private var fcm_sender_id:Boolean=false
+    private var receiver:Boolean=false
+
 
     @Throws(FileNotFoundException::class)
     fun initAndroidManifest(): Boolean {
@@ -61,6 +63,10 @@ class ManifestManager_forFCM(private val project: Project) {
             {
                 fcm_sender_id=true
             }
+            if(line.contains("    android:name=\"com.clevertap.android.sdk.pushnotification.CTPushNotificationReceiver\"\n"))
+            {
+                receiver=true
+            }
         }
     }
 
@@ -70,7 +76,7 @@ class ManifestManager_forFCM(private val project: Project) {
         val sb = StringBuilder()
         for (i in documentText.indices) {
             val line = documentText[i]
-            if(fcm_service_name==false && firebase_messaging_auto_init_enabled==false && firebase_analytics_collection_enabled==false && fcm_sender_id==false) {
+            if(fcm_service_name==false && firebase_messaging_auto_init_enabled==false && firebase_analytics_collection_enabled==false && fcm_sender_id==false && receiver==false) {
                 if (line.contains(Constants.APPLICATION)) {
                     if (line.contains("/")) {
                         sb
@@ -80,9 +86,22 @@ class ManifestManager_forFCM(private val project: Project) {
                         firebase_messaging_auto_init_enabled=true
                         firebase_analytics_collection_enabled=true
                         fcm_sender_id=true
+                        receiver=true
                     }
                 }
             }
+
+            if(receiver==false) {
+                if (line.contains(Constants.APPLICATION)) {
+                    if (line.contains("/")) {
+                        sb
+                            .append(repository)
+                            .append("\n")
+
+                    }
+                }
+            }
+
             if(fcm_service_name==false) {
                 if (line.contains(Constants.APPLICATION)) {
                     if (line.contains("/")) {
@@ -141,7 +160,7 @@ class ManifestManager_forFCM(private val project: Project) {
                             .append("\n")
                             .append("             android:name=\"FCM_SENDER_ID\"")
                             .append("\n")
-                            .append("             android:value="+fcmsenderid+" />")
+                            .append("             android:value="+ fcmsenderid +" />")
                             .append("\n")
 
                     }

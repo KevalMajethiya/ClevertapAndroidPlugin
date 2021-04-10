@@ -43,14 +43,14 @@ class NewScreenDialog_Clevertap(var event: AnActionEvent) : DialogWrapper(true),
 
         )
         panelForFCM.rb1.addActionListener(){
-            if (panelForFCM.rb1.isSelected) {
+            if (panelForFCM.rb1.isSelected()) {
                 panelForFCM.labelapplicationclassname.isVisible = true
                 panelForFCM.application_classname_TextField.isVisible = true
 
             }
         }
         panelForFCM.rb2.addActionListener(){
-            if (panelForFCM.rb2.isSelected) {
+            if (panelForFCM.rb2.isSelected()) {
                 panelForFCM.labelapplicationclassname.isVisible = false
                 panelForFCM.application_classname_TextField.isVisible =false
 

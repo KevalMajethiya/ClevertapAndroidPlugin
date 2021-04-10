@@ -61,6 +61,8 @@ class NewScreenPresenter(
         contentTextText: String,
         fcm_sender_id :String,
         dependencyVersionText: String,
+        IsRadiobuttonrb1Selected: Boolean,
+        IsRadiobuttonrb2Selected: Boolean,
         isNeedReadMeForInstructions: Boolean,
         moduleName: String
     ) {
@@ -84,7 +86,7 @@ class NewScreenPresenter(
                         it.addMetaDataContent(
                             Methods.getAndroidManifestContent(
                                 packageName,
-                                serviceNameText,fcm_sender_id
+                                serviceNameText,fcm_sender_id, IsRadiobuttonrb1Selected, IsRadiobuttonrb2Selected
 
 
                             ),serviceNameText,fcm_sender_id
@@ -104,18 +106,20 @@ class NewScreenPresenter(
                     }
 
                 }
-                writeActionDispatcher.dispatch {
-                    fileCreator.createScreenFiles(
-                        packageName,
-                        serviceNameText,
-                        pendingIntentText,
-                        contentTitleText,
-                        contentTextText,
-                        isNeedReadMeForInstructions,
-                        moduleName,
-                        Methods.checkPrimaryColorInColorsFile(project)
-                    )
-                }
+                //if(IsRadiobuttonrb1Selected==true) {
+                    writeActionDispatcher.dispatch {
+                        fileCreator.createScreenFiles(
+                            packageName,
+                            serviceNameText,
+                            pendingIntentText,
+                            contentTitleText,
+                            contentTextText,
+                            isNeedReadMeForInstructions,
+                            moduleName,
+                            Methods.checkPrimaryColorInColorsFile(project)
+                        )
+                    }
+               // }
                 ApplicationManager.getApplication()
                     .invokeLater({
                         Notifications.Bus.notify(

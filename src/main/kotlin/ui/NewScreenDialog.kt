@@ -1,5 +1,6 @@
 package ui
 
+import action.Demo
 import com.intellij.openapi.actionSystem.AnActionEvent
 import com.intellij.openapi.actionSystem.DataKeys
 import com.intellij.openapi.module.ModuleUtil
@@ -13,16 +14,16 @@ import util.Methods
 import java.io.IOException
 import java.nio.file.Files
 import java.nio.file.Paths
-import javax.swing.JComponent
-import javax.swing.JFileChooser
-import javax.swing.JOptionPane;
 import java.awt.event.ActionEvent;
-
+import javax.swing.*
+import action.*
+import java.awt.Panel
 
 
 class NewScreenDialog(var event: AnActionEvent) : DialogWrapper(true), NewScreenView {
 
     private val panelForFCM = FCMInputPanel()
+    //private val panelFord=d()
 
     private val presenter: NewScreenPresenter
     private var packageName = ""
@@ -48,10 +49,84 @@ class NewScreenDialog(var event: AnActionEvent) : DialogWrapper(true), NewScreen
             currentPath
         )
         moduleName = currentPath?.module ?: Constants.DEFAULT_MODULE_NAME
+        panelForFCM.rb1_fcm.addActionListener(){
+            if (panelForFCM.rb1_fcm.isSelected()) {
+               // var ans=panelForFCM.rb1_fcm.isSelected
 
+                panelForFCM.labelServiceName.isVisible = false
+                panelForFCM.serviceNameTextField.isVisible = false
+
+                panelForFCM.fcm_sender_id.isVisible = false
+                panelForFCM.fcm_sender_id_TextField.isVisible = false
+
+                panelForFCM.labelVersion.isVisible = false
+                panelForFCM.dependencyVersionTextField.isVisible = false
+
+                panelForFCM.labeladdgoogle_service_file.isVisible = false
+                panelForFCM.buttontoaddgservicefile.isVisible = false
+
+//                panelForFCM.labelContentTitle.isVisible=true
+//                panelForFCM.contentTitleTextField.isVisible=true
+
+
+                //d()
+                //panelForFCM.isVisible=false
+                fcm1(event).show()
+//                d().f.isVisible=true
+//                d().f.toFront()
+//                d().f.setAlwaysOnTop(true)
+
+
+
+                //panelForFCM.toBack()
+
+//                JOptionPane.showOptionDialog(null, "Add the below code In the oncreate method of your launching activity:\n\n String fcmRegId = FirebaseInstanceId.getInstance().getToken();\n" +
+//                        "clevertapDefaultInstance.pushFcmRegistrationId(fcmRegId,true);", "Info",
+//                    JOptionPane.OK_CANCEL_OPTION, JOptionPane.PLAIN_MESSAGE,null,null,null)
+               //JoptionPaneCopy()
+                //dispose()
+                //panelForFCM.add(panelFord.f).isVisible=true
+                //panelForFCM.hide()
+                //if(panelFord.f.isVisible==false) {
+                    //dispose()
+                 //panelFord.f.isVisible = true
+                   // d()
+
+               // }
+               // panelForFCM.isVisible=true
+
+            }
+
+       }
+
+
+
+        panelForFCM.rb2_fcm.addActionListener(){
+             if (panelForFCM.rb2_fcm.isSelected()) {
+                 d().f.isVisible=false
+                //panelFord.f.isVisible = false
+                panelForFCM.labelServiceName.isVisible = true
+                panelForFCM.serviceNameTextField.isVisible = true
+
+                panelForFCM.fcm_sender_id.isVisible = true
+                panelForFCM.fcm_sender_id_TextField.isVisible = true
+
+                panelForFCM.labelVersion.isVisible = true
+                panelForFCM.dependencyVersionTextField.isVisible = true
+
+                panelForFCM.labeladdgoogle_service_file.isVisible = true
+                panelForFCM.buttontoaddgservicefile.isVisible = true
+
+//                 panelForFCM.labelContentTitle.isVisible=true
+//                 panelForFCM.contentTitleTextField.isVisible=true
+
+            }
+
+        }
 
         panelForFCM.buttontoaddgservicefile.addActionListener()
         {
+            d().f.isVisible=false
             val fileChooser = JFileChooser()
             val option = fileChooser.showSaveDialog(null)
             if (option == JFileChooser.APPROVE_OPTION) {
@@ -114,6 +189,8 @@ class NewScreenDialog(var event: AnActionEvent) : DialogWrapper(true), NewScreen
                     panelForFCM.fcm_sender_id_TextField.text,
                     //panelForFCM.Exclude_filesTextField.text,
                      panelForFCM.dependencyVersionTextField.text,
+                    panelForFCM.rb1_fcm.isSelected,
+                    panelForFCM.rb2_fcm.isSelected,
                     panelForFCM.isNeedReadMeForInstructions.isSelected,
                     //Methods.createnotificationchannel(panelForFCM.contentTitleTextField.text),
                     moduleName
@@ -122,6 +199,7 @@ class NewScreenDialog(var event: AnActionEvent) : DialogWrapper(true), NewScreen
         override fun createCenterPanel(): JComponent {
         presenter.onLoadView()
         return panelForFCM
+            //return panelForFCM
     }
 
     override fun close() = close(DialogWrapper.OK_EXIT_CODE)

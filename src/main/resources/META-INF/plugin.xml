@@ -67,11 +67,11 @@
 
 <!--        <action class="action.Demo"-->
 <!--                id="action.Demo"-->
-<!--                text="Clevertap Initialization"-->
+<!--                text="Clevertap Initialization Demo"-->
 <!--                description="Demo">-->
 <!--            <add-to-group group-id="GenerateGroup" anchor="first"/>-->
 
-<!--        </action>-->
+<!--       </action>-->
         <action class="action.SearchAction_FCM"
                 id="action.SearchAction_FCM"
                 text="Add Push Notification with Clevertap"

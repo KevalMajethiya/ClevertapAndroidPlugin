@@ -60,18 +60,6 @@
             </RecentProjectMetaInfo>
           </value>
         </entry>
-        <entry key="$USER_HOME$/AndroidStudioProjects/MF">
-          <value>
-            <RecentProjectMetaInfo projectWorkspaceId="1qZ1JNw4yxO6Q95vlIowa66k3in">
-              <option name="binFolder" value="$APPLICATION_HOME_DIR$/bin" />
-              <option name="build" value="AI-201.8743.12.41.7042882" />
-              <option name="buildTimestamp" value="1608424789981" />
-              <frame x="0" y="0" width="1280" height="800" />
-              <option name="productionCode" value="AI" />
-              <option name="projectOpenTimestamp" value="1617272638886" />
-            </RecentProjectMetaInfo>
-          </value>
-        </entry>
         <entry key="$USER_HOME$/AndroidStudioProjects/NewApp">
           <value>
             <RecentProjectMetaInfo projectWorkspaceId="1qZ2PqnfiEXHtu1GCeRGPoc5k6W">
@@ -84,15 +72,15 @@
             </RecentProjectMetaInfo>
           </value>
         </entry>
-        <entry key="$USER_HOME$/AndroidStudioProjects/FinalTesting">
+        <entry key="$USER_HOME$/AndroidStudioProjects/Fcmtesting">
           <value>
-            <RecentProjectMetaInfo projectWorkspaceId="1qZ9fYFonWoWeLVix4N3d9SbQgv">
+            <RecentProjectMetaInfo opened="true" projectWorkspaceId="1qmtBpF8Tmo1bY0vWvQ6qq1ByvI">
               <option name="binFolder" value="$APPLICATION_HOME_DIR$/bin" />
               <option name="build" value="AI-201.8743.12.41.7042882" />
-              <option name="buildTimestamp" value="1608424796383" />
-              <frame x="0" y="0" width="1280" height="800" />
+              <option name="buildTimestamp" value="1608424747599" />
+              <frame x="0" y="23" width="1280" height="723" />
               <option name="productionCode" value="AI" />
-              <option name="projectOpenTimestamp" value="1617276494399" />
+              <option name="projectOpenTimestamp" value="1618044556717" />
             </RecentProjectMetaInfo>
           </value>
         </entry>
@@ -101,9 +89,8 @@
     <option name="lastProjectLocation" value="$USER_HOME$/AndroidStudioProjects" />
     <option name="recentPaths">
       <list>
-        <option value="$USER_HOME$/AndroidStudioProjects/FinalTesting" />
+        <option value="$USER_HOME$/AndroidStudioProjects/Fcmtesting" />
         <option value="$USER_HOME$/AndroidStudioProjects/NewApp" />
-        <option value="$USER_HOME$/AndroidStudioProjects/MF" />
         <option value="$USER_HOME$/AndroidStudioProjects/AndroidPlugin" />
         <option value="$USER_HOME$/AndroidStudioProjects/TestApp" />
         <option value="$USER_HOME$/AndroidStudioProjects/PluginTesting" />

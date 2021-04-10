@@ -223,28 +223,63 @@ object Methods {
 
     fun getAndroidManifestContent(     packageName: String,
                                        serviceNameText: String,
-                                       fcm_sender_id:String
-    ): String {
-        return "\n        <service\n" +
-                "            android:name=\"com.clevertap.android.sdk.pushnotification.fcm"+".$serviceNameText\"\n" +
-                "            android:exported=\"false\">\n" +
-                "            <intent-filter>\n" +
-                "                <action android:name=\"com.google.firebase.MESSAGING_EVENT\" />\n" +
-                "            </intent-filter>\n" +
-                "        </service>\n" +
-                "        \n" +
-                "        <meta-data\n" +
-                "            android:name=\"firebase_messaging_auto_init_enabled\"\n" +
-                "            android:value=\"false\" />\n" +
-                "        \n" +
-                "        <meta-data\n" +
-                "            android:name=\"firebase_analytics_collection_enabled\"\n" +
-                "            android:value=\"false\" />\n" +
-                "        <meta-data\n" +
-                "            android:name=\"FCM_SENDER_ID\"\n" +
-                "            android:value=\"$fcm_sender_id\" />\n" +
-                "        \n"
+                                       fcm_sender_id:String,
+                                       rb1_fcm_selected :Boolean,
+                                       rb2_fcm_selected :Boolean
 
+
+    ): String {
+        if(rb1_fcm_selected)
+        {
+//            return "\n        <service\n" +
+//                    "            android:name=\"com.your.package"+".$serviceNameText\">\n" +
+//                    "            <intent-filter>\n" +
+//                    "                <action android:name=\"com.google.firebase.MESSAGING_EVENT\" />\n" +
+//                    "            </intent-filter>\n" +
+//                    "          </service>\n" +
+              return "\n        <receiver\n"+
+                     "            android:name=\"com.clevertap.android.sdk.pushnotification.CTPushNotificationReceiver\"\n"+
+                     "            android:exported=\"false\"\n"+
+                     "            android:enabled=\"true\">\n"+
+                     "         </receiver>\n"
+//                    "        \n" +
+//                    "        <meta-data\n" +
+//                    "            android:name=\"firebase_messaging_auto_init_enabled\"\n" +
+//                    "            android:value=\"false\" />\n" +
+//                    "        \n" +
+//                    "        <meta-data\n" +
+//                    "            android:name=\"firebase_analytics_collection_enabled\"\n" +
+//                    "            android:value=\"false\" />\n" +
+//                    "        <meta-data\n" +
+//                    "            android:name=\"FCM_SENDER_ID\"\n" +
+//                    "            android:value=\"$fcm_sender_id\" />\n" +
+//                    "        \n"
+
+        }
+        if(rb2_fcm_selected)
+        {
+            return "\n        <service\n" +
+                    "            android:name=\"com.clevertap.android.sdk.pushnotification.fcm"+".$serviceNameText\"\n" +
+                    "            android:exported=\"false\">\n" +
+                    "            <intent-filter>\n" +
+                    "                <action android:name=\"com.google.firebase.MESSAGING_EVENT\" />\n" +
+                    "            </intent-filter>\n" +
+                    "        </service>\n" +
+                    "        \n" +
+                    "        <meta-data\n" +
+                    "            android:name=\"firebase_messaging_auto_init_enabled\"\n" +
+                    "            android:value=\"false\" />\n" +
+                    "        \n" +
+                    "        <meta-data\n" +
+                    "            android:name=\"firebase_analytics_collection_enabled\"\n" +
+                    "            android:value=\"false\" />\n" +
+                    "        <meta-data\n" +
+                    "            android:name=\"FCM_SENDER_ID\"\n" +
+                    "            android:value=\"$fcm_sender_id\" />\n" +
+                    "        \n"
+
+        }
+      return " "
     }
 
 

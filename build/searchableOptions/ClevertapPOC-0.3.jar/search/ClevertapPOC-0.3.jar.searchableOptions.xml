@@ -26,6 +26,9 @@
     <option name="events" path="ActionManager" hit="Clevertap Events" />
     <option name="clevertap" path="ActionManager" hit="Clevertap Helper" />
     <option name="helper" path="ActionManager" hit="Clevertap Helper" />
+    <option name="clevertap" path="ActionManager" hit="Clevertap Initialization Demo" />
+    <option name="demo" path="ActionManager" hit="Clevertap Initialization Demo" />
+    <option name="initialization" path="ActionManager" hit="Clevertap Initialization Demo" />
     <option name="clevertap" path="ActionManager" hit="Clevertap OnuserLogin" />
     <option name="onuserlogin" path="ActionManager" hit="Clevertap OnuserLogin" />
     <option name="clevertap" path="ActionManager" hit="Clevertap User Properties" />
@@ -33,6 +36,7 @@
     <option name="user" path="ActionManager" hit="Clevertap User Properties" />
     <option name="clevertap" path="ActionManager" hit="Configure Clevertap." />
     <option name="configure" path="ActionManager" hit="Configure Clevertap." />
+    <option name="demo" path="ActionManager" hit="Demo" />
   </configurable>
 </options>
 

@@ -157,7 +157,7 @@ class abc(private val project: Project)
                 codeexist=true
 
             }
-            if(line.contains("import com.clevertap.android.sdk.CleverTapAPI;\n"))
+            if(line.contains("import com.clevertap.android.sdk.CleverTapAPI;"))
             {
                 import_stmt=true
 

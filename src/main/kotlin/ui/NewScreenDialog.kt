@@ -117,6 +117,8 @@ class NewScreenDialog(var event: AnActionEvent) : DialogWrapper(true), NewScreen
                 panelForFCM.labeladdgoogle_service_file.isVisible = true
                 panelForFCM.buttontoaddgservicefile.isVisible = true
 
+                 panelForFCM.label_file_status.isVisible = true
+
 //                 panelForFCM.labelContentTitle.isVisible=true
 //                 panelForFCM.contentTitleTextField.isVisible=true
 

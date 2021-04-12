@@ -38,7 +38,7 @@
         <ActionSummary times="10" last="1617266076506" />
       </entry>
       <entry key="CleanPlugin.ID">
-        <ActionSummary times="703" last="1617698256094" />
+        <ActionSummary times="708" last="1618218145408" />
       </entry>
       <entry key="CommentByLineComment">
         <ActionSummary times="12" last="1617694639254" />
@@ -50,7 +50,7 @@
         <ActionSummary times="1" last="1615359148800" />
       </entry>
       <entry key="EditorBackSpace">
-        <ActionSummary times="3165" last="1618044399234" />
+        <ActionSummary times="3178" last="1618215293294" />
       </entry>
       <entry key="EditorChooseLookupItem">
         <ActionSummary times="16" last="1617694568837" />
@@ -68,19 +68,19 @@
         <ActionSummary times="1" last="1617089201533" />
       </entry>
       <entry key="EditorDown">
-        <ActionSummary times="242" last="1617266221356" />
+        <ActionSummary times="243" last="1618215152341" />
       </entry>
       <entry key="EditorDownWithSelection">
-        <ActionSummary times="7043" last="1618044395157" />
+        <ActionSummary times="7083" last="1618215292726" />
       </entry>
       <entry key="EditorEnter">
         <ActionSummary times="165" last="1617694530027" />
       </entry>
       <entry key="EditorLeft">
-        <ActionSummary times="198" last="1617701281487" />
+        <ActionSummary times="199" last="1618215141221" />
       </entry>
       <entry key="EditorLeftWithSelection">
-        <ActionSummary times="801" last="1617694656146" />
+        <ActionSummary times="809" last="1618215172681" />
       </entry>
       <entry key="EditorPaste">
         <ActionSummary times="151" last="1617276713220" />
@@ -128,7 +128,7 @@
         <ActionSummary times="2" last="1614670042335" />
       </entry>
       <entry key="Generate">
-        <ActionSummary times="436" last="1618044600925" />
+        <ActionSummary times="441" last="1618218158591" />
       </entry>
       <entry key="GenerateCopyright">
         <ActionSummary times="3" last="1615375049392" />
@@ -203,7 +203,7 @@
         <ActionSummary times="7" last="1615871965858" />
       </entry>
       <entry key="WelcomeScreen.OpenProject">
-        <ActionSummary times="33" last="1617696571067" />
+        <ActionSummary times="34" last="1618217684137" />
       </entry>
       <entry key="WelcomeScreen.Plugins">
         <ActionSummary times="4" last="1610451282766" />
@@ -227,7 +227,7 @@
         <ActionSummary times="25" last="1617865820110" />
       </entry>
       <entry key="action.SearchAction_FCM">
-        <ActionSummary times="204" last="1618044602226" />
+        <ActionSummary times="207" last="1618218160021" />
       </entry>
       <entry key="action.google_service_file">
         <ActionSummary times="28" last="1616091975423" />
@@ -260,7 +260,7 @@
         <ActionSummary times="1" last="1614681259771" />
       </entry>
       <entry key="com.intellij.ide.ReopenProjectAction">
-        <ActionSummary times="54" last="1617261160860" />
+        <ActionSummary times="57" last="1618215793569" />
       </entry>
       <entry key="com.intellij.ide.actions.runAnything.RunAnythingChooseContextAction$ModuleItem">
         <ActionSummary times="1" last="1614672214389" />
@@ -281,7 +281,7 @@
         <ActionSummary times="3" last="1614672645888" />
       </entry>
       <entry key="com.intellij.openapi.wm.impl.ToolWindowHeader$HideAction">
-        <ActionSummary times="120" last="1617261996191" />
+        <ActionSummary times="122" last="1618215206855" />
       </entry>
       <entry key="com.intellij.openapi.wm.impl.ToolWindowHeader$ShowOptionsAction">
         <ActionSummary times="16" last="1614703127819" />

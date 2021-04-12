@@ -18,7 +18,7 @@
     <size key="GridCell.Tab.0.bottom.0.0.1280.800" width="1238" height="212" />
   </component>
   <component name="WindowManager">
-    <frame x="0" y="23" width="1280" height="723" />
+    <frame x="0" y="23" width="1280" height="716" />
     <layout>
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Find" order="1" />
@@ -35,10 +35,10 @@
     </layout>
   </component>
   <component name="WindowStateApplicationService">
-    <state x="451" y="133" key="FileChooserDialogImpl" timestamp="1617696576287">
-      <screen x="0" y="23" width="1280" height="721" />
+    <state x="451" y="132" key="FileChooserDialogImpl" timestamp="1618217689153">
+      <screen x="0" y="23" width="1280" height="715" />
     </state>
-    <state x="451" y="132" key="FileChooserDialogImpl/0.23.1280.715" timestamp="1617695897314" />
+    <state x="451" y="132" key="FileChooserDialogImpl/0.23.1280.715" timestamp="1618217689153" />
     <state x="451" y="132" key="FileChooserDialogImpl/0.23.1280.716" timestamp="1617690731035" />
     <state x="451" y="133" key="FileChooserDialogImpl/0.23.1280.721" timestamp="1617696576287" />
     <state x="451" y="133" key="FileChooserDialogImpl/0.23.1280.723" timestamp="1617261766491" />
@@ -53,10 +53,10 @@
     </state>
     <state x="921" y="555" width="356" height="156" key="ProcessPopupWindow/0.23.1280.716" timestamp="1616155760329" />
     <state x="921" y="559" width="356" height="158" key="ProcessPopupWindow/0.23.1280.721" timestamp="1616745854575" />
-    <state x="639" y="349" key="WELCOME_SCREEN" timestamp="1617696367192">
+    <state x="639" y="349" key="WELCOME_SCREEN" timestamp="1618218597458">
       <screen x="0" y="23" width="1280" height="715" />
     </state>
-    <state x="639" y="349" key="WELCOME_SCREEN/0.23.1280.715" timestamp="1617696367192" />
+    <state x="639" y="349" key="WELCOME_SCREEN/0.23.1280.715" timestamp="1618218597458" />
     <state x="639" y="349" key="WELCOME_SCREEN/0.23.1280.716" timestamp="1617271827995" />
     <state x="639" y="351" key="WELCOME_SCREEN/0.23.1280.721" timestamp="1617272736714" />
     <state x="639" y="351" key="WELCOME_SCREEN/0.23.1280.723" timestamp="1617261388773" />

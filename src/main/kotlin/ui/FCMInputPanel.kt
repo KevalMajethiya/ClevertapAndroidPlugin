@@ -84,6 +84,7 @@ class FCMInputPanel :JPanel() {
         val inset = 6
         val constraints = GridBagConstraints()
         constraints.anchor = GridBagConstraints.WEST
+        //constraints.insets = Insets(inset, inset, inset, inset)
         constraints.insets = Insets(inset, inset, inset, inset)
 
 
@@ -137,14 +138,14 @@ class FCMInputPanel :JPanel() {
 
         constraints.gridx = 0
         constraints.gridy = 3
-        //labelContentTitle.setVisible(false)
+        labelContentTitle.setVisible(false)
         labelContentTitle.setToolTipText("CleverTap Dashboard -> Settings -> Channels")
         labelContentTitle.setIcon(icon)
         labelContentTitle.setHorizontalTextPosition( SwingConstants.LEFT);
         labelContentTitle.setVerticalTextPosition( SwingConstants.CENTER );
         newPanel.add(labelContentTitle, constraints)
         constraints.gridx = 1
-        //contentTitleTextField.setVisible(false)
+        contentTitleTextField.setVisible(false)
         newPanel.add(contentTitleTextField, constraints)
 
 
@@ -227,7 +228,7 @@ class FCMInputPanel :JPanel() {
         // add the panel to this frame
         //newPanel.preferredSize()
 
-        //newPanel.setBounds(200,200,800,500)
+        //newPanel.setSize(1000,1000)
         add(newPanel)
         //f1.isVisible=true
         //add(f1).isVisible=false

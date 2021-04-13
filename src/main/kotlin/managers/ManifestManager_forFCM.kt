@@ -70,46 +70,46 @@ class ManifestManager_forFCM(private val project: Project) {
         }
     }
 
-    fun addMetaDataContent(repository: String,fcmservice_name:String,fcmsenderid:String) {
+    fun addMetaDataContent(repository: String,fcmservice_name:String,fcmsenderid:String,IsRadiobuttonrb1Selected:Boolean) {
         checkbeforeinsertion()
         val documentText = androidManifest!!.text.split("\n".toRegex()).dropLastWhile { it.isEmpty() }.toTypedArray()
         val sb = StringBuilder()
         for (i in documentText.indices) {
             val line = documentText[i]
-//            if(fcm_service_name==false && firebase_messaging_auto_init_enabled==false && firebase_analytics_collection_enabled==false && fcm_sender_id==false && receiver==false) {
-//                if (line.contains(Constants.APPLICATION)) {
-//                    if (line.contains("/")) {
-//                        sb
-//                            .append(repository)
-//                            .append("\n")
-//                        fcm_service_name=true
-//                        firebase_messaging_auto_init_enabled=true
-//                        firebase_analytics_collection_enabled=true
-//                        fcm_sender_id=true
-//                        receiver=true
-//                    }
-//                }
-//            }
-
-            if(receiver==false) {
+            if(fcm_service_name==false && firebase_messaging_auto_init_enabled==false && firebase_analytics_collection_enabled==false && fcm_sender_id==false && receiver==false) {
                 if (line.contains(Constants.APPLICATION)) {
                     if (line.contains("/")) {
                         sb
+                            .append(repository)
+                            .append("\n")
+                        fcm_service_name=true
+                        firebase_messaging_auto_init_enabled=true
+                        firebase_analytics_collection_enabled=true
+                        fcm_sender_id=true
+                        receiver=true
+                    }
+                }
+            }
+            if(IsRadiobuttonrb1Selected==true) {
+                if (receiver == false) {
+                    if (line.contains(Constants.APPLICATION)) {
+                        if (line.contains("/")) {
+                            sb
 //                            .append(repository)
 //                            .append("\n")
-                            .append("         <receiver")
-                            .append("\n")
-                            .append("             android:name=\"com.clevertap.android.sdk.pushnotification.CTPushNotificationReceiver\"")
-                            .append("\n")
-                            .append("             android:exported=\"false\"")
-                            .append("\n")
-                            .append("             android:enabled=\"true\">")
-                            .append("\n")
-                            .append("         </receiver>")
-                            .append("\n")
+                                .append("         <receiver")
+                                .append("\n")
+                                .append("             android:name=\"com.clevertap.android.sdk.pushnotification.CTPushNotificationReceiver\"")
+                                .append("\n")
+                                .append("             android:exported=\"false\"")
+                                .append("\n")
+                                .append("             android:enabled=\"true\">")
+                                .append("\n")
+                                .append("         </receiver>")
+                                .append("\n")
 
 
-
+                        }
                     }
                 }
             }

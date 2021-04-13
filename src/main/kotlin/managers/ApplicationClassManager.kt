@@ -164,6 +164,7 @@ class ApplicationClassManager(private val project: Project)
                                 .append("\n")
                                 .append("        " + "ActivityLifecycleCallback.register(this);")
                                 .append("\n")
+                            codeexist=true
 
 
                         }
@@ -191,6 +192,7 @@ class ApplicationClassManager(private val project: Project)
                                 .append("\n")
                                 .append("        " + "ActivityLifecycleCallback.register(this);")
                                 .append("\n")
+                            codeexist=true
 
 
                         }
@@ -204,6 +206,7 @@ class ApplicationClassManager(private val project: Project)
                                 .append("\n")
                                 .append("    " + "ActivityLifecycleCallback.register(this);")
                                 .append("\n")
+                            codeexist=true
                             //   }
 
                         }

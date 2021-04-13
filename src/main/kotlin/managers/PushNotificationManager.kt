@@ -17,6 +17,8 @@ class PushNotificationManager(private val project: Project) {
     private var launchingactivityname:String=""
     private var notification_channel_exist:Boolean=false
     private var import_stmt:Boolean=false
+    private var import_stmt_hashmap:Boolean=false
+
 
 
     private var projectBaseDir: VirtualFile? = null
@@ -132,6 +134,11 @@ class PushNotificationManager(private val project: Project) {
                 import_stmt=true
 
             }
+            if(line.contains("import java.util.HashMap;"))
+            {
+                import_stmt_hashmap=true
+
+            }
         }
     }
 
@@ -150,6 +157,15 @@ class PushNotificationManager(private val project: Project) {
                         // if (line.contains("/")) {
                         sb
                             .append("import android.app.NotificationManager;")
+                            .append("\n")
+                        // }
+                    }
+                }
+                if(import_stmt_hashmap==false) {
+                    if (line.contains("package")) {
+                        // if (line.contains("/")) {
+                        sb
+                            .append("import java.util.HashMap;;")
                             .append("\n")
                         // }
                     }

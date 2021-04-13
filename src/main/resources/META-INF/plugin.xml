@@ -14,7 +14,7 @@
     </extensions>
 
     <actions>
-        <action id="CleanPlugin.ID" class="action.SearchAction" text="Clevertap Helper"
+        <action id="CleanPlugin.ID" class="action.SearchAction" text="Clevertap Assistant"
                 description="Configure Clevertap."
                 icon="/icons/ct.jpg"
                 use-shortcut-of="CleanPlugin.ID" keymap="$default">

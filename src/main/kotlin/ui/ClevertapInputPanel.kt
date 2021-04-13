@@ -175,7 +175,7 @@ class ClevertapInputPanel : JPanel()
 
             override fun mouseClicked(e: MouseEvent)
             {
-                Desktop.getDesktop().browse(URI("https://developer.clevertap.com/docs/android"))
+                Desktop.getDesktop().browse(URI("https://developer.clevertap.com/docs/android#section-in-app-notifications"))
                 ;
             }
 
@@ -212,7 +212,7 @@ class ClevertapInputPanel : JPanel()
 
             override fun mouseClicked(e: MouseEvent)
             {
-                Desktop.getDesktop().browse(URI("https://developer.clevertap.com/docs/android"))
+                Desktop.getDesktop().browse(URI("https://developer.clevertap.com/docs/android#section-changing-account-credentials"))
                 ;
             }
 

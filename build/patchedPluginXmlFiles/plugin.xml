@@ -8,7 +8,7 @@
   <version>0.3</version>
   <extensions defaultExtensionNs="com.intellij"/>
   <actions>
-    <action id="CleanPlugin.ID" class="action.SearchAction" text="Clevertap Helper" description="Configure Clevertap." icon="/icons/ct.jpg" use-shortcut-of="CleanPlugin.ID" keymap="$default">
+    <action id="CleanPlugin.ID" class="action.SearchAction" text="Clevertap Assistant" description="Configure Clevertap." icon="/icons/ct.jpg" use-shortcut-of="CleanPlugin.ID" keymap="$default">
       <add-to-group group-id="NewGroup" anchor="after" relative-to-action="NewDir"/>
       <keyboard-shortcut keymap="$default" first-keystroke="control alt e"/>
     </action>

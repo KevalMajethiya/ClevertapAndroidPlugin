@@ -138,14 +138,14 @@ class FCMInputPanel :JPanel() {
 
         constraints.gridx = 0
         constraints.gridy = 3
-        labelContentTitle.setVisible(false)
+        //labelContentTitle.setVisible(false)
         labelContentTitle.setToolTipText("CleverTap Dashboard -> Settings -> Channels")
         labelContentTitle.setIcon(icon)
         labelContentTitle.setHorizontalTextPosition( SwingConstants.LEFT);
         labelContentTitle.setVerticalTextPosition( SwingConstants.CENTER );
         newPanel.add(labelContentTitle, constraints)
         constraints.gridx = 1
-        contentTitleTextField.setVisible(false)
+        //contentTitleTextField.setVisible(false)
         newPanel.add(contentTitleTextField, constraints)
 
 

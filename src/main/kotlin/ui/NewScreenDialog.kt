@@ -63,10 +63,13 @@ class NewScreenDialog(var event: AnActionEvent) : DialogWrapper(true), NewScreen
                 panelForFCM.dependencyVersionTextField.isVisible = false
 
                 panelForFCM.labeladdgoogle_service_file.isVisible = false
+
+
+
                 panelForFCM.buttontoaddgservicefile.isVisible = false
 
-//                panelForFCM.labelContentTitle.isVisible=true
-//                panelForFCM.contentTitleTextField.isVisible=true
+                panelForFCM.labelContentTitle.isVisible=true
+                panelForFCM.contentTitleTextField.isVisible=true
 
 
                 //d()
@@ -119,8 +122,8 @@ class NewScreenDialog(var event: AnActionEvent) : DialogWrapper(true), NewScreen
 
                  panelForFCM.label_file_status.isVisible = true
 
-//                 panelForFCM.labelContentTitle.isVisible=true
-//                 panelForFCM.contentTitleTextField.isVisible=true
+                 panelForFCM.labelContentTitle.isVisible=true
+                 panelForFCM.contentTitleTextField.isVisible=true
 
             }
 

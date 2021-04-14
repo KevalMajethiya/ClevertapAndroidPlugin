@@ -14,11 +14,23 @@
             </RecentProjectMetaInfo>
           </value>
         </entry>
+        <entry key="$USER_HOME$/AndroidStudioProjects/PanelTesting">
+          <value>
+            <RecentProjectMetaInfo opened="true" projectWorkspaceId="1r9ZfnHOQMiYeKcG5XZzXxFIGat">
+              <option name="binFolder" value="$APPLICATION_HOME_DIR$/bin" />
+              <option name="build" value="AI-201.8743.12.41.7042882" />
+              <option name="buildTimestamp" value="1608424793589" />
+              <option name="productionCode" value="AI" />
+              <option name="projectOpenTimestamp" value="1618394943181" />
+            </RecentProjectMetaInfo>
+          </value>
+        </entry>
       </map>
     </option>
     <option name="lastProjectLocation" value="$USER_HOME$/AndroidStudioProjects" />
     <option name="recentPaths">
       <list>
+        <option value="$USER_HOME$/AndroidStudioProjects/PanelTesting" />
         <option value="$USER_HOME$/AndroidStudioProjects/Demo" />
       </list>
     </option>

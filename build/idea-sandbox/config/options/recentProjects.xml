@@ -2,26 +2,25 @@
   <component name="RecentProjectsManager">
     <option name="additionalInfo">
       <map>
-        <entry key="$USER_HOME$/AndroidStudioProjects/Demo">
+        <entry key="$USER_HOME$/AndroidStudioProjects/MyApp">
           <value>
-            <RecentProjectMetaInfo projectWorkspaceId="1r6rWvGCQaxq9YPyrCf3d6z7ZEq">
+            <RecentProjectMetaInfo projectWorkspaceId="1rIBRlQl0Si6KnVVOCbow8cDzuO">
               <option name="binFolder" value="$APPLICATION_HOME_DIR$/bin" />
               <option name="build" value="AI-201.8743.12.41.7042882" />
-              <option name="buildTimestamp" value="1608424781336" />
-              <frame x="0" y="0" width="1280" height="800" />
+              <option name="buildTimestamp" value="1608424784867" />
               <option name="productionCode" value="AI" />
-              <option name="projectOpenTimestamp" value="1618307518515" />
+              <option name="projectOpenTimestamp" value="1618654205515" />
             </RecentProjectMetaInfo>
           </value>
         </entry>
-        <entry key="$USER_HOME$/AndroidStudioProjects/PanelTesting">
+        <entry key="$USER_HOME$/AndroidStudioProjects/MyApplication">
           <value>
-            <RecentProjectMetaInfo opened="true" projectWorkspaceId="1r9ZfnHOQMiYeKcG5XZzXxFIGat">
+            <RecentProjectMetaInfo projectWorkspaceId="1rIFKupTGhTknDI9HpixgU3D0BU">
               <option name="binFolder" value="$APPLICATION_HOME_DIR$/bin" />
               <option name="build" value="AI-201.8743.12.41.7042882" />
-              <option name="buildTimestamp" value="1608424793589" />
+              <option name="buildTimestamp" value="1608424782803" />
               <option name="productionCode" value="AI" />
-              <option name="projectOpenTimestamp" value="1618394943181" />
+              <option name="projectOpenTimestamp" value="1618659237459" />
             </RecentProjectMetaInfo>
           </value>
         </entry>
@@ -30,8 +29,8 @@
     <option name="lastProjectLocation" value="$USER_HOME$/AndroidStudioProjects" />
     <option name="recentPaths">
       <list>
-        <option value="$USER_HOME$/AndroidStudioProjects/PanelTesting" />
-        <option value="$USER_HOME$/AndroidStudioProjects/Demo" />
+        <option value="$USER_HOME$/AndroidStudioProjects/MyApplication" />
+        <option value="$USER_HOME$/AndroidStudioProjects/MyApp" />
       </list>
     </option>
   </component>

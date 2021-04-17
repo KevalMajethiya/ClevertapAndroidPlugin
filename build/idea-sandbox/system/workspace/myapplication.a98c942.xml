@@ -500,7 +500,13 @@
           <option name="generated" value="true" />
           <option name="moduleName" value="My_Application.app" />
           <option name="type" value="SOURCE" />
-          <option name="url" value="file://$PROJECT_DIR$/app/build/generated/ap_generated_sources/debug/out" />
+          <option name="url" value="file://$PROJECT_DIR$/app/build/generated/renderscript_source_output_dir/debug/out" />
+        </SourceFolderModelState>
+        <SourceFolderModelState>
+          <option name="generated" value="true" />
+          <option name="moduleName" value="My_Application.app" />
+          <option name="type" value="TEST_SOURCE" />
+          <option name="url" value="file://$PROJECT_DIR$/app/build/generated/renderscript_source_output_dir/debugAndroidTest/out" />
         </SourceFolderModelState>
         <SourceFolderModelState>
           <option name="generated" value="true" />
@@ -517,44 +523,8 @@
         <SourceFolderModelState>
           <option name="generated" value="true" />
           <option name="moduleName" value="My_Application.app" />
-          <option name="type" value="SOURCE" />
-          <option name="url" value="file://$PROJECT_DIR$/app/build/generated/renderscript_source_output_dir/debug/out" />
-        </SourceFolderModelState>
-        <SourceFolderModelState>
-          <option name="generated" value="true" />
-          <option name="moduleName" value="My_Application.app" />
-          <option name="type" value="TEST_SOURCE" />
-          <option name="url" value="file://$PROJECT_DIR$/app/build/generated/renderscript_source_output_dir/debugAndroidTest/out" />
-        </SourceFolderModelState>
-        <SourceFolderModelState>
-          <option name="generated" value="true" />
-          <option name="moduleName" value="My_Application.app" />
-          <option name="type" value="SOURCE" />
-          <option name="url" value="file://$PROJECT_DIR$/app/build/generated/source/buildConfig/debug" />
-        </SourceFolderModelState>
-        <SourceFolderModelState>
-          <option name="generated" value="true" />
-          <option name="moduleName" value="My_Application.app" />
           <option name="type" value="TEST_SOURCE" />
           <option name="url" value="file://$PROJECT_DIR$/app/build/generated/source/buildConfig/androidTest/debug" />
-        </SourceFolderModelState>
-        <SourceFolderModelState>
-          <option name="generated" value="true" />
-          <option name="moduleName" value="My_Application.app" />
-          <option name="type" value="RESOURCE" />
-          <option name="url" value="file://$PROJECT_DIR$/app/build/generated/res/google-services/debug" />
-        </SourceFolderModelState>
-        <SourceFolderModelState>
-          <option name="generated" value="true" />
-          <option name="moduleName" value="My_Application.app" />
-          <option name="type" value="RESOURCE" />
-          <option name="url" value="file://$PROJECT_DIR$/app/build/generated/res/resValues/debug" />
-        </SourceFolderModelState>
-        <SourceFolderModelState>
-          <option name="generated" value="true" />
-          <option name="moduleName" value="My_Application.app" />
-          <option name="type" value="TEST_RESOURCE" />
-          <option name="url" value="file://$PROJECT_DIR$/app/build/generated/res/resValues/androidTest/debug" />
         </SourceFolderModelState>
         <SourceFolderModelState>
           <option name="generated" value="true" />
@@ -567,6 +537,12 @@
           <option name="moduleName" value="My_Application.app" />
           <option name="type" value="TEST_RESOURCE" />
           <option name="url" value="file://$PROJECT_DIR$/app/build/generated/res/rs/androidTest/debug" />
+        </SourceFolderModelState>
+        <SourceFolderModelState>
+          <option name="generated" value="true" />
+          <option name="moduleName" value="My_Application.app" />
+          <option name="type" value="TEST_RESOURCE" />
+          <option name="url" value="file://$PROJECT_DIR$/app/build/generated/res/resValues/androidTest/debug" />
         </SourceFolderModelState>
       </list>
     </option>

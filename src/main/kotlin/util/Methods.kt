@@ -87,7 +87,6 @@ object Methods {
         return  "\n       <!-- Required to allow the app to send events and user profile information -->\n     " +
                 "         <uses-permission android:name=\"android.permission.INTERNET\"/>\n" +
                 "         <!-- Recommended so that CleverTap knows when to attempt a network call -->\n" +
-
                 "         <uses-permission android:name=\"android.permission.ACCESS_NETWORK_STATE\"/>\n"
 
 

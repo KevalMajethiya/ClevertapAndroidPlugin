@@ -22,6 +22,7 @@ import java.util.stream.Stream
 class GradleManager(private val project: Project) {
 
     private var buildGradle: Document? = null
+    private var buildGradleproject: Document? = null
 
     private var modules = arrayOf<Any>()
 
@@ -32,6 +33,7 @@ class GradleManager(private val project: Project) {
     fun initBuildGradle(): Boolean {
         checkFilesExist()
         val gradleVirtualFile: VirtualFile?
+        val gradleVirtualFilenew: VirtualFile?
         if (modules.size > 1) {
             val isHaveAppModule: String? = modules.find { it == Constants.DEFAULT_MODULE_NAME } as String
             if (isHaveAppModule != null && isHaveAppModule != "") {
@@ -49,7 +51,9 @@ class GradleManager(private val project: Project) {
             gradleVirtualFile = projectBaseDir!!
                 .findChild("build.gradle")
         }
+        gradleVirtualFilenew = projectBaseDir!!.findChild("build.gradle")
         if (gradleVirtualFile != null) {
+            buildGradleproject = FileDocumentManager.getInstance().getDocument(gradleVirtualFilenew!!)
             buildGradle = FileDocumentManager.getInstance().getDocument(gradleVirtualFile)
         }
         return true
@@ -94,12 +98,15 @@ class GradleManager(private val project: Project) {
             }
         }
     }
-    fun addDependency(repository: String, actionEvent: AnActionEvent) {
+    fun addDependency(repository1: String, actionEvent: AnActionEvent) {
         checkbeforeinsertion()
         if(codeexist==false) {
             val documentText = buildGradle!!.text.split("\n".toRegex()).dropLastWhile { it.isEmpty() }.toTypedArray()
+            val documentTextnew=buildGradleproject!!.text.split("\n".toRegex()).dropLastWhile { it.isEmpty() }.toTypedArray()
 
             val sb = StringBuilder()
+            val sb2= StringBuilder()
+
             for (i in documentText.indices) {
                 val line = documentText[i]
 
@@ -111,12 +118,14 @@ class GradleManager(private val project: Project) {
                     if (line.contains("{")) {
                         sb
                             .append("\t$FCM_NOTIFICATION\n\t${Constants.IMPLEMENTATION} '")
-                            .append(repository)
+                            .append(repository1)
                             .append("'\n")
                     }
                 }
             }
 
+
+            writeToProjectGradle(sb2,actionEvent)
             writeToGradle(sb, actionEvent)
         }
     }
@@ -125,6 +134,14 @@ class GradleManager(private val project: Project) {
         val application = ApplicationManager.getApplication()
         application.invokeLater {
             application.runWriteAction { buildGradle!!.setText(stringBuilder) }
+            syncProject(actionEvent)
+        }
+    }
+
+    private fun writeToProjectGradle(stringBuilder: StringBuilder, actionEvent: AnActionEvent) {
+        val application = ApplicationManager.getApplication()
+        application.invokeLater {
+            application.runWriteAction { buildGradleproject!!.setText(stringBuilder) }
             syncProject(actionEvent)
         }
     }

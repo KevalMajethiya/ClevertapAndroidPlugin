@@ -1,7 +1,8 @@
 <idea-plugin>
   <id>CleverTap.CleverTap</id>
-  <name>CleverTap</name>
+  <name>CleverTap (Beta)</name>
   <vendor email="jjideshnair8@gmail.com">Clevertap</vendor>
+  <description>Helps to integrate Clevertap in your app</description>
   <idea-version since-build="182.0"/>
   <depends>com.intellij.modules.lang</depends>
   <depends>org.jetbrains.kotlin</depends>
@@ -11,6 +12,9 @@
     <action id="CleanPlugin.ID" class="action.SearchAction" text="Clevertap Assistant" description="Configure Clevertap." icon="/icons/ct.jpg" use-shortcut-of="CleanPlugin.ID" keymap="$default">
       <add-to-group group-id="NewGroup" anchor="after" relative-to-action="NewDir"/>
       <keyboard-shortcut keymap="$default" first-keystroke="control alt e"/>
+    </action>
+    <action class="action.Auditreport" id="action.Auditreport" text="Audit Report" description="Generating Audit Report">
+      <add-to-group group-id="GenerateGroup" anchor="first"/>
     </action>
     <action class="action.AccessorAction" id="action.AccessorAction" text="Clevertap Events" description="Add Clevertap Events/User Properties">
       <add-to-group group-id="GenerateGroup" anchor="first"/>

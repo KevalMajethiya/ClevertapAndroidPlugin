@@ -13,10 +13,7 @@ import data.file.FileCreator
 import data.file.PackageExtractor
 import data.file.WriteActionDispatcher
 import data.repository.ModuleRepository
-import managers.ApplicationClassManager
-import managers.GradleManager
-import managers.ManifestManager
-import managers.abc
+import managers.*
 
 
 import org.jetbrains.kotlin.idea.kdoc.insert
@@ -53,6 +50,8 @@ class NewScreenPresenterClevertap(
     private var manifestManager: ManifestManager? = null
     private var applicationClassManager:ApplicationClassManager?=null
     private var abc:abc?=null
+    private var AuditreportManager:AuditreportManager?=null
+
 
 
     fun onLoadView() {
@@ -95,6 +94,7 @@ class NewScreenPresenterClevertap(
             manifestManager = ManifestManager(project)
             applicationClassManager=ApplicationClassManager(project)
             abc=abc(project)
+            AuditreportManager=AuditreportManager(project)
 
 
             try {
@@ -104,6 +104,11 @@ class NewScreenPresenterClevertap(
                     it.initapplicationclass()
                     //it.checkinsertion()
                 }
+//                AuditreportManager?.let{
+//
+//                    it.initapplicationclass()
+//
+//                }
                 //}
                 gradleManager?.let {
                     if (it.initBuildGradle()) {

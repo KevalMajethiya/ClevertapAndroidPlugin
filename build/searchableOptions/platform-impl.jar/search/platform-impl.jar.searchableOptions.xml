@@ -8772,7 +8772,8 @@
     <option name="build" hit="Build Tools" />
     <option name="tools" hit="Build Tools" />
     <option name="changereminder" hit="ChangeReminder" />
-    <option name="clevertap" hit="CleverTap" />
+    <option name="beta" hit="CleverTap (Beta)" />
+    <option name="clevertap" hit="CleverTap (Beta)" />
     <option name="clevertap" hit="Clevertap" />
     <option name="code" hit="Code Coverage" />
     <option name="coverage" hit="Code Coverage" />

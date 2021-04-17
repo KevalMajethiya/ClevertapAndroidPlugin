@@ -120,21 +120,8 @@ class abc(private val project: Project)
         val basePath = project.basePath
         projectBaseDir = LocalFileSystem.getInstance().findFileByPath(project.basePath +"/app/src/main/java/"+ans1+"/" + op +".java")
         print(projectBaseDir)
-       // projectBaseDir = LocalFileSystem.getInstance().findFileByPath(basePath!!)
-        //projectBaseDir = LocalFileSystem.getInstance().findFileByPath(project.basePath +"/app/src/main/java")
 
-        // projectBaseDir = LocalFileSystem.getInstance().findFileByPath(basePath!!)
         val manifestVirtualFile: VirtualFile? = projectBaseDir
-//            .findChild(Constants.DEFAULT_MODULE_NAME)!!
-//            .findChild("src")!!
-//            .findChild("main")!!
-//            .findChild("java")!!
-//
-//            //.findChild("com")!!
-//            .findChild(pkg)!!
-//            .findChild("example")!!
-//            .findChild("demoapp1")!!
-//            .findChild("MainActivity.java")
         return if (manifestVirtualFile != null) {
             androidapplicationclass = FileDocumentManager.getInstance().getDocument(manifestVirtualFile)
             initiateclevertap()
@@ -149,6 +136,7 @@ class abc(private val project: Project)
         //val opp=launchingactivityname
         val documentText = androidapplicationclass!!.text.split("\n".toRegex()).dropLastWhile { it.isEmpty() }.toTypedArray()
        // val sb = StringBuilder()
+
         for (i in documentText.indices)
         {
             var line = documentText[i]
@@ -173,6 +161,7 @@ class abc(private val project: Project)
             val documentText =
                 androidapplicationclass!!.text.split("\n".toRegex()).dropLastWhile { it.isEmpty() }.toTypedArray()
             val sb = StringBuilder()
+
             for (i in documentText.indices) {
                 var line = documentText[i]
                 sb
@@ -188,27 +177,24 @@ class abc(private val project: Project)
                         //.append("\n")
                     }
                 }
+
                 if(c==false) {
                     if (line.contains("setContentView")) {
-                        //if (line.contains("class" +" " + opp )) {
-
-
-                        // if (line.contains("{")) {
                         sb
-
-                            //.append("\n")
+                            .append("        Context context = getApplicationContext();")
+                           // .append("   //Initializing the CleverTap SDK")
+                            .append("\n")
                             .append("        CleverTapAPI clevertapDefaultInstance = CleverTapAPI.getDefaultInstance(getApplicationContext());")
                             .append("   //Initializing the CleverTap SDK")
                             .append("\n")
-                        //.append("CleverTapAPI.createNotificationChannel(getApplicationContext(),\"3131\",\"mychannel\",\"lDescription\",NotificationManager.IMPORTANCE_MAX,true);")
-                        //.append("\n")
+
+
                     }
                 }
-
-
                 // }
 
             }
+
 
             writeToManifest(sb)
        // }

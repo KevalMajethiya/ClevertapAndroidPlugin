@@ -22,6 +22,8 @@
     <option name="notification" path="ActionManager" hit="Add Push Notification with Clevertap" />
     <option name="push" path="ActionManager" hit="Add Push Notification with Clevertap" />
     <option name="with" path="ActionManager" hit="Add Push Notification with Clevertap" />
+    <option name="audit" path="ActionManager" hit="Audit Report" />
+    <option name="report" path="ActionManager" hit="Audit Report" />
     <option name="assistant" path="ActionManager" hit="Clevertap Assistant" />
     <option name="clevertap" path="ActionManager" hit="Clevertap Assistant" />
     <option name="clevertap" path="ActionManager" hit="Clevertap Events" />
@@ -33,6 +35,9 @@
     <option name="user" path="ActionManager" hit="Clevertap User Properties" />
     <option name="clevertap" path="ActionManager" hit="Configure Clevertap." />
     <option name="configure" path="ActionManager" hit="Configure Clevertap." />
+    <option name="audit" path="ActionManager" hit="Generating Audit Report" />
+    <option name="generating" path="ActionManager" hit="Generating Audit Report" />
+    <option name="report" path="ActionManager" hit="Generating Audit Report" />
   </configurable>
 </options>
 

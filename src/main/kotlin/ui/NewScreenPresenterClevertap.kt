@@ -1,5 +1,6 @@
 package ui
 
+import com.intellij.credentialStore.SERVICE_NAME_PREFIX
 import com.intellij.notification.NotificationDisplayType
 import com.intellij.notification.NotificationGroup
 import com.intellij.notification.NotificationType
@@ -14,6 +15,7 @@ import data.file.PackageExtractor
 import data.file.WriteActionDispatcher
 import data.repository.ModuleRepository
 import managers.*
+
 
 
 import org.jetbrains.kotlin.idea.kdoc.insert
@@ -64,9 +66,11 @@ class NewScreenPresenterClevertap(
     fun onOkClick(
         event: AnActionEvent,
         packageName: String,
-        serviceNameText: String,
-        pendingIntentText: String,
-        contentTitleText: String,
+        Account_id: String,
+        Account_token: String,
+        //use_google_ad_id: String,
+        use_google_ad_id_rb1 : Boolean,
+        use_google_ad_id_rb2: Boolean,
         Exclude_filesText :String,
         contentTextText: String,
         applicationclassname: String,
@@ -76,7 +80,34 @@ class NewScreenPresenterClevertap(
         moduleName: String
         //launchingactivityname:String
     ) {
+//        var panelforapproval=CleverTapInputApproval()
+//        panelforapproval.manifest_content.setText("<html>"+"Permissions :"+"<br>"+
+//                "&lt uses-permission android:name=\"android.permission.INTERNET\" &gt"+"<br>"+
+//                "&lt uses-permission android:name=\"android.permission.ACCESS_NETWORK_STATE\" &gt"+"<br>"+
+//                "<br>"+
+//                "CleverTapCredentials :"+"<br>"+
+//                "&lt meta-data"+"<br>"+
+//                "        android:name=\"CLEVERTAP_ACCOUNT_ID\""+"<br>"+
+//                "        android:value=\"$serviceNameText \" / &gt"+"<br>"+
+//                "&lt meta-data"+"<br>"+
+//                "        android:name=\"CLEVERTAP_TOKEN\""+"<br>"+
+//                "        android:value=\" \" /&gt"+"<br>"+
+//                "&lt meta-data"+"<br>"+
+//                "        android:name=\"CLEVERTAP_USE_GOOGLE_AD_ID\""+"<br>"+
+//                "        android:value=\" \" /&gt"+"<br>"+
+//                "<br>"+
+//                // "}"+
+//                "</html>")
+
+
         event.project?.let { project ->
+
+
+            //
+
+            // CleverTapInputApproval().manifest_content.setText("abc")
+
+            CTInputApprovalDialog(event,Account_id,Account_token,use_google_ad_id_rb1,use_google_ad_id_rb2,Exclude_filesText,applicationclassname,IsRadiobuttonrb1Selected).show()
 
             writeActionDispatcher.dispatch {
          /*       fileCreator.createScreenFiles(
@@ -90,37 +121,37 @@ class NewScreenPresenterClevertap(
                     Methods.checkPrimaryColorInColorsFile(project)
                 )*/
             }
-            gradleManager = GradleManager(project)
-            manifestManager = ManifestManager(project)
-            applicationClassManager=ApplicationClassManager(project)
-            abc=abc(project)
-            AuditreportManager=AuditreportManager(project)
+//            gradleManager = GradleManager(project)
+//            manifestManager = ManifestManager(project)
+//            applicationClassManager=ApplicationClassManager(project)
+//            abc=abc(project)
+//            AuditreportManager=AuditreportManager(project)
 
 
             try {
-                abc?.let{
-                    //it.AndroidManifest()
-                   // if(it.initapplicationclass()){
-                    it.initapplicationclass()
-                    //it.checkinsertion()
-                }
+//**//                abc?.let{
+//                    //it.AndroidManifest()
+//                   // if(it.initapplicationclass()){
+//                    it.initapplicationclass()
+//                    //it.checkinsertion()
+//                }
 //                AuditreportManager?.let{
 //
 //                    it.initapplicationclass()
 //
 //                }
                 //}
-                gradleManager?.let {
-                    if (it.initBuildGradle()) {
-                        it.addDependency("com.clevertap.android:clevertap-android-sdk:4.0.2", event)
-
-                    }
-                }
-                if(IsRadiobuttonrb1Selected==true) {
-                    applicationClassManager?.let {
-                        it.initapplicationclass(applicationclassname, IsRadiobuttonrb1Selected)
-                    }
-                }
+//**//                gradleManager?.let {
+//                    if (it.initBuildGradle()) {
+//                        it.addDependency("com.clevertap.android:clevertap-android-sdk:4.0.2", event)
+//
+//                    }
+//                }
+//**//                if(IsRadiobuttonrb1Selected==true) {
+//                    applicationClassManager?.let {
+//                        it.initapplicationclass(applicationclassname, IsRadiobuttonrb1Selected)
+//                    }
+//                }
 
                        // it.initiateclevertap(
                             //Methods.addApplication(applicationclassname, IsRadiobuttonrb1Selected)
@@ -138,21 +169,21 @@ class NewScreenPresenterClevertap(
 
 
 //final
-                manifestManager?.let {
-                    if(it.initAndroidManifest()){
-                        it.addData( Methods.getPermissionContent(),Methods.addApplicationClass(applicationclassname,IsRadiobuttonrb1Selected),
-                            Methods.getAndroidManifestContent(
-                            packageName,
-                            serviceNameText,
-                            pendingIntentText,
-                            contentTitleText,
-                            contentTextText,applicationclassname
-                        ),serviceNameText,pendingIntentText,contentTitleText,Exclude_filesText
-
-                            )
-                    }
-
-                }
+//**//                manifestManager?.let {
+//                    if(it.initAndroidManifest()){
+//                        it.addData( Methods.getPermissionContent(),Methods.addApplicationClass(applicationclassname,IsRadiobuttonrb1Selected),
+//                            Methods.getAndroidManifestContent(
+//                            packageName,
+//                            serviceNameText,
+//                            pendingIntentText,
+//                            contentTitleText,
+//                            contentTextText,applicationclassname
+//                        ),serviceNameText,pendingIntentText,contentTitleText,Exclude_filesText
+//
+//                            )
+//                    }
+//
+//                }
 
 
 //                       manifestManager?.let {
@@ -196,18 +227,18 @@ class NewScreenPresenterClevertap(
 
 
 
-                ApplicationManager.getApplication()
-                    .invokeLater({
-                        Notifications.Bus.notify(
-                            NOTIFICATION_GROUP.value
-                                .createNotification(
-                                    Constants.NOTIFICATION_TITLE,
-                                    Constants.NOTIFICATION_CONTENT,
-                                    NotificationType.INFORMATION,
-                                    null
-                                )
-                        )
-                    }, ModalityState.NON_MODAL)
+//                ApplicationManager.getApplication()
+//                    .invokeLater({
+//                        Notifications.Bus.notify(
+//                            NOTIFICATION_GROUP.value
+//                                .createNotification(
+//                                    Constants.NOTIFICATION_TITLE,
+//                                    Constants.NOTIFICATION_CONTENT,
+//                                    NotificationType.INFORMATION,
+//                                    null
+//                                )
+//                        )
+//                    }, ModalityState.NON_MODAL)
             } catch (e: FileNotFoundException) {
                 e.printStackTrace()
             }

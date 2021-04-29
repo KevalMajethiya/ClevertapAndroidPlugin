@@ -80,6 +80,8 @@ class ManifestManager_forFCM(private val project: Project) {
                 if (line.contains(Constants.APPLICATION)) {
                     if (line.contains("/")) {
                         sb
+                            .append("<!-- Added by CleverTap Plugin-->")
+                            .append("\n")
                             .append(repository)
                             .append("\n")
                         fcm_service_name=true
@@ -95,6 +97,8 @@ class ManifestManager_forFCM(private val project: Project) {
                     if (line.contains(Constants.APPLICATION)) {
                         if (line.contains("/")) {
                             sb
+                                .append("        <!-- Added by CleverTap Plugin-->")
+                                .append("\n")
 //                            .append(repository)
 //                            .append("\n")
                                 .append("         <receiver")
@@ -107,6 +111,7 @@ class ManifestManager_forFCM(private val project: Project) {
                                 .append("\n")
                                 .append("         </receiver>")
                                 .append("\n")
+                            receiver =true
 
 
                         }
@@ -118,6 +123,8 @@ class ManifestManager_forFCM(private val project: Project) {
                 if (line.contains(Constants.APPLICATION)) {
                     if (line.contains("/")) {
                         sb
+                            .append("        <!-- Added by CleverTap Plugin-->")
+                            .append("\n")
                             .append("        <service")
                             .append("\n")
                             .append("             android:name=\"com.clevertap.android.sdk.pushnotification.fcm."+fcmservice_name+"\"")
@@ -132,6 +139,7 @@ class ManifestManager_forFCM(private val project: Project) {
                             .append("\n")
                             .append("         </service>")
                             .append("\n")
+                        fcm_service_name=true
 
                     }
                 }
@@ -140,12 +148,15 @@ class ManifestManager_forFCM(private val project: Project) {
                 if (line.contains(Constants.APPLICATION)) {
                     if (line.contains("/")) {
                         sb
+                            .append("         <!-- Added by CleverTap Plugin-->")
+                            .append("\n")
                             .append("         <meta-data")
                             .append("\n")
                             .append("             android:name=\"firebase_messaging_auto_init_enabled\"")
                             .append("\n")
                             .append("             android:value=\"false\" />")
                             .append("\n")
+                        firebase_messaging_auto_init_enabled=true
 
                     }
                 }
@@ -154,12 +165,15 @@ class ManifestManager_forFCM(private val project: Project) {
                 if (line.contains(Constants.APPLICATION)) {
                     if (line.contains("/")) {
                         sb
+                            .append("         <!-- Added by CleverTap Plugin-->")
+                            .append("\n")
                             .append("         <meta-data")
                             .append("\n")
                             .append("             android:name=\"firebase_analytics_collection_enabled\"")
                             .append("\n")
                             .append("             android:value=\"false\"/>")
                             .append("\n")
+                        firebase_analytics_collection_enabled=true
 
                     }
                 }
@@ -168,12 +182,15 @@ class ManifestManager_forFCM(private val project: Project) {
                 if (line.contains(Constants.APPLICATION)) {
                     if (line.contains("/")) {
                         sb
+                            .append("        <!-- Added by CleverTap Plugin-->")
+                            .append("\n")
                             .append("         <meta-data")
                             .append("\n")
                             .append("             android:name=\"FCM_SENDER_ID\"")
                             .append("\n")
                             .append("             android:value="+ fcmsenderid +" />")
                             .append("\n")
+                        fcm_sender_id=true
 
                     }
                 }

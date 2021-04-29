@@ -9,9 +9,9 @@ import ui.*
 
 class Demo : AnAction() {
     override fun actionPerformed(event: AnActionEvent) {
-        //demo1(event).show()
+        demo1(event).show()
         //d()
-        fcm1(event).show()
+        //fcm1(event).show()
        // JoptionPaneCopy()
         //codesnippet_fcm()
     }

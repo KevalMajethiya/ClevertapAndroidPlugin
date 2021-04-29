@@ -47,6 +47,7 @@ class demo1(var event: AnActionEvent) : DialogWrapper(true), NewScreenView{
     private var moduleName = ""
 
     init {
+
         val currentPath = event.getData(DataKeys.VIRTUAL_FILE)?.let {
             val module = ModuleUtil.findModuleForFile(it, event.project!!)?.name ?: Constants.DEFAULT_MODULE_NAME
             CurrentPathfcm(it.path, it.isDirectory, module)
@@ -93,6 +94,7 @@ class demo1(var event: AnActionEvent) : DialogWrapper(true), NewScreenView{
     }
 
     override fun close() = close(DialogWrapper.OK_EXIT_CODE)
+
 
     override fun showPackage(packageName: String) {
         this.packageName = packageName

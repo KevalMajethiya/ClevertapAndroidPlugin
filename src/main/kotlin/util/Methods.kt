@@ -35,7 +35,9 @@ object Methods {
         packageName: String,
         serviceNameText: String,
         pendingIntentText: String,
-        contentTitleText: String,
+        //contentTitleText: String,
+        google_ad_id_rb1:Boolean,
+        google_ad_id_rb2:Boolean,
         activityName: String,
         contentTextText: String
     ): String {
@@ -47,9 +49,11 @@ object Methods {
 //                "       android:theme=\"@android:style/Theme.Translucent.NoTitleBar\"\n" +
 //                "       android:configChanges=\"orientation|keyboardHidden\"/>\n" +
 
-        return  "        <meta-data\n" +
+        return  "        <!-- Activities to be excluded from in-app notifications-->-->\n" +
+                "        <meta-data\n" +
                 "        android:name=\"CLEVERTAP_INAPP_EXCLUDE\"\n" +
                 "        android:value=\"$activityName\" />\n" +
+                "        <!-- Adding CleverTap Credentials-->\n"+
 
                 "        <meta-data\n" +
                 "            android:name=\"CLEVERTAP_ACCOUNT_ID\"\n" +
@@ -58,13 +62,14 @@ object Methods {
                 "        <meta-data\n" +
                 "            android:name=\"CLEVERTAP_TOKEN\"\n" +
                 "            android:value=\"$pendingIntentText\" />\n"+
+                "        <!-- IMPORTANT: To force use Google AD ID to uniquely identify  users, use the following meta tag. GDPR mandates that if you are using this tag, there is prominent disclousure to your end customer in their application. Read more about GDPR here - https://clevertap.com/blog/in-preparation-of-gdpr-compliance/ -->\n"+
                 "        <meta-data\n" +
-                if(contentTitleText=="yes"||contentTitleText=="YES"||contentTitleText=="Yes") {
+                if(google_ad_id_rb1==true) {
                     "            android:name=\"CLEVERTAP_USE_GOOGLE_AD_ID\"\n" +
                     "            android:value=\"1\"/>\n"
 
                 }
-                else if(contentTitleText=="no"||contentTitleText=="NO"||contentTitleText=="No")
+                else if(google_ad_id_rb2==true)
                 {
                     "            android:name=\"CLEVERTAP_USE_GOOGLE_AD_ID\"\n" +
                     "            android:value=\"0\"/>\n"
@@ -84,9 +89,9 @@ object Methods {
        // return arrayOf(internet_permissioon,access_netwrok)
 
 
-        return  "\n       <!-- Required to allow the app to send events and user profile information -->\n     " +
+        return  "\n       <!-- Required to allow the app to send events and user profile information --> \n" +
                 "         <uses-permission android:name=\"android.permission.INTERNET\"/>\n" +
-                "         <!-- Recommended so that CleverTap knows when to attempt a network call -->\n" +
+                "         <!-- Recommended so that CleverTap knows when to attempt a network call -->\n"+
                 "         <uses-permission android:name=\"android.permission.ACCESS_NETWORK_STATE\"/>\n"
 
 

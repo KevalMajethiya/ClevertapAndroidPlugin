@@ -22,7 +22,6 @@ import java.util.stream.Stream
 class GradleManager(private val project: Project) {
 
     private var buildGradle: Document? = null
-    private var buildGradleproject: Document? = null
 
     private var modules = arrayOf<Any>()
 
@@ -53,7 +52,7 @@ class GradleManager(private val project: Project) {
         }
         gradleVirtualFilenew = projectBaseDir!!.findChild("build.gradle")
         if (gradleVirtualFile != null) {
-            buildGradleproject = FileDocumentManager.getInstance().getDocument(gradleVirtualFilenew!!)
+
             buildGradle = FileDocumentManager.getInstance().getDocument(gradleVirtualFile)
         }
         return true
@@ -102,7 +101,7 @@ class GradleManager(private val project: Project) {
         checkbeforeinsertion()
         if(codeexist==false) {
             val documentText = buildGradle!!.text.split("\n".toRegex()).dropLastWhile { it.isEmpty() }.toTypedArray()
-            val documentTextnew=buildGradleproject!!.text.split("\n".toRegex()).dropLastWhile { it.isEmpty() }.toTypedArray()
+
 
             val sb = StringBuilder()
             val sb2= StringBuilder()
@@ -119,13 +118,16 @@ class GradleManager(private val project: Project) {
                         sb
                             .append("\t$FCM_NOTIFICATION\n\t${Constants.IMPLEMENTATION} '")
                             .append(repository1)
-                            .append("'\n")
+                            .append("'")
+                            .append("   //added by CleverTap plug-in")
+                            .append("\n")
+                        codeexist=true
                     }
                 }
             }
 
 
-            writeToProjectGradle(sb2,actionEvent)
+           // writeToProjectGradle(sb2,actionEvent)
             writeToGradle(sb, actionEvent)
         }
     }
@@ -138,13 +140,6 @@ class GradleManager(private val project: Project) {
         }
     }
 
-    private fun writeToProjectGradle(stringBuilder: StringBuilder, actionEvent: AnActionEvent) {
-        val application = ApplicationManager.getApplication()
-        application.invokeLater {
-            application.runWriteAction { buildGradleproject!!.setText(stringBuilder) }
-            syncProject(actionEvent)
-        }
-    }
 
     // TODO do not allow this method called without invokeLater()
     private fun syncProject(actionEvent: AnActionEvent) {

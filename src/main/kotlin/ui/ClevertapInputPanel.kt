@@ -53,13 +53,12 @@ class ClevertapInputPanel : JPanel()
 
     private val labelPendingIntent = JLabel(PENDINGINTENT_ACTIVITY_NAME)
 
-
-    private val labelContentTitle = JLabel(CONTENT_TITLE)
+    private val labelContentTitle = JLabel("<html>"+"Should Google AD ID be the CleverTap ID(yes/no)?" +"<br>"+"<a href=\"https://www.w3schools.com/\">Link to documentation!</a>")
 
     private val labelContentText = JLabel(CONTENT_TEXT)
-    private val labelExcludefiles = JLabel("<html>"+Exclude_files +"<br>"+"<a href=\"https://www.w3schools.com/\">Link to documentationp!</a>")
-    private val applicationclass = JLabel("<html>"+"Do you have Application Class:"+"<br>"+"<a href=\"https://www.w3schools.com/\">Link to documentationp!</a>")
-     val labelapplicationclassname = JLabel("<html>"+"Application Class Name:"+"<br>" + "<a href=\"https://www.w3schools.com/\">Link to documentationp!</a>")
+    private val labelExcludefiles = JLabel("<html>"+Exclude_files +"<br>"+"<a href=\"https://www.w3schools.com/\">Link to documentation!</a>")
+    private val applicationclass = JLabel("<html>"+"Do you have Application Class:"+"<br>"+"<a href=\"https://www.w3schools.com/\">Link to documentation!</a>")
+     val labelapplicationclassname = JLabel("<html>"+"Application Class Name:"+"<br>" + "<a href=\"https://www.w3schools.com/\">Link to documentation!</a>")
 
 
     private val labelVersion = JLabel(DEPENDENCY_VERSION)
@@ -67,6 +66,11 @@ class ClevertapInputPanel : JPanel()
      var rb1 =JRadioButton("Yes")
      var rb2 =JRadioButton("No")
      var bg= ButtonGroup()
+
+    var rb1_labelContentText =JRadioButton("Yes")
+    var rb2_labelContentText =JRadioButton("No")
+    var bg_labelContentText= ButtonGroup()
+
 
 
 
@@ -160,12 +164,45 @@ class ClevertapInputPanel : JPanel()
         labelContentTitle.setIcon(icon)
         labelContentTitle.setHorizontalTextPosition( SwingConstants.LEFT);
         labelContentTitle.setVerticalTextPosition( SwingConstants.CENTER );
+        labelContentTitle.addMouseListener(object : MouseAdapter() {
+
+
+            override fun mouseClicked(e: MouseEvent)
+            {
+                Desktop.getDesktop().browse(URI("https://developer.clevertap.com/docs/sdk-changes-for-gdpr-compliance"))
+                ;
+            }
+
+            override fun mouseExited(e: MouseEvent)
+            {
+
+            }
+
+            override fun mouseEntered(e: MouseEvent)
+            {
+
+
+            }
+        })
         newPanel.add(labelContentTitle, constraints)
         constraints.gridx = 1
-        newPanel.add(contentTitleTextField, constraints)
+        bg_labelContentText.add(rb1_labelContentText)
+        bg_labelContentText.add(rb2_labelContentText)
+        constraints.gridx = 1
+        newPanel.add(rb1_labelContentText, constraints)
+        //newPanel.add(rb2_labelContentText, constraints)
+        //constraints.gridx = 2
+        constraints.gridy =3
+        newPanel.add(rb2_labelContentText, constraints)
+
+
+       // newPanel.add(contentTitleTextField, constraints)
+
+
+
 
         constraints.gridx = 0
-        constraints.gridy = 3
+        constraints.gridy = 4
         labelExcludefiles.setToolTipText("<html>" + " To exclude one or more activities from showing Clevertap's INAPP notification."+ "<br>"+"Mention the name of activities with commas as a separator as shown below. " +"<br>" + "(Example :YourSplashActivity1, YourSplashActivity2)" + "</html>")
         labelExcludefiles.setIcon(icon)
         labelExcludefiles.setHorizontalTextPosition( SwingConstants.LEFT);
@@ -190,7 +227,6 @@ class ClevertapInputPanel : JPanel()
             }
         })
         newPanel.add(labelExcludefiles, constraints)
-
         constraints.gridx = 1
         //newPanel.add(contentTextTextField, constraints)
         newPanel.add(Exclude_filesTextField, constraints)
@@ -202,7 +238,7 @@ class ClevertapInputPanel : JPanel()
 
 
         constraints.gridx = 0
-        constraints.gridy = 4
+        constraints.gridy = 5
         applicationclass.setToolTipText("Yes Or No")
         applicationclass.setIcon(icon)
         applicationclass.setHorizontalTextPosition( SwingConstants.LEFT);
@@ -232,11 +268,11 @@ class ClevertapInputPanel : JPanel()
         constraints.gridx = 1
         newPanel.add(rb1, constraints)
         //constraints.gridx = 2
-        constraints.gridy =5
+        constraints.gridy =6
         newPanel.add(rb2, constraints)
 
         constraints.gridx = 0
-        constraints.gridy = 6
+        constraints.gridy = 7
         labelapplicationclassname.setToolTipText("<html>" +"Enter Application Class name" +"<br>"+ "(Example :MyApplcationClass)"+ "</html>")
         labelapplicationclassname.setIcon(icon)
         labelapplicationclassname.setHorizontalTextPosition( SwingConstants.LEFT);

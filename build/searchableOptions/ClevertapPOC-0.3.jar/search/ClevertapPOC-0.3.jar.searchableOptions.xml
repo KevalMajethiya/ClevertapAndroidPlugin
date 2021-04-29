@@ -24,20 +24,25 @@
     <option name="with" path="ActionManager" hit="Add Push Notification with Clevertap" />
     <option name="audit" path="ActionManager" hit="Audit Report" />
     <option name="report" path="ActionManager" hit="Audit Report" />
-    <option name="assistant" path="ActionManager" hit="Clevertap Assistant" />
-    <option name="clevertap" path="ActionManager" hit="Clevertap Assistant" />
+    <option name="basic" path="ActionManager" hit="Basic Integration" />
+    <option name="integration" path="ActionManager" hit="Basic Integration" />
     <option name="clevertap" path="ActionManager" hit="Clevertap Events" />
     <option name="events" path="ActionManager" hit="Clevertap Events" />
+    <option name="clevertap" path="ActionManager" hit="Clevertap Initialization Demo" />
+    <option name="demo" path="ActionManager" hit="Clevertap Initialization Demo" />
+    <option name="initialization" path="ActionManager" hit="Clevertap Initialization Demo" />
     <option name="clevertap" path="ActionManager" hit="Clevertap OnuserLogin" />
     <option name="onuserlogin" path="ActionManager" hit="Clevertap OnuserLogin" />
-    <option name="clevertap" path="ActionManager" hit="Clevertap User Properties" />
-    <option name="properties" path="ActionManager" hit="Clevertap User Properties" />
-    <option name="user" path="ActionManager" hit="Clevertap User Properties" />
+    <option name="clevertap" path="ActionManager" hit="Clevertap PushProfile" />
+    <option name="pushprofile" path="ActionManager" hit="Clevertap PushProfile" />
     <option name="clevertap" path="ActionManager" hit="Configure Clevertap." />
     <option name="configure" path="ActionManager" hit="Configure Clevertap." />
+    <option name="demo" path="ActionManager" hit="Demo" />
     <option name="audit" path="ActionManager" hit="Generating Audit Report" />
     <option name="generating" path="ActionManager" hit="Generating Audit Report" />
     <option name="report" path="ActionManager" hit="Generating Audit Report" />
+    <option name="notification" path="ActionManager" hit="Push Notification" />
+    <option name="push" path="ActionManager" hit="Push Notification" />
   </configurable>
 </options>
 

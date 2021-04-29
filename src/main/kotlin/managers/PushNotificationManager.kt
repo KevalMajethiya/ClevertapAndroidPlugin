@@ -97,7 +97,7 @@ class PushNotificationManager(private val project: Project) {
         return "com"
     }
     @Throws(FileNotFoundException::class)
-    fun initlaunchingactivity(): Boolean {
+    fun initlaunchingactivity(contentTitleText:String): Boolean {
         AndroidManifest()
         val op=launchingactivityname
         var op1=packagename
@@ -108,7 +108,7 @@ class PushNotificationManager(private val project: Project) {
         val manifestVirtualFile: VirtualFile? = projectBaseDir
         return if (manifestVirtualFile != null) {
             launching_activity = FileDocumentManager.getInstance().getDocument(manifestVirtualFile)
-            addnotificationchannel("d")
+            addnotificationchannel(contentTitleText)
             true
 
         } else {
@@ -134,15 +134,15 @@ class PushNotificationManager(private val project: Project) {
                 import_stmt=true
 
             }
-            if(line.contains("import java.util.HashMap;"))
-            {
-                import_stmt_hashmap=true
-
-            }
+//            if(line.contains("import java.util.HashMap;"))
+//            {
+//                import_stmt_hashmap=true
+//
+//            }
         }
     }
 
-    fun addnotificationchannel(repository: String) {
+    fun addnotificationchannel(contentTitleText:String) {
         checkbeforeinsertion()
         //if(notification_channel_exist==false) {
             val documentText =launching_activity!!.text.split("\n".toRegex()).dropLastWhile { it.isEmpty() }.toTypedArray()
@@ -157,25 +157,29 @@ class PushNotificationManager(private val project: Project) {
                         // if (line.contains("/")) {
                         sb
                             .append("import android.app.NotificationManager;")
+                            .append("        //added by CleverTap plug-in")
                             .append("\n")
+                        import_stmt=true
                         // }
                     }
                 }
-                if(import_stmt_hashmap==false) {
-                    if (line.contains("package")) {
-                        // if (line.contains("/")) {
-                        sb
-                            .append("import java.util.HashMap;;")
-                            .append("\n")
-                        // }
-                    }
-                }
+//                if(import_stmt_hashmap==false) {
+//                    if (line.contains("package")) {
+//                        // if (line.contains("/")) {
+//                        sb
+//                            .append("import java.util.HashMap;")
+//                            .append("\n")
+//                        // }
+//                    }
+//                }
                 if(notification_channel_exist==false) {
                     if (line.contains("setContentView")) {
                         // if (line.contains("/")) {
                         sb
-                            .append(repository)
+                            .append("CleverTapAPI.createNotificationChannel(getApplicationContext(),\"$contentTitleText\",\"mychannel\",\"lDescription\",NotificationManager.IMPORTANCE_MAX,true);")
+                            .append("        //added by CleverTap plug-in")
                             .append("\n")
+                            notification_channel_exist=true
                         // }
                     }
                 }
@@ -188,7 +192,7 @@ class PushNotificationManager(private val project: Project) {
     private fun writeToManifest(stringBuilder: StringBuilder) {
         val application = ApplicationManager.getApplication()
         application.invokeLater {
-            application.runWriteAction { launching_activity!!.setText(stringBuilder) }
+            application.runWriteAction {launching_activity!!.setText(stringBuilder) }
         }
     }
 }

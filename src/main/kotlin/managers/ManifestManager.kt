@@ -209,18 +209,18 @@ class ManifestManager(private val project: Project) {
 
         }
     }
-    fun addData(repository1: String,repository2: String,repository3: String,clevertapid :String,clevertaptoken:String, clevertap_usegoogleid:String,clevertap_inappexclude:String) {
+    fun addData(repository1: String,repository2: String,repository3: String,clevertapid :String,clevertaptoken:String, usegoogle_ad_id_rb1:Boolean,usegoogle_ad_id_rb2:Boolean,clevertap_inappexclude:String) {
         checkbeforeinsertion()
         var default_clevertap_class_exist=default_clevertap_class
         var internet_permission_exist=internet_permission
         var network_access_permission_exist=network_access_permission
 
-        var clevertap_usegoogleid_value=clevertap_usegoogleid
-        if(clevertap_usegoogleid_value=="yes"||clevertap_usegoogleid_value=="YES"||clevertap_usegoogleid_value=="Yes")
+        var clevertap_usegoogleid_value=""
+        if(usegoogle_ad_id_rb1==true)
         {
             clevertap_usegoogleid_value="1"
         }
-        else if(clevertap_usegoogleid_value=="no"||clevertap_usegoogleid_value=="NO"||clevertap_usegoogleid_value=="No")
+        else if(usegoogle_ad_id_rb2==true)
         {
             clevertap_usegoogleid_value="0"
         }
@@ -236,6 +236,8 @@ class ManifestManager(private val project: Project) {
                 if (line.contains(Constants.MANIFEST)) {
                     if (line.contains(">")) {
                         sb
+                            .append("<!-- Added by CleverTap Plugin-->")
+                            .append("\n")
                             .append(repository1)
                             .append("\n")
                         network_access_permission_exist=true
@@ -247,6 +249,8 @@ class ManifestManager(private val project: Project) {
                 if (line.contains(Constants.MANIFEST)) {
                     if (line.contains(">")) {
                         sb
+                            .append("<!-- Added by CleverTap Plugin-->")
+                            .append("\n")
                             .append("    <!-- Required to allow the app to send events and user profile information -->")
                             .append("\n")
                             .append("    <uses-permission android:name=\"android.permission.INTERNET\"/>")
@@ -258,7 +262,9 @@ class ManifestManager(private val project: Project) {
                 if (line.contains(Constants.MANIFEST)) {
                     if (line.contains(">")) {
                         sb
-                            .append("    <!-- Recommended so that CleverTap knows when to attempt a network call -->\n")
+                            .append("<!-- Added by CleverTap Plugin-->")
+                            .append("\n")
+                            .append("    <!-- Recommended so that CleverTap knows when to attempt a network call -->")
                             .append("\n")
                             .append("    <uses-permission android:name=\"android.permission.ACCESS_NETWORK_STATE\"/>")
                             .append("\n")
@@ -268,7 +274,10 @@ class ManifestManager(private val project: Project) {
             if(default_clevertap_class_exist==false) {
                 if (line.contains("android:allowBackup")) {
                     sb
-
+//                        .append("<!-- Added by CleverTap Plugin-->")
+//                        .append("\n")
+//                        .append("    <!-- Adding Default CleverTap ApplicationClass -->")
+//                        .append("\n")
                         .append(repository2)
                         .append("\n")
 
@@ -278,6 +287,8 @@ class ManifestManager(private val project: Project) {
                 if (line.contains(Constants.APPLICATION)) {
                     if (line.contains("/")) {
                         sb
+                            .append("<!-- Added by CleverTap Plugin-->")
+                            .append("\n")
                             .append(repository3)
                             .append("\n")
                         clevertap_Id=true
@@ -292,12 +303,16 @@ class ManifestManager(private val project: Project) {
                 if (line.contains(Constants.APPLICATION)) {
                     if (line.contains("/")) {
                         sb
+                            .append("         <!-- Added by CleverTap Plugin-->")
+                            .append("\n")
+                            .append("         <!-- Adding CleverTap Account_Id-->")
                             .append("         <meta-data")
                             .append("\n")
                             .append("             android:name=\"CLEVERTAP_ACCOUNT_ID\"")
                             .append("\n")
                             .append("             android:value=\"$clevertapid\" />")
                             .append("\n")
+                        clevertap_Id=true
                     }
                 }
             }
@@ -305,12 +320,17 @@ class ManifestManager(private val project: Project) {
                 if (line.contains(Constants.APPLICATION)) {
                     if (line.contains("/")) {
                         sb
+                            .append("         <!-- Added by CleverTap Plugin-->")
+                            .append("\n")
+                            .append("         <!-- Adding CleverTap Token-->")
+                            .append("\n")
                             .append("         <meta-data")
                             .append("\n")
                             .append("             android:name=\"CLEVERTAP_TOKEN\"")
                             .append("\n")
                             .append("             android:value=\"$clevertaptoken\" />")
                             .append("\n")
+                        clevertap_token=true
                     }
                 }
             }
@@ -319,12 +339,17 @@ class ManifestManager(private val project: Project) {
                 if (line.contains(Constants.APPLICATION)) {
                     if (line.contains("/")) {
                         sb
+                            .append("         <!-- Added by CleverTap Plugin-->")
+                            .append("\n")
+                            .append("         <!-- IMPORTANT: To force use Google AD ID to uniquely identify  users, use the following meta tag. GDPR mandates that if you are using this tag, there is prominent disclousure to your end customer in their application. Read more about GDPR here - https://clevertap.com/blog/in-preparation-of-gdpr-compliance/ -->")
+                            .append("\n")
                             .append("         <meta-data")
                             .append("\n")
                             .append("             android:name=\"CLEVERTAP_USE_GOOGLE_AD_ID\"")
                             .append("\n")
                             .append("             android:value=\"$clevertap_usegoogleid_value\" />")
                             .append("\n")
+                        clevertap_use_google_ad_id=true
                     }
                 }
             }
@@ -332,12 +357,18 @@ class ManifestManager(private val project: Project) {
                 if (line.contains(Constants.APPLICATION)) {
                     if (line.contains("/")) {
                         sb
+                            .append("         <!-- Added by CleverTap Plugin-->")
+                            .append("\n")
+                            .append("         <!-- Activities to be excluded from in-app notifications-->")
+                            .append("\n")
                             .append("         <meta-data")
                             .append("\n")
                             .append("             android:name=\"CLEVERTAP_INAPP_EXCLUDE\"")
                             .append("\n")
                             .append("             android:value=\"$clevertap_inappexclude\" />")
                             .append("\n")
+                        clevertap_Inapp_exclude=true
+
                     }
                 }
             }

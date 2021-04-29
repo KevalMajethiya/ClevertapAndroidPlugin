@@ -2,25 +2,15 @@
   <component name="RecentProjectsManager">
     <option name="additionalInfo">
       <map>
-        <entry key="$USER_HOME$/AndroidStudioProjects/MyApp">
+        <entry key="$USER_HOME$/AndroidStudioProjects/CT">
           <value>
-            <RecentProjectMetaInfo projectWorkspaceId="1rIBRlQl0Si6KnVVOCbow8cDzuO">
+            <RecentProjectMetaInfo opened="true" projectWorkspaceId="1rhZjGdf6XWItrkXLm0PDd1ntrh">
               <option name="binFolder" value="$APPLICATION_HOME_DIR$/bin" />
               <option name="build" value="AI-201.8743.12.41.7042882" />
-              <option name="buildTimestamp" value="1608424784867" />
+              <option name="buildTimestamp" value="1608424743434" />
+              <frame x="0" y="0" width="1280" height="800" />
               <option name="productionCode" value="AI" />
-              <option name="projectOpenTimestamp" value="1618654205515" />
-            </RecentProjectMetaInfo>
-          </value>
-        </entry>
-        <entry key="$USER_HOME$/AndroidStudioProjects/MyApplication">
-          <value>
-            <RecentProjectMetaInfo projectWorkspaceId="1rIFKupTGhTknDI9HpixgU3D0BU">
-              <option name="binFolder" value="$APPLICATION_HOME_DIR$/bin" />
-              <option name="build" value="AI-201.8743.12.41.7042882" />
-              <option name="buildTimestamp" value="1608424782803" />
-              <option name="productionCode" value="AI" />
-              <option name="projectOpenTimestamp" value="1618659237459" />
+              <option name="projectOpenTimestamp" value="1619614812699" />
             </RecentProjectMetaInfo>
           </value>
         </entry>
@@ -29,8 +19,7 @@
     <option name="lastProjectLocation" value="$USER_HOME$/AndroidStudioProjects" />
     <option name="recentPaths">
       <list>
-        <option value="$USER_HOME$/AndroidStudioProjects/MyApplication" />
-        <option value="$USER_HOME$/AndroidStudioProjects/MyApp" />
+        <option value="$USER_HOME$/AndroidStudioProjects/CT" />
       </list>
     </option>
   </component>

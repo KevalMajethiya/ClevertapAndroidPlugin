@@ -16,7 +16,8 @@ import com.intellij.psi.PsiMethod
 import javax.annotation.Nullable
 
 
-class CodeGenerator_forOnuserlogin(private val mClass: PsiClass, private val editor:Editor) {
+class
+CodeGenerator_forOnuserlogin(private val mClass: PsiClass, private val editor:Editor) {
     fun generate() {
         val elementFactory = JavaPsiFacade.getElementFactory(mClass.project)
         val setContentViewStatement: PsiStatement? = null
@@ -33,14 +34,14 @@ class CodeGenerator_forOnuserlogin(private val mClass: PsiClass, private val edi
         val onCreateMethodBody = onCreateMethod.body
 
             val fieldTextBuilder = StringBuilder()
-            fieldTextBuilder.append("HashMap<String, Object> OnUserLoginProperties = new HashMap<String, Object>();")
-            val callevent=elementFactory.createStatementFromText("OnUserLoginProperties.put(\"USer Property_name \", \"value\");", mClass)
+            fieldTextBuilder.append("HashMap<String, Object> OnUserLoginProperties = new HashMap<String, Object>();//added by CleverTap plug-in")
+            val callevent=elementFactory.createStatementFromText("OnUserLoginProperties.put(\"USer Property_name \", \"value\");//added by CleverTap plug-in", mClass)
         
             mClass.add(elementFactory.createFieldFromText(fieldTextBuilder.toString(), mClass))
          //   mClass.add(elementFactory.createFieldFromText("CleverTapAPI clevertap = CleverTapAPI.getDefaultInstance(getApplicationContext());", mClass))
             onCreateMethodBody?.addAfter(callevent,setContentViewStatement)
             //JL//onCreateMethodBody?.add(elementFactory.createStatementFromText("callOnuserLoginMethod(UserProperties);",mClass))
-            onCreateMethodBody?.add(elementFactory.createStatementFromText("clevertapDefaultInstance.onUserLogin(OnUserLoginProperties);",mClass))
+            onCreateMethodBody?.add(elementFactory.createStatementFromText("clevertapDefaultInstance.onUserLogin(OnUserLoginProperties);//added by CleverTap plug-in",mClass))
             //cleverTap.pushEvent("Product viewed", prodViewedAction);
            // elementFactory.createMethodFromText("")
          //   onCreateMethodBody?.addAfter(elementFactory.createCommentFromText("Add event properties to hashmap, call the even with desried name",mClass),callevent)

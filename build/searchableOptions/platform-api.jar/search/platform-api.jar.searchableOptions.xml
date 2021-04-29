@@ -163,6 +163,8 @@
     <option name="components" path="ActionManager" hit="Clear text in text components" />
     <option name="in" path="ActionManager" hit="Clear text in text components" />
     <option name="text" path="ActionManager" hit="Clear text in text components" />
+    <option name="assistant" path="ActionManager" hit="Clevertap Assistant" />
+    <option name="clevertap" path="ActionManager" hit="Clevertap Assistant" />
     <option name="close" path="ActionManager" hit="Close Context Menu" />
     <option name="context" path="ActionManager" hit="Close Context Menu" />
     <option name="menu" path="ActionManager" hit="Close Context Menu" />

@@ -33,14 +33,14 @@ class CodeGenerator_forProfilePush(private val mClass: PsiClass, private val edi
         val onCreateMethodBody = onCreateMethod.body
 
         val fieldTextBuilder = StringBuilder()
-        fieldTextBuilder.append("HashMap<String, Object> UserProperties = new HashMap<String, Object>();")
-        val callevent=elementFactory.createStatementFromText("UserProperties.put(\"USer Property_name \", \"value\");", mClass)
+        fieldTextBuilder.append("HashMap<String, Object> UserProperties = new HashMap<String, Object>();//added by CleverTap plug-in")
+        val callevent=elementFactory.createStatementFromText("UserProperties.put(\"USer Property_name \", \"value\");//added by CleverTap plug-in", mClass)
 
         mClass.add(elementFactory.createFieldFromText(fieldTextBuilder.toString(), mClass))
       //  mClass.add(elementFactory.createFieldFromText("CleverTapAPI clevertap = CleverTapAPI.getDefaultInstance(getApplicationContext());", mClass))
         onCreateMethodBody?.addAfter(callevent,setContentViewStatement)
       //JL // onCreateMethodBody?.add(elementFactory.createStatementFromText("callPushprofileMethod(UserProperties);",mClass))
-        onCreateMethodBody?.add(elementFactory.createStatementFromText("clevertapDefaultInstance.pushProfile(UserProperties);",mClass))
+        onCreateMethodBody?.add(elementFactory.createStatementFromText("clevertapDefaultInstance.pushProfile(UserProperties);//added by CleverTap plug-in",mClass))
         //cleverTap.pushEvent("Product viewed", prodViewedAction);
         // elementFactory.createMethodFromText("")
         //   onCreateMethodBody?.addAfter(elementFactory.createCommentFromText("Add event properties to hashmap, call the even with desried name",mClass),callevent)

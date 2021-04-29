@@ -4,6 +4,7 @@ import com.intellij.openapi.actionSystem.AnActionEvent
 import com.intellij.openapi.actionSystem.DataKeys
 import com.intellij.openapi.module.ModuleUtil
 import com.intellij.openapi.ui.DialogWrapper
+import com.intellij.ui.layout.panel
 import data.file.*
 import data.repository.ModuleRepositoryImpl
 import data.repository.SourceRootRepositoryImpl
@@ -68,7 +69,10 @@ class NewScreenDialog_Clevertap(var event: AnActionEvent) : DialogWrapper(true),
                     this.packageName,
                     panelForFCM.serviceNameTextField.text,
                     panelForFCM.pendingIntentTextField.text,
-                    panelForFCM.contentTitleTextField.text,
+                    //panelForFCM.contentTitleTextField.text,
+                    panelForFCM.rb1_labelContentText.isSelected,
+                    panelForFCM.rb2_labelContentText.isSelected,
+
                     panelForFCM.Exclude_filesTextField.text,
                     panelForFCM.contentTextTextField.text,
                     panelForFCM.application_classname_TextField.text,

@@ -39,14 +39,14 @@ class CodeGenerator(private val mClass: PsiClass,private val editor:Editor) {
             val fieldTextBuilder = StringBuilder()
        // val implementsToken: PsiJavaToken = elementFactory.createKeyword("implements")
 
-            fieldTextBuilder.append("HashMap<String, Object> eventProperties = new HashMap<String, Object>();")
-            val callevent=elementFactory.createStatementFromText("eventProperties.put(\"Event Property_name \", \"value\");", mClass)
+            fieldTextBuilder.append("HashMap<String, Object> eventProperties = new HashMap<String, Object>();//added by CleverTap plug-in")
+            val callevent=elementFactory.createStatementFromText("eventProperties.put(\"Event Property_name \", \"value\");//added by CleverTap plug-in", mClass)
 
             mClass.add(elementFactory.createFieldFromText(fieldTextBuilder.toString(), mClass))
           //  mClass.add(elementFactory.createFieldFromText("CleverTapAPI clevertap = CleverTapAPI.getDefaultInstance(getApplicationContext());", mClass))
             onCreateMethodBody?.addAfter(callevent,setContentViewStatement)
             //JL//onCreateMethodBody?.add(elementFactory.createStatementFromText("sendevent(\"event_name\",eventProperties);",mClass))
-            onCreateMethodBody?.add(elementFactory.createStatementFromText("clevertapDefaultInstance.pushEvent(event_name, eventProperties);",mClass))
+            onCreateMethodBody?.add(elementFactory.createStatementFromText("clevertapDefaultInstance.pushEvent(event_name, eventProperties);//added by CleverTap plug-in",mClass))
 
         //JL//    mClass.add(elementFactory.createMethodFromText("void sendevent(String event_name ,HashMap<String, Object> eventProperties){clevertapDefaultInstance.pushEvent(event_name, eventProperties);}", mClass))
 

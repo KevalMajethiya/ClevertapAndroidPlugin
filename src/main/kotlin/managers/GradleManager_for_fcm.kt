@@ -154,13 +154,17 @@ class GradleManager_for_fcm(private val project: Project) {
                         sb
                             .append("\t${Constants.IMPLEMENTATION} '")
                             .append(repository)
-                            .append("'\n")
+                            .append("'")
+                            .append("   //added by CleverTap plug-in")
+                            .append("\n")
 //                            .append("\t${Constants.IMPLEMENTATION} '")
 //                            .append(Constants.PLAYSTORE)
                            // .append("'\n")
                             .append("\t${Constants.IMPLEMENTATION} '")
                             .append(Constants.Intalrefrerrer)
-                            .append("'\n")
+                            .append("'")
+                            .append("   //added by CleverTap plug-in")
+                            .append("\n")
                         gradle_for_fcm= true
                         playstore=true
                         install_referrer=true
@@ -173,7 +177,10 @@ class GradleManager_for_fcm(private val project: Project) {
                         sb
                             .append("\t${Constants.IMPLEMENTATION} '")
                             .append(repository)
+                            .append("'")
+                            .append("   //added by CleverTap plug-in")
                             .append("'\n")
+                        gradle_for_fcm=true
                     }
                 }
             }
@@ -193,13 +200,19 @@ class GradleManager_for_fcm(private val project: Project) {
                         sb
                             .append("\t${Constants.IMPLEMENTATION} '")
                             .append(Constants.Intalrefrerrer)
+                            .append("'")
+                            .append("   //added by CleverTap plug-in")
                             .append("'\n")
+                        install_referrer=true
                     }
                 }
             }
             if(apply_plugin==false) {
                 if (i == documentText.lastIndex) {
-                    sb.append("apply plugin: 'com.google.gms.google-services'")
+                    sb
+                        .append("apply plugin: 'com.google.gms.google-services'")
+                        .append("   //added by CleverTap plug-in")
+                    apply_plugin=true
                 }
             }
         }
@@ -215,7 +228,9 @@ class GradleManager_for_fcm(private val project: Project) {
                     if (line.contains("{")) {
                         sb2
                             .append("        classpath 'com.google.gms:google-services:4.3.3'")
+                            .append("   //added by CleverTap plug-in")
                             .append("\n")
+                        classpath=true
 
                     }
                 }

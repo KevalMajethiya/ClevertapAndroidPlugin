@@ -197,8 +197,11 @@ class NewScreenDialog(var event: AnActionEvent) : DialogWrapper(true), NewScreen
                     panelForFCM.rb1_fcm.isSelected,
                     panelForFCM.rb2_fcm.isSelected,
                     panelForFCM.isNeedReadMeForInstructions.isSelected,
+
                     //Methods.createnotificationchannel(panelForFCM.contentTitleTextField.text),
                     moduleName
+                   // fcm1(event)
+
 
             )
         override fun createCenterPanel(): JComponent {

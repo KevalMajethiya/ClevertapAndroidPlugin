@@ -17,12 +17,15 @@ import java.io.FileNotFoundException
 class abc(private val project: Project)
 {
     private var androidapplicationclass: Document? = null
+    //private var androidapplicationclass1: Document? = null
     private var androidManifestfile: Document? = null
     private var ans:String=""
     private var codeexist:Boolean=false
     private var import_stmt:Boolean=false
     private var packagename:String=""
     private var launchingactivityname:String=""
+    private var import_stmt_hashmap:Boolean=false
+
 
 
     private var projectBaseDir: VirtualFile? = null
@@ -124,6 +127,8 @@ class abc(private val project: Project)
         val manifestVirtualFile: VirtualFile? = projectBaseDir
         return if (manifestVirtualFile != null) {
             androidapplicationclass = FileDocumentManager.getInstance().getDocument(manifestVirtualFile)
+            //androidapplicationclass1 = FileDocumentManager.getInstance().getDocument(manifestVirtualFile)
+
             initiateclevertap()
             true
         } else {
@@ -150,6 +155,12 @@ class abc(private val project: Project)
                 import_stmt=true
 
             }
+            if(line.contains("import java.util.HashMap;"))
+            {
+                import_stmt_hashmap=true
+
+            }
+
         }
     }
 
@@ -171,22 +182,37 @@ class abc(private val project: Project)
                     if (line.contains("package")) {
                         sb
                             .append("import com.clevertap.android.sdk.CleverTapAPI;")
+                            .append(" //added by CleverTap plug-in")
                             //.append("   //Initializing the CleverTap SDK")
                             .append("\n")
+                        import_stmt=true
                         //.append("CleverTapAPI.createNotificationChannel(getApplicationContext(),\"3131\",\"mychannel\",\"lDescription\",NotificationManager.IMPORTANCE_MAX,true);")
                         //.append("\n")
                     }
                 }
+                if(import_stmt_hashmap==false) {
+                    if (line.contains("package")) {
+                        // if (line.contains("/")) {
+                        sb
+                            .append("import java.util.HashMap;")
+                            .append("                      //added by CleverTap plug-in")
+                            .append("\n")
+                        import_stmt_hashmap=true
+                        // }
+                    }
+                }
+
 
                 if(c==false) {
                     if (line.contains("setContentView")) {
                         sb
-                            .append("        Context context = getApplicationContext();")
-                           // .append("   //Initializing the CleverTap SDK")
+//                            .append("        Context context = getApplicationContext();")
+//                            .append("   //added by CleverTap plug-in")
                             .append("\n")
                             .append("        CleverTapAPI clevertapDefaultInstance = CleverTapAPI.getDefaultInstance(getApplicationContext());")
                             .append("   //Initializing the CleverTap SDK")
                             .append("\n")
+                        c=true
 
 
                     }

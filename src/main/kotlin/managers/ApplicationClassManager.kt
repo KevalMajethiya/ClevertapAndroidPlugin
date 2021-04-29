@@ -163,8 +163,9 @@ class ApplicationClassManager(private val project: Project)
                                 .append("// Must be called before super.onCreate()")
                                 .append("\n")
                                 .append("        " + "ActivityLifecycleCallback.register(this);")
+                                .append("   //added by CleverTap plug-in")
                                 .append("\n")
-                            codeexist=true
+                            c=true
 
 
                         }
@@ -191,8 +192,9 @@ class ApplicationClassManager(private val project: Project)
                                 .append("// Must be called before super.onCreate()")
                                 .append("\n")
                                 .append("        " + "ActivityLifecycleCallback.register(this);")
+                                .append("   //added by CleverTap plug-in")
                                 .append("\n")
-                            codeexist=true
+                            c=true
 
 
                         }
@@ -205,8 +207,9 @@ class ApplicationClassManager(private val project: Project)
                                 .append("// Must be called before super.onCreate()")
                                 .append("\n")
                                 .append("    " + "ActivityLifecycleCallback.register(this);")
+                                .append("   //added by CleverTap plug-in")
                                 .append("\n")
-                            codeexist=true
+                            c=true
                             //   }
 
                         }

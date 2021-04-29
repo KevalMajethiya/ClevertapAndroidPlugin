@@ -1,29 +1,71 @@
 <idea-plugin >
     <id>CleverTap.CleverTap</id>
-    <name>CleverTap (Beta)</name>
+    <name>CleverTap Assistant (Beta)</name>
     <vendor email="jjideshnair8@gmail.com" >Clevertap</vendor>
+    <!-- Description of the plugin.
+    Plugin helps to integrate Clevertap in your app in less then 5 minutes.
+    -->
     <description>Helps to integrate Clevertap in your app</description>
 
 
     <idea-version since-build="182.0"/>
     <depends>com.intellij.modules.lang</depends>
     <depends>org.jetbrains.kotlin</depends>
-    <version>0.3</version>
+    <version>0.1</version>
 
     <extensions defaultExtensionNs="com.intellij">
         <!-- Add your extensions here -->
     </extensions>
 
     <actions>
-        <action id="CleanPlugin.ID" class="action.SearchAction" text="Clevertap Assistant"
-                description="Configure Clevertap."
-                icon="/icons/ct.jpg"
-                use-shortcut-of="CleanPlugin.ID" keymap="$default">
-            <add-to-group group-id="NewGroup" anchor="after" relative-to-action="NewDir"/>
-            <keyboard-shortcut keymap="$default" first-keystroke="control alt e"/>
+<!--        <group id="outer" text="Sample" description="Sample desc">-->
+<!--            <add-to-group group-id="NewGroup" anchor="after" relative-to-action="NewDir"/>-->
+<!--            <action id="a1" class="action.SearchAction" text="Push Notification"/>-->
+<!--            <action id="a2" class="action.SearchAction" text="Audit Report"/>-->
+<!--&lt;!&ndash;            <action id="b1" class="action.SearchAction" text="B1"/>&ndash;&gt;-->
+<!--            <separator/>-->
+<!--            <group id="inner" text="Inner" popup="true">-->
+<!--                <action class="action.SearchAction" id="a3" text="A3"/
+                    use-shortcut-of="CleanPlugin.ID1" keymap="$default">>
+                    <keyboard-shortcut keymap="$default" first-keystroke="control alt e"/>-->
 
-        </action>
-<!--        <action class="action.AccessorAction_nativedisplay"-->
+<!--                <action class="action.SearchAction" id="a4" text="A4"/>-->
+<!--            </group>-->
+<!--        </group>-->
+
+
+        <group id="inner" text="Clevertap Assistant" popup="true" icon="/icons/ctlogo2.png">
+            <add-to-group group-id="NewGroup" anchor="after" relative-to-action="NewDir"/>
+            <action id="CleanPlugin.ID1" class="action.SearchAction" text="Basic Integration"
+                    description="Configure Clevertap."
+                    use-shortcut-of="CleanPlugin.ID1" keymap="$default">
+
+            </action>
+            <action id="CleanPlugin.ID2" class="action.SearchAction_FCM" text="Push Notification"
+                description="Configure Clevertap."
+                use-shortcut-of="CleanPlugin.ID2" keymap="$default">
+<!--                <keyboard-shortcut keymap="$default" first-keystroke="control alt p"/>-->
+            </action>
+            <action id="CleanPlugin.ID3" class="action.Auditreport" text="Audit Report"
+                    description="Configure Clevertap."
+                    use-shortcut-of="CleanPlugin.ID3" keymap="$default">
+
+<!--                <keyboard-shortcut keymap="$default" first-keystroke="control alt a"/>-->
+            </action>
+        </group>
+<!--        <action id="abc" class="action.SearchAction" text="FCM"-->
+<!--                description="Configure Clevertap."-->
+<!--                icon="/icons/ctlogo2.png"-->
+<!--                use-shortcut-of="CleanPlugin.ID" keymap="$default">-->
+<!--            <add-to-group group-id="NewGroup" anchor="after" relative-to-action="CleanPlugin.ID"/>-->
+<!--&lt;!&ndash;            <keyboard-shortcut keymap="$default" first-keystroke="control alt e"/>&ndash;&gt;-->
+
+<!--        </action>-->
+
+
+
+
+        <!--        <action class="action.AccessorAction_nativedisplay"-->
 <!--                id="action.AccessorAction_nativedisplay"-->
 <!--                text="Clevertap Native Display"-->
 <!--                description="Add Clevertap nativedisplay">-->
@@ -37,25 +79,45 @@
                 description="Generating Audit Report">
             <add-to-group group-id="GenerateGroup" anchor="first"/>
         </action>
-        <action class="action.AccessorAction"
+<!--        <action class="action.AccessorAction"-->
+<!--                id="action.AccessorAction"-->
+<!--                text="Clevertap Events"-->
+<!--                description="Add Clevertap Events/User Properties">-->
+<!--            <add-to-group group-id="GenerateGroup" anchor="first"/>-->
+<!--        </action>-->
+<!--        <action class="action.AccessorAction_propfilePush"-->
+<!--                id="action.AccessorAction_Userproperties"-->
+<!--                text="Clevertap User Properties"-->
+<!--                description="Add Clevertap User Properties">-->
+<!--            <add-to-group group-id="GenerateGroup" anchor="first"/>-->
+<!--        </action>-->
+<!--        <action class="action.AccessorAction_onuserlogin"-->
+<!--                id="action.AccessorAction_Onuserlogin"-->
+<!--                text="Clevertap OnuserLogin"-->
+<!--                description="Add Clevertap Onuserlogin">-->
+<!--            <add-to-group group-id="GenerateGroup" anchor="first"/>-->
+<!--        </action>-->
+        <action class="action.UserEvents"
                 id="action.AccessorAction"
                 text="Clevertap Events"
                 description="Add Clevertap Events/User Properties">
             <add-to-group group-id="GenerateGroup" anchor="first"/>
         </action>
-        <action class="action.AccessorAction_propfilePush"
+
+        <action class="action.PushProfile"
                 id="action.AccessorAction_Userproperties"
-                text="Clevertap User Properties"
+                text="Clevertap PushProfile"
                 description="Add Clevertap User Properties">
             <add-to-group group-id="GenerateGroup" anchor="first"/>
         </action>
-        <action class="action.AccessorAction_onuserlogin"
+        <action class="action.OnUserLogin"
                 id="action.AccessorAction_Onuserlogin"
                 text="Clevertap OnuserLogin"
                 description="Add Clevertap Onuserlogin">
             <add-to-group group-id="GenerateGroup" anchor="first"/>
         </action>
-<!--        <action class="action.AccessorAction_intialize"-->
+
+        <!--        <action class="action.AccessorAction_intialize"-->
 <!--                id="action.AccessorAction_intialize"-->
 <!--                text="Clevertap Initialization"-->
 <!--                description="Intialize Clevertap">-->
@@ -72,13 +134,13 @@
 <!--        </action>-->
 
 
-<!--        <action class="action.Demo"-->
-<!--                id="action.Demo"-->
-<!--                text="Clevertap Initialization Demo"-->
-<!--                description="Demo">-->
-<!--            <add-to-group group-id="GenerateGroup" anchor="first"/>-->
+        <action class="action.Cursor"
+                id="action.Demo"
+                text="Clevertap Initialization Demo"
+                description="Demo">
+            <add-to-group group-id="GenerateGroup" anchor="first"/>
 
-<!--       </action>-->
+       </action>
         <action class="action.SearchAction_FCM"
                 id="action.SearchAction_FCM"
                 text="Add Push Notification with Clevertap"

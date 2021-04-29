@@ -53,7 +53,7 @@ object Constants {
     const val FCM_SERVICE_NAME = "Account ID: "
 
     const val PENDINGINTENT_ACTIVITY_NAME = "Account Token:"
-    const val CONTENT_TITLE = "Use Google AD ID (yes/no):"
+    const val CONTENT_TITLE = "Should Google AD ID be the CleverTap Id(yes/no)?:"
     const val CONTENT_TEXT = "Add Clevertap Application Class(yes/no):"
     const val Exclude_files = "Name of the activity to be excluded from receiving InApp:"
     const val DEPENDENCY_VERSION = "Dependency Version:"

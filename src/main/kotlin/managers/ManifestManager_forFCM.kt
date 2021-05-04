@@ -80,7 +80,7 @@ class ManifestManager_forFCM(private val project: Project) {
                 if (line.contains(Constants.APPLICATION)) {
                     if (line.contains("/")) {
                         sb
-                            .append("<!-- Added by CleverTap Plugin-->")
+                            .append("<!-- Added by CleverTap Assistant-->")
                             .append("\n")
                             .append(repository)
                             .append("\n")
@@ -97,7 +97,7 @@ class ManifestManager_forFCM(private val project: Project) {
                     if (line.contains(Constants.APPLICATION)) {
                         if (line.contains("/")) {
                             sb
-                                .append("        <!-- Added by CleverTap Plugin-->")
+                                .append("        <!-- Added by CleverTap Assistant-->")
                                 .append("\n")
 //                            .append(repository)
 //                            .append("\n")
@@ -123,7 +123,7 @@ class ManifestManager_forFCM(private val project: Project) {
                 if (line.contains(Constants.APPLICATION)) {
                     if (line.contains("/")) {
                         sb
-                            .append("        <!-- Added by CleverTap Plugin-->")
+                            .append("        <!-- Added by CleverTap Assistant-->")
                             .append("\n")
                             .append("        <service")
                             .append("\n")
@@ -148,7 +148,7 @@ class ManifestManager_forFCM(private val project: Project) {
                 if (line.contains(Constants.APPLICATION)) {
                     if (line.contains("/")) {
                         sb
-                            .append("         <!-- Added by CleverTap Plugin-->")
+                            .append("         <!-- Added by CleverTap Assistant-->")
                             .append("\n")
                             .append("         <meta-data")
                             .append("\n")
@@ -165,7 +165,7 @@ class ManifestManager_forFCM(private val project: Project) {
                 if (line.contains(Constants.APPLICATION)) {
                     if (line.contains("/")) {
                         sb
-                            .append("         <!-- Added by CleverTap Plugin-->")
+                            .append("         <!-- Added by CleverTap Assistant-->")
                             .append("\n")
                             .append("         <meta-data")
                             .append("\n")
@@ -182,7 +182,7 @@ class ManifestManager_forFCM(private val project: Project) {
                 if (line.contains(Constants.APPLICATION)) {
                     if (line.contains("/")) {
                         sb
-                            .append("        <!-- Added by CleverTap Plugin-->")
+                            .append("        <!-- Added by CleverTap Assistant-->")
                             .append("\n")
                             .append("         <meta-data")
                             .append("\n")

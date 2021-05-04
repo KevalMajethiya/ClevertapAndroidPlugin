@@ -4,13 +4,25 @@
       <map>
         <entry key="$USER_HOME$/AndroidStudioProjects/CT">
           <value>
-            <RecentProjectMetaInfo opened="true" projectWorkspaceId="1rhZjGdf6XWItrkXLm0PDd1ntrh">
+            <RecentProjectMetaInfo projectWorkspaceId="1rhZjGdf6XWItrkXLm0PDd1ntrh">
               <option name="binFolder" value="$APPLICATION_HOME_DIR$/bin" />
               <option name="build" value="AI-201.8743.12.41.7042882" />
-              <option name="buildTimestamp" value="1608424743434" />
-              <frame x="0" y="0" width="1280" height="800" />
+              <option name="buildTimestamp" value="1608424772162" />
+              <frame x="0" y="23" width="1280" height="715" />
               <option name="productionCode" value="AI" />
-              <option name="projectOpenTimestamp" value="1619614812699" />
+              <option name="projectOpenTimestamp" value="1619772886218" />
+            </RecentProjectMetaInfo>
+          </value>
+        </entry>
+        <entry key="$USER_HOME$/AndroidStudioProjects/Demo">
+          <value>
+            <RecentProjectMetaInfo projectWorkspaceId="1s1QSf7MRc74UI57ug2Leh4WyCd">
+              <option name="binFolder" value="$APPLICATION_HOME_DIR$/bin" />
+              <option name="build" value="AI-201.8743.12.41.7042882" />
+              <option name="buildTimestamp" value="1608424744418" />
+              <frame x="0" y="23" width="1280" height="716" />
+              <option name="productionCode" value="AI" />
+              <option name="projectOpenTimestamp" value="1620041716873" />
             </RecentProjectMetaInfo>
           </value>
         </entry>
@@ -19,6 +31,7 @@
     <option name="lastProjectLocation" value="$USER_HOME$/AndroidStudioProjects" />
     <option name="recentPaths">
       <list>
+        <option value="$USER_HOME$/AndroidStudioProjects/Demo" />
         <option value="$USER_HOME$/AndroidStudioProjects/CT" />
       </list>
     </option>

@@ -155,7 +155,7 @@ class GradleManager_for_fcm(private val project: Project) {
                             .append("\t${Constants.IMPLEMENTATION} '")
                             .append(repository)
                             .append("'")
-                            .append("   //added by CleverTap plug-in")
+                            .append("   //added by CleverTap Assistant")
                             .append("\n")
 //                            .append("\t${Constants.IMPLEMENTATION} '")
 //                            .append(Constants.PLAYSTORE)
@@ -163,7 +163,7 @@ class GradleManager_for_fcm(private val project: Project) {
                             .append("\t${Constants.IMPLEMENTATION} '")
                             .append(Constants.Intalrefrerrer)
                             .append("'")
-                            .append("   //added by CleverTap plug-in")
+                            .append("   //added by CleverTap Assistant")
                             .append("\n")
                         gradle_for_fcm= true
                         playstore=true
@@ -178,7 +178,7 @@ class GradleManager_for_fcm(private val project: Project) {
                             .append("\t${Constants.IMPLEMENTATION} '")
                             .append(repository)
                             .append("'")
-                            .append("   //added by CleverTap plug-in")
+                            .append("   //added by CleverTap Assistant")
                             .append("'\n")
                         gradle_for_fcm=true
                     }
@@ -201,7 +201,7 @@ class GradleManager_for_fcm(private val project: Project) {
                             .append("\t${Constants.IMPLEMENTATION} '")
                             .append(Constants.Intalrefrerrer)
                             .append("'")
-                            .append("   //added by CleverTap plug-in")
+                            .append("   //added by CleverTap Assistant")
                             .append("'\n")
                         install_referrer=true
                     }
@@ -211,7 +211,7 @@ class GradleManager_for_fcm(private val project: Project) {
                 if (i == documentText.lastIndex) {
                     sb
                         .append("apply plugin: 'com.google.gms.google-services'")
-                        .append("   //added by CleverTap plug-in")
+                        .append("   //added by CleverTap Assistant")
                     apply_plugin=true
                 }
             }
@@ -228,7 +228,7 @@ class GradleManager_for_fcm(private val project: Project) {
                     if (line.contains("{")) {
                         sb2
                             .append("        classpath 'com.google.gms:google-services:4.3.3'")
-                            .append("   //added by CleverTap plug-in")
+                            .append("   //added by CleverTap Assistant")
                             .append("\n")
                         classpath=true
 

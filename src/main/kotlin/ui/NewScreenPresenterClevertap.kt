@@ -71,6 +71,7 @@ class NewScreenPresenterClevertap(
         //use_google_ad_id: String,
         use_google_ad_id_rb1 : Boolean,
         use_google_ad_id_rb2: Boolean,
+        region_selected : String,
         Exclude_filesText :String,
         contentTextText: String,
         applicationclassname: String,

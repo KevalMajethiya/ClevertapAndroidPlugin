@@ -18,7 +18,7 @@
     <size key="GridCell.Tab.0.bottom.0.0.1280.800" width="1238" height="212" />
   </component>
   <component name="WindowManager">
-    <frame x="0" y="0" width="1280" height="800" />
+    <frame x="0" y="23" width="1280" height="716" />
     <layout>
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Find" order="1" />
@@ -35,29 +35,29 @@
     </layout>
   </component>
   <component name="WindowStateApplicationService">
-    <state x="451" y="132" key="FileChooserDialogImpl" timestamp="1619430528984">
+    <state x="451" y="132" key="FileChooserDialogImpl" timestamp="1620037708099">
       <screen x="0" y="23" width="1280" height="716" />
     </state>
-    <state x="451" y="132" key="FileChooserDialogImpl/0.23.1280.715" timestamp="1618898717768" />
-    <state x="451" y="132" key="FileChooserDialogImpl/0.23.1280.716" timestamp="1619430528984" />
+    <state x="451" y="132" key="FileChooserDialogImpl/0.23.1280.715" timestamp="1620037529418" />
+    <state x="451" y="132" key="FileChooserDialogImpl/0.23.1280.716" timestamp="1620037708099" />
     <state x="451" y="133" key="FileChooserDialogImpl/0.23.1280.721" timestamp="1619174959933" />
     <state x="451" y="133" key="FileChooserDialogImpl/0.23.1280.723" timestamp="1618561909040" />
     <state x="451" y="133" key="FileChooserDialogImpl/0.23.1280.724" timestamp="1618997783352" />
     <state x="451" y="134" key="FileChooserDialogImpl/0.23.1280.726" timestamp="1617276491997" />
-    <state x="228" y="99" key="IDE.errors.dialog" timestamp="1616776353637">
+    <state x="228" y="99" key="IDE.errors.dialog" timestamp="1619768217069">
       <screen x="0" y="23" width="1280" height="715" />
     </state>
-    <state x="228" y="99" key="IDE.errors.dialog/0.23.1280.715" timestamp="1616776353637" />
+    <state x="228" y="99" key="IDE.errors.dialog/0.23.1280.715" timestamp="1619768217069" />
     <state x="921" y="559" width="356" height="158" key="ProcessPopupWindow" timestamp="1616745854575">
       <screen x="0" y="23" width="1280" height="721" />
     </state>
     <state x="921" y="555" width="356" height="156" key="ProcessPopupWindow/0.23.1280.716" timestamp="1616155760329" />
     <state x="921" y="559" width="356" height="158" key="ProcessPopupWindow/0.23.1280.721" timestamp="1616745854575" />
-    <state x="639" y="349" key="WELCOME_SCREEN" timestamp="1619601496934">
+    <state x="639" y="349" key="WELCOME_SCREEN" timestamp="1620041785838">
       <screen x="0" y="23" width="1280" height="716" />
     </state>
-    <state x="639" y="349" key="WELCOME_SCREEN/0.23.1280.715" timestamp="1619012501557" />
-    <state x="639" y="349" key="WELCOME_SCREEN/0.23.1280.716" timestamp="1619601496934" />
+    <state x="639" y="349" key="WELCOME_SCREEN/0.23.1280.715" timestamp="1620040611807" />
+    <state x="639" y="349" key="WELCOME_SCREEN/0.23.1280.716" timestamp="1620041785838" />
     <state x="639" y="351" key="WELCOME_SCREEN/0.23.1280.721" timestamp="1619500515397" />
     <state x="639" y="351" key="WELCOME_SCREEN/0.23.1280.723" timestamp="1619075592310" />
     <state x="639" y="352" key="WELCOME_SCREEN/0.23.1280.724" timestamp="1618997635391" />

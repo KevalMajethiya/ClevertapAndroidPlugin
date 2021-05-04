@@ -207,7 +207,7 @@ class UserEventsManager(private val project: Project)
 
                     sb
                         .append("HashMap<String, Object> eventProperties = new HashMap<String, Object>();")
-                        .append("  //added by CleverTap plug-in")
+                        .append("  //added by CleverTap Assistant")
                         .append("\n")
                     import_stmt_hashmap=true
 
@@ -219,7 +219,7 @@ class UserEventsManager(private val project: Project)
                     if (line.contains("void onCreate")) {
                         sb
                             .append("        eventProperties.put(\"Event Property_name \", \"value\");")
-                            .append("   //added by CleverTap plug-in")
+                            .append("   //added by CleverTap Assistant")
                             .append("\n")
 
                         eventproperties_exsit = true
@@ -233,7 +233,7 @@ class UserEventsManager(private val project: Project)
                         sb
                             // .append("\n")
                             .append("        clevertapDefaultInstance.pushEvent(\"event_name\", eventProperties);")
-                            .append("     //added by CleverTap plug-in")
+                            .append("     //added by CleverTap Assistant")
                             .append("\n")
                         pushevent_exist = true
 
@@ -256,7 +256,7 @@ class UserEventsManager(private val project: Project)
                     if (line.contains("void onCreate")) {
                         sb
                             .append("        eventProperties.put(\"Event Property_name \", \"value\");")
-                            .append("   //added by CleverTap plug-in")
+                            .append("   //added by CleverTap Assistant")
                             .append("\n")
 
                         eventproperties_exsit = true
@@ -270,7 +270,7 @@ class UserEventsManager(private val project: Project)
                         sb
                             // .append("\n")
                             .append("        clevertapDefaultInstance.pushEvent(\"event_name\", eventProperties);")
-                            .append("     //added by CleverTap plug-in")
+                            .append("     //added by CleverTap Assistant")
                             .append("\n")
                         pushevent_exist = true
 

@@ -27,8 +27,18 @@
     <action class="action.OnUserLogin" id="action.AccessorAction_Onuserlogin" text="Clevertap OnuserLogin" description="Add Clevertap Onuserlogin">
       <add-to-group group-id="GenerateGroup" anchor="first"/>
     </action>
-    <action class="action.Cursor" id="action.Demo" text="Clevertap Initialization Demo" description="Demo">
-      <add-to-group group-id="GenerateGroup" anchor="first"/>
+    <group id="events" text="Add ClevertTap Events" popup="true" icon="/icons/ctlogo3.png">
+      <add-to-group group-id="EditorPopupMenu" anchor="first"/>
+      <action class="action.UserEvents_cursor" id="event" text="Only Event" description="Demo"/>
+      <action class="action.UserEventsWithProperties_cursor" id="eventproperties" text="Events with properties" description="Demo"/>
+    </group>
+    <group id="userproperties" text="Add ClevertTap User Properties" popup="true" icon="/icons/ctlogo3.png">
+      <add-to-group group-id="EditorPopupMenu" anchor="first"/>
+      <action class="action.OnUserLogin_cursor" id="onuserlogin" text="OnUserLogin " description="Demo"/>
+      <action class="action.PushProfile_cursor" id="profilepush" text="Profile Push" description="Demo"/>
+    </group>
+    <action class="action.IntializeCleverTap_cursor" id="intialize" text="Initialize CleverTap " description="Intialize clevertap object" icon="/icons/ctlogo3.png">
+      <add-to-group group-id="EditorPopupMenu" anchor="first"/>
     </action>
     <action class="action.SearchAction_FCM" id="action.SearchAction_FCM" text="Add Push Notification with Clevertap" description="Add FCM and Clevertap">
       <add-to-group group-id="GenerateGroup" anchor="first"/>

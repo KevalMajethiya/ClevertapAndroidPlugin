@@ -114,9 +114,9 @@ class FCMApprovaPresenter(
 
 
                 }
-               // if(IsRadiobuttonrb1Selected==true) {
+                if(IsRadiobuttonrb2Selected==true) {
                 writeActionDispatcher.dispatch {
-                   /* fileCreator.createScreenFiles(
+                   fileCreator.createScreenFiles(
                         packageName,
                         serviceNameText,
                         //pendingIntentText,
@@ -127,9 +127,9 @@ class FCMApprovaPresenter(
                         isNeedReadMeForInstructions,
                         moduleName,
                         Methods.checkPrimaryColorInColorsFile(project)
-                    )*/
+                    )
                 }
-               //  }
+                 }
                 ApplicationManager.getApplication()
                     .invokeLater({
                         Notifications.Bus.notify(

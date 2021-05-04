@@ -236,7 +236,7 @@ class ManifestManager(private val project: Project) {
                 if (line.contains(Constants.MANIFEST)) {
                     if (line.contains(">")) {
                         sb
-                            .append("<!-- Added by CleverTap Plugin-->")
+                            .append("<!-- Added by CleverTap Assistant-->")
                             .append("\n")
                             .append(repository1)
                             .append("\n")
@@ -249,7 +249,7 @@ class ManifestManager(private val project: Project) {
                 if (line.contains(Constants.MANIFEST)) {
                     if (line.contains(">")) {
                         sb
-                            .append("<!-- Added by CleverTap Plugin-->")
+                            .append("<!-- Added by CleverTap Assistant-->")
                             .append("\n")
                             .append("    <!-- Required to allow the app to send events and user profile information -->")
                             .append("\n")
@@ -262,7 +262,7 @@ class ManifestManager(private val project: Project) {
                 if (line.contains(Constants.MANIFEST)) {
                     if (line.contains(">")) {
                         sb
-                            .append("<!-- Added by CleverTap Plugin-->")
+                            .append("<!-- Added by CleverTap Assistant-->")
                             .append("\n")
                             .append("    <!-- Recommended so that CleverTap knows when to attempt a network call -->")
                             .append("\n")
@@ -287,7 +287,7 @@ class ManifestManager(private val project: Project) {
                 if (line.contains(Constants.APPLICATION)) {
                     if (line.contains("/")) {
                         sb
-                            .append("<!-- Added by CleverTap Plugin-->")
+                            .append("<!-- Added by CleverTap Assistant-->")
                             .append("\n")
                             .append(repository3)
                             .append("\n")
@@ -303,7 +303,7 @@ class ManifestManager(private val project: Project) {
                 if (line.contains(Constants.APPLICATION)) {
                     if (line.contains("/")) {
                         sb
-                            .append("         <!-- Added by CleverTap Plugin-->")
+                            .append("         <!-- Added by CleverTap Assistant-->")
                             .append("\n")
                             .append("         <!-- Adding CleverTap Account_Id-->")
                             .append("         <meta-data")
@@ -320,7 +320,7 @@ class ManifestManager(private val project: Project) {
                 if (line.contains(Constants.APPLICATION)) {
                     if (line.contains("/")) {
                         sb
-                            .append("         <!-- Added by CleverTap Plugin-->")
+                            .append("         <!-- Added by CleverTap Assistant-->")
                             .append("\n")
                             .append("         <!-- Adding CleverTap Token-->")
                             .append("\n")
@@ -339,7 +339,7 @@ class ManifestManager(private val project: Project) {
                 if (line.contains(Constants.APPLICATION)) {
                     if (line.contains("/")) {
                         sb
-                            .append("         <!-- Added by CleverTap Plugin-->")
+                            .append("         <!-- Added by CleverTap Assistant-->")
                             .append("\n")
                             .append("         <!-- IMPORTANT: To force use Google AD ID to uniquely identify  users, use the following meta tag. GDPR mandates that if you are using this tag, there is prominent disclousure to your end customer in their application. Read more about GDPR here - https://clevertap.com/blog/in-preparation-of-gdpr-compliance/ -->")
                             .append("\n")
@@ -357,7 +357,7 @@ class ManifestManager(private val project: Project) {
                 if (line.contains(Constants.APPLICATION)) {
                     if (line.contains("/")) {
                         sb
-                            .append("         <!-- Added by CleverTap Plugin-->")
+                            .append("         <!-- Added by CleverTap Assistant-->")
                             .append("\n")
                             .append("         <!-- Activities to be excluded from in-app notifications-->")
                             .append("\n")

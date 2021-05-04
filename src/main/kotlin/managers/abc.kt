@@ -182,7 +182,7 @@ class abc(private val project: Project)
                     if (line.contains("package")) {
                         sb
                             .append("import com.clevertap.android.sdk.CleverTapAPI;")
-                            .append(" //added by CleverTap plug-in")
+                            .append(" //added by CleverTap Assistant")
                             //.append("   //Initializing the CleverTap SDK")
                             .append("\n")
                         import_stmt=true
@@ -190,21 +190,21 @@ class abc(private val project: Project)
                         //.append("\n")
                     }
                 }
-                if(import_stmt_hashmap==false) {
-                    if (line.contains("package")) {
-                        // if (line.contains("/")) {
-                        sb
-                            .append("import java.util.HashMap;")
-                            .append("                      //added by CleverTap plug-in")
-                            .append("\n")
-                        import_stmt_hashmap=true
-                        // }
-                    }
-                }
+//                if(import_stmt_hashmap==false) {
+//                    if (line.contains("package")) {
+//                        // if (line.contains("/")) {
+//                        sb
+//                            .append("import java.util.HashMap;")
+//                            .append("                      //added by CleverTap plug-in")
+//                            .append("\n")
+//                        import_stmt_hashmap=true
+//                        // }
+//                    }
+//                }
 
 
                 if(c==false) {
-                    if (line.contains("setContentView")) {
+                    if (line.contains("void onCreate")) {
                         sb
 //                            .append("        Context context = getApplicationContext();")
 //                            .append("   //added by CleverTap plug-in")

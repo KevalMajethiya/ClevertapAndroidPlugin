@@ -35,7 +35,7 @@
 
 
         <group id="inner" text="Clevertap Assistant" popup="true" icon="/icons/ctlogo2.png">
-            <add-to-group group-id="NewGroup" anchor="after" relative-to-action="NewDir"/>
+            <add-to-group group-id="NewGroup" anchor="after" relative-to-action="NewDir" />
             <action id="CleanPlugin.ID1" class="action.SearchAction" text="Basic Integration"
                     description="Configure Clevertap."
                     use-shortcut-of="CleanPlugin.ID1" keymap="$default">
@@ -53,15 +53,6 @@
 <!--                <keyboard-shortcut keymap="$default" first-keystroke="control alt a"/>-->
             </action>
         </group>
-<!--        <action id="abc" class="action.SearchAction" text="FCM"-->
-<!--                description="Configure Clevertap."-->
-<!--                icon="/icons/ctlogo2.png"-->
-<!--                use-shortcut-of="CleanPlugin.ID" keymap="$default">-->
-<!--            <add-to-group group-id="NewGroup" anchor="after" relative-to-action="CleanPlugin.ID"/>-->
-<!--&lt;!&ndash;            <keyboard-shortcut keymap="$default" first-keystroke="control alt e"/>&ndash;&gt;-->
-
-<!--        </action>-->
-
 
 
 
@@ -71,7 +62,6 @@
 <!--                description="Add Clevertap nativedisplay">-->
 <!--            <add-to-group group-id="GenerateGroup" anchor="first"/>-->
 
-<!--        </action>-->
 
         <action class="action.Auditreport"
                 id="action.Auditreport"
@@ -134,13 +124,84 @@
 <!--        </action>-->
 
 
-        <action class="action.Cursor"
-                id="action.Demo"
-                text="Clevertap Initialization Demo"
-                description="Demo">
-            <add-to-group group-id="GenerateGroup" anchor="first"/>
+        <group id="events" text="Add ClevertTap Events" popup="true" icon="/icons/ctlogo3.png" >
+        <add-to-group group-id="EditorPopupMenu" anchor="first" />
+            <action class="action.UserEvents_cursor"
+                    id="event"
+                    text="Only Event"
+                    description="Demo">
 
-       </action>
+            </action>
+            <action class="action.UserEventsWithProperties_cursor"
+                    id="eventproperties"
+                    text="Events with properties"
+                    description="Demo">
+
+            </action>
+        </group>
+
+        <group id="userproperties" text="Add ClevertTap User Properties" popup="true" icon="/icons/ctlogo3.png"  >
+            <add-to-group group-id="EditorPopupMenu" anchor="first" />
+            <action class="action.OnUserLogin_cursor"
+                    id="onuserlogin"
+                    text="OnUserLogin "
+                    description="Demo">
+
+            </action>
+            <action class="action.PushProfile_cursor"
+                    id="profilepush"
+                    text="Profile Push"
+                    description="Demo">
+
+            </action>
+        </group>
+
+
+            <action class="action.IntializeCleverTap_cursor"
+                    id="intialize"
+                    text="Initialize CleverTap "
+                    description="Intialize clevertap object"
+                    icon="/icons/ctlogo3.png">
+                <add-to-group group-id="EditorPopupMenu" anchor="first" />
+            </action>
+
+<!--            <action class="action.Auditreport"-->
+<!--                    id="action.Auditreport1"-->
+<!--                    text="Audit Report"-->
+<!--                    description="Generating Audit Report"-->
+<!--                    icon="/icons/ctlogo3.png">-->
+<!--                <add-to-group group-id="EditorPopupMenu" anchor="first" />-->
+<!--            </action>-->
+
+
+
+<!--            <action class="action.SearchAction_FCM"-->
+<!--                    id="action.SearchAction_FCM1"-->
+<!--                    text="Add Push Notification with Clevertap"-->
+<!--                    description="Add FCM and Clevertap"-->
+<!--                    icon="/icons/ctlogo3.png">-->
+<!--                <add-to-group group-id="EditorPopupMenu" anchor="first" />-->
+<!--            </action>-->
+
+
+
+
+        <!--        <group id="events" text="Add Events" popup="true">-->
+<!--            <add-to-group group-id="GenerateGroup" anchor="first"/>-->
+
+<!--            <action class="action.Cursor"-->
+<!--                    id="action.Demo"-->
+<!--                    text="Only Event"-->
+<!--                    description="Demo">-->
+
+<!--            </action>-->
+<!--            <action class="action.Cursor"-->
+<!--                    id="action.Demo1"-->
+<!--                    text="Events with properties"-->
+<!--                    description="Demo">-->
+
+<!--            </action>-->
+<!--        </group>-->
         <action class="action.SearchAction_FCM"
                 id="action.SearchAction_FCM"
                 text="Add Push Notification with Clevertap"

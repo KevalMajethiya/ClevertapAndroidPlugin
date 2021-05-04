@@ -134,7 +134,7 @@ class GradleManager_for_audit(private val project: Project) {
                                 .append("    //Dependency for audit file")
                                 .append("\n")
                                 .append(repository)
-                                .append("   //added by CleverTap plug-in")
+                                .append("   //added by CleverTap Assistant")
                                 .append("\n")
                         }
                     }
@@ -162,7 +162,7 @@ class GradleManager_for_audit(private val project: Project) {
 //                                .append(line1)
 //                                .append("\n")
                                     .append("        maven { url 'https://jitpack.io' }")//line18
-                                    .append("   //added by CleverTap plug-in")
+                                    .append("   //added by CleverTap Assistant")
                                     .append("\n")
                                 maven_exist=true
 

@@ -157,7 +157,7 @@ class PushNotificationManager(private val project: Project) {
                         // if (line.contains("/")) {
                         sb
                             .append("import android.app.NotificationManager;")
-                            .append("        //added by CleverTap plug-in")
+                            .append("        //added by CleverTap Assistant")
                             .append("\n")
                         import_stmt=true
                         // }
@@ -176,8 +176,8 @@ class PushNotificationManager(private val project: Project) {
                     if (line.contains("setContentView")) {
                         // if (line.contains("/")) {
                         sb
-                            .append("CleverTapAPI.createNotificationChannel(getApplicationContext(),\"$contentTitleText\",\"mychannel\",\"lDescription\",NotificationManager.IMPORTANCE_MAX,true);")
-                            .append("        //added by CleverTap plug-in")
+                            .append("\t\tCleverTapAPI.createNotificationChannel(getApplicationContext(),\"$contentTitleText\",\"mychannel\",\"lDescription\",NotificationManager.IMPORTANCE_MAX,true);")
+                            .append("        //added by CleverTap Assistant")
                             .append("\n")
                             notification_channel_exist=true
                         // }

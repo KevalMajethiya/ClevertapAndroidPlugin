@@ -195,7 +195,7 @@ class ProfilePush(private val project: Project)
                     // if (line.contains("/")) {
                     sb
                         .append("import java.util.HashMap;")
-                        .append("                      //added by CleverTap plug-in")
+                        .append("                      //added by CleverTap Assistant")
                         .append("\n")
                     import_stmt_hashmap=true
                     // }
@@ -207,7 +207,7 @@ class ProfilePush(private val project: Project)
 
                     sb
                         .append("HashMap<String, Object> ProfilePush = new HashMap<String, Object>();")
-                        .append("  //added by CleverTap plug-in")
+                        .append("  //added by CleverTap Assistant")
                         .append("\n")
                     import_stmt_hashmap=true
 
@@ -220,7 +220,7 @@ class ProfilePush(private val project: Project)
                     if (line.contains("void onCreate")) {
                         sb
                             .append("        ProfilePush.put(\"USer Property_name \", \"value\");")
-                            .append("   //added by CleverTap plug-in")
+                            .append("   //added by CleverTap Assistant")
                             .append("\n")
 
                         context_exsit = true
@@ -234,7 +234,7 @@ class ProfilePush(private val project: Project)
                         sb
                             // .append("\n")
                             .append("        clevertapDefaultInstance.pushProfile(ProfilePush);")
-                            .append("     //added by CleverTap plug-in")
+                            .append("     //added by CleverTap Assistant")
                             .append("\n")
                         onuserlogin_method_exist = true
 
@@ -258,7 +258,7 @@ class ProfilePush(private val project: Project)
                         if (line.contains("void onCreate")) {
                             sb
                                 .append("        ProfilePush.put(\"USer Property_name \", \"value\");")
-                                .append("   //added by CleverTap plug-in")
+                                .append("   //added by CleverTap Assistant")
                                 .append("\n")
 
                             context_exsit = true
@@ -272,7 +272,7 @@ class ProfilePush(private val project: Project)
                             sb
                                 // .append("\n")
                                 .append("        clevertapDefaultInstance.pushProfile(ProfilePush);")
-                                .append("     //added by CleverTap plug-in")
+                                .append("     //added by CleverTap Assistant")
                                 .append("\n")
                             onuserlogin_method_exist = true
                             clevertap_instance=true

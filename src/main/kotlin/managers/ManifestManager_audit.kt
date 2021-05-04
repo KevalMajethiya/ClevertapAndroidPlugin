@@ -202,7 +202,7 @@ class ManifestManager_audit(private val project: Project) {
                 if (line.contains(Constants.MANIFEST)) {
                     if (line.contains(">")) {
                         sb
-                            .append("    <!-- Added by CleverTap Plugin-->")
+                            .append("    <!-- Added by CleverTap Assistant-->")
                             .append("\n")
                             .append("    <!-- Required to read logs -->")
                             .append("\n")
@@ -216,7 +216,7 @@ class ManifestManager_audit(private val project: Project) {
                 if (line.contains(Constants.MANIFEST)) {
                     if (line.contains(">")) {
                         sb
-                            .append("    <!-- Added by CleverTap Plugin-->")
+                            .append("    <!-- Added by CleverTap Assistant-->")
                             .append("\n")
                             .append("    <!-- Required to read and write data to external storage -->\n")
                             .append("\n")

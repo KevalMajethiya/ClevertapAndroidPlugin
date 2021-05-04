@@ -87,6 +87,13 @@
     <option name="active" path="ActionManager" hit="Active Tool Window" />
     <option name="tool" path="ActionManager" hit="Active Tool Window" />
     <option name="window" path="ActionManager" hit="Active Tool Window" />
+    <option name="add" path="ActionManager" hit="Add ClevertTap Events" />
+    <option name="cleverttap" path="ActionManager" hit="Add ClevertTap Events" />
+    <option name="events" path="ActionManager" hit="Add ClevertTap Events" />
+    <option name="add" path="ActionManager" hit="Add ClevertTap User Properties" />
+    <option name="cleverttap" path="ActionManager" hit="Add ClevertTap User Properties" />
+    <option name="properties" path="ActionManager" hit="Add ClevertTap User Properties" />
+    <option name="user" path="ActionManager" hit="Add ClevertTap User Properties" />
     <option name="actions" path="ActionManager" hit="Analysis Actions" />
     <option name="analysis" path="ActionManager" hit="Analysis Actions" />
     <option name="analyze" path="ActionManager" hit="Analyze" />

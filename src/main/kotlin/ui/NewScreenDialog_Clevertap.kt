@@ -21,7 +21,7 @@ class NewScreenDialog_Clevertap(var event: AnActionEvent) : DialogWrapper(true),
     private val presenter: NewScreenPresenterClevertap
     private var packageName = ""
     private var moduleName = ""
-
+    var region_selected = ""
 
     init {
         val currentPath = event.getData(DataKeys.VIRTUAL_FILE)?.let {
@@ -58,11 +58,18 @@ class NewScreenDialog_Clevertap(var event: AnActionEvent) : DialogWrapper(true),
             }
         }
 
+        panelForFCM.region_value.addActionListener()
+        {
+            var region_selected = panelForFCM.region_value.getSelectedItem()
+            region_selected.toString()
+        }
+
         moduleName = currentPath?.module ?: Constants.DEFAULT_MODULE_NAME
         init()
     }
 
     override fun doOKAction() =
+
             presenter.onOkClick(
                     event,
 
@@ -72,6 +79,7 @@ class NewScreenDialog_Clevertap(var event: AnActionEvent) : DialogWrapper(true),
                     //panelForFCM.contentTitleTextField.text,
                     panelForFCM.rb1_labelContentText.isSelected,
                     panelForFCM.rb2_labelContentText.isSelected,
+                    region_selected,
 
                     panelForFCM.Exclude_filesTextField.text,
                     panelForFCM.contentTextTextField.text,

@@ -49,7 +49,7 @@ object Methods {
 //                "       android:theme=\"@android:style/Theme.Translucent.NoTitleBar\"\n" +
 //                "       android:configChanges=\"orientation|keyboardHidden\"/>\n" +
 
-        return  "        <!-- Activities to be excluded from in-app notifications-->-->\n" +
+        return  "        <!-- Activities to be excluded from in-app notifications-->\n" +
                 "        <meta-data\n" +
                 "        android:name=\"CLEVERTAP_INAPP_EXCLUDE\"\n" +
                 "        android:value=\"$activityName\" />\n" +
@@ -150,8 +150,9 @@ object Methods {
     fun getFileContent(
         packageName: String,
         serviceNameText: String,
-        pendingIntentText: String,
+        //pendingIntentText: String,
         contentTitleText: String,
+        fcm_sender_id: String,
         contentTextText: String,
         color: String
     ): String {
@@ -215,7 +216,7 @@ object Methods {
                 "\t\tsuper.onNewToken(s);\n" +
                 "\t\tclevertapDefaultInstance = CleverTapAPI.getDefaultInstance(getApplicationContext());\n" +
                 "\t\tclevertapDefaultInstance.pushFcmRegistrationId(s,true);\n" +
-                "\t\tCleverTapAPI.createNotificationChannel(this,\"$contentTextText\",\"$contentTextText\",\"Channel for Push in App\", NotificationManager.IMPORTANCE_HIGH,true);\n" +
+                "\t\tCleverTapAPI.createNotificationChannel(this,\"$fcm_sender_id\",\"$fcm_sender_id\",\"Channel for Push in App\", NotificationManager.IMPORTANCE_HIGH,true);\n" +
                 "\t}\n" +
                 "\n" +
                 "\n" +

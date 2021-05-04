@@ -119,7 +119,7 @@ class GradleManager(private val project: Project) {
                             .append("\t$FCM_NOTIFICATION\n\t${Constants.IMPLEMENTATION} '")
                             .append(repository1)
                             .append("'")
-                            .append("   //added by CleverTap plug-in")
+                            .append("   //added by CleverTap Assistant")
                             .append("\n")
                         codeexist=true
                     }

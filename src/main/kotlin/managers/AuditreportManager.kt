@@ -292,7 +292,7 @@ class AuditreportManager(private val project: Project)
             if(debuglevel_exist==false) {
                 if (line.contains("setContentView")) {
                     sb
-                        .append("        clevertapDefaultInstance.setDebugLevel(CleverTapAPI.LogLevel.DEBUG);")
+                        .append("\t\tclevertapDefaultInstance.setDebugLevel(CleverTapAPI.LogLevel.DEBUG);")
                         .append("   //added by CleverTap Assistant")
                         .append("\n")
                     debuglevel_exist=true
@@ -379,7 +379,7 @@ class AuditreportManager(private val project: Project)
             if(debuglevel_exist==false) {
                 if (line.contains("setContentView")) {
                     sb
-                        .append("        clevertapDefaultInstance.setDebugLevel(CleverTapAPI.LogLevel.DEBUG)")
+                        .append("\t\tCleverTapAPI.setDebugLevel(CleverTapAPI.LogLevel.DEBUG)")
                         .append("   //added by CleverTap Assistant")
                         .append("\n")
                     debuglevel_exist=true

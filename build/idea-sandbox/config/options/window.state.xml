@@ -18,16 +18,16 @@
     <size key="GridCell.Tab.0.bottom.0.0.1280.800" width="1238" height="212" />
   </component>
   <component name="WindowManager">
-    <frame x="0" y="23" width="1280" height="721" />
+    <frame x="0" y="23" width="1280" height="716" />
     <layout>
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info id="Structure" order="1" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info content_ui="combo" id="Project" order="0" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info id="Structure" order="1" weight="0.25" />
       <window_info anchor="bottom" id="Run" order="2" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
@@ -54,13 +54,13 @@
     </state>
     <state x="921" y="555" width="356" height="156" key="ProcessPopupWindow/0.23.1280.716" timestamp="1616155760329" />
     <state x="921" y="559" width="356" height="158" key="ProcessPopupWindow/0.23.1280.721" timestamp="1616745854575" />
-    <state x="639" y="351" key="WELCOME_SCREEN" timestamp="1620377254998">
-      <screen x="0" y="23" width="1280" height="721" />
+    <state x="639" y="351" key="WELCOME_SCREEN" timestamp="1620631150897">
+      <screen x="0" y="23" width="1280" height="723" />
     </state>
     <state x="639" y="349" key="WELCOME_SCREEN/0.23.1280.715" timestamp="1620206681090" />
     <state x="639" y="349" key="WELCOME_SCREEN/0.23.1280.716" timestamp="1620308288337" />
     <state x="639" y="351" key="WELCOME_SCREEN/0.23.1280.721" timestamp="1620377254998" />
-    <state x="639" y="351" key="WELCOME_SCREEN/0.23.1280.723" timestamp="1619075592310" />
+    <state x="639" y="351" key="WELCOME_SCREEN/0.23.1280.723" timestamp="1620631150897" />
     <state x="639" y="352" key="WELCOME_SCREEN/0.23.1280.724" timestamp="1620291179856" />
   </component>
 </application>

@@ -44,7 +44,7 @@ class OnuserLogin_Cursor (var event: AnActionEvent)
                 document.insertString(ans,
                     "        HashMap<String, Object> OnUserLoginProperties = new HashMap<String, Object>();//added by CleverTap Assistant\n" +
                             "\t\tOnUserLoginProperties.put(\"USer Property_name \", \"value\");//added by CleverTap Assistant\n" +
-                            "\t\tclevertapDefaultInstance.onUserLogin(OnUserLoginProperties);//added by CleverTap Assistant"
+                            "\t\tclevertapDefaultInstance.onUserLogin(OnUserLoginProperties);//added by CleverTap Assistant\n"
                 )
             }
 
@@ -56,7 +56,7 @@ class OnuserLogin_Cursor (var event: AnActionEvent)
             ) {  var ans =document.getLineStartOffset(linenumber)
                 document.insertString(ans,"\t\tval OnUserLoginProperties =HashMap<String, Any>() //added by CleverTap Assistant\n" +
                         "\t\tOnUserLoginProperties[\"USer Property_name \"]=\"value\" //added by CleverTap Assistant\n" +
-                        "\t\tclevertapDefaultInstance?.onUserLogin(OnUserLoginProperties) //added by CleverTap Assistant")
+                        "\t\tclevertapDefaultInstance?.onUserLogin(OnUserLoginProperties) //added by CleverTap Assistant\n")
             }
 
         }

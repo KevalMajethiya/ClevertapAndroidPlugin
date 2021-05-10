@@ -41,7 +41,7 @@ class UserEventsWithProperties_cursor (var event: AnActionEvent)
             ) {  var ans =document.getLineStartOffset(linenumber)
                 document.insertString(ans,"\t\tHashMap<String, Object> eventProperties = new HashMap<String, Object>();//added by CleverTap Assistant\n" +
                         "\t\teventProperties.put(\"Event Property_name \", \"value\");//added by CleverTap Assistant\n" +
-                        "\t\tclevertapDefaultInstance.pushEvent(\"event_name\", eventProperties);//added by CleverTap Assistant")
+                        "\t\tclevertapDefaultInstance.pushEvent(\"event_name\", eventProperties);//added by CleverTap Assistant\n")
             }
         }
         if(file_extension=="kt")
@@ -51,7 +51,7 @@ class UserEventsWithProperties_cursor (var event: AnActionEvent)
             ) {  var ans =document.getLineStartOffset(linenumber)
                 document.insertString(ans,"\t\tval eventProperties =HashMap<String, Any>() //added by CleverTap Assistant\n" +
                         "\t\teventProperties[\"USer Property_name \"]=\"value\" //added by CleverTap Assistant\n" +
-                        "\t\tclevertapDefaultInstance?.pushEvent(\"event_name\", eventProperties) //added by CleverTap Assistant")
+                        "\t\tclevertapDefaultInstance?.pushEvent(\"event_name\", eventProperties) //added by CleverTap Assistant\n")
             }
 
         }

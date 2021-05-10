@@ -60,6 +60,11 @@ object Methods {
                 "        <!-- Adding CleverTap Credentials-->\n"+
 
                 "        <meta-data\n" +
+                "            android:name=\"CLEVERTAP_REGION\"\n" +
+                "            android:value=\"$region\"/>\n"+
+
+
+                "        <meta-data\n" +
                 "            android:name=\"CLEVERTAP_ACCOUNT_ID\"\n" +
                 "            android:value=\"$account_id\" />\n" +
                 "        \n" +
@@ -83,10 +88,7 @@ object Methods {
                     "            android:name=\"CLEVERTAP_USE_GOOGLE_AD_ID\"\n" +
                     "            android:value=\" \"/>\n"
 
-                }+
-                "        <meta-data\n" +
-                "            android:name=\"CLEVERTAP_REGION\"\n" +
-                "            android:value=\"$region\"/>\n"
+                }
 
 
 

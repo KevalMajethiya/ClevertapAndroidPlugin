@@ -3,10 +3,11 @@
     <id>CleverTap.CleverTap</id>
     <name>CleverTap Assistant (Beta)</name>
     <vendor email="jjideshnair8@gmail.com" >Clevertap</vendor>
-    <!-- Description of the plugin.
-    Plugin helps to integrate Clevertap in your app in less then 5 minutes.
-    -->
-    <description>Helps to integrate Clevertap in your app</description>
+
+        <description>Plugin helps to integrate Clevertap in your app in less then 5 minutes.
+        It helps to install the CleverTap SDK, track your  user events,enrich user profiles,
+        send push notifications and see this information within the CleverTap dashboard .
+        </description>
 
 
     <idea-version since-build="182.0"/>
@@ -19,20 +20,6 @@
     </extensions>
 
     <actions>
-<!--        <group id="outer" text="Sample" description="Sample desc">-->
-<!--            <add-to-group group-id="NewGroup" anchor="after" relative-to-action="NewDir"/>-->
-<!--            <action id="a1" class="action.SearchAction" text="Push Notification"/>-->
-<!--            <action id="a2" class="action.SearchAction" text="Audit Report"/>-->
-<!--&lt;!&ndash;            <action id="b1" class="action.SearchAction" text="B1"/>&ndash;&gt;-->
-<!--            <separator/>-->
-<!--            <group id="inner" text="Inner" popup="true">-->
-<!--                <action class="action.SearchAction" id="a3" text="A3"/
-                    use-shortcut-of="CleanPlugin.ID1" keymap="$default">>
-                    <keyboard-shortcut keymap="$default" first-keystroke="control alt e"/>-->
-
-<!--                <action class="action.SearchAction" id="a4" text="A4"/>-->
-<!--            </group>-->
-<!--        </group>-->
 
 
         <group id="inner" text="Clevertap Assistant" popup="true" icon="/icons/ctlogo2.png">
@@ -57,11 +44,6 @@
 
 
 
-        <!--        <action class="action.AccessorAction_nativedisplay"-->
-<!--                id="action.AccessorAction_nativedisplay"-->
-<!--                text="Clevertap Native Display"-->
-<!--                description="Add Clevertap nativedisplay">-->
-<!--            <add-to-group group-id="GenerateGroup" anchor="first"/>-->
 
 
         <action class="action.Auditreport"
@@ -70,24 +52,6 @@
                 description="Generating Audit Report">
             <add-to-group group-id="GenerateGroup" anchor="first"/>
         </action>
-<!--        <action class="action.AccessorAction"-->
-<!--                id="action.AccessorAction"-->
-<!--                text="Clevertap Events"-->
-<!--                description="Add Clevertap Events/User Properties">-->
-<!--            <add-to-group group-id="GenerateGroup" anchor="first"/>-->
-<!--        </action>-->
-<!--        <action class="action.AccessorAction_propfilePush"-->
-<!--                id="action.AccessorAction_Userproperties"-->
-<!--                text="Clevertap User Properties"-->
-<!--                description="Add Clevertap User Properties">-->
-<!--            <add-to-group group-id="GenerateGroup" anchor="first"/>-->
-<!--        </action>-->
-<!--        <action class="action.AccessorAction_onuserlogin"-->
-<!--                id="action.AccessorAction_Onuserlogin"-->
-<!--                text="Clevertap OnuserLogin"-->
-<!--                description="Add Clevertap Onuserlogin">-->
-<!--            <add-to-group group-id="GenerateGroup" anchor="first"/>-->
-<!--        </action>-->
         <action class="action.UserEvents"
                 id="action.AccessorAction"
                 text="Clevertap Events"
@@ -108,21 +72,6 @@
             <add-to-group group-id="GenerateGroup" anchor="first"/>
         </action>
 
-        <!--        <action class="action.AccessorAction_intialize"-->
-<!--                id="action.AccessorAction_intialize"-->
-<!--                text="Clevertap Initialization"-->
-<!--                description="Intialize Clevertap">-->
-<!--            <add-to-group group-id="GenerateGroup" anchor="first" />-->
-
-<!--        </action>-->
-
-<!--        <action class="action.google_service_file"-->
-<!--                id="action.google_service_file"-->
-<!--                text="Add Google_service_file"-->
-<!--                description="Add Google_servive_file">-->
-<!--            <add-to-group group-id="GenerateGroup" anchor="first"/>-->
-
-<!--        </action>-->
 
 
         <group id="events" text="Add ClevertTap Events" popup="true" icon="/icons/ctlogo3.png" >
@@ -166,43 +115,7 @@
                 <add-to-group group-id="EditorPopupMenu" anchor="first" />
             </action>
 
-<!--            <action class="action.Auditreport"-->
-<!--                    id="action.Auditreport1"-->
-<!--                    text="Audit Report"-->
-<!--                    description="Generating Audit Report"-->
-<!--                    icon="/icons/ctlogo3.png">-->
-<!--                <add-to-group group-id="EditorPopupMenu" anchor="first" />-->
-<!--            </action>-->
 
-
-
-<!--            <action class="action.SearchAction_FCM"-->
-<!--                    id="action.SearchAction_FCM1"-->
-<!--                    text="Add Push Notification with Clevertap"-->
-<!--                    description="Add FCM and Clevertap"-->
-<!--                    icon="/icons/ctlogo3.png">-->
-<!--                <add-to-group group-id="EditorPopupMenu" anchor="first" />-->
-<!--            </action>-->
-
-
-
-
-        <!--        <group id="events" text="Add Events" popup="true">-->
-<!--            <add-to-group group-id="GenerateGroup" anchor="first"/>-->
-
-<!--            <action class="action.Cursor"-->
-<!--                    id="action.Demo"-->
-<!--                    text="Only Event"-->
-<!--                    description="Demo">-->
-
-<!--            </action>-->
-<!--            <action class="action.Cursor"-->
-<!--                    id="action.Demo1"-->
-<!--                    text="Events with properties"-->
-<!--                    description="Demo">-->
-
-<!--            </action>-->
-<!--        </group>-->
         <action class="action.SearchAction_FCM"
                 id="action.SearchAction_FCM"
                 text="Add Push Notification with Clevertap"

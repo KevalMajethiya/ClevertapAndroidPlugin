@@ -2,7 +2,10 @@
   <id>CleverTap.CleverTap</id>
   <name>CleverTap Assistant (Beta)</name>
   <vendor email="jjideshnair8@gmail.com">Clevertap</vendor>
-  <description>Helps to integrate Clevertap in your app</description>
+  <description>Plugin helps to integrate Clevertap in your app in less then 5 minutes.
+        It helps to install the CleverTap SDK, track your  user events,enrich user profiles,
+        send push notifications and see this information within the CleverTap dashboard .
+        </description>
   <idea-version since-build="182.0"/>
   <depends>com.intellij.modules.lang</depends>
   <depends>org.jetbrains.kotlin</depends>

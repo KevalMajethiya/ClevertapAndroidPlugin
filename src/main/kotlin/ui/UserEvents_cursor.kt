@@ -42,7 +42,7 @@ class UserEvents_cursor (var event: AnActionEvent)
                 var ans = document.getLineStartOffset(linenumber)
                 document.insertString(
                     ans,
-                    "\t\tclevertapDefaultInstance.pushEvent(\"event_name\");//added by CleverTap Assistant"
+                    "\t\tclevertapDefaultInstance.pushEvent(\"event_name\");//added by CleverTap Assistant\n"
                 )
             }
         }
@@ -51,7 +51,7 @@ class UserEvents_cursor (var event: AnActionEvent)
             WriteCommandAction.runWriteCommandAction(
                 project
             ) {  var ans =document.getLineStartOffset(linenumber)
-                document.insertString(ans,"\t\tclevertapDefaultInstance?.pushEvent(\"event_name\")//added by CleverTap Assistant")
+                document.insertString(ans,"\t\tclevertapDefaultInstance?.pushEvent(\"event_name\")//added by CleverTap Assistant\n")
             }
         }
 

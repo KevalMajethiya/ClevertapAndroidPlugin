@@ -284,7 +284,7 @@ class ApplicationClassManager(private val project: Project)
             for (i in documentText.indices) {
                 var line = documentText[i]
                 if(import_stmt==false) {
-                    if (line.contains("package")) {
+                    if (line.contains("class")) {
                         sb.append("import com.clevertap.android.sdk.ActivityLifecycleCallback")
                         sb.append("\n")
                     }
@@ -311,7 +311,7 @@ class ApplicationClassManager(private val project: Project)
                             //.append(repository)
                             .append("// Must be called before super.onCreate()")
                             .append("\n")
-                            .append("        " + "ActivityLifecycleCallback.register(this)")
+                            .append("\t\tActivityLifecycleCallback.register(this)")
                             .append("   //added by CleverTap Assistant")
                             .append("\n")
                         c=true
@@ -340,7 +340,7 @@ class ApplicationClassManager(private val project: Project)
                             //.append(repository)
                             .append("// Must be called before super.onCreate()")
                             .append("\n")
-                            .append("        " + "ActivityLifecycleCallback.register(this)")
+                            .append("\t\tActivityLifecycleCallback.register(this)")
                             .append("   //added by CleverTap Assistant")
                             .append("\n")
                         c=true
@@ -355,7 +355,7 @@ class ApplicationClassManager(private val project: Project)
                             // .append(repository)
                             .append("// Must be called before super.onCreate()")
                             .append("\n")
-                            .append("    " + "ActivityLifecycleCallback.register(this)")
+                            .append("\t\tActivityLifecycleCallback.register(this)")
                             .append("   //added by CleverTap Assistant")
                             .append("\n")
                         c=true

@@ -48,7 +48,7 @@ class PushProfile_cursor (var event: AnActionEvent)
                     ans,
                     "\t\tHashMap<String, Object> ProfilePush = new HashMap<String, Object>();//added by CleverTap Assistant\n" +
                             "\t\tProfilePush.put(\"USer Property_name \", \"value\");//added by CleverTap Assistant\n" +
-                            "\t\tclevertapDefaultInstance.pushProfile(ProfilePush);//added by CleverTap Assistant"
+                            "\t\tclevertapDefaultInstance.pushProfile(ProfilePush);//added by CleverTap Assistant\n"
                 )
             }
 
@@ -60,7 +60,7 @@ class PushProfile_cursor (var event: AnActionEvent)
             ) {  var ans =document.getLineStartOffset(linenumber)
                 document.insertString(ans,"\t\tval ProfilePush =HashMap<String, Any>()//added by CleverTap Assistant\n" +
                         "\t\tProfilePush[\"USer Property_name\"]= \"value\"//added by CleverTap Assistant\n" +
-                        "\t\tclevertapDefaultInstance?.pushProfile(ProfilePush)//added by CleverTap Assistant") }
+                        "\t\tclevertapDefaultInstance?.pushProfile(ProfilePush)//added by CleverTap Assistant\n") }
 
         }
     }

@@ -15,6 +15,7 @@ class test(var event: AnActionEvent) {
     private var AuditreportManager:AuditreportManager?=null
     private var GradleManager_for_audit: GradleManager_for_audit?= null
     private var manifestManager_audit: ManifestManager_audit? = null
+    private  var createFCMfile:createFCMfile?=null
 
 
     init {
@@ -23,6 +24,7 @@ class test(var event: AnActionEvent) {
             AuditreportManager = AuditreportManager(project)
             GradleManager_for_audit= GradleManager_for_audit(project)
             manifestManager_audit = ManifestManager_audit(project)
+            createFCMfile=createFCMfile(project)
 
             try {
 
@@ -31,6 +33,11 @@ class test(var event: AnActionEvent) {
                     it.initapplicationclass()
 
                 }
+//                createFCMfile?.let{
+//
+//                    it.initapplicationclass(Methods.getFileContent1())
+//
+//                }
 
                 GradleManager_for_audit?.let {
                     if (it.initBuildGradle()) {

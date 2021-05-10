@@ -12,6 +12,7 @@ import com.intellij.openapi.vfs.VirtualFile
 import org.jetbrains.kotlin.idea.util.findModule
 
 import util.Constants
+import java.io.File
 import java.io.FileNotFoundException
 
 
@@ -124,13 +125,45 @@ class AuditreportManager(private val project: Project)
         // val ans2=ans1.replace("\"","")
         print(ans1)
         val basePath = project.basePath
-        projectBaseDir = LocalFileSystem.getInstance().findFileByPath(project.basePath +"/app/src/main/java/"+ans1+"/" + op +".java")
-        print(projectBaseDir)
+        //projectBaseDir = LocalFileSystem.getInstance().findFileByPath(project.basePath +"/app/src/main/java/"+ans1+"/" + op +".java")
+        //print(projectBaseDir)
+        var file = File(project.basePath +"/app/src/main/java/"+ans1+"/" + op +".java")
+        var file1 = File(project.basePath +"/app/src/main/java/"+ans1+"/" + op +".kt")
+        var java_file_exist = file.exists()
+        var kotlin_file_exist = file1.exists()
+        if(java_file_exist==true)
+        {
+            projectBaseDir = LocalFileSystem.getInstance().findFileByPath(project.basePath +"/app/src/main/java/"+ans1+"/" + op +".java")
+            val manifestVirtualFile: VirtualFile? = projectBaseDir
+            return if (manifestVirtualFile != null) {
+                androidapplicationclass = FileDocumentManager.getInstance().getDocument(manifestVirtualFile)
+                //androidapplicationclass1 = FileDocumentManager.getInstance().getDocument(manifestVirtualFile)
+
+                initiateauditreport()
+                true
+            } else {
+                false
+            }
+        }
+        if(kotlin_file_exist==true)
+        {
+            projectBaseDir = LocalFileSystem.getInstance().findFileByPath(project.basePath +"/app/src/main/java/"+ans1+"/" + op +".kt")
+            val manifestVirtualFile: VirtualFile? = projectBaseDir
+            return if (manifestVirtualFile != null) {
+                androidapplicationclass = FileDocumentManager.getInstance().getDocument(manifestVirtualFile)
+                //androidapplicationclass1 = FileDocumentManager.getInstance().getDocument(manifestVirtualFile)
+
+                initiateauditreport_kt()
+                true
+            } else {
+                false
+            }
+        }
+
         // projectBaseDir = LocalFileSystem.getInstance().findFileByPath(basePath!!)
         //projectBaseDir = LocalFileSystem.getInstance().findFileByPath(project.basePath +"/app/src/main/java")
 
-        // projectBaseDir = LocalFileSystem.getInstance().findFileByPath(basePath!!)
-        val manifestVirtualFile: VirtualFile? = projectBaseDir
+        // projectBaseDir = LocalFileSystem.getInstance().findFileByPath(basePath!!) //       val manifestVirtualFile: VirtualFile? = projectBaseDir
 //            .findChild(Constants.DEFAULT_MODULE_NAME)!!
 //            .findChild("src")!!
 //            .findChild("main")!!
@@ -141,13 +174,14 @@ class AuditreportManager(private val project: Project)
 //            .findChild("example")!!
 //            .findChild("demoapp1")!!
 //            .findChild("MainActivity.java")
-        return if (manifestVirtualFile != null) {
-            androidapplicationclass = FileDocumentManager.getInstance().getDocument(manifestVirtualFile)
-            initiateclevertap()
-            true
-        } else {
-            false
-        }
+//        return if (manifestVirtualFile != null) {
+//            androidapplicationclass = FileDocumentManager.getInstance().getDocument(manifestVirtualFile)
+//            initiateauditreport()
+//            true
+//        } else {
+//            false
+//        }
+        return true
     }
 
     fun checkinsertion()
@@ -159,27 +193,27 @@ class AuditreportManager(private val project: Project)
         for (i in documentText.indices)
         {
             var line = documentText[i]
-            if(line.contains("import android.content.Context;"))
+            if(line.contains("import android.content.Context"))
             {
                 import_stmt_context=true
 
             }
-            if(line.contains("import com.example.getauditreport.ReportGenerate;"))
+            if(line.contains("import com.example.getauditreport.ReportGenerate"))
             {
                 import_stmt_report_generate=true
 
             }
-            if(line.contains("Context context = getApplicationContext();"))
+            if(line.contains("context = getApplicationContext()"))
             {
                 context_exist=true
 
             }
-            if(line.contains("clevertapDefaultInstance.setDebugLevel(CleverTapAPI.LogLevel.DEBUG);"))
+            if(line.contains("clevertapDefaultInstance.setDebugLevel(CleverTapAPI.LogLevel.DEBUG)"))
             {
                 debuglevel_exist=true
 
             }
-            if(line.contains("ReportGenerate.run(context);"))
+            if(line.contains("ReportGenerate.run(context)"))
             {
                 reportgenerate_run_exist=true
 
@@ -192,7 +226,7 @@ class AuditreportManager(private val project: Project)
         }
     }
 
-    fun initiateclevertap() {
+    fun initiateauditreport() {
         checkinsertion()
         var c= codeexist
         // if(c==false) {
@@ -278,6 +312,94 @@ class AuditreportManager(private val project: Project)
         // }
 
     }
+
+    fun initiateauditreport_kt() {
+        checkinsertion()
+        var c= codeexist
+        // if(c==false) {
+        // val opp=launchingactivityname
+        val documentText =
+            androidapplicationclass!!.text.split("\n".toRegex()).dropLastWhile { it.isEmpty() }.toTypedArray()
+        val sb = StringBuilder()
+
+        for (i in documentText.indices) {
+            var line = documentText[i]
+            sb
+                .append(line)
+                .append("\n")
+            if( import_stmt_context==false) {
+                if (line.contains("package")) {
+                    sb
+                        .append("import android.content.Context")
+                        .append(" //added by CleverTap Assistant")
+                        //.append("   //Initializing the CleverTap SDK")
+                        .append("\n")
+                    import_stmt_context=true
+                    //.append("CleverTapAPI.createNotificationChannel(getApplicationContext(),\"3131\",\"mychannel\",\"lDescription\",NotificationManager.IMPORTANCE_MAX,true);")
+                    //.append("\n")
+                }
+            }
+            if(import_stmt_report_generate==false) {
+                if (line.contains("package")) {
+                    // if (line.contains("/")) {
+                    sb
+                        .append("import com.example.getauditreport.ReportGenerate")
+                        .append("                      //added by CleverTap Assistant")
+                        .append("\n")
+                    import_stmt_report_generate=true
+                    // }
+                }
+            }
+
+
+            if(context_exist==false) {
+                if (line.contains("fun onCreate")) {
+                    sb
+                        .append("\t\tvar context = getApplicationContext()")
+                        .append("   //added by CleverTap Assistant")
+                        .append("\n")
+                    context_exist=true
+
+
+                }
+            }
+
+
+            if(reportgenerate_run_exist==false) {
+                if (line.contains("setContentView")) {
+                    sb
+                        .append("        ReportGenerate.run(context)")
+                        .append("   //added by CleverTap Assistant")
+                        .append("\n")
+                    reportgenerate_run_exist=true
+
+
+                }
+            }
+            if(debuglevel_exist==false) {
+                if (line.contains("setContentView")) {
+                    sb
+                        .append("        clevertapDefaultInstance.setDebugLevel(CleverTapAPI.LogLevel.DEBUG)")
+                        .append("   //added by CleverTap Assistant")
+                        .append("\n")
+                    debuglevel_exist=true
+
+
+                }
+            }
+
+
+
+            // }
+
+        }
+
+
+        writeToManifest(sb)
+        // }
+
+    }
+
 
 
     private fun writeToManifest(stringBuilder: StringBuilder) {

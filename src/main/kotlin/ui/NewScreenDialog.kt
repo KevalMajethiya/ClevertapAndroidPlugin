@@ -74,7 +74,11 @@ class NewScreenDialog(var event: AnActionEvent) : DialogWrapper(true), NewScreen
 
                 //d()
                 //panelForFCM.isVisible=false
-                fcm1(event).show()
+                //fcm1(event).show()
+                event.project?.let{
+                    project->
+                    fcm1(event,project).show()
+                }
 //                d().f.isVisible=true
 //                d().f.toFront()
 //                d().f.setAlwaysOnTop(true)

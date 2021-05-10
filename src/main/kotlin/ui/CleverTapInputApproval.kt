@@ -50,11 +50,11 @@ class CleverTapInputApproval() : JPanel()
 //                "<br>"+
 //               // "}"+
 //                "</html>")
-        launchingact_content.setText("<html>"+"import com.clevertap.android.sdk.CleverTapAPI;"+"<br>"+
-                "\t\tclevertapDefaultInstance = CleverTapAPI.getDefaultInstance(getApplicationContext());"+"<br>"+
-                "</html>")
-        myapplication_class_content.setText("<html>"+"ActivityLifecycleCallback.register(this);"+"<br>"+
-                "</html>")
+//        launchingact_content.setText("<html>"+"import com.clevertap.android.sdk.CleverTapAPI;"+"<br>"+
+//                "\t\tclevertapDefaultInstance = CleverTapAPI.getDefaultInstance(getApplicationContext());"+"<br>"+
+//                "</html>")
+//        myapplication_class_content.setText("<html>"+"ActivityLifecycleCallback.register(this);"+"<br>"+
+//                "</html>")
 
 
 

@@ -9,6 +9,9 @@ import ui.*
 
 class IntializeCleverTap_cursor: AnAction() {
     override fun actionPerformed(event: AnActionEvent) {
+//        event.project?.let { project ->
+//            InitializeCleverTap_cursor(event, project)
+//        }
         InitializeCleverTap_cursor(event)
 
     }

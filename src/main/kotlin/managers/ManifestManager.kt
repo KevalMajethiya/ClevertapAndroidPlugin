@@ -22,6 +22,7 @@ class ManifestManager(private val project: Project) {
     private var clevertap_token:Boolean=false
     private var clevertap_use_google_ad_id:Boolean=false
     private var clevertap_Inapp_exclude:Boolean=false
+    private var region_exist:Boolean=false
 
 
     private var androidManifest: Document? = null
@@ -206,11 +207,20 @@ class ManifestManager(private val project: Project) {
             {
                 clevertap_Inapp_exclude=true
             }
+            if(line.contains("CLEVERTAP_REGION"))
+            {
+                region_exist=true
+            }
 
         }
     }
-    fun addData(repository1: String,repository2: String,repository3: String,clevertapid :String,clevertaptoken:String, usegoogle_ad_id_rb1:Boolean,usegoogle_ad_id_rb2:Boolean,clevertap_inappexclude:String) {
+    fun addData(repository1: String,repository2: String,repository3: String,clevertapid :String,clevertaptoken:String, usegoogle_ad_id_rb1:Boolean,usegoogle_ad_id_rb2:Boolean,region : String,clevertap_inappexclude:String) {
         checkbeforeinsertion()
+        var clevertapid=clevertapid.trim()
+        var clevertaptoken=clevertaptoken.trim()
+        var clevertap_inappexclude=clevertap_inappexclude.trim()
+
+
         var default_clevertap_class_exist=default_clevertap_class
         var internet_permission_exist=internet_permission
         var network_access_permission_exist=network_access_permission
@@ -283,7 +293,7 @@ class ManifestManager(private val project: Project) {
 
                 }
             }
-            if(clevertap_Id==false && clevertap_token==false && clevertap_use_google_ad_id==false && clevertap_Inapp_exclude==false) {
+            if(clevertap_Id==false && clevertap_token==false && clevertap_use_google_ad_id==false && clevertap_Inapp_exclude==false && region_exist==false) {
                 if (line.contains(Constants.APPLICATION)) {
                     if (line.contains("/")) {
                         sb
@@ -295,6 +305,7 @@ class ManifestManager(private val project: Project) {
                         clevertap_token=true
                         clevertap_use_google_ad_id=true
                         clevertap_Inapp_exclude=true
+                        region_exist=true
                     }
 
                 }
@@ -306,6 +317,7 @@ class ManifestManager(private val project: Project) {
                             .append("         <!-- Added by CleverTap Assistant-->")
                             .append("\n")
                             .append("         <!-- Adding CleverTap Account_Id-->")
+                            .append("\n")
                             .append("         <meta-data")
                             .append("\n")
                             .append("             android:name=\"CLEVERTAP_ACCOUNT_ID\"")
@@ -350,6 +362,24 @@ class ManifestManager(private val project: Project) {
                             .append("             android:value=\"$clevertap_usegoogleid_value\" />")
                             .append("\n")
                         clevertap_use_google_ad_id=true
+                    }
+                }
+            }
+            if(region_exist==false) {
+                if (line.contains(Constants.APPLICATION)) {
+                    if (line.contains("/")) {
+                        sb
+                            .append("         <!-- Added by CleverTap Assistant-->")
+                            .append("\n")
+                            .append("         <!-- Adding CleverTap Region -->")
+                            .append("\n")
+                            .append("         <meta-data")
+                            .append("\n")
+                            .append("             android:name=\"CLEVERTAP_REGION\"")
+                            .append("\n")
+                            .append("             android:value=\"$region\" />")
+                            .append("\n")
+                        region_exist=true
                     }
                 }
             }

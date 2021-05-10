@@ -22,30 +22,31 @@ class fcm : JPanel()
 
     init
     {
+
         val newPanel = JPanel(GridBagLayout())
         val inset = 6
         val constraints = GridBagConstraints()
         constraints.anchor = GridBagConstraints.WEST
         constraints.insets = Insets(inset, inset, inset, inset)
 
-        l3.setText("<html>"+"try {"+"<br>"+
-                "if (message.getData().size() > 0) {"+"<br>"+
-                "                Bundle extras = new Bundle();"+"<br>"+
-                "                for (Map.Entry<String, String> entry : message.getData().entrySet()) {"+"<br>"+
-                "                    extras.putString(entry.getKey(), entry.getValue());"+"<br>"+
-                "}"+"<br>"+
-                "                NotificationInfo info = CleverTapAPI.getNotificationInfo(extras);"+"<br>"+
-                "                if (info.fromCleverTap) {"+"<br>"+
-                "                    CleverTapAPI.createNotification(getApplicationContext(), extras);"+"<br>"+
-                "                } else {"+"<br>"+
-                "                    // not from CleverTap handle yourself or pass to another provider"+"<br>"+
-                "}"+"<br>"+
-                "}"+"<br>"+
-                "        } catch (Throwable t) {"+"<br>"+
-                "           Log.d(\"MYFCMLIST\", \"Error parsing FCM message\", t);"+"<br>"+
-                "}"+
-                "</html>")
-        l6.setText("<html>"+"@Override"+"<br>"+"public void onNewToken(@NonNull String s) {"+"<br>"+"    super.onNewToken(s);"+"<br>"+"\t\tclevertapDefaultInstance = CleverTapAPI.getDefaultInstance(getApplicationContext());"+"<br>"+"clevertapDefaultInstance.pushFcmRegistrationId(s,true);"+"<br>"+"}"+"<br>"+"</html>")
+//        l3.setText("<html>"+"try {"+"<br>"+
+//                "if (message.getData().size() > 0) {"+"<br>"+
+//                "                Bundle extras = new Bundle();"+"<br>"+
+//                "                for (Map.Entry<String, String> entry : message.getData().entrySet()) {"+"<br>"+
+//                "                    extras.putString(entry.getKey(), entry.getValue());"+"<br>"+
+//                "}"+"<br>"+
+//                "                NotificationInfo info = CleverTapAPI.getNotificationInfo(extras);"+"<br>"+
+//                "                if (info.fromCleverTap) {"+"<br>"+
+//                "                    CleverTapAPI.createNotification(getApplicationContext(), extras);"+"<br>"+
+//                "                } else {"+"<br>"+
+//                "                    // not from CleverTap handle yourself or pass to another provider"+"<br>"+
+//                "}"+"<br>"+
+//                "}"+"<br>"+
+//                "        } catch (Throwable t) {"+"<br>"+
+//                "           Log.d(\"MYFCMLIST\", \"Error parsing FCM message\", t);"+"<br>"+
+//                "}"+
+//                "</html>")
+//        l6.setText("<html>"+"@Override"+"<br>"+"public void onNewToken(@NonNull String s) {"+"<br>"+"    super.onNewToken(s);"+"<br>"+"\t\tclevertapDefaultInstance = CleverTapAPI.getDefaultInstance(getApplicationContext());"+"<br>"+"clevertapDefaultInstance.pushFcmRegistrationId(s,true);"+"<br>"+"}"+"<br>"+"</html>")
 
 
         constraints.gridx = 0

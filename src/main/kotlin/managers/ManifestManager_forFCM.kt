@@ -127,7 +127,7 @@ class ManifestManager_forFCM(private val project: Project) {
                             .append("\n")
                             .append("        <service")
                             .append("\n")
-                            .append("             android:name=\"com.clevertap.android.sdk.pushnotification.fcm."+fcmservice_name+"\"")
+                            .append("             android:name=\".fcm."+fcmservice_name+"\"")
                             .append("\n")
                             .append("             android:exported=\"false\">")
                             .append("\n")

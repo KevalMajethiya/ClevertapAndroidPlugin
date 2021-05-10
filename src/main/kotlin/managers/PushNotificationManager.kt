@@ -8,6 +8,7 @@ import com.intellij.openapi.project.Project
 import com.intellij.openapi.vfs.LocalFileSystem
 import com.intellij.openapi.vfs.VirtualFile
 import util.Constants
+import java.io.File
 import java.io.FileNotFoundException
 
 class PushNotificationManager(private val project: Project) {
@@ -103,17 +104,50 @@ class PushNotificationManager(private val project: Project) {
         var op1=packagename
         var ans1=op1.replace(".","/")
         val basePath = project.basePath
-        projectBaseDir = LocalFileSystem.getInstance().findFileByPath(project.basePath +"/app/src/main/java/"+ ans1 + "/" + op + ".java")
+       // projectBaseDir = LocalFileSystem.getInstance().findFileByPath(project.basePath +"/app/src/main/java/"+ ans1 + "/" + op + ".java")
        // projectBaseDir = LocalFileSystem.getInstance().findFileByPath(basePath!!)
-        val manifestVirtualFile: VirtualFile? = projectBaseDir
-        return if (manifestVirtualFile != null) {
-            launching_activity = FileDocumentManager.getInstance().getDocument(manifestVirtualFile)
-            addnotificationchannel(contentTitleText)
-            true
+        var file = File(project.basePath +"/app/src/main/java/"+ans1+"/" + op +".java")
+        var file1 = File(project.basePath +"/app/src/main/java/"+ans1+"/" + op +".kt")
+        var java_file_exist = file.exists()
+        var kotlin_file_exist = file1.exists()
+        if(java_file_exist==true)
+        {
+            projectBaseDir = LocalFileSystem.getInstance().findFileByPath(project.basePath +"/app/src/main/java/"+ans1+"/" + op +".java")
+            val manifestVirtualFile: VirtualFile? = projectBaseDir
+            return if (manifestVirtualFile != null) {
+                launching_activity = FileDocumentManager.getInstance().getDocument(manifestVirtualFile)
+                //androidapplicationclass1 = FileDocumentManager.getInstance().getDocument(manifestVirtualFile)
 
-        } else {
-            false
+                addnotificationchannel(contentTitleText)
+                true
+            } else {
+                false
+            }
         }
+        if(kotlin_file_exist==true)
+        {
+            projectBaseDir = LocalFileSystem.getInstance().findFileByPath(project.basePath +"/app/src/main/java/"+ans1+"/" + op +".kt")
+            val manifestVirtualFile: VirtualFile? = projectBaseDir
+            return if (manifestVirtualFile != null) {
+                launching_activity = FileDocumentManager.getInstance().getDocument(manifestVirtualFile)
+                //androidapplicationclass1 = FileDocumentManager.getInstance().getDocument(manifestVirtualFile)
+
+                addnotificationchannel_kt(contentTitleText)
+                true
+            } else {
+                false
+            }
+        }
+//        val manifestVirtualFile: VirtualFile? = projectBaseDir
+//        return if (manifestVirtualFile != null) {
+//            launching_activity = FileDocumentManager.getInstance().getDocument(manifestVirtualFile)
+//            addnotificationchannel(contentTitleText)
+//            true
+//
+//        } else {
+//            false
+//        }
+        return true
     }
 
     fun checkbeforeinsertion()
@@ -129,7 +163,7 @@ class PushNotificationManager(private val project: Project) {
                 notification_channel_exist=true
 
             }
-            if(line.contains("import android.app.NotificationManager;"))
+            if(line.contains("import android.app.NotificationManager"))
             {
                 import_stmt=true
 
@@ -187,6 +221,53 @@ class PushNotificationManager(private val project: Project) {
             }
             writeToManifest(sb)
        // }
+    }
+
+    fun addnotificationchannel_kt(contentTitleText:String) {
+        checkbeforeinsertion()
+        //if(notification_channel_exist==false) {
+        val documentText =launching_activity!!.text.split("\n".toRegex()).dropLastWhile { it.isEmpty() }.toTypedArray()
+        val sb = StringBuilder()
+        for (i in documentText.indices) {
+            val line = documentText[i]
+            sb
+                .append(line)
+                .append("\n")
+            if(import_stmt==false) {
+                if (line.contains("package")) {
+                    // if (line.contains("/")) {
+                    sb
+                        .append("import android.app.NotificationManager")
+                        .append("        //added by CleverTap Assistant")
+                        .append("\n")
+                    import_stmt=true
+                    // }
+                }
+            }
+//                if(import_stmt_hashmap==false) {
+//                    if (line.contains("package")) {
+//                        // if (line.contains("/")) {
+//                        sb
+//                            .append("import java.util.HashMap;")
+//                            .append("\n")
+//                        // }
+//                    }
+//                }
+            if(notification_channel_exist==false) {
+                if (line.contains("setContentView")) {
+                    // if (line.contains("/")) {
+                    sb
+                        .append("\t\tCleverTapAPI.createNotificationChannel(getApplicationContext(),\"$contentTitleText\",\"mychannel\",\"lDescription\",NotificationManager.IMPORTANCE_MAX,true)")
+                        .append("        //added by CleverTap Assistant")
+                        .append("\n")
+                    notification_channel_exist=true
+                    // }
+                }
+            }
+
+        }
+        writeToManifest(sb)
+        // }
     }
 
     private fun writeToManifest(stringBuilder: StringBuilder) {

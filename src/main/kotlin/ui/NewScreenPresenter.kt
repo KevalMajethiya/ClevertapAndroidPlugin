@@ -16,6 +16,7 @@ import data.repository.ModuleRepository
 import managers.GradleManager_for_fcm
 import managers.ManifestManager_forFCM
 import managers.PushNotificationManager
+import managers.check_language
 import util.Constants
 import util.Methods
 import java.io.FileNotFoundException
@@ -68,7 +69,10 @@ class NewScreenPresenter(
         //fcm1: fcm1
     ) {
         event.project?.let { project ->
-            FCMApprovalDialog(event,serviceNameText,contentTitleText,fcm_sender_id,dependencyVersionText,IsRadiobuttonrb1Selected,IsRadiobuttonrb2Selected).show()
+            var check= check_language(project)
+            var lang= check.find_language()
+
+            FCMApprovalDialog(event,serviceNameText,contentTitleText,fcm_sender_id,dependencyVersionText,IsRadiobuttonrb1Selected,IsRadiobuttonrb2Selected,lang).show()
 
 //            gradleManagerForfcm = GradleManager_for_fcm(project)
 //            manifestManagerForFCM = ManifestManager_forFCM(project)

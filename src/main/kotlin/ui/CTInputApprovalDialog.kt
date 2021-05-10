@@ -13,8 +13,8 @@ import java.awt.event.ActionEvent
 import java.awt.event.ActionListener
 import javax.swing.JComponent
 
-class CTInputApprovalDialog(var event: AnActionEvent,Account_id:String,Account_token:String,use_google_ad_id_rb1:Boolean,use_google_ad_id_rb2: Boolean, Exclude_filesText:String,applicationclassname:String,IsRadiobuttonrb1Selected:Boolean) : DialogWrapper(true),  NewScreenView {
 
+class CTInputApprovalDialog(var event: AnActionEvent,Account_id:String,Account_token:String,use_google_ad_id_rb1:Boolean,use_google_ad_id_rb2: Boolean, region_selected : String,Exclude_filesText:String,applicationclassname:String,IsRadiobuttonrb1Selected:Boolean,lang:String) : DialogWrapper(true),  NewScreenView {
     private val panelForFCM1 = CleverTapInputApproval()
     private val panelForFCM = ClevertapInputPanel()
 
@@ -31,8 +31,11 @@ class CTInputApprovalDialog(var event: AnActionEvent,Account_id:String,Account_t
     private var Exclude_files =Exclude_filesText
     private var applicationclassname = applicationclassname
     private var Radiobuttonrb1Selected = IsRadiobuttonrb1Selected
+    private var region_selected = region_selected
+    private var lang= lang
 
     init {
+
         val currentPath = event.getData(DataKeys.VIRTUAL_FILE)?.let {
             val module = ModuleUtil.findModuleForFile(it, event.project!!)?.name ?: Constants.DEFAULT_MODULE_NAME
             CurrentPath(it.path, it.isDirectory, module)
@@ -62,6 +65,30 @@ class CTInputApprovalDialog(var event: AnActionEvent,Account_id:String,Account_t
             currentPath
 
         )
+        if(lang=="java") {
+            panelForFCM1.launchingact_content.setText(
+                "<html>" + "import com.clevertap.android.sdk.CleverTapAPI;" + "<br>" +
+                        "\t\tCleverTapAPI clevertapDefaultInstance = CleverTapAPI.getDefaultInstance(getApplicationContext());" + "<br>" +
+                        "</html>"
+            )
+            panelForFCM1.myapplication_class_content.setText("<html>"+ "import com.clevertap.android.sdk.ActivityLifecycleCallback;" + "<br>" +
+                    "ActivityLifecycleCallback.register(this);"+"<br>"+
+                    "</html>")
+        }
+        if(lang=="kotlin") {
+            panelForFCM1.launchingact_content.setText(
+                "<html>" + "import com.clevertap.android.sdk.CleverTapAPI" + "<br>" +
+                        "\t\tclevertapDefaultInstance = CleverTapAPI.getDefaultInstance(getApplicationContext())" + "<br>" +
+                        "</html>"
+            )
+            panelForFCM1.myapplication_class_content.setText("<html>"+"import com.clevertap.android.sdk.ActivityLifecycleCallback" + "<br>"
+                    +"ActivityLifecycleCallback.register(this)"+"<br>"+
+                    "</html>")
+        }
+
+
+
+
         if(google_ad_id_rb1==true)
         {
             use_google_ad_id="1"
@@ -95,6 +122,9 @@ class CTInputApprovalDialog(var event: AnActionEvent,Account_id:String,Account_t
 
                             "        \t\tandroid:name=\"CLEVERTAP_USE_GOOGLE_AD_ID\"" + "<br>" +
                             "        \t\tandroid:value=\"$use_google_ad_id \" /&gt" + "<br>" +
+                            "&lt meta-data" + "<br>" +
+                            "        \t\tandroid:name=\"CLEVERTAP_REGION\"" + "<br>" +
+                            "        \t\tandroid:value=\"$region_selected \" /&gt" + "<br>" +
                             "<br>" +
                             "</html>"
                 )
@@ -123,6 +153,9 @@ class CTInputApprovalDialog(var event: AnActionEvent,Account_id:String,Account_t
                         "&lt meta-data" + "<br>" +
                         "        \t\tandroid:name=\"CLEVERTAP_USE_GOOGLE_AD_ID\"" + "<br>" +
                         "        \t\tandroid:value=\"$use_google_ad_id \" /&gt" + "<br>" +
+                        "&lt meta-data" + "<br>" +
+                        "        \t\tandroid:name=\"CLEVERTAP_REGION\"" + "<br>" +
+                        "        \t\tandroid:value=\"$region_selected \" /&gt" + "<br>" +
                         "<br>" +
                         "</html>"
             )
@@ -156,6 +189,7 @@ class CTInputApprovalDialog(var event: AnActionEvent,Account_id:String,Account_t
             ac_token,
             google_ad_id_rb1,
             google_ad_id_rb2,
+            region_selected,
             Exclude_files,
 
             //panelForFCM.serviceNameTextField.text,

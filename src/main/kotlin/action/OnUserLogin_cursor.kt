@@ -9,6 +9,11 @@ import ui.*
 
 class OnUserLogin_cursor: AnAction() {
     override fun actionPerformed(event: AnActionEvent) {
+
+//        event.project?.let{
+//            project ->
+//            OnuserLogin_Cursor(event,project)
+//        }
         OnuserLogin_Cursor(event)
 
     }

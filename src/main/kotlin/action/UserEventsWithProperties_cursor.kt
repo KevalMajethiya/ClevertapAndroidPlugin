@@ -12,6 +12,9 @@ import ui.UserEventsWithProperties_cursor
 
 class UserEventsWithProperties_cursor: AnAction() {
     override fun actionPerformed(event: AnActionEvent) {
+//        event.project?.let { project ->
+//            UserEventsWithProperties_cursor(event,project)
+//        }
         UserEventsWithProperties_cursor(event)
 
     }

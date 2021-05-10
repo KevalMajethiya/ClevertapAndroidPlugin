@@ -2,27 +2,50 @@
   <component name="RecentProjectsManager">
     <option name="additionalInfo">
       <map>
-        <entry key="$USER_HOME$/AndroidStudioProjects/CT">
+        <entry key="$USER_HOME$/AndroidStudioProjects/KotlinDemo">
           <value>
-            <RecentProjectMetaInfo projectWorkspaceId="1rhZjGdf6XWItrkXLm0PDd1ntrh">
+            <RecentProjectMetaInfo projectWorkspaceId="1s9NKrnfL5xvCTDlfQkdaCJrrqw">
               <option name="binFolder" value="$APPLICATION_HOME_DIR$/bin" />
               <option name="build" value="AI-201.8743.12.41.7042882" />
-              <option name="buildTimestamp" value="1608424772162" />
-              <frame x="0" y="23" width="1280" height="715" />
+              <option name="buildTimestamp" value="1608424742843" />
               <option name="productionCode" value="AI" />
-              <option name="projectOpenTimestamp" value="1619772886218" />
+              <option name="projectOpenTimestamp" value="1620308227694" />
             </RecentProjectMetaInfo>
           </value>
         </entry>
-        <entry key="$USER_HOME$/AndroidStudioProjects/Demo">
+        <entry key="$USER_HOME$/AndroidStudioProjects/MyApp">
           <value>
-            <RecentProjectMetaInfo projectWorkspaceId="1s1QSf7MRc74UI57ug2Leh4WyCd">
+            <RecentProjectMetaInfo projectWorkspaceId="1s4I8okvQybQDTyxJlk8MjivKIb">
               <option name="binFolder" value="$APPLICATION_HOME_DIR$/bin" />
               <option name="build" value="AI-201.8743.12.41.7042882" />
-              <option name="buildTimestamp" value="1608424744418" />
+              <option name="buildTimestamp" value="1608424796927" />
               <frame x="0" y="23" width="1280" height="716" />
               <option name="productionCode" value="AI" />
-              <option name="projectOpenTimestamp" value="1620041716873" />
+              <option name="projectOpenTimestamp" value="1620367955731" />
+            </RecentProjectMetaInfo>
+          </value>
+        </entry>
+        <entry key="$USER_HOME$/AndroidStudioProjects/CT">
+          <value>
+            <RecentProjectMetaInfo projectWorkspaceId="1sC5AcPYQllFrNjoNeIHKt7X0Ej">
+              <option name="binFolder" value="$APPLICATION_HOME_DIR$/bin" />
+              <option name="build" value="AI-201.8743.12.41.7042882" />
+              <option name="buildTimestamp" value="1608424796927" />
+              <frame x="0" y="23" width="1280" height="715" />
+              <option name="productionCode" value="AI" />
+              <option name="projectOpenTimestamp" value="1620368032682" />
+            </RecentProjectMetaInfo>
+          </value>
+        </entry>
+        <entry key="$USER_HOME$/AndroidStudioProjects/My">
+          <value>
+            <RecentProjectMetaInfo projectWorkspaceId="1sCEGBI3m9LGOsv0ADTxSazEwyo">
+              <option name="binFolder" value="$APPLICATION_HOME_DIR$/bin" />
+              <option name="build" value="AI-201.8743.12.41.7042882" />
+              <option name="buildTimestamp" value="1608424768809" />
+              <frame x="0" y="23" width="1280" height="721" />
+              <option name="productionCode" value="AI" />
+              <option name="projectOpenTimestamp" value="1620377198877" />
             </RecentProjectMetaInfo>
           </value>
         </entry>
@@ -31,8 +54,10 @@
     <option name="lastProjectLocation" value="$USER_HOME$/AndroidStudioProjects" />
     <option name="recentPaths">
       <list>
-        <option value="$USER_HOME$/AndroidStudioProjects/Demo" />
+        <option value="$USER_HOME$/AndroidStudioProjects/My" />
         <option value="$USER_HOME$/AndroidStudioProjects/CT" />
+        <option value="$USER_HOME$/AndroidStudioProjects/MyApp" />
+        <option value="$USER_HOME$/AndroidStudioProjects/KotlinDemo" />
       </list>
     </option>
   </component>

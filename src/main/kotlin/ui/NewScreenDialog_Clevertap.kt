@@ -60,8 +60,8 @@ class NewScreenDialog_Clevertap(var event: AnActionEvent) : DialogWrapper(true),
 
         panelForFCM.region_value.addActionListener()
         {
-            var region_selected = panelForFCM.region_value.getSelectedItem()
-            region_selected.toString()
+//            var region_selected = panelForFCM.region_value.getSelectedItem()
+//            region_selected.toString()
         }
 
         moduleName = currentPath?.module ?: Constants.DEFAULT_MODULE_NAME
@@ -79,7 +79,8 @@ class NewScreenDialog_Clevertap(var event: AnActionEvent) : DialogWrapper(true),
                     //panelForFCM.contentTitleTextField.text,
                     panelForFCM.rb1_labelContentText.isSelected,
                     panelForFCM.rb2_labelContentText.isSelected,
-                    region_selected,
+                    //region_selected,
+                    panelForFCM.region_value.getSelectedItem().toString(),
 
                     panelForFCM.Exclude_filesTextField.text,
                     panelForFCM.contentTextTextField.text,

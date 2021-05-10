@@ -10,6 +10,7 @@ import org.jetbrains.kotlin.idea.util.findModule
 import ui.NewScreenDialog_Clevertap
 
 import util.Constants
+import java.io.File
 import java.io.FileNotFoundException
 import java.util.logging.Logger
 
@@ -22,6 +23,7 @@ class ApplicationClassManager(private val project: Project)
     var radiobuttonvalue : Boolean=false
     private var packagename:String=""
     private var codeexist:Boolean=false
+   private var import_stmt:Boolean=false
 
     private var projectBaseDir: VirtualFile? = null
 
@@ -93,7 +95,40 @@ class ApplicationClassManager(private val project: Project)
 
         val applicationfilename=demo
         //print(applicationfilename)
-        projectBaseDir = LocalFileSystem.getInstance().findFileByPath(project.basePath +"/app/src/main/java/"+ ans1 +"/" + applicationfilename +".java")
+        //projectBaseDir = LocalFileSystem.getInstance().findFileByPath(project.basePath +"/app/src/main/java/"+ ans1 +"/" + applicationfilename +".java")
+        var file = File(project.basePath +"/app/src/main/java/"+ans1+"/" + applicationfilename +".java")
+        var file1 = File(project.basePath +"/app/src/main/java/"+ans1+"/" + applicationfilename +".kt")
+        var java_file_exist = file.exists()
+        var kotlin_file_exist = file1.exists()
+        if(java_file_exist==true)
+        {
+            projectBaseDir = LocalFileSystem.getInstance().findFileByPath(project.basePath +"/app/src/main/java/"+ans1+"/" + applicationfilename +".java")
+            val manifestVirtualFile: VirtualFile? = projectBaseDir
+            return if (manifestVirtualFile != null) {
+                androidapplicationclass = FileDocumentManager.getInstance().getDocument(manifestVirtualFile)
+                //androidapplicationclass1 = FileDocumentManager.getInstance().getDocument(manifestVirtualFile)
+
+                addapplicationclassdetails()
+                true
+            } else {
+                false
+            }
+        }
+        if(kotlin_file_exist==true)
+        {
+            projectBaseDir = LocalFileSystem.getInstance().findFileByPath(project.basePath +"/app/src/main/java/"+ans1+"/" + applicationfilename +".kt")
+            val manifestVirtualFile: VirtualFile? = projectBaseDir
+            return if (manifestVirtualFile != null) {
+                androidapplicationclass = FileDocumentManager.getInstance().getDocument(manifestVirtualFile)
+                //androidapplicationclass1 = FileDocumentManager.getInstance().getDocument(manifestVirtualFile)
+
+                addapplicationclassdetails_kt()
+                true
+            } else {
+                false
+            }
+        }
+
         val manifestVirtualFile: VirtualFile? = projectBaseDir
 //            .findChild(Constants.DEFAULT_MODULE_NAME)!!
 //            .findChild("src")!!
@@ -127,6 +162,11 @@ class ApplicationClassManager(private val project: Project)
                 codeexist=true
 
             }
+            if(line.contains("import com.clevertap.android.sdk.ActivityLifecycleCallback"))
+            {
+                import_stmt=true
+
+            }
         }
     }
     fun addapplicationclassdetails() {
@@ -140,6 +180,12 @@ class ApplicationClassManager(private val project: Project)
             if (radiobuttonvalue == true) {
                 for (i in documentText.indices) {
                     var line = documentText[i]
+                    if(import_stmt==false) {
+                        if (line.contains("package")) {
+                            sb.append("import com.clevertap.android.sdk.ActivityLifecycleCallback;")
+                            sb.append("\n")
+                        }
+                    }
                     if(c==false) {
                         // var line1= documentText[i]
                         if (line.contains("public void onCreate() { super.onCreate();")) {
@@ -226,6 +272,110 @@ class ApplicationClassManager(private val project: Project)
         //}
 
     }
+    fun addapplicationclassdetails_kt() {
+        checkbeforeinsertion()
+        var c= codeexist
+        // if(c==false) {
+        var rnabs = radiobuttonvalue
+        val documentText =
+            androidapplicationclass!!.text.split("\n".toRegex()).dropLastWhile { it.isEmpty() }.toTypedArray()
+        val sb = StringBuilder()
+        if (radiobuttonvalue == true) {
+            for (i in documentText.indices) {
+                var line = documentText[i]
+                if(import_stmt==false) {
+                    if (line.contains("package")) {
+                        sb.append("import com.clevertap.android.sdk.ActivityLifecycleCallback")
+                        sb.append("\n")
+                    }
+                }
+                if(c==false) {
+                    // var line1= documentText[i]
+                    if (line.contains(" override fun onCreate() { super.onCreate()")) {
+                        val ans = line
+                        val ans1 = ans.split("{")
+                        val ans2 = ans1[0]
+                        val ans3 = ans1[1]
+                        line.split("{")
+                        //line=line[0].toString()
+                        line = line[0].toString()
+
+                        sb
+                            //.append("ActivityLifecycleCallback.register(this);")
+                            .append(ans2)
+                            .append("\n")
+                            .append("    {")
+                            .append("\n")
+                            .append("       " + ans3)
+                            .append("\n")
+                            //.append(repository)
+                            .append("// Must be called before super.onCreate()")
+                            .append("\n")
+                            .append("        " + "ActivityLifecycleCallback.register(this)")
+                            .append("   //added by CleverTap Assistant")
+                            .append("\n")
+                        c=true
+
+
+                    }
+                    if (line.contains("{ super.onCreate()")) {
+                        val ans = line
+                        val ans1 = ans.split("{")
+                        val ans2 = ans1[1]
+                        //val ans3=ans1[1]
+                        line.split("{")
+                        //line=line[0].toString()
+                        line = line[0].toString()
+
+                        sb
+                            //.append("ActivityLifecycleCallback.register(this);")
+                            .append("{")
+                            .append("\n")
+                            .append(ans2)
+                            .append("\n")
+
+
+                            // .append("       "+ans3)
+                            // .append("\n")
+                            //.append(repository)
+                            .append("// Must be called before super.onCreate()")
+                            .append("\n")
+                            .append("        " + "ActivityLifecycleCallback.register(this)")
+                            .append("   //added by CleverTap Assistant")
+                            .append("\n")
+                        c=true
+
+
+                    }
+                    if (line.contains(" super.onCreate()")) {
+
+                        //  if (line.contains("{"))
+                        //  {
+                        sb
+                            // .append(repository)
+                            .append("// Must be called before super.onCreate()")
+                            .append("\n")
+                            .append("    " + "ActivityLifecycleCallback.register(this)")
+                            .append("   //added by CleverTap Assistant")
+                            .append("\n")
+                        c=true
+                        //   }
+
+                    }
+                }
+
+                sb
+                    .append(line)
+                    .append("\n")
+                line = documentText[i]
+
+            }
+        }
+        writeToManifest(sb)
+        //}
+
+    }
+
 
     private fun writeToManifest(stringBuilder: StringBuilder) {
         val application = ApplicationManager.getApplication()

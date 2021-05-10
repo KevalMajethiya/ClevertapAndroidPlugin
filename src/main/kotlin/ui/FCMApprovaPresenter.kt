@@ -13,6 +13,7 @@ import data.repository.ModuleRepository
 import managers.GradleManager_for_fcm
 import managers.ManifestManager_forFCM
 import managers.PushNotificationManager
+import managers.createFCMfile
 import util.Constants
 import util.Methods
 import java.io.FileNotFoundException
@@ -42,6 +43,7 @@ class FCMApprovaPresenter(
     private var gradleManagerForfcm: GradleManager_for_fcm? = null
     private var manifestManagerForFCM: ManifestManager_forFCM? = null
     private var pushnotificationmanager: PushNotificationManager? = null
+    private  var createFCMfile: createFCMfile?=null
 
     fun onLoadView() {
         view.showPackage(packageExtractor.extractFromCurrentPath())
@@ -69,6 +71,7 @@ class FCMApprovaPresenter(
             gradleManagerForfcm = GradleManager_for_fcm(project)
             manifestManagerForFCM = ManifestManager_forFCM(project)
             pushnotificationmanager= PushNotificationManager(project)
+            createFCMfile= createFCMfile(project)
             try {
                 gradleManagerForfcm?.let {
                     if(IsRadiobuttonrb2Selected==true) {
@@ -111,25 +114,31 @@ class FCMApprovaPresenter(
                         it.initlaunchingactivity(contentTitleText)
                        // it.addnotificationchannel(contentTitleText)
 
-
-
                 }
                 if(IsRadiobuttonrb2Selected==true) {
-                writeActionDispatcher.dispatch {
-                   fileCreator.createScreenFiles(
-                        packageName,
-                        serviceNameText,
-                        //pendingIntentText,
-                        contentTitleText,
-                        fcm_sender_id,
-                        dependencyVersionText,
-                        //contentTextText,
-                        isNeedReadMeForInstructions,
-                        moduleName,
-                        Methods.checkPrimaryColorInColorsFile(project)
-                    )
+                    createFCMfile?.let {
+
+                        it.initapplicationclass( serviceNameText,fcm_sender_id)
+
+
+                    }
                 }
-                 }
+//                if(IsRadiobuttonrb2Selected==true) {
+//                writeActionDispatcher.dispatch {
+//                   fileCreator.createScreenFiles(
+//                        packageName,
+//                        serviceNameText,
+//                        //pendingIntentText,
+//                        contentTitleText,
+//                        fcm_sender_id,
+//                        dependencyVersionText,
+//                        //contentTextText,
+//                        isNeedReadMeForInstructions,
+//                        moduleName,
+//                        Methods.checkPrimaryColorInColorsFile(project)
+//                    )
+//                }
+//                 }
                 ApplicationManager.getApplication()
                     .invokeLater({
                         Notifications.Bus.notify(

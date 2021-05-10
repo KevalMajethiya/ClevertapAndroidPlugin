@@ -53,6 +53,7 @@ class NewScreenPresenterClevertap(
     private var applicationClassManager:ApplicationClassManager?=null
     private var abc:abc?=null
     private var AuditreportManager:AuditreportManager?=null
+    private var check_language: check_language?=null
 
 
 
@@ -102,13 +103,17 @@ class NewScreenPresenterClevertap(
 
 
         event.project?.let { project ->
+            var check= check_language(project)
+            var lang= check.find_language()
+
 
 
             //
 
             // CleverTapInputApproval().manifest_content.setText("abc")
 
-            CTInputApprovalDialog(event,Account_id,Account_token,use_google_ad_id_rb1,use_google_ad_id_rb2,Exclude_filesText,applicationclassname,IsRadiobuttonrb1Selected).show()
+            CTInputApprovalDialog(event,Account_id,Account_token,use_google_ad_id_rb1,use_google_ad_id_rb2,region_selected,
+                Exclude_filesText,applicationclassname,IsRadiobuttonrb1Selected,lang).show()
 
             writeActionDispatcher.dispatch {
          /*       fileCreator.createScreenFiles(

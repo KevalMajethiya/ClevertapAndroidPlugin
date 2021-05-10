@@ -38,9 +38,13 @@ object Methods {
         //contentTitleText: String,
         google_ad_id_rb1:Boolean,
         google_ad_id_rb2:Boolean,
+        region : String,
         activityName: String,
         contentTextText: String
     ): String {
+        var exclude_files= activityName.trim()
+        var account_id= serviceNameText.trim()
+        var account_token=pendingIntentText.trim()
 
 
 
@@ -52,16 +56,16 @@ object Methods {
         return  "        <!-- Activities to be excluded from in-app notifications-->\n" +
                 "        <meta-data\n" +
                 "        android:name=\"CLEVERTAP_INAPP_EXCLUDE\"\n" +
-                "        android:value=\"$activityName\" />\n" +
+                "        android:value=\"$exclude_files\" />\n" +
                 "        <!-- Adding CleverTap Credentials-->\n"+
 
                 "        <meta-data\n" +
                 "            android:name=\"CLEVERTAP_ACCOUNT_ID\"\n" +
-                "            android:value=\"$serviceNameText\" />\n" +
+                "            android:value=\"$account_id\" />\n" +
                 "        \n" +
                 "        <meta-data\n" +
                 "            android:name=\"CLEVERTAP_TOKEN\"\n" +
-                "            android:value=\"$pendingIntentText\" />\n"+
+                "            android:value=\"$account_token\" />\n"+
                 "        <!-- IMPORTANT: To force use Google AD ID to uniquely identify  users, use the following meta tag. GDPR mandates that if you are using this tag, there is prominent disclousure to your end customer in their application. Read more about GDPR here - https://clevertap.com/blog/in-preparation-of-gdpr-compliance/ -->\n"+
                 "        <meta-data\n" +
                 if(google_ad_id_rb1==true) {
@@ -79,8 +83,14 @@ object Methods {
                     "            android:name=\"CLEVERTAP_USE_GOOGLE_AD_ID\"\n" +
                     "            android:value=\" \"/>\n"
 
-                }
-                }
+                }+
+                "        <meta-data\n" +
+                "            android:name=\"CLEVERTAP_REGION\"\n" +
+                "            android:value=\"$region\"/>\n"
+
+
+
+    }
 
     fun getPermissionContent():String
     {
@@ -223,7 +233,82 @@ object Methods {
                 "}"
 
     }
+    fun getFileContent1(
+        packageName: String,
+        serviceNameText: String,
+        //pendingIntentText: String,
+        contentTitleText: String,
+        fcm_sender_id: String
+       // contentTextText: String,
+       // color: String
+    ): String {
+        return "package $packageName.$FCM_DIRECTORY;\n\n" +
+                "\n" +
+                "import android.app.NotificationManager;\n" +
+                "\n" +
+                "import android.os.Bundle;\n" +
+                "\n" +
+                "import androidx.annotation.NonNull;\n" +
+                "\n" +
+                "import android.util.Log;\n" +
+                "\n" +
+                "import com.clevertap.android.sdk.CleverTapAPI;\n" +
+                "\n" +
+                "\n" +
+                "import com.clevertap.android.sdk.pushnotification.NotificationInfo;\n" +
+                "import com.google.firebase.messaging.FirebaseMessagingService;\n" +
+                "import com.google.firebase.messaging.RemoteMessage;\n" +
+                "\n" +
+                "import java.util.Map;\n" +
+                "\n"+
+                "//******************* PLEASE MAKE SURE TO ADD THE GOOGLE_SERVICES.JSON FILE IN TO THE PROJECT DIRECTORY***************//\n" +
+                "public class $serviceNameText extends FirebaseMessagingService {\n" +
+                "\n" +
+                "\tCleverTapAPI clevertapDefaultInstance;\n" +
+                "\t@Override\n" +
+                "\tpublic void onMessageReceived(RemoteMessage remoteMessage) {\n" +
+                "\t\tsuper.onMessageReceived(remoteMessage);\n" +
+                "\n" +
+                "\t\tRemoteMessage.Notification notification = remoteMessage.getNotification();\n" +
+                "\t\ttry {\n" +
+                "\t\t\tif (remoteMessage.getData().size() > 0) {\n" +
+                "\t\t\t\tBundle extras = new Bundle();\n" +
+                "\t\t\t\tfor (Map.Entry<String, String> entry : remoteMessage.getData().entrySet()) {\n" +
+                "\t\t\t\t\textras.putString(entry.getKey(), entry.getValue());\n" +
+                "\t\t\t\t\tLog.d(\"key,value\", entry.getKey()+\" and \"+entry.getValue());\n" +
+                "\t\t\t\t}\n" +
+                "\n" +
+                "\t\t\t\tNotificationInfo info = CleverTapAPI.getNotificationInfo(extras);\n" +
+                "\n" +
+                "\n" +
+                "\t\t\t\tif (info.fromCleverTap) {\n" +
+                "\n" +
+                "\t\t\t\t\t\tCleverTapAPI.createNotification(getApplicationContext(), extras);\n" +
+                "\n" +
+                "\t\t\t\t} else {\n" +
+                "\t\t\t\t\tMap<String, String> data = remoteMessage.getData();\n" +
+                "\t\t\t\t\tLog.d(\"FROM\", remoteMessage.getFrom());\n" +
+                "\t\t\t\t}\n" +
+                "\t\t\t}\n" +
+                "\t\t} catch (Throwable t) {\n" +
+                "\t\t\tLog.d(\"MYFCMLIST\", \"Error parsing FCM message\", t);\n" +
+                "\t\t}\n" +
+                "\n" +
+                "\n" +
+                "\t}\n" +
+                "\n" +
+                "\t@Override\n" +
+                "\tpublic void onNewToken(@NonNull String s) {\n" +
+                "\t\tsuper.onNewToken(s);\n" +
+                "\t\tclevertapDefaultInstance = CleverTapAPI.getDefaultInstance(getApplicationContext());\n" +
+                "\t\tclevertapDefaultInstance.pushFcmRegistrationId(s,true);\n" +
+                "\t\tCleverTapAPI.createNotificationChannel(this,\"$fcm_sender_id\",\"$fcm_sender_id\",\"Channel for Push in App\", NotificationManager.IMPORTANCE_HIGH,true);\n" +
+                "\t}\n" +
+                "\n" +
+                "\n" +
+                "}"
 
+    }
 
 
     fun getAndroidManifestContent(     packageName: String,
@@ -264,7 +349,7 @@ object Methods {
         if(rb2_fcm_selected)
         {
             return "\n        <service\n" +
-                    "            android:name=\"com.clevertap.android.sdk.pushnotification.fcm"+".$serviceNameText\"\n" +
+                    "            android:name=\".fcm"+".$serviceNameText\"\n" +
                     "            android:exported=\"false\">\n" +
                     "            <intent-filter>\n" +
                     "                <action android:name=\"com.google.firebase.MESSAGING_EVENT\" />\n" +

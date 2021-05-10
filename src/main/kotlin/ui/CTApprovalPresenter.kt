@@ -67,6 +67,7 @@ class CTApprovalPresenter(
         //contentTitleText: String,
         google_ad_id_rb1:Boolean,
         google_ad_id_rb2:Boolean,
+        region_selected :String,
         Exclude_filesText :String,
         contentTextText: String,
         applicationclassname: String,
@@ -149,10 +150,11 @@ class CTApprovalPresenter(
                                 //contentTitleText,
                                 google_ad_id_rb1,
                                 google_ad_id_rb2,
+                                region_selected,
                                 Exclude_filesText,
                                 //contentTextText,
                                 applicationclassname
-                            ),Account_id,pendingIntentText,google_ad_id_rb1,google_ad_id_rb2,Exclude_filesText
+                            ),Account_id,pendingIntentText,google_ad_id_rb1,google_ad_id_rb2,region_selected,Exclude_filesText
 
                         )
                     }

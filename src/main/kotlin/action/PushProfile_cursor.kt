@@ -10,6 +10,9 @@ import ui.PushProfile
 
 class PushProfile_cursor: AnAction() {
     override fun actionPerformed(event: AnActionEvent) {
+//        event.project?.let { project ->
+//            PushProfile_cursor(event, project)
+//        }
         PushProfile_cursor(event)
 
     }

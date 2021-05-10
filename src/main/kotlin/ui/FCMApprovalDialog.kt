@@ -13,7 +13,7 @@ import java.awt.event.ActionEvent
 import java.awt.event.ActionListener
 import javax.swing.JComponent
 
-class FCMApprovalDialog(var event: AnActionEvent,serviceNameText:String,channel_id:String,fcm_sender_id:String,dependencyVersionText:String,IsRadiobuttonrb1Selected:Boolean,IsRadiobuttonrb2Selected:Boolean) : DialogWrapper(true),  NewScreenView {
+class FCMApprovalDialog(var event: AnActionEvent,serviceNameText:String,channel_id:String,fcm_sender_id:String,dependencyVersionText:String,IsRadiobuttonrb1Selected:Boolean,IsRadiobuttonrb2Selected:Boolean,lang:String) : DialogWrapper(true),  NewScreenView {
 
     private val panelForFCM1 = FCMApproval()
     private val panelForFCM = FCMInputPanel()
@@ -28,6 +28,7 @@ class FCMApprovalDialog(var event: AnActionEvent,serviceNameText:String,channel_
     private var dependencyVersion =dependencyVersionText
     private var IsRadiobuttonrb1Selected = IsRadiobuttonrb1Selected
     private var IsRadiobuttonrb2Selected = IsRadiobuttonrb2Selected
+    private var lang = lang
 
     init {
         val currentPath = event.getData(DataKeys.VIRTUAL_FILE)?.let {
@@ -87,9 +88,21 @@ class FCMApprovalDialog(var event: AnActionEvent,serviceNameText:String,channel_
 
             )
 
-            panelForFCM1.launchingact_content.setText("<html>"+"import android.app.NotificationManager;"+"<br>"+
-                    "CleverTapAPI.createNotificationChannel(getApplicationContext(),\"$channel_id\",\"mychannel\",\"lDescription\",NotificationManager.IMPORTANCE_MAX,true);"+"<br>"+
-                    "</html>")
+            if(lang=="java") {
+                panelForFCM1.launchingact_content.setText(
+                    "<html>" + "import android.app.NotificationManager;" + "<br>" +
+                            "CleverTapAPI.createNotificationChannel(getApplicationContext(),\"$channel_id\",\"mychannel\",\"lDescription\",NotificationManager.IMPORTANCE_MAX,true);" + "<br>" +
+                            "</html>"
+                )
+            }
+            if(lang=="kotlin") {
+                panelForFCM1.launchingact_content.setText(
+                    "<html>" + "import android.app.NotificationManager" + "<br>" +
+                            "CleverTapAPI.createNotificationChannel(getApplicationContext(),\"$channel_id\",\"mychannel\",\"lDescription\",NotificationManager.IMPORTANCE_MAX,true)" + "<br>" +
+                            "</html>"
+                )
+            }
+
 
             panelForFCM1.app_gradle_content.setText("<html>"+"implementation 'com.google.firebase:firebase-messaging:20.2.4'"+"<br>"+
                     "implementation 'com.android.installreferrer:installreferrer:2.1'"+"<br>"+

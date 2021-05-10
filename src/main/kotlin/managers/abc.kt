@@ -11,6 +11,7 @@ import com.intellij.openapi.vfs.VirtualFile
 import org.jetbrains.kotlin.idea.util.findModule
 
 import util.Constants
+import java.io.File
 import java.io.FileNotFoundException
 
 
@@ -33,6 +34,7 @@ class abc(private val project: Project)
     @Throws(FileNotFoundException::class)
     fun AndroidManifest(): Boolean {
         val basePath = project.basePath
+
         projectBaseDir = LocalFileSystem.getInstance().findFileByPath(basePath!!)
 
         val manifestVirtualFile: VirtualFile? = projectBaseDir!!
@@ -121,19 +123,53 @@ class abc(private val project: Project)
        // val ans2=ans1.replace("\"","")
         print(ans1)
         val basePath = project.basePath
-        projectBaseDir = LocalFileSystem.getInstance().findFileByPath(project.basePath +"/app/src/main/java/"+ans1+"/" + op +".java")
+        //projectBaseDir = LocalFileSystem.getInstance().findFileByPath(project.basePath +"/app/src/main/java/"+ans1+"/" + op +".java")
         print(projectBaseDir)
 
-        val manifestVirtualFile: VirtualFile? = projectBaseDir
-        return if (manifestVirtualFile != null) {
-            androidapplicationclass = FileDocumentManager.getInstance().getDocument(manifestVirtualFile)
-            //androidapplicationclass1 = FileDocumentManager.getInstance().getDocument(manifestVirtualFile)
+        var file = File(project.basePath +"/app/src/main/java/"+ans1+"/" + op +".java")
+        var file1 = File(project.basePath +"/app/src/main/java/"+ans1+"/" + op +".kt")
+        var java_file_exist = file.exists()
+        var kotlin_file_exist = file1.exists()
+        if(java_file_exist==true)
+        {
+            projectBaseDir = LocalFileSystem.getInstance().findFileByPath(project.basePath +"/app/src/main/java/"+ans1+"/" + op +".java")
+            val manifestVirtualFile: VirtualFile? = projectBaseDir
+            return if (manifestVirtualFile != null) {
+                androidapplicationclass = FileDocumentManager.getInstance().getDocument(manifestVirtualFile)
+                //androidapplicationclass1 = FileDocumentManager.getInstance().getDocument(manifestVirtualFile)
 
-            initiateclevertap()
-            true
-        } else {
-            false
+                initiateclevertap()
+                true
+            } else {
+                false
+            }
         }
+        if(kotlin_file_exist==true)
+        {
+            projectBaseDir = LocalFileSystem.getInstance().findFileByPath(project.basePath +"/app/src/main/java/"+ans1+"/" + op +".kt")
+            val manifestVirtualFile: VirtualFile? = projectBaseDir
+            return if (manifestVirtualFile != null) {
+                androidapplicationclass = FileDocumentManager.getInstance().getDocument(manifestVirtualFile)
+                //androidapplicationclass1 = FileDocumentManager.getInstance().getDocument(manifestVirtualFile)
+
+                initiateclevertap_kt()
+                true
+            } else {
+                false
+            }
+        }
+
+//        val manifestVirtualFile: VirtualFile? = projectBaseDir
+//        return if (manifestVirtualFile != null) {
+//            androidapplicationclass = FileDocumentManager.getInstance().getDocument(manifestVirtualFile)
+//            //androidapplicationclass1 = FileDocumentManager.getInstance().getDocument(manifestVirtualFile)
+//
+//            initiateclevertap()
+//            true
+//        } else {
+//            false
+//        }
+        return true
     }
 
     fun checkinsertion()
@@ -226,6 +262,102 @@ class abc(private val project: Project)
        // }
 
     }
+
+    fun checkinsertion_kt()
+    {
+        //val opp=launchingactivityname
+        val documentText = androidapplicationclass!!.text.split("\n".toRegex()).dropLastWhile { it.isEmpty() }.toTypedArray()
+        // val sb = StringBuilder()
+
+        for (i in documentText.indices)
+        {
+            var line = documentText[i]
+            if(line.contains("CleverTapAPI clevertapDefaultInstance = CleverTapAPI.getDefaultInstance(getApplicationContext())"))
+            {
+                codeexist=true
+
+            }
+            if(line.contains("import com.clevertap.android.sdk.CleverTapAPI"))
+            {
+                import_stmt=true
+
+            }
+            if(line.contains("import java.util.HashMap"))
+            {
+                import_stmt_hashmap=true
+
+            }
+
+        }
+    }
+
+
+    fun initiateclevertap_kt() {
+        checkinsertion_kt()
+        var c= codeexist
+        // if(c==false) {
+        // val opp=launchingactivityname
+        val documentText =
+            androidapplicationclass!!.text.split("\n".toRegex()).dropLastWhile { it.isEmpty() }.toTypedArray()
+        val sb = StringBuilder()
+
+        for (i in documentText.indices) {
+            var line = documentText[i]
+            sb
+                .append(line)
+                .append("\n")
+            if(import_stmt==false) {
+                if (line.contains("package")) {
+                    sb
+                        .append("import com.clevertap.android.sdk.CleverTapAPI")
+                        .append(" //added by CleverTap Assistant")
+                        //.append("   //Initializing the CleverTap SDK")
+                        .append("\n")
+                    import_stmt=true
+                    //.append("CleverTapAPI.createNotificationChannel(getApplicationContext(),\"3131\",\"mychannel\",\"lDescription\",NotificationManager.IMPORTANCE_MAX,true);")
+                    //.append("\n")
+                }
+            }
+//                if(import_stmt_hashmap==false) {
+//                    if (line.contains("package")) {
+//                        // if (line.contains("/")) {
+//                        sb
+//                            .append("import java.util.HashMap;")
+//                            .append("                      //added by CleverTap plug-in")
+//                            .append("\n")
+//                        import_stmt_hashmap=true
+//                        // }
+//                    }
+//                }
+
+
+            if(c==false) {
+                if (line.contains("fun onCreate")) {
+                    sb
+//                            .append("        Context context = getApplicationContext();")
+//                            .append("   //added by CleverTap plug-in")
+                        .append("\n")
+                        .append("        var clevertapDefaultInstance: CleverTapAPI? = null")
+                        .append("\n")
+                        .append("\t\tclevertapDefaultInstance = CleverTapAPI.getDefaultInstance(applicationContext)")
+                        .append("   //Initializing the CleverTap SDK")
+                        .append("\n")
+                    c=true
+
+
+                }
+            }
+            // }
+
+        }
+
+
+        writeToManifest(sb)
+        // }
+
+    }
+
+
 
 
     private fun writeToManifest(stringBuilder: StringBuilder) {

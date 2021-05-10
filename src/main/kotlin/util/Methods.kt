@@ -57,12 +57,11 @@ object Methods {
                 "        <meta-data\n" +
                 "        android:name=\"CLEVERTAP_INAPP_EXCLUDE\"\n" +
                 "        android:value=\"$exclude_files\" />\n" +
-                "        <!-- Adding CleverTap Credentials-->\n"+
-
                 "        <meta-data\n" +
                 "            android:name=\"CLEVERTAP_REGION\"\n" +
                 "            android:value=\"$region\"/>\n"+
 
+                "        <!-- Adding CleverTap Credentials-->\n"+
 
                 "        <meta-data\n" +
                 "            android:name=\"CLEVERTAP_ACCOUNT_ID\"\n" +

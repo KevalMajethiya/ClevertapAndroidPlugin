@@ -47,7 +47,7 @@
         <ActionSummary times="803" last="1619601170549" />
       </entry>
       <entry key="CleanPlugin.ID1">
-        <ActionSummary times="28" last="1620630568663" />
+        <ActionSummary times="29" last="1620654357182" />
       </entry>
       <entry key="CleanPlugin.ID2">
         <ActionSummary times="35" last="1620630875890" />
@@ -65,7 +65,7 @@
         <ActionSummary times="1" last="1615359148800" />
       </entry>
       <entry key="EditorBackSpace">
-        <ActionSummary times="5440" last="1620631107734" />
+        <ActionSummary times="5447" last="1620654417935" />
       </entry>
       <entry key="EditorChooseLookupItem">
         <ActionSummary times="16" last="1617694568837" />
@@ -83,10 +83,10 @@
         <ActionSummary times="1" last="1617089201533" />
       </entry>
       <entry key="EditorDown">
-        <ActionSummary times="794" last="1620631089000" />
+        <ActionSummary times="802" last="1620654417276" />
       </entry>
       <entry key="EditorDownWithSelection">
-        <ActionSummary times="11125" last="1620631107215" />
+        <ActionSummary times="11157" last="1620654417661" />
       </entry>
       <entry key="EditorEnter">
         <ActionSummary times="252" last="1620630803528" />
@@ -122,7 +122,7 @@
         <ActionSummary times="206" last="1620629739607" />
       </entry>
       <entry key="EditorUpWithSelection">
-        <ActionSummary times="544" last="1620630762336" />
+        <ActionSummary times="545" last="1620654395935" />
       </entry>
       <entry key="ExpandAllRegions">
         <ActionSummary times="1" last="1620630871167" />
@@ -305,7 +305,7 @@
         <ActionSummary times="1" last="1614681259771" />
       </entry>
       <entry key="com.intellij.ide.ReopenProjectAction">
-        <ActionSummary times="188" last="1620630520977" />
+        <ActionSummary times="189" last="1620654328528" />
       </entry>
       <entry key="com.intellij.ide.actions.runAnything.RunAnythingChooseContextAction$ModuleItem">
         <ActionSummary times="1" last="1614672214389" />

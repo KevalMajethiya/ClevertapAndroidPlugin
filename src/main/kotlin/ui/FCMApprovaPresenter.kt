@@ -118,7 +118,7 @@ class FCMApprovaPresenter(
                 if(IsRadiobuttonrb2Selected==true) {
                     createFCMfile?.let {
 
-                        it.initapplicationclass( serviceNameText,fcm_sender_id)
+                        it.initapplicationclass( serviceNameText,contentTitleText)
 
 
                     }

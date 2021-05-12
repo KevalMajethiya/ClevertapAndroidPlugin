@@ -42,6 +42,7 @@ intellij {
 //    alternativeIdePath '/Volumes/Project/Android Studio 4.0 Preview.app'
     intellij.updateSinceUntilBuild false
 }
+
 compileKotlin {
     kotlinOptions.jvmTarget = "1.8"
 }

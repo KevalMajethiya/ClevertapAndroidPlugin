@@ -2,7 +2,7 @@
 <idea-plugin >
     <id>CleverTap.CleverTap</id>
     <name>CleverTap Assistant (Beta)</name>
-    <vendor email="jjideshnair8@gmail.com" >Clevertap</vendor>
+    <vendor email="jideshnair8@gmail.com" >Clevertap</vendor>
 
         <description>Plugin helps to integrate Clevertap in your app in less then 5 minutes.
         It helps to install the CleverTap SDK, track your  user events,enrich user profiles,

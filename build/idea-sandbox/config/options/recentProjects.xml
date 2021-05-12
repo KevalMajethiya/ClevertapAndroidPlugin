@@ -1,64 +1,70 @@
 <application>
   <component name="RecentProjectsManager">
+    <option name="recentPaths">
+      <list>
+        <option value="D:/Clevertap/Testing/123" />
+      </list>
+    </option>
+    <option name="pid" value="" />
     <option name="additionalInfo">
       <map>
         <entry key="$USER_HOME$/AndroidStudioProjects/CT">
           <value>
-            <RecentProjectMetaInfo projectWorkspaceId="1sC5AcPYQllFrNjoNeIHKt7X0Ej">
-              <option name="binFolder" value="$APPLICATION_HOME_DIR$/bin" />
+            <RecentProjectMetaInfo>
               <option name="build" value="AI-201.8743.12.41.7042882" />
-              <option name="buildTimestamp" value="1608424796927" />
-              <frame x="0" y="23" width="1280" height="715" />
               <option name="productionCode" value="AI" />
+              <option name="binFolder" value="$APPLICATION_HOME_DIR$/bin" />
               <option name="projectOpenTimestamp" value="1620368032682" />
-            </RecentProjectMetaInfo>
-          </value>
-        </entry>
-        <entry key="$USER_HOME$/AndroidStudioProjects/My">
-          <value>
-            <RecentProjectMetaInfo projectWorkspaceId="1sCEGBI3m9LGOsv0ADTxSazEwyo">
-              <option name="binFolder" value="$APPLICATION_HOME_DIR$/bin" />
-              <option name="build" value="AI-201.8743.12.41.7042882" />
-              <option name="buildTimestamp" value="1608424768809" />
-              <frame x="0" y="23" width="1280" height="721" />
-              <option name="productionCode" value="AI" />
-              <option name="projectOpenTimestamp" value="1620377198877" />
+              <option name="buildTimestamp" value="1608424796927" />
             </RecentProjectMetaInfo>
           </value>
         </entry>
         <entry key="$USER_HOME$/AndroidStudioProjects/KotlinDemo">
           <value>
-            <RecentProjectMetaInfo projectWorkspaceId="1s9NKrnfL5xvCTDlfQkdaCJrrqw">
-              <option name="binFolder" value="$APPLICATION_HOME_DIR$/bin" />
+            <RecentProjectMetaInfo>
               <option name="build" value="AI-201.8743.12.41.7042882" />
-              <option name="buildTimestamp" value="1608424760922" />
               <option name="productionCode" value="AI" />
+              <option name="binFolder" value="$APPLICATION_HOME_DIR$/bin" />
               <option name="projectOpenTimestamp" value="1620628209273" />
+              <option name="buildTimestamp" value="1608424760922" />
+            </RecentProjectMetaInfo>
+          </value>
+        </entry>
+        <entry key="$USER_HOME$/AndroidStudioProjects/My">
+          <value>
+            <RecentProjectMetaInfo>
+              <option name="build" value="AI-201.8743.12.41.7042882" />
+              <option name="productionCode" value="AI" />
+              <option name="binFolder" value="$APPLICATION_HOME_DIR$/bin" />
+              <option name="projectOpenTimestamp" value="1620377198877" />
+              <option name="buildTimestamp" value="1608424768809" />
             </RecentProjectMetaInfo>
           </value>
         </entry>
         <entry key="$USER_HOME$/AndroidStudioProjects/MyApp">
           <value>
-            <RecentProjectMetaInfo opened="true" projectWorkspaceId="1s4I8okvQybQDTyxJlk8MjivKIb">
-              <option name="binFolder" value="$APPLICATION_HOME_DIR$/bin" />
+            <RecentProjectMetaInfo>
               <option name="build" value="AI-201.8743.12.41.7042882" />
-              <option name="buildTimestamp" value="1608424756028" />
-              <frame x="0" y="23" width="1280" height="716" />
               <option name="productionCode" value="AI" />
+              <option name="binFolder" value="$APPLICATION_HOME_DIR$/bin" />
               <option name="projectOpenTimestamp" value="1620654332462" />
+              <option name="buildTimestamp" value="1608424756028" />
+            </RecentProjectMetaInfo>
+          </value>
+        </entry>
+        <entry key="D:/Clevertap/Testing/123">
+          <value>
+            <RecentProjectMetaInfo>
+              <option name="build" value="IC-191.7479.19" />
+              <option name="productionCode" value="IC" />
+              <option name="binFolder" value="$APPLICATION_HOME_DIR$/bin" />
+              <option name="projectOpenTimestamp" value="1620803193096" />
+              <option name="buildTimestamp" value="1559024599110" />
             </RecentProjectMetaInfo>
           </value>
         </entry>
       </map>
     </option>
-    <option name="lastProjectLocation" value="$USER_HOME$/AndroidStudioProjects" />
-    <option name="recentPaths">
-      <list>
-        <option value="$USER_HOME$/AndroidStudioProjects/MyApp" />
-        <option value="$USER_HOME$/AndroidStudioProjects/KotlinDemo" />
-        <option value="$USER_HOME$/AndroidStudioProjects/My" />
-        <option value="$USER_HOME$/AndroidStudioProjects/CT" />
-      </list>
-    </option>
+    <option name="lastProjectLocation" value="D:/Clevertap/Testing" />
   </component>
 </application>

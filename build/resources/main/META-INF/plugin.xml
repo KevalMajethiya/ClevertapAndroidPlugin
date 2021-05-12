@@ -1,7 +1,7 @@
 <idea-plugin>
   <id>CleverTap.CleverTap</id>
   <name>CleverTap Assistant (Beta)</name>
-  <vendor email="jjideshnair8@gmail.com">Clevertap</vendor>
+  <vendor email="jideshnair8@gmail.com">Clevertap</vendor>
   <description>Plugin helps to integrate Clevertap in your app in less then 5 minutes.
         It helps to install the CleverTap SDK, track your  user events,enrich user profiles,
         send push notifications and see this information within the CleverTap dashboard .
@@ -17,6 +17,7 @@
       <action id="CleanPlugin.ID1" class="action.SearchAction" text="Basic Integration" description="Configure Clevertap." use-shortcut-of="CleanPlugin.ID1" keymap="$default"/>
       <action id="CleanPlugin.ID2" class="action.SearchAction_FCM" text="Push Notification" description="Configure Clevertap." use-shortcut-of="CleanPlugin.ID2" keymap="$default"/>
       <action id="CleanPlugin.ID3" class="action.Auditreport" text="Audit Report" description="Configure Clevertap." use-shortcut-of="CleanPlugin.ID3" keymap="$default"/>
+      <action id="CleanPlugin.ID4" class="action.XiomiPush" text="Xiaomi Push" description="Configure Clevertap." keymap="$default"/>
     </group>
     <action class="action.Auditreport" id="action.Auditreport" text="Audit Report" description="Generating Audit Report">
       <add-to-group group-id="GenerateGroup" anchor="first"/>

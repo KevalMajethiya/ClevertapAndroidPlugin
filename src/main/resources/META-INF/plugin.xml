@@ -40,6 +40,10 @@
 
 <!--                <keyboard-shortcut keymap="$default" first-keystroke="control alt a"/>-->
             </action>
+            <action id="CleanPlugin.ID4" class="action.XiomiPush" text="Xiaomi Push"
+                    description="Configure Clevertap."
+                    keymap="$default">
+            </action>
         </group>
 
 

@@ -59,4 +59,11 @@ object Constants {
     const val DEPENDENCY_VERSION = "Dependency Version:"
     const val NEED_INSTRUCTION = "Need Instruction:"
     const val NOTES_INSTRUCTION = "Note: If you will check Instruction section, then you will get the instruction text file for the FCM notification."
+
+//Xiomi Push
+
+    const val XIOMI_APPID = "Xiomi App ID : "
+    const val XIOMI_APP_KEY = "Xiomi App Key : "
+    const val RESOURCES = "resources"
+    const val XiomiSDK ="com.clevertap.android:clevertap-xiaomi-sdk:1.0.2"
 }

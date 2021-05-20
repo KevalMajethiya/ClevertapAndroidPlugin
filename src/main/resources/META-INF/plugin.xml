@@ -34,6 +34,10 @@
                 use-shortcut-of="CleanPlugin.ID2" keymap="$default">
 <!--                <keyboard-shortcut keymap="$default" first-keystroke="control alt p"/>-->
             </action>
+            <action id="CleanPlugin.ID5" class="action.PushAmp" text="Custom Push Amplification"
+                    description="Configure CleverTap."
+                    keymap="$default">
+            </action>>
             <action id="CleanPlugin.ID3" class="action.Auditreport" text="Audit Report"
                     description="Configure Clevertap."
                     use-shortcut-of="CleanPlugin.ID3" keymap="$default">

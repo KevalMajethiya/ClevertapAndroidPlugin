@@ -16,9 +16,11 @@ class check_language(private val project: Project)
     private var packagename:String=""
     private var launchingactivityname:String=""
     private var language=""
+    private var applicationClassName:String=""
 
     init{
         find_language()
+        find_appClass()
 
     }
     fun AndroidManifest(): Boolean {
@@ -34,6 +36,7 @@ class check_language(private val project: Project)
         return if (manifestVirtualFile != null) {
             androidManifestfile = FileDocumentManager.getInstance().getDocument(manifestVirtualFile)
             getpackagename()
+            getAppClass()
             true
         } else {
             false
@@ -54,10 +57,10 @@ class check_language(private val project: Project)
                 {
                     val line1=documentText[j]
                     if(line1.contains("activity")) {
-                        var ans=line1
-                        var b= ans.split(".")
+                        val ans=line1
+                        val b= ans.split(".")
                         var c=b[1]
-                        var d=b[1].split("\"")
+                        val d=b[1].split("\"")
                         launchingactivityname=d[0]
                         print(launchingactivityname)
                         // launchingactivityname="line"
@@ -73,11 +76,11 @@ class check_language(private val project: Project)
 
             if (line.contains("package")) {
                 if (line.contains("=")) {
-                    var a = line
-                    var b = a.split("=")
+                    val a = line
+                    val b = a.split("=")
                     //var d=
-                    var c = b[1]
-                    var d = c.split("\"")
+                    val c = b[1]
+                    val d = c.split("\"")
                     packagename = d[1]
                     //return "abc"
                     //initapplicationclass(packagename!!)
@@ -94,22 +97,41 @@ class check_language(private val project: Project)
         return "com"
     }
 
+    fun getAppClass():String{
+
+        val documentText = androidManifestfile!!.text.split("\n".toRegex()).dropLastWhile { it.isEmpty() }.toTypedArray()
+        val sb = StringBuilder()
+        for (i in documentText.indices){
+            val line = documentText[i]
+            if (line.contains("android:name")){
+                val a = line
+                val b = a.split("=")
+                val c = b[1]
+                val d = c.split("\"")
+                applicationClassName = d[1]
+                break
+            }
+        }
+        return applicationClassName
+
+    }
+
     fun find_language(): String {
         AndroidManifest()
         val op = launchingactivityname
-        var op1 = packagename
+        val op1 = packagename
         // val ans=pkg
-        var ans1 = op1.replace(".", "/")
+        val ans1 = op1.replace(".", "/")
         // val ans2=ans1.replace("\"","")
         print(ans1)
         val basePath = project.basePath
         //projectBaseDir = LocalFileSystem.getInstance().findFileByPath(project.basePath +"/app/src/main/java/"+ans1+"/" + op +".java")
         print(projectBaseDir)
 
-        var file = File(project.basePath + "/app/src/main/java/" + ans1 + "/" + op + ".java")
-        var file1 = File(project.basePath + "/app/src/main/java/" + ans1 + "/" + op + ".kt")
-        var java_file_exist = file.exists()
-        var kotlin_file_exist = file1.exists()
+        val file = File(project.basePath + "/app/src/main/java/" + ans1 + "/" + op + ".java")
+        val file1 = File(project.basePath + "/app/src/main/java/" + ans1 + "/" + op + ".kt")
+        val java_file_exist = file.exists()
+        val kotlin_file_exist = file1.exists()
         if (java_file_exist == true) {
              language= "java"
 
@@ -120,6 +142,14 @@ class check_language(private val project: Project)
         }
 
         return language
+    }
+
+    fun find_appClass() : String{
+
+        AndroidManifest()
+
+
+        return applicationClassName
     }
 
 }

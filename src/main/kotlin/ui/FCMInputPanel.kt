@@ -34,7 +34,7 @@ import java.awt.Dimension
 class FCMInputPanel :JPanel() {
 
     val fileContent = ClevertapInputPanel::class.java.getResource("/icons/hint.png")
-    val icon = ImageIcon(fileContent);
+    val icon = ImageIcon(fileContent)
 
     // val icon = ImageIcon("/Users/kevalmajethiya/Desktop/ClevrtapPluginWithFCM-master/images/hint.png")
      val labelServiceName = JLabel(FCM_SERVICE_NAME_FCM)
@@ -103,8 +103,8 @@ class FCMInputPanel :JPanel() {
         constraints.gridy = 0
         label_fcm_pushnotification_implemented.setToolTipText("Yes Or No")
         label_fcm_pushnotification_implemented.setIcon(icon)
-        label_fcm_pushnotification_implemented.setHorizontalTextPosition( SwingConstants.LEFT);
-        label_fcm_pushnotification_implemented.setVerticalTextPosition( SwingConstants.CENTER );
+        label_fcm_pushnotification_implemented.setHorizontalTextPosition( SwingConstants.LEFT)
+        label_fcm_pushnotification_implemented.setVerticalTextPosition( SwingConstants.CENTER )
         newPanel.add(label_fcm_pushnotification_implemented, constraints)
         constraints.gridx = 1
         bg_fcm.add(rb1_fcm)
@@ -123,8 +123,8 @@ class FCMInputPanel :JPanel() {
         labelServiceName.setVisible(false)
         labelServiceName.setToolTipText("Enter FCM Service Name")
         labelServiceName.setIcon(icon)
-        labelServiceName.setHorizontalTextPosition( SwingConstants.LEFT);
-        labelServiceName.setVerticalTextPosition( SwingConstants.CENTER );
+        labelServiceName.setHorizontalTextPosition( SwingConstants.LEFT)
+        labelServiceName.setVerticalTextPosition( SwingConstants.CENTER )
         newPanel.add(labelServiceName, constraints)
         constraints.gridx = 1
         serviceNameTextField.setVisible(false)
@@ -141,8 +141,8 @@ class FCMInputPanel :JPanel() {
         labelContentTitle.setVisible(false)
         labelContentTitle.setToolTipText("CleverTap Dashboard -> Settings -> Channels")
         labelContentTitle.setIcon(icon)
-        labelContentTitle.setHorizontalTextPosition( SwingConstants.LEFT);
-        labelContentTitle.setVerticalTextPosition( SwingConstants.CENTER );
+        labelContentTitle.setHorizontalTextPosition( SwingConstants.LEFT)
+        labelContentTitle.setVerticalTextPosition( SwingConstants.CENTER )
         newPanel.add(labelContentTitle, constraints)
         constraints.gridx = 1
         contentTitleTextField.setVisible(false)
@@ -152,7 +152,7 @@ class FCMInputPanel :JPanel() {
 
 //        constraints.gridx = 0
 //        constraints.gridy = 3
-//        newPanel.add(button, constraints)
+//        newPanel.add(, constraints)
 
         /*   constraints.gridx = 0
           constraints.gridy = 3
@@ -165,8 +165,8 @@ class FCMInputPanel :JPanel() {
         fcm_sender_id.setVisible(false)
         fcm_sender_id.setToolTipText("Enter FCM Sender ID.")
         fcm_sender_id.setIcon(icon)
-        fcm_sender_id.setHorizontalTextPosition( SwingConstants.LEFT);
-        fcm_sender_id.setVerticalTextPosition( SwingConstants.CENTER );
+        fcm_sender_id.setHorizontalTextPosition( SwingConstants.LEFT)
+        fcm_sender_id.setVerticalTextPosition( SwingConstants.CENTER )
         newPanel.add(fcm_sender_id, constraints)
         constraints.gridx = 1
         fcm_sender_id_TextField.setVisible(false)
@@ -178,8 +178,8 @@ class FCMInputPanel :JPanel() {
         labelVersion.setVisible(false)
         labelVersion.setToolTipText("Enter Dependency Version.")
         labelVersion.setIcon(icon)
-        labelVersion.setHorizontalTextPosition( SwingConstants.LEFT);
-        labelVersion.setVerticalTextPosition( SwingConstants.CENTER );
+        labelVersion.setHorizontalTextPosition( SwingConstants.LEFT)
+        labelVersion.setVerticalTextPosition( SwingConstants.CENTER )
         newPanel.add(labelVersion, constraints)
         constraints.gridx = 1
         dependencyVersionTextField.setVisible(false)
@@ -190,8 +190,8 @@ class FCMInputPanel :JPanel() {
         labeladdgoogle_service_file.setVisible(false)
         labeladdgoogle_service_file.setToolTipText("Upload your google_service.json by clicking on upload button.")
         labeladdgoogle_service_file.setIcon(icon)
-        labeladdgoogle_service_file.setHorizontalTextPosition( SwingConstants.LEFT);
-        labeladdgoogle_service_file.setVerticalTextPosition( SwingConstants.CENTER );
+        labeladdgoogle_service_file.setHorizontalTextPosition( SwingConstants.LEFT)
+        labeladdgoogle_service_file.setVerticalTextPosition( SwingConstants.CENTER )
         newPanel.add(labeladdgoogle_service_file, constraints)
         constraints.gridx = 1
         buttontoaddgservicefile.setVisible(false)
@@ -238,7 +238,7 @@ class FCMInputPanel :JPanel() {
 
     }
 
-    override fun getPreferredSize(): Dimension? {
+    override fun getPreferredSize(): Dimension {
         return Dimension(800, 400)
     }
 

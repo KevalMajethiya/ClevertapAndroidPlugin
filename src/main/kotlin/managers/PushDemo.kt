@@ -11,12 +11,12 @@ import util.Constants
 import java.io.File
 import java.io.FileNotFoundException
 
-class PushNotificationManager(private val project: Project) {
+class PushDemo(private val project: Project) {
     private var androidManifestfile: Document? = null
     private var packagename:String=""
     private var launching_activity: Document? = null
     private var launchingactivityname:String=""
-    private  var firebase_receiver_class_name:String=""
+    private var firebase_receiver_class_name:String=""
     private var notification_channel_exist:Boolean=false
     private var import_stmt:Boolean=false
     private var import_stmt_hashmap:Boolean=false
@@ -75,42 +75,26 @@ class PushNotificationManager(private val project: Project) {
                     }
                 }
             }
-//            if (line.contains("com.google.firebase.MESSAGING_EVENT"))
-//            {
-//                for(j in i downTo 1)
-//                {
-//                    val line1=documentText[j]
-//                    if(line1.contains("android:name")) {
-//                        var ans=line1
-//                        var b= ans.split("\"")
-//                        var c=b[1]
-//                        var d=b[1].split("\"")
-//                        firebase_receiver_class_name=d[0]
-//
-//                    }
-//                }
-//            }
-            if (line.contains("android.intent.action.MAIN"))
+            if (line.contains("com.google.firebase.MESSAGING_EVENT"))
             {
-                for(k in i downTo 1)
+                for(j in i downTo 1)
                 {
-                    val line2=documentText[k]
-                    if(line2.contains("android:allowBackup")) {
-                        var ans11=line2
-                        //var ans12= ans11.split(".")
-                        //var ans13=ans12[1]
-                        //var ans14=ans12[1].split("\"")
-                        firebase_receiver_class_name=ans11
-                        //print(firebase_receiver_class_name)
+                    val line1=documentText[j]
+                    if(line1.contains("android:name")) {
+                        var ans=line1
+                        var b= ans.split("\"")
+                        var c=b[1]
+                        var d=b[1].split("\"")
+                        firebase_receiver_class_name=d[0]
+                        print(firebase_receiver_class_name)
                         // launchingactivityname="line"
-                        //return firebase_receiver_class_name
+                        return firebase_receiver_class_name
                         //initapplicationclass(activityname)
                         //sb
                         //.append(activityname)
                         // .append("\n")
 
                     }
-                    //break
                 }
             }
 
@@ -139,13 +123,12 @@ class PushNotificationManager(private val project: Project) {
     @Throws(FileNotFoundException::class)
     fun initlaunchingactivity(contentTitleText:String): Boolean {
         AndroidManifest()
-        val fcm_name=firebase_receiver_class_name
         val op=launchingactivityname
         var op1=packagename
         var ans1=op1.replace(".","/")
         val basePath = project.basePath
-       // projectBaseDir = LocalFileSystem.getInstance().findFileByPath(project.basePath +"/app/src/main/java/"+ ans1 + "/" + op + ".java")
-       // projectBaseDir = LocalFileSystem.getInstance().findFileByPath(basePath!!)
+        // projectBaseDir = LocalFileSystem.getInstance().findFileByPath(project.basePath +"/app/src/main/java/"+ ans1 + "/" + op + ".java")
+        // projectBaseDir = LocalFileSystem.getInstance().findFileByPath(basePath!!)
         var file = File(project.basePath +"/app/src/main/java/"+ans1+"/" + op +".java")
         var file1 = File(project.basePath +"/app/src/main/java/"+ans1+"/" + op +".kt")
         var java_file_exist = file.exists()
@@ -219,24 +202,24 @@ class PushNotificationManager(private val project: Project) {
     fun addnotificationchannel(contentTitleText:String) {
         checkbeforeinsertion()
         //if(notification_channel_exist==false) {
-            val documentText =launching_activity!!.text.split("\n".toRegex()).dropLastWhile { it.isEmpty() }.toTypedArray()
-            val sb = StringBuilder()
-            for (i in documentText.indices) {
-                val line = documentText[i]
-                sb
-                    .append(line)
-                    .append("\n")
-                if(import_stmt==false) {
-                    if (line.contains("package")) {
-                        // if (line.contains("/")) {
-                        sb
-                            .append("import android.app.NotificationManager;")
-                            .append("        //added by CleverTap Assistant")
-                            .append("\n")
-                        import_stmt=true
-                        // }
-                    }
+        val documentText =launching_activity!!.text.split("\n".toRegex()).dropLastWhile { it.isEmpty() }.toTypedArray()
+        val sb = StringBuilder()
+        for (i in documentText.indices) {
+            val line = documentText[i]
+            sb
+                .append(line)
+                .append("\n")
+            if(import_stmt==false) {
+                if (line.contains("package")) {
+                    // if (line.contains("/")) {
+                    sb
+                        .append("import android.app.NotificationManager;")
+                        .append("        //added by CleverTap Assistant")
+                        .append("\n")
+                    import_stmt=true
+                    // }
                 }
+            }
 //                if(import_stmt_hashmap==false) {
 //                    if (line.contains("package")) {
 //                        // if (line.contains("/")) {
@@ -246,21 +229,21 @@ class PushNotificationManager(private val project: Project) {
 //                        // }
 //                    }
 //                }
-                if(notification_channel_exist==false) {
-                    if (line.contains("setContentView")) {
-                        // if (line.contains("/")) {
-                        sb
-                            .append("\t\tCleverTapAPI.createNotificationChannel(getApplicationContext(),\"$contentTitleText\",\"mychannel\",\"lDescription\",NotificationManager.IMPORTANCE_MAX,true);")
-                            .append("        //added by CleverTap Assistant")
-                            .append("\n")
-                            notification_channel_exist=true
-                        // }
-                    }
+            if(notification_channel_exist==false) {
+                if (line.contains("setContentView")) {
+                    // if (line.contains("/")) {
+                    sb
+                        .append("\t\tCleverTapAPI.createNotificationChannel(getApplicationContext(),\"$contentTitleText\",\"mychannel\",\"lDescription\",NotificationManager.IMPORTANCE_MAX,true);")
+                        .append("        //added by CleverTap Assistant")
+                        .append("\n")
+                    notification_channel_exist=true
+                    // }
                 }
-
             }
-            writeToManifest(sb)
-       // }
+
+        }
+        writeToManifest(sb)
+        // }
     }
 
     fun addnotificationchannel_kt(contentTitleText:String) {

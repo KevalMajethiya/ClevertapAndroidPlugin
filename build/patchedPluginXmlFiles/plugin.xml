@@ -16,10 +16,13 @@
       <add-to-group group-id="NewGroup" anchor="after" relative-to-action="NewDir"/>
       <action id="CleanPlugin.ID1" class="action.SearchAction" text="Basic Integration" description="Configure Clevertap." use-shortcut-of="CleanPlugin.ID1" keymap="$default"/>
       <action id="CleanPlugin.ID2" class="action.SearchAction_FCM" text="Push Notification" description="Configure Clevertap." use-shortcut-of="CleanPlugin.ID2" keymap="$default"/>
-      <action id="CleanPlugin.ID5" class="action.PushAmp" text="Custom Push Amplification" description="Configure CleverTap." keymap="$default"/>
+      <action id="CleanPlugin.ID7" class="action.PushAmp" text="Custom Push Amplification" description="Configure CleverTap." keymap="$default"/>
 &gt;
-                  <action id="CleanPlugin.ID3" class="action.Auditreport" text="Audit Report" description="Configure Clevertap." use-shortcut-of="CleanPlugin.ID3" keymap="$default"/>
-      <action id="CleanPlugin.ID4" class="action.XiomiPush" text="Xiaomi Push" description="Configure Clevertap." keymap="$default"/>
+
+                  <action id="CleanPlugin.ID4" class="action.XiomiPush" text="Xiaomi Push" description="Configure Clevertap." keymap="$default"/>
+      <action id="CleanPlugin.ID5" class="action.HuaweiPush" text="Huawei Push" description="Configure Clevertap." keymap="$default"/>
+      <action id="CleanPlugin.ID6" class="action.Geofence" text="Geofence" description="Configure Clevertap." keymap="$default"/>
+      <action id="CleanPlugin.ID3" class="action.Auditreport" text="Audit Report" description="Configure Clevertap." use-shortcut-of="CleanPlugin.ID3" keymap="$default"/>
     </group>
     <action class="action.Auditreport" id="action.Auditreport" text="Audit Report" description="Generating Audit Report">
       <add-to-group group-id="GenerateGroup" anchor="first"/>

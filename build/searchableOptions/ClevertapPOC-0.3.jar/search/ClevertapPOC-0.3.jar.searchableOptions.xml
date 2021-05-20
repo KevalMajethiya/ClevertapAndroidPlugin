@@ -41,6 +41,9 @@
     <option name="audit" path="ActionManager" hit="Generating Audit Report" />
     <option name="generating" path="ActionManager" hit="Generating Audit Report" />
     <option name="report" path="ActionManager" hit="Generating Audit Report" />
+    <option name="geofence" path="ActionManager" hit="Geofence" />
+    <option name="huawei" path="ActionManager" hit="Huawei Push" />
+    <option name="push" path="ActionManager" hit="Huawei Push" />
     <option name="clevertap" path="ActionManager" hit="Initialize CleverTap " />
     <option name="initialize" path="ActionManager" hit="Initialize CleverTap " />
     <option name="clevertap" path="ActionManager" hit="Intialize clevertap object" />
@@ -53,6 +56,8 @@
     <option name="push" path="ActionManager" hit="Profile Push" />
     <option name="notification" path="ActionManager" hit="Push Notification" />
     <option name="push" path="ActionManager" hit="Push Notification" />
+    <option name="push" path="ActionManager" hit="Xiaomi Push" />
+    <option name="xiaomi" path="ActionManager" hit="Xiaomi Push" />
   </configurable>
 </options>
 

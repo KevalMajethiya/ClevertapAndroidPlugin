@@ -5,7 +5,7 @@
         <ActionSummary times="1" last="1616152483763" />
       </entry>
       <entry key="$Delete">
-        <ActionSummary times="11" last="1620631122592" />
+        <ActionSummary times="12" last="1621492639608" />
       </entry>
       <entry key="$Paste">
         <ActionSummary times="1" last="1614852302070" />
@@ -17,7 +17,7 @@
         <ActionSummary times="46" last="1618568946008" />
       </entry>
       <entry key="$Undo">
-        <ActionSummary times="221" last="1620628909171" />
+        <ActionSummary times="227" last="1621492189633" />
       </entry>
       <entry key="ActivateDeviceFileExplorerToolWindow">
         <ActionSummary times="1" last="1618662291974" />
@@ -55,6 +55,15 @@
       <entry key="CleanPlugin.ID3">
         <ActionSummary times="21" last="1620631019720" />
       </entry>
+      <entry key="CleanPlugin.ID5">
+        <ActionSummary times="14" last="1621333793732" />
+      </entry>
+      <entry key="CleanPlugin.ID6">
+        <ActionSummary times="27" last="1621489419644" />
+      </entry>
+      <entry key="CleanPlugin.ID7">
+        <ActionSummary times="11" last="1621493311905" />
+      </entry>
       <entry key="CommentByLineComment">
         <ActionSummary times="12" last="1617694639254" />
       </entry>
@@ -65,16 +74,16 @@
         <ActionSummary times="1" last="1615359148800" />
       </entry>
       <entry key="EditorBackSpace">
-        <ActionSummary times="5447" last="1620654417935" />
+        <ActionSummary times="5713" last="1621494141457" />
       </entry>
       <entry key="EditorChooseLookupItem">
-        <ActionSummary times="16" last="1617694568837" />
+        <ActionSummary times="19" last="1621492880888" />
       </entry>
       <entry key="EditorCopy">
         <ActionSummary times="120" last="1620628726891" />
       </entry>
       <entry key="EditorCut">
-        <ActionSummary times="23" last="1620630610530" />
+        <ActionSummary times="24" last="1621429794726" />
       </entry>
       <entry key="EditorDeleteLine">
         <ActionSummary times="2" last="1616750451591" />
@@ -83,28 +92,28 @@
         <ActionSummary times="1" last="1617089201533" />
       </entry>
       <entry key="EditorDown">
-        <ActionSummary times="802" last="1620654417276" />
+        <ActionSummary times="882" last="1621492370448" />
       </entry>
       <entry key="EditorDownWithSelection">
-        <ActionSummary times="11157" last="1620654417661" />
+        <ActionSummary times="11448" last="1621494138055" />
       </entry>
       <entry key="EditorEnter">
-        <ActionSummary times="252" last="1620630803528" />
+        <ActionSummary times="264" last="1621492878608" />
       </entry>
       <entry key="EditorLeft">
-        <ActionSummary times="350" last="1620284953602" />
+        <ActionSummary times="359" last="1621492372385" />
       </entry>
       <entry key="EditorLeftWithSelection">
-        <ActionSummary times="2361" last="1620631088183" />
+        <ActionSummary times="2486" last="1621492702107" />
       </entry>
       <entry key="EditorPaste">
-        <ActionSummary times="170" last="1620630612587" />
+        <ActionSummary times="181" last="1621492693001" />
       </entry>
       <entry key="EditorRight">
-        <ActionSummary times="155" last="1620291117497" />
+        <ActionSummary times="165" last="1621494135787" />
       </entry>
       <entry key="EditorRightWithSelection">
-        <ActionSummary times="2893" last="1620630741800" />
+        <ActionSummary times="3005" last="1621494141072" />
       </entry>
       <entry key="EditorSplitLine">
         <ActionSummary times="1" last="1616591191237" />
@@ -113,16 +122,16 @@
         <ActionSummary times="4" last="1616494634219" />
       </entry>
       <entry key="EditorTab">
-        <ActionSummary times="46" last="1620630972428" />
+        <ActionSummary times="52" last="1621423488442" />
       </entry>
       <entry key="EditorToggleColumnMode">
         <ActionSummary times="1" last="1614937617904" />
       </entry>
       <entry key="EditorUp">
-        <ActionSummary times="206" last="1620629739607" />
+        <ActionSummary times="212" last="1621492365123" />
       </entry>
       <entry key="EditorUpWithSelection">
-        <ActionSummary times="545" last="1620654395935" />
+        <ActionSummary times="549" last="1621494133104" />
       </entry>
       <entry key="ExpandAllRegions">
         <ActionSummary times="1" last="1620630871167" />
@@ -169,14 +178,17 @@
       <entry key="InvalidateCaches">
         <ActionSummary times="1" last="1614680551229" />
       </entry>
+      <entry key="Kotlin.NewFile">
+        <ActionSummary times="3" last="1621492646108" />
+      </entry>
       <entry key="MakeGradleProject">
-        <ActionSummary times="406" last="1620631132462" />
+        <ActionSummary times="440" last="1621494143116" />
       </entry>
       <entry key="MinimizeCurrentWindow">
         <ActionSummary times="1" last="1609329564279" />
       </entry>
       <entry key="NewClass">
-        <ActionSummary times="8" last="1619176037169" />
+        <ActionSummary times="10" last="1621491518237" />
       </entry>
       <entry key="NewProject">
         <ActionSummary times="1" last="1615189904146" />
@@ -227,10 +239,10 @@
         <ActionSummary times="1" last="1620145840893" />
       </entry>
       <entry key="WelcomeScreen.CreateNewProject">
-        <ActionSummary times="7" last="1615871965858" />
+        <ActionSummary times="9" last="1621488431207" />
       </entry>
       <entry key="WelcomeScreen.OpenProject">
-        <ActionSummary times="61" last="1620368165450" />
+        <ActionSummary times="69" last="1621492498041" />
       </entry>
       <entry key="WelcomeScreen.Plugins">
         <ActionSummary times="4" last="1610451282766" />
@@ -305,7 +317,7 @@
         <ActionSummary times="1" last="1614681259771" />
       </entry>
       <entry key="com.intellij.ide.ReopenProjectAction">
-        <ActionSummary times="189" last="1620654328528" />
+        <ActionSummary times="204" last="1621489391246" />
       </entry>
       <entry key="com.intellij.ide.actions.runAnything.RunAnythingChooseContextAction$ModuleItem">
         <ActionSummary times="1" last="1614672214389" />
@@ -326,7 +338,7 @@
         <ActionSummary times="3" last="1614672645888" />
       </entry>
       <entry key="com.intellij.openapi.wm.impl.ToolWindowHeader$HideAction">
-        <ActionSummary times="212" last="1620631133755" />
+        <ActionSummary times="216" last="1621429789185" />
       </entry>
       <entry key="com.intellij.openapi.wm.impl.ToolWindowHeader$ShowOptionsAction">
         <ActionSummary times="16" last="1614703127819" />

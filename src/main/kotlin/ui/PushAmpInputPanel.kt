@@ -60,6 +60,6 @@ class PushAmpInputPanel: JPanel() {
 
     }
     override fun getPreferredSize(): Dimension {
-        return Dimension(600, 200)
+        return Dimension(800, 200)
     }
 }

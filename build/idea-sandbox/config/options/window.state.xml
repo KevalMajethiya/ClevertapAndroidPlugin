@@ -35,27 +35,32 @@
     </layout>
   </component>
   <component name="WindowStateApplicationService">
-    <state x="451" y="132" key="FileChooserDialogImpl" />
-    <state x="451" y="132" key="FileChooserDialogImpl/0.23.1280.715" />
-    <state x="451" y="132" key="FileChooserDialogImpl/0.23.1280.716" />
-    <state x="451" y="133" key="FileChooserDialogImpl/0.23.1280.721" />
-    <state x="451" y="133" key="FileChooserDialogImpl/0.23.1280.723" />
-    <state x="451" y="133" key="FileChooserDialogImpl/0.23.1280.724" />
-    <state x="451" y="134" key="FileChooserDialogImpl/0.23.1280.726" />
-    <state x="228" y="99" key="IDE.errors.dialog" />
-    <state x="228" y="99" key="IDE.errors.dialog/0.23.1280.715" />
-    <state x="228" y="99" key="IDE.errors.dialog/0.23.1280.716" />
-    <state x="921" y="559" width="356" height="158" key="ProcessPopupWindow" />
-    <state x="921" y="555" width="356" height="156" key="ProcessPopupWindow/0.23.1280.716" />
-    <state x="921" y="559" width="356" height="158" key="ProcessPopupWindow/0.23.1280.721" />
-    <state x="639" y="351" key="WELCOME_SCREEN" />
-    <state x="639" y="349" key="WELCOME_SCREEN/0.23.1280.715" />
-    <state x="639" y="349" key="WELCOME_SCREEN/0.23.1280.716" />
-    <state x="639" y="351" key="WELCOME_SCREEN/0.23.1280.721" />
-    <state x="639" y="351" key="WELCOME_SCREEN/0.23.1280.723" />
-    <state x="639" y="352" key="WELCOME_SCREEN/0.23.1280.724" />
-    <state x="210" y="150" width="1500" height="780" key="com.intellij.history.integration.ui.views.FileHistoryDialog" />
-    <state x="210" y="150" width="1500" height="780" key="com.intellij.history.integration.ui.views.FileHistoryDialog/1920.1080" />
-    <state x="210" y="150" width="1500" height="780" key="com.intellij.history.integration.ui.views.FileHistoryDialog@1920.1080@120dpi" />
+    <state x="451" y="133" key="FileChooserDialogImpl" timestamp="1621492503006">
+      <screen x="0" y="23" width="1280" height="723" />
+    </state>
+    <state x="451" y="132" key="FileChooserDialogImpl/0.23.1280.715" timestamp="1620127990782" />
+    <state x="451" y="132" key="FileChooserDialogImpl/0.23.1280.716" timestamp="1620368168881" />
+    <state x="451" y="133" key="FileChooserDialogImpl/0.23.1280.721" timestamp="1619174959933" />
+    <state x="451" y="133" key="FileChooserDialogImpl/0.23.1280.723" timestamp="1621492503006" />
+    <state x="451" y="133" key="FileChooserDialogImpl/0.23.1280.724" timestamp="1618997783352" />
+    <state x="451" y="134" key="FileChooserDialogImpl/0.23.1280.726" timestamp="1617276491997" />
+    <state x="228" y="99" key="IDE.errors.dialog" timestamp="1620147704066">
+      <screen x="0" y="23" width="1280" height="716" />
+    </state>
+    <state x="228" y="99" key="IDE.errors.dialog/0.23.1280.715" timestamp="1619768217069" />
+    <state x="228" y="99" key="IDE.errors.dialog/0.23.1280.716" timestamp="1620147704066" />
+    <state x="921" y="559" width="356" height="158" key="ProcessPopupWindow" timestamp="1616745854575">
+      <screen x="0" y="23" width="1280" height="721" />
+    </state>
+    <state x="921" y="555" width="356" height="156" key="ProcessPopupWindow/0.23.1280.716" timestamp="1616155760329" />
+    <state x="921" y="559" width="356" height="158" key="ProcessPopupWindow/0.23.1280.721" timestamp="1616745854575" />
+    <state x="639" y="351" key="WELCOME_SCREEN" timestamp="1621494182971">
+      <screen x="0" y="23" width="1280" height="723" />
+    </state>
+    <state x="639" y="349" key="WELCOME_SCREEN/0.23.1280.715" timestamp="1620206681090" />
+    <state x="639" y="349" key="WELCOME_SCREEN/0.23.1280.716" timestamp="1620308288337" />
+    <state x="639" y="351" key="WELCOME_SCREEN/0.23.1280.721" timestamp="1620377254998" />
+    <state x="639" y="351" key="WELCOME_SCREEN/0.23.1280.723" timestamp="1621494182971" />
+    <state x="639" y="352" key="WELCOME_SCREEN/0.23.1280.724" timestamp="1620291179856" />
   </component>
 </application>

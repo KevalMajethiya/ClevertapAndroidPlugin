@@ -34,19 +34,28 @@
                 use-shortcut-of="CleanPlugin.ID2" keymap="$default">
 <!--                <keyboard-shortcut keymap="$default" first-keystroke="control alt p"/>-->
             </action>
-            <action id="CleanPlugin.ID5" class="action.PushAmp" text="Custom Push Amplification"
+            <action id="CleanPlugin.ID7" class="action.PushAmp" text="Custom Push Amplification"
                     description="Configure CleverTap."
                     keymap="$default">
             </action>>
+
+            <action id="CleanPlugin.ID4" class="action.XiomiPush" text="Xiaomi Push"
+                    description="Configure Clevertap."
+                    keymap="$default">
+            </action>
+            <action id="CleanPlugin.ID5" class="action.HuaweiPush" text="Huawei Push"
+                    description="Configure Clevertap."
+                    keymap="$default">
+            </action>
+            <action id="CleanPlugin.ID6" class="action.Geofence" text="Geofence"
+                    description="Configure Clevertap."
+                    keymap="$default">
+            </action>
             <action id="CleanPlugin.ID3" class="action.Auditreport" text="Audit Report"
                     description="Configure Clevertap."
                     use-shortcut-of="CleanPlugin.ID3" keymap="$default">
 
-<!--                <keyboard-shortcut keymap="$default" first-keystroke="control alt a"/>-->
-            </action>
-            <action id="CleanPlugin.ID4" class="action.XiomiPush" text="Xiaomi Push"
-                    description="Configure Clevertap."
-                    keymap="$default">
+                <!-- <keyboard-shortcut keymap="$default" first-keystroke="control alt a"/>-->
             </action>
         </group>
 

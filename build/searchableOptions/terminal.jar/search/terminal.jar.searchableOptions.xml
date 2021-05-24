@@ -2,18 +2,10 @@
 <options>
   <configurable id="preferences.keymap" configurable_name="Keymap">
     <option name="" path="ActionManager" hit="" />
-    <option name="goto" path="ActionManager" hit="Goto Next Splitter" />
-    <option name="next" path="ActionManager" hit="Goto Next Splitter" />
-    <option name="splitter" path="ActionManager" hit="Goto Next Splitter" />
-    <option name="goto" path="ActionManager" hit="Goto Previous Splitter" />
-    <option name="previous" path="ActionManager" hit="Goto Previous Splitter" />
-    <option name="splitter" path="ActionManager" hit="Goto Previous Splitter" />
-    <option name="left" path="ActionManager" hit="Move Tab Left" />
-    <option name="move" path="ActionManager" hit="Move Tab Left" />
-    <option name="tab" path="ActionManager" hit="Move Tab Left" />
-    <option name="move" path="ActionManager" hit="Move Tab Right" />
-    <option name="right" path="ActionManager" hit="Move Tab Right" />
-    <option name="tab" path="ActionManager" hit="Move Tab Right" />
+    <option name="left" path="ActionManager" hit="Move Left" />
+    <option name="move" path="ActionManager" hit="Move Left" />
+    <option name="move" path="ActionManager" hit="Move Right" />
+    <option name="right" path="ActionManager" hit="Move Right" />
     <option name="editor" path="ActionManager" hit="Move to Editor" />
     <option name="move" path="ActionManager" hit="Move to Editor" />
     <option name="to" path="ActionManager" hit="Move to Editor" />
@@ -28,10 +20,6 @@
     <option name="terminal" path="ActionManager" hit="Open in Terminal" />
     <option name="rename" path="ActionManager" hit="Rename Session" />
     <option name="session" path="ActionManager" hit="Rename Session" />
-    <option name="horizontally" path="ActionManager" hit="Split Horizontally" />
-    <option name="split" path="ActionManager" hit="Split Horizontally" />
-    <option name="split" path="ActionManager" hit="Split Vertically" />
-    <option name="vertically" path="ActionManager" hit="Split Vertically" />
     <option name="editor" path="ActionManager" hit="Switch Focus To Editor" />
     <option name="focus" path="ActionManager" hit="Switch Focus To Editor" />
     <option name="switch" path="ActionManager" hit="Switch Focus To Editor" />
@@ -76,9 +64,6 @@
     <option name="shell" hit="Shell integration" />
     <option name="path" hit="Shell path" />
     <option name="shell" hit="Shell path" />
-    <option name="command" hit="Smart command handling" />
-    <option name="handling" hit="Smart command handling" />
-    <option name="smart" hit="Smart command handling" />
     <option name="directory" hit="Start directory" />
     <option name="start" hit="Start directory" />
     <option name="name" hit="Tab name" />

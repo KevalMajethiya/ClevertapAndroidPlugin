@@ -32,8 +32,13 @@
     <option name="onuserlogin" path="ActionManager" hit="Clevertap OnuserLogin" />
     <option name="clevertap" path="ActionManager" hit="Clevertap PushProfile" />
     <option name="pushprofile" path="ActionManager" hit="Clevertap PushProfile" />
+    <option name="clevertap" path="ActionManager" hit="Configure CleverTap." />
+    <option name="configure" path="ActionManager" hit="Configure CleverTap." />
     <option name="clevertap" path="ActionManager" hit="Configure Clevertap." />
     <option name="configure" path="ActionManager" hit="Configure Clevertap." />
+    <option name="amplification" path="ActionManager" hit="Custom Push Amplification" />
+    <option name="custom" path="ActionManager" hit="Custom Push Amplification" />
+    <option name="push" path="ActionManager" hit="Custom Push Amplification" />
     <option name="demo" path="ActionManager" hit="Demo" />
     <option name="events" path="ActionManager" hit="Events with properties" />
     <option name="properties" path="ActionManager" hit="Events with properties" />

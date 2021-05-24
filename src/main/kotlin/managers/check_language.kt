@@ -1,5 +1,6 @@
 package managers
 
+import com.intellij.formatting.blocks.split
 import com.intellij.openapi.actionSystem.PlatformDataKeys
 import com.intellij.openapi.command.WriteCommandAction
 import com.intellij.openapi.fileEditor.FileDocumentManager
@@ -108,7 +109,8 @@ class check_language(private val project: Project)
                 val b = a.split("=")
                 val c = b[1]
                 val d = c.split("\"")
-                applicationClassName = d[1]
+                val e = d[1].split(".")
+                applicationClassName = e[1]
                 break
             }
         }

@@ -267,15 +267,15 @@
     <option name="ssl" hit="SSL protocols:" />
     <option name="sslv3" hit="SSLv3" />
     <option name="tlsv1" hit="TLSv1" />
-    <option name="as" hit="Use Studio general proxy settings as default for Subversion" />
-    <option name="default" hit="Use Studio general proxy settings as default for Subversion" />
-    <option name="for" hit="Use Studio general proxy settings as default for Subversion" />
-    <option name="general" hit="Use Studio general proxy settings as default for Subversion" />
-    <option name="proxy" hit="Use Studio general proxy settings as default for Subversion" />
-    <option name="settings" hit="Use Studio general proxy settings as default for Subversion" />
-    <option name="studio" hit="Use Studio general proxy settings as default for Subversion" />
-    <option name="subversion" hit="Use Studio general proxy settings as default for Subversion" />
-    <option name="use" hit="Use Studio general proxy settings as default for Subversion" />
+    <option name="as" hit="Use IDEA general proxy settings as default for Subversion" />
+    <option name="default" hit="Use IDEA general proxy settings as default for Subversion" />
+    <option name="for" hit="Use IDEA general proxy settings as default for Subversion" />
+    <option name="general" hit="Use IDEA general proxy settings as default for Subversion" />
+    <option name="idea" hit="Use IDEA general proxy settings as default for Subversion" />
+    <option name="proxy" hit="Use IDEA general proxy settings as default for Subversion" />
+    <option name="settings" hit="Use IDEA general proxy settings as default for Subversion" />
+    <option name="subversion" hit="Use IDEA general proxy settings as default for Subversion" />
+    <option name="use" hit="Use IDEA general proxy settings as default for Subversion" />
     <option name="seconds" hit="seconds" />
   </configurable>
   <configurable id="vcs.Subversion.SSH" configurable_name="SSH">

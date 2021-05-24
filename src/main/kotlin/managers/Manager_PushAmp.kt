@@ -233,7 +233,7 @@ class Manager_PushAmp (private val project: Project) {
         writeToManifest(sb)
 
     }
-    fun addApplicationData(IsRadiobuttonrb1Selected:Boolean,appclassname:String){
+    fun addApplicationData(IsRadiobuttonrb1Selected:Boolean,appclassname:String,lang : String){
         checkbeforeinsertion2()
         val documentText = appClass!!.text.split("\n".toRegex()).dropLastWhile { it.isEmpty() }.toTypedArray()
         val sb = StringBuilder()
@@ -296,22 +296,27 @@ class Manager_PushAmp (private val project: Project) {
 
                 if (impVal == false){
                     if (line.contains("class "+ appclassname)){
-                        if (line.contains("implements") || line.contains(":")){
+                        if (lang=="java"){
+                            if (line.contains("implements")){
+                                val ans = line
+                                val ans1 = ans.split("implements")
+                                line = ans1[0] + impData+"," + ans1[1]
+                            }
+                            else{
+                                val ans = line
+                                val ans1 = ans.split("{")
+                                line = ans1[0] + impData + "{"
+                            }
+                        }
+                        if (lang=="kotlin"){
                             val ans = line
-                            val ans1 = ans.split("implements")
-                            if (ans1.count() == 1){
-                                val ans2 = ans1[0].split(":")
-                                line = ans2[0].toString() + impData+"," + ans1[1].toString()
-                            }
-                            if (ans1.count() == 2){
-                                line = ans1[0].toString() + impData+"," + ans1[1].toString()
-                            }
+                            val ans1 = ans.split(":")
+                            line = ans1[0] + impData+"," + ans1[1]
                         }
                         else{
                             val ans = line
                             val ans1 = ans.split("{")
                             line = ans1[0] + impData + "{"
-
                         }
                     }
                 }

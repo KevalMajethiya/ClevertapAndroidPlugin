@@ -19,6 +19,8 @@ class PushNotificationManager(private val project: Project) {
     private var notification_channel_exist:Boolean=false
     private var import_stmt:Boolean=false
     private var import_stmt_hashmap:Boolean=false
+    private var firebase_receiver_class_name : String =""
+    private var name : String = ""
 
 
 
@@ -74,6 +76,8 @@ class PushNotificationManager(private val project: Project) {
                     }
                 }
             }
+
+
 
             if (line.contains("package")) {
                 if (line.contains("=")) {

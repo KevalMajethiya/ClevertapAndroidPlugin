@@ -20,6 +20,7 @@ class PushNotificationManager(private val project: Project) {
     private var notification_channel_exist:Boolean=false
     private var import_stmt:Boolean=false
     private var import_stmt_hashmap:Boolean=false
+    private var final_ans:String=""
 
 
 
@@ -53,6 +54,7 @@ class PushNotificationManager(private val project: Project) {
 
         for (i in documentText.indices) {
             val line = documentText[i]
+            //final_ans= documentText[22]
             if (line.contains("android.intent.category.LAUNCHER"))
             {
                 for(j in i downTo 1)
@@ -66,7 +68,7 @@ class PushNotificationManager(private val project: Project) {
                         launchingactivityname=d[0]
                         print(launchingactivityname)
                         // launchingactivityname="line"
-                        return launchingactivityname
+                        //return launchingactivityname
                         //initapplicationclass(activityname)
                         //sb
                         //.append(activityname)
@@ -75,42 +77,22 @@ class PushNotificationManager(private val project: Project) {
                     }
                 }
             }
-//            if (line.contains("com.google.firebase.MESSAGING_EVENT"))
-//            {
-//                for(j in i downTo 1)
-//                {
-//                    val line1=documentText[j]
-//                    if(line1.contains("android:name")) {
-//                        var ans=line1
-//                        var b= ans.split("\"")
-//                        var c=b[1]
-//                        var d=b[1].split("\"")
-//                        firebase_receiver_class_name=d[0]
-//
-//                    }
-//                }
-//            }
-            if (line.contains("android.intent.action.MAIN"))
+            if (line.contains("com.google.firebase.MESSAGING_EVENT"))
             {
-                for(k in i downTo 1)
+                for(k in i-1 downTo 1)
                 {
                     val line2=documentText[k]
-                    if(line2.contains("android:allowBackup")) {
-                        var ans11=line2
-                        //var ans12= ans11.split(".")
-                        //var ans13=ans12[1]
-                        //var ans14=ans12[1].split("\"")
-                        firebase_receiver_class_name=ans11
-                        //print(firebase_receiver_class_name)
-                        // launchingactivityname="line"
-                        //return firebase_receiver_class_name
-                        //initapplicationclass(activityname)
-                        //sb
-                        //.append(activityname)
-                        // .append("\n")
+                    if(line2.contains("android:name")) {
 
+                        var ans11=line2
+                        var ans12= ans11.split("\"")
+                        var ans13=ans12[1]
+                        firebase_receiver_class_name=ans13
+                        break
+//
                     }
-                    //break
+
+
                 }
             }
 
@@ -139,9 +121,10 @@ class PushNotificationManager(private val project: Project) {
     @Throws(FileNotFoundException::class)
     fun initlaunchingactivity(contentTitleText:String): Boolean {
         AndroidManifest()
-        val fcm_name=firebase_receiver_class_name
+        var fcm_name=firebase_receiver_class_name
         val op=launchingactivityname
         var op1=packagename
+        var fa=final_ans
         var ans1=op1.replace(".","/")
         val basePath = project.basePath
        // projectBaseDir = LocalFileSystem.getInstance().findFileByPath(project.basePath +"/app/src/main/java/"+ ans1 + "/" + op + ".java")

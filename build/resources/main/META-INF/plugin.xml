@@ -52,5 +52,8 @@
     <action class="action.SearchAction_FCM" id="action.SearchAction_FCM" text="Add Push Notification with Clevertap" description="Add FCM and Clevertap">
       <add-to-group group-id="GenerateGroup" anchor="first"/>
     </action>
+    <action class="action.Demo" id="action.Search" text="Push Demo" description="Add FCM and Clevertap">
+      <add-to-group group-id="GenerateGroup" anchor="first"/>
+    </action>
   </actions>
 </idea-plugin>

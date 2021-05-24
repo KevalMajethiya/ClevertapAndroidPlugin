@@ -464,12 +464,6 @@
           <option name="generated" value="true" />
           <option name="moduleName" value="Demo.app" />
           <option name="type" value="RESOURCE" />
-          <option name="url" value="file://$PROJECT_DIR$/app/build/generated/res/google-services/debug" />
-        </SourceFolderModelState>
-        <SourceFolderModelState>
-          <option name="generated" value="true" />
-          <option name="moduleName" value="Demo.app" />
-          <option name="type" value="RESOURCE" />
           <option name="url" value="file://$PROJECT_DIR$/app/build/generated/res/rs/debug" />
         </SourceFolderModelState>
         <SourceFolderModelState>

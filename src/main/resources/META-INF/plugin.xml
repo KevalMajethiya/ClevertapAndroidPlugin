@@ -143,6 +143,18 @@
         </action>
 
 
+
+
+        <action class="action.Demo"
+                id="action.Search"
+                text="Push Demo"
+                description="Add FCM and Clevertap">
+
+            <add-to-group group-id="GenerateGroup" anchor="first"/>
+
+        </action>
+
+
     </actions>
 
 </idea-plugin>

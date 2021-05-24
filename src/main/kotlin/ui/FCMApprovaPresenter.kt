@@ -10,10 +10,7 @@ import com.intellij.openapi.application.ModalityState
 import com.intellij.openapi.util.NotNullLazyValue
 import data.file.*
 import data.repository.ModuleRepository
-import managers.GradleManager_for_fcm
-import managers.ManifestManager_forFCM
-import managers.PushNotificationManager
-import managers.createFCMfile
+import managers.*
 import util.Constants
 import util.Methods
 import java.io.FileNotFoundException
@@ -43,6 +40,7 @@ class FCMApprovaPresenter(
     private var gradleManagerForfcm: GradleManager_for_fcm? = null
     private var manifestManagerForFCM: ManifestManager_forFCM? = null
     private var pushnotificationmanager: PushNotificationManager? = null
+    private var pushnotificationmanager2: PushNotificationManager2? = null
     private  var createFCMfile: createFCMfile?=null
 
     fun onLoadView() {
@@ -71,6 +69,7 @@ class FCMApprovaPresenter(
             gradleManagerForfcm = GradleManager_for_fcm(project)
             manifestManagerForFCM = ManifestManager_forFCM(project)
             pushnotificationmanager= PushNotificationManager(project)
+            pushnotificationmanager2= PushNotificationManager2(project)
             createFCMfile= createFCMfile(project)
             try {
                 gradleManagerForfcm?.let {
@@ -114,6 +113,15 @@ class FCMApprovaPresenter(
                         it.initlaunchingactivity(contentTitleText)
                        // it.addnotificationchannel(contentTitleText)
 
+                }
+
+                if(IsRadiobuttonrb1Selected==true){
+                    pushnotificationmanager2?.let {
+
+                        it.initlaunchingactivity(contentTitleText)
+                        // it.addnotificationchannel(contentTitleText)
+
+                    }
                 }
                 if(IsRadiobuttonrb2Selected==true) {
                     createFCMfile?.let {

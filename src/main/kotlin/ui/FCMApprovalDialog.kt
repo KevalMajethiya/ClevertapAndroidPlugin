@@ -130,6 +130,15 @@ class FCMApprovalDialog(var event: AnActionEvent,serviceNameText:String,channel_
             panelForFCM1.manifest_yes.setVisible(true)
             panelForFCM1.fcm_implemented.setVisible(true)
 
+            panelForFCM1.file6.setVisible(true)
+            panelForFCM1.fcm_service_class.setVisible(true)
+            panelForFCM1.fcm_service_class_content1.setVisible(true)
+
+            panelForFCM1.fcm_service_class_content2.setVisible(true)
+
+
+
+
 
             panelForFCM1.fcm_implemented.setText(
                 "<html>"+ "&lt receiver" + "<br>" +
@@ -141,9 +150,61 @@ class FCMApprovalDialog(var event: AnActionEvent,serviceNameText:String,channel_
                     "</html>"
             )
 
-            panelForFCM1.launchingact_content.setText("<html>"+"import android.app.NotificationManager;"+"<br>"+
-                    "CleverTapAPI.createNotificationChannel(getApplicationContext(),\"$channel_id\",\"mychannel\",\"lDescription\",NotificationManager.IMPORTANCE_MAX,true);"+"<br>"+
-                    "</html>")
+            if(lang=="java") {
+
+                panelForFCM1.launchingact_content.setText(
+                    "<html>" + "import android.app.NotificationManager;" + "<br>" +
+                            "CleverTapAPI.createNotificationChannel(getApplicationContext(),\"$channel_id\",\"mychannel\",\"lDescription\",NotificationManager.IMPORTANCE_MAX,true);" + "<br>" +
+                            "</html>"
+                )
+
+                panelForFCM1.fcm_service_class_content1.setText(
+                    "<html>" + "try {" + "<br>" +
+                            "if (remotemessage.getData().size() > 0) {" + "<br>" +
+                            "                Bundle extras = new Bundle();" + "<br>" +
+                            "                for (Map.Entry<String, String> entry : remotemessage.getData().entrySet()) {" + "<br>" +
+                            "                    extras.putString(entry.getKey(), entry.getValue()) };" + "<br>" +
+                            "                NotificationInfo info = CleverTapAPI.getNotificationInfo(extras);" + "<br>" +
+                            "                if (info.fromCleverTap) {" + "<br>" +
+                            "                    CleverTapAPI.createNotification(getApplicationContext(), extras);" + "<br>" +
+                            "                } else {" + "<br>" +
+                            "                    // not from CleverTap handle yourself or pass to another provider  }" + "<br>" +
+                            "}" + "<br>" +
+                            "        } catch (Throwable t) {" + "<br>" +
+                            "           Log.d(\"MYFCMLIST\", \"Error parsing FCM message\", t); }" + "<br>" +
+                            "</html>"
+                )
+
+                panelForFCM1.fcm_service_class_content2.setText("<html>" + "@Override" + "<br>" + "public void onNewToken(@NonNull String s) {" + "<br>" + "    super.onNewToken(s);" + "<br>" + "\t\tclevertapDefaultInstance = CleverTapAPI.getDefaultInstance(getApplicationContext());" + "<br>" + "clevertapDefaultInstance.pushFcmRegistrationId(s,true);" + "<br>" + "}" + "<br>" + "</html>")
+            }
+            if(lang=="kotlin")
+            {
+                panelForFCM1.launchingact_content.setText(
+                    "<html>" + "import android.app.NotificationManager" + "<br>" +
+                            "CleverTapAPI.createNotificationChannel(getApplicationContext(),\"$channel_id\",\"mychannel\",\"lDescription\",NotificationManager.IMPORTANCE_MAX,true)" + "<br>" +
+                            "</html>"
+                )
+
+                panelForFCM1.fcm_service_class_content1.setText("<html>"+"remotemessage.data.apply {"+"<br>"+
+                        "try {"+"<br>"+
+                        "if (size() > 0) {"+"<br>"+
+                        "                val extras =Bundle()"+"<br>"+
+                        "                for ((key,value) in this ) {"+"<br>"+
+                        "                    extras.putString(key, value)"+"<br>"+
+                        "}"+"<br>"+
+                        "                val info = CleverTapAPI.getNotificationInfo(extras)"+"<br>"+
+                        "                if (info.fromCleverTap) {"+"<br>"+
+                        "                    CleverTapAPI.createNotification(ApplicationContext(), extras)"+"<br>"+
+                        "                } else {"+
+                        "                    // not from CleverTap handle yourself or pass to another provider }" +"<br>"+
+                        "}"+"<br>"+
+                        "        } catch (t: Throwable) {"+
+                        "           Log.d(\"MYFCMLIST\", \"Error parsing FCM message\", t)"+
+                        "}"+
+                        "</html>")
+
+                panelForFCM1.fcm_service_class_content2.setText("<html>"+"@Override"+"<br>"+"fun onNewToken(@NonNull String s) {"+"<br>"+"    super.onNewToken(s)"+"<br>"+"\t\tclevertapDefaultInstance = CleverTapAPI.getDefaultInstance(getApplicationContext())"+"<br>"+"clevertapDefaultInstance.pushFcmRegistrationId(s,true)"+"<br>"+"}"+"<br>"+"</html>")
+            }
 
 
         }

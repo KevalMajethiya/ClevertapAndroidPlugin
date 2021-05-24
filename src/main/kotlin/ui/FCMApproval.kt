@@ -29,11 +29,21 @@ class FCMApproval() : JPanel()
     var manifest_yes = JLabel("Following code snippet would be added in the manifest file:")
     var fcm_implemented=JLabel()
 
+    var file6 = JLabel("FCM_Service file:")
+    var fcm_service_class = JLabel("Following code snippet would be added in the FCM_Service file:")
+    var fcm_service_class_content1=JLabel()
+
+    var fcm_service_class_content2=JLabel()
+
+
+
+
 
 //    var b= JButton("Copy")
 //    var b1= JButton("Copy")
 
     init
+
     {
 
         val newPanel = JPanel(GridBagLayout())
@@ -158,6 +168,30 @@ class FCMApproval() : JPanel()
         constraints.gridy = 14
         fcm_implemented.setVisible(false)
         newPanel.add(fcm_implemented, constraints)
+
+        constraints.gridx = 0
+        constraints.gridy = 15
+        file6.setVisible(false)
+        newPanel.add(file6, constraints)
+
+        constraints.gridx = 0
+        constraints.gridy = 16
+        fcm_service_class.setVisible(false)
+        newPanel.add(fcm_service_class, constraints)
+
+        constraints.gridx = 0
+        constraints.gridy = 17
+        fcm_service_class_content1.setVisible(false)
+        newPanel.add(fcm_service_class_content1, constraints)
+
+        constraints.gridx = 0
+        constraints.gridy = 18
+        fcm_service_class_content2.setVisible(false)
+        newPanel.add(fcm_service_class_content2, constraints)
+
+
+
+
 
 
 

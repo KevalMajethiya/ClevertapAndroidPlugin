@@ -114,7 +114,7 @@ object Methods {
     ):String
     {
         if(IsRadiobuttonrb1Selected==false) {
-        return "\n        android:name=\"com.clevertap.android.sdk.Application\"\n"
+        return "        android:name=\"com.clevertap.android.sdk.Application\"\n"
     }
 //        else
 //        {

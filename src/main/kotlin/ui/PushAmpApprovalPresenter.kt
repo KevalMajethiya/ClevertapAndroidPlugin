@@ -10,6 +10,7 @@ import data.file.PackageExtractor
 import data.file.WriteActionDispatcher
 import data.repository.ModuleRepository
 import managers.Manager_PushAmp
+import managers.check_language
 import util.Constants
 import java.io.FileNotFoundException
 
@@ -56,6 +57,9 @@ class PushAmpApprovalPresenter (
     ){
         event.project?.let { project ->
 
+            val check= check_language(project)
+            val lang= check.find_language()
+
             managerForPushAmp = Manager_PushAmp(project)
 
             try {
@@ -67,7 +71,7 @@ class PushAmpApprovalPresenter (
                     }
                     if (IsRadiobuttonrb1Selected==true){
                         if (it.initAppClass(appclassname) && it.initReceiverClass(receivcerClass)){
-                            it.addApplicationData(IsRadiobuttonrb1Selected,appclassname)
+                            it.addApplicationData(IsRadiobuttonrb1Selected,appclassname,lang)
                             it.addReceiverData()
                         }
                     }

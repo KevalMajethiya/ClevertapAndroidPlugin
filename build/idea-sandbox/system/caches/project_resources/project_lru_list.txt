@@ -1,12 +1,12 @@
-fcm_kt_testing.9ced040b
+pushamplicationtesting.dcc701d9
+myapp.fcea5013
+my1.80a9aac3
 demo.948752e5
+fcm_kt_testing.9ced040b
 d.d3a59aa2
 fcmtesting.3e277422
 audittesting.f1cb64b7
 ct.a10db9d3
 pushampt.c014c94c
-pushamplicationtesting.dcc701d9
 geofencetesting.a5da642e
 my.a10dbb2e
-huaweidemo.7486d3ec
-myapp.fcea5013

@@ -68,8 +68,8 @@
     <property name="com.intellij.history.integration.ui.views.FileHistoryDialog.0" value="300" />
     <property name="com.intellij.history.integration.ui.views.FileHistoryDialog.1" value="800" />
     <property name="defaultJdkConfigured" value="true" />
-    <property name="file.chooser.recent.files" value="$USER_HOME$/AndroidStudioProjects/FCM_kt_testing&#10;/Users/kevalmajethiya/AndroidStudioProjects/Demo&#10;/Users/kevalmajethiya/AndroidStudioProjects/D&#10;/Users/kevalmajethiya/AndroidStudioProjects/FCMTesting&#10;/Users/kevalmajethiya/AndroidStudioProjects/AuditTesting&#10;/Users/kevalmajethiya/AndroidStudioProjects/CT&#10;/Users/kevalmajethiya/AndroidStudioProjects/PushAmpT&#10;/Users/kevalmajethiya/AndroidStudioProjects/PushAmplicationTesting&#10;/Users/kevalmajethiya/AndroidStudioProjects/GeofenceTesting&#10;/Users/kevalmajethiya/AndroidStudioProjects&#10;/Users/kevalmajethiya/AndroidStudioProjects/My&#10;/Users/kevalmajethiya/AndroidStudioProjects/HuaweiDemo&#10;/Users/kevalmajethiya/AndroidStudioProjects/MyApp&#10;D:/Clevertap/Testing&#10;C:/&#10;C:/Users/Jitendra/AndroidStudioProjects/My&#10;/Users/kevalmajethiya/AndroidStudioProjects/KotlinDemo&#10;/Users/kevalmajethiya/AndroidStudioProjects/MyApplication&#10;/Users/kevalmajethiya/AndroidStudioProjects/Testing&#10;/Users/kevalmajethiya/AndroidStudioProjects/MyApp1&#10;/Users/kevalmajethiya/AndroidStudioProjects/DInt&#10;/Users/kevalmajethiya/AndroidStudioProjects/PanelTesting&#10;/Users/kevalmajethiya/AndroidStudioProjects/Demo2&#10;/Users/kevalmajethiya/AndroidStudioProjects/Fcmtesting&#10;/Users/kevalmajethiya/AndroidStudioProjects/FcmUpdation&#10;/Users/kevalmajethiya/AndroidStudioProjects/FinalTesting&#10;/Users/kevalmajethiya/AndroidStudioProjects/NewApp&#10;/Users/kevalmajethiya/AndroidStudioProjects/MF&#10;/Users/kevalmajethiya/AndroidStudioProjects/TT&#10;/Users/kevalmajethiya/AndroidStudioProjects/T" />
-    <property name="file.gist.reindex.count" value="1697" />
+    <property name="file.chooser.recent.files" value="$USER_HOME$/AndroidStudioProjects/MyApp&#10;/Users/kevalmajethiya/AndroidStudioProjects/My1&#10;/Users/kevalmajethiya/AndroidStudioProjects/FCM_kt_testing&#10;/Users/kevalmajethiya/AndroidStudioProjects/Demo&#10;/Users/kevalmajethiya/AndroidStudioProjects/D&#10;/Users/kevalmajethiya/AndroidStudioProjects/FCMTesting&#10;/Users/kevalmajethiya/AndroidStudioProjects/AuditTesting&#10;/Users/kevalmajethiya/AndroidStudioProjects/CT&#10;/Users/kevalmajethiya/AndroidStudioProjects/PushAmpT&#10;/Users/kevalmajethiya/AndroidStudioProjects/PushAmplicationTesting&#10;/Users/kevalmajethiya/AndroidStudioProjects/GeofenceTesting&#10;/Users/kevalmajethiya/AndroidStudioProjects&#10;/Users/kevalmajethiya/AndroidStudioProjects/My&#10;/Users/kevalmajethiya/AndroidStudioProjects/HuaweiDemo&#10;D:/Clevertap/Testing&#10;C:/&#10;C:/Users/Jitendra/AndroidStudioProjects/My&#10;/Users/kevalmajethiya/AndroidStudioProjects/KotlinDemo&#10;/Users/kevalmajethiya/AndroidStudioProjects/MyApplication&#10;/Users/kevalmajethiya/AndroidStudioProjects/Testing&#10;/Users/kevalmajethiya/AndroidStudioProjects/MyApp1&#10;/Users/kevalmajethiya/AndroidStudioProjects/DInt&#10;/Users/kevalmajethiya/AndroidStudioProjects/PanelTesting&#10;/Users/kevalmajethiya/AndroidStudioProjects/Demo2&#10;/Users/kevalmajethiya/AndroidStudioProjects/Fcmtesting&#10;/Users/kevalmajethiya/AndroidStudioProjects/FcmUpdation&#10;/Users/kevalmajethiya/AndroidStudioProjects/FinalTesting&#10;/Users/kevalmajethiya/AndroidStudioProjects/NewApp&#10;/Users/kevalmajethiya/AndroidStudioProjects/MF&#10;/Users/kevalmajethiya/AndroidStudioProjects/TT" />
+    <property name="file.gist.reindex.count" value="1708" />
     <property name="fileTypeChangedCounter" value="1" />
     <property name="ide.memory.adjusted" value="true" />
     <property name="installed.kotlin.plugin.version" value="1.3.72-release-Studio4.1-5" />
@@ -77,12 +77,12 @@
     <property name="kotlin.lastUpdateCheck" value="1614343613371" />
     <property name="kotlin.plugin.releaseDate" value="1.3.72-release-Studio4.1-5:2020-06-17" />
     <property name="lastTip" value="12" />
-    <property name="last_opened_file_path" value="$USER_HOME$/AndroidStudioProjects/FCM_kt_testing" />
+    <property name="last_opened_file_path" value="$USER_HOME$/AndroidStudioProjects/MyApp" />
     <property name="memory.settings.last.check.timestamp" value="1572607101648" />
     <property name="memory.settings.postsync.do.not.show.again" value="true" />
     <property name="project.wizard.group" value="com.android.tools.idea.npw.ideahost.AndroidModuleBuilder" />
     <property name="project.wizard.template" value="Android" />
-    <property name="studio.activity.count" value="85" />
+    <property name="studio.activity.count" value="64" />
     <property name="tasks.pass.word.conversion.enforced" value="true" />
     <property name="ts.lib.d.ts.version" value="3.4.1" />
   </component>

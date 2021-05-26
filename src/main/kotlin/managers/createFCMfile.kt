@@ -61,28 +61,7 @@ class createFCMfile(private val project: Project)
 
         for (i in documentText.indices) {
             val line = documentText[i]
-            if (line.contains("android.intent.category.LAUNCHER"))
-            {
-                for(j in i downTo 1)
-                {
-                    val line1=documentText[j]
-                    if(line1.contains("activity")) {
-                        var ans=line1
-                        var b= ans.split(".")
-                        var c=b[1]
-                        var d=b[1].split("\"")
-                        launchingactivityname=d[0]
-                        print(launchingactivityname)
-                        // launchingactivityname="line"
-                        return launchingactivityname
-                        //initapplicationclass(activityname)
-                        //sb
-                        //.append(activityname)
-                        // .append("\n")
 
-                    }
-                }
-            }
 
             if (line.contains("package")) {
                 if (line.contains("=")) {
@@ -96,14 +75,9 @@ class createFCMfile(private val project: Project)
                     //initapplicationclass(packagename!!)
                 }
             }
-            sb
-                .append(line)
-                .append("\n")
-
-            //  }
 
         }
-        writeToManifest(sb)
+
         return "com"
     }
 

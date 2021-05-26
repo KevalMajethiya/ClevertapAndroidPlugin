@@ -35,13 +35,13 @@
     </layout>
   </component>
   <component name="WindowStateApplicationService">
-    <state x="451" y="133" key="FileChooserDialogImpl" timestamp="1621850092592">
+    <state x="451" y="133" key="FileChooserDialogImpl" timestamp="1622020007307">
       <screen x="0" y="23" width="1280" height="723" />
     </state>
     <state x="451" y="132" key="FileChooserDialogImpl/0.23.1280.715" timestamp="1620127990782" />
     <state x="451" y="132" key="FileChooserDialogImpl/0.23.1280.716" timestamp="1621838994234" />
     <state x="451" y="133" key="FileChooserDialogImpl/0.23.1280.721" timestamp="1621503329383" />
-    <state x="451" y="133" key="FileChooserDialogImpl/0.23.1280.723" timestamp="1621850092592" />
+    <state x="451" y="133" key="FileChooserDialogImpl/0.23.1280.723" timestamp="1622020007307" />
     <state x="451" y="133" key="FileChooserDialogImpl/0.23.1280.724" timestamp="1621495744727" />
     <state x="451" y="134" key="FileChooserDialogImpl/0.23.1280.726" timestamp="1617276491997" />
     <state x="228" y="100" key="IDE.errors.dialog" timestamp="1621501250364">
@@ -56,13 +56,13 @@
     </state>
     <state x="921" y="555" width="356" height="156" key="ProcessPopupWindow/0.23.1280.716" timestamp="1616155760329" />
     <state x="921" y="559" width="356" height="158" key="ProcessPopupWindow/0.23.1280.721" timestamp="1616745854575" />
-    <state x="639" y="351" key="WELCOME_SCREEN" timestamp="1621859979718">
+    <state x="639" y="351" key="WELCOME_SCREEN" timestamp="1622020282713">
       <screen x="0" y="23" width="1280" height="723" />
     </state>
     <state x="639" y="349" key="WELCOME_SCREEN/0.23.1280.715" timestamp="1620206681090" />
     <state x="639" y="349" key="WELCOME_SCREEN/0.23.1280.716" timestamp="1621838995923" />
-    <state x="639" y="351" key="WELCOME_SCREEN/0.23.1280.721" timestamp="1621841522522" />
-    <state x="639" y="351" key="WELCOME_SCREEN/0.23.1280.723" timestamp="1621859979718" />
+    <state x="639" y="351" key="WELCOME_SCREEN/0.23.1280.721" timestamp="1622019749949" />
+    <state x="639" y="351" key="WELCOME_SCREEN/0.23.1280.723" timestamp="1622020282713" />
     <state x="639" y="352" key="WELCOME_SCREEN/0.23.1280.724" timestamp="1621501251864" />
   </component>
 </application>

@@ -63,7 +63,7 @@ class ManifestManager_forFCM(private val project: Project) {
             {
                 fcm_sender_id=true
             }
-            if(line.contains("android:name=\"com.clevertap.android.sdk.pushnotification.CTPushNotificationReceiver\"\n"))
+            if(line.contains("android:name=\"com.clevertap.android.sdk.pushnotification.CTPushNotificationReceiver\""))
             {
                 receiver=true
             }

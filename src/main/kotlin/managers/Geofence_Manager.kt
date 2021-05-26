@@ -69,24 +69,37 @@ class Geofence_Manager(private val project: Project)
             {
                 for(j in i downTo 1)
                 {
-                    val line1=documentText[j]
+                    var line1=documentText[j]
                     if(line1.contains("activity")) {
-                        var ans=line1
-                        var b= ans.split(".")
-                        var c=b[1]
-                        var d=b[1].split("\"")
-                        launchingactivityname=d[0]
-                        print(launchingactivityname)
-                        // launchingactivityname="line"
-                        return launchingactivityname
-                        //initapplicationclass(activityname)
-                        //sb
-                        //.append(activityname)
-                        // .append("\n")
+                        if(line1.contains("android:name")){
+                            var ans=line1
+                            var b= ans.split(".")
+                            var c=b[1]
+                            var d=b[1].split("\"")
+                            var e=d[0]
+                            launchingactivityname=e
 
+
+                        }
+                        else
+                        {
+                            var line1=documentText[j+1]
+                            if(line1.contains("android:name")){
+                                var ans=line1
+                                var b= ans.split(".")
+                                var c=b[1]
+                                var d=b[1].split("\"")
+                                var e=d[0]
+                                launchingactivityname=e
+
+
+                            }
+
+                        }
                     }
                 }
             }
+
 
             if (line.contains("package")) {
                 if (line.contains("=")) {

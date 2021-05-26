@@ -55,24 +55,37 @@ class check_language(private val project: Project)
             {
                 for(j in i downTo 1)
                 {
-                    val line1=documentText[j]
+                    var line1=documentText[j]
                     if(line1.contains("activity")) {
-                        val ans=line1
-                        val b= ans.split(".")
-                        var c=b[1]
-                        val d=b[1].split("\"")
-                        launchingactivityname=d[0]
-                        print(launchingactivityname)
-                        // launchingactivityname="line"
-                        return launchingactivityname
-                        //initapplicationclass(activityname)
-                        //sb
-                        //.append(activityname)
-                        // .append("\n")
+                        if(line1.contains("android:name")){
+                            var ans=line1
+                            var b= ans.split(".")
+                            var c=b[1]
+                            var d=b[1].split("\"")
+                            var e=d[0]
+                            launchingactivityname=e
 
+
+                        }
+                        else
+                        {
+                            var line1=documentText[j+1]
+                            if(line1.contains("android:name")){
+                                var ans=line1
+                                var b= ans.split(".")
+                                var c=b[1]
+                                var d=b[1].split("\"")
+                                var e=d[0]
+                                launchingactivityname=e
+
+                                
+                            }
+
+                        }
                     }
                 }
             }
+
 
             if (line.contains("package")) {
                 if (line.contains("=")) {
@@ -108,7 +121,9 @@ class check_language(private val project: Project)
                 val b = a.split("=")
                 val c = b[1]
                 val d = c.split("\"")
-                applicationClassName = d[1]
+                val e = d[1].split(".")
+
+                applicationClassName = e[1]
                 break
             }
         }

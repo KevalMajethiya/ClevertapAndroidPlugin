@@ -86,12 +86,13 @@ class ManifestManager(private val project: Project) {
 
 
             //if (line.contains("activity")) {
-                if (line.contains("android.intent.category.LAUNCHER"))
+            if (line.contains("android.intent.category.LAUNCHER"))
+            {
+                for(j in i downTo 1)
                 {
-                    for(j in i downTo 1)
-                    {
-                        val line1=documentText[j]
-                        if(line1.contains("activity")) {
+                    var line1=documentText[j]
+                    if(line1.contains("activity")) {
+                        if(line1.contains("android:name")){
                             var ans=line1
                             var b= ans.split(".")
                             var c=b[1]
@@ -103,8 +104,27 @@ class ManifestManager(private val project: Project) {
                                 .append(activityname)
                                 .append("\n")
                         }
+                        else
+                        {
+                            var line1=documentText[j+1]
+                            if(line1.contains("android:name")){
+                                var ans=line1
+                                var b= ans.split(".")
+                                var c=b[1]
+                                var d=b[1].split("\"")
+                                var e=d[0]
+                                var activityname=e
+
+                                sb
+                                    .append(activityname)
+                                    .append("\n")
+                            }
+
+                        }
                     }
-                 }
+                }
+            }
+
 
             //}
         }
@@ -124,7 +144,6 @@ class ManifestManager(private val project: Project) {
 
                 if (line.contains("/")) {
                     sb
-
                         .append(repository)
                         .append("\n")
                 }
@@ -284,10 +303,6 @@ class ManifestManager(private val project: Project) {
             if(default_clevertap_class_exist==false) {
                 if (line.contains("android:allowBackup")) {
                     sb
-//                        .append("<!-- Added by CleverTap Plugin-->")
-//                        .append("\n")
-//                        .append("    <!-- Adding Default CleverTap ApplicationClass -->")
-//                        .append("\n")
                         .append(repository2)
                         .append("\n")
 

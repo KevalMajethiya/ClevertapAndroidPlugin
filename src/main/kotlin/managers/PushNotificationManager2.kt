@@ -241,7 +241,7 @@ class PushNotificationManager2(private val project: Project) {
                 import_map=true
 
             }
-            if(line.contains("if (remoteMessage.getData().size() > 0)"))
+            if(line.contains("CleverTapAPI.createNotification(getApplicationContext(), extras);"))
             {
                 firebase_messaging_content=true
 
@@ -536,7 +536,7 @@ class PushNotificationManager2(private val project: Project) {
                 import_map=true
 
             }
-            if(line.contains("if (remoteMessage.getData().size > 0)"))
+            if(line.contains("CleverTapAPI.createNotification(getApplicationContext(), extras)"))
             {
                 firebase_messaging_content=true
 

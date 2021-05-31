@@ -70,7 +70,7 @@ class ManifestManager_forFCM(private val project: Project) {
         }
     }
 
-    fun addMetaDataContent(repository: String,fcmservice_name:String,fcmsenderid:String,IsRadiobuttonrb1Selected:Boolean) {
+    fun addMetaDataContent(repository: String,fcmservice_name:String,fcmsenderid:String,IsRadiobuttonrb1Selected:Boolean,IsRadiobuttonrb2Selected:Boolean) {
         checkbeforeinsertion()
         val documentText = androidManifest!!.text.split("\n".toRegex()).dropLastWhile { it.isEmpty() }.toTypedArray()
         val sb = StringBuilder()
@@ -118,80 +118,81 @@ class ManifestManager_forFCM(private val project: Project) {
                     }
                 }
             }
+            if(IsRadiobuttonrb2Selected==true) {
+                if (fcm_service_name == false) {
+                    if (line.contains(Constants.APPLICATION)) {
+                        if (line.contains("/")) {
+                            sb
+                                .append("        <!-- Added by CleverTap Assistant-->")
+                                .append("\n")
+                                .append("        <service")
+                                .append("\n")
+                                .append("             android:name=\".fcm." + fcmservice_name + "\"")
+                                .append("\n")
+                                .append("             android:exported=\"false\">")
+                                .append("\n")
+                                .append("             <intent-filter>")
+                                .append("\n")
+                                .append("                 <action android:name=\"com.google.firebase.MESSAGING_EVENT\" />")
+                                .append("\n")
+                                .append("             </intent-filter>")
+                                .append("\n")
+                                .append("         </service>")
+                                .append("\n")
+                            fcm_service_name = true
 
-            if(fcm_service_name==false) {
-                if (line.contains(Constants.APPLICATION)) {
-                    if (line.contains("/")) {
-                        sb
-                            .append("        <!-- Added by CleverTap Assistant-->")
-                            .append("\n")
-                            .append("        <service")
-                            .append("\n")
-                            .append("             android:name=\".fcm."+fcmservice_name+"\"")
-                            .append("\n")
-                            .append("             android:exported=\"false\">")
-                            .append("\n")
-                            .append("             <intent-filter>")
-                            .append("\n")
-                            .append("                 <action android:name=\"com.google.firebase.MESSAGING_EVENT\" />")
-                            .append("\n")
-                            .append("             </intent-filter>")
-                            .append("\n")
-                            .append("         </service>")
-                            .append("\n")
-                        fcm_service_name=true
-
+                        }
                     }
                 }
-            }
-            if(firebase_messaging_auto_init_enabled==false) {
-                if (line.contains(Constants.APPLICATION)) {
-                    if (line.contains("/")) {
-                        sb
-                            .append("         <!-- Added by CleverTap Assistant-->")
-                            .append("\n")
-                            .append("         <meta-data")
-                            .append("\n")
-                            .append("             android:name=\"firebase_messaging_auto_init_enabled\"")
-                            .append("\n")
-                            .append("             android:value=\"false\" />")
-                            .append("\n")
-                        firebase_messaging_auto_init_enabled=true
+                if (firebase_messaging_auto_init_enabled == false) {
+                    if (line.contains(Constants.APPLICATION)) {
+                        if (line.contains("/")) {
+                            sb
+                                .append("         <!-- Added by CleverTap Assistant-->")
+                                .append("\n")
+                                .append("         <meta-data")
+                                .append("\n")
+                                .append("             android:name=\"firebase_messaging_auto_init_enabled\"")
+                                .append("\n")
+                                .append("             android:value=\"false\" />")
+                                .append("\n")
+                            firebase_messaging_auto_init_enabled = true
 
+                        }
                     }
                 }
-            }
-            if(firebase_analytics_collection_enabled==false) {
-                if (line.contains(Constants.APPLICATION)) {
-                    if (line.contains("/")) {
-                        sb
-                            .append("         <!-- Added by CleverTap Assistant-->")
-                            .append("\n")
-                            .append("         <meta-data")
-                            .append("\n")
-                            .append("             android:name=\"firebase_analytics_collection_enabled\"")
-                            .append("\n")
-                            .append("             android:value=\"false\"/>")
-                            .append("\n")
-                        firebase_analytics_collection_enabled=true
+                if (firebase_analytics_collection_enabled == false) {
+                    if (line.contains(Constants.APPLICATION)) {
+                        if (line.contains("/")) {
+                            sb
+                                .append("         <!-- Added by CleverTap Assistant-->")
+                                .append("\n")
+                                .append("         <meta-data")
+                                .append("\n")
+                                .append("             android:name=\"firebase_analytics_collection_enabled\"")
+                                .append("\n")
+                                .append("             android:value=\"false\"/>")
+                                .append("\n")
+                            firebase_analytics_collection_enabled = true
 
+                        }
                     }
                 }
-            }
-            if(fcm_sender_id==false) {
-                if (line.contains(Constants.APPLICATION)) {
-                    if (line.contains("/")) {
-                        sb
-                            .append("        <!-- Added by CleverTap Assistant-->")
-                            .append("\n")
-                            .append("         <meta-data")
-                            .append("\n")
-                            .append("             android:name=\"FCM_SENDER_ID\"")
-                            .append("\n")
-                            .append("             android:value="+ fcmsenderid +" />")
-                            .append("\n")
-                        fcm_sender_id=true
+                if (fcm_sender_id == false) {
+                    if (line.contains(Constants.APPLICATION)) {
+                        if (line.contains("/")) {
+                            sb
+                                .append("        <!-- Added by CleverTap Assistant-->")
+                                .append("\n")
+                                .append("         <meta-data")
+                                .append("\n")
+                                .append("             android:name=\"FCM_SENDER_ID\"")
+                                .append("\n")
+                                .append("             android:value=" + fcmsenderid + " />")
+                                .append("\n")
+                            fcm_sender_id = true
 
+                        }
                     }
                 }
             }

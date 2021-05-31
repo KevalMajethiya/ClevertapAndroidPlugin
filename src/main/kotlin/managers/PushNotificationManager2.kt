@@ -30,6 +30,7 @@ class PushNotificationManager2(private val project: Project) {
     private var clevertap_object:Boolean=false
     private var firebase_messaging_content:Boolean=false
     private var on_new_token:Boolean=false
+    private var s_onNewtoken:Boolean=false
 
 
 
@@ -70,32 +71,23 @@ class PushNotificationManager2(private val project: Project) {
                 {
                     var line1=documentText[j]
                     if(line1.contains("activity")) {
-                        if(line1.contains("android:name")){
-                            var ans=line1
-                            var b= ans.split(".")
-                            var c=b[1]
-                            var d=b[1].split("\"")
-                            var e=d[0]
-                            launchingactivityname=e
 
-
-                        }
-                        else
-                        {
-                            var line1=documentText[j+1]
-                            if(line1.contains("android:name")){
-                                var ans=line1
-                                var b= ans.split(".")
-                                var c=b[1]
-                                var d=b[1].split("\"")
-                                var e=d[0]
-                                launchingactivityname=e
-
-
+                        for(k in j..i) {
+                            var line2 = documentText[k]
+                            if (line2.contains("android:name")) {
+                                var ans = line2
+                                var b = ans.split(".")
+                                var c = b[1]
+                                var d = b[1].split("\"")
+                                var e = d[0]
+                                launchingactivityname = e
+                                break
                             }
-
                         }
+                        break
+
                     }
+
                 }
             }
 
@@ -249,7 +241,7 @@ class PushNotificationManager2(private val project: Project) {
                 import_map=true
 
             }
-            if(line.contains("RemoteMessage.Notification notification = remoteMessage.getNotification();"))
+            if(line.contains("if (remoteMessage.getData().size() > 0)"))
             {
                 firebase_messaging_content=true
 
@@ -262,6 +254,11 @@ class PushNotificationManager2(private val project: Project) {
             if(line.contains("void onNewToken"))
             {
                 on_new_token=true
+
+            }
+            if(line.contains("clevertapDefaultInstance.pushFcmRegistrationId(s,true)"))
+            {
+                s_onNewtoken=true
 
             }
 
@@ -390,8 +387,8 @@ class PushNotificationManager2(private val project: Project) {
             if(firebase_messaging_content==false) {
                 if (line.contains("super.onMessageReceived")) {
                     sb
-                        .append("\t\tRemoteMessage.Notification notification = remoteMessage.getNotification();")
-                        .append("\n")
+//                        .append("\t\tRemoteMessage.Notification notification = remoteMessage.getNotification();")
+//                        .append("\n")
                         .append("\t\ttry ")
                         .append("\n")
                         .append("\t\t{")
@@ -426,9 +423,7 @@ class PushNotificationManager2(private val project: Project) {
                         .append("\n")
                         .append("\t\t\t\t{")
                         .append("\n")
-                        .append("\t\t\t\t\tMap<String, String> data = remoteMessage.getData();")
-                        .append("\n")
-                        .append("\t\t\t\t\tLog.d(\"FROM\", remoteMessage.getFrom());")
+                        .append("\t\t\t\t\t//not from cleverTap handle yourself pass to another provider.")
                         .append("\n")
                         .append("\t\t\t\t}")
                         .append("\n")
@@ -462,11 +457,24 @@ class PushNotificationManager2(private val project: Project) {
                         .append("\n")
                         .append("\t\tclevertapDefaultInstance.pushFcmRegistrationId(s,true);")
                         .append("\n")
-                        .append("\t\tCleverTapAPI.createNotificationChannel(this,\"$contentTitleText\",\"$contentTitleText\",\"Channel for Push in App\", NotificationManager.IMPORTANCE_HIGH,true);")
-                        .append("\n")
+//                        .append("\t\tCleverTapAPI.createNotificationChannel(this,\"$contentTitleText\",\"$contentTitleText\",\"Channel for Push in App\", NotificationManager.IMPORTANCE_HIGH,true);")
+//                        .append("\n")
                         .append("\t}")
                         .append("\n")
                     on_new_token=true
+                    s_onNewtoken=true
+                }
+            }
+            if(s_onNewtoken==false) {
+                if (line.contains("super.onNewToken")) {
+                    sb
+                        .append("\t\tclevertapDefaultInstance = CleverTapAPI.getDefaultInstance(getApplicationContext());")
+                        .append("\n")
+                        .append("\t\tclevertapDefaultInstance.pushFcmRegistrationId(s,true);")
+                        .append("\n")
+//                        .append("\t\tCleverTapAPI.createNotificationChannel(this,\"$contentTitleText\",\"$contentTitleText\",\"Channel for Push in App\", NotificationManager.IMPORTANCE_HIGH,true);")
+//                        .append("\n")
+                    s_onNewtoken=true
                 }
             }
 
@@ -528,7 +536,7 @@ class PushNotificationManager2(private val project: Project) {
                 import_map=true
 
             }
-            if(line.contains("RemoteMessage.Notification notification = remoteMessage.getNotification()"))
+            if(line.contains("if (remoteMessage.getData().size > 0)"))
             {
                 firebase_messaging_content=true
 
@@ -541,6 +549,11 @@ class PushNotificationManager2(private val project: Project) {
             if(line.contains("fun onNewToken"))
             {
                 on_new_token=true
+
+            }
+            if(line.contains("clevertapDefaultInstance.pushFcmRegistrationId(s,true)"))
+            {
+                s_onNewtoken=true
 
             }
 
@@ -668,8 +681,8 @@ class PushNotificationManager2(private val project: Project) {
             if(firebase_messaging_content==false) {
                 if (line.contains("super.onMessageReceived")) {
                     sb
-                        .append("\t\tval notification: RemoteMessage.Notification?  = remoteMessage.getNotification();")
-                        .append("\n")
+//                        .append("\t\tval notification: RemoteMessage.Notification?  = remoteMessage.getNotification();")
+//                        .append("\n")
                         .append("\tremoteMessage.data.apply {")
                         .append("\n")
                         .append("\t\ttry ")
@@ -706,9 +719,7 @@ class PushNotificationManager2(private val project: Project) {
                         .append("\n")
                         .append("\t\t\t\t{")
                         .append("\n")
-                        .append("\t\t\t\t\t//val data: kotlin.collections.Map<String, String> = remoteMessage.getData()")
-                        .append("\n")
-                        .append("\t\t\t\t\tLog.d(\"FROM\", remoteMessage.getFrom()!!)")
+                        .append("\t\t\t\t\t//not from cleverTap handle yourself pass to another provider.")
                         .append("\n")
                         .append("\t\t\t\t}")
                         .append("\n")
@@ -745,12 +756,25 @@ class PushNotificationManager2(private val project: Project) {
                         .append("\n")
                         .append("\t\tclevertapDefaultInstance?.pushFcmRegistrationId(s,true);")
                         .append("\n")
-                        .append("\t\tCleverTapAPI.createNotificationChannel(this,\"$contentTitleText\",\"$contentTitleText\",\"Channel for Push in App\", NotificationManager.IMPORTANCE_HIGH,true);")
-                        .append("\n")
+//                        .append("\t\tCleverTapAPI.createNotificationChannel(this,\"$contentTitleText\",\"$contentTitleText\",\"Channel for Push in App\", NotificationManager.IMPORTANCE_HIGH,true);")
+//                        .append("\n")
                         .append("\t}")
 
                         .append("\n")
                     on_new_token=true
+                    s_onNewtoken=true
+                }
+            }
+            if(s_onNewtoken==false) {
+                if (line.contains("super.onNewToken")) {
+                    sb
+                        .append("\t\tCleverTapAPI.getDefaultInstance(getApplicationContext())")
+                        .append("\n")
+                        .append("\t\tclevertapDefaultInstance?.pushFcmRegistrationId(s,true)")
+                        .append("\n")
+//                        .append("\t\tCleverTapAPI.createNotificationChannel(this,\"$contentTitleText\",\"$contentTitleText\",\"Channel for Push in App\", NotificationManager.IMPORTANCE_HIGH,true);")
+//                        .append("\n")
+                    s_onNewtoken=true
                 }
             }
 

@@ -54,7 +54,8 @@ class PushAmpPresenter(
             val check= check_language(project)
             val lang= check.find_language()
             val appclassName = check.find_appClass()
-            PushAmpApprovalDialog(event,className,IsRadiobuttonrb1Selected,IsRadiobuttonrb2Selected,lang,appclassName).show()
+            val receiver_class=check.find_receiver_class()
+            PushAmpApprovalDialog(event,receiver_class,IsRadiobuttonrb1Selected,IsRadiobuttonrb2Selected,lang,appclassName).show()
             try {
 
             }

@@ -80,9 +80,9 @@ class ManifestManager(private val project: Project) {
         val sb = StringBuilder()
         for (i in documentText.indices) {
             val line = documentText[i]
-            sb
-                .append(line)
-                .append("\n")
+//            sb
+//                .append(line)
+//                .append("\n")
 
 
             //if (line.contains("activity")) {
@@ -92,36 +92,25 @@ class ManifestManager(private val project: Project) {
                 {
                     var line1=documentText[j]
                     if(line1.contains("activity")) {
-                        if(line1.contains("android:name")){
-                            var ans=line1
-                            var b= ans.split(".")
-                            var c=b[1]
-                            var d=b[1].split("\"")
-                            var e=d[0]
-                            var activityname=e
 
-                            sb
-                                .append(activityname)
-                                .append("\n")
-                        }
-                        else
-                        {
-                            var line1=documentText[j+1]
-                            if(line1.contains("android:name")){
-                                var ans=line1
-                                var b= ans.split(".")
-                                var c=b[1]
-                                var d=b[1].split("\"")
-                                var e=d[0]
-                                var activityname=e
-
-                                sb
-                                    .append(activityname)
-                                    .append("\n")
+                        for(k in j..i) {
+                            var line2 = documentText[k]
+                            if (line2.contains("android:name")) {
+                                var ans = line2
+                                var b = ans.split(".")
+                                var c = b[1]
+                                var d = b[1].split("\"")
+                                var e = d[0]
+                                var activityname = e
+                                break
                             }
-
                         }
+                        break
+
+
                     }
+
+
                 }
             }
 
@@ -146,6 +135,7 @@ class ManifestManager(private val project: Project) {
                     sb
                         .append(repository)
                         .append("\n")
+
                 }
 
             }

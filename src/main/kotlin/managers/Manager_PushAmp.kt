@@ -27,6 +27,12 @@ class Manager_PushAmp (private val project: Project) {
     private var impData : String = ""
     private var listVal : Boolean = false
     private var listData : String = ""
+    private var firebase_receiver_class_name:String=""
+    private var import_iterator:Boolean=false
+    private var import_os_bundle:Boolean=false
+    private var import_pushnotification:Boolean=false
+    private var import_clevertap_sdk:Boolean=false
+
 
     @Throws(FileNotFoundException::class)
     fun initAndroidManifest(): Boolean {
@@ -63,6 +69,24 @@ class Manager_PushAmp (private val project: Project) {
 
                 }
             }
+            if (line.contains("com.google.firebase.MESSAGING_EVENT"))
+            {
+                for(k in i-1 downTo 1)
+                {
+                    val line2=documentText[k]
+                    if(line2.contains("android:name")) {
+
+                        var ans11=line2
+                        var ans12= ans11.split("\"")
+                        var ans13=ans12[1]
+                        firebase_receiver_class_name=ans13
+                        break
+//
+                    }
+
+
+                }
+            }
         }
         return "com"
     }
@@ -74,16 +98,18 @@ class Manager_PushAmp (private val project: Project) {
         getpackagename()
         val op1=packagename
         val ans1 =op1.replace(".","/")
-        val file = File(project.basePath +"/app/src/main/java/"+ans1+"/" + receiverClass +".java")
-        val file1 = File(project.basePath +"/app/src/main/java/"+ans1+"/" + receiverClass +".kt")
+        var fcm_name=firebase_receiver_class_name
+        var fcm_path=fcm_name.replace(".","/")
+        val file = File(project.basePath +"/app/src/main/java/"+ans1 + fcm_path +".java")
+        val file1 = File(project.basePath +"/app/src/main/java/"+ans1  + fcm_path +".kt")
         val java_file_exist = file.exists()
         val kotlin_file_exist = file1.exists()
         if (java_file_exist==true){
-            projectBaseDir = LocalFileSystem.getInstance().findFileByPath(project.basePath+"/app/src/main/java/"+ans1+"/" + receiverClass +".java")
+            projectBaseDir = LocalFileSystem.getInstance().findFileByPath(project.basePath+"/app/src/main/java/"+ans1  + fcm_path +".java")
 
         }
         if (kotlin_file_exist==true){
-            projectBaseDir = LocalFileSystem.getInstance().findFileByPath(project.basePath+"/app/src/main/java/"+ans1+"/" + receiverClass +".kt")
+            projectBaseDir = LocalFileSystem.getInstance().findFileByPath(project.basePath+"/app/src/main/java/"+ans1  + fcm_path +".kt")
         }
         val manifestVirtualFile: VirtualFile? = projectBaseDir
         return if (manifestVirtualFile != null) {
@@ -116,17 +142,18 @@ class Manager_PushAmp (private val project: Project) {
                     "}"
             impData = " implements CTPushAmpListener"
 
-            receiveData = "if (message.getData().size() > 0) {\n" +
-                    "                Bundle extras = new Bundle();\n" +
-                    "                Iterator var = message.getData().entrySet().iterator();\n" +
+            receiveData = "\t\tif (remoteMessage.getData().size() > 0) {\n" +
+                    "\t\t\tBundle extras = new Bundle();\n" +
+                    "\t\t\tIterator var = remoteMessage.getData().entrySet().iterator();\n" +
                     "\n" +
-                    "                while(var.hasNext()) {\n" +
-                    "                    Map.Entry entry = (Map.Entry)var.next();\n" +
-                    "                    extras.putString((String)entry.getKey(), (String)entry.getValue());\n" +
-                    "                }\n" +
-                    "                    CleverTapAPI.processPushNotification(getApplicationContext(),extras);\n" +
-                    "                }\n" +
-                    "            }\n"
+                    "\t\t\twhile(var.hasNext()) {\n" +
+                    "" +
+                    "\t\t\t\tMap.Entry entry = (Map.Entry)var.next();\n" +
+                    "\t\t\t\t extras.putString((String)entry.getKey(), (String)entry.getValue());\n" +
+                    "\t\t\t}\n" +
+                    "\t\t\tCleverTapAPI.processPushNotification(getApplicationContext(),extras);\n" +
+                    "\t\t\t}\n"
+
 
 
         }
@@ -140,10 +167,10 @@ class Manager_PushAmp (private val project: Project) {
                     "  //write push notification rendering logic here\n" +
                     "}"
 
-            receiveData = "if (message.getData().size() > 0)\n" +
+            receiveData = "if (remoteMessage.getData().size() > 0)\n" +
                     "{\n" +
                     "  val extras = Bundle()\n" +
-                    "  val `var` = message.getData().entrySet().iterator()\n" +
+                    "  val `var` = remoteMessage.getData().entrySet().iterator()\n" +
                     "  while (`var`.hasNext())\n" +
                     "  {\n" +
                     "    val entry = `var`.next() as Map.Entry\n" +
@@ -176,15 +203,40 @@ class Manager_PushAmp (private val project: Project) {
         val documentText = receiverClassFile!!.text.split("\n".toRegex()).dropLastWhile { it.isEmpty() }.toTypedArray()
         for (i in documentText.indices){
             var line = documentText[i]
+            if(line.contains("import android.os.Bundle"))
+            {
+                import_os_bundle=true
+            }
+
+            if(line.contains("import java.util.Iterator"))
+            {
+                import_iterator=true
+            }
+
             if (line.contains("CleverTapAPI.processPushNotification(getApplicationContext(),extras);")){
                 receiveVal = true
             }
+
         }
     }
     fun checkbeforeinsertion2(){
         val documentText = appClass!!.text.split("\n".toRegex()).dropLastWhile { it.isEmpty() }.toTypedArray()
         for (i in documentText.indices){
             var line = documentText[i]
+            if(line.contains("import com.clevertap.android.sdk.pushnotification.amp.CTPushAmpListener"))
+            {
+                import_pushnotification=true
+            }
+            if(line.contains("import com.clevertap.android.sdk.CleverTapAPI"))
+            {
+                import_clevertap_sdk=true
+            }
+            if(line.contains("import android.os.Bundle"))
+            {
+                import_os_bundle=true
+            }
+
+
             if (line.contains("implements") && line.contains("CTPushAmpListener")){
                 impVal = true
 
@@ -240,6 +292,36 @@ class Manager_PushAmp (private val project: Project) {
         for (i in documentText.indices){
             var line = documentText[i]
             if (IsRadiobuttonrb1Selected == true){
+                if(import_pushnotification==false)
+                {
+                    if(line.contains("class"))
+                    {
+                        sb
+                            .append("import com.clevertap.android.sdk.pushnotification.amp.CTPushAmpListener;")
+                            .append("\n")
+                        import_pushnotification=true
+                    }
+                }
+                if(import_os_bundle==false)
+                {
+                    if(line.contains("class"))
+                    {
+                        sb
+                            .append("import android.os.Bundle;")
+                            .append("\n")
+                        import_os_bundle=true
+                    }
+                }
+                if(import_clevertap_sdk==false)
+                {
+                    if(line.contains("class"))
+                    {
+                        sb
+                            .append("import com.clevertap.android.sdk.CleverTapAPI;")
+                            .append("\n")
+                        import_clevertap_sdk=true
+                    }
+                }
                 if(listVal==false){
                     if (line.contains("public void onCreate() { super.onCreate();")) {
                         val ans = line
@@ -346,8 +428,33 @@ class Manager_PushAmp (private val project: Project) {
         val sb = StringBuilder()
         for (i in documentText.indices){
             val line =documentText[i]
+            sb
+                .append(line)
+                .append("\n")
+            if(import_iterator==false)
+            {
+                if(line.contains("package"))
+                {
+                    sb
+                        .append("import java.util.Iterator;")
+                        .append("\n")
+                    import_iterator=true
+                }
+            }
+
+            if(import_os_bundle==false)
+            {
+                if(line.contains("package"))
+                {
+                    sb
+                        .append("import android.os.Bundle;")
+                        .append("\n")
+                    import_os_bundle=true
+                }
+            }
+
             if (receiveVal== false){
-                if (i == documentText.lastIndexOf("}")){
+                if (line.contains("onMessageReceived")){
                     sb
                         .append("   //added by CleverTap Assistant")
                         .append("\n")
@@ -357,8 +464,7 @@ class Manager_PushAmp (private val project: Project) {
                     receiveVal =true
                 }
             }
-            sb.append(line)
-                .append("\n")
+
         }
         writeToReceiver(sb)
     }

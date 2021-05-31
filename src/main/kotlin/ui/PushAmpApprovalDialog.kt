@@ -7,6 +7,8 @@ import com.intellij.openapi.ui.DialogWrapper
 import data.file.*
 import data.repository.ModuleRepositoryImpl
 import data.repository.SourceRootRepositoryImpl
+import managers.Manager_PushAmp
+import managers.check_language
 import util.Constants
 import javax.swing.JComponent
 

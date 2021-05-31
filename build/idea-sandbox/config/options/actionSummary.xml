@@ -50,7 +50,7 @@
         <ActionSummary times="803" last="1619601170549" />
       </entry>
       <entry key="CleanPlugin.ID1">
-        <ActionSummary times="37" last="1622019268819" />
+        <ActionSummary times="39" last="1622452209844" />
       </entry>
       <entry key="CleanPlugin.ID2">
         <ActionSummary times="72" last="1622020154163" />
@@ -248,7 +248,7 @@
         <ActionSummary times="9" last="1621488431207" />
       </entry>
       <entry key="WelcomeScreen.OpenProject">
-        <ActionSummary times="79" last="1622019999520" />
+        <ActionSummary times="82" last="1622451434126" />
       </entry>
       <entry key="WelcomeScreen.Plugins">
         <ActionSummary times="4" last="1610451282766" />
@@ -326,7 +326,7 @@
         <ActionSummary times="1" last="1614681259771" />
       </entry>
       <entry key="com.intellij.ide.ReopenProjectAction">
-        <ActionSummary times="230" last="1622025674778" />
+        <ActionSummary times="235" last="1622452183816" />
       </entry>
       <entry key="com.intellij.ide.actions.runAnything.RunAnythingChooseContextAction$ModuleItem">
         <ActionSummary times="1" last="1614672214389" />

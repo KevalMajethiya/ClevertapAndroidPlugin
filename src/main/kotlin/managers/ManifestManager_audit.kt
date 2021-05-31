@@ -85,21 +85,30 @@ class ManifestManager_audit(private val project: Project) {
             {
                 for(j in i downTo 1)
                 {
-                    val line1=documentText[j]
+                    var line1=documentText[j]
                     if(line1.contains("activity")) {
-                        var ans=line1
-                        var b= ans.split(".")
-                        var c=b[1]
-                        var d=b[1].split("\"")
-                        var e=d[0]
-                        var activityname=e
 
-                        sb
-                            .append(activityname)
-                            .append("\n")
+                        for(k in j..i) {
+                            var line2 = documentText[k]
+                            if (line2.contains("android:name")) {
+                                var ans = line2
+                                var b = ans.split(".")
+                                var c = b[1]
+                                var d = b[1].split("\"")
+                                var e = d[0]
+                                var activityname = e
+                                break
+                            }
+                        }
+                        break
+
+
                     }
+
+
                 }
             }
+
 
             //}
         }

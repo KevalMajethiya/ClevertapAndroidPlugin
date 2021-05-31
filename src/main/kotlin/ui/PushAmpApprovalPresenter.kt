@@ -59,8 +59,10 @@ class PushAmpApprovalPresenter (
 
             val check= check_language(project)
             val lang= check.find_language()
+            val receiver_class=check.find_receiver_class()
 
             managerForPushAmp = Manager_PushAmp(project)
+
 
             try {
                 managerForPushAmp?.let {

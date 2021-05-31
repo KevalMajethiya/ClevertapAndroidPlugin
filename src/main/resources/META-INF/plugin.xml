@@ -34,7 +34,7 @@
                 use-shortcut-of="CleanPlugin.ID2" keymap="$default">
 <!--                <keyboard-shortcut keymap="$default" first-keystroke="control alt p"/>-->
             </action>
-            <action id="CleanPlugin.ID7" class="action.PushAmp" text="Custom Push Amplification"
+            <action id="CleanPlugin.ID7" class="action.PushAmp" text="Push Amplification"
                     description="Configure CleverTap."
                     keymap="$default">
             </action>>

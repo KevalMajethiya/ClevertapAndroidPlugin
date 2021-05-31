@@ -71,32 +71,23 @@ class Geofence_Manager(private val project: Project)
                 {
                     var line1=documentText[j]
                     if(line1.contains("activity")) {
-                        if(line1.contains("android:name")){
-                            var ans=line1
-                            var b= ans.split(".")
-                            var c=b[1]
-                            var d=b[1].split("\"")
-                            var e=d[0]
-                            launchingactivityname=e
 
-
-                        }
-                        else
-                        {
-                            var line1=documentText[j+1]
-                            if(line1.contains("android:name")){
-                                var ans=line1
-                                var b= ans.split(".")
-                                var c=b[1]
-                                var d=b[1].split("\"")
-                                var e=d[0]
-                                launchingactivityname=e
-
-
+                        for(k in j..i) {
+                            var line2 = documentText[k]
+                            if (line2.contains("android:name")) {
+                                var ans = line2
+                                var b = ans.split(".")
+                                var c = b[1]
+                                var d = b[1].split("\"")
+                                var e = d[0]
+                                launchingactivityname = e
+                                break
                             }
-
                         }
+                        break
+
                     }
+
                 }
             }
 

@@ -17,6 +17,7 @@ class check_language(private val project: Project)
     private var launchingactivityname:String=""
     private var language=""
     private var applicationClassName:String=""
+    private var firebase_receiver_class_name:String=""
 
     init{
         find_language()
@@ -37,6 +38,7 @@ class check_language(private val project: Project)
             androidManifestfile = FileDocumentManager.getInstance().getDocument(manifestVirtualFile)
             getpackagename()
             getAppClass()
+            get_receiver_Class()
             true
         } else {
             false
@@ -57,35 +59,25 @@ class check_language(private val project: Project)
                 {
                     var line1=documentText[j]
                     if(line1.contains("activity")) {
-                        if(line1.contains("android:name")){
-                            var ans=line1
-                            var b= ans.split(".")
-                            var c=b[1]
-                            var d=b[1].split("\"")
-                            var e=d[0]
-                            launchingactivityname=e
 
-
-                        }
-                        else
-                        {
-                            var line1=documentText[j+1]
-                            if(line1.contains("android:name")){
-                                var ans=line1
-                                var b= ans.split(".")
-                                var c=b[1]
-                                var d=b[1].split("\"")
-                                var e=d[0]
-                                launchingactivityname=e
-
-                                
+                        for(k in j..i) {
+                            var line2 = documentText[k]
+                            if (line2.contains("android:name")) {
+                                var ans = line2
+                                var b = ans.split(".")
+                                var c = b[1]
+                                var d = b[1].split("\"")
+                                var e = d[0]
+                                launchingactivityname = e
+                                break
                             }
-
                         }
+                        break
+
                     }
+
                 }
             }
-
 
             if (line.contains("package")) {
                 if (line.contains("=")) {
@@ -99,6 +91,7 @@ class check_language(private val project: Project)
                     //initapplicationclass(packagename!!)
                 }
             }
+
             sb
                 .append(line)
                 .append("\n")
@@ -114,22 +107,59 @@ class check_language(private val project: Project)
 
         val documentText = androidManifestfile!!.text.split("\n".toRegex()).dropLastWhile { it.isEmpty() }.toTypedArray()
         val sb = StringBuilder()
-        for (i in documentText.indices){
+        for (i in documentText.indices) {
             val line = documentText[i]
-            if (line.contains("android:name")){
-                val a = line
-                val b = a.split("=")
-                val c = b[1]
-                val d = c.split("\"")
-                val e = d[1].split(".")
+            if (line.contains("application")){
+                for(j in i..documentText.lastIndex) {
+                    val line1=documentText[j]
+                    if (line1.contains("android:name")) {
+                        val a = line1
+                        val b = a.split("=")
+                        val c = b[1]
+                        val d = c.split("\"")
+                        val e = d[1].split(".")
 
-                applicationClassName = e[1]
+                        applicationClassName = e[1]
+                        break
+                    }
+                }
                 break
-            }
+        }
         }
         return applicationClassName
 
     }
+
+    fun get_receiver_Class():String{
+
+        val documentText = androidManifestfile!!.text.split("\n".toRegex()).dropLastWhile { it.isEmpty() }.toTypedArray()
+        val sb = StringBuilder()
+        for (i in documentText.indices) {
+            val line = documentText[i]
+            if (line.contains("com.google.firebase.MESSAGING_EVENT"))
+            {
+                for(k in i-1 downTo 1)
+                {
+                    val line2=documentText[k]
+                    if(line2.contains("android:name")) {
+
+                        var ans11=line2
+                        var ans12= ans11.split("\"")
+                        var ans13=ans12[1]
+                        firebase_receiver_class_name=ans13
+                        break
+//
+                    }
+
+
+                }
+            }
+
+        }
+        return firebase_receiver_class_name
+
+    }
+
 
     fun find_language(): String {
         AndroidManifest()
@@ -165,6 +195,14 @@ class check_language(private val project: Project)
 
 
         return applicationClassName
+    }
+
+    fun find_receiver_class() : String{
+
+        AndroidManifest()
+
+
+        return firebase_receiver_class_name
     }
 
 }

@@ -36,9 +36,6 @@
     <option name="configure" path="ActionManager" hit="Configure CleverTap." />
     <option name="clevertap" path="ActionManager" hit="Configure Clevertap." />
     <option name="configure" path="ActionManager" hit="Configure Clevertap." />
-    <option name="amplification" path="ActionManager" hit="Custom Push Amplification" />
-    <option name="custom" path="ActionManager" hit="Custom Push Amplification" />
-    <option name="push" path="ActionManager" hit="Custom Push Amplification" />
     <option name="demo" path="ActionManager" hit="Demo" />
     <option name="events" path="ActionManager" hit="Events with properties" />
     <option name="properties" path="ActionManager" hit="Events with properties" />
@@ -59,6 +56,8 @@
     <option name="only" path="ActionManager" hit="Only Event" />
     <option name="profile" path="ActionManager" hit="Profile Push" />
     <option name="push" path="ActionManager" hit="Profile Push" />
+    <option name="amplification" path="ActionManager" hit="Push Amplification" />
+    <option name="push" path="ActionManager" hit="Push Amplification" />
     <option name="demo" path="ActionManager" hit="Push Demo" />
     <option name="push" path="ActionManager" hit="Push Demo" />
     <option name="notification" path="ActionManager" hit="Push Notification" />

@@ -41,8 +41,8 @@ class PushAmpDialog(var event: AnActionEvent) : DialogWrapper(true), NewScreenVi
         panelForPushAmp.rb1.addActionListener(){
             if (panelForPushAmp.rb1.isSelected()){
 
-                panelForPushAmp.receiverClass.isVisible = true
-                panelForPushAmp.receiverLabel.isVisible = true
+//                panelForPushAmp.receiverClass.isVisible = true
+//                panelForPushAmp.receiverLabel.isVisible = true
             }
         }
 

@@ -2,29 +2,6 @@
   <component name="RecentProjectsManager">
     <option name="additionalInfo">
       <map>
-        <entry key="$USER_HOME$/AndroidStudioProjects/PushAmpT">
-          <value>
-            <RecentProjectMetaInfo projectWorkspaceId="1smzCOAi8cQ3ZMoD75PbQE5226T">
-              <option name="binFolder" value="$APPLICATION_HOME_DIR$/bin" />
-              <option name="build" value="AI-201.8743.12.41.7042882" />
-              <option name="buildTimestamp" value="1608424769778" />
-              <option name="productionCode" value="AI" />
-              <option name="projectOpenTimestamp" value="1621495013786" />
-            </RecentProjectMetaInfo>
-          </value>
-        </entry>
-        <entry key="$USER_HOME$/AndroidStudioProjects/FCMTesting">
-          <value>
-            <RecentProjectMetaInfo projectWorkspaceId="1sn5lw7iyOrCFP2UkK7z6XUFdew">
-              <option name="binFolder" value="$APPLICATION_HOME_DIR$/bin" />
-              <option name="build" value="AI-201.8743.12.41.7042882" />
-              <option name="buildTimestamp" value="1608424753913" />
-              <frame x="0" y="0" width="1280" height="800" />
-              <option name="productionCode" value="AI" />
-              <option name="projectOpenTimestamp" value="1621501228618" />
-            </RecentProjectMetaInfo>
-          </value>
-        </entry>
         <entry key="$USER_HOME$/AndroidStudioProjects/D">
           <value>
             <RecentProjectMetaInfo projectWorkspaceId="1snHAWdX51FrzM5rnyUUQxZeivI">
@@ -61,12 +38,58 @@
         </entry>
         <entry key="$USER_HOME$/AndroidStudioProjects/PushAmplicationTesting">
           <value>
-            <RecentProjectMetaInfo opened="true" projectWorkspaceId="1smwmEcTMiH4qODDVG5EFCMDoFc">
+            <RecentProjectMetaInfo projectWorkspaceId="1smwmEcTMiH4qODDVG5EFCMDoFc">
               <option name="binFolder" value="$APPLICATION_HOME_DIR$/bin" />
               <option name="build" value="AI-201.8743.12.41.7042882" />
-              <option name="buildTimestamp" value="1608424798639" />
+              <option name="buildTimestamp" value="1608424769388" />
               <option name="productionCode" value="AI" />
-              <option name="projectOpenTimestamp" value="1622025678479" />
+              <option name="projectOpenTimestamp" value="1622439823706" />
+            </RecentProjectMetaInfo>
+          </value>
+        </entry>
+        <entry key="$USER_HOME$/AndroidStudioProjects/Demo">
+          <value>
+            <RecentProjectMetaInfo projectWorkspaceId="1snKkR58BnjLOAYiI32blvX8aVK">
+              <option name="binFolder" value="$APPLICATION_HOME_DIR$/bin" />
+              <option name="build" value="AI-201.8743.12.41.7042882" />
+              <option name="buildTimestamp" value="1608424790733" />
+              <frame x="0" y="23" width="1280" height="715" extendedState="6" />
+              <option name="productionCode" value="AI" />
+              <option name="projectOpenTimestamp" value="1622450702306" />
+            </RecentProjectMetaInfo>
+          </value>
+        </entry>
+        <entry key="$USER_HOME$/AndroidStudioProjects/FCMTesting">
+          <value>
+            <RecentProjectMetaInfo projectWorkspaceId="1sn5lw7iyOrCFP2UkK7z6XUFdew">
+              <option name="binFolder" value="$APPLICATION_HOME_DIR$/bin" />
+              <option name="build" value="AI-201.8743.12.41.7042882" />
+              <option name="buildTimestamp" value="1608424790733" />
+              <frame x="0" y="23" width="1280" height="721" />
+              <option name="productionCode" value="AI" />
+              <option name="projectOpenTimestamp" value="1622450715473" />
+            </RecentProjectMetaInfo>
+          </value>
+        </entry>
+        <entry key="$USER_HOME$/AndroidStudioProjects/PushAmpT">
+          <value>
+            <RecentProjectMetaInfo projectWorkspaceId="1smzCOAi8cQ3ZMoD75PbQE5226T">
+              <option name="binFolder" value="$APPLICATION_HOME_DIR$/bin" />
+              <option name="build" value="AI-201.8743.12.41.7042882" />
+              <option name="buildTimestamp" value="1608424790733" />
+              <option name="productionCode" value="AI" />
+              <option name="projectOpenTimestamp" value="1622450746432" />
+            </RecentProjectMetaInfo>
+          </value>
+        </entry>
+        <entry key="$USER_HOME$/AndroidStudioProjects/abcd">
+          <value>
+            <RecentProjectMetaInfo projectWorkspaceId="1tIJb7lvrtUHg4ufEIULbFKq8Ys">
+              <option name="binFolder" value="$APPLICATION_HOME_DIR$/bin" />
+              <option name="build" value="AI-201.8743.12.41.7042882" />
+              <option name="buildTimestamp" value="1608424740622" />
+              <option name="productionCode" value="AI" />
+              <option name="projectOpenTimestamp" value="1622453590349" />
             </RecentProjectMetaInfo>
           </value>
         </entry>
@@ -75,12 +98,14 @@
     <option name="lastProjectLocation" value="D:/Clevertap/Testing" />
     <option name="recentPaths">
       <list>
+        <option value="$USER_HOME$/AndroidStudioProjects/abcd" />
+        <option value="$USER_HOME$/AndroidStudioProjects/PushAmpT" />
+        <option value="$USER_HOME$/AndroidStudioProjects/FCMTesting" />
+        <option value="$USER_HOME$/AndroidStudioProjects/Demo" />
         <option value="$USER_HOME$/AndroidStudioProjects/PushAmplicationTesting" />
         <option value="$USER_HOME$/AndroidStudioProjects/MyApp" />
         <option value="$USER_HOME$/AndroidStudioProjects/FCM_kt_testing" />
         <option value="$USER_HOME$/AndroidStudioProjects/D" />
-        <option value="$USER_HOME$/AndroidStudioProjects/FCMTesting" />
-        <option value="$USER_HOME$/AndroidStudioProjects/PushAmpT" />
       </list>
     </option>
   </component>

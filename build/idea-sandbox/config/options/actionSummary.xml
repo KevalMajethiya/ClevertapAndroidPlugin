@@ -58,11 +58,14 @@
       <entry key="CleanPlugin.ID3">
         <ActionSummary times="21" last="1620631019720" />
       </entry>
+      <entry key="CleanPlugin.ID4">
+        <ActionSummary times="1" last="1622529282183" />
+      </entry>
       <entry key="CleanPlugin.ID5">
-        <ActionSummary times="14" last="1621333793732" />
+        <ActionSummary times="16" last="1622529902606" />
       </entry>
       <entry key="CleanPlugin.ID6">
-        <ActionSummary times="27" last="1621489419644" />
+        <ActionSummary times="29" last="1622529703881" />
       </entry>
       <entry key="CleanPlugin.ID7">
         <ActionSummary times="14" last="1622025787629" />
@@ -77,7 +80,7 @@
         <ActionSummary times="1" last="1615359148800" />
       </entry>
       <entry key="EditorBackSpace">
-        <ActionSummary times="6330" last="1622025817671" />
+        <ActionSummary times="6340" last="1622529648100" />
       </entry>
       <entry key="EditorChooseLookupItem">
         <ActionSummary times="23" last="1621852774260" />
@@ -98,7 +101,7 @@
         <ActionSummary times="1025" last="1622020209472" />
       </entry>
       <entry key="EditorDownWithSelection">
-        <ActionSummary times="12428" last="1622020206464" />
+        <ActionSummary times="12520" last="1622529647829" />
       </entry>
       <entry key="EditorEnter">
         <ActionSummary times="278" last="1622025708205" />
@@ -107,7 +110,7 @@
         <ActionSummary times="372" last="1622025816759" />
       </entry>
       <entry key="EditorLeftWithSelection">
-        <ActionSummary times="2575" last="1622020208663" />
+        <ActionSummary times="2577" last="1622529622661" />
       </entry>
       <entry key="EditorPaste">
         <ActionSummary times="198" last="1621853715361" />
@@ -116,7 +119,7 @@
         <ActionSummary times="226" last="1621853719013" />
       </entry>
       <entry key="EditorRightWithSelection">
-        <ActionSummary times="3165" last="1622014332683" />
+        <ActionSummary times="3166" last="1622529623231" />
       </entry>
       <entry key="EditorSplitLine">
         <ActionSummary times="1" last="1616591191237" />
@@ -134,7 +137,7 @@
         <ActionSummary times="229" last="1622020190961" />
       </entry>
       <entry key="EditorUpWithSelection">
-        <ActionSummary times="608" last="1622020180345" />
+        <ActionSummary times="611" last="1622529637012" />
       </entry>
       <entry key="ExpandAllRegions">
         <ActionSummary times="1" last="1620630871167" />
@@ -326,7 +329,7 @@
         <ActionSummary times="1" last="1614681259771" />
       </entry>
       <entry key="com.intellij.ide.ReopenProjectAction">
-        <ActionSummary times="235" last="1622452183816" />
+        <ActionSummary times="236" last="1622529107308" />
       </entry>
       <entry key="com.intellij.ide.actions.runAnything.RunAnythingChooseContextAction$ModuleItem">
         <ActionSummary times="1" last="1614672214389" />
@@ -347,7 +350,7 @@
         <ActionSummary times="3" last="1614672645888" />
       </entry>
       <entry key="com.intellij.openapi.wm.impl.ToolWindowHeader$HideAction">
-        <ActionSummary times="226" last="1622020251536" />
+        <ActionSummary times="230" last="1622529652816" />
       </entry>
       <entry key="com.intellij.openapi.wm.impl.ToolWindowHeader$ShowOptionsAction">
         <ActionSummary times="16" last="1614703127819" />

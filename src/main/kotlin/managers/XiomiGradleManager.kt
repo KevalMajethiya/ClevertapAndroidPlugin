@@ -92,7 +92,7 @@ class XiomiGradleManager(private val project: Project) {
         val documentText = buildGradle!!.text.split("\n".toRegex()).dropLastWhile { it.isEmpty() }.toTypedArray()
         for (i in documentText.indices){
             var line = documentText[i]
-            if(line.contains("com.google.firebase:firebase-messaging:"))
+            if(line.contains("com.clevertap.android:clevertap-xiaomi-sdk"))
             {
                 gradle_xiomi=true
             }

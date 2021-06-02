@@ -126,9 +126,27 @@ class Huawei_Gradle_Manager(private val project: Project) {
             if (line.contains("maven {url 'http://developer.huawei.com/repo/'}")) {
                 buildscript_repo = true
             }
-            if (line.contains("maven {url 'http://developer.huawei.com/repo/'}")) {
-                allproject_repo = true
+//            if (line.contains("maven {url 'http://developer.huawei.com/repo/'}")) {
+//                allproject_repo = true
+//            }
+
+            if (line.contains("allprojects ")) {
+                for (j in i + 1..documentTextnew.size - 1) {
+                    var line1 = documentTextnew[j]
+                    if (line1.contains("repositories {")) {
+                        for(k in j..documentTextnew.size-1)
+                        {
+                            var line2= documentTextnew[k]
+                            if (line2.contains("maven {url 'http://developer.huawei.com/repo/'}")) {
+                                allproject_repo = true
+                            }
+
+                        }
+                    }
+                }
+                    break
             }
+
         }
 
     }
@@ -221,20 +239,20 @@ class Huawei_Gradle_Manager(private val project: Project) {
             sb2
                 .append(line)
                 .append("\n")
-//            if (buildscript_repo == false) {
-//                if (line.contains("repositories")) {
-//                    if (line.contains("{")) {
-//                        sb2
-//                            .append("\t\t//HUAWEI")
-//                            .append("\n")
-//                            .append("\t\tmaven {url 'http://developer.huawei.com/repo/'}")
-//                            .append("   //added by CleverTap Assistant")
-//                            .append("\n")
-//                        buildscript_repo = true
-//
-//                    }
-//                }
-//            }
+            if (buildscript_repo == false) {
+                if (line.contains("repositories")) {
+                    if (line.contains("{")) {
+                        sb2
+                            .append("\t\t//HUAWEI")
+                            .append("\n")
+                            .append("\t\tmaven {url 'http://developer.huawei.com/repo/'}")
+                            .append("   //added by CleverTap Assistant")
+                            .append("\n")
+                        buildscript_repo = true
+
+                    }
+                }
+            }
             if (classpath == false) {
                 if (line.contains(Constants.DEPENDENCIES)) {
                     if (line.contains("{")) {

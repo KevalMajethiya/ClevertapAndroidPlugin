@@ -32,7 +32,13 @@ class Huawei_Approval() : JPanel()
         constraints.insets = Insets(inset, inset, inset, inset)
 
 
-        project_gradle_content.setText("<html>"+"dependencies {"+"<br>"+
+        project_gradle_content.setText("<html>"+"buildscript {"+"<br>"+
+                "    repositories { "+"<br>"+
+                ""+"<br>"+
+                "        maven {url 'http://developer.huawei.com/repo/'}"+"<br>"+
+                "        } "+"<br>"+
+                "} "+"<br>"+
+                "dependencies {"+"<br>"+
                 "        classpath \"com.huawei.agconnect:agcp:1.4.1.300\" "+"<br>"+
                 " }"+ "<br>"+
                 "all projects {"+"<br>"+

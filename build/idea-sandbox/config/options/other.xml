@@ -82,7 +82,7 @@
     <property name="memory.settings.postsync.do.not.show.again" value="true" />
     <property name="project.wizard.group" value="com.android.tools.idea.npw.ideahost.AndroidModuleBuilder" />
     <property name="project.wizard.template" value="Android" />
-    <property name="studio.activity.count" value="97" />
+    <property name="studio.activity.count" value="10" />
     <property name="tasks.pass.word.conversion.enforced" value="true" />
     <property name="ts.lib.d.ts.version" value="3.4.1" />
   </component>

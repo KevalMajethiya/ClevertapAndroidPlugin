@@ -62,7 +62,7 @@
         <ActionSummary times="1" last="1622529282183" />
       </entry>
       <entry key="CleanPlugin.ID5">
-        <ActionSummary times="16" last="1622529902606" />
+        <ActionSummary times="20" last="1622539917856" />
       </entry>
       <entry key="CleanPlugin.ID6">
         <ActionSummary times="29" last="1622529703881" />
@@ -80,7 +80,7 @@
         <ActionSummary times="1" last="1615359148800" />
       </entry>
       <entry key="EditorBackSpace">
-        <ActionSummary times="6340" last="1622529648100" />
+        <ActionSummary times="6352" last="1622539951799" />
       </entry>
       <entry key="EditorChooseLookupItem">
         <ActionSummary times="23" last="1621852774260" />
@@ -101,7 +101,7 @@
         <ActionSummary times="1025" last="1622020209472" />
       </entry>
       <entry key="EditorDownWithSelection">
-        <ActionSummary times="12520" last="1622529647829" />
+        <ActionSummary times="12549" last="1622539951510" />
       </entry>
       <entry key="EditorEnter">
         <ActionSummary times="278" last="1622025708205" />
@@ -110,7 +110,7 @@
         <ActionSummary times="372" last="1622025816759" />
       </entry>
       <entry key="EditorLeftWithSelection">
-        <ActionSummary times="2577" last="1622529622661" />
+        <ActionSummary times="2590" last="1622539622551" />
       </entry>
       <entry key="EditorPaste">
         <ActionSummary times="198" last="1621853715361" />
@@ -329,7 +329,7 @@
         <ActionSummary times="1" last="1614681259771" />
       </entry>
       <entry key="com.intellij.ide.ReopenProjectAction">
-        <ActionSummary times="236" last="1622529107308" />
+        <ActionSummary times="237" last="1622539426025" />
       </entry>
       <entry key="com.intellij.ide.actions.runAnything.RunAnythingChooseContextAction$ModuleItem">
         <ActionSummary times="1" last="1614672214389" />

@@ -1,12 +1,2 @@
-abcd.94947524
-demo.948752e5
-pushamplicationtesting.dcc701d9
-fcmtesting.3e277422
-myapp.fcea5013
-my1.80a9aac3
-fcm_kt_testing.9ced040b
-d.d3a59aa2
-audittesting.f1cb64b7
-ct.a10db9d3
-pushampt.c014c94c
-geofencetesting.a5da642e
+minal.fce3b13b
+pt_demo1.cc1e3895

@@ -46,6 +46,12 @@
       <action class="action.OnUserLogin_cursor" id="onuserlogin" text="OnUserLogin " description="Demo"/>
       <action class="action.PushProfile_cursor" id="profilepush" text="Profile Push" description="Demo"/>
     </group>
+    <group id="pushtemplates" text="Push Templates" popup="true" icon="/icons/ctlogo3.png">
+      <add-to-group group-id="EditorPopupMenu" anchor="first"/>
+      <action class="action.PushTemplates_initalization" id="event1" text="Integration" description="Demo1"/>
+      <action class="action.Push_Templates" id="eventproperties1" text="Test" description="Demo2"/>
+      <action class="action.Stop_service" id="stop" text="Stop Service" description="stop"/>
+    </group>
     <action class="action.IntializeCleverTap_cursor" id="intialize" text="Initialize CleverTap " description="Intialize clevertap object" icon="/icons/ctlogo3.png">
       <add-to-group group-id="EditorPopupMenu" anchor="first"/>
     </action>
@@ -53,6 +59,9 @@
       <add-to-group group-id="GenerateGroup" anchor="first"/>
     </action>
     <action class="action.Demo" id="action.Search" text="Push Demo" description="Add FCM and Clevertap">
+      <add-to-group group-id="GenerateGroup" anchor="first"/>
+    </action>
+    <action class="action.start" id="action.Search1" text="Start Demo" description="Start Demo">
       <add-to-group group-id="GenerateGroup" anchor="first"/>
     </action>
   </actions>

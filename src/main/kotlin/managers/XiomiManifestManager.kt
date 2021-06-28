@@ -36,7 +36,7 @@ class XiomiManifestManager(private val project: Project) {
     fun checkbeforeinsertion(){
         val documentText = androidManifest!!.text.split("\n".toRegex()).dropLastWhile { it.isEmpty() }.toTypedArray()
         for (i in documentText.indices){
-            var line = documentText[i]
+            val line = documentText[i]
             if(line.contains("CLEVERTAP_XIAOMI_APP_KEY"))
             {
                 xiaomi_app_key=true
@@ -71,7 +71,7 @@ class XiomiManifestManager(private val project: Project) {
 //                }
 //            }
 
-            if(xiaomi_app_id==false){
+            if(!xiaomi_app_id){
                 if (line.contains(Constants.APPLICATION)){
                     if (line.contains("/")){
                         sb
@@ -87,7 +87,7 @@ class XiomiManifestManager(private val project: Project) {
                     }
                 }
             }
-            if(xiaomi_app_key==false){
+            if(!xiaomi_app_key){
                 if (line.contains(Constants.APPLICATION)){
                     if (line.contains("/")){
                         sb

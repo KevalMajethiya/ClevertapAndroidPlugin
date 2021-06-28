@@ -1,46 +1,44 @@
 package ui
 import util.Constants.FCM_PANEL
-import java.awt.*
+import java.awt.Desktop
+import java.awt.GridBagConstraints
+import java.awt.GridBagLayout
+import java.awt.Insets
 import java.awt.event.MouseAdapter
 import java.awt.event.MouseEvent
 import java.net.URI
 import javax.swing.*
-import javax.swing.BorderFactory
-import javax.swing.JPanel
-import javax.swing.JTextField
-import javax.swing.JButton
-import javax.swing.JFrame
 
 
 class HuaweInputPanel :JPanel() {
 
-    val fileContent = ClevertapInputPanel::class.java.getResource("/icons/hint.png")
-    val icon = ImageIcon(fileContent)
+//    val fileContent = ClevertapInputPanel::class.java.getResource("/icons/hint.png")
+//    val icon = ImageIcon(fileContent)
 
-    val clevertap_logo = ClevertapInputPanel::class.java.getResource("/icons/clevertap_logo.png")
-    val c_img = ImageIcon(clevertap_logo)
-    val img_label = JLabel()
+//    val clevertap_logo = ClevertapInputPanel::class.java.getResource("/icons/clevertap_logo.png")
+//    val c_img = ImageIcon(clevertap_logo)
+//    val img_label = JLabel()
 
-    val console_img = ClevertapInputPanel::class.java.getResource("/icons/Huawei_SS.png")
-    val registration_img = ImageIcon(console_img)
-    val r_img_label = JLabel()
+//    val console_img = ClevertapInputPanel::class.java.getResource("/icons/Huawei_SS.png")
+//    val registration_img = ImageIcon(console_img)
+//    val r_img_label = JLabel()
 
 
-    val introduction_label = JLabel("<html>"+"<b>"+"Introduction"+"</b>"+"<hr>"+"</html>")
-    val intro_content = JLabel("CleverTap Huawei Push SDK provides an out of the box service to use the Huwaei Push Kit.")
+    private val introduction_label = JLabel("<html>"+"<b>"+"Introduction"+"</b>"+"<hr>"+"</html>")
+    private val intro_content = JLabel("CleverTap Huawei Push SDK provides an out of the box service to use the Huwaei Push Kit.")
 
-    val register_label = JLabel("<html>"+"<b>"+"Register"+"</b>"+"<hr>"+"</html>")
-    val register_content = JLabel("<html>"+"The first step to access the Huawei cloud push is registered as a Huawei developer on the "+"<a href=\"\">Huawei Website.</a>"+"</html>")
+    private val register_label = JLabel("<html>"+"<b>"+"Register"+"</b>"+"<hr>"+"</html>")
+    private val register_content = JLabel("<html>"+"The first step to access the Huawei cloud push is registered as a Huawei developer on the "+"<a href=\"\">Huawei Website.</a>"+"</html>")
 
-    val enable_pushkit_label = JLabel("<html>"+"<b>"+"Enable Push Kit"+"</b>"+"<hr>"+"</html>")
-    val enable_pushkit_content = JLabel("Once you login to the console, enable the Push Kit.")
+    private val enable_pushkit_label = JLabel("<html>"+"<b>"+"Enable Push Kit"+"</b>"+"<hr>"+"</html>")
+    private val enable_pushkit_content = JLabel("Once you login to the console, enable the Push Kit.")
 
 
 
     // val icon = ImageIcon("/Users/kevalmajethiya/Desktop/ClevrtapPluginWithFCM-master/images/hint.png")
 //    val labelServiceName = JLabel("Huawei Service Name")
 //    val fcm_sender_id=JLabel("FCM Sender_ID:")
-      val labeladd_agconnect_service_file=JLabel("<html>"+"<b>"+"Add Agconnect-Service File"+"</b>"+"<hr>"+"</html>")
+    private val labeladd_agconnect_service_file=JLabel("<html>"+"<b>"+"Add Agconnect-Service File"+"</b>"+"<hr>"+"</html>")
     val label_file_status=JLabel("NO File Selected")
 //    val label_fcm_pushnotification_implemented=JLabel("Have you implemented push notifications using fcm ?")
 
@@ -49,7 +47,6 @@ class HuaweInputPanel :JPanel() {
 //    var rb1_fcm =JRadioButton("Yes")
 //    var rb2_fcm =JRadioButton("No")
 //    var bg_fcm= ButtonGroup()
-    var f1= JFrame()
 //    var l1= JLabel("abc")
 //    var b1= JButton("Check")
 
@@ -62,7 +59,6 @@ class HuaweInputPanel :JPanel() {
 
     init {
 
-        val newPanel1 = JPanel(GridBagLayout())
 
 
         val inset = 6
@@ -164,10 +160,10 @@ class HuaweInputPanel :JPanel() {
 
         constraints.gridx = 0
         constraints.gridy = 8
-        labeladd_agconnect_service_file.setToolTipText("Upload your Agcoonect_service.json by clicking on upload button.")
+        labeladd_agconnect_service_file.toolTipText = "Upload your Agcoonect_service.json by clicking on upload button."
         //labeladd_agconnect_service_file.setIcon(icon)
-        labeladd_agconnect_service_file.setHorizontalTextPosition( SwingConstants.LEFT)
-        labeladd_agconnect_service_file.setVerticalTextPosition( SwingConstants.CENTER )
+        labeladd_agconnect_service_file.horizontalTextPosition = SwingConstants.LEFT
+        labeladd_agconnect_service_file.verticalTextPosition = SwingConstants.CENTER
         newPanel.add(labeladd_agconnect_service_file, constraints)
 
         constraints.gridx = 0

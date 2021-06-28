@@ -13,11 +13,9 @@ import com.intellij.openapi.vfs.LocalFileSystem
 import com.intellij.openapi.vfs.VirtualFile
 import org.apache.commons.lang.StringUtils
 import util.Constants
-import util.Constants.FCM_NOTIFICATION
-
-import javax.swing.*
 import java.io.FileNotFoundException
 import java.util.stream.Stream
+import javax.swing.SwingUtilities
 
 class GradleManager_for_audit(private val project: Project) {
 
@@ -91,7 +89,7 @@ class GradleManager_for_audit(private val project: Project) {
         // val sb = StringBuilder()
         for (i in documentText.indices)
         {
-            var line = documentText[i]
+            val line = documentText[i]
             if(line.contains("com.github.Anu2897:ReportGenerate-Android"))
             {
                 dependency_imp=true
@@ -102,7 +100,7 @@ class GradleManager_for_audit(private val project: Project) {
         val documentTextnew=buildGradleproject!!.text.split("\n".toRegex()).dropLastWhile { it.isEmpty() }.toTypedArray()
         for (i in documentTextnew.indices)
         {
-            var line = documentTextnew[i]
+            val line = documentTextnew[i]
 
             if(line.contains("maven { url 'https://jitpack.io' }"))
             {
@@ -127,7 +125,7 @@ class GradleManager_for_audit(private val project: Project) {
                 sb
                     .append(line)
                     .append("\n")
-                if(dependency_imp==false) {
+                if(!dependency_imp) {
                     if (line.contains(Constants.DEPENDENCIES)) {
                         if (line.contains("{")) {
                             sb
@@ -143,16 +141,16 @@ class GradleManager_for_audit(private val project: Project) {
 
             for (i in documentTextnew.indices)
             {
-                var line = documentTextnew[i]
+                val line = documentTextnew[i]
 
                 sb2
                     .append(line)
                     .append("\n")
-                if(maven_exist==false) {
+                if(!maven_exist) {
                     if (line.contains("allprojects {")) {
                         for (j in i + 1..documentTextnew.size - 1) {
 
-                            var line1 = documentTextnew[j]
+                            val line1 = documentTextnew[j]
                             sb3
                                 .append(line1)
                                 .append("\n")

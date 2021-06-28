@@ -1,15 +1,13 @@
 package managers
 
 //package managers
-import com.intellij.openapi.actionSystem.AnActionEvent
+
 import com.intellij.openapi.application.ApplicationManager
 import com.intellij.openapi.editor.Document
 import com.intellij.openapi.fileEditor.FileDocumentManager
 import com.intellij.openapi.project.Project
 import com.intellij.openapi.vfs.LocalFileSystem
 import com.intellij.openapi.vfs.VirtualFile
-import org.jetbrains.kotlin.idea.util.findModule
-
 import util.Constants
 import java.io.File
 import java.io.FileNotFoundException
@@ -21,9 +19,9 @@ class createFCMfile(private val project: Project)
     private var androidapplicationclass: Document? = null
     //private var androidapplicationclass1: Document? = null
     private var androidManifestfile: Document? = null
-    private var ans:String=""
-    private var codeexist:Boolean=false
-    private var import_stmt:Boolean=false
+//    private var ans:String=""
+//    private var codeexist:Boolean=false
+//    private var import_stmt:Boolean=false
     private var packagename:String=""
     private var launchingactivityname:String=""
     private var import_stmt_hashmap:Boolean=false
@@ -65,11 +63,11 @@ class createFCMfile(private val project: Project)
 
             if (line.contains("package")) {
                 if (line.contains("=")) {
-                    var a = line
-                    var b = a.split("=")
+                    val a = line
+                    val b = a.split("=")
                     //var d=
-                    var c = b[1]
-                    var d = c.split("\"")
+                    val c = b[1]
+                    val d = c.split("\"")
                     packagename = d[1]
                     //return "abc"
                     //initapplicationclass(packagename!!)
@@ -87,29 +85,29 @@ class createFCMfile(private val project: Project)
     fun initapplicationclass(serviceNameText:String,channel_id:String){
         AndroidManifest()
         val op=launchingactivityname
-        var op1=packagename
+        val op1=packagename
         // val ans=pkg
-        var ans1=op1.replace(".","/")
+        val ans1=op1.replace(".","/")
         // val ans2=ans1.replace("\"","")
         print(ans1)
         val basePath = project.basePath
         //projectBaseDir = basePath +"/app/src/main/java/"+ans1
         print(projectBaseDir)
-        var dirpath = basePath +"/app/src/main/java/"+ans1+"/"+"fcm"
+        val dirpath = "$basePath/app/src/main/java/$ans1/fcm"
        // var ans = dirpath
         //path
-        var dir = File(dirpath)
+        val dir = File(dirpath)
         //var file = File("/Users/kevalmajethiya/AndroidStudioProjects/MyApp/app/src/main/java/com/example/myapp/fcm")
         //if(dir.exists()==false)
         //{
             dir.mkdir()
 
        // }
-        var count = dir.list().size
+        val count = dir.list().size
         if(count<1) {
-            var file1 = File(dirpath + "/" + serviceNameText + ".java")
+            val file1 = File("$dirpath/$serviceNameText.java")
             file1.createNewFile()
-            var fw = FileWriter(dirpath + "/" + serviceNameText + ".java")
+            val fw = FileWriter("$dirpath/$serviceNameText.java")
             fw.write(
                 "package $op1.${Constants.FCM_DIRECTORY};\n\n" +
                         "\n" +

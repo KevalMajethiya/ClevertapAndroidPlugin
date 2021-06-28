@@ -1,33 +1,15 @@
 package ui
 
 
-import com.intellij.openapi.actionSystem.AnActionEvent
-import util.Constants.CONTENT_TEXT
-import util.Constants.CONTENT_TITLE
-import util.Constants.ChannelID_Name_FCM
-import util.Constants.DEPENDENCY_VERSION
-import util.Constants.DEPENDENCY_VERSION_VALUE
-import util.Constants.DEPENDENCY_VERSION_VALUE_FCM
+
 import util.Constants.FCM_PANEL
-import util.Constants.FCM_SERVICE_NAME
-import util.Constants.FCM_SERVICE_NAME_FCM
-import util.Constants.MY_FIREBASE_MESSAGING_SERVICE
-import util.Constants.MY_FIREBASE_MESSAGING_SERVICE_FCM
-import util.Constants.NEED_INSTRUCTION
-import util.Constants.NOTES_INSTRUCTION
-import util.Constants.PENDINGINTENT_ACTIVITY_NAME
-import util.Constants.PENDINGINTENT_ACTIVITY_NAME_FCM
-import javax.swing.*
-import javax.swing.BorderFactory
 import java.awt.GridBagConstraints
-import java.awt.Insets
 import java.awt.GridBagLayout
+import java.awt.Insets
+import javax.swing.BorderFactory
+import javax.swing.JButton
+import javax.swing.JLabel
 import javax.swing.JPanel
-import javax.swing.JTextField
-import java.io.IOException;
-import java.nio.file.*;
-import java.awt.*;
-import java.awt.event.ActionListener;
 
 class fileselection : JPanel() {
     val button = JButton("Open!")

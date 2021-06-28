@@ -1,28 +1,18 @@
 package managers
 
-import com.intellij.openapi.actionSystem.AnActionEvent
 import com.intellij.openapi.application.ApplicationManager
 import com.intellij.openapi.editor.Document
 import com.intellij.openapi.fileEditor.FileDocumentManager
 import com.intellij.openapi.project.Project
 import com.intellij.openapi.vfs.LocalFileSystem
 import com.intellij.openapi.vfs.VirtualFile
-import org.jetbrains.kotlin.idea.kdoc.insert
 import util.Constants
-import util.Methods
 import java.io.FileNotFoundException
 
 
 class PushDemo(private val project: Project) {
 
-    private var default_clevertap_class:Boolean=false
-    private var internet_permission:Boolean=false
-    private var network_access_permission:Boolean=false
-    private var clevertap_Id:Boolean=false
-    private var clevertap_token:Boolean=false
-    private var clevertap_use_google_ad_id:Boolean=false
-    private var clevertap_Inapp_exclude:Boolean=false
-    private var region_exist:Boolean=false
+
     private var final_ans:String=""
 
 
@@ -73,9 +63,9 @@ class PushDemo(private val project: Project) {
                     val line2=documentText[k]
                     if(line2.contains("android:name")) {
 
-                        var ans11=line2
-                        var ans12= ans11.split("\"")
-                        var ans13=ans12[1]
+                        val ans11=line2
+                        val ans12= ans11.split("\"")
+                        val ans13=ans12[1]
                         //var ans14=ans12[1].split("\"")
                         final_ans=ans13
                         //print(firebase_receiver_class_name)

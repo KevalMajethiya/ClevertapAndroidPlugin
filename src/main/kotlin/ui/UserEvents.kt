@@ -1,14 +1,7 @@
 package ui
 
-import com.intellij.notification.NotificationType
-import com.intellij.notification.Notifications
 import com.intellij.openapi.actionSystem.AnActionEvent
-import com.intellij.openapi.application.ApplicationManager
-import com.intellij.openapi.application.ModalityState
-
-import util.Constants
-import managers.*
-import util.Methods
+import managers.UserEventsManager
 import java.io.FileNotFoundException
 
 class UserEvents(var event: AnActionEvent) {

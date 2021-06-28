@@ -1,26 +1,22 @@
 package managers
-import com.intellij.openapi.actionSystem.AnActionEvent
+
 import com.intellij.openapi.application.ApplicationManager
 import com.intellij.openapi.editor.Document
 import com.intellij.openapi.fileEditor.FileDocumentManager
 import com.intellij.openapi.project.Project
 import com.intellij.openapi.vfs.LocalFileSystem
 import com.intellij.openapi.vfs.VirtualFile
-import org.jetbrains.kotlin.idea.util.findModule
-import ui.NewScreenDialog_Clevertap
-
 import util.Constants
 import java.io.File
 import java.io.FileNotFoundException
-import java.util.logging.Logger
 
 
 class ApplicationClassManager(private val project: Project)
 {
     private var androidapplicationclass: Document? = null
     private var androidManifestfile: Document? = null
-    private var ans:String=""
-    var radiobuttonvalue : Boolean=false
+//    private var ans:String=""
+private var radiobuttonvalue : Boolean=false
     private var packagename:String=""
     private var codeexist:Boolean=false
    private var import_stmt:Boolean=false
@@ -61,8 +57,8 @@ class ApplicationClassManager(private val project: Project)
 
                     val b = line.split("=")
                     //var d=
-                    var c = b[1]
-                    var d = c.split("\"")
+                    val c = b[1]
+                    val d = c.split("\"")
                     packagename = d[1]
                     //initapplicationclass("d",packagename!!)
 
@@ -86,20 +82,20 @@ class ApplicationClassManager(private val project: Project)
     @Throws(FileNotFoundException::class)
     fun initapplicationclass(demo :String,IsRadiobuttonrb1Selected:Boolean): Boolean {
         AndroidManifest()
-        var op1=packagename
+        val op1=packagename
         radiobuttonvalue=IsRadiobuttonrb1Selected
-        var ans1 =op1.replace(".","/")
-        val basePath = project.basePath
+        val ans1 =op1.replace(".","/")
+//        val basePath = project.basePath
         //print(demo)
 
         val applicationfilename=demo
         //print(applicationfilename)
         //projectBaseDir = LocalFileSystem.getInstance().findFileByPath(project.basePath +"/app/src/main/java/"+ ans1 +"/" + applicationfilename +".java")
-        var file = File(project.basePath +"/app/src/main/java/"+ans1+"/" + applicationfilename +".java")
-        var file1 = File(project.basePath +"/app/src/main/java/"+ans1+"/" + applicationfilename +".kt")
-        var java_file_exist = file.exists()
-        var kotlin_file_exist = file1.exists()
-        if(java_file_exist==true)
+        val file = File(project.basePath +"/app/src/main/java/"+ans1+"/" + applicationfilename +".java")
+        val file1 = File(project.basePath +"/app/src/main/java/"+ans1+"/" + applicationfilename +".kt")
+        val java_file_exist = file.exists()
+        val kotlin_file_exist = file1.exists()
+        if(java_file_exist)
         {
             projectBaseDir = LocalFileSystem.getInstance().findFileByPath(project.basePath +"/app/src/main/java/"+ans1+"/" + applicationfilename +".java")
             val manifestVirtualFile: VirtualFile? = projectBaseDir
@@ -113,7 +109,7 @@ class ApplicationClassManager(private val project: Project)
                 false
             }
         }
-        if(kotlin_file_exist==true)
+        if(kotlin_file_exist)
         {
             projectBaseDir = LocalFileSystem.getInstance().findFileByPath(project.basePath +"/app/src/main/java/"+ans1+"/" + applicationfilename +".kt")
             val manifestVirtualFile: VirtualFile? = projectBaseDir
@@ -155,7 +151,7 @@ class ApplicationClassManager(private val project: Project)
         // val sb = StringBuilder()
         for (i in documentText.indices)
         {
-            var line = documentText[i]
+            val line = documentText[i]
             if(line.contains("ActivityLifecycleCallback.register"))
             {
                 codeexist=true
@@ -172,20 +168,20 @@ class ApplicationClassManager(private val project: Project)
         checkbeforeinsertion()
         var c= codeexist
        // if(c==false) {
-            var rnabs = radiobuttonvalue
+//            var rnabs = radiobuttonvalue
             val documentText =
                 androidapplicationclass!!.text.split("\n".toRegex()).dropLastWhile { it.isEmpty() }.toTypedArray()
             val sb = StringBuilder()
-            if (radiobuttonvalue == true) {
+            if (radiobuttonvalue) {
                 for (i in documentText.indices) {
                     var line = documentText[i]
-                    if(import_stmt==false) {
+                    if(!import_stmt) {
                         if (line.contains("package")) {
                             sb.append("import com.clevertap.android.sdk.ActivityLifecycleCallback;")
                             sb.append("\n")
                         }
                     }
-                    if(c==false) {
+                    if(!c) {
                         // var line1= documentText[i]
                         if (line.contains("public void onCreate() { super.onCreate();")) {
                             val ans = line
@@ -275,20 +271,20 @@ class ApplicationClassManager(private val project: Project)
         checkbeforeinsertion()
         var c= codeexist
         // if(c==false) {
-        var rnabs = radiobuttonvalue
+//        var rnabs = radiobuttonvalue
         val documentText =
             androidapplicationclass!!.text.split("\n".toRegex()).dropLastWhile { it.isEmpty() }.toTypedArray()
         val sb = StringBuilder()
-        if (radiobuttonvalue == true) {
+        if (radiobuttonvalue) {
             for (i in documentText.indices) {
                 var line = documentText[i]
-                if(import_stmt==false) {
+                if(!import_stmt) {
                     if (line.contains("class")) {
                         sb.append("import com.clevertap.android.sdk.ActivityLifecycleCallback")
                         sb.append("\n")
                     }
                 }
-                if(c==false) {
+                if(!c) {
                     // var line1= documentText[i]
                     if (line.contains(" override fun onCreate() { super.onCreate()")) {
                         val ans = line

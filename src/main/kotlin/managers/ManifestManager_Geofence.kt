@@ -1,15 +1,12 @@
 package managers
 
-import com.intellij.openapi.actionSystem.AnActionEvent
 import com.intellij.openapi.application.ApplicationManager
 import com.intellij.openapi.editor.Document
 import com.intellij.openapi.fileEditor.FileDocumentManager
 import com.intellij.openapi.project.Project
 import com.intellij.openapi.vfs.LocalFileSystem
 import com.intellij.openapi.vfs.VirtualFile
-import org.jetbrains.kotlin.idea.kdoc.insert
 import util.Constants
-import util.Methods
 import java.io.FileNotFoundException
 
 
@@ -50,7 +47,7 @@ class ManifestManager_Geofence(private val project: Project) {
         // val sb = StringBuilder()
         for (i in documentText.indices)
         {
-            var line = documentText[i]
+            val line = documentText[i]
 
             if(line.contains("<uses-permission android:name=\"android.permission.ACCESS_FINE_LOCATION\" />"))
             {
@@ -80,7 +77,7 @@ class ManifestManager_Geofence(private val project: Project) {
         for (i in documentText.indices) {
             val line = documentText[i]
 
-            if(acces_fine_location_permission==false) {
+            if(!acces_fine_location_permission) {
                 if (line.contains(Constants.MANIFEST)) {
                     if (line.contains(">")) {
                         sb
@@ -92,7 +89,7 @@ class ManifestManager_Geofence(private val project: Project) {
                     }
                 }
             }
-            if(access_background_location_permission==false) {
+            if(!access_background_location_permission) {
                 if (line.contains(Constants.MANIFEST)) {
                     if (line.contains(">")) {
                         sb
@@ -104,7 +101,7 @@ class ManifestManager_Geofence(private val project: Project) {
                     }
                 }
             }
-            if(wake_lock_permission==false) {
+            if(!wake_lock_permission) {
                 if (line.contains("Constants.MANIFEST")) {
                     if (line.contains(">")) {
 
@@ -118,7 +115,7 @@ class ManifestManager_Geofence(private val project: Project) {
 
                 }
             }
-            if(receive_boot_completed_permission==false) {
+            if(!receive_boot_completed_permission) {
                 if (line.contains("Constants.MANIFEST")) {
                     if (line.contains(">")) {
 

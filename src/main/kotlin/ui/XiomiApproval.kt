@@ -14,13 +14,13 @@ class XiomiApproval:JPanel() {
     var manifest = JLabel("Following code snippet would be added in the manifest file:")
     var manifest_content= JLabel()
 
-    var file2 = JLabel("<Html>"+"<b>"+"Strings.xml"+"</b>"+"</Html>")
-    var strings_xml = JLabel("Following code snippet would be added in your res/strings.xml file:")
+    private var file2 = JLabel("<Html>"+"<b>"+"Strings.xml"+"</b>"+"</Html>")
+    private var strings_xml = JLabel("Following code snippet would be added in your res/strings.xml file:")
     var strings_xml_content= JLabel()
 
-    var file3 = JLabel("<Html>"+"<b>"+"Build.gadle(app)"+"</b>"+"</Html>")
-    var app_gradle = JLabel("Following code snippet would be added in your Build.gradle(app) file:")
-    var app_gradle_content= JLabel()
+    private var file3 = JLabel("<Html>"+"<b>"+"Build.gadle(app)"+"</b>"+"</Html>")
+    private var app_gradle = JLabel("Following code snippet would be added in your Build.gradle(app) file:")
+    private var app_gradle_content= JLabel()
 
     init {
         val newPanel = JPanel(GridBagLayout())
@@ -29,7 +29,7 @@ class XiomiApproval:JPanel() {
         constraints.anchor = GridBagConstraints.WEST
         constraints.insets = Insets(inset, inset, inset, inset)
 
-        app_gradle_content.setText("<HTML>"+"implementation 'com.clevertap.android:clevertap-xiaomi-sdk:1.0.2'"+"<br>"+"</html>")
+        app_gradle_content.text = "<HTML>"+"implementation 'com.clevertap.android:clevertap-xiaomi-sdk:1.0.2'"+"<br>"+"</html>"
 
         constraints.gridx =0
         constraints.gridy = 0

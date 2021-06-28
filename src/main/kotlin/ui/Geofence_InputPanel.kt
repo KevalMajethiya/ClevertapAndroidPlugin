@@ -1,28 +1,15 @@
 package ui
-import util.Constants.Exclude_files
-import util.Constants.DEPENDENCY_VERSION_VALUE
+
 import util.Constants.FCM_PANEL
-import util.Constants.FCM_SERVICE_NAME
-import util.Constants.MY_FIREBASE_MESSAGING_SERVICE
-import util.Constants.NEED_INSTRUCTION
-import util.Constants.PENDINGINTENT_ACTIVITY_NAME
-import javax.swing.*
-import javax.swing.BorderFactory
-import java.awt.GridBagConstraints
-import java.awt.Insets
-import java.awt.GridBagLayout
-import javax.swing.JPanel
-import javax.swing.JTextField
-import javax.swing.JLabel
-import java.awt.event.MouseEvent
-import java.awt.event.MouseAdapter
-
 import java.awt.Desktop
-
-import javax.swing.ImageIcon
-
+import java.awt.GridBagConstraints
+import java.awt.GridBagLayout
+import java.awt.Insets
+import java.awt.event.MouseAdapter
+import java.awt.event.MouseEvent
 import java.net.URI
-import javax.swing.JRadioButton
+import javax.swing.*
+import com.intellij.openapi.ui.ComboBox
 
 
 class Geofence_InputPanel : JPanel() {
@@ -55,14 +42,14 @@ class Geofence_InputPanel : JPanel() {
     val displacement_TextField = JTextField(20)
     val geofence_notification_responsiveness_TextField = JTextField(25)
 
-    var logs = arrayOf<String>("DEBUG", "INFO", "VERBOSE", "OFF")
-    var log_values = JComboBox(logs)
+    var logs = arrayOf("DEBUG", "INFO", "VERBOSE", "OFF")
+    var log_values = ComboBox(logs)
 
-    var location_accuracy = arrayOf<String>("HIGH", "MEDIUM", "LOW")
-    var location_accuracy_values = JComboBox(location_accuracy)
+    var location_accuracy = arrayOf("HIGH", "MEDIUM", "LOW")
+    var location_accuracy_values = ComboBox(location_accuracy)
 
-    var location_fetch_mode = arrayOf<String>("FETCH_LAST_LOCATION_PERIODIC", "FETCH_CURRENT_LOCATION_PERIODIC")
-    var location_fetch_mode_values = JComboBox(location_fetch_mode)
+    var location_fetch_mode = arrayOf("FETCH_LAST_LOCATION_PERIODIC", "FETCH_CURRENT_LOCATION_PERIODIC")
+    var location_fetch_mode_values = ComboBox(location_fetch_mode)
 
 
     init {
@@ -80,10 +67,10 @@ class Geofence_InputPanel : JPanel() {
 
         constraints.gridx = 0
         constraints.gridy = 0
-        label_loglevel.setToolTipText("Set the appropriate log level.")
-        label_loglevel.setIcon(icon)
-        label_loglevel.setHorizontalTextPosition(SwingConstants.LEFT)
-        label_loglevel.setVerticalTextPosition(SwingConstants.TOP)
+        label_loglevel.toolTipText = "Set the appropriate log level."
+        label_loglevel.icon = icon
+        label_loglevel.horizontalTextPosition = SwingConstants.LEFT
+        label_loglevel.verticalTextPosition = SwingConstants.TOP
 //        label_loglevel.addMouseListener(object : MouseAdapter() {
 //
 //
@@ -108,10 +95,10 @@ class Geofence_InputPanel : JPanel() {
 
         constraints.gridx = 0
         constraints.gridy = 1
-        label_location_accuracy.setToolTipText("Set location accuracy.")
-        label_location_accuracy.setIcon(icon)
-        label_location_accuracy.setHorizontalTextPosition(SwingConstants.LEFT)
-        label_location_accuracy.setVerticalTextPosition(SwingConstants.TOP)
+        label_location_accuracy.toolTipText = "Set location accuracy."
+        label_location_accuracy.icon = icon
+        label_location_accuracy.horizontalTextPosition = SwingConstants.LEFT
+        label_location_accuracy.verticalTextPosition = SwingConstants.TOP
 
         newPanel.add(label_location_accuracy, constraints)
 
@@ -121,10 +108,10 @@ class Geofence_InputPanel : JPanel() {
 
         constraints.gridx = 0
         constraints.gridy = 2
-        label_location_fetch_mode.setToolTipText("Select the appropriate location fetch mode.")
-        label_location_fetch_mode.setIcon(icon)
-        label_location_fetch_mode.setHorizontalTextPosition(SwingConstants.LEFT)
-        label_location_fetch_mode.setVerticalTextPosition(SwingConstants.TOP)
+        label_location_fetch_mode.toolTipText = "Select the appropriate location fetch mode."
+        label_location_fetch_mode.icon = icon
+        label_location_fetch_mode.horizontalTextPosition = SwingConstants.LEFT
+        label_location_fetch_mode.verticalTextPosition = SwingConstants.TOP
 
         newPanel.add(label_location_fetch_mode, constraints)
 
@@ -136,13 +123,13 @@ class Geofence_InputPanel : JPanel() {
 
         constraints.gridx = 0
         constraints.gridy = 3
-        label_Geofence_Monitoring_count.setIcon(icon)
+        label_Geofence_Monitoring_count.icon = icon
 
 
-        label_Geofence_Monitoring_count.setToolTipText("<html>"+"Enter the Geofence Geofence Monitoring Count."+"<br>"+"Default Value is 50 "+"<html>")
-        label_Geofence_Monitoring_count.setIcon(icon)
-        label_Geofence_Monitoring_count.setHorizontalTextPosition(SwingConstants.LEFT)
-        label_Geofence_Monitoring_count.setVerticalTextPosition(SwingConstants.CENTER)
+        label_Geofence_Monitoring_count.toolTipText = "<html>"+"Enter the Geofence Geofence Monitoring Count."+"<br>"+"Default Value is 50 "+"<html>"
+        label_Geofence_Monitoring_count.icon = icon
+        label_Geofence_Monitoring_count.horizontalTextPosition = SwingConstants.LEFT
+        label_Geofence_Monitoring_count.verticalTextPosition = SwingConstants.CENTER
         newPanel.add(label_Geofence_Monitoring_count, constraints)
 
         constraints.gridx = 1
@@ -153,10 +140,10 @@ class Geofence_InputPanel : JPanel() {
 
         constraints.gridx = 0
         constraints.gridy = 4
-        label_interval.setToolTipText("<html>"+"Enter the interval in milliseconds."+"<br>"+"Default Value is 30 minutes "+"<br>"+"Values less than 30 minutes will be ignored by SDK."+"<html>")
-        label_interval.setIcon(icon)
-        label_interval.setHorizontalTextPosition(SwingConstants.LEFT)
-        label_interval.setVerticalTextPosition(SwingConstants.CENTER)
+        label_interval.toolTipText = "<html>"+"Enter the interval in milliseconds."+"<br>"+"Default Value is 30 minutes "+"<br>"+"Values less than 30 minutes will be ignored by SDK."+"<html>"
+        label_interval.icon = icon
+        label_interval.horizontalTextPosition = SwingConstants.LEFT
+        label_interval.verticalTextPosition = SwingConstants.CENTER
         newPanel.add(label_interval, constraints)
         //labelPendingIntent.setToolTipText("This is a demo tooltip")
         constraints.gridx = 1
@@ -166,10 +153,10 @@ class Geofence_InputPanel : JPanel() {
 
         constraints.gridx = 0
         constraints.gridy = 5
-        label_fastest_interval.setToolTipText("<html>"+"Enter the Fastest interval in milliseconds."+"<br>"+"Default Value is 30 minutes "+"<br>"+"Values less than 30 minutes will be ignored by SDK."+"<html>")
-        label_fastest_interval.setIcon(icon)
-        label_fastest_interval.setHorizontalTextPosition(SwingConstants.LEFT)
-        label_fastest_interval.setVerticalTextPosition(SwingConstants.CENTER)
+        label_fastest_interval.toolTipText = "<html>"+"Enter the Fastest interval in milliseconds."+"<br>"+"Default Value is 30 minutes "+"<br>"+"Values less than 30 minutes will be ignored by SDK."+"<html>"
+        label_fastest_interval.icon = icon
+        label_fastest_interval.horizontalTextPosition = SwingConstants.LEFT
+        label_fastest_interval.verticalTextPosition = SwingConstants.CENTER
         newPanel.add(label_fastest_interval, constraints)
         constraints.gridx = 1
         newPanel.add(fastest_interval_TextField, constraints)
@@ -178,10 +165,10 @@ class Geofence_InputPanel : JPanel() {
 
         constraints.gridx = 0
         constraints.gridy = 6
-        label_displacement.setToolTipText("<html>"+"Enter the Smallest Dispalcement Distance in metres."+"<br>"+"Default Value is 200 metres "+"<br>"+"Values less than 200 meters will be ignored by SDK."+"<html>")
-        label_displacement.setIcon(icon)
-        label_displacement.setHorizontalTextPosition(SwingConstants.LEFT)
-        label_displacement.setVerticalTextPosition(SwingConstants.CENTER)
+        label_displacement.toolTipText = "<html>"+"Enter the Smallest Dispalcement Distance in metres."+"<br>"+"Default Value is 200 metres "+"<br>"+"Values less than 200 meters will be ignored by SDK."+"<html>"
+        label_displacement.icon = icon
+        label_displacement.horizontalTextPosition = SwingConstants.LEFT
+        label_displacement.verticalTextPosition = SwingConstants.CENTER
         newPanel.add(label_displacement, constraints)
         constraints.gridx = 1
         newPanel.add(displacement_TextField, constraints)
@@ -191,10 +178,10 @@ class Geofence_InputPanel : JPanel() {
 
         constraints.gridx = 0
         constraints.gridy = 7
-        label_geofence_notification_responsiveness.setToolTipText("Enter the value for geofence notification responsiveness in milliseconds.")
-        label_geofence_notification_responsiveness.setIcon(icon)
-        label_geofence_notification_responsiveness.setHorizontalTextPosition(SwingConstants.LEFT)
-        label_geofence_notification_responsiveness.setVerticalTextPosition(SwingConstants.TOP)
+        label_geofence_notification_responsiveness.toolTipText = "Enter the value for geofence notification responsiveness in milliseconds."
+        label_geofence_notification_responsiveness.icon = icon
+        label_geofence_notification_responsiveness.horizontalTextPosition = SwingConstants.LEFT
+        label_geofence_notification_responsiveness.verticalTextPosition = SwingConstants.TOP
         label_geofence_notification_responsiveness.addMouseListener(object : MouseAdapter() {
 
 
@@ -220,10 +207,10 @@ class Geofence_InputPanel : JPanel() {
 
         constraints.gridx = 0
         constraints.gridy = 8
-        label_bglocation.setToolTipText("Yes or No")
-        label_bglocation.setIcon(icon)
-        label_bglocation.setHorizontalTextPosition(SwingConstants.LEFT)
-        label_bglocation.setVerticalTextPosition(SwingConstants.TOP)
+        label_bglocation.toolTipText = "Yes or No"
+        label_bglocation.icon = icon
+        label_bglocation.horizontalTextPosition = SwingConstants.LEFT
+        label_bglocation.verticalTextPosition = SwingConstants.TOP
 
         newPanel.add(label_bglocation, constraints)
         bg.add(enable_bglocation_y)

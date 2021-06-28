@@ -11,12 +11,6 @@ import com.intellij.openapi.util.NotNullLazyValue
 import data.file.*
 import data.repository.ModuleRepository
 import managers.*
-
-
-import org.jetbrains.kotlin.idea.kdoc.insert
-
-
-
 import util.Constants
 import util.Methods
 import java.io.FileNotFoundException
@@ -99,12 +93,7 @@ class CTApprovalPresenter(
 
 
             try {
-                abc?.let{
-                    //it.AndroidManifest()
-                    // if(it.initapplicationclass()){
-                    it.initapplicationclass()
-                    //it.checkinsertion()
-                }
+                abc?.initapplicationclass()
 //                AuditreportManager?.let{
 //
 //                    it.initapplicationclass()
@@ -118,10 +107,8 @@ class CTApprovalPresenter(
 
                     }
                 }
-                if(IsRadiobuttonrb1Selected==true) {
-                    applicationClassManager?.let {
-                        it.initapplicationclass(applicationclassname, IsRadiobuttonrb1Selected)
-                    }
+                if(IsRadiobuttonrb1Selected) {
+                    applicationClassManager?.initapplicationclass(applicationclassname, IsRadiobuttonrb1Selected)
                 }
 
                 // it.initiateclevertap(

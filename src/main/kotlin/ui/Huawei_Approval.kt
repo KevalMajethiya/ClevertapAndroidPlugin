@@ -6,18 +6,18 @@ import java.awt.GridBagLayout
 import java.awt.Insets
 import javax.swing.*
 
-class Huawei_Approval() : JPanel()
+class Huawei_Approval : JPanel()
 {
 
     var file1 = JLabel("Build.gadle(Project)")
-    var project_gradle = JLabel("Following dependency would be added to your Project-level build.gradle file:")
-    var project_gradle_content = JLabel()
+    private var project_gradle = JLabel("Following dependency would be added to your Project-level build.gradle file:")
+    private var project_gradle_content = JLabel()
 
 
 
-    var file2 = JLabel("Build.gadle(app)")
-    var app_gradle = JLabel("Following code snippet would be added in your app's build.gradle file:")
-    var app_gradle_content= JLabel()
+    private var file2 = JLabel("Build.gadle(app)")
+    private var app_gradle = JLabel("Following code snippet would be added in your app's build.gradle file:")
+    private var app_gradle_content= JLabel()
 
 
 
@@ -32,7 +32,7 @@ class Huawei_Approval() : JPanel()
         constraints.insets = Insets(inset, inset, inset, inset)
 
 
-        project_gradle_content.setText("<html>"+"buildscript {"+"<br>"+
+        project_gradle_content.text = "<html>"+"buildscript {"+"<br>"+
                 "    repositories { "+"<br>"+
                 ""+"<br>"+
                 "        maven {url 'http://developer.huawei.com/repo/'}"+"<br>"+
@@ -47,13 +47,13 @@ class Huawei_Approval() : JPanel()
                 "        maven {url 'http://developer.huawei.com/repo/'}"+"<br>"+
                 "        } "+"<br>"+
                 "} "+"<br>"+
-                "</html>")
+                "</html>"
 
-        app_gradle_content.setText("<html>"+"implementation \"com.clevertap.android:clevertap-hms-sdk:1.0.1\""+"<br>"+
+        app_gradle_content.text = "<html>"+"implementation \"com.clevertap.android:clevertap-hms-sdk:1.0.1\""+"<br>"+
                 "implementation \"com.huawei.hms:push:5.1.1.301\"\n"+"<br>"+
                 "<br>"+
                 "apply plugin: 'com.huawei.agconnect'\n'"+"<br>"+"<br>"+
-                "</html>")
+                "</html>"
 
 
 

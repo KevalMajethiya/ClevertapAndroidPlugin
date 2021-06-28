@@ -37,7 +37,7 @@ class XiomiStringmanager(private val project: Project) {
     fun checkbeforeinsertion(){
         val documentText = stringXML!!.text.split("\n".toRegex()).dropLastWhile { it.isEmpty() }.toTypedArray()
         for (i in documentText.indices){
-            var line = documentText[i]
+            val line = documentText[i]
             if(line.contains("xiaomi_app_key"))
             {
                 xiaomi_app_key=true
@@ -55,26 +55,26 @@ class XiomiStringmanager(private val project: Project) {
         val sb = StringBuilder()
         for (i in documentText.indices){
             val line = documentText[i]
-            if(xiaomi_app_id==false){
+            if(!xiaomi_app_id){
                 if (line.contains(Constants.RESOURCES)){
                     if (line.contains("/")){
                         sb
                             .append("    <!-- Added by CleverTap Assistant-->")
                             .append("\n")
-                            .append("    <string name=\"xiaomi_app_id\">" + AppID +"</string>")
+                            .append("    <string name=\"xiaomi_app_id\">$AppID</string>")
                             .append("\n")
                         xiaomi_app_id=true
                     }
                 }
             }
 
-            if(xiaomi_app_key==false){
+            if(!xiaomi_app_key){
                 if (line.contains(Constants.RESOURCES)){
                     if (line.contains("/")){
                         sb
                             .append("    <!-- Added by CleverTap Assistant-->")
                             .append("\n")
-                            .append("    <string name=\"xiaomi_app_key\">" + AppKey +"</string>")
+                            .append("    <string name=\"xiaomi_app_key\">$AppKey</string>")
                             .append("\n")
                         xiaomi_app_key=true
                     }

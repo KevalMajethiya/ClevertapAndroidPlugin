@@ -4,14 +4,10 @@ import com.intellij.openapi.actionSystem.AnActionEvent
 import com.intellij.openapi.actionSystem.DataKeys
 import com.intellij.openapi.module.ModuleUtil
 import com.intellij.openapi.ui.DialogWrapper
-import com.intellij.ui.layout.panel
 import data.file.*
 import data.repository.ModuleRepositoryImpl
 import data.repository.SourceRootRepositoryImpl
-import managers.ManifestManager
 import util.Constants
-import java.awt.event.ActionEvent
-import java.awt.event.ActionListener
 import javax.swing.JComponent
 
 class NewScreenDialog_Clevertap(var event: AnActionEvent) : DialogWrapper(true),  NewScreenView {
@@ -21,7 +17,7 @@ class NewScreenDialog_Clevertap(var event: AnActionEvent) : DialogWrapper(true),
     private val presenter: NewScreenPresenterClevertap
     private var packageName = ""
     private var moduleName = ""
-    var region_selected = ""
+//    var region_selected = ""
 
     init {
         val currentPath = event.getData(DataKeys.VIRTUAL_FILE)?.let {
@@ -43,15 +39,15 @@ class NewScreenDialog_Clevertap(var event: AnActionEvent) : DialogWrapper(true),
             currentPath
 
         )
-        panelForFCM.rb1.addActionListener(){
-            if (panelForFCM.rb1.isSelected()) {
+        panelForFCM.rb1.addActionListener{
+            if (panelForFCM.rb1.isSelected) {
                 panelForFCM.labelapplicationclassname.isVisible = true
                 panelForFCM.application_classname_TextField.isVisible = true
 
             }
         }
-        panelForFCM.rb2.addActionListener(){
-            if (panelForFCM.rb2.isSelected()) {
+        panelForFCM.rb2.addActionListener{
+            if (panelForFCM.rb2.isSelected) {
                 panelForFCM.labelapplicationclassname.isVisible = false
                 panelForFCM.application_classname_TextField.isVisible =false
 
@@ -80,7 +76,7 @@ class NewScreenDialog_Clevertap(var event: AnActionEvent) : DialogWrapper(true),
                     panelForFCM.rb1_labelContentText.isSelected,
                     panelForFCM.rb2_labelContentText.isSelected,
                     //region_selected,
-                    panelForFCM.region_value.getSelectedItem().toString(),
+                    panelForFCM.region_value.selectedItem.toString(),
 
                     panelForFCM.Exclude_filesTextField.text,
                     panelForFCM.contentTextTextField.text,
@@ -97,7 +93,7 @@ class NewScreenDialog_Clevertap(var event: AnActionEvent) : DialogWrapper(true),
         return panelForFCM
     }
 
-    override fun close() = close(DialogWrapper.OK_EXIT_CODE)
+    override fun close() = close(OK_EXIT_CODE)
 
     override fun showPackage(packageName: String) {
         this.packageName = packageName

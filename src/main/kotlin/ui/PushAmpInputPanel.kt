@@ -9,12 +9,12 @@ import javax.swing.*
 
 class PushAmpInputPanel: JPanel() {
 
-    val fileContent = ClevertapInputPanel::class.java.getResource("/icons/hint.png")
-    val icon = ImageIcon(fileContent)
-    val custRender = JLabel("Are you Custom Rendering Push Notifications :")
+    private val fileContent = ClevertapInputPanel::class.java.getResource("/icons/hint.png")
+    private val icon = ImageIcon(fileContent)
+    private val custRender = JLabel("Are you Custom Rendering Push Notifications :")
     var rb1 = JRadioButton("Yes")
     var rb2 = JRadioButton("No")
-    var bg = ButtonGroup()
+    private var bg = ButtonGroup()
     val receiverLabel = JLabel("FCM Receiver class :")
     val receiverClass = JTextField(30)
     val newPanel = JPanel(GridBagLayout())
@@ -28,9 +28,9 @@ class PushAmpInputPanel: JPanel() {
 
         constraints.gridx = 0
         constraints.gridy = 0
-        custRender.setToolTipText("Yes Or No")
-        custRender.setHorizontalTextPosition( SwingConstants.LEFT)
-        custRender.setVerticalTextPosition( SwingConstants.CENTER )
+        custRender.toolTipText = "Yes Or No"
+        custRender.horizontalTextPosition = SwingConstants.LEFT
+        custRender.verticalTextPosition = SwingConstants.CENTER
         newPanel.add(custRender, constraints)
 
         constraints.gridx=1
@@ -42,14 +42,14 @@ class PushAmpInputPanel: JPanel() {
 
         constraints.gridx = 0
         constraints.gridy = 2
-        receiverLabel.setVisible(false)
-        receiverLabel.setToolTipText("Enter Receiver Class Name")
-        receiverLabel.setIcon(icon)
-        receiverLabel.setHorizontalTextPosition( SwingConstants.LEFT)
-        receiverLabel.setVerticalTextPosition( SwingConstants.CENTER )
+        receiverLabel.isVisible = false
+        receiverLabel.toolTipText = "Enter Receiver Class Name"
+        receiverLabel.icon = icon
+        receiverLabel.horizontalTextPosition = SwingConstants.LEFT
+        receiverLabel.verticalTextPosition = SwingConstants.CENTER
         newPanel.add(receiverLabel, constraints)
         constraints.gridx = 1
-        receiverClass.setVisible(false)
+        receiverClass.isVisible = false
         newPanel.add(receiverClass, constraints)
 
         newPanel.border = BorderFactory.createTitledBorder(

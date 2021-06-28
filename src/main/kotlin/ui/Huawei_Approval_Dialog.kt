@@ -7,10 +7,7 @@ import com.intellij.openapi.ui.DialogWrapper
 import data.file.*
 import data.repository.ModuleRepositoryImpl
 import data.repository.SourceRootRepositoryImpl
-import managers.ManifestManager
 import util.Constants
-import java.awt.event.ActionEvent
-import java.awt.event.ActionListener
 import javax.swing.JComponent
 
 class Huawei_Approval_Dialog(var event: AnActionEvent) : DialogWrapper(true),  NewScreenView {
@@ -67,7 +64,7 @@ class Huawei_Approval_Dialog(var event: AnActionEvent) : DialogWrapper(true),  N
         return panelForHuawei
     }
 
-    override fun close() = close(DialogWrapper.OK_EXIT_CODE)
+    override fun close() = close(OK_EXIT_CODE)
 
     override fun showPackage(packageName: String) {
         this.packageName = packageName

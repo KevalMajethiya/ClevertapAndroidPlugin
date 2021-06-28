@@ -1,15 +1,14 @@
 package ui
 
-import com.intellij.notification.NotificationDisplayType
-import com.intellij.notification.NotificationGroup
 import com.intellij.openapi.actionSystem.AnActionEvent
-import com.intellij.openapi.util.NotNullLazyValue
 import data.file.CurrentPath
 import data.file.FileCreator
 import data.file.PackageExtractor
 import data.file.WriteActionDispatcher
 import data.repository.ModuleRepository
-import managers.*
+import managers.XiomiGradleManager
+import managers.XiomiManifestManager
+import managers.XiomiStringmanager
 import util.Constants
 import java.io.FileNotFoundException
 

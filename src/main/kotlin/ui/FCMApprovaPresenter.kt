@@ -73,7 +73,7 @@ class FCMApprovaPresenter(
             createFCMfile= createFCMfile(project)
             try {
                 gradleManagerForfcm?.let {
-                    if(IsRadiobuttonrb2Selected==true) {
+                    if(IsRadiobuttonrb2Selected) {
                         if (it.initBuildGradle()) {
                             it.addDependency("${Constants.GRADLE_FOR_FCM}$dependencyVersionText", event)
 
@@ -108,28 +108,13 @@ class FCMApprovaPresenter(
 //                    }
 //
 //                }
-                pushnotificationmanager?.let {
+                pushnotificationmanager?.initlaunchingactivity(contentTitleText)
 
-                        it.initlaunchingactivity(contentTitleText)
-                       // it.addnotificationchannel(contentTitleText)
-
+                if(IsRadiobuttonrb1Selected){
+                    pushnotificationmanager2?.initlaunchingactivity(contentTitleText)
                 }
-
-                if(IsRadiobuttonrb1Selected==true){
-                    pushnotificationmanager2?.let {
-
-                        it.initlaunchingactivity(contentTitleText)
-                        // it.addnotificationchannel(contentTitleText)
-
-                    }
-                }
-                if(IsRadiobuttonrb2Selected==true) {
-                    createFCMfile?.let {
-
-                        it.initapplicationclass( serviceNameText,contentTitleText)
-
-
-                    }
+                if(IsRadiobuttonrb2Selected) {
+                    createFCMfile?.initapplicationclass( serviceNameText,contentTitleText)
                 }
 //                if(IsRadiobuttonrb2Selected==true) {
 //                writeActionDispatcher.dispatch {

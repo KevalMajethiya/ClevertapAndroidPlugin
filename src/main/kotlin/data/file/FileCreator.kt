@@ -1,18 +1,13 @@
 package data.file
 
+//import com.sun.javafx.scene.CameraHelper.project
+
 import data.repository.SourceRootRepository
 import model.FileType
-import util.Constants
 import util.Constants.COLOR_PRIMARY_FROM_ANDROID
 import util.Constants.COLOR_PRIMARY_FROM_XML
 import util.Constants.FCM_DIRECTORY
 import util.Methods.getFileContent
-//import com.sun.javafx.scene.CameraHelper.project
-
-import com.intellij.openapi.command.WriteCommandAction
-
-
-
 
 
 interface FileCreator {

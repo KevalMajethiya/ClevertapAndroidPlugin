@@ -1,6 +1,5 @@
 package managers
 
-import com.intellij.openapi.actionSystem.AnActionEvent
 import com.intellij.openapi.application.ApplicationManager
 import com.intellij.openapi.editor.Document
 import com.intellij.openapi.fileEditor.FileDocumentManager
@@ -19,8 +18,6 @@ class PushNotificationManager(private val project: Project) {
     private  var firebase_receiver_class_name:String=""
     private var notification_channel_exist:Boolean=false
     private var import_stmt:Boolean=false
-    private var import_stmt_hashmap:Boolean=false
-    private var final_ans:String=""
 
 
 
@@ -59,17 +56,16 @@ class PushNotificationManager(private val project: Project) {
             {
                 for(j in i downTo 1)
                 {
-                    var line1=documentText[j]
+                    val line1=documentText[j]
                     if(line1.contains("activity")) {
 
                         for(k in j..i) {
-                            var line2 = documentText[k]
+                            val line2 = documentText[k]
                             if (line2.contains("android:name")) {
-                                var ans = line2
-                                var b = ans.split(".")
-                                var c = b[1]
-                                var d = b[1].split("\"")
-                                var e = d[0]
+                                val ans = line2
+                                val b = ans.split(".")
+                                val d = b[1].split("\"")
+                                val e = d[0]
                                 launchingactivityname = e
                                 break
                             }
@@ -90,9 +86,9 @@ class PushNotificationManager(private val project: Project) {
                     val line2=documentText[k]
                     if(line2.contains("android:name")) {
 
-                        var ans11=line2
-                        var ans12= ans11.split("\"")
-                        var ans13=ans12[1]
+                        val ans11=line2
+                        val ans12= ans11.split("\"")
+                        val ans13=ans12[1]
                         firebase_receiver_class_name=ans13
                         break
 //
@@ -104,11 +100,11 @@ class PushNotificationManager(private val project: Project) {
 
             if (line.contains("package")) {
                 if (line.contains("=")) {
-                    var a = line
-                    var b = a.split("=")
+                    val a = line
+                    val b = a.split("=")
                     //var d=
-                    var c = b[1]
-                    var d = c.split("\"")
+                    val c = b[1]
+                    val d = c.split("\"")
                     packagename = d[1]
                     //return "abc"
                     //initapplicationclass(packagename!!)
@@ -127,19 +123,16 @@ class PushNotificationManager(private val project: Project) {
     @Throws(FileNotFoundException::class)
     fun initlaunchingactivity(contentTitleText:String): Boolean {
         AndroidManifest()
-        var fcm_name=firebase_receiver_class_name
         val op=launchingactivityname
-        var op1=packagename
-        var fa=final_ans
-        var ans1=op1.replace(".","/")
-        val basePath = project.basePath
+        val op1=packagename
+        val ans1=op1.replace(".","/")
        // projectBaseDir = LocalFileSystem.getInstance().findFileByPath(project.basePath +"/app/src/main/java/"+ ans1 + "/" + op + ".java")
        // projectBaseDir = LocalFileSystem.getInstance().findFileByPath(basePath!!)
-        var file = File(project.basePath +"/app/src/main/java/"+ans1+"/" + op +".java")
-        var file1 = File(project.basePath +"/app/src/main/java/"+ans1+"/" + op +".kt")
-        var java_file_exist = file.exists()
-        var kotlin_file_exist = file1.exists()
-        if(java_file_exist==true)
+        val file = File(project.basePath +"/app/src/main/java/"+ans1+"/" + op +".java")
+        val file1 = File(project.basePath +"/app/src/main/java/"+ans1+"/" + op +".kt")
+        val java_file_exist = file.exists()
+        val kotlin_file_exist = file1.exists()
+        if(java_file_exist)
         {
             projectBaseDir = LocalFileSystem.getInstance().findFileByPath(project.basePath +"/app/src/main/java/"+ans1+"/" + op +".java")
             val manifestVirtualFile: VirtualFile? = projectBaseDir
@@ -153,7 +146,7 @@ class PushNotificationManager(private val project: Project) {
                 false
             }
         }
-        if(kotlin_file_exist==true)
+        if(kotlin_file_exist)
         {
             projectBaseDir = LocalFileSystem.getInstance().findFileByPath(project.basePath +"/app/src/main/java/"+ans1+"/" + op +".kt")
             val manifestVirtualFile: VirtualFile? = projectBaseDir
@@ -186,7 +179,7 @@ class PushNotificationManager(private val project: Project) {
         // val sb = StringBuilder()
         for (i in documentText.indices)
         {
-            var line = documentText[i]
+            val line = documentText[i]
             if(line.contains("CleverTapAPI.createNotificationChannel"))
             {
                 notification_channel_exist=true
@@ -215,7 +208,7 @@ class PushNotificationManager(private val project: Project) {
                 sb
                     .append(line)
                     .append("\n")
-                if(import_stmt==false) {
+                if(!import_stmt) {
                     if (line.contains("package")) {
                         // if (line.contains("/")) {
                         sb
@@ -235,7 +228,7 @@ class PushNotificationManager(private val project: Project) {
 //                        // }
 //                    }
 //                }
-                if(notification_channel_exist==false) {
+                if(!notification_channel_exist) {
                     if (line.contains("setContentView")) {
                         // if (line.contains("/")) {
                         sb
@@ -262,7 +255,7 @@ class PushNotificationManager(private val project: Project) {
             sb
                 .append(line)
                 .append("\n")
-            if(import_stmt==false) {
+            if(!import_stmt) {
                 if (line.contains("package")) {
                     // if (line.contains("/")) {
                     sb
@@ -282,7 +275,7 @@ class PushNotificationManager(private val project: Project) {
 //                        // }
 //                    }
 //                }
-            if(notification_channel_exist==false) {
+            if(!notification_channel_exist) {
                 if (line.contains("setContentView")) {
                     // if (line.contains("/")) {
                     sb

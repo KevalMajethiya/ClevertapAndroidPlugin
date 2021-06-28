@@ -1,12 +1,8 @@
 package ui
 
 
-import java.awt.Toolkit;
-import java.awt.datatransfer.DataFlavor;
-import java.awt.datatransfer.StringSelection;
-import java.awt.datatransfer.Transferable;
-import java.awt.datatransfer.UnsupportedFlavorException;
-
+import java.awt.Toolkit
+import java.awt.datatransfer.StringSelection
 import com.intellij.openapi.actionSystem.AnActionEvent
 import com.intellij.openapi.actionSystem.DataKeys
 import com.intellij.openapi.fileEditor.FileDocumentManager
@@ -19,31 +15,8 @@ import data.file.*
 import data.repository.ModuleRepositoryImpl
 import data.repository.SourceRootRepositoryImpl
 import util.Constants
-import util.Constants.CONTENT_TEXT
-import util.Constants.CONTENT_TITLE
-import util.Constants.ChannelID_Name_FCM
-import util.Constants.DEPENDENCY_VERSION
-import util.Constants.DEPENDENCY_VERSION_VALUE
-import util.Constants.DEPENDENCY_VERSION_VALUE_FCM
-import util.Constants.FCM_PANEL
-import util.Constants.FCM_SERVICE_NAME
-import util.Constants.FCM_SERVICE_NAME_FCM
-import util.Constants.MY_FIREBASE_MESSAGING_SERVICE
-import util.Constants.MY_FIREBASE_MESSAGING_SERVICE_FCM
-import util.Constants.NEED_INSTRUCTION
-import util.Constants.NOTES_INSTRUCTION
-import util.Constants.PENDINGINTENT_ACTIVITY_NAME
-import util.Constants.PENDINGINTENT_ACTIVITY_NAME_FCM
 import javax.swing.*
-import javax.swing.BorderFactory
-import java.awt.GridBagConstraints
-import java.awt.Insets
-import java.awt.GridBagLayout
 import java.io.File
-import javax.swing.JPanel
-import javax.swing.JTextField
-import java.io.IOException
-import java.nio.file.*
 
 
 class fcm1(var event: AnActionEvent,private val project: Project) : DialogWrapper(true), NewScreenView{
@@ -56,7 +29,6 @@ class fcm1(var event: AnActionEvent,private val project: Project) : DialogWrappe
     private var androidManifestfile: com.intellij.openapi.editor.Document? = null
     private var pkgname:String=""
     private var launchingactivityname:String=""
-    private var language=""
 
     init {
         find_language()
@@ -116,10 +88,8 @@ class fcm1(var event: AnActionEvent,private val project: Project) : DialogWrappe
                 {
                     val line1=documentText[j]
                     if(line1.contains("activity")) {
-                        var ans=line1
-                        var b= ans.split(".")
-                        var c=b[1]
-                        var d=b[1].split("\"")
+                        val b= line1.split(".")
+                        val d=b[1].split("\"")
                         launchingactivityname=d[0]
                         print(launchingactivityname)
                         // launchingactivityname="line"
@@ -135,11 +105,10 @@ class fcm1(var event: AnActionEvent,private val project: Project) : DialogWrappe
 
             if (line.contains("package")) {
                 if (line.contains("=")) {
-                    var a = line
-                    var b = a.split("=")
+                    val b = line.split("=")
                     //var d=
-                    var c = b[1]
-                    var d = c.split("\"")
+                    val c = b[1]
+                    val d = c.split("\"")
                     pkgname = d[1]
                     //return "abc"
                     //initapplicationclass(packagename!!)
@@ -159,47 +128,47 @@ class fcm1(var event: AnActionEvent,private val project: Project) : DialogWrappe
     fun find_language(): Boolean {
         AndroidManifest()
         val op = launchingactivityname
-        var op1 = pkgname
+        val op1 = pkgname
         // val ans=pkg
-        var ans1 = op1.replace(".", "/")
+        val ans1 = op1.replace(".", "/")
         // val ans2=ans1.replace("\"","")
         print(ans1)
-        val basePath = project.basePath
+        //val basePath = project.basePath
         //projectBaseDir = LocalFileSystem.getInstance().findFileByPath(project.basePath +"/app/src/main/java/"+ans1+"/" + op +".java")
         print(projectBaseDir)
 
-        var file = File(project.basePath + "/app/src/main/java/" + ans1 + "/" + op + ".java")
-        var file1 = File(project.basePath + "/app/src/main/java/" + ans1 + "/" + op + ".kt")
-        var java_file_exist = file.exists()
-        var kotlin_file_exist = file1.exists()
-        if (java_file_exist == true) {
+        val file = File(project.basePath + "/app/src/main/java/" + ans1 + "/" + op + ".java")
+        val file1 = File(project.basePath + "/app/src/main/java/" + ans1 + "/" + op + ".kt")
+        val java_file_exist = file.exists()
+        val kotlin_file_exist = file1.exists()
+        if (java_file_exist) {
             //language= "java"
-                panelForFCM. l3.setText("<html>"+"try {"+"<br>"+
-                        "if (remotemessage.getData().size() > 0) {"+"<br>"+
-                        "                Bundle extras = new Bundle();"+"<br>"+
-                        "                for (Map.Entry<String, String> entry : remotemessage.getData().entrySet()) {"+"<br>"+
-                        "                    extras.putString(entry.getKey(), entry.getValue());"+"<br>"+
-                        "}"+"<br>"+
-                        "                NotificationInfo info = CleverTapAPI.getNotificationInfo(extras);"+"<br>"+
-                        "                if (info.fromCleverTap) {"+"<br>"+
-                        "                    CleverTapAPI.createNotification(getApplicationContext(), extras);"+"<br>"+
-                        "                } else {"+"<br>"+
-                        "                    // not from CleverTap handle yourself or pass to another provider"+"<br>"+
-                        "}"+"<br>"+
-                        "}"+"<br>"+
-                        "        } catch (Throwable t) {"+"<br>"+
-                        "           Log.d(\"MYFCMLIST\", \"Error parsing FCM message\", t);"+"<br>"+
-                        "}"+
-                        "</html>")
+            panelForFCM. l3.text = "<html>"+"try {"+"<br>"+
+                    "if (remotemessage.getData().size() > 0) {"+"<br>"+
+                    "                Bundle extras = new Bundle();"+"<br>"+
+                    "                for (Map.Entry<String, String> entry : remotemessage.getData().entrySet()) {"+"<br>"+
+                    "                    extras.putString(entry.getKey(), entry.getValue());"+"<br>"+
+                    "}"+"<br>"+
+                    "                NotificationInfo info = CleverTapAPI.getNotificationInfo(extras);"+"<br>"+
+                    "                if (info.fromCleverTap) {"+"<br>"+
+                    "                    CleverTapAPI.createNotification(getApplicationContext(), extras);"+"<br>"+
+                    "                } else {"+"<br>"+
+                    "                    // not from CleverTap handle yourself or pass to another provider"+"<br>"+
+                    "}"+"<br>"+
+                    "}"+"<br>"+
+                    "        } catch (Throwable t) {"+"<br>"+
+                    "           Log.d(\"MYFCMLIST\", \"Error parsing FCM message\", t);"+"<br>"+
+                    "}"+
+                    "</html>"
 
-            panelForFCM. l6.setText("<html>"+"@Override"+"<br>"+"public void onNewToken(@NonNull String s) {"+"<br>"+"    super.onNewToken(s);"+"<br>"+"\t\tclevertapDefaultInstance = CleverTapAPI.getDefaultInstance(getApplicationContext());"+"<br>"+"clevertapDefaultInstance.pushFcmRegistrationId(s,true);"+"<br>"+"}"+"<br>"+"</html>")
+            panelForFCM. l6.text = "<html>"+"@Override"+"<br>"+"public void onNewToken(@NonNull String s) {"+"<br>"+"    super.onNewToken(s);"+"<br>"+"\t\tclevertapDefaultInstance = CleverTapAPI.getDefaultInstance(getApplicationContext());"+"<br>"+"clevertapDefaultInstance.pushFcmRegistrationId(s,true);"+"<br>"+"}"+"<br>"+"</html>"
             panelForFCM.b.addActionListener()
             {
 
                 fun setStringToClipboard( stringContent : String)
                 {
-                    val stringSelection = StringSelection(stringContent);
-                    Toolkit.getDefaultToolkit().getSystemClipboard().setContents(stringSelection, null);
+                    val stringSelection = StringSelection(stringContent)
+                    Toolkit.getDefaultToolkit().systemClipboard.setContents(stringSelection, null)
                 }
                 setStringToClipboard("\t\ttry {\n" +
                         "            if (remotemessage.getData().size() > 0) {\n" +
@@ -218,7 +187,7 @@ class fcm1(var event: AnActionEvent,private val project: Project) : DialogWrappe
                         "            }\n" +
                         "        } catch (Throwable t) {\n" +
                         "           Log.d(\"MYFCMLIST\", \"Error parsing FCM message\", t);\n" +
-                        "        }");
+                        "        }")
                 // If a string is on the system clipboard, this method returns it; otherwise it returns null.
 
                 // This method writes a string to the clipboard.
@@ -232,8 +201,8 @@ class fcm1(var event: AnActionEvent,private val project: Project) : DialogWrappe
 
                 fun setStringToClipboard( stringContent : String)
                 {
-                    val stringSelection = StringSelection(stringContent);
-                    Toolkit.getDefaultToolkit().getSystemClipboard().setContents(stringSelection, null);
+                    val stringSelection = StringSelection(stringContent)
+                    Toolkit.getDefaultToolkit().systemClipboard.setContents(stringSelection, null)
                 }
                 setStringToClipboard("@Override\n" +
                         "\tpublic void onNewToken(@NonNull String s) {\n" +
@@ -241,7 +210,7 @@ class fcm1(var event: AnActionEvent,private val project: Project) : DialogWrappe
                         "\t\tCleverTapAPI clevertapDefaultInstance = CleverTapAPI.getDefaultInstance(getApplicationContext());\n" +
                         "\t\tclevertapDefaultInstance.pushFcmRegistrationId(s,true);\n" +
 
-                        "\t}\n");
+                        "\t}\n")
                 // If a string is on the system clipboard, this method returns it; otherwise it returns null.
 
                 // This method writes a string to the clipboard.
@@ -252,36 +221,36 @@ class fcm1(var event: AnActionEvent,private val project: Project) : DialogWrappe
             }
 
         }
-        if(kotlin_file_exist == true)
+        if(kotlin_file_exist)
         {
             //language= "kotlin"
-                panelForFCM.l3.setText("<html>"+"remotemessage.data.apply {"+"<br>"+
-                        "try {"+"<br>"+
-                        "if (size() > 0) {"+"<br>"+
-                        "                val extras =Bundle()"+"<br>"+
-                        "                for ((key,value) in this ) {"+"<br>"+
-                        "                    extras.putString(key, value)"+"<br>"+
-                        "}"+"<br>"+
-                        "                val info = CleverTapAPI.getNotificationInfo(extras)"+"<br>"+
-                        "                if (info.fromCleverTap) {"+"<br>"+
-                        "                    CleverTapAPI.createNotification(ApplicationContext(), extras)"+"<br>"+
-                        "                } else {"+"<br>"+
-                        "                    // not from CleverTap handle yourself or pass to another provider"+"<br>"+
-                        "}"+"<br>"+
-                        "}"+"<br>"+
-                        "        } catch (t: Throwable) {"+"<br>"+
-                        "           Log.d(\"MYFCMLIST\", \"Error parsing FCM message\", t)"+"<br>"+
-                        "}"+
-                        "</html>")
+            panelForFCM.l3.text = "<html>"+"remotemessage.data.apply {"+"<br>"+
+                    "try {"+"<br>"+
+                    "if (size() > 0) {"+"<br>"+
+                    "                val extras =Bundle()"+"<br>"+
+                    "                for ((key,value) in this ) {"+"<br>"+
+                    "                    extras.putString(key, value)"+"<br>"+
+                    "}"+"<br>"+
+                    "                val info = CleverTapAPI.getNotificationInfo(extras)"+"<br>"+
+                    "                if (info.fromCleverTap) {"+"<br>"+
+                    "                    CleverTapAPI.createNotification(ApplicationContext(), extras)"+"<br>"+
+                    "                } else {"+"<br>"+
+                    "                    // not from CleverTap handle yourself or pass to another provider"+"<br>"+
+                    "}"+"<br>"+
+                    "}"+"<br>"+
+                    "        } catch (t: Throwable) {"+"<br>"+
+                    "           Log.d(\"MYFCMLIST\", \"Error parsing FCM message\", t)"+"<br>"+
+                    "}"+
+                    "</html>"
 
-            panelForFCM. l6.setText("<html>"+"@Override"+"<br>"+"fun onNewToken(@NonNull String s) {"+"<br>"+"    super.onNewToken(s)"+"<br>"+"\t\tclevertapDefaultInstance = CleverTapAPI.getDefaultInstance(getApplicationContext())"+"<br>"+"clevertapDefaultInstance.pushFcmRegistrationId(s,true)"+"<br>"+"}"+"<br>"+"</html>")
+            panelForFCM. l6.text = "<html>"+"@Override"+"<br>"+"fun onNewToken(@NonNull String s) {"+"<br>"+"    super.onNewToken(s)"+"<br>"+"\t\tclevertapDefaultInstance = CleverTapAPI.getDefaultInstance(getApplicationContext())"+"<br>"+"clevertapDefaultInstance.pushFcmRegistrationId(s,true)"+"<br>"+"}"+"<br>"+"</html>"
             panelForFCM.b.addActionListener()
             {
 
                 fun setStringToClipboard( stringContent : String)
                 {
-                    val stringSelection = StringSelection(stringContent);
-                    Toolkit.getDefaultToolkit().getSystemClipboard().setContents(stringSelection, null);
+                    val stringSelection = StringSelection(stringContent)
+                    Toolkit.getDefaultToolkit().systemClipboard.setContents(stringSelection, null)
                 }
                 setStringToClipboard("\t\t message.data.apply {\n" +
                         "\t\ttry {\n"+
@@ -301,7 +270,7 @@ class fcm1(var event: AnActionEvent,private val project: Project) : DialogWrappe
                         "            }\n" +
                         "        } catch (t: Throwable) {\n" +
                         "           Log.d(\"MYFCMLIST\", \"Error parsing FCM message\", t);\n" +
-                        "        }");
+                        "        }")
                 // If a string is on the system clipboard, this method returns it; otherwise it returns null.
 
                 // This method writes a string to the clipboard.
@@ -315,8 +284,8 @@ class fcm1(var event: AnActionEvent,private val project: Project) : DialogWrappe
 
                 fun setStringToClipboard( stringContent : String)
                 {
-                    val stringSelection = StringSelection(stringContent);
-                    Toolkit.getDefaultToolkit().getSystemClipboard().setContents(stringSelection, null);
+                    val stringSelection = StringSelection(stringContent)
+                    Toolkit.getDefaultToolkit().systemClipboard.setContents(stringSelection, null)
                 }
                 setStringToClipboard("@Override\n" +
                         "\tfun onNewToken(@NonNull String s) {\n" +
@@ -324,7 +293,7 @@ class fcm1(var event: AnActionEvent,private val project: Project) : DialogWrappe
                         "\t\tclevertapDefaultInstance = CleverTapAPI.getDefaultInstance(getApplicationContext())\n" +
                         "\t\tclevertapDefaultInstance.pushFcmRegistrationId(s,true)\n" +
 
-                        "\t}\n");
+                        "\t}\n")
                 // If a string is on the system clipboard, this method returns it; otherwise it returns null.
 
                 // This method writes a string to the clipboard.
@@ -346,7 +315,7 @@ class fcm1(var event: AnActionEvent,private val project: Project) : DialogWrappe
         return panelForFCM
     }
 
-    override fun close() = close(DialogWrapper.OK_EXIT_CODE)
+    override fun close() = close(OK_EXIT_CODE)
 
     override fun showPackage(packageName: String) {
         this.packageName = packageName

@@ -1,15 +1,12 @@
 package managers
 
-import com.intellij.openapi.actionSystem.AnActionEvent
 import com.intellij.openapi.application.ApplicationManager
 import com.intellij.openapi.editor.Document
 import com.intellij.openapi.fileEditor.FileDocumentManager
 import com.intellij.openapi.project.Project
 import com.intellij.openapi.vfs.LocalFileSystem
 import com.intellij.openapi.vfs.VirtualFile
-import org.jetbrains.kotlin.idea.kdoc.insert
 import util.Constants
-import util.Methods
 import java.io.FileNotFoundException
 
 
@@ -85,17 +82,16 @@ class ManifestManager_audit(private val project: Project) {
             {
                 for(j in i downTo 1)
                 {
-                    var line1=documentText[j]
+                    val line1=documentText[j]
                     if(line1.contains("activity")) {
 
                         for(k in j..i) {
-                            var line2 = documentText[k]
+                            val line2 = documentText[k]
                             if (line2.contains("android:name")) {
-                                var ans = line2
-                                var b = ans.split(".")
-                                var c = b[1]
-                                var d = b[1].split("\"")
-                                var e = d[0]
+                                val ans = line2
+                                val b = ans.split(".")
+                                val d = b[1].split("\"")
+                                val e = d[0]
                                 var activityname = e
                                 break
                             }
@@ -151,7 +147,6 @@ class ManifestManager_audit(private val project: Project) {
 
             if (line.contains(Constants.MANIFEST)) {
 
-                val s=line
                 //s.split(" ")
                 //val a=s.substring(10)
 
@@ -182,7 +177,7 @@ class ManifestManager_audit(private val project: Project) {
         // val sb = StringBuilder()
         for (i in documentText.indices)
         {
-            var line = documentText[i]
+            val line = documentText[i]
 
             if(line.contains("uses-permission android:name=\"android.permission.READ_LOGS\""))
             {
@@ -207,7 +202,7 @@ class ManifestManager_audit(private val project: Project) {
         for (i in documentText.indices) {
             val line = documentText[i]
 
-            if(read_logs_permission_exist==false) {
+            if(!read_logs_permission_exist) {
                 if (line.contains(Constants.MANIFEST)) {
                     if (line.contains(">")) {
                         sb
@@ -221,7 +216,7 @@ class ManifestManager_audit(private val project: Project) {
                     }
                 }
             }
-            if(write_external_storage_permission_exist==false) {
+            if(!write_external_storage_permission_exist) {
                 if (line.contains(Constants.MANIFEST)) {
                     if (line.contains(">")) {
                         sb

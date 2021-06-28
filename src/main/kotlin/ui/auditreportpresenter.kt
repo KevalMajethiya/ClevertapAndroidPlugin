@@ -11,14 +11,7 @@ import com.intellij.openapi.util.NotNullLazyValue
 import data.file.*
 import data.repository.ModuleRepository
 import managers.*
-
-
-import org.jetbrains.kotlin.idea.kdoc.insert
-
-
-
 import util.Constants
-import util.Methods
 import java.io.FileNotFoundException
 
 class auditreportpresenter(
@@ -82,11 +75,7 @@ class auditreportpresenter(
 
             try {
 
-                AuditreportManager?.let{
-
-                    it.initapplicationclass()
-
-                }
+                AuditreportManager?.initapplicationclass()
                 //}
 
 

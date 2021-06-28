@@ -43,20 +43,16 @@ class XiomiApprovalDialog(var event: AnActionEvent,appID : String,appKey : Strin
 
         )
 
-        panelForXiomi1.manifest_content.setText(
-            "<html>"+ "&lt meta-data" + "<br>" +
-                    "  \t      android:name=\"CLEVERTAP_XIAOMI_APP_ID\"" + "<br>" +
-                    "  \t      android:value=\"@string/xiaomi_app_id \" / &gt" + "<br>" +
-                    "&lt meta-data" + "<br>" +
-                    "  \t      android:name=\"CLEVERTAP_XIAOMI_APP_KEY\"" + "<br>" +
-                    "  \t      android:value=\"@string/xiaomi_app_key \" / &gt" + "<br>" +
-                    "</html>"
-        )
+        panelForXiomi1.manifest_content.text = "<html>"+ "&lt meta-data" + "<br>" +
+                "  \t      android:name=\"CLEVERTAP_XIAOMI_APP_ID\"" + "<br>" +
+                "  \t      android:value=\"@string/xiaomi_app_id \" / &gt" + "<br>" +
+                "&lt meta-data" + "<br>" +
+                "  \t      android:name=\"CLEVERTAP_XIAOMI_APP_KEY\"" + "<br>" +
+                "  \t      android:value=\"@string/xiaomi_app_key \" / &gt" + "<br>" +
+                "</html>"
 
-        panelForXiomi1.strings_xml_content.setText(
-            "<html>"+ "&lt string name = " + "\"xiaomi_app_id\" &gt " +AppId+"&lt/string&gt" +"<br>"
-                    + "&lt string name = " + "\"xiaomi_app_key\" &gt " +AppKey+"&lt/string&gt"
-        )
+        panelForXiomi1.strings_xml_content.text = ("<html>"+ "&lt string name = " + "\"xiaomi_app_id\" &gt " +AppId+"&lt/string&gt" +"<br>"
+                + "&lt string name = " + "\"xiaomi_app_key\" &gt " +AppKey+"&lt/string&gt")
 
         moduleName = currentPath?.module ?: Constants.DEFAULT_MODULE_NAME
         init()
@@ -77,7 +73,7 @@ class XiomiApprovalDialog(var event: AnActionEvent,appID : String,appKey : Strin
         return panelForXiomi1
     }
 
-    override fun close() = close(DialogWrapper.OK_EXIT_CODE)
+    override fun close() = close(OK_EXIT_CODE)
 
     override fun showPackage(packageName: String) {
         this.packageName = packageName

@@ -6,7 +6,7 @@ import java.awt.GridBagLayout
 import java.awt.Insets
 import javax.swing.*
 
-class FCMApproval() : JPanel()
+class FCMApproval : JPanel()
 {
 
     var file1 = JLabel("AndroidManifest file:")
@@ -73,8 +73,8 @@ class FCMApproval() : JPanel()
 //        launchingact_content.setText("<html>"+"import com.clevertap.android.sdk.CleverTapAPI;"+"<br>"+
 //                "\t\tclevertapDefaultInstance = CleverTapAPI.getDefaultInstance(getApplicationContext());"+"<br>"+
 //                "</html>")
-        project_gradle_content.setText("<html>"+"classpath 'com.google.gms:google-services:4.3.3'"+"<br>"+
-                "</html>")
+        project_gradle_content.text = "<html>"+"classpath 'com.google.gms:google-services:4.3.3'"+"<br>"+
+                "</html>"
 
 //        app_gradle_content.setText("<html>"+"implementation 'com.google.firebase:firebase-messaging:20.2.4'"+"<br>"+
 //                "implementation 'com.android.installreferrer:installreferrer:2.1'"+"<br>"+
@@ -85,18 +85,18 @@ class FCMApproval() : JPanel()
 
         constraints.gridx = 0
         constraints.gridy = 0
-        file1.setVisible(false)
+        file1.isVisible = false
         newPanel.add(file1, constraints)
 
 
         constraints.gridx = 0
         constraints.gridy = 1
-        manifest.setVisible(false)
+        manifest.isVisible = false
         newPanel.add(manifest, constraints)
 
         constraints.gridx = 0
         constraints.gridy = 2
-        manifest_content.setVisible(false)
+        manifest_content.isVisible = false
         newPanel.add(manifest_content, constraints)
 
 //        constraints.gridx = 0
@@ -105,88 +105,88 @@ class FCMApproval() : JPanel()
 
         constraints.gridx = 0
         constraints.gridy = 3
-        file2.setVisible(false)
+        file2.isVisible = false
         newPanel.add(file2, constraints)
 
         constraints.gridx = 0
         constraints.gridy = 4
-        launchingact.setVisible(false)
+        launchingact.isVisible = false
         newPanel.add(launchingact, constraints)
 
         constraints.gridx = 0
         constraints.gridy = 5
-        launchingact_content.setVisible(false)
+        launchingact_content.isVisible = false
         newPanel.add(launchingact_content, constraints)
 
         constraints.gridx = 0
         constraints.gridy = 6
-        file3.setVisible(false)
+        file3.isVisible = false
         newPanel.add(file3, constraints)
 
         constraints.gridx = 0
         constraints.gridy = 7
-        project_gradle.setVisible(false)
+        project_gradle.isVisible = false
         //project_gradle_content.setVisible(false)
         newPanel.add(project_gradle, constraints)
 
         constraints.gridx = 0
         constraints.gridy = 8
-        project_gradle_content.setVisible(false)
+        project_gradle_content.isVisible = false
         //myapplication_class_content.setVisible(false)
         newPanel.add(project_gradle_content, constraints)
 
         constraints.gridx = 0
         constraints.gridy = 9
-        file4.setVisible(false)
+        file4.isVisible = false
         //file3.setVisible(false)
         newPanel.add(file4, constraints)
 
         constraints.gridx = 0
         constraints.gridy = 10
-        app_gradle.setVisible(false)
+        app_gradle.isVisible = false
         //project_gradle_content.setVisible(false)
         newPanel.add(app_gradle, constraints)
 
         constraints.gridx = 0
         constraints.gridy = 11
-        app_gradle_content.setVisible(false)
+        app_gradle_content.isVisible = false
         //myapplication_class_content.setVisible(false)
         newPanel.add(app_gradle_content, constraints)
 
         constraints.gridx = 0
         constraints.gridy = 12
-        file5.setVisible(false)
+        file5.isVisible = false
         newPanel.add(file5, constraints)
 
         constraints.gridx = 0
         constraints.gridy = 13
-        manifest_yes.setVisible(false)
+        manifest_yes.isVisible = false
         newPanel.add(manifest_yes, constraints)
 
 
         constraints.gridx = 0
         constraints.gridy = 14
-        fcm_implemented.setVisible(false)
+        fcm_implemented.isVisible = false
         newPanel.add(fcm_implemented, constraints)
 
         constraints.gridx = 0
         constraints.gridy = 15
-        file6.setVisible(false)
+        file6.isVisible = false
         newPanel.add(file6, constraints)
 
         constraints.gridx = 0
         constraints.gridy = 16
-        fcm_service_class.setVisible(false)
+        fcm_service_class.isVisible = false
         newPanel.add(fcm_service_class, constraints)
 
         constraints.gridx = 0
         constraints.gridy = 17
-        fcm_service_class_content1.setVisible(false)
+        fcm_service_class_content1.isVisible = false
         newPanel.add(fcm_service_class_content1, constraints)
 
         constraints.gridx = 0
         constraints.gridy = 18
-        fcm_service_class_content2.setVisible(false)
+        fcm_service_class_content2.isVisible = false
         newPanel.add(fcm_service_class_content2, constraints)
 
 

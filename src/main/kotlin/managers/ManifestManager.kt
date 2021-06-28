@@ -1,15 +1,12 @@
 package managers
 
-import com.intellij.openapi.actionSystem.AnActionEvent
 import com.intellij.openapi.application.ApplicationManager
 import com.intellij.openapi.editor.Document
 import com.intellij.openapi.fileEditor.FileDocumentManager
 import com.intellij.openapi.project.Project
 import com.intellij.openapi.vfs.LocalFileSystem
 import com.intellij.openapi.vfs.VirtualFile
-import org.jetbrains.kotlin.idea.kdoc.insert
 import util.Constants
-import util.Methods
 import java.io.FileNotFoundException
 
 
@@ -90,17 +87,16 @@ class ManifestManager(private val project: Project) {
             {
                 for(j in i downTo 1)
                 {
-                    var line1=documentText[j]
+                    val line1=documentText[j]
                     if(line1.contains("activity")) {
 
                         for(k in j..i) {
-                            var line2 = documentText[k]
+                            val line2 = documentText[k]
                             if (line2.contains("android:name")) {
-                                var ans = line2
-                                var b = ans.split(".")
-                                var c = b[1]
-                                var d = b[1].split("\"")
-                                var e = d[0]
+                                val ans = line2
+                                val b = ans.split(".")
+                                val d = b[1].split("\"")
+                                val e = d[0]
                                 var activityname = e
                                 break
                             }
@@ -156,7 +152,7 @@ class ManifestManager(private val project: Project) {
 
             if (line.contains(Constants.MANIFEST)) {
 
-                val s=line
+//                val s=line
                 //s.split(" ")
                 //val a=s.substring(10)
 
@@ -187,7 +183,7 @@ class ManifestManager(private val project: Project) {
         // val sb = StringBuilder()
         for (i in documentText.indices)
         {
-            var line = documentText[i]
+            val line = documentText[i]
             if(line.contains("android:name=\"com.clevertap.android.sdk.Application\""))
             {
                 default_clevertap_class=true
@@ -225,21 +221,21 @@ class ManifestManager(private val project: Project) {
     }
     fun addData(repository1: String,repository2: String,repository3: String,clevertapid :String,clevertaptoken:String, usegoogle_ad_id_rb1:Boolean,usegoogle_ad_id_rb2:Boolean,region : String,clevertap_inappexclude:String) {
         checkbeforeinsertion()
-        var clevertapid=clevertapid.trim()
-        var clevertaptoken=clevertaptoken.trim()
-        var clevertap_inappexclude=clevertap_inappexclude.trim()
+        val clevertapid=clevertapid.trim()
+        val clevertaptoken=clevertaptoken.trim()
+        val clevertap_inappexclude=clevertap_inappexclude.trim()
 
 
-        var default_clevertap_class_exist=default_clevertap_class
+        val default_clevertap_class_exist=default_clevertap_class
         var internet_permission_exist=internet_permission
         var network_access_permission_exist=network_access_permission
 
         var clevertap_usegoogleid_value=""
-        if(usegoogle_ad_id_rb1==true)
+        if(usegoogle_ad_id_rb1)
         {
             clevertap_usegoogleid_value="1"
         }
-        else if(usegoogle_ad_id_rb2==true)
+        else if(usegoogle_ad_id_rb2)
         {
             clevertap_usegoogleid_value="0"
         }
@@ -251,7 +247,7 @@ class ManifestManager(private val project: Project) {
         val sb = StringBuilder()
         for (i in documentText.indices) {
             val line = documentText[i]
-            if(internet_permission_exist==false && network_access_permission_exist==false ) {
+            if(!internet_permission_exist && !network_access_permission_exist) {
                 if (line.contains(Constants.MANIFEST)) {
                     if (line.contains(">")) {
                         sb
@@ -264,7 +260,7 @@ class ManifestManager(private val project: Project) {
                     }
                 }
             }
-            if(internet_permission_exist==false) {
+            if(!internet_permission_exist) {
                 if (line.contains(Constants.MANIFEST)) {
                     if (line.contains(">")) {
                         sb
@@ -277,7 +273,7 @@ class ManifestManager(private val project: Project) {
                     }
                 }
             }
-            if(network_access_permission_exist==false) {
+            if(!network_access_permission_exist) {
                 if (line.contains(Constants.MANIFEST)) {
                     if (line.contains(">")) {
                         sb
@@ -290,7 +286,7 @@ class ManifestManager(private val project: Project) {
                     }
                 }
             }
-            if(default_clevertap_class_exist==false) {
+            if(!default_clevertap_class_exist) {
                 if (line.contains("android:allowBackup")) {
                     sb
                         .append(repository2)
@@ -298,7 +294,7 @@ class ManifestManager(private val project: Project) {
 
                 }
             }
-            if(clevertap_Id==false && clevertap_token==false && clevertap_use_google_ad_id==false && clevertap_Inapp_exclude==false && region_exist==false) {
+            if(!clevertap_Id && !clevertap_token && !clevertap_use_google_ad_id && !clevertap_Inapp_exclude && !region_exist) {
                 if (line.contains(Constants.APPLICATION)) {
                     if (line.contains("/")) {
                         sb
@@ -315,7 +311,7 @@ class ManifestManager(private val project: Project) {
 
                 }
             }
-            if(clevertap_Id==false) {
+            if(!clevertap_Id) {
                 if (line.contains(Constants.APPLICATION)) {
                     if (line.contains("/")) {
                         sb
@@ -333,7 +329,7 @@ class ManifestManager(private val project: Project) {
                     }
                 }
             }
-            if(clevertap_token==false) {
+            if(!clevertap_token) {
                 if (line.contains(Constants.APPLICATION)) {
                     if (line.contains("/")) {
                         sb
@@ -352,7 +348,7 @@ class ManifestManager(private val project: Project) {
                 }
             }
 
-            if(clevertap_use_google_ad_id==false) {
+            if(!clevertap_use_google_ad_id) {
                 if (line.contains(Constants.APPLICATION)) {
                     if (line.contains("/")) {
                         sb
@@ -370,7 +366,7 @@ class ManifestManager(private val project: Project) {
                     }
                 }
             }
-            if(region_exist==false) {
+            if(!region_exist) {
                 if (line.contains(Constants.APPLICATION)) {
                     if (line.contains("/")) {
                         sb
@@ -388,7 +384,7 @@ class ManifestManager(private val project: Project) {
                     }
                 }
             }
-            if(clevertap_Inapp_exclude==false) {
+            if(!clevertap_Inapp_exclude) {
                 if (line.contains(Constants.APPLICATION)) {
                     if (line.contains("/")) {
                         sb

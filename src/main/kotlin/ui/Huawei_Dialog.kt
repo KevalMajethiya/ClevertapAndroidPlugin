@@ -1,6 +1,5 @@
 package ui
 
-import action.Demo
 import com.intellij.openapi.actionSystem.AnActionEvent
 import com.intellij.openapi.actionSystem.DataKeys
 import com.intellij.openapi.module.ModuleUtil
@@ -8,16 +7,12 @@ import com.intellij.openapi.ui.DialogWrapper
 import data.file.*
 import data.repository.ModuleRepositoryImpl
 import data.repository.SourceRootRepositoryImpl
-import managers.PushNotificationManager
 import util.Constants
-import util.Methods
 import java.io.IOException
 import java.nio.file.Files
 import java.nio.file.Paths
-import java.awt.event.ActionEvent;
-import javax.swing.*
-import action.*
-import java.awt.Panel
+import javax.swing.JComponent
+import javax.swing.JFileChooser
 
 
 class Huawei_Dialog(var event: AnActionEvent) : DialogWrapper(true), NewScreenView {
@@ -61,16 +56,15 @@ class Huawei_Dialog(var event: AnActionEvent) : DialogWrapper(true), NewScreenVi
             val option = fileChooser.showSaveDialog(null)
             if (option == JFileChooser.APPROVE_OPTION) {
                 val file = fileChooser.selectedFile
-                val fname: String
-                fname = file.name
+                val fname: String = file.name
                 val fn = "agconnect-services.json"
                 // String fnn="google-services.json";
                 // String fnn="google-services.json";
 
                 //label.setText("File Saved as: " + file.getName());
-                val project = event.getProject()
+                val project = event.project
 
-                val sourcePath = project?.getBasePath()
+                val sourcePath = project?.basePath
                 // panelForFCM.label.setText(sourcePath)
                 //label.text = "File Saved as: " + file.path
                 val toFile = sourcePath + "/app/" + file.name
@@ -86,9 +80,9 @@ class Huawei_Dialog(var event: AnActionEvent) : DialogWrapper(true), NewScreenVi
                     } catch (e1: IOException) {
                         // e.printStackTrace();
                     }
-                    panelForHuawei.label_file_status.setText("Agconnect Service file added")
+                    panelForHuawei.label_file_status.text = "Agconnect Service file added"
                 } else {
-                    panelForHuawei.label_file_status.setText("You have selected wrong file")
+                    panelForHuawei.label_file_status.text = "You have selected wrong file"
                 }
 
 
@@ -133,7 +127,7 @@ class Huawei_Dialog(var event: AnActionEvent) : DialogWrapper(true), NewScreenVi
         //return panelForFCM
     }
 
-    override fun close() = close(DialogWrapper.OK_EXIT_CODE)
+    override fun close() = close(OK_EXIT_CODE)
 
     override fun showPackage(packageName: String) {
         this.packageName = packageName

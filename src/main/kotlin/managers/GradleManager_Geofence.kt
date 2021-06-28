@@ -13,11 +13,9 @@ import com.intellij.openapi.vfs.LocalFileSystem
 import com.intellij.openapi.vfs.VirtualFile
 import org.apache.commons.lang.StringUtils
 import util.Constants
-import util.Constants.FCM_NOTIFICATION
-
-import javax.swing.*
 import java.io.FileNotFoundException
 import java.util.stream.Stream
+import javax.swing.SwingUtilities
 
 class GradleManager_Geofence(private val project: Project) {
 
@@ -94,7 +92,7 @@ class GradleManager_Geofence(private val project: Project) {
         // val sb = StringBuilder()
         for (i in documentText.indices)
         {
-            var line = documentText[i]
+            val line = documentText[i]
             if(line.contains("implementation 'com.clevertap.android:clevertap-geofence-sdk"))
             {
                 geofence_sdk_exist=true
@@ -126,7 +124,7 @@ class GradleManager_Geofence(private val project: Project) {
             sb
                 .append(line)
                 .append("\n")
-            if(geofence_sdk_exist==false) {
+            if(!geofence_sdk_exist) {
                 if (line.contains("dependencies {")) {
                     sb
                         .append("\timplementation 'com.clevertap.android:clevertap-geofence-sdk:1.0.2'")
@@ -135,7 +133,7 @@ class GradleManager_Geofence(private val project: Project) {
                     geofence_sdk_exist= true
                 }
             }
-            if(clevertap_sdk_exist==false) {
+            if(!clevertap_sdk_exist) {
                 if (line.contains("dependencies {")) {
                     sb
                         .append("\timplementation 'com.clevertap.android:clevertap-android-sdk:4.1.0'")
@@ -144,7 +142,7 @@ class GradleManager_Geofence(private val project: Project) {
                     clevertap_sdk_exist= true
                 }
             }
-            if(work_runtime_exist==false) {
+            if(!work_runtime_exist) {
                 if (line.contains("dependencies {")) {
                     sb
                         .append("\timplementation 'androidx.work:work-runtime:2.3.4'")
@@ -153,7 +151,7 @@ class GradleManager_Geofence(private val project: Project) {
                     work_runtime_exist= true
                 }
             }
-            if(androidx_concurrent_exist==false) {
+            if(!androidx_concurrent_exist) {
                 if (line.contains("dependencies {")) {
                     sb
                         .append("\timplementation 'androidx.concurrent:concurrent-futures:1.0.0'")
@@ -162,7 +160,7 @@ class GradleManager_Geofence(private val project: Project) {
                     androidx_concurrent_exist= true
                 }
             }
-            if(play_services_location_permission==false) {
+            if(!play_services_location_permission) {
                 if (line.contains("dependencies {")) {
                     sb
                         .append("\timplementation 'com.google.android.gms:play-services-location:17.0.0'")

@@ -9,7 +9,7 @@ internal class rdemo : JFrame(), ActionListener {
     var rb1: JRadioButton
     var rb2: JRadioButton
     var b: JButton
-    var tf: JTextField
+    var tf: JTextField = JTextField()
     override fun actionPerformed(e: ActionEvent) {
         //RadioListener myListener = new RadioListener();
         if (rb1.isSelected) {
@@ -30,7 +30,6 @@ internal class rdemo : JFrame(), ActionListener {
     }
 
     init {
-        tf = JTextField()
         //tf.setEnabled(false);
         tf.isVisible = false
         tf.setBounds(100, 25, 100, 30)

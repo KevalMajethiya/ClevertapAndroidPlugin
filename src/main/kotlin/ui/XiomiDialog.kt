@@ -57,7 +57,7 @@ class XiomiDialog(var event: AnActionEvent) : DialogWrapper(true), NewScreenView
         //return panelForFCM
     }
 
-    override fun close() = close(DialogWrapper.OK_EXIT_CODE)
+    override fun close() = close(OK_EXIT_CODE)
 
     override fun showPackage(packageName: String) {
         this.packageName = packageName

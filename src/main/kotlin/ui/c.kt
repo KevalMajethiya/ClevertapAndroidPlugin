@@ -1,14 +1,8 @@
 
 package ui
 
-import com.intellij.openapi.project.Project
-
-
 import com.intellij.openapi.actionSystem.AnActionEvent
 import com.intellij.openapi.actionSystem.PlatformDataKeys
-import javax.swing.Action
-import javax.swing.text.Document
-import org.jdom.filter2.Filters.document
 
 import com.intellij.openapi.command.WriteCommandAction
 
@@ -18,15 +12,15 @@ import com.intellij.openapi.command.WriteCommandAction
 class c (var event: AnActionEvent)
 {
     init {
-        var project = event.getData(PlatformDataKeys.PROJECT)
-        var editor  = event.getData(PlatformDataKeys.EDITOR)
-        var selectionmodel = editor?.selectionModel
-        var document = editor?.document
-        var linenumber = document!!.getLineNumber(selectionmodel!!.getSelectionStart())
+        val project = event.getData(PlatformDataKeys.PROJECT)
+        val editor  = event.getData(PlatformDataKeys.EDITOR)
+        val selectionmodel = editor?.selectionModel
+        val document = editor?.document
+        val linenumber = document!!.getLineNumber(selectionmodel!!.selectionStart)
         print(linenumber)
         WriteCommandAction.runWriteCommandAction(
             project
-        ) {  var ans =document.getLineStartOffset(linenumber)
+        ) {  val ans =document.getLineStartOffset(linenumber)
             document.insertString(ans,"CleverTapAPI clevertapDefaultInstance = CleverTapAPI.getDefaultInstance(getApplicationContext());") }
 
     }

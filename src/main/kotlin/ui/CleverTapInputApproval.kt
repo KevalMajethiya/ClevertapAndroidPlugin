@@ -6,7 +6,7 @@ import java.awt.GridBagLayout
 import java.awt.Insets
 import javax.swing.*
 
-class CleverTapInputApproval() : JPanel()
+class CleverTapInputApproval : JPanel()
 {
 
     var file1 = JLabel("AndroidManifest file:")
@@ -22,7 +22,6 @@ class CleverTapInputApproval() : JPanel()
 
 
     var b= JButton("Copy")
-    var b1= JButton("Copy")
 
     init
     {
@@ -93,17 +92,17 @@ class CleverTapInputApproval() : JPanel()
 
         constraints.gridx = 0
         constraints.gridy = 7
-        file3.setVisible(false)
+        file3.isVisible = false
         newPanel.add(file3, constraints)
 
         constraints.gridx = 0
         constraints.gridy = 8
-        myapplication_class.setVisible(false)
+        myapplication_class.isVisible = false
         newPanel.add(myapplication_class, constraints)
 
         constraints.gridx = 0
         constraints.gridy = 9
-        myapplication_class_content.setVisible(false)
+        myapplication_class_content.isVisible = false
         newPanel.add(myapplication_class_content, constraints)
 
         // set border for the panel

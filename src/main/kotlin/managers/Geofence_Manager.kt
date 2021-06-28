@@ -1,15 +1,13 @@
 package managers
 
 //package managers
-import com.intellij.openapi.actionSystem.AnActionEvent
+
 import com.intellij.openapi.application.ApplicationManager
 import com.intellij.openapi.editor.Document
 import com.intellij.openapi.fileEditor.FileDocumentManager
 import com.intellij.openapi.project.Project
 import com.intellij.openapi.vfs.LocalFileSystem
 import com.intellij.openapi.vfs.VirtualFile
-import org.jetbrains.kotlin.idea.util.findModule
-
 import util.Constants
 import java.io.File
 import java.io.FileNotFoundException
@@ -20,7 +18,7 @@ class Geofence_Manager(private val project: Project)
     private var androidapplicationclass: Document? = null
     //private var androidapplicationclass1: Document? = null
     private var androidManifestfile: Document? = null
-    private var ans:String=""
+//    private var ans:String=""
     private var clevertap_object:Boolean=false
     private var CleverTapAPI_sdk_import_stmt:Boolean=false
     private var packagename:String=""
@@ -69,17 +67,16 @@ class Geofence_Manager(private val project: Project)
             {
                 for(j in i downTo 1)
                 {
-                    var line1=documentText[j]
+                    val line1=documentText[j]
                     if(line1.contains("activity")) {
 
                         for(k in j..i) {
-                            var line2 = documentText[k]
+                            val line2 = documentText[k]
                             if (line2.contains("android:name")) {
-                                var ans = line2
-                                var b = ans.split(".")
-                                var c = b[1]
-                                var d = b[1].split("\"")
-                                var e = d[0]
+                                val ans = line2
+                                val b = ans.split(".")
+                                val d = b[1].split("\"")
+                                val e = d[0]
                                 launchingactivityname = e
                                 break
                             }
@@ -94,11 +91,11 @@ class Geofence_Manager(private val project: Project)
 
             if (line.contains("package")) {
                 if (line.contains("=")) {
-                    var a = line
-                    var b = a.split("=")
+                    val a = line
+                    val b = a.split("=")
                     //var d=
-                    var c = b[1]
-                    var d = c.split("\"")
+                    val c = b[1]
+                    val d = c.split("\"")
                     packagename = d[1]
                     //return "abc"
                     //initapplicationclass(packagename!!)
@@ -128,20 +125,20 @@ class Geofence_Manager(private val project: Project)
                              geofence_notification_responsiveness:String,enable_bglocation_y:Boolean,enable_bglocation_n:Boolean,lang: String): Boolean {
         AndroidManifest()
         val op=launchingactivityname
-        var op1=packagename
+        val op1=packagename
         // val ans=pkg
-        var ans1=op1.replace(".","/")
+        val ans1=op1.replace(".","/")
         // val ans2=ans1.replace("\"","")
         print(ans1)
         val basePath = project.basePath
         //projectBaseDir = LocalFileSystem.getInstance().findFileByPath(project.basePath +"/app/src/main/java/"+ans1+"/" + op +".java")
         print(projectBaseDir)
 
-        var file = File(project.basePath +"/app/src/main/java/"+ans1+"/" + op +".java")
-        var file1 = File(project.basePath +"/app/src/main/java/"+ans1+"/" + op +".kt")
-        var java_file_exist = file.exists()
-        var kotlin_file_exist = file1.exists()
-        if(java_file_exist==true)
+        val file = File(project.basePath +"/app/src/main/java/"+ans1+"/" + op +".java")
+        val file1 = File(project.basePath +"/app/src/main/java/"+ans1+"/" + op +".kt")
+        val java_file_exist = file.exists()
+        val kotlin_file_exist = file1.exists()
+        if(java_file_exist)
         {
             projectBaseDir = LocalFileSystem.getInstance().findFileByPath(project.basePath +"/app/src/main/java/"+ans1+"/" + op +".java")
             val manifestVirtualFile: VirtualFile? = projectBaseDir
@@ -156,7 +153,7 @@ class Geofence_Manager(private val project: Project)
                 false
             }
         }
-        if(kotlin_file_exist==true)
+        if(kotlin_file_exist)
         {
             projectBaseDir = LocalFileSystem.getInstance().findFileByPath(project.basePath +"/app/src/main/java/"+ans1+"/" + op +".kt")
             val manifestVirtualFile: VirtualFile? = projectBaseDir
@@ -193,7 +190,7 @@ class Geofence_Manager(private val project: Project)
 
         for (i in documentText.indices)
         {
-            var line = documentText[i]
+            val line = documentText[i]
             if(line.contains("CleverTapAPI clevertapDefaultInstance = CleverTapAPI.getDefaultInstance(getApplicationContext());"))
             {
                 clevertap_object=true
@@ -239,11 +236,11 @@ class Geofence_Manager(private val project: Project)
         val sb = StringBuilder()
 
         for (i in documentText.indices) {
-            var line = documentText[i]
+            val line = documentText[i]
             sb
                 .append(line)
                 .append("\n")
-            if(CleverTapAPI_sdk_import_stmt==false) {
+            if(!CleverTapAPI_sdk_import_stmt) {
                 if (line.contains("package")) {
                     sb
                         .append("import com.clevertap.android.sdk.CleverTapAPI;")
@@ -255,7 +252,7 @@ class Geofence_Manager(private val project: Project)
                     //.append("\n")
                 }
             }
-                if(CTGeofenceAPI_import_stmt==false) {
+                if(!CTGeofenceAPI_import_stmt) {
                     if (line.contains("package")) {
                         // if (line.contains("/")) {
                         sb
@@ -266,7 +263,7 @@ class Geofence_Manager(private val project: Project)
                         // }
                     }
                 }
-            if(CTGeofenceSettings_import_stmt==false) {
+            if(!CTGeofenceSettings_import_stmt) {
                 if (line.contains("package")){
                     sb
                         .append("import com.clevertap.android.geofence.CTGeofenceSettings;")
@@ -276,7 +273,7 @@ class Geofence_Manager(private val project: Project)
                 }
             }
 
-            if(geofence_Logger_import_stmt==false) {
+            if(!geofence_Logger_import_stmt) {
                 if (line.contains("package")){
                     sb
                         .append("import com.clevertap.android.geofence.Logger;")
@@ -287,7 +284,7 @@ class Geofence_Manager(private val project: Project)
             }
 
 
-            if(clevertap_object==false) {
+            if(!clevertap_object) {
                 if (line.contains("void onCreate")) {
                     sb
                         .append("\n")
@@ -298,16 +295,16 @@ class Geofence_Manager(private val project: Project)
                 }
             }
 
-            if(enable_bglocation_y==true)
+            if(enable_bglocation_y)
             {
                 bglocation=true
             }
-            if(enable_bglocation_n==true)
+            if(enable_bglocation_n)
             {
                 bglocation=false
             }
 
-            if(CTGeofenceSettings_object==false) {
+            if(!CTGeofenceSettings_object) {
                 if (line.contains("setContentView")) {
                     sb
                         .append("\t\t//Added by CleverTap Assistant")
@@ -338,7 +335,7 @@ class Geofence_Manager(private val project: Project)
                     CTGeofenceSettings_object=true
                 }
             }
-            if(CTGeofenceAPI_initialization==false) {
+            if(!CTGeofenceAPI_initialization) {
                 if (line.contains("setContentView")) {
                     sb
                         .append("\n")
@@ -365,7 +362,7 @@ class Geofence_Manager(private val project: Project)
 
         for (i in documentText.indices)
         {
-            var line = documentText[i]
+            val line = documentText[i]
             if(line.contains("CleverTapAPI clevertapDefaultInstance = CleverTapAPI.getDefaultInstance(getApplicationContext())"))
             {
                 clevertap_object=true
@@ -412,11 +409,11 @@ class Geofence_Manager(private val project: Project)
         val sb = StringBuilder()
 
         for (i in documentText.indices) {
-            var line = documentText[i]
+            val line = documentText[i]
             sb
                 .append(line)
                 .append("\n")
-            if(CleverTapAPI_sdk_import_stmt==false) {
+            if(!CleverTapAPI_sdk_import_stmt) {
                 if (line.contains("package")) {
                     sb
                         .append("import com.clevertap.android.sdk.CleverTapAPI")
@@ -427,7 +424,7 @@ class Geofence_Manager(private val project: Project)
 
                 }
             }
-            if(CTGeofenceAPI_import_stmt==false) {
+            if(!CTGeofenceAPI_import_stmt) {
                 if (line.contains("package")) {
                     // if (line.contains("/")) {
                     sb
@@ -438,7 +435,7 @@ class Geofence_Manager(private val project: Project)
                     // }
                 }
             }
-            if(CTGeofenceSettings_import_stmt==false) {
+            if(!CTGeofenceSettings_import_stmt) {
                 if (line.contains("package")){
                     sb
                         .append("import com.clevertap.android.geofence.CTGeofenceSettings")
@@ -448,7 +445,7 @@ class Geofence_Manager(private val project: Project)
                 }
             }
 
-            if(geofence_Logger_import_stmt==false) {
+            if(!geofence_Logger_import_stmt) {
                 if (line.contains("package")){
                     sb
                         .append("import com.clevertap.android.geofence.Logger")
@@ -460,7 +457,7 @@ class Geofence_Manager(private val project: Project)
 
 
 
-            if(clevertap_object==false) {
+            if(!clevertap_object) {
                 if (line.contains("fun onCreate")) {
                     sb
                         .append("\n")
@@ -473,16 +470,16 @@ class Geofence_Manager(private val project: Project)
 
                 }
             }
-            if(enable_bglocation_y==true)
+            if(enable_bglocation_y)
             {
                 bglocation=true
             }
-            if(enable_bglocation_n==false)
+            if(!enable_bglocation_n)
             {
                 bglocation=false
             }
 
-            if(CTGeofenceSettings_object==false) {
+            if(!CTGeofenceSettings_object) {
                 if (line.contains("setContentView")) {
                     sb
                         .append("//Added by CleverTap Assistant")
@@ -512,7 +509,7 @@ class Geofence_Manager(private val project: Project)
                     CTGeofenceSettings_object=true
                 }
             }
-            if(CTGeofenceAPI_initialization==false) {
+            if(!CTGeofenceAPI_initialization) {
                 if (line.contains("setContentView")) {
                     sb
                         .append("\n")

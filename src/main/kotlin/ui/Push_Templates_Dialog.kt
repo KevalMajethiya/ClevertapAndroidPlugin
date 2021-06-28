@@ -8,13 +8,8 @@ import com.intellij.ui.layout.panel
 import data.file.*
 import data.repository.ModuleRepositoryImpl
 import data.repository.SourceRootRepositoryImpl
-import managers.ManifestManager
 import util.Constants
-import java.awt.event.ActionEvent
-import java.awt.event.ActionListener
 import javax.swing.JComponent
-import javax.swing.JLabel
-import javax.swing.JTextField
 
 class Push_Templates_Dialog(var event: AnActionEvent) : DialogWrapper(true),  NewScreenView {
 
@@ -23,7 +18,7 @@ class Push_Templates_Dialog(var event: AnActionEvent) : DialogWrapper(true),  Ne
     private val presenter: Push_Templates_Presenter
     private var packageName = ""
     private var moduleName = ""
-    var region_selected = ""
+//    var region_selected = ""
 
     init {
         val currentPath = event.getData(DataKeys.VIRTUAL_FILE)?.let {
@@ -48,7 +43,7 @@ class Push_Templates_Dialog(var event: AnActionEvent) : DialogWrapper(true),  Ne
 
         panelForPushTemplates.template_value.addActionListener()
         {
-            var template_selected = panelForPushTemplates.template_value.getSelectedItem()
+            val template_selected = panelForPushTemplates.template_value.selectedItem
             if(template_selected=="Basic")
             {
                 hide()
@@ -547,7 +542,15 @@ class Push_Templates_Dialog(var event: AnActionEvent) : DialogWrapper(true),  Ne
             panelForPushTemplates.titlte_clr_TextField.text,
             panelForPushTemplates.msg_clr_TextField.text,
             panelForPushTemplates.small_icon_clr_TextField.text,
-            panelForPushTemplates.template_value.getSelectedItem().toString()
+            panelForPushTemplates.dl2_TextField.text,
+            panelForPushTemplates.dln_TextField.text,
+            panelForPushTemplates.img1_TextField.text,
+            panelForPushTemplates.img2_TextField.text,
+            panelForPushTemplates.img3_TextField.text,
+            panelForPushTemplates.imgn_TextField.text
+
+
+
             //moduleName
         )
 
@@ -556,7 +559,7 @@ class Push_Templates_Dialog(var event: AnActionEvent) : DialogWrapper(true),  Ne
         return panelForPushTemplates
     }
 
-    override fun close() = close(DialogWrapper.OK_EXIT_CODE)
+    override fun close() = close(OK_EXIT_CODE)
 
     override fun showPackage(packageName: String) {
         this.packageName = packageName

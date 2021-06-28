@@ -1,20 +1,15 @@
 package ui;
 import com.intellij.openapi.actionSystem.*;
-import com.intellij.openapi.command.CommandProcessor;
-import com.intellij.openapi.command.UndoConfirmationPolicy;
 import com.intellij.openapi.editor.*;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.ui.Messages;
 import org.jetbrains.annotations.NotNull;
-import javax.swing.*;
 
 public class cursor
 {
-    private Project project;
-    private Editor editor;
     public void update(@NotNull AnActionEvent event) {
-        project = event.getData(PlatformDataKeys.PROJECT);
-        editor  = event.getData(PlatformDataKeys.EDITOR);
+        Project project = event.getData(PlatformDataKeys.PROJECT);
+        Editor editor = event.getData(PlatformDataKeys.EDITOR);
         Document document = editor.getDocument();
         final CaretModel caretModel = editor.getCaretModel();
         // Getting the primary caret ensures we get the correct one of a possible many.
@@ -25,9 +20,9 @@ public class cursor
         int caretOffset = primaryCaret.getOffset();
 
         // Build and display the caret report.
-        String report = logicalPos.toString() + "\n" + visualPos.toString() + "\n" +
+        String report = logicalPos + "\n" + visualPos + "\n" +
                 "Offset: " + caretOffset;
-        Messages.showInfoMessage(report.toString(), "Caret Parameters Inside The Editor");
+        Messages.showInfoMessage(report, "Caret Parameters Inside The Editor");
 
 
 

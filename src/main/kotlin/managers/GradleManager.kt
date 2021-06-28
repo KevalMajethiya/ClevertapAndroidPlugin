@@ -89,7 +89,7 @@ class GradleManager(private val project: Project) {
         // val sb = StringBuilder()
         for (i in documentText.indices)
         {
-            var line = documentText[i]
+            val line = documentText[i]
             if(line.contains("com.clevertap.android:clevertap-android-sdk:"))
             {
                 codeexist=true
@@ -99,12 +99,11 @@ class GradleManager(private val project: Project) {
     }
     fun addDependency(repository1: String, actionEvent: AnActionEvent) {
         checkbeforeinsertion()
-        if(codeexist==false) {
+        if(!codeexist) {
             val documentText = buildGradle!!.text.split("\n".toRegex()).dropLastWhile { it.isEmpty() }.toTypedArray()
 
 
             val sb = StringBuilder()
-            val sb2= StringBuilder()
 
             for (i in documentText.indices) {
                 val line = documentText[i]

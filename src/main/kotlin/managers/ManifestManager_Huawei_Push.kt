@@ -1,6 +1,5 @@
 package managers
 
-import com.intellij.openapi.actionSystem.AnActionEvent
 import com.intellij.openapi.application.ApplicationManager
 import com.intellij.openapi.editor.Document
 import com.intellij.openapi.fileEditor.FileDocumentManager
@@ -16,10 +15,7 @@ class ManifestManager_Huawei_Push(private val project: Project) {
 
     private var projectBaseDir: VirtualFile? = null
     private var huawei_service_name:Boolean=false
-    private var firebase_messaging_auto_init_enabled:Boolean=false
-    private var firebase_analytics_collection_enabled:Boolean=false
-    private var fcm_sender_id:Boolean=false
-    private var receiver:Boolean=false
+
 
 
     @Throws(FileNotFoundException::class)
@@ -46,7 +42,7 @@ class ManifestManager_Huawei_Push(private val project: Project) {
         // val sb = StringBuilder()
         for (i in documentText.indices)
         {
-            var line = documentText[i]
+            val line = documentText[i]
             if(line.contains("fcm.FcmMessageListenerService"))
             {
                 huawei_service_name=true
@@ -63,7 +59,7 @@ class ManifestManager_Huawei_Push(private val project: Project) {
             val line = documentText[i]
 
 
-            if(huawei_service_name==false) {
+            if(!huawei_service_name) {
                 if (line.contains(Constants.APPLICATION)) {
                     if (line.contains("/")) {
                         sb

@@ -1,15 +1,13 @@
 package managers
 
 //package managers
-import com.intellij.openapi.actionSystem.AnActionEvent
+
 import com.intellij.openapi.application.ApplicationManager
 import com.intellij.openapi.editor.Document
 import com.intellij.openapi.fileEditor.FileDocumentManager
 import com.intellij.openapi.project.Project
 import com.intellij.openapi.vfs.LocalFileSystem
 import com.intellij.openapi.vfs.VirtualFile
-import org.jetbrains.kotlin.idea.util.findModule
-
 import util.Constants
 import java.io.FileNotFoundException
 
@@ -18,7 +16,6 @@ class onUserLoginManager(private val project: Project)
 {
     private var androidapplicationclass: Document? = null
     private var androidManifestfile: Document? = null
-    private var ans:String=""
     private var context_exsit:Boolean=false
     private var onuserlogin_method_exist:Boolean=false
     private var packagename:String=""
@@ -62,17 +59,16 @@ class onUserLoginManager(private val project: Project)
             {
                 for(j in i downTo 1)
                 {
-                    var line1=documentText[j]
+                    val line1=documentText[j]
                     if(line1.contains("activity")) {
 
                         for(k in j..i) {
-                            var line2 = documentText[k]
+                            val line2 = documentText[k]
                             if (line2.contains("android:name")) {
-                                var ans = line2
-                                var b = ans.split(".")
-                                var c = b[1]
-                                var d = b[1].split("\"")
-                                var e = d[0]
+                                val ans = line2
+                                val b = ans.split(".")
+                                val d = b[1].split("\"")
+                                val e = d[0]
                                 launchingactivityname = e
                                 break
                             }
@@ -89,11 +85,10 @@ class onUserLoginManager(private val project: Project)
 
             if (line.contains("package")) {
                 if (line.contains("=")) {
-                    var a = line
-                    var b = a.split("=")
-                    //var d=
-                    var c = b[1]
-                    var d = c.split("\"")
+                    val a = line
+                    val b = a.split("=")
+                    val c = b[1]
+                    val d = c.split("\"")
                     packagename = d[1]
                     //return "abc"
                     //initapplicationclass(packagename!!)
@@ -122,12 +117,11 @@ class onUserLoginManager(private val project: Project)
     fun initapplicationclass(): Boolean {
         AndroidManifest()
         val op=launchingactivityname
-        var op1=packagename
+        val op1=packagename
         // val ans=pkg
-        var ans1=op1.replace(".","/")
+        val ans1=op1.replace(".","/")
         // val ans2=ans1.replace("\"","")
         print(ans1)
-        val basePath = project.basePath
         projectBaseDir = LocalFileSystem.getInstance().findFileByPath(project.basePath +"/app/src/main/java/"+ans1+"/" + op +".java")
         print(projectBaseDir)
 
@@ -149,7 +143,7 @@ class onUserLoginManager(private val project: Project)
 
         for (i in documentText.indices)
         {
-            var line = documentText[i]
+            val line = documentText[i]
             if(line.contains("CleverTapAPI clevertapDefaultInstance = CleverTapAPI.getDefaultInstance(getApplicationContext());"))
             {
                 clevertap_instance=true
@@ -190,12 +184,12 @@ class onUserLoginManager(private val project: Project)
         val sb = StringBuilder()
 
         for (i in documentText.indices) {
-            var line = documentText[i]
+            val line = documentText[i]
             sb
                 .append(line)
                 .append("\n")
 
-            if(import_stmt_hashmap==false) {
+            if(!import_stmt_hashmap) {
                 if (line.contains("package")) {
                     // if (line.contains("/")) {
                     sb
@@ -207,7 +201,7 @@ class onUserLoginManager(private val project: Project)
                 }
             }
 
-            if(hashmap_obj==false) {
+            if(!hashmap_obj) {
                 if (line.contains("class")) {
 
                     sb
@@ -220,8 +214,8 @@ class onUserLoginManager(private val project: Project)
             }
 
 
-            if(clevertap_instance==true) {
-                if (context_exsit == false) {
+            if(clevertap_instance) {
+                if (!context_exsit) {
                     if (line.contains("void onCreate")) {
                         sb
                             .append("        OnUserLoginProperties.put(\"USer Property_name \", \"value\");")
@@ -234,7 +228,7 @@ class onUserLoginManager(private val project: Project)
                     }
                 }
 
-                if (onuserlogin_method_exist == false) {
+                if (!onuserlogin_method_exist) {
                     if (line.contains("CleverTapAPI clevertapDefaultInstance = CleverTapAPI.getDefaultInstance(getApplicationContext());")) {
                         sb
                             // .append("\n")
@@ -247,7 +241,7 @@ class onUserLoginManager(private val project: Project)
                     }
                 }
             }
-            if(clevertap_instance==false)
+            if(!clevertap_instance)
             {
 
                 if (line.contains("void onCreate")) {
@@ -259,7 +253,7 @@ class onUserLoginManager(private val project: Project)
                     //clevertap_instance=true
                 }
 
-                if (context_exsit == false) {
+                if (!context_exsit) {
                     if (line.contains("void onCreate")) {
                         sb
                             .append("        OnUserLoginProperties.put(\"USer Property_name \", \"value\");")
@@ -272,7 +266,7 @@ class onUserLoginManager(private val project: Project)
                     }
                 }
 
-                if (onuserlogin_method_exist == false) {
+                if (!onuserlogin_method_exist) {
                     if (line.contains("setContentView")) {
                         sb
                             // .append("\n")

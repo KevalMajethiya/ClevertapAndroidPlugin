@@ -1,29 +1,13 @@
 package ui
 
-import com.intellij.credentialStore.SERVICE_NAME_PREFIX
-import com.intellij.notification.NotificationDisplayType
-import com.intellij.notification.NotificationGroup
-import com.intellij.notification.NotificationType
-import com.intellij.notification.Notifications
+
 import com.intellij.openapi.actionSystem.AnActionEvent
-import com.intellij.openapi.application.ApplicationManager
-import com.intellij.openapi.application.ModalityState
-import com.intellij.openapi.util.NotNullLazyValue
 import data.file.CurrentPath
 import data.file.FileCreator
 import data.file.PackageExtractor
 import data.file.WriteActionDispatcher
 import data.repository.ModuleRepository
-import managers.*
-
-
-
-import org.jetbrains.kotlin.idea.kdoc.insert
-
-
-
-import util.Constants
-import util.Methods
+import managers.check_language
 import java.io.FileNotFoundException
 
 class NewScreenPresenterClevertap(
@@ -34,28 +18,6 @@ class NewScreenPresenterClevertap(
     private val moduleRepository: ModuleRepository,
     private val currentPath: CurrentPath?
 ) {
-
-    companion object {
-        private val NOTIFICATION_GROUP = object :
-            NotNullLazyValue<NotificationGroup>() {
-            override fun compute(): NotificationGroup {
-                return NotificationGroup(
-                    Constants.DISPLAY_ID,
-                    NotificationDisplayType.BALLOON,
-                    true
-                )
-            }
-        }
-    }
-
-    private var gradleManager: GradleManager? = null
-    private var manifestManager: ManifestManager? = null
-    private var applicationClassManager:ApplicationClassManager?=null
-    private var abc:abc?=null
-    private var AuditreportManager:AuditreportManager?=null
-    private var check_language: check_language?=null
-
-
 
     fun onLoadView() {
         view.showPackage(packageExtractor.extractFromCurrentPath())
@@ -103,8 +65,8 @@ class NewScreenPresenterClevertap(
 
 
         event.project?.let { project ->
-            var check= check_language(project)
-            var lang= check.find_language()
+            val check= check_language(project)
+            val lang= check.find_language()
 
 
 

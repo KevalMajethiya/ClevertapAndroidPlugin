@@ -1,23 +1,15 @@
 package ui
-import util.Constants
+
 import java.awt.*
 
-import javax.swing.JFrame;
-import javax.swing.JLabel;
 
-import java.awt.datatransfer.DataFlavor;
-import java.awt.datatransfer.StringSelection;
-import java.awt.datatransfer.Transferable;
-import java.awt.datatransfer.UnsupportedFlavorException;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.io.IOException;
-import javax.swing.BorderFactory
+import javax.swing.JLabel
+
 import javax.swing.JPanel
 
 class auditreport: JPanel()
 {
-    val task = JLabel("Generating Audit File :");
+    val task = JLabel("Generating Audit File :")
     //val l = JLabel("CleverTapAPI clevertapDefaultInstance = CleverTapAPI.getDefaultInstance(getApplicationContext());");
     //val copyToClipboardButton =  Button("Copy to clipboard");
 

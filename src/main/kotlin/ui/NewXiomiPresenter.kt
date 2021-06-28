@@ -1,15 +1,11 @@
 package ui
 
-import com.intellij.notification.NotificationDisplayType
-import com.intellij.notification.NotificationGroup
 import com.intellij.openapi.actionSystem.AnActionEvent
-import com.intellij.openapi.util.NotNullLazyValue
 import data.file.CurrentPathfcm
 import data.file.FileCreator
 import data.file.PackageExtractor
 import data.file.WriteActionDispatcher
 import data.repository.ModuleRepository
-import util.Constants
 import java.io.FileNotFoundException
 
 class NewXiomiPresenter(
@@ -20,20 +16,6 @@ class NewXiomiPresenter(
     private val moduleRepository: ModuleRepository,
     private val currentPathfcm: CurrentPathfcm?
 ) {
-
-    companion object {
-        private val NOTIFICATION_GROUP = object :
-            NotNullLazyValue<NotificationGroup>() {
-            override fun compute(): NotificationGroup {
-                return NotificationGroup(
-                    Constants.DISPLAY_ID,
-                    NotificationDisplayType.BALLOON,
-                    true
-                )
-            }
-        }
-    }
-
 
     fun onLoadView() {
         view.showPackage(packageExtractor.extractFromCurrentPath())
@@ -48,7 +30,7 @@ class NewXiomiPresenter(
         appID:String,
         appKey: String
     ) {
-        event.project?.let { project ->
+        event.project?.let {
             XiomiApprovalDialog(event, appID, appKey).show()
             try {
 

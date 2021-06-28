@@ -11,7 +11,7 @@ import javax.swing.JPanel
 class PushAmpApproval(className:String,lang : String,appclassName:String): JPanel() {
 
     private var recieverClass = className
-    private var Lang = lang
+//    private var Lang = lang
     private var appClassName = appclassName
     var file1 = JLabel("<Html>"+"<b>"+"AndroidManifest file:"+"</b>"+"</Html>")
     var manifest = JLabel("Following code snippet would be added in the manifest file:")
@@ -34,15 +34,15 @@ class PushAmpApproval(className:String,lang : String,appclassName:String): JPane
 
         constraints.gridx =0
         constraints.gridy = 0
-        file1.setVisible(false)
+        file1.isVisible = false
         newPanel.add(file1,constraints)
 
         constraints.gridy = 1
-        manifest.setVisible(false)
+        manifest.isVisible = false
         newPanel.add(manifest,constraints)
 
         constraints.gridy = 2
-        manifest_content.setVisible(false)
+        manifest_content.isVisible = false
         newPanel.add(manifest_content,constraints)
 
         constraints.gridx =0
@@ -51,54 +51,54 @@ class PushAmpApproval(className:String,lang : String,appclassName:String): JPane
         if (lang=="java"){
 
             constraints.gridy = 0
-            file2.setVisible(false)
-            file2.setText("<Html><b>$recieverClass.java : </b></Html>")
+            file2.isVisible = false
+            file2.text = "<Html><b>$recieverClass.java : </b></Html>"
             newPanel.add(file2,constraints)
 
             constraints.gridy = 1
-            line1.setText("Following code snippet would be added in the $recieverClass.java file:")
-            line1.setVisible(false)
+            line1.text = "Following code snippet would be added in the $recieverClass.java file:"
+            line1.isVisible = false
             newPanel.add(line1,constraints)
 
             constraints.gridy = 3
-            file3.setText("<Html><b>$appClassName.java : </b></Html>")
-            file3.setVisible(false)
+            file3.text = "<Html><b>$appClassName.java : </b></Html>"
+            file3.isVisible = false
             newPanel.add(file3,constraints)
 
             constraints.gridy = 4
-            line2.setText("Following code snippet would be added in the $appClassName.java file:")
-            line2.setVisible(false)
+            line2.text = "Following code snippet would be added in the $appClassName.java file:"
+            line2.isVisible = false
             newPanel.add(line2,constraints)
         }
         if(lang=="kotlin"){
 
             constraints.gridy = 0
-            file2.setVisible(false)
-            file2.setText("<Html><b>$recieverClass.kt : </b></Html>")
+            file2.isVisible = false
+            file2.text = "<Html><b>$recieverClass.kt : </b></Html>"
             newPanel.add(file2,constraints)
 
             constraints.gridy = 1
-            line1.setText("Following code snippet would be added in the $recieverClass.kt file:")
-            line1.setVisible(false)
+            line1.text = "Following code snippet would be added in the $recieverClass.kt file:"
+            line1.isVisible = false
             newPanel.add(line1,constraints)
 
             constraints.gridy = 3
-            file3.setText("<Html><b>$appClassName.kt : </b></Html>")
-            file3.setVisible(false)
+            file3.text = "<Html><b>$appClassName.kt : </b></Html>"
+            file3.isVisible = false
             newPanel.add(file3,constraints)
 
             constraints.gridy = 4
-            line2.setText("Following code snippet would be added in the $appClassName.kt file:")
-            line2.setVisible(false)
+            line2.text = "Following code snippet would be added in the $appClassName.kt file:"
+            line2.isVisible = false
             newPanel.add(line2,constraints)
         }
 
         constraints.gridy = 2
-        receiver_Class.setVisible(false)
+        receiver_Class.isVisible = false
         newPanel.add(receiver_Class,constraints)
 
         constraints.gridy = 5
-        appclass_content.setVisible(false)
+        appclass_content.isVisible = false
         newPanel.add(appclass_content,constraints)
 
 

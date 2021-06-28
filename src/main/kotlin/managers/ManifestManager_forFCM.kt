@@ -1,6 +1,5 @@
 package managers
 
-import com.intellij.openapi.actionSystem.AnActionEvent
 import com.intellij.openapi.application.ApplicationManager
 import com.intellij.openapi.editor.Document
 import com.intellij.openapi.fileEditor.FileDocumentManager
@@ -46,7 +45,7 @@ class ManifestManager_forFCM(private val project: Project) {
         // val sb = StringBuilder()
         for (i in documentText.indices)
         {
-            var line = documentText[i]
+            val line = documentText[i]
             if(line.contains("fcm.FcmMessageListenerService"))
             {
                 fcm_service_name=true
@@ -76,7 +75,7 @@ class ManifestManager_forFCM(private val project: Project) {
         val sb = StringBuilder()
         for (i in documentText.indices) {
             val line = documentText[i]
-            if(fcm_service_name==false && firebase_messaging_auto_init_enabled==false && firebase_analytics_collection_enabled==false && fcm_sender_id==false && receiver==false) {
+            if(!fcm_service_name && !firebase_messaging_auto_init_enabled && !firebase_analytics_collection_enabled && !fcm_sender_id && !receiver) {
                 if (line.contains(Constants.APPLICATION)) {
                     if (line.contains("/")) {
                         sb
@@ -92,8 +91,8 @@ class ManifestManager_forFCM(private val project: Project) {
                     }
                 }
             }
-            if(IsRadiobuttonrb1Selected==true) {
-                if (receiver == false) {
+            if(IsRadiobuttonrb1Selected) {
+                if (!receiver) {
                     if (line.contains(Constants.APPLICATION)) {
                         if (line.contains("/")) {
                             sb
@@ -118,8 +117,8 @@ class ManifestManager_forFCM(private val project: Project) {
                     }
                 }
             }
-            if(IsRadiobuttonrb2Selected==true) {
-                if (fcm_service_name == false) {
+            if(IsRadiobuttonrb2Selected) {
+                if (!fcm_service_name) {
                     if (line.contains(Constants.APPLICATION)) {
                         if (line.contains("/")) {
                             sb
@@ -127,7 +126,7 @@ class ManifestManager_forFCM(private val project: Project) {
                                 .append("\n")
                                 .append("        <service")
                                 .append("\n")
-                                .append("             android:name=\".fcm." + fcmservice_name + "\"")
+                                .append("             android:name=\".fcm.$fcmservice_name\"")
                                 .append("\n")
                                 .append("             android:exported=\"false\">")
                                 .append("\n")
@@ -144,7 +143,7 @@ class ManifestManager_forFCM(private val project: Project) {
                         }
                     }
                 }
-                if (firebase_messaging_auto_init_enabled == false) {
+                if (!firebase_messaging_auto_init_enabled) {
                     if (line.contains(Constants.APPLICATION)) {
                         if (line.contains("/")) {
                             sb
@@ -161,7 +160,7 @@ class ManifestManager_forFCM(private val project: Project) {
                         }
                     }
                 }
-                if (firebase_analytics_collection_enabled == false) {
+                if (!firebase_analytics_collection_enabled) {
                     if (line.contains(Constants.APPLICATION)) {
                         if (line.contains("/")) {
                             sb
@@ -178,7 +177,7 @@ class ManifestManager_forFCM(private val project: Project) {
                         }
                     }
                 }
-                if (fcm_sender_id == false) {
+                if (!fcm_sender_id) {
                     if (line.contains(Constants.APPLICATION)) {
                         if (line.contains("/")) {
                             sb
@@ -188,7 +187,7 @@ class ManifestManager_forFCM(private val project: Project) {
                                 .append("\n")
                                 .append("             android:name=\"FCM_SENDER_ID\"")
                                 .append("\n")
-                                .append("             android:value=" + fcmsenderid + " />")
+                                .append("             android:value=$fcmsenderid />")
                                 .append("\n")
                             fcm_sender_id = true
 

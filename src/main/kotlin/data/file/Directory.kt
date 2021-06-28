@@ -3,16 +3,11 @@ package data.file
 
 import com.intellij.lang.html.HTMLLanguage
 import com.intellij.lang.java.JavaLanguage
-import com.intellij.openapi.fileTypes.StdFileTypes.JAVA
+import com.intellij.openapi.command.WriteCommandAction
 import com.intellij.openapi.project.Project
 import com.intellij.psi.PsiDirectory
 import com.intellij.psi.PsiFileFactory
 import model.FileType
-import org.jetbrains.kotlin.idea.KotlinLanguage
-import com.intellij.openapi.command.WriteCommandAction
-
-
-
 
 
 interface Directory {

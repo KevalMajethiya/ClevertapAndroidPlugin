@@ -4,14 +4,10 @@ import com.intellij.openapi.actionSystem.AnActionEvent
 import com.intellij.openapi.actionSystem.DataKeys
 import com.intellij.openapi.module.ModuleUtil
 import com.intellij.openapi.ui.DialogWrapper
-import com.intellij.ui.layout.panel
 import data.file.*
 import data.repository.ModuleRepositoryImpl
 import data.repository.SourceRootRepositoryImpl
-import managers.ManifestManager
 import util.Constants
-import java.awt.event.ActionEvent
-import java.awt.event.ActionListener
 import javax.swing.JComponent
 
 class Geofence_Dialog(var event: AnActionEvent) : DialogWrapper(true),  NewScreenView {
@@ -21,7 +17,6 @@ class Geofence_Dialog(var event: AnActionEvent) : DialogWrapper(true),  NewScree
     private val presenter: Geofence_Presenter
     private var packageName = ""
     private var moduleName = ""
-    var region_selected = ""
 
     init {
         val currentPath = event.getData(DataKeys.VIRTUAL_FILE)?.let {
@@ -55,9 +50,9 @@ class Geofence_Dialog(var event: AnActionEvent) : DialogWrapper(true),  NewScree
             event,
 
             this.packageName,
-            panelForGeofence.log_values.getSelectedItem().toString(),
-            panelForGeofence.location_accuracy_values.getSelectedItem().toString(),
-            panelForGeofence.location_fetch_mode_values.getSelectedItem().toString(),
+            panelForGeofence.log_values.selectedItem.toString(),
+            panelForGeofence.location_accuracy_values.selectedItem.toString(),
+            panelForGeofence.location_fetch_mode_values.selectedItem.toString(),
             panelForGeofence.Geofence_Monitoring_count_Textfield.text,
             panelForGeofence.interval_TextField.text,
             panelForGeofence.fastest_interval_TextField.text,
@@ -73,7 +68,7 @@ class Geofence_Dialog(var event: AnActionEvent) : DialogWrapper(true),  NewScree
         return panelForGeofence
     }
 
-    override fun close() = close(DialogWrapper.OK_EXIT_CODE)
+    override fun close() = close(OK_EXIT_CODE)
 
     override fun showPackage(packageName: String) {
         this.packageName = packageName

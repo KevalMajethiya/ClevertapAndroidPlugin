@@ -38,16 +38,16 @@ class PushAmpDialog(var event: AnActionEvent) : DialogWrapper(true), NewScreenVi
         )
 
         moduleName = currentPath?.module ?: Constants.DEFAULT_MODULE_NAME
-        panelForPushAmp.rb1.addActionListener(){
-            if (panelForPushAmp.rb1.isSelected()){
+        panelForPushAmp.rb1.addActionListener{
+            if (panelForPushAmp.rb1.isSelected){
 
 //                panelForPushAmp.receiverClass.isVisible = true
 //                panelForPushAmp.receiverLabel.isVisible = true
             }
         }
 
-        panelForPushAmp.rb2.addActionListener(){
-            if (panelForPushAmp.rb2.isSelected()){
+        panelForPushAmp.rb2.addActionListener{
+            if (panelForPushAmp.rb2.isSelected){
 
                 panelForPushAmp.receiverClass.isVisible = false
                 panelForPushAmp.receiverLabel.isVisible = false
@@ -74,7 +74,7 @@ class PushAmpDialog(var event: AnActionEvent) : DialogWrapper(true), NewScreenVi
         //return panelForFCM
     }
 
-    override fun close() = close(DialogWrapper.OK_EXIT_CODE)
+    override fun close() = close(OK_EXIT_CODE)
 
     override fun showPackage(packageName: String) {
         this.packageName = packageName

@@ -104,7 +104,7 @@ class GradleManager_for_fcm(private val project: Project) {
         // val sb = StringBuilder()
         for (i in documentText.indices)
         {
-            var line = documentText[i]
+            val line = documentText[i]
             if(line.contains("com.google.firebase:firebase-messaging:"))
             {
                 gradle_for_fcm=true
@@ -128,7 +128,7 @@ class GradleManager_for_fcm(private val project: Project) {
         }
         for (i in documentTextnew.indices)
         {
-            var line = documentTextnew[i]
+            val line = documentTextnew[i]
             if(line.contains("classpath 'com.google.gms:google-services:"))
             {
                 classpath=true
@@ -148,7 +148,7 @@ class GradleManager_for_fcm(private val project: Project) {
             sb
                 .append(line)
                 .append("\n")
-            if(gradle_for_fcm==false && install_referrer==false) {
+            if(!gradle_for_fcm && !install_referrer) {
                 if (line.contains(Constants.DEPENDENCIES)) {
                     if (line.contains("{")) {
                         sb
@@ -171,7 +171,7 @@ class GradleManager_for_fcm(private val project: Project) {
                     }
                 }
             }
-            if(gradle_for_fcm==false ) {
+            if(!gradle_for_fcm) {
                 if (line.contains(Constants.DEPENDENCIES)) {
                     if (line.contains("{")) {
                         sb
@@ -194,7 +194,7 @@ class GradleManager_for_fcm(private val project: Project) {
 //                    }
 //                }
 //            }
-            if(install_referrer==false) {
+            if(!install_referrer) {
                 if (line.contains(Constants.DEPENDENCIES)) {
                     if (line.contains("{")) {
                         sb
@@ -207,7 +207,7 @@ class GradleManager_for_fcm(private val project: Project) {
                     }
                 }
             }
-            if(apply_plugin==false) {
+            if(!apply_plugin) {
                 if (i == documentText.lastIndex) {
                     sb
                         .append("apply plugin: 'com.google.gms.google-services'")
@@ -223,7 +223,7 @@ class GradleManager_for_fcm(private val project: Project) {
             sb2
                 .append(line)
                 .append("\n")
-            if(classpath==false) {
+            if(!classpath) {
                 if (line.contains(Constants.DEPENDENCIES)) {
                     if (line.contains("{")) {
                         sb2

@@ -1,6 +1,5 @@
 package managers
 
-import com.intellij.openapi.actionSystem.AnActionEvent
 import com.intellij.openapi.application.ApplicationManager
 import com.intellij.openapi.editor.Document
 import com.intellij.openapi.fileEditor.FileDocumentManager
@@ -69,17 +68,16 @@ class PushNotificationManager2(private val project: Project) {
             {
                 for(j in i downTo 1)
                 {
-                    var line1=documentText[j]
+                    val line1=documentText[j]
                     if(line1.contains("activity")) {
 
                         for(k in j..i) {
-                            var line2 = documentText[k]
+                            val line2 = documentText[k]
                             if (line2.contains("android:name")) {
-                                var ans = line2
-                                var b = ans.split(".")
-                                var c = b[1]
-                                var d = b[1].split("\"")
-                                var e = d[0]
+                                val ans = line2
+                                val b = ans.split(".")
+                                val d = b[1].split("\"")
+                                val e = d[0]
                                 launchingactivityname = e
                                 break
                             }
@@ -98,9 +96,9 @@ class PushNotificationManager2(private val project: Project) {
                     val line2=documentText[k]
                     if(line2.contains("android:name")) {
 
-                        var ans11=line2
-                        var ans12= ans11.split("\"")
-                        var ans13=ans12[1]
+                        val ans11=line2
+                        val ans12= ans11.split("\"")
+                        val ans13=ans12[1]
                         firebase_receiver_class_name=ans13
                         break
 //
@@ -112,11 +110,11 @@ class PushNotificationManager2(private val project: Project) {
 
             if (line.contains("package")) {
                 if (line.contains("=")) {
-                    var a = line
-                    var b = a.split("=")
+                    val a = line
+                    val b = a.split("=")
                     //var d=
-                    var c = b[1]
-                    var d = c.split("\"")
+                    val c = b[1]
+                    val d = c.split("\"")
                     packagename = d[1]
                     //return "abc"
                     //initapplicationclass(packagename!!)
@@ -135,20 +133,19 @@ class PushNotificationManager2(private val project: Project) {
     @Throws(FileNotFoundException::class)
     fun initlaunchingactivity(contentTitleText:String): Boolean {
         AndroidManifest()
-        var fcm_name=firebase_receiver_class_name
-        var fcm_path=fcm_name.replace(".","/")
+        val fcm_name=firebase_receiver_class_name
+        val fcm_path=fcm_name.replace(".","/")
         val op=launchingactivityname
-        var op1=packagename
+        val op1=packagename
         var fa=final_ans
-        var ans1=op1.replace(".","/")
-        val basePath = project.basePath
+        val ans1=op1.replace(".","/")
         // projectBaseDir = LocalFileSystem.getInstance().findFileByPath(project.basePath +"/app/src/main/java/"+ ans1 + "/" + op + ".java")
         // projectBaseDir = LocalFileSystem.getInstance().findFileByPath(basePath!!)
-        var file = File(project.basePath +"/app/src/main/java/"+ans1 + fcm_path+".java")
-        var file1 = File(project.basePath +"/app/src/main/java/"+ans1 + fcm_path +".kt")
-        var java_file_exist = file.exists()
-        var kotlin_file_exist = file1.exists()
-        if(java_file_exist==true)
+        val file = File(project.basePath +"/app/src/main/java/"+ans1 + fcm_path+".java")
+        val file1 = File(project.basePath +"/app/src/main/java/"+ans1 + fcm_path +".kt")
+        val java_file_exist = file.exists()
+        val kotlin_file_exist = file1.exists()
+        if(java_file_exist)
         {
             projectBaseDir = LocalFileSystem.getInstance().findFileByPath(project.basePath +"/app/src/main/java/"+ans1 + fcm_path +".java")
             val manifestVirtualFile: VirtualFile? = projectBaseDir
@@ -162,7 +159,7 @@ class PushNotificationManager2(private val project: Project) {
                 false
             }
         }
-        if(kotlin_file_exist==true)
+        if(kotlin_file_exist)
         {
             projectBaseDir = LocalFileSystem.getInstance().findFileByPath(project.basePath +"/app/src/main/java/"+ans1 + fcm_path +".kt")
             val manifestVirtualFile: VirtualFile? = projectBaseDir
@@ -195,7 +192,7 @@ class PushNotificationManager2(private val project: Project) {
         // val sb = StringBuilder()
         for (i in documentText.indices)
         {
-            var line = documentText[i]
+            val line = documentText[i]
             if(line.contains("import com.clevertap.android.sdk.CleverTapAPI;"))
             {
                 import_clevertapAPI=true
@@ -276,7 +273,7 @@ class PushNotificationManager2(private val project: Project) {
             sb
                 .append(line)
                 .append("\n")
-            if(import_clevertapAPI==false) {
+            if(!import_clevertapAPI) {
                 if (line.contains("package")) {
                     // if (line.contains("/")) {
                     sb
@@ -287,7 +284,7 @@ class PushNotificationManager2(private val project: Project) {
                     // }
                 }
             }
-            if(import_notification_manager==false) {
+            if(!import_notification_manager) {
                 if (line.contains("package")) {
                     // if (line.contains("/")) {
                     sb
@@ -298,7 +295,7 @@ class PushNotificationManager2(private val project: Project) {
                     // }
                 }
             }
-            if(import_util_log==false) {
+            if(!import_util_log) {
                     if (line.contains("package")) {
                         sb
                             .append("import android.util.Log;")
@@ -307,7 +304,7 @@ class PushNotificationManager2(private val project: Project) {
                         import_util_log=true
                     }
                 }
-            if(import_non_null==false) {
+            if(!import_non_null) {
                 if (line.contains("package")) {
                     sb
                         .append("import androidx.annotation.NonNull;")
@@ -317,7 +314,7 @@ class PushNotificationManager2(private val project: Project) {
                 }
             }
 
-            if(import_os_bundle==false) {
+            if(!import_os_bundle) {
                 if (line.contains("package")) {
                     sb
                         .append("import android.os.Bundle;")
@@ -327,7 +324,7 @@ class PushNotificationManager2(private val project: Project) {
                 }
             }
 
-            if(import_notification_info==false) {
+            if(!import_notification_info) {
                 if (line.contains("package")) {
                     sb
                         .append("import com.clevertap.android.sdk.pushnotification.NotificationInfo;")
@@ -338,7 +335,7 @@ class PushNotificationManager2(private val project: Project) {
             }
 
 
-            if(import_firebase_messaging_service==false) {
+            if(!import_firebase_messaging_service) {
                 if (line.contains("package")) {
                     sb
                         .append("import com.google.firebase.messaging.FirebaseMessagingService;")
@@ -348,7 +345,7 @@ class PushNotificationManager2(private val project: Project) {
                 }
             }
 
-            if(import_remote_messasge==false) {
+            if(!import_remote_messasge) {
                 if (line.contains("package")) {
                     sb
                         .append("import com.google.firebase.messaging.RemoteMessage;")
@@ -358,7 +355,7 @@ class PushNotificationManager2(private val project: Project) {
                 }
             }
 
-            if(import_map==false) {
+            if(!import_map) {
                 if (line.contains("package")) {
                     sb
                         .append("import java.util.Map;\n")
@@ -372,7 +369,7 @@ class PushNotificationManager2(private val project: Project) {
 
 
 
-            if(clevertap_object==false) {
+            if(!clevertap_object) {
                 if (line.contains("class")) {
                     // if (line.contains("/")) {
                     sb
@@ -384,7 +381,7 @@ class PushNotificationManager2(private val project: Project) {
                 }
             }
 
-            if(firebase_messaging_content==false) {
+            if(!firebase_messaging_content) {
                 if (line.contains("super.onMessageReceived")) {
                     sb
 //                        .append("\t\tRemoteMessage.Notification notification = remoteMessage.getNotification();")
@@ -442,7 +439,7 @@ class PushNotificationManager2(private val project: Project) {
 
                 }
             }
-            if(on_new_token==false) {
+            if(!on_new_token) {
                 if (i == documentText.lastIndex-1) {
                     sb
                         .append("\t@Override")
@@ -465,7 +462,7 @@ class PushNotificationManager2(private val project: Project) {
                     s_onNewtoken=true
                 }
             }
-            if(s_onNewtoken==false) {
+            if(!s_onNewtoken) {
                 if (line.contains("super.onNewToken")) {
                     sb
                         .append("\t\tclevertapDefaultInstance = CleverTapAPI.getDefaultInstance(getApplicationContext());")
@@ -490,7 +487,7 @@ class PushNotificationManager2(private val project: Project) {
         // val sb = StringBuilder()
         for (i in documentText.indices)
         {
-            var line = documentText[i]
+            val line = documentText[i]
             if(line.contains("import com.clevertap.android.sdk.CleverTapAPI"))
             {
                 import_clevertapAPI=true
@@ -571,7 +568,7 @@ class PushNotificationManager2(private val project: Project) {
             sb
                 .append(line)
                 .append("\n")
-            if(import_clevertapAPI==false) {
+            if(!import_clevertapAPI) {
                 if (line.contains("package")) {
                     // if (line.contains("/")) {
                     sb
@@ -582,7 +579,7 @@ class PushNotificationManager2(private val project: Project) {
                     // }
                 }
             }
-            if(import_notification_manager==false) {
+            if(!import_notification_manager) {
                 if (line.contains("package")) {
                     // if (line.contains("/")) {
                     sb
@@ -593,7 +590,7 @@ class PushNotificationManager2(private val project: Project) {
                     // }
                 }
             }
-            if(import_util_log==false) {
+            if(!import_util_log) {
                 if (line.contains("package")) {
                     sb
                         .append("import android.util.Log")
@@ -602,7 +599,7 @@ class PushNotificationManager2(private val project: Project) {
                     import_util_log=true
                 }
             }
-            if(import_non_null==false) {
+            if(!import_non_null) {
                 if (line.contains("package")) {
                     sb
                         .append("import androidx.annotation.NonNull")
@@ -612,7 +609,7 @@ class PushNotificationManager2(private val project: Project) {
                 }
             }
 
-            if(import_os_bundle==false) {
+            if(!import_os_bundle) {
                 if (line.contains("package")) {
                     sb
                         .append("import android.os.Bundle;")
@@ -622,7 +619,7 @@ class PushNotificationManager2(private val project: Project) {
                 }
             }
 
-            if(import_notification_info==false) {
+            if(!import_notification_info) {
                 if (line.contains("package")) {
                     sb
                         .append("import com.clevertap.android.sdk.pushnotification.NotificationInfo")
@@ -632,7 +629,7 @@ class PushNotificationManager2(private val project: Project) {
                 }
             }
 
-            if(import_firebase_messaging_service==false) {
+            if(!import_firebase_messaging_service) {
                 if (line.contains("package")) {
                     sb
                         .append("import com.google.firebase.messaging.FirebaseMessagingService")
@@ -642,7 +639,7 @@ class PushNotificationManager2(private val project: Project) {
                 }
             }
 
-            if(import_remote_messasge==false) {
+            if(!import_remote_messasge) {
                 if (line.contains("package")) {
                     sb
                         .append("import com.google.firebase.messaging.RemoteMessage")
@@ -652,7 +649,7 @@ class PushNotificationManager2(private val project: Project) {
                 }
             }
 
-            if(import_map==false) {
+            if(!import_map) {
                 if (line.contains("package")) {
                     sb
                         .append("import java.util.Map")
@@ -666,7 +663,7 @@ class PushNotificationManager2(private val project: Project) {
 
 
 
-            if(clevertap_object==false) {
+            if(!clevertap_object) {
                 if (line.contains("class")) {
                     // if (line.contains("/")) {
                     sb
@@ -678,7 +675,7 @@ class PushNotificationManager2(private val project: Project) {
                 }
             }
 
-            if(firebase_messaging_content==false) {
+            if(!firebase_messaging_content) {
                 if (line.contains("super.onMessageReceived")) {
                     sb
 //                        .append("\t\tval notification: RemoteMessage.Notification?  = remoteMessage.getNotification();")
@@ -741,7 +738,7 @@ class PushNotificationManager2(private val project: Project) {
 
                 }
             }
-            if(on_new_token==false) {
+            if(!on_new_token) {
                 if (i == documentText.lastIndex-1) {
                     sb
                         .append("\toverride")
@@ -765,7 +762,7 @@ class PushNotificationManager2(private val project: Project) {
                     s_onNewtoken=true
                 }
             }
-            if(s_onNewtoken==false) {
+            if(!s_onNewtoken) {
                 if (line.contains("super.onNewToken")) {
                     sb
                         .append("\t\tCleverTapAPI.getDefaultInstance(getApplicationContext())")

@@ -91,7 +91,7 @@ class XiomiGradleManager(private val project: Project) {
     fun checkbeforeinsertion(){
         val documentText = buildGradle!!.text.split("\n".toRegex()).dropLastWhile { it.isEmpty() }.toTypedArray()
         for (i in documentText.indices){
-            var line = documentText[i]
+            val line = documentText[i]
             if(line.contains("com.clevertap.android:clevertap-xiaomi-sdk"))
             {
                 gradle_xiomi=true
@@ -109,7 +109,7 @@ class XiomiGradleManager(private val project: Project) {
             sb
                 .append(line)
                 .append("\n")
-            if(gradle_xiomi==false){
+            if(!gradle_xiomi){
                 if (line.contains(Constants.DEPENDENCIES)){
                     if (line.contains("{")){
                         sb

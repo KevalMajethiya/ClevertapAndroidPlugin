@@ -7,13 +7,14 @@ import com.intellij.openapi.ui.DialogWrapper
 import data.file.*
 import data.repository.ModuleRepositoryImpl
 import data.repository.SourceRootRepositoryImpl
-import managers.ManifestManager
 import util.Constants
-import java.awt.event.ActionEvent
-import java.awt.event.ActionListener
 import javax.swing.JComponent
 
-class FCMApprovalDialog(var event: AnActionEvent,serviceNameText:String,channel_id:String,fcm_sender_id:String,dependencyVersionText:String,IsRadiobuttonrb1Selected:Boolean,IsRadiobuttonrb2Selected:Boolean,lang:String) : DialogWrapper(true),  NewScreenView {
+class FCMApprovalDialog(var event: AnActionEvent, serviceNameText:String,
+                        private var channel_id: String,
+                        private var fcm_sender_id: String, dependencyVersionText:String,
+                        private var IsRadiobuttonrb1Selected: Boolean,
+                        private var IsRadiobuttonrb2Selected: Boolean, lang:String) : DialogWrapper(true),  NewScreenView {
 
     private val panelForFCM1 = FCMApproval()
     private val panelForFCM = FCMInputPanel()
@@ -23,12 +24,7 @@ class FCMApprovalDialog(var event: AnActionEvent,serviceNameText:String,channel_
     private var packageName = ""
     private var moduleName = ""
     private var service_name= serviceNameText
-    private var channel_id=channel_id
-    private var fcm_sender_id=fcm_sender_id
     private var dependencyVersion =dependencyVersionText
-    private var IsRadiobuttonrb1Selected = IsRadiobuttonrb1Selected
-    private var IsRadiobuttonrb2Selected = IsRadiobuttonrb2Selected
-    private var lang = lang
 
     init {
         val currentPath = event.getData(DataKeys.VIRTUAL_FILE)?.let {
@@ -51,141 +47,126 @@ class FCMApprovalDialog(var event: AnActionEvent,serviceNameText:String,channel_
             currentPath
 
         )
-        if(IsRadiobuttonrb2Selected==true) {
-            panelForFCM1.file1.setVisible(true)
-            panelForFCM1.manifest.setVisible(true)
-            panelForFCM1.manifest_content.setVisible(true)
-            panelForFCM1. file2.setVisible(true)
-            panelForFCM1.launchingact.setVisible(true)
-            panelForFCM1.launchingact_content.setVisible(true)
-            panelForFCM1. file3.setVisible(true)
-            panelForFCM1.project_gradle.setVisible(true)
-            panelForFCM1.project_gradle_content.setVisible(true)
-            panelForFCM1.file4.setVisible(true)
-            panelForFCM1.app_gradle.setVisible(true)
-            panelForFCM1.app_gradle_content.setVisible(true)
+        if(IsRadiobuttonrb2Selected) {
+            panelForFCM1.file1.isVisible = true
+            panelForFCM1.manifest.isVisible = true
+            panelForFCM1.manifest_content.isVisible = true
+            panelForFCM1. file2.isVisible = true
+            panelForFCM1.launchingact.isVisible = true
+            panelForFCM1.launchingact_content.isVisible = true
+            panelForFCM1. file3.isVisible = true
+            panelForFCM1.project_gradle.isVisible = true
+            panelForFCM1.project_gradle_content.isVisible = true
+            panelForFCM1.file4.isVisible = true
+            panelForFCM1.app_gradle.isVisible = true
+            panelForFCM1.app_gradle_content.isVisible = true
 
 
-            panelForFCM1.manifest_content.setText(
-                "<html>"+ "&lt meta-data" + "<br>" +
-                        "        android:name=\"FCM_SENDER_ID\"" + "<br>" +
-                        "        android:value=\"$fcm_sender_id \" / &gt" + "<br>" +
-                        "&lt meta-data" + "<br>" +
-                        "        android:name=\"firebase_messaging_auto_init_enabled\"" + "<br>" +
-                        "        android:value=\" false\" / &gt" + "<br>" +
-                        "&lt meta-data" + "<br>" +
-                        "        android:name=\"firebase_analytics_collection_enabled\"" + "<br>" +
-                        "        android:value=\" false\" / &gt" + "<br>" +
-                        "&lt service" + "<br>" +
-                        "android:name=\"com.clevertap.android.sdk.pushnotification.fcm.FcmMessageListenerService\"" + "<br>" +
-                        "android:exported=\"false\">" + "<br>" +
-                        "&lt intent-filter &gt" + "<br>" +
-                        "&lt action android:name=\"com.google.firebase.MESSAGING_EVENT\" /&gt" + "<br>" +
-                        "&lt /intent-filter &gt" + "<br>" +
-                        "&lt /service &gt" + "<br>" +
-                        //"<br>" +
-                        "</html>"
-
-            )
+            panelForFCM1.manifest_content.text = "<html>"+ "&lt meta-data" + "<br>" +
+                    "        android:name=\"FCM_SENDER_ID\"" + "<br>" +
+                    "        android:value=\"$fcm_sender_id \" / &gt" + "<br>" +
+                    "&lt meta-data" + "<br>" +
+                    "        android:name=\"firebase_messaging_auto_init_enabled\"" + "<br>" +
+                    "        android:value=\" false\" / &gt" + "<br>" +
+                    "&lt meta-data" + "<br>" +
+                    "        android:name=\"firebase_analytics_collection_enabled\"" + "<br>" +
+                    "        android:value=\" false\" / &gt" + "<br>" +
+                    "&lt service" + "<br>" +
+                    "android:name=\"com.clevertap.android.sdk.pushnotification.fcm.FcmMessageListenerService\"" + "<br>" +
+                    "android:exported=\"false\">" + "<br>" +
+                    "&lt intent-filter &gt" + "<br>" +
+                    "&lt action android:name=\"com.google.firebase.MESSAGING_EVENT\" /&gt" + "<br>" +
+                    "&lt /intent-filter &gt" + "<br>" +
+                    "&lt /service &gt" + "<br>" +
+                    //"<br>" +
+                    "</html>"
 
             if(lang=="java") {
-                panelForFCM1.launchingact_content.setText(
-                    "<html>" + "import android.app.NotificationManager;" + "<br>" +
-                            "CleverTapAPI.createNotificationChannel(getApplicationContext(),\"$channel_id\",\"mychannel\",\"lDescription\",NotificationManager.IMPORTANCE_MAX,true);" + "<br>" +
-                            "</html>"
-                )
+                panelForFCM1.launchingact_content.text = "<html>" + "import android.app.NotificationManager;" + "<br>" +
+                        "CleverTapAPI.createNotificationChannel(getApplicationContext(),\"$channel_id\",\"mychannel\",\"lDescription\",NotificationManager.IMPORTANCE_MAX,true);" + "<br>" +
+                        "</html>"
             }
             if(lang=="kotlin") {
-                panelForFCM1.launchingact_content.setText(
-                    "<html>" + "import android.app.NotificationManager" + "<br>" +
-                            "CleverTapAPI.createNotificationChannel(getApplicationContext(),\"$channel_id\",\"mychannel\",\"lDescription\",NotificationManager.IMPORTANCE_MAX,true)" + "<br>" +
-                            "</html>"
-                )
+                panelForFCM1.launchingact_content.text = "<html>" + "import android.app.NotificationManager" + "<br>" +
+                        "CleverTapAPI.createNotificationChannel(getApplicationContext(),\"$channel_id\",\"mychannel\",\"lDescription\",NotificationManager.IMPORTANCE_MAX,true)" + "<br>" +
+                        "</html>"
             }
 
 
-            panelForFCM1.app_gradle_content.setText("<html>"+"implementation 'com.google.firebase:firebase-messaging:20.2.4'"+"<br>"+
+            panelForFCM1.app_gradle_content.text = "<html>"+"implementation 'com.google.firebase:firebase-messaging:20.2.4'"+"<br>"+
                     "implementation 'com.android.installreferrer:installreferrer:2.1'"+"<br>"+
                     "apply plugin: 'com.google.gms.google-services'"+"<br>"+"<br>"+
-                    "</html>")
+                    "</html>"
 
 
         }
-        if(IsRadiobuttonrb1Selected==true){
-            panelForFCM1.file1.setVisible(false)
-            panelForFCM1.manifest.setVisible(false)
-            panelForFCM1.manifest_content.setVisible(false)
-            panelForFCM1. file3.setVisible(false)
-            panelForFCM1.project_gradle.setVisible(false)
-            panelForFCM1.project_gradle_content.setVisible(false)
-            panelForFCM1.file4.setVisible(false)
-            panelForFCM1.app_gradle.setVisible(false)
-            panelForFCM1.app_gradle_content.setVisible(false)
-            panelForFCM1. file2.setVisible(true)
-            panelForFCM1.launchingact.setVisible(true)
-            panelForFCM1.launchingact_content.setVisible(true)
+        if(IsRadiobuttonrb1Selected){
+            panelForFCM1.file1.isVisible = false
+            panelForFCM1.manifest.isVisible = false
+            panelForFCM1.manifest_content.isVisible = false
+            panelForFCM1. file3.isVisible = false
+            panelForFCM1.project_gradle.isVisible = false
+            panelForFCM1.project_gradle_content.isVisible = false
+            panelForFCM1.file4.isVisible = false
+            panelForFCM1.app_gradle.isVisible = false
+            panelForFCM1.app_gradle_content.isVisible = false
+            panelForFCM1. file2.isVisible = true
+            panelForFCM1.launchingact.isVisible = true
+            panelForFCM1.launchingact_content.isVisible = true
 
 
-            panelForFCM1.file5.setVisible(true)
-            panelForFCM1.manifest_yes.setVisible(true)
-            panelForFCM1.fcm_implemented.setVisible(true)
+            panelForFCM1.file5.isVisible = true
+            panelForFCM1.manifest_yes.isVisible = true
+            panelForFCM1.fcm_implemented.isVisible = true
 
-            panelForFCM1.file6.setVisible(true)
-            panelForFCM1.fcm_service_class.setVisible(true)
-            panelForFCM1.fcm_service_class_content1.setVisible(true)
+            panelForFCM1.file6.isVisible = true
+            panelForFCM1.fcm_service_class.isVisible = true
+            panelForFCM1.fcm_service_class_content1.isVisible = true
 
-            panelForFCM1.fcm_service_class_content2.setVisible(true)
-
-
+            panelForFCM1.fcm_service_class_content2.isVisible = true
 
 
 
-            panelForFCM1.fcm_implemented.setText(
-                "<html>"+ "&lt receiver" + "<br>" +
+
+
+            panelForFCM1.fcm_implemented.text = "<html>"+ "&lt receiver" + "<br>" +
                     "android:name=\"com.clevertap.android.sdk.pushnotification.CTPushNotificationReceiver\"" + "<br>" +
                     "android:exported=\"false\">" + "<br>" +
                     "android:enabled=\"true\" &gt" + "<br>" +
-                        "&lt /receiver &gt" + "<br>" +
+                    "&lt /receiver &gt" + "<br>" +
                     //"<br>" +
                     "</html>"
-            )
 
             if(lang=="java") {
 
-                panelForFCM1.launchingact_content.setText(
-                    "<html>" + "import android.app.NotificationManager;" + "<br>" +
-                            "CleverTapAPI.createNotificationChannel(getApplicationContext(),\"$channel_id\",\"mychannel\",\"lDescription\",NotificationManager.IMPORTANCE_MAX,true);" + "<br>" +
-                            "</html>"
-                )
+                panelForFCM1.launchingact_content.text = "<html>" + "import android.app.NotificationManager;" + "<br>" +
+                        "CleverTapAPI.createNotificationChannel(getApplicationContext(),\"$channel_id\",\"mychannel\",\"lDescription\",NotificationManager.IMPORTANCE_MAX,true);" + "<br>" +
+                        "</html>"
 
-                panelForFCM1.fcm_service_class_content1.setText(
-                    "<html>" + "try {" + "<br>" +
-                            "if (remotemessage.getData().size() > 0) {" + "<br>" +
-                            "                Bundle extras = new Bundle();" + "<br>" +
-                            "                for (Map.Entry<String, String> entry : remotemessage.getData().entrySet()) {" + "<br>" +
-                            "                    extras.putString(entry.getKey(), entry.getValue()) };" + "<br>" +
-                            "                NotificationInfo info = CleverTapAPI.getNotificationInfo(extras);" + "<br>" +
-                            "                if (info.fromCleverTap) {" + "<br>" +
-                            "                    CleverTapAPI.createNotification(getApplicationContext(), extras);" + "<br>" +
-                            "                } else {" + "<br>" +
-                            "                    // not from CleverTap handle yourself or pass to another provider  }" + "<br>" +
-                            "}" + "<br>" +
-                            "        } catch (Throwable t) {" + "<br>" +
-                            "           Log.d(\"MYFCMLIST\", \"Error parsing FCM message\", t); }" + "<br>" +
-                            "</html>"
-                )
+                panelForFCM1.fcm_service_class_content1.text = "<html>" + "try {" + "<br>" +
+                        "if (remotemessage.getData().size() > 0) {" + "<br>" +
+                        "                Bundle extras = new Bundle();" + "<br>" +
+                        "                for (Map.Entry<String, String> entry : remotemessage.getData().entrySet()) {" + "<br>" +
+                        "                    extras.putString(entry.getKey(), entry.getValue()) };" + "<br>" +
+                        "                NotificationInfo info = CleverTapAPI.getNotificationInfo(extras);" + "<br>" +
+                        "                if (info.fromCleverTap) {" + "<br>" +
+                        "                    CleverTapAPI.createNotification(getApplicationContext(), extras);" + "<br>" +
+                        "                } else {" + "<br>" +
+                        "                    // not from CleverTap handle yourself or pass to another provider  }" + "<br>" +
+                        "}" + "<br>" +
+                        "        } catch (Throwable t) {" + "<br>" +
+                        "           Log.d(\"MYFCMLIST\", \"Error parsing FCM message\", t); }" + "<br>" +
+                        "</html>"
 
-                panelForFCM1.fcm_service_class_content2.setText("<html>" + "@Override" + "<br>" + "public void onNewToken(@NonNull String s) {" + "<br>" + "    super.onNewToken(s);" + "<br>" + "\t\tclevertapDefaultInstance = CleverTapAPI.getDefaultInstance(getApplicationContext());" + "<br>" + "clevertapDefaultInstance.pushFcmRegistrationId(s,true);" + "<br>" + "}" + "<br>" + "</html>")
+                panelForFCM1.fcm_service_class_content2.text = "<html>" + "@Override" + "<br>" + "public void onNewToken(@NonNull String s) {" + "<br>" + "    super.onNewToken(s);" + "<br>" + "\t\tclevertapDefaultInstance = CleverTapAPI.getDefaultInstance(getApplicationContext());" + "<br>" + "clevertapDefaultInstance.pushFcmRegistrationId(s,true);" + "<br>" + "}" + "<br>" + "</html>"
             }
             if(lang=="kotlin")
             {
-                panelForFCM1.launchingact_content.setText(
-                    "<html>" + "import android.app.NotificationManager" + "<br>" +
-                            "CleverTapAPI.createNotificationChannel(getApplicationContext(),\"$channel_id\",\"mychannel\",\"lDescription\",NotificationManager.IMPORTANCE_MAX,true)" + "<br>" +
-                            "</html>"
-                )
+                panelForFCM1.launchingact_content.text = "<html>" + "import android.app.NotificationManager" + "<br>" +
+                        "CleverTapAPI.createNotificationChannel(getApplicationContext(),\"$channel_id\",\"mychannel\",\"lDescription\",NotificationManager.IMPORTANCE_MAX,true)" + "<br>" +
+                        "</html>"
 
-                panelForFCM1.fcm_service_class_content1.setText("<html>"+"remotemessage.data.apply {"+"<br>"+
+                panelForFCM1.fcm_service_class_content1.text = "<html>"+"remotemessage.data.apply {"+"<br>"+
                         "try {"+"<br>"+
                         "if (size() > 0) {"+"<br>"+
                         "                val extras =Bundle()"+"<br>"+
@@ -201,9 +182,9 @@ class FCMApprovalDialog(var event: AnActionEvent,serviceNameText:String,channel_
                         "        } catch (t: Throwable) {"+
                         "           Log.d(\"MYFCMLIST\", \"Error parsing FCM message\", t)"+
                         "}"+
-                        "</html>")
+                        "</html>"
 
-                panelForFCM1.fcm_service_class_content2.setText("<html>"+"@Override"+"<br>"+"fun onNewToken(@NonNull String s) {"+"<br>"+"    super.onNewToken(s)"+"<br>"+"\t\tclevertapDefaultInstance = CleverTapAPI.getDefaultInstance(getApplicationContext())"+"<br>"+"clevertapDefaultInstance.pushFcmRegistrationId(s,true)"+"<br>"+"}"+"<br>"+"</html>")
+                panelForFCM1.fcm_service_class_content2.text = "<html>"+"@Override"+"<br>"+"fun onNewToken(@NonNull String s) {"+"<br>"+"    super.onNewToken(s)"+"<br>"+"\t\tclevertapDefaultInstance = CleverTapAPI.getDefaultInstance(getApplicationContext())"+"<br>"+"clevertapDefaultInstance.pushFcmRegistrationId(s,true)"+"<br>"+"}"+"<br>"+"</html>"
             }
 
 
@@ -264,7 +245,7 @@ class FCMApprovalDialog(var event: AnActionEvent,serviceNameText:String,channel_
         return panelForFCM1
     }
 
-    override fun close() = close(DialogWrapper.OK_EXIT_CODE)
+    override fun close() = close(OK_EXIT_CODE)
 
     override fun showPackage(packageName: String) {
         this.packageName = packageName

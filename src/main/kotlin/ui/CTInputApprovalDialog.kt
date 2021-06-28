@@ -7,14 +7,13 @@ import com.intellij.openapi.ui.DialogWrapper
 import data.file.*
 import data.repository.ModuleRepositoryImpl
 import data.repository.SourceRootRepositoryImpl
-import managers.ManifestManager
 import util.Constants
-import java.awt.event.ActionEvent
-import java.awt.event.ActionListener
 import javax.swing.JComponent
 
 
-class CTInputApprovalDialog(var event: AnActionEvent,Account_id:String,Account_token:String,use_google_ad_id_rb1:Boolean,use_google_ad_id_rb2: Boolean, region_selected : String,Exclude_filesText:String,applicationclassname:String,IsRadiobuttonrb1Selected:Boolean,lang:String) : DialogWrapper(true),  NewScreenView {
+class CTInputApprovalDialog(var event: AnActionEvent, Account_id:String, Account_token:String, use_google_ad_id_rb1:Boolean, use_google_ad_id_rb2: Boolean,
+                            private var region_selected: String, Exclude_filesText:String,
+                            private var applicationclassname: String, IsRadiobuttonrb1Selected:Boolean, lang:String) : DialogWrapper(true),  NewScreenView {
     private val panelForFCM1 = CleverTapInputApproval()
     private val panelForFCM = ClevertapInputPanel()
 
@@ -29,10 +28,7 @@ class CTInputApprovalDialog(var event: AnActionEvent,Account_id:String,Account_t
     private var google_ad_id_rb2=use_google_ad_id_rb2
     private var use_google_ad_id=""
     private var Exclude_files =Exclude_filesText
-    private var applicationclassname = applicationclassname
     private var Radiobuttonrb1Selected = IsRadiobuttonrb1Selected
-    private var region_selected = region_selected
-    private var lang= lang
 
     init {
 
@@ -66,22 +62,18 @@ class CTInputApprovalDialog(var event: AnActionEvent,Account_id:String,Account_t
 
         )
         if(lang=="java") {
-            panelForFCM1.launchingact_content.setText(
-                "<html>" + "import com.clevertap.android.sdk.CleverTapAPI;" + "<br>" +
-                        "\t\tCleverTapAPI clevertapDefaultInstance = CleverTapAPI.getDefaultInstance(getApplicationContext());" + "<br>" +
-                        "</html>"
-            )
-            panelForFCM1.myapplication_class_content.setText("<html>"+ "import com.clevertap.android.sdk.ActivityLifecycleCallback;" + "<br>" +
+            panelForFCM1.launchingact_content.text = "<html>" + "import com.clevertap.android.sdk.CleverTapAPI;" + "<br>" +
+                    "\t\tCleverTapAPI clevertapDefaultInstance = CleverTapAPI.getDefaultInstance(getApplicationContext());" + "<br>" +
+                    "</html>"
+            panelForFCM1.myapplication_class_content.text = "<html>"+ "import com.clevertap.android.sdk.ActivityLifecycleCallback;" + "<br>" +
                     "ActivityLifecycleCallback.register(this);"+"<br>"+
-                    "</html>")
+                    "</html>"
         }
         if(lang=="kotlin") {
-            panelForFCM1.launchingact_content.setText(
-                "<html>" + "import com.clevertap.android.sdk.CleverTapAPI" + "<br>" +
-                        "\t\tclevertapDefaultInstance = CleverTapAPI.getDefaultInstance(getApplicationContext())" + "<br>" +
-                        "</html>"
-            )
-            panelForFCM1.myapplication_class_content.setText("<html>"+"import com.clevertap.android.sdk.ActivityLifecycleCallback" + "<br>"
+            panelForFCM1.launchingact_content.text = "<html>" + "import com.clevertap.android.sdk.CleverTapAPI" + "<br>" +
+                    "\t\tclevertapDefaultInstance = CleverTapAPI.getDefaultInstance(getApplicationContext())" + "<br>" +
+                    "</html>"
+            panelForFCM1.myapplication_class_content.text = ("<html>"+"import com.clevertap.android.sdk.ActivityLifecycleCallback" + "<br>"
                     +"ActivityLifecycleCallback.register(this)"+"<br>"+
                     "</html>")
         }
@@ -89,87 +81,83 @@ class CTInputApprovalDialog(var event: AnActionEvent,Account_id:String,Account_t
 
 
 
-        if(google_ad_id_rb1==true)
+        if(google_ad_id_rb1)
         {
             use_google_ad_id="1"
         }
-        if(google_ad_id_rb2==true)
+        if(google_ad_id_rb2)
         {
             use_google_ad_id="0"
         }
-        if(IsRadiobuttonrb1Selected==false) {
+        if(!IsRadiobuttonrb1Selected) {
 
-                panelForFCM1.manifest_content.setText(
-                    "<html>" + "Default CleverTapApplication Class" + "<br>" +
-                            "&lt application " + "<br>" +
-                            "android:name=\"com.clevertap.android.sdk.Application\"" + "<br>" +
-                            "&lt /application /&gt" + "<br>" +
-                            "Permissions :" + "<br>" +
-                            "&lt uses-permission android:name=\"android.permission.INTERNET\" &gt" + "<br>" +
-                            "&lt uses-permission android:name=\"android.permission.ACCESS_NETWORK_STATE\" &gt" + "<br>" +
-                            "<br>" +
-                            "CleverTapCredentials :" + "<br>" +
-                            "&lt meta-data" + "<br>" +
-                            "        \t\tandroid:name=\"CLEVERTAP_INAPP_EXCLUDE\"" + "<br>" +
-                            "        \t\tandroid:value=\" $Exclude_files\" / &gt" + "<br>" +
-                            "&lt meta-data" + "<br>" +
-                            "        \t\tandroid:name=\"CLEVERTAP_ACCOUNT_ID\"" + "<br>" +
-                            "        \t\tandroid:value=\" $Account_id\" / &gt" + "<br>" +
-                            "&lt meta-data" + "<br>" +
-                            "        \t\tandroid:name=\"CLEVERTAP_TOKEN\"" + "<br>" +
-                            "        \t\tandroid:value=\"$Account_token \" /&gt" + "<br>" +
-                            "&lt meta-data" + "<br>" +
+            panelForFCM1.manifest_content.text = "<html>" + "Default CleverTapApplication Class" + "<br>" +
+                    "&lt application " + "<br>" +
+                    "android:name=\"com.clevertap.android.sdk.Application\"" + "<br>" +
+                    "&lt /application /&gt" + "<br>" +
+                    "Permissions :" + "<br>" +
+                    "&lt uses-permission android:name=\"android.permission.INTERNET\" &gt" + "<br>" +
+                    "&lt uses-permission android:name=\"android.permission.ACCESS_NETWORK_STATE\" &gt" + "<br>" +
+                    "<br>" +
+                    "CleverTapCredentials :" + "<br>" +
+                    "&lt meta-data" + "<br>" +
+                    "        \t\tandroid:name=\"CLEVERTAP_INAPP_EXCLUDE\"" + "<br>" +
+                    "        \t\tandroid:value=\" $Exclude_files\" / &gt" + "<br>" +
+                    "&lt meta-data" + "<br>" +
+                    "        \t\tandroid:name=\"CLEVERTAP_ACCOUNT_ID\"" + "<br>" +
+                    "        \t\tandroid:value=\" $Account_id\" / &gt" + "<br>" +
+                    "&lt meta-data" + "<br>" +
+                    "        \t\tandroid:name=\"CLEVERTAP_TOKEN\"" + "<br>" +
+                    "        \t\tandroid:value=\"$Account_token \" /&gt" + "<br>" +
+                    "&lt meta-data" + "<br>" +
 
-                            "        \t\tandroid:name=\"CLEVERTAP_USE_GOOGLE_AD_ID\"" + "<br>" +
-                            "        \t\tandroid:value=\"$use_google_ad_id \" /&gt" + "<br>" +
-                            "&lt meta-data" + "<br>" +
-                            "        \t\tandroid:name=\"CLEVERTAP_REGION\"" + "<br>" +
-                            "        \t\tandroid:value=\"$region_selected \" /&gt" + "<br>" +
-                            "<br>" +
-                            "</html>"
-                )
+                    "        \t\tandroid:name=\"CLEVERTAP_USE_GOOGLE_AD_ID\"" + "<br>" +
+                    "        \t\tandroid:value=\"$use_google_ad_id \" /&gt" + "<br>" +
+                    "&lt meta-data" + "<br>" +
+                    "        \t\tandroid:name=\"CLEVERTAP_REGION\"" + "<br>" +
+                    "        \t\tandroid:value=\"$region_selected \" /&gt" + "<br>" +
+                    "<br>" +
+                    "</html>"
             }
 
         else{
-            panelForFCM1.file3.setVisible(true)
-            panelForFCM1.myapplication_class.setVisible(true)
-            panelForFCM1.myapplication_class_content.setVisible(true)
+            panelForFCM1.file3.isVisible = true
+            panelForFCM1.myapplication_class.isVisible = true
+            panelForFCM1.myapplication_class_content.isVisible = true
 
-            panelForFCM1.manifest_content.setText(
-                "<html>"+ "Permissions :" + "<br>" +
-                        "&lt uses-permission android:name=\"android.permission.INTERNET\" &gt" + "<br>" +
-                        "&lt uses-permission android:name=\"android.permission.ACCESS_NETWORK_STATE\" &gt" + "<br>" +
-                        "<br>" +
-                        "CleverTapCredentials :" + "<br>" +
-                        "&lt meta-data" + "<br>" +
-                        "        \t\tandroid:name=\"CLEVERTAP_INAPP_EXCLUDE\"" + "<br>" +
-                        "        \t\tandroid:value=\" $Exclude_files\" / &gt" + "<br>" +
-                        "&lt meta-data" + "<br>" +
-                        "        \t\tandroid:name=\"CLEVERTAP_ACCOUNT_ID\"" + "<br>" +
-                        "        \t\tandroid:value=\" $Account_id\" / &gt" + "<br>" +
-                        "&lt meta-data" + "<br>" +
-                        "        \t\tandroid:name=\"CLEVERTAP_TOKEN\"" + "<br>" +
-                        "        \t\tandroid:value=\"$Account_token \" /&gt" + "<br>" +
-                        "&lt meta-data" + "<br>" +
-                        "        \t\tandroid:name=\"CLEVERTAP_USE_GOOGLE_AD_ID\"" + "<br>" +
-                        "        \t\tandroid:value=\"$use_google_ad_id \" /&gt" + "<br>" +
-                        "&lt meta-data" + "<br>" +
-                        "        \t\tandroid:name=\"CLEVERTAP_REGION\"" + "<br>" +
-                        "        \t\tandroid:value=\"$region_selected \" /&gt" + "<br>" +
-                        "<br>" +
-                        "</html>"
-            )
+            panelForFCM1.manifest_content.text = "<html>"+ "Permissions :" + "<br>" +
+                    "&lt uses-permission android:name=\"android.permission.INTERNET\" &gt" + "<br>" +
+                    "&lt uses-permission android:name=\"android.permission.ACCESS_NETWORK_STATE\" &gt" + "<br>" +
+                    "<br>" +
+                    "CleverTapCredentials :" + "<br>" +
+                    "&lt meta-data" + "<br>" +
+                    "        \t\tandroid:name=\"CLEVERTAP_INAPP_EXCLUDE\"" + "<br>" +
+                    "        \t\tandroid:value=\" $Exclude_files\" / &gt" + "<br>" +
+                    "&lt meta-data" + "<br>" +
+                    "        \t\tandroid:name=\"CLEVERTAP_ACCOUNT_ID\"" + "<br>" +
+                    "        \t\tandroid:value=\" $Account_id\" / &gt" + "<br>" +
+                    "&lt meta-data" + "<br>" +
+                    "        \t\tandroid:name=\"CLEVERTAP_TOKEN\"" + "<br>" +
+                    "        \t\tandroid:value=\"$Account_token \" /&gt" + "<br>" +
+                    "&lt meta-data" + "<br>" +
+                    "        \t\tandroid:name=\"CLEVERTAP_USE_GOOGLE_AD_ID\"" + "<br>" +
+                    "        \t\tandroid:value=\"$use_google_ad_id \" /&gt" + "<br>" +
+                    "&lt meta-data" + "<br>" +
+                    "        \t\tandroid:name=\"CLEVERTAP_REGION\"" + "<br>" +
+                    "        \t\tandroid:value=\"$region_selected \" /&gt" + "<br>" +
+                    "<br>" +
+                    "</html>"
 
         }
-        panelForFCM.rb1.addActionListener(){
-            if (panelForFCM.rb1.isSelected()) {
+        panelForFCM.rb1.addActionListener {
+            if (panelForFCM.rb1.isSelected) {
                 panelForFCM.labelapplicationclassname.isVisible = true
                 panelForFCM.application_classname_TextField.isVisible = true
 
             }
         }
-        panelForFCM.rb2.addActionListener(){
-            if (panelForFCM.rb2.isSelected()) {
+        panelForFCM.rb2.addActionListener{
+            if (panelForFCM.rb2.isSelected) {
                 panelForFCM.labelapplicationclassname.isVisible = false
                 panelForFCM.application_classname_TextField.isVisible =false
 
@@ -216,7 +204,7 @@ class CTInputApprovalDialog(var event: AnActionEvent,Account_id:String,Account_t
         return panelForFCM1
     }
 
-    override fun close() = close(DialogWrapper.OK_EXIT_CODE)
+    override fun close() = close(OK_EXIT_CODE)
 
     override fun showPackage(packageName: String) {
         this.packageName = packageName

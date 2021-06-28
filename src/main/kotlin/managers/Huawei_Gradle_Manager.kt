@@ -106,7 +106,7 @@ class Huawei_Gradle_Manager(private val project: Project) {
             buildGradleproject!!.text.split("\n".toRegex()).dropLastWhile { it.isEmpty() }.toTypedArray()
         // val sb = StringBuilder()
         for (i in documentText.indices) {
-            var line = documentText[i]
+            val line = documentText[i]
 
             if (line.contains("implementation 'com.clevertap.android:clevertap-hms-sdk:")) {
                 hms_sdk = true
@@ -119,7 +119,7 @@ class Huawei_Gradle_Manager(private val project: Project) {
             }
         }
         for (i in documentTextnew.indices) {
-            var line = documentTextnew[i]
+            val line = documentTextnew[i]
             if (line.contains("classpath 'com.huawei.agconnect:agcp:")) {
                 classpath = true
             }
@@ -132,11 +132,11 @@ class Huawei_Gradle_Manager(private val project: Project) {
 
             if (line.contains("allprojects ")) {
                 for (j in i + 1..documentTextnew.size - 1) {
-                    var line1 = documentTextnew[j]
+                    val line1 = documentTextnew[j]
                     if (line1.contains("repositories {")) {
                         for(k in j..documentTextnew.size-1)
                         {
-                            var line2= documentTextnew[k]
+                            val line2= documentTextnew[k]
                             if (line2.contains("maven {url 'http://developer.huawei.com/repo/'}")) {
                                 allproject_repo = true
                             }
@@ -189,7 +189,7 @@ class Huawei_Gradle_Manager(private val project: Project) {
 //                    }
 //                }
 //            }
-            if (hms_sdk == false) {
+            if (!hms_sdk) {
                 if (line.contains("dependencies")) {
                     if (line.contains("{")) {
                         sb
@@ -212,7 +212,7 @@ class Huawei_Gradle_Manager(private val project: Project) {
 //                    }
 //                }
 //            }
-            if (hms_push == false) {
+            if (!hms_push) {
                 if (line.contains(Constants.DEPENDENCIES)) {
                     if (line.contains("{")) {
                         sb
@@ -223,7 +223,7 @@ class Huawei_Gradle_Manager(private val project: Project) {
                     }
                 }
             }
-            if (apply_plugin == false) {
+            if (!apply_plugin) {
                 if (i == documentText.lastIndex) {
                     sb
                         .append("apply plugin: 'com.huawei.agconnect'")
@@ -239,7 +239,7 @@ class Huawei_Gradle_Manager(private val project: Project) {
             sb2
                 .append(line)
                 .append("\n")
-            if (buildscript_repo == false) {
+            if (!buildscript_repo) {
                 if (line.contains("repositories")) {
                     if (line.contains("{")) {
                         sb2
@@ -253,7 +253,7 @@ class Huawei_Gradle_Manager(private val project: Project) {
                     }
                 }
             }
-            if (classpath == false) {
+            if (!classpath) {
                 if (line.contains(Constants.DEPENDENCIES)) {
                     if (line.contains("{")) {
                         sb2
@@ -270,12 +270,12 @@ class Huawei_Gradle_Manager(private val project: Project) {
             //break
 
 
-            if (allproject_repo == false) {
+            if (!allproject_repo) {
                 if (line.contains("allprojects ")) {
 
                     for (j in i + 1..documentTextnew.size - 1) {
 
-                        var line1 = documentTextnew[j]
+                        val line1 = documentTextnew[j]
                         sb3
                             .append(line1)
                             .append("\n")

@@ -1,9 +1,6 @@
 package ui
 
-import com.intellij.notification.NotificationDisplayType
-import com.intellij.notification.NotificationGroup
 import com.intellij.openapi.actionSystem.AnActionEvent
-import com.intellij.openapi.util.NotNullLazyValue
 import data.file.CurrentPath
 import data.file.FileCreator
 import data.file.PackageExtractor
@@ -11,7 +8,6 @@ import data.file.WriteActionDispatcher
 import data.repository.ModuleRepository
 import managers.Manager_PushAmp
 import managers.check_language
-import util.Constants
 import java.io.FileNotFoundException
 
 class PushAmpApprovalPresenter (
@@ -22,20 +18,6 @@ class PushAmpApprovalPresenter (
     private val moduleRepository: ModuleRepository,
     private val currentPathfcm: CurrentPath?
 ) {
-
-    companion object {
-        private val NOTIFICATION_GROUP = object :
-            NotNullLazyValue<NotificationGroup>() {
-            override fun compute(): NotificationGroup {
-                return NotificationGroup(
-                    Constants.DISPLAY_ID,
-                    NotificationDisplayType.BALLOON,
-                    true
-                )
-            }
-        }
-    }
-
 
     private var managerForPushAmp : Manager_PushAmp? = null
 
@@ -60,19 +42,19 @@ class PushAmpApprovalPresenter (
 
             val check= check_language(project)
             val lang= check.find_language()
-            val receiver_class=check.find_receiver_class()
+            check.find_receiver_class()
 
             managerForPushAmp = Manager_PushAmp(project)
 
 
             try {
                 managerForPushAmp?.let {
-                    if (IsRadiobuttonrb2Selected==true){
+                    if (IsRadiobuttonrb2Selected){
                         if (it.initAndroidManifest()){
                             it.addMetaDataContent(IsRadiobuttonrb2Selected)
                         }
                     }
-                    if (IsRadiobuttonrb1Selected==true){
+                    if (IsRadiobuttonrb1Selected){
                         if (it.initAppClass(appclassname) && it.initReceiverClass(receivcerClass)){
                             it.addApplicationData(IsRadiobuttonrb1Selected,appclassname,lang)
                             it.addReceiverData()

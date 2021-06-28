@@ -1,7 +1,5 @@
 package managers
 
-import com.intellij.openapi.actionSystem.PlatformDataKeys
-import com.intellij.openapi.command.WriteCommandAction
 import com.intellij.openapi.fileEditor.FileDocumentManager
 import com.intellij.openapi.project.Project
 import com.intellij.openapi.vfs.LocalFileSystem
@@ -57,17 +55,16 @@ class check_language(private val project: Project)
             {
                 for(j in i downTo 1)
                 {
-                    var line1=documentText[j]
+                    val line1=documentText[j]
                     if(line1.contains("activity")) {
 
                         for(k in j..i) {
-                            var line2 = documentText[k]
+                            val line2 = documentText[k]
                             if (line2.contains("android:name")) {
-                                var ans = line2
-                                var b = ans.split(".")
-                                var c = b[1]
-                                var d = b[1].split("\"")
-                                var e = d[0]
+                                val ans = line2
+                                val b = ans.split(".")
+                                val d = b[1].split("\"")
+                                val e = d[0]
                                 launchingactivityname = e
                                 break
                             }
@@ -143,9 +140,9 @@ class check_language(private val project: Project)
                     val line2=documentText[k]
                     if(line2.contains("android:name")) {
 
-                        var ans11=line2
-                        var ans12= ans11.split("\"")
-                        var ans13=ans12[1]
+                        val ans11=line2
+                        val ans12= ans11.split("\"")
+                        val ans13=ans12[1]
                         firebase_receiver_class_name=ans13
                         break
 //
@@ -177,11 +174,11 @@ class check_language(private val project: Project)
         val file1 = File(project.basePath + "/app/src/main/java/" + ans1 + "/" + op + ".kt")
         val java_file_exist = file.exists()
         val kotlin_file_exist = file1.exists()
-        if (java_file_exist == true) {
+        if (java_file_exist) {
              language= "java"
 
         }
-        if(kotlin_file_exist == true)
+        if(kotlin_file_exist)
         {
             language= "kotlin"
         }

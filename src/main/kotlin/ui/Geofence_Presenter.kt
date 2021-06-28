@@ -2,21 +2,15 @@ package ui
 
 import com.intellij.notification.NotificationDisplayType
 import com.intellij.notification.NotificationGroup
-import com.intellij.notification.NotificationType
-import com.intellij.notification.Notifications
 import com.intellij.openapi.actionSystem.AnActionEvent
-import com.intellij.openapi.application.ApplicationManager
-import com.intellij.openapi.application.ModalityState
 import com.intellij.openapi.util.NotNullLazyValue
-import data.file.*
+import data.file.CurrentPath
+import data.file.FileCreator
+import data.file.PackageExtractor
+import data.file.WriteActionDispatcher
 import data.repository.ModuleRepository
-import managers.GradleManager_for_fcm
-import managers.ManifestManager_forFCM
-import managers.PushNotificationManager
 import managers.check_language
 import util.Constants
-import util.Methods
-import java.io.FileNotFoundException
 
 class Geofence_Presenter(
     private val view: NewScreenView,
@@ -40,9 +34,7 @@ class Geofence_Presenter(
         }
     }
 
-    private var gradleManagerForfcm: GradleManager_for_fcm? = null
-    private var manifestManagerForFCM: ManifestManager_forFCM? = null
-    private var pushnotificationmanager: PushNotificationManager? = null
+
 
     fun onLoadView() {
         view.showPackage(packageExtractor.extractFromCurrentPath())
@@ -67,8 +59,8 @@ class Geofence_Presenter(
         //fcm1: fcm1
     ) {
         event.project?.let { project ->
-            var check= check_language(project)
-            var lang= check.find_language()
+            val check= check_language(project)
+            val lang= check.find_language()
 
             Geofence_Approval_Dialog(event,log_value,location_accuracy_value,location_fetch_mode_value,Geofence_Monitoring_count,interval,fastest_interval,displacement,geofence_notification_responsiveness,enable_bglocation_y,enable_bglocation_n,lang).show()
             // FCMApprovalDialog(event,serviceNameText,contentTitleText,fcm_sender_id,dependencyVersionText,IsRadiobuttonrb1Selected,IsRadiobuttonrb2Selected,lang).show()

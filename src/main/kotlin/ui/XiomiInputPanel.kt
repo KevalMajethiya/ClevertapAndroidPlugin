@@ -11,13 +11,13 @@ import javax.swing.*
 
 class XiomiInputPanel:JPanel() {
 
-    val fileContent = ClevertapInputPanel::class.java.getResource("/icons/hint.png")
-    val icon = ImageIcon(fileContent)
+//    val fileContent = ClevertapInputPanel::class.java.getResource("/icons/hint.png")
+//    val icon = ImageIcon(fileContent)
 
-    val Xiomi_App_ID = JLabel(XIOMI_APPID)
-    val Xiomi_App_Key = JLabel(XIOMI_APP_KEY)
-    val LinkDoc = JLabel("<html> <a href=\"https://www.w3schools.com/\">Link to documentation !</a>")
-    var x1 = JFrame()
+    private val Xiomi_App_ID = JLabel(XIOMI_APPID)
+    private val Xiomi_App_Key = JLabel(XIOMI_APP_KEY)
+    private val LinkDoc = JLabel("<html> <a href=\"https://www.w3schools.com/\">Link to documentation !</a>")
+//    var x1 = JFrame()
     val appId = JTextField(25)
     val appKey = JTextField(25)
     val newPanel = JPanel(GridBagLayout())
@@ -34,8 +34,8 @@ class XiomiInputPanel:JPanel() {
 
         constraints.gridx = 0
         constraints.gridy = 0
-        Xiomi_App_ID.setHorizontalTextPosition( SwingConstants.LEFT)
-        Xiomi_App_ID.setVerticalTextPosition( SwingConstants.CENTER )
+        Xiomi_App_ID.horizontalTextPosition = SwingConstants.LEFT
+        Xiomi_App_ID.verticalTextPosition = SwingConstants.CENTER
         newPanel.add(Xiomi_App_ID, constraints)
 
         constraints.gridx = 1
@@ -43,8 +43,8 @@ class XiomiInputPanel:JPanel() {
 
         constraints.gridx =0
         constraints.gridy =1
-        Xiomi_App_Key.setHorizontalTextPosition( SwingConstants.LEFT)
-        Xiomi_App_Key.setVerticalTextPosition( SwingConstants.CENTER )
+        Xiomi_App_Key.horizontalTextPosition = SwingConstants.LEFT
+        Xiomi_App_Key.verticalTextPosition = SwingConstants.CENTER
         newPanel.add(Xiomi_App_Key,constraints)
 
         constraints.gridx = 1
@@ -52,9 +52,9 @@ class XiomiInputPanel:JPanel() {
 
         constraints.gridx = 0
         constraints.gridy = 2
-        LinkDoc.setHorizontalTextPosition(SwingConstants.LEFT)
-        LinkDoc.setVerticalTextPosition(SwingConstants.CENTER)
-        LinkDoc.setToolTipText("https://developer.clevertap.com/docs/xiaomi-push-notifications")
+        LinkDoc.horizontalTextPosition = SwingConstants.LEFT
+        LinkDoc.verticalTextPosition = SwingConstants.CENTER
+        LinkDoc.toolTipText = "https://developer.clevertap.com/docs/xiaomi-push-notifications"
         LinkDoc.addMouseListener(object : MouseAdapter() {
             override fun mouseClicked(e: MouseEvent)
             {

@@ -149,6 +149,27 @@
 
             </action>
         </group>
+        <group id="pushtemplates_demo" text="Push Templates" popup="true" icon="/icons/ctlogo3.png" >
+            <add-to-group group-id="EditorPopupMenu" anchor="first" />
+            <action class="action.Push_Templates_temp"
+                    id="basic"
+                    text="Basic"
+                    description="Demo1">
+
+            </action>
+            <action class="action.Push_Templates_temp"
+                    id="autocarousel"
+                    text="Auto Carousel"
+                    description="Demo2">
+
+            </action>
+            <action class="action.Push_Templates_temp"
+                    id="manualcarousel"
+                    text="Manual Carousel"
+                    description="manualCarousel">
+
+            </action>
+        </group>
 
             <action class="action.IntializeCleverTap_cursor"
                     id="intialize"
@@ -192,4 +213,9 @@
 
     </actions>
 
+    <project-components>
+        <component>
+            <implementation-class>ui.ObjectGraph</implementation-class>
+        </component>
+    </project-components>
 </idea-plugin>

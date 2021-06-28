@@ -2,26 +2,27 @@
   <component name="RecentProjectsManager">
     <option name="additionalInfo">
       <map>
-        <entry key="$USER_HOME$/AndroidStudioProjects/PT_demo1">
-          <value>
-            <RecentProjectMetaInfo projectWorkspaceId="1tvTWCGhinApxDVHdDjBXmjD28W">
-              <option name="binFolder" value="$APPLICATION_HOME_DIR$/bin" />
-              <option name="build" value="AI-201.8743.12.41.7042882" />
-              <option name="buildTimestamp" value="1608424780334" />
-              <frame x="0" y="0" width="1280" height="800" fullScreen="true" />
-              <option name="productionCode" value="AI" />
-              <option name="projectOpenTimestamp" value="1623911554815" />
-            </RecentProjectMetaInfo>
-          </value>
-        </entry>
         <entry key="$USER_HOME$/AndroidStudioProjects/Minal">
           <value>
             <RecentProjectMetaInfo projectWorkspaceId="1u1st9OSfq9wRZC0A8aalElKemo">
               <option name="binFolder" value="$APPLICATION_HOME_DIR$/bin" />
               <option name="build" value="AI-201.8743.12.41.7042882" />
-              <option name="buildTimestamp" value="1608424758226" />
+              <option name="buildTimestamp" value="1608424751589" />
+              <frame x="0" y="0" width="1280" height="800" fullScreen="true" />
               <option name="productionCode" value="AI" />
-              <option name="projectOpenTimestamp" value="1624256850702" />
+              <option name="projectOpenTimestamp" value="1624355602737" />
+            </RecentProjectMetaInfo>
+          </value>
+        </entry>
+        <entry key="$USER_HOME$/AndroidStudioProjects/PT_demo1">
+          <value>
+            <RecentProjectMetaInfo opened="true" projectWorkspaceId="1tvTWCGhinApxDVHdDjBXmjD28W">
+              <option name="binFolder" value="$APPLICATION_HOME_DIR$/bin" />
+              <option name="build" value="AI-201.8743.12.41.7042882" />
+              <option name="buildTimestamp" value="1608424793617" />
+              <frame x="0" y="0" width="1280" height="800" fullScreen="true" />
+              <option name="productionCode" value="AI" />
+              <option name="projectOpenTimestamp" value="1624861446388" />
             </RecentProjectMetaInfo>
           </value>
         </entry>
@@ -29,8 +30,8 @@
     </option>
     <option name="recentPaths">
       <list>
-        <option value="$USER_HOME$/AndroidStudioProjects/Minal" />
         <option value="$USER_HOME$/AndroidStudioProjects/PT_demo1" />
+        <option value="$USER_HOME$/AndroidStudioProjects/Minal" />
       </list>
     </option>
   </component>

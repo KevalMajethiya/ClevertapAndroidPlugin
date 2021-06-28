@@ -9,6 +9,7 @@
   <idea-version since-build="182.0"/>
   <depends>com.intellij.modules.lang</depends>
   <depends>org.jetbrains.kotlin</depends>
+  <depends>org.jetbrains.android</depends>
   <version>0.3</version>
   <extensions defaultExtensionNs="com.intellij"/>
   <actions>
@@ -52,6 +53,12 @@
       <action class="action.Push_Templates" id="eventproperties1" text="Test" description="Demo2"/>
       <action class="action.Stop_service" id="stop" text="Stop Service" description="stop"/>
     </group>
+    <group id="pushtemplates_demo" text="Push Templates" popup="true" icon="/icons/ctlogo3.png">
+      <add-to-group group-id="EditorPopupMenu" anchor="first"/>
+      <action class="action.Push_Templates_temp" id="basic" text="Basic" description="Demo1"/>
+      <action class="action.Push_Templates_temp" id="autocarousel" text="Auto Carousel" description="Demo2"/>
+      <action class="action.Push_Templates_temp" id="manualcarousel" text="Manual Carousel" description="manualCarousel"/>
+    </group>
     <action class="action.IntializeCleverTap_cursor" id="intialize" text="Initialize CleverTap " description="Intialize clevertap object" icon="/icons/ctlogo3.png">
       <add-to-group group-id="EditorPopupMenu" anchor="first"/>
     </action>
@@ -65,4 +72,9 @@
       <add-to-group group-id="GenerateGroup" anchor="first"/>
     </action>
   </actions>
+  <project-components>
+    <component>
+      <implementation-class>ui.ObjectGraph</implementation-class>
+    </component>
+  </project-components>
 </idea-plugin>

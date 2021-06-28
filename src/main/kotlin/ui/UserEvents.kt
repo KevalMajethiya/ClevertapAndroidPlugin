@@ -22,11 +22,7 @@ class UserEvents(var event: AnActionEvent) {
 
             try {
 
-                UserEventsManager?.let{
-
-                    it.initapplicationclass()
-
-                }
+                UserEventsManager?.initapplicationclass()
 
 
 

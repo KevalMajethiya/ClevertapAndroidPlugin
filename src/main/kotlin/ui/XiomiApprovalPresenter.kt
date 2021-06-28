@@ -22,19 +22,6 @@ class XiomiApprovalPresenter(
     private val currentPathfcm: CurrentPath?
 ) {
 
-    companion object {
-        private val NOTIFICATION_GROUP = object :
-            NotNullLazyValue<NotificationGroup>() {
-            override fun compute(): NotificationGroup {
-                return NotificationGroup(
-                    Constants.DISPLAY_ID,
-                    NotificationDisplayType.BALLOON,
-                    true
-                )
-            }
-        }
-    }
-
     private var gradleManager: XiomiGradleManager? = null
     private var manifestManager: XiomiManifestManager? = null
     private var stringManager: XiomiStringmanager? = null

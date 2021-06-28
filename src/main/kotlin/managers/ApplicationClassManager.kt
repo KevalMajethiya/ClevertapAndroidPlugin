@@ -59,8 +59,7 @@ class ApplicationClassManager(private val project: Project)
             if (line.contains("package")) {
                 if (line.contains("=")) {
 
-                    var a = line
-                    var b = a.split("=")
+                    val b = line.split("=")
                     //var d=
                     var c = b[1]
                     var d = c.split("\"")

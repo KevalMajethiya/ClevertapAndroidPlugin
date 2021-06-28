@@ -15,7 +15,6 @@ import java.io.FileNotFoundException
 
 class ManifestManager_Geofence(private val project: Project) {
 
-    private var default_clevertap_class:Boolean=false
     private var acces_fine_location_permission:Boolean=false
     private var access_background_location_permission:Boolean=false
     private var wake_lock_permission:Boolean=false

@@ -22,20 +22,6 @@ class PushAmpPresenter(
     private val currentPathfcm: CurrentPathfcm?
 ) {
 
-    companion object {
-        private val NOTIFICATION_GROUP = object :
-            NotNullLazyValue<NotificationGroup>() {
-            override fun compute(): NotificationGroup {
-                return NotificationGroup(
-                    Constants.DISPLAY_ID,
-                    NotificationDisplayType.BALLOON,
-                    true
-                )
-            }
-        }
-    }
-
-
     fun onLoadView() {
         view.showPackage(packageExtractor.extractFromCurrentPath())
         view.showModules(moduleRepository.getAllModules())

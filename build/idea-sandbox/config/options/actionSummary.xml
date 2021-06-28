@@ -1,41 +1,134 @@
 <application>
   <component name="ActionsLocalSummary">
     <data>
+      <entry key="$Delete">
+        <ActionSummary times="1" last="1624600945439" />
+      </entry>
+      <entry key="$SelectAll">
+        <ActionSummary times="2" last="1624861578747" />
+      </entry>
+      <entry key="$Undo">
+        <ActionSummary times="26" last="1624612833113" />
+      </entry>
+      <entry key="Android.RunAndroidAvdManager">
+        <ActionSummary times="3" last="1624623448310" />
+      </entry>
+      <entry key="CleanPlugin.ID1">
+        <ActionSummary times="1" last="1624613896742" />
+      </entry>
+      <entry key="CommentByLineComment">
+        <ActionSummary times="17" last="1624612926248" />
+      </entry>
       <entry key="DeveloperServices.ConnectionAssistant">
-        <ActionSummary times="2" last="1623928282091" />
+        <ActionSummary times="9" last="1624861717991" />
+      </entry>
+      <entry key="EditorBackSpace">
+        <ActionSummary times="1332" last="1624861579026" />
+      </entry>
+      <entry key="EditorChooseLookupItem">
+        <ActionSummary times="9" last="1624626215183" />
+      </entry>
+      <entry key="EditorCopy">
+        <ActionSummary times="24" last="1624861828952" />
+      </entry>
+      <entry key="EditorCut">
+        <ActionSummary times="12" last="1624626009487" />
       </entry>
       <entry key="EditorDown">
-        <ActionSummary times="2" last="1623921065721" />
+        <ActionSummary times="70" last="1624626037171" />
+      </entry>
+      <entry key="EditorDownWithSelection">
+        <ActionSummary times="319" last="1624626008214" />
       </entry>
       <entry key="EditorEnter">
-        <ActionSummary times="1" last="1623919890698" />
+        <ActionSummary times="39" last="1624626208698" />
+      </entry>
+      <entry key="EditorLeft">
+        <ActionSummary times="29" last="1624626016734" />
+      </entry>
+      <entry key="EditorLeftWithSelection">
+        <ActionSummary times="382" last="1624626008454" />
+      </entry>
+      <entry key="EditorPaste">
+        <ActionSummary times="167" last="1624861855936" />
+      </entry>
+      <entry key="EditorRight">
+        <ActionSummary times="89" last="1624626218721" />
+      </entry>
+      <entry key="EditorRightWithSelection">
+        <ActionSummary times="609" last="1624625951120" />
+      </entry>
+      <entry key="EditorTab">
+        <ActionSummary times="4" last="1624608399512" />
       </entry>
       <entry key="EditorUp">
-        <ActionSummary times="7" last="1623921065358" />
+        <ActionSummary times="28" last="1624626011313" />
+      </entry>
+      <entry key="EditorUpWithSelection">
+        <ActionSummary times="4" last="1624610921045" />
       </entry>
       <entry key="Generate">
-        <ActionSummary times="10" last="1623928470432" />
+        <ActionSummary times="31" last="1624357658368" />
+      </entry>
+      <entry key="HideAllWindows">
+        <ActionSummary times="1" last="1624602384414" />
+      </entry>
+      <entry key="MakeGradleProject">
+        <ActionSummary times="136" last="1624861687998" />
+      </entry>
+      <entry key="NewClass">
+        <ActionSummary times="1" last="1624359150425" />
       </entry>
       <entry key="Run">
-        <ActionSummary times="6" last="1623920999495" />
+        <ActionSummary times="125" last="1624861739816" />
       </entry>
       <entry key="Stop">
-        <ActionSummary times="6" last="1623921181708" />
+        <ActionSummary times="50" last="1624624931784" />
       </entry>
       <entry key="WelcomeScreen.OpenProject">
         <ActionSummary times="2" last="1623919709759" />
       </entry>
       <entry key="action.Search1">
-        <ActionSummary times="10" last="1623928471850" />
+        <ActionSummary times="31" last="1624357659757" />
+      </entry>
+      <entry key="com.android.tools.idea.common.editor.DesignToolsSplitEditor$MyToolBarAction">
+        <ActionSummary times="2" last="1624601747224" />
       </entry>
       <entry key="com.android.tools.idea.gradle.project.sync.setup.post.MemorySettingsPostSyncChecker$2">
         <ActionSummary times="1" last="1623919814175" />
       </entry>
+      <entry key="com.android.tools.idea.run.deployment.SelectDeviceAction">
+        <ActionSummary times="1" last="1624602415294" />
+      </entry>
+      <entry key="com.intellij.codeInsight.daemon.impl.DaemonTooltipWithActionRenderer$addActionsRow$2">
+        <ActionSummary times="1" last="1624359318576" />
+      </entry>
+      <entry key="com.intellij.execution.impl.ConsoleViewImpl$BackSpaceHandler">
+        <ActionSummary times="15" last="1624278623933" />
+      </entry>
+      <entry key="com.intellij.execution.impl.ConsoleViewImpl$ClearThisConsoleAction">
+        <ActionSummary times="6" last="1624602441005" />
+      </entry>
+      <entry key="com.intellij.execution.impl.ConsoleViewImpl$EnterHandler">
+        <ActionSummary times="1" last="1624278576728" />
+      </entry>
+      <entry key="com.intellij.execution.impl.ConsoleViewImpl$PasteHandler">
+        <ActionSummary times="1" last="1624278575593" />
+      </entry>
       <entry key="com.intellij.ide.ReopenProjectAction">
-        <ActionSummary times="4" last="1623928248931" />
+        <ActionSummary times="26" last="1624861443617" />
       </entry>
       <entry key="com.intellij.openapi.wm.impl.ToolWindowHeader$HideAction">
-        <ActionSummary times="2" last="1623911577281" />
+        <ActionSummary times="36" last="1624861686461" />
+      </entry>
+      <entry key="event1">
+        <ActionSummary times="1" last="1624355186774" />
+      </entry>
+      <entry key="eventproperties1">
+        <ActionSummary times="61" last="1624861787139" />
+      </entry>
+      <entry key="template.create.XMLValues XML File">
+        <ActionSummary times="2" last="1624600955919" />
       </entry>
     </data>
   </component>

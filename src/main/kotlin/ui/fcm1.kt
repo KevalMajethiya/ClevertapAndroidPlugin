@@ -337,12 +337,7 @@ class fcm1(var event: AnActionEvent,private val project: Project) : DialogWrappe
 
         return true
     }
-    fun display()
-    {
-       // if(language==java)
 
-
-    }
 
 
 

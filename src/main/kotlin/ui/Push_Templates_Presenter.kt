@@ -48,6 +48,7 @@ class Push_Templates_Presenter(
 
     fun onOkClick(
         event: AnActionEvent,
+        template_type:String,
         title: String,
         message: String,
         msg_summary:String,
@@ -59,9 +60,17 @@ class Push_Templates_Presenter(
         titlte_clr:String,
         msg_clr:String,
         small_icon_clr:String,
-        template_type:String
+        dl2:String,
+        dln:String,
+        img1:String,
+        img2:String,
+        img3:String,
+        imgn:String
+
+
         //fcm1: fcm1
     ) {
+
         event.project?.let { project ->
 
 //            Huawei_Push = Huawei_Push(project)
@@ -72,6 +81,9 @@ class Push_Templates_Presenter(
 //
             try {
 
+                AdbFacade.startDefaultActivity(project,template_type,title,message,msg_summary,subtitle,bg,
+                    big_img,ico,dl1,titlte_clr,msg_clr,small_icon_clr,dl2,dln,img1,img2,img3,imgn)
+
                 Push_Templates_Test_Manager?.let{
                     //it.AndroidManifest()
                     // if(it.initapplicationclass()){
@@ -81,14 +93,14 @@ class Push_Templates_Presenter(
                         it.start_service()
                     }
                 }
-                Rewritng_PT_service_file?.let{
-                    //it.initapplicationclass(basic_temp_title,basic_temp_message,basic_temp_msg_summary,ico,)
-                    if(it.initapplicationclass())
-                    {
-                        it.rewriting_servicefile(title,message,msg_summary,subtitle,bg,big_img,ico,dl1,
-                            titlte_clr,msg_clr,small_icon_clr,template_type)
-                    }
-                }
+//                Rewritng_PT_service_file?.let{
+//                    //it.initapplicationclass(basic_temp_title,basic_temp_message,basic_temp_msg_summary,ico,)
+//                    if(it.initapplicationclass())
+//                    {
+//                        it.rewriting_servicefile(title,message,msg_summary,subtitle,bg,big_img,ico,dl1,
+//                            titlte_clr,msg_clr,small_icon_clr,template_type)
+//                    }
+//                }
 //                Huawei_Gradle_Manager?.let{
 //                    if(it.initBuildGradle())
 //                    {

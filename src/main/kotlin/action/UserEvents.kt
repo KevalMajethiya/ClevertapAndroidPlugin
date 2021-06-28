@@ -8,7 +8,6 @@ import ui.UserEvents
 
 class UserEvents : AnAction() {
     override fun actionPerformed(event: AnActionEvent) {
-        // auditreportfile1(event).show()
 
         UserEvents(event)
 

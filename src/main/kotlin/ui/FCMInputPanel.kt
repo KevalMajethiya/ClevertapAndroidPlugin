@@ -78,7 +78,6 @@ class FCMInputPanel :JPanel() {
 //        f1.setLayout(null);
 //        f1.setVisible(false);
 
-        val newPanel1 = JPanel(GridBagLayout())
 
 
         val inset = 6

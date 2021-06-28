@@ -9,7 +9,6 @@ import ui.UserEvents
 
 class Stop_service : AnAction() {
     override fun actionPerformed(event: AnActionEvent) {
-        // auditreportfile1(event).show()
 
         Stop_service(event)
 

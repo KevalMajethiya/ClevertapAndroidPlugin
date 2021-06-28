@@ -25080,3 +25080,1046 @@ java.util.concurrent.TimeoutException: Waited 1 seconds (plus 491903 nanoseconds
 2021-06-28 12:13:58,920 [1205126]   INFO - stubs.SerializationManagerImpl - END StubSerializationManager SHUTDOWN 
 2021-06-28 12:13:58,920 [1205126]   INFO -        #com.intellij.idea.Main - ------------------------------------------------------ IDE SHUTDOWN ------------------------------------------------------ 
 2021-06-28 12:13:58,930 [1205136]   INFO - org.jetbrains.io.BuiltInServer - web server stopped 
+2021-06-28 12:41:16,559 [      0]   INFO -        #com.intellij.idea.Main - ------------------------------------------------------ IDE STARTED ------------------------------------------------------ 
+2021-06-28 12:41:16,730 [    171]   INFO - .intellij.util.EnvironmentUtil - loading shell env: /bin/bash -l -i -c '/Applications/Android Studio.app/Contents/bin/printenv.py' '/private/var/folders/z3/7t9zr1r5559f2_dzk1v1j7c80000gn/T/intellij-shell-env.tmp' 
+2021-06-28 12:41:16,800 [    241]   INFO - ntellij.idea.ApplicationLoader - CPU cores: 4; ForkJoinPool.commonPool: java.util.concurrent.ForkJoinPool@5e7987b0[Running, parallelism = 4, size = 0, active = 0, running = 0, steals = 0, tasks = 0, submissions = 0]; factory: com.intellij.concurrency.IdeaForkJoinWorkerThreadFactory@7c0ad805 
+2021-06-28 12:41:16,839 [    280]  ERROR - llij.ide.plugins.PluginManager - null 
+java.lang.ExceptionInInitializerError
+	at com.intellij.ide.IdeEventQueue.<clinit>(IdeEventQueue.java:78)
+	at com.intellij.idea.StartupUtil.replaceSystemEventQueue(StartupUtil.java:723)
+	at com.intellij.idea.StartupUtil.patchSystem(StartupUtil.java:707)
+	at com.intellij.idea.ApplicationLoader.executeInitAppInEdt(ApplicationLoader.kt:59)
+	at com.intellij.idea.ApplicationLoader.access$executeInitAppInEdt(ApplicationLoader.kt:1)
+	at com.intellij.idea.ApplicationLoader$initApplication$1$1.run(ApplicationLoader.kt:355)
+	at java.desktop/java.awt.event.InvocationEvent.dispatch(InvocationEvent.java:316)
+	at java.desktop/java.awt.EventQueue.dispatchEventImpl(EventQueue.java:770)
+	at java.desktop/java.awt.EventQueue$4.run(EventQueue.java:721)
+	at java.desktop/java.awt.EventQueue$4.run(EventQueue.java:715)
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:391)
+	at java.base/java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:85)
+	at java.desktop/java.awt.EventQueue.dispatchEvent(EventQueue.java:740)
+	at java.desktop/java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.java:203)
+	at java.desktop/java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:124)
+	at java.desktop/java.awt.EventDispatchThread.pumpEventsForHierarchy(EventDispatchThread.java:113)
+	at java.desktop/java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:109)
+	at java.desktop/java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:101)
+	at java.desktop/java.awt.EventDispatchThread.run(EventDispatchThread.java:90)
+Caused by: java.lang.reflect.InaccessibleObjectException: Unable to make field protected java.lang.Runnable java.awt.event.InvocationEvent.runnable accessible: module java.desktop does not "opens java.awt.event" to unnamed module @6eb31482
+	at java.base/java.lang.reflect.AccessibleObject.checkCanSetAccessible(AccessibleObject.java:357)
+	at java.base/java.lang.reflect.AccessibleObject.checkCanSetAccessible(AccessibleObject.java:297)
+	at java.base/java.lang.reflect.Field.checkCanSetAccessible(Field.java:177)
+	at java.base/java.lang.reflect.Field.setAccessible(Field.java:171)
+	at com.intellij.util.ReflectionUtil.findFieldInHierarchy(ReflectionUtil.java:153)
+	at com.intellij.util.ReflectionUtil.findAssignableField(ReflectionUtil.java:141)
+	at com.intellij.openapi.application.impl.InvocationUtil.findRunnableField(InvocationUtil.java:53)
+	at com.intellij.openapi.application.impl.InvocationUtil.<clinit>(InvocationUtil.java:25)
+	... 19 more
+2021-06-28 12:41:16,851 [    292]  ERROR - llij.ide.plugins.PluginManager - Android Studio 4.1.2  Build #AI-201.8743.12.41.7042882 
+2021-06-28 12:41:16,851 [    292]  ERROR - llij.ide.plugins.PluginManager - JDK: 16.0.1; VM: OpenJDK 64-Bit Server VM; Vendor: Oracle Corporation 
+2021-06-28 12:41:16,859 [    300]  ERROR - llij.ide.plugins.PluginManager - OS: Mac OS X 
+2021-06-28 12:41:16,861 [    302]   INFO -                         STDERR -  
+2021-06-28 12:41:16,861 [    302]   INFO -                         STDERR - Start Failed: Internal error. Please refer to https://code.google.com/p/android/issues 
+2021-06-28 12:41:16,861 [    302]   INFO -                         STDERR -  
+2021-06-28 12:41:16,871 [    312]   INFO -                         STDERR - java.lang.ExceptionInInitializerError 
+2021-06-28 12:41:16,871 [    312]   INFO -                         STDERR - 	at com.intellij.ide.IdeEventQueue.<clinit>(IdeEventQueue.java:78) 
+2021-06-28 12:41:16,871 [    312]   INFO -                         STDERR - 	at com.intellij.idea.StartupUtil.replaceSystemEventQueue(StartupUtil.java:723) 
+2021-06-28 12:41:16,871 [    312]   INFO -                         STDERR - 	at com.intellij.idea.StartupUtil.patchSystem(StartupUtil.java:707) 
+2021-06-28 12:41:16,871 [    312]   INFO -                         STDERR - 	at com.intellij.idea.ApplicationLoader.executeInitAppInEdt(ApplicationLoader.kt:59) 
+2021-06-28 12:41:16,873 [    314]   INFO -                         STDERR - 	at com.intellij.idea.ApplicationLoader.access$executeInitAppInEdt(ApplicationLoader.kt:1) 
+2021-06-28 12:41:16,873 [    314]   INFO -                         STDERR - 	at com.intellij.idea.ApplicationLoader$initApplication$1$1.run(ApplicationLoader.kt:355) 
+2021-06-28 12:41:16,873 [    314]   INFO -                         STDERR - 	at java.desktop/java.awt.event.InvocationEvent.dispatch(InvocationEvent.java:316) 
+2021-06-28 12:41:16,873 [    314]   INFO -                         STDERR - 	at java.desktop/java.awt.EventQueue.dispatchEventImpl(EventQueue.java:770) 
+2021-06-28 12:41:16,873 [    314]   INFO -                         STDERR - 	at java.desktop/java.awt.EventQueue$4.run(EventQueue.java:721) 
+2021-06-28 12:41:16,873 [    314]   INFO -                         STDERR - 	at java.desktop/java.awt.EventQueue$4.run(EventQueue.java:715) 
+2021-06-28 12:41:16,874 [    315]   INFO -                         STDERR - 	at java.base/java.security.AccessController.doPrivileged(AccessController.java:391) 
+2021-06-28 12:41:16,874 [    315]   INFO -                         STDERR - 	at java.base/java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:85) 
+2021-06-28 12:41:16,874 [    315]   INFO -                         STDERR - 	at java.desktop/java.awt.EventQueue.dispatchEvent(EventQueue.java:740) 
+2021-06-28 12:41:16,874 [    315]   INFO -                         STDERR - 	at java.desktop/java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.java:203) 
+2021-06-28 12:41:16,874 [    315]   INFO -                         STDERR - 	at java.desktop/java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:124) 
+2021-06-28 12:41:16,874 [    315]   INFO -                         STDERR - 	at java.desktop/java.awt.EventDispatchThread.pumpEventsForHierarchy(EventDispatchThread.java:113) 
+2021-06-28 12:41:16,874 [    315]   INFO -                         STDERR - 	at java.desktop/java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:109) 
+2021-06-28 12:41:16,874 [    315]   INFO -                         STDERR - 	at java.desktop/java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:101) 
+2021-06-28 12:41:16,875 [    316]   INFO -                         STDERR - 	at java.desktop/java.awt.EventDispatchThread.run(EventDispatchThread.java:90) 
+2021-06-28 12:41:16,875 [    316]   INFO -                         STDERR - Caused by: java.lang.reflect.InaccessibleObjectException: Unable to make field protected java.lang.Runnable java.awt.event.InvocationEvent.runnable accessible: module java.desktop does not "opens java.awt.event" to unnamed module @6eb31482 
+2021-06-28 12:41:16,875 [    316]   INFO -                         STDERR - 	at java.base/java.lang.reflect.AccessibleObject.checkCanSetAccessible(AccessibleObject.java:357) 
+2021-06-28 12:41:16,876 [    317]   INFO -                         STDERR - 	at java.base/java.lang.reflect.AccessibleObject.checkCanSetAccessible(AccessibleObject.java:297) 
+2021-06-28 12:41:16,876 [    317]   INFO -                         STDERR - 	at java.base/java.lang.reflect.Field.checkCanSetAccessible(Field.java:177) 
+2021-06-28 12:41:16,876 [    317]   INFO -                         STDERR - 	at java.base/java.lang.reflect.Field.setAccessible(Field.java:171) 
+2021-06-28 12:41:16,876 [    317]   INFO -                         STDERR - 	at com.intellij.util.ReflectionUtil.findFieldInHierarchy(ReflectionUtil.java:153) 
+2021-06-28 12:41:16,876 [    317]   INFO -                         STDERR - 	at com.intellij.util.ReflectionUtil.findAssignableField(ReflectionUtil.java:141) 
+2021-06-28 12:41:16,877 [    318]   INFO -                         STDERR - 	at com.intellij.openapi.application.impl.InvocationUtil.findRunnableField(InvocationUtil.java:53) 
+2021-06-28 12:41:16,878 [    319]   INFO -                         STDERR - 	at com.intellij.openapi.application.impl.InvocationUtil.<clinit>(InvocationUtil.java:25) 
+2021-06-28 12:41:16,878 [    319]   INFO -                         STDERR - 	... 19 more 
+2021-06-28 12:41:16,878 [    319]   INFO -                         STDERR -  
+2021-06-28 12:41:16,878 [    319]   INFO -                         STDERR - ----- 
+2021-06-28 12:41:16,878 [    319]   INFO -                         STDERR - JRE 16.0.1+9-24 x86_64 by Oracle Corporation 
+2021-06-28 12:41:16,879 [    320]   INFO -                         STDERR - /Users/kevalmajethiya/Library/Java/JavaVirtualMachines/openjdk-16.0.1/Contents/Home 
+2021-06-28 12:41:16,880 [    321]   INFO -        #com.intellij.idea.Main - ------------------------------------------------------ IDE SHUTDOWN ------------------------------------------------------ 
+2021-06-28 12:41:16,885 [    326]   INFO -        #com.intellij.idea.Main - IDE: Android Studio (build #AI-201.8743.12.41.7042882, 20 Dec 2020 06:09) 
+2021-06-28 12:41:16,885 [    326]   INFO -        #com.intellij.idea.Main - OS: Mac OS X (10.15.6, x86_64) 
+2021-06-28 12:41:16,885 [    326]   INFO -        #com.intellij.idea.Main - JRE: 16.0.1+9-24 (Oracle Corporation) 
+2021-06-28 12:41:16,885 [    326]   INFO -        #com.intellij.idea.Main - JVM: 16.0.1+9-24 (OpenJDK 64-Bit Server VM) 
+2021-06-28 12:41:16,886 [    327]   INFO -        #com.intellij.idea.Main - JVM Args: -Dapple.awt.fileDialogForDirectories=true -Dapple.laf.useScreenMenuBar=true -Didea.classpath.index.enabled=false -Didea.config.path=/Users/kevalmajethiya/Desktop/ClevrtapPluginWithFCM-master/build/idea-sandbox/config -Didea.is.internal=true -Didea.platform.prefix=AndroidStudio -Didea.plugins.path=/Users/kevalmajethiya/Desktop/ClevrtapPluginWithFCM-master/build/idea-sandbox/plugins -Didea.required.plugins.id=CleverTap.CleverTap -Didea.smooth.progress=false -Didea.system.path=/Users/kevalmajethiya/Desktop/ClevrtapPluginWithFCM-master/build/idea-sandbox/system -Xms256m -Xmx512m -Dfile.encoding=UTF-8 -Duser.country=GB -Duser.language=en -Duser.variant -ea 
+2021-06-28 12:41:16,886 [    327]   INFO -        #com.intellij.idea.Main - library path: /Users/kevalmajethiya/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:. 
+2021-06-28 12:41:16,887 [    328]   INFO -        #com.intellij.idea.Main - boot library path: /Users/kevalmajethiya/Library/Java/JavaVirtualMachines/openjdk-16.0.1/Contents/Home/lib 
+2021-06-28 12:41:16,892 [    333]   INFO -        #com.intellij.idea.Main - Locale=en_GB JNU=UTF-8 file.encoding=UTF-8 
+2021-06-28 12:41:17,091 [    532]   INFO - .intellij.util.EnvironmentUtil - shell environment loaded (23 vars) 
+2021-06-28 12:41:17,341 [    782]   INFO - org.jetbrains.io.BuiltInServer - web server stopped 
+2021-06-28 13:52:32,014 [      1]   INFO -        #com.intellij.idea.Main - ------------------------------------------------------ IDE STARTED ------------------------------------------------------ 
+2021-06-28 13:52:32,082 [     69]   INFO - .intellij.util.EnvironmentUtil - loading shell env: /bin/bash -l -i -c '/Applications/Android Studio.app/Contents/bin/printenv.py' '/private/var/folders/z3/7t9zr1r5559f2_dzk1v1j7c80000gn/T/intellij-shell-env.tmp' 
+2021-06-28 13:52:32,357 [    344]   INFO -        #com.intellij.idea.Main - IDE: Android Studio (build #AI-201.8743.12.41.7042882, 20 Dec 2020 06:09) 
+2021-06-28 13:52:32,357 [    344]   INFO -        #com.intellij.idea.Main - OS: Mac OS X (10.15.6, x86_64) 
+2021-06-28 13:52:32,357 [    344]   INFO -        #com.intellij.idea.Main - JRE: 1.8.0_292-b10 (AdoptOpenJDK) 
+2021-06-28 13:52:32,358 [    345]   INFO -        #com.intellij.idea.Main - JVM: openj9-0.26.0 (Eclipse OpenJ9 VM) 
+2021-06-28 13:52:32,358 [    345]   INFO -        #com.intellij.idea.Main - JVM Args: -Xoptionsfile=/Users/kevalmajethiya/Library/Java/JavaVirtualMachines/adopt-openj9-1.8.0_292/Contents/Home/jre/lib/default/options.default -Xlockword:mode=default,noLockword=java/lang/String,noLockword=java/util/MapEntry,noLockword=java/util/HashMap$Entry,noLockword=org/apache/harmony/luni/util/ModifiedMap$Entry,noLockword=java/util/Hashtable$Entry,noLockword=java/lang/invoke/MethodType,noLockword=java/lang/invoke/MethodHandle,noLockword=java/lang/invoke/CollectHandle,noLockword=java/lang/invoke/ConstructorHandle,noLockword=java/lang/invoke/ConvertHandle,noLockword=java/lang/invoke/ArgumentConversionHandle,noLockword=java/lang/invoke/AsTypeHandle,noLockword=java/lang/invoke/ExplicitCastHandle,noLockword=java/lang/invoke/FilterReturnHandle,noLockword=java/lang/invoke/DirectHandle,noLockword=java/lang/invoke/ReceiverBoundHandle,noLockword=java/lang/invoke/DynamicInvokerHandle,noLockword=java/lang/invoke/FieldHandle,noLockword=java/lang/invoke/FieldGetterHandle,noLockword=java/lang/invoke/FieldSetterHandle,noLockword=java/lang/invoke/StaticFieldGetterHandle,noLockword=java/lang/invoke/StaticFieldSetterHandle,noLockword=java/lang/invoke/IndirectHandle,noLockword=java/lang/invoke/InterfaceHandle,noLockword=java/lang/invoke/VirtualHandle,noLockword=java/lang/invoke/PrimitiveHandle,noLockword=java/lang/invoke/InvokeExactHandle,noLockword=java/lang/invoke/InvokeGenericHandle,noLockword=java/lang/invoke/VarargsCollectorHandle,noLockword=java/lang/invoke/ThunkTuple -Xjcl:jclse29 -Dcom.ibm.oti.vm.bootstrap.library.path=/Users/kevalmajethiya/Library/Java/JavaVirtualMachines/adopt-openj9-1.8.0_292/Contents/Home/jre/lib/default:/Users/kevalmajethiya/Library/Java/JavaVirtualMachines/adopt-openj9-1.8.0_292/Contents/Home/jre/lib -Dsun.boot.library.path=/Users/kevalmajethiya/Library/Java/JavaVirtualMachines/adopt-openj9-1.8.0_292/Contents/Home/jre/lib/default:/Users/kevalmajethiya/Library/Java/JavaVirtualMachines/adopt-openj9-1.8.0_292/Contents/Home/jre/lib -Djava.library.path=/Users/kevalmajethiya/Library/Java/JavaVirtualMachines/adopt-openj9-1.8.0_292/Contents/Home/jre/lib/default:/Users/kevalmajethiya/Library/Java/JavaVirtualMachines/adopt-openj9-1.8.0_292/Contents/Home/jre/lib:/usr/lib -Djava.home=/Users/kevalmajethiya/Library/Java/JavaVirtualMachines/adopt-openj9-1.8.0_292/Contents/Home/jre -Djava.ext.dirs=/Users/kevalmajethiya/Library/Java/JavaVirtualMachines/adopt-openj9-1.8.0_292/Contents/Home/jre/lib/ext -Duser.dir=/Applications/Android Studio.app/Contents/bin -Djava.class.path=. -Dapple.awt.fileDialogForDirectories=true -Dapple.laf.useScreenMenuBar=true -Didea.classpath.index.enabled=false -Didea.config.path=/Users/kevalmajethiya/Desktop/ClevrtapPluginWithFCM-master/build/idea-sandbox/config -Didea.is.internal=true -Didea.platform.prefix=AndroidStudio -Didea.plugins.path=/Users/kevalmajethiya/Desktop/ClevrtapPluginWithFCM-master/build/idea-sandbox/plugins -Didea.required.plugins.id=CleverTap.CleverTap -Didea.smooth.progress=false -Didea.system.path=/Users/kevalmajethiya/Desktop/ClevrtapPluginWithFCM-master/build/idea-sandbox/system -Xms256m -Xmx512m -Dfile.encoding=UTF-8 -Duser.country=GB -Duser.language=en -Duser.variant -ea -Djava.class.path=/Users/kevalmajethiya/Library/Java/JavaVirtualMachines/adopt-openj9-1.8.0_292/Contents/Home/lib/tools.jar:/Applications/Android Studio.app/Contents/lib/idea_rt.jar:/Applications/Android Studio.app/Contents/lib/idea.jar:/Applications/Android Studio.app/Contents/lib/bootstrap.jar:/Applications/Android Studio.app/Contents/lib/extensions.jar:/Applications/Android Studio.app/Contents/lib/util.jar:/Applications/Android Studio.app/Contents/lib/openapi.jar:/Applications/Android Studio.app/Contents/lib/trove4j.jar:/Applications/Android Studio.app/Contents/lib/jdom.jar:/Applications/Android Studio.app/Contents/lib/log4j.jar -Dsun.java.command=com.intellij.idea.Main -Dsun.java.launcher=SUN_STANDARD 
+2021-06-28 13:52:32,359 [    346]   INFO -        #com.intellij.idea.Main - ext: /Users/kevalmajethiya/Library/Java/JavaVirtualMachines/adopt-openj9-1.8.0_292/Contents/Home/jre/lib/ext: [traceformat.jar, sunec.jar, nashorn.jar, cldrdata.jar, dtfjview.jar, dnsns.jar, localedata.jar, sunjce_provider.jar, meta-index, dtfj.jar, sunpkcs11.jar, jaccess.jar, zipfs.jar] 
+2021-06-28 13:52:32,359 [    346]   INFO -        #com.intellij.idea.Main - library path: /Users/kevalmajethiya/Library/Java/JavaVirtualMachines/adopt-openj9-1.8.0_292/Contents/Home/jre/lib/default:/Users/kevalmajethiya/Library/Java/JavaVirtualMachines/adopt-openj9-1.8.0_292/Contents/Home/jre/lib:/usr/lib 
+2021-06-28 13:52:32,359 [    346]   INFO -        #com.intellij.idea.Main - boot library path: /Users/kevalmajethiya/Library/Java/JavaVirtualMachines/adopt-openj9-1.8.0_292/Contents/Home/jre/lib/default:/Users/kevalmajethiya/Library/Java/JavaVirtualMachines/adopt-openj9-1.8.0_292/Contents/Home/jre/lib 
+2021-06-28 13:52:32,359 [    346]   INFO -        #com.intellij.idea.Main - Locale=en_GB JNU=UTF-8 file.encoding=UTF-8 
+2021-06-28 13:52:32,455 [    442]   INFO - .intellij.util.EnvironmentUtil - shell environment loaded (13 vars) 
+2021-06-28 13:52:32,748 [    735]   INFO - ntellij.idea.ApplicationLoader - CPU cores: 4; ForkJoinPool.commonPool: java.util.concurrent.ForkJoinPool@a08dddce[Running, parallelism = 3, size = 0, active = 0, running = 0, steals = 0, tasks = 0, submissions = 0]; factory: com.intellij.concurrency.IdeaForkJoinWorkerThreadFactory@c86a6ab8 
+2021-06-28 13:52:33,910 [   1897]   INFO -        #com.intellij.idea.Main - JNA library (64-bit) loaded in 1840 ms 
+2021-06-28 13:52:33,974 [   1961]   WARN - i.mac.MacOSApplicationProvider - No URL bundle (CFBundleURLTypes) is defined in the main bundle.
+To be able to open external links, specify protocols in the app layout section of the build file.
+Example: args.urlSchemes = ["your-protocol"] will handle following links: your-protocol://open?file=file&line=line 
+2021-06-28 13:52:34,421 [   2408]   INFO - llij.ide.plugins.PluginManager - Plugin com.intellij.java misses optional descriptor profiler-java.xml 
+2021-06-28 13:52:34,431 [   2418]   INFO - llij.ide.plugins.PluginManager - Plugin org.intellij.groovy misses optional descriptor duplicates-groovy.xml 
+2021-06-28 13:52:34,432 [   2419]   INFO - llij.ide.plugins.PluginManager - Plugin org.intellij.groovy misses optional descriptor duplicates-detection-groovy.xml 
+2021-06-28 13:52:34,700 [   2687]   INFO - llij.ide.plugins.PluginManager - Loaded bundled plugins: IDEA CORE (201.8743.12), com.intellij.platform.images (201.8743.12.41.7042882), JetBrains Repository Search (201.8743.12.41.7042882), Subversion (201.8743.12.41.7042882), Smali Support (201.8743.12.41.7042882), Configuration Script (201.8743.12.41.7042882), Copyright (201.8743.12.41.7042882), Java (201.8743.12.41.7042882), Git (201.8743.12.41.7042882), ChangeReminder (201.8743.12.41.7042882), Next File Prediction (201.8743.12.41.7042882), JUnit (201.8743.12.41.7042882), Layoutlib Native (201.8743.12.41.7042882), Layoutlib Standard (201.8743.12.41.7042882), Google Login (201.8743.12.41.7042882), Java IDE Customization (201.8743.12.41.7042882), Task Management (201.8743.12.41.7042882), GitHub (201.8743.12.41.7042882), IntelliLang (201.8743.12.41.7042882), TestNG (201.8743.12.41.7042882), Code Coverage for Java (201.8743.12.41.7042882), Java Stream Debugger (201.8743.12.41.7042882), Java Bytecode Decompiler (201.8743.12.41.7042882), Gradle (201.8743.12.41.7042882), Properties (201.8743.12.41.7042882), Java Internationalization (201.8743.12.41.7042882), Groovy (201.8743.12.41.7042882), Gradle-Java (201.8743.12.41.7042882), Kotlin (1.3.72-release-Studio4.1-5), Compose (201.8743.12.41.7042882), Google Cloud Tools Core (201.8743.12.41.7042882), Resource Bundle Editor (201.8743.12.41.7042882), Mercurial (201.8743.12.41.7042882), EditorConfig (201.8743.12.41.7042882), Terminal (201.8743.12.41.7042882), Android (10.4.1.2.201.8743.12.41.7042882), Android NDK Support (201.8743.12.41.7042882), Android APK Support (201.8743.12.41.7042882), Google Developers Samples (201.8743.12.41.7042882), Google Cloud Tools For Android Studio (201.8743.12.41.7042882), Test Recorder (201.8743.12.41.7042882), Firebase Services (201.8743.12.41.7042882), Firebase Testing (201.8743.12.41.7042882), App Links Assistant (201.8743.12.41.7042882), Firebase App Indexing (201.8743.12.41.7042882), Shell Script (201.8743.12.41.7042882), TextMate bundles (201.8743.12.41.7042882), YAML (201.8743.12.41.7042882), Settings Repository (201.8743.12.41.7042882) 
+2021-06-28 13:52:34,700 [   2687]   INFO - llij.ide.plugins.PluginManager - Loaded custom plugins: CleverTap Assistant (Beta) (0.3) 
+2021-06-28 13:52:36,018 [   4005]   INFO - ellij.util.io.PagedFileStorage - lower=100; upper=428; buffer=10; max=428 
+2021-06-28 13:52:36,043 [   4030]   INFO - tellij.util.io.FileChannelUtil - interruptible FileChannel-s will be used for indexes 
+2021-06-28 13:52:36,043 [   4030]   INFO - tellij.util.io.FileChannelUtil - interruptible FileChannel-s will be used for indexes 
+2021-06-28 13:52:36,089 [   4076]   INFO - m.intellij.ui.mac.touchbar.NST - touchbar-server isn't running, skip nst loading 
+2021-06-28 13:52:36,190 [   4177]   INFO - cation.options.RegistryManager - Registry values changed by user: external.system.auto.import.disabled = true 
+2021-06-28 13:52:36,541 [   4528]   INFO - til.net.ssl.CertificateManager - Default SSL context initialized 
+2021-06-28 13:52:36,589 [   4576]   WARN - Container.ComponentManagerImpl - Do not use constructor injection (requestorClass=com.android.tools.idea.AndroidInitialConfigurator) 
+2021-06-28 13:52:36,750 [   4737]   INFO - rains.ide.BuiltInServerManager - built-in server started, port 63344 
+2021-06-28 13:52:36,797 [   4784]   INFO - com.intellij.ide.ui.UISettings - Loaded: fontSize=12, fontScale=1.0; restored: fontSize=12, fontScale=1.0 
+2021-06-28 13:52:37,122 [   5109]   INFO - pi.util.registry.RegistryValue - Registry value 'external.system.auto.import.disabled' has changed to 'true' 
+2021-06-28 13:52:37,276 [   5263]   INFO - pl.local.NativeFileWatcherImpl - Starting file watcher: /Applications/Android Studio.app/Contents/bin/fsnotifier 
+2021-06-28 13:52:37,282 [   5269]   INFO - pl.local.NativeFileWatcherImpl - Native file watcher is operational. 
+2021-06-28 13:52:38,613 [   6600]   INFO - leBasedIndexDataInitialization - Initialization done: 1804 
+2021-06-28 13:52:38,927 [   6914]   INFO - exImpl$StubIndexInitialization - Initialization done: 314 
+2021-06-28 13:52:38,951 [   6938]   INFO - gs.impl.UpdateCheckerComponent - channel: beta 
+2021-06-28 13:52:39,145 [   7132]   INFO - penapi.application.Experiments - Experimental features enabled for user: wsl.p9.support, wsl.p9.show.roots.in.file.chooser, inline.browse.button, linux.native.menu, recent.and.edited.files.together, show.create.new.element.in.popup, copy.reference.popup, new.large.text.file.viewer, property.value.inplace.editing, terminal.shell.command.handling 
+2021-06-28 13:52:39,183 [   7170]   INFO - lij.impl.ConversionServiceImpl - conversion will be performed because at least /Users/kevalmajethiya/AndroidStudioProjects/PT_demo1/.idea/workspace.xml is changed (oldLastModified=1624860576000, newLastModified=1624868499000 
+2021-06-28 13:52:39,580 [   7567]   WARN - nSystem.impl.ActionManagerImpl - keymap "Xcode" not found [Plugin: com.intellij] 
+2021-06-28 13:52:39,858 [   7845]   WARN - nSystem.impl.ActionManagerImpl - keymap "ReSharper" not found [Plugin: com.android.tools.ndk] 
+2021-06-28 13:52:40,026 [   8013]   INFO - BridgeProjectLifecycleListener - Using legacy project model to open project 
+2021-06-28 13:52:40,203 [   8190]   WARN - nsions.impl.ExtensionPointImpl - Extension to be removed not found: class org.jetbrains.plugins.gradle.execution.test.runner.TestClassGradleConfigurationProducer 
+2021-06-28 13:52:41,992 [   9979]   INFO - rojectCodeStyleSettingsManager - Initialized from default code style settings. 
+2021-06-28 13:52:42,106 [  10093]   INFO - CompilerWorkspaceConfiguration - Available processors: 4 
+2021-06-28 13:52:42,895 [  10882]   WARN - Container.ComponentManagerImpl - Do not use constructor injection (requestorClass=org.jetbrains.android.compose.AndroidComposeAutoDocumentation) 
+2021-06-28 13:52:43,249 [  11236]   WARN - Container.ComponentManagerImpl - Do not use constructor injection (requestorClass=com.android.tools.idea.apk.ApkProjectComponent) 
+2021-06-28 13:52:43,251 [  11238]   WARN - Container.ComponentManagerImpl - Do not use constructor injection (requestorClass=com.android.tools.idea.apk.issues.SetupIssueReporter) 
+2021-06-28 13:52:44,962 [  12949]   INFO - j.ide.script.IdeStartupScripts - 0 startup script(s) found 
+2021-06-28 13:52:45,141 [  13128]   INFO - artup.AndroidStudioInitializer - Failed to disable 'org.intellij.plugins.intelliLang.inject.groovy.GrConcatenationInjector' 
+2021-06-28 13:52:46,750 [  14737]   INFO - .deployment.AsyncDevicesGetter - adb not found 
+2021-06-28 13:52:48,153 [  16140]   INFO - penapi.project.DumbServiceImpl - Running dumb mode task: com.intellij.util.indexing.UnindexedFilesUpdater@59988e9f 
+2021-06-28 13:52:48,279 [  16266]   WARN - ugins.textmate.TextMateService - Missing builtin bundles, checked: 
+/Users/kevalmajethiya/Desktop/ClevrtapPluginWithFCM-master/build/idea-sandbox/plugins/textmate/lib/bundles
+/Applications/Android Studio.app/Contents/plugins/textmate/lib/bundles 
+2021-06-28 13:52:48,339 [  16326]   INFO - .diagnostic.PerformanceWatcher - Pushing properties took 179ms; general responsiveness: ok; EDT responsiveness: ok 
+2021-06-28 13:52:48,520 [  16507]   WARN - Container.ComponentManagerImpl - Do not use constructor injection (requestorClass=com.android.tools.idea.apk.symbols.DebugSymbolNotifications) 
+2021-06-28 13:52:50,357 [  18344]   WARN - com.intellij.util.xmlb.Binding - no accessors for class org.jetbrains.kotlin.idea.highlighter.KotlinDefaultHighlightingSettingsProvider 
+2021-06-28 13:52:52,310 [  20297]   WARN - Container.ComponentManagerImpl - Do not use constructor injection (requestorClass=com.android.tools.idea.apk.ApkWritingAccessProvider) 
+2021-06-28 13:52:53,418 [  21405]   INFO - roid.tools.idea.adb.AdbService - Initializing adb using: /Users/kevalmajethiya/Library/Android/sdk/platform-tools/adb 
+2021-06-28 13:52:53,428 [  21415]   INFO - .deployment.AsyncDevicesGetter - ADB is not connected 
+2021-06-28 13:52:53,619 [  21606]   INFO -            #com.android.ddmlib - Connected to adb for device monitoring 
+2021-06-28 13:52:53,839 [  21826]   INFO - roid.tools.idea.adb.AdbService - Successfully connected to adb 
+2021-06-28 13:52:54,863 [  22850]   WARN - openapi.wm.impl.ToolWindowImpl - ToolWindow icons should be 13x13. Please fix ToolWindow (ID:  Problems View) or icon jar:file:/Applications/Android%20Studio.app/Contents/lib/icons.jar!/general/warning.svg 
+2021-06-28 13:52:55,002 [  22989]   INFO - ge.ExternalProjectsDataStorage - Load external projects data in 2680 millis (read time: 2668) 
+2021-06-28 13:52:55,383 [  23370]   WARN - Container.ComponentManagerImpl - Do not use constructor injection (requestorClass=com.android.tools.idea.gradle.notification.GeneratedFileNotificationProvider) 
+2021-06-28 13:52:55,455 [  23442]   WARN - Container.ComponentManagerImpl - Do not use constructor injection (requestorClass=com.android.tools.idea.apk.editor.notification.ApkReloadNotificationProvider) 
+2021-06-28 13:52:55,661 [  23648]   INFO - ngd.lsp.ClangDaemonContextImpl - Using clangd from: /Applications/Android Studio.app/Contents/bin/clang/mac/clangd 
+2021-06-28 13:52:55,833 [  23820]   INFO - ProjectRootPostStartUpActivity - /Users/kevalmajethiya/AndroidStudioProjects/PT_demo1/.idea case-sensitivity: expected=false actual=false 
+2021-06-28 13:52:55,923 [  23910]   INFO - .diagnostic.PerformanceWatcher - Post-startup activities under progress took 4410ms; general responsiveness: ok; EDT responsiveness: 0/4 sluggish, 3/4 very slow 
+2021-06-28 13:52:56,500 [  24487]   INFO - tellij.ide.SystemHealthMonitor - restored ignored PIPE handler 
+2021-06-28 13:52:57,019 [  25006]   INFO - tor.impl.FileEditorManagerImpl - Project opening took 17634 ms 
+2021-06-28 13:53:01,402 [  29389]   INFO - .diagnostic.PerformanceWatcher - Indexable file iteration took 13057ms; general responsiveness: ok; EDT responsiveness: 3/13 sluggish, 3/13 very slow 
+2021-06-28 13:53:01,440 [  29427]   INFO - penapi.project.DumbServiceImpl - Running dumb mode task: com.jetbrains.cidr.lang.symbols.symtable.OCSymbolTablesBuildingActivity$1@28f385af 
+2021-06-28 13:53:01,456 [  29443]   INFO -       #com.jetbrains.cidr.lang - Clearing symbols finished in 10 ms 
+2021-06-28 13:53:01,546 [  29533]   INFO -       #com.jetbrains.cidr.lang - Loading Module Maps finished in 65 ms 
+2021-06-28 13:53:01,549 [  29536]   INFO -       #com.jetbrains.cidr.lang - Loaded 0 module maps in 0 packs for 0 search roots 
+2021-06-28 13:53:01,566 [  29553]   INFO -       #com.jetbrains.cidr.lang - Building symbols in FAST mode, 0 source files from total 0 project files 
+2021-06-28 13:53:01,886 [  29873]   INFO -       #com.jetbrains.cidr.lang - Loading Module Maps finished in 405 ms 
+2021-06-28 13:53:01,894 [  29881]   INFO -       #com.jetbrains.cidr.lang - Loading Header Maps finished in 8 ms 
+2021-06-28 13:53:01,907 [  29894]   INFO -       #com.jetbrains.cidr.lang - Loaded 0 tables for 0 files (0 project files) 
+2021-06-28 13:53:01,908 [  29895]   INFO -       #com.jetbrains.cidr.lang - Building symbols for 0 source files 
+2021-06-28 13:53:01,915 [  29902]   INFO -       #com.jetbrains.cidr.lang - Updating Symbols finished in 1 ms 
+2021-06-28 13:53:01,915 [  29902]   INFO -       #com.jetbrains.cidr.lang - Building symbols for 0 unused headers 
+2021-06-28 13:53:01,916 [  29903]   INFO -       #com.jetbrains.cidr.lang - Updating Symbols finished in 1 ms 
+2021-06-28 13:53:01,916 [  29903]   INFO -       #com.jetbrains.cidr.lang - Updating Symbols finished in 1 ms 
+2021-06-28 13:53:01,919 [  29906]   INFO -       #com.jetbrains.cidr.lang - Saving modified symbols for 0 files (0 tables of total 0) 
+2021-06-28 13:53:01,921 [  29908]   INFO -       #com.jetbrains.cidr.lang - Saving symbols finished in 2 ms 
+2021-06-28 13:53:01,922 [  29909]   INFO -       #com.jetbrains.cidr.lang - Saved 0 module maps in 0 packs 
+2021-06-28 13:53:01,924 [  29911]   INFO -       #com.jetbrains.cidr.lang - Saving Module Maps finished in 2 ms 
+2021-06-28 13:53:01,927 [  29914]   INFO - penapi.project.DumbServiceImpl - updateFinished 
+2021-06-28 13:53:01,930 [  29917]   INFO - g.FileBasedIndexProjectHandler - Has changed files: false; project=Project (name=PT_demo1, containerState=ACTIVE, componentStore=/Users/kevalmajethiya/AndroidStudioProjects/PT_demo1)  
+2021-06-28 13:53:02,605 [  30592]   INFO - penapi.project.DumbServiceImpl - Running dumb mode task: com.android.tools.idea.res.ResourceFolderRepositoryFileCacheImpl$PruneTask@59243afe 
+2021-06-28 13:53:02,684 [  30671]   INFO - penapi.project.DumbServiceImpl - Running dumb mode task: com.android.tools.idea.res.ResourceFolderRepositoryFileCacheImpl$ManageLruProjectFilesTask@eb2a2e7a 
+2021-06-28 13:53:02,705 [  30692]   INFO - penapi.project.DumbServiceImpl - updateFinished 
+2021-06-28 13:53:02,706 [  30693]   INFO - g.FileBasedIndexProjectHandler - Has changed files: false; project=Project (name=PT_demo1, containerState=ACTIVE, componentStore=/Users/kevalmajethiya/AndroidStudioProjects/PT_demo1)  
+2021-06-28 13:53:02,823 [  30810]   INFO - penapi.project.DumbServiceImpl - Running dumb mode task: com.android.tools.idea.res.ResourceFolderRegistry$PopulateCachesTask@6bb750da 
+2021-06-28 13:53:03,012 [  30999]   INFO - penapi.project.DumbServiceImpl - updateFinished 
+2021-06-28 13:53:03,013 [  31000]   INFO - g.FileBasedIndexProjectHandler - Has changed files: false; project=Project (name=PT_demo1, containerState=ACTIVE, componentStore=/Users/kevalmajethiya/AndroidStudioProjects/PT_demo1)  
+2021-06-28 13:53:03,055 [  31042]   INFO - idGradleProjectStartupActivity - Up-to-date models found in the cache. Not invoking Gradle sync. 
+2021-06-28 13:53:03,415 [  31402]   INFO - roid.tools.ndk.GradleWorkspace - Updating model took 0.213s 
+2021-06-28 13:53:04,783 [  32770]   WARN - dering.imagepool.ImagePoolImpl - 0 maxSize for Bucket. This Bucket will not be used. 
+2021-06-28 13:53:16,777 [  44764]   WARN - Container.ComponentManagerImpl - Do not use constructor injection (requestorClass=com.android.tools.idea.lang.androidSql.room.RoomDependencyChecker) 
+2021-06-28 13:53:30,080 [  58067]   INFO - ild.invoker.GradleBuildInvoker - About to execute Gradle tasks: [:app:assembleDebug] 
+2021-06-28 13:53:30,149 [  58136]   INFO - s.plugins.gradle.GradleManager - Instructing gradle to use java from /Applications/Android Studio.app/Contents/jre/jdk/Contents/Home 
+2021-06-28 13:53:30,253 [  58240]   INFO - ild.invoker.GradleBuildInvoker - Build command line options: [-Pandroid.injected.invoked.from.ide=true, -Pandroid.injected.studio.version=10.4.1.2.201.8743.12.41.7042882, -Pandroid.injected.attribution.file.location=/var/folders/z3/7t9zr1r5559f2_dzk1v1j7c80000gn/T/1624868610242-0] 
+2021-06-28 13:53:31,706 [  59693]   INFO - xecution.GradleExecutionHelper - Passing command-line args to Gradle Tooling API: -Pandroid.injected.invoked.from.ide=true -Pandroid.injected.studio.version=10.4.1.2.201.8743.12.41.7042882 -Pandroid.injected.attribution.file.location=/var/folders/z3/7t9zr1r5559f2_dzk1v1j7c80000gn/T/1624868610242-0 
+2021-06-28 13:53:42,467 [  70454]   INFO - ild.invoker.GradleBuildInvoker - Gradle build finished in 12 s 265 ms 
+2021-06-28 13:54:06,186 [  94173]   INFO - ild.invoker.GradleBuildInvoker - About to execute Gradle tasks: [:app:assembleDebug] 
+2021-06-28 13:54:06,215 [  94202]   INFO - s.plugins.gradle.GradleManager - Instructing gradle to use java from /Applications/Android Studio.app/Contents/jre/jdk/Contents/Home 
+2021-06-28 13:54:06,218 [  94205]   INFO - ild.invoker.GradleBuildInvoker - Build command line options: [-Pandroid.injected.invoked.from.ide=true, -Pandroid.injected.studio.version=10.4.1.2.201.8743.12.41.7042882, -Pandroid.injected.attribution.file.location=/var/folders/z3/7t9zr1r5559f2_dzk1v1j7c80000gn/T/1624868646218-0, -Pandroid.injected.build.api=26, -Pandroid.injected.build.density=xhdpi, -Pandroid.injected.build.abi=armeabi-v7a,armeabi] 
+2021-06-28 13:54:06,240 [  94227]   INFO - xecution.GradleExecutionHelper - Passing command-line args to Gradle Tooling API: -Pandroid.injected.invoked.from.ide=true -Pandroid.injected.studio.version=10.4.1.2.201.8743.12.41.7042882 -Pandroid.injected.attribution.file.location=/var/folders/z3/7t9zr1r5559f2_dzk1v1j7c80000gn/T/1624868646218-0 -Pandroid.injected.build.api=26 -Pandroid.injected.build.density=xhdpi -Pandroid.injected.build.abi=armeabi-v7a,armeabi 
+2021-06-28 13:54:11,984 [  99971]   INFO - ild.invoker.GradleBuildInvoker - Gradle build finished in 5 s 763 ms 
+2021-06-28 13:54:11,990 [  99977]   INFO - a.gradle.run.MakeBeforeRunTask - Couldn't get post build models. 
+2021-06-28 13:54:11,991 [  99978]   INFO - a.gradle.run.MakeBeforeRunTask - Gradle invocation complete, success = true 
+2021-06-28 13:54:12,243 [ 100230]   INFO - idea.run.AndroidProcessHandler - Adding device samsung-sm_g570f-4210b3dbd8ec54bf to monitor for launched app: com.example.pt_demo1 
+2021-06-28 13:54:13,229 [ 101216]   INFO - ools.idea.run.tasks.DeployTask - Installing application: com.example.pt_demo1 
+2021-06-28 13:54:13,535 [ 101522]   INFO - a.run.tasks.AbstractDeployTask - 1139124774ms TRC_BEG [31792][31792] : installer 
+2021-06-28 13:54:13,535 [ 101522]   INFO - a.run.tasks.AbstractDeployTask - 1139124775ms TRC_BEG [31792][31792] : Command Dump 
+2021-06-28 13:54:13,535 [ 101522]   INFO - a.run.tasks.AbstractDeployTask - 1139124775ms TRC_BEG [31792][31792] : get process ids 
+2021-06-28 13:54:13,535 [ 101522]   INFO - a.run.tasks.AbstractDeployTask - 1139124811ms LOG_ERR [31792][31792] : Could not get package user id: /system/bin/run-as: unknown package: com.example.pt_demo1
+ 
+2021-06-28 13:54:13,536 [ 101523]   INFO - a.run.tasks.AbstractDeployTask - 1139124811ms TRC_END [31792][31792] :  
+2021-06-28 13:54:13,536 [ 101523]   INFO - a.run.tasks.AbstractDeployTask - 1139124811ms TRC_BEG [31792][31792] : CmdCommand::GetApksFromDump 
+2021-06-28 13:54:13,536 [ 101523]   INFO - a.run.tasks.AbstractDeployTask - 1139124858ms TRC_END [31792][31792] :  
+2021-06-28 13:54:13,536 [ 101523]   INFO - a.run.tasks.AbstractDeployTask - 1139124858ms LOG_ERR [31792][31792] : Could not find apks for package: com.example.pt_demo1 
+2021-06-28 13:54:13,536 [ 101523]   INFO - a.run.tasks.AbstractDeployTask - 1139124858ms TRC_END [31792][31792] :  
+2021-06-28 13:54:13,536 [ 101523]   INFO - a.run.tasks.AbstractDeployTask - 1139124858ms TRC_END [31792][31792] :  
+2021-06-28 13:54:13,544 [ 101531]   INFO - a.run.tasks.AbstractDeployTask - DUMP_UNKNOWN_PACKAGE 
+2021-06-28 13:54:13,867 [ 101854]   INFO -            #com.android.ddmlib - Created install session 141068167 with options -r -t --user current --dont-kill -S 4311443 
+2021-06-28 13:54:13,868 [ 101855]   INFO -            #com.android.ddmlib - Uploading APK /Users/kevalmajethiya/AndroidStudioProjects/PT_demo1/app/build/outputs/apk/debug/app-debug.apk to session 141068167 
+2021-06-28 13:54:40,043 [ 128030]   INFO - a.run.tasks.AbstractDeployTask - Install successfully finished in 27 s 735 ms. 
+2021-06-28 13:54:41,263 [ 129250]   INFO - run.AndroidLogcatOutputCapture - startCapture("samsung-sm_g570f-4210b3dbd8ec54bf") 
+2021-06-28 13:57:36,400 [ 304387]   INFO - rationStore.ComponentStoreImpl - Saving appDebuggerSettings took 11 ms, FileTypeManager took 35 ms, HttpConfigurable took 18 ms 
+2021-06-28 13:57:37,801 [ 305788]   WARN - com.intellij.util.xmlb.Binding - no accessors for class com.android.build.attribution.data.SuppressedWarnings 
+2021-06-28 13:57:37,908 [ 305895]   INFO - rationStore.ComponentStoreImpl - Saving Project (name=PT_demo1, containerState=ACTIVE, componentStore=/Users/kevalmajethiya/AndroidStudioProjects/PT_demo1) RunManager took 56 ms, libraryTable took 18 ms 
+2021-06-28 13:57:37,910 [ 305897]   INFO - mponents.impl.stores.StoreUtil - saveProjectsAndApp took 2035 ms 
+2021-06-28 13:58:32,253 [ 360240]   WARN - com.intellij.util.xmlb.Binding - no accessors for class org.jetbrains.kotlin.idea.scripting.gradle.GradleScriptInputsWatcher$Storage 
+2021-06-28 13:58:32,271 [ 360258]   WARN - com.intellij.util.xmlb.Binding - no accessors for class org.jetbrains.kotlin.idea.core.script.configuration.utils.ScriptClassRootsStorage 
+2021-06-28 13:58:32,342 [ 360329]   INFO - rationStore.ComponentStoreImpl - Saving Project (name=PT_demo1, containerState=ACTIVE, componentStore=/Users/kevalmajethiya/AndroidStudioProjects/PT_demo1) XDebuggerManager took 20 ms, libraryTable took 11 ms, sourceFolderManager took 14 ms 
+2021-06-28 13:58:35,566 [ 363553]   INFO - rationStore.ComponentStoreImpl - Saving Project (name=PT_demo1, containerState=ACTIVE, componentStore=/Users/kevalmajethiya/AndroidStudioProjects/PT_demo1) KotlinCommonCompilerArguments took 17 ms 
+2021-06-28 13:59:39,393 [ 427380]   INFO - rationStore.ComponentStoreImpl - Saving Project (name=PT_demo1, containerState=ACTIVE, componentStore=/Users/kevalmajethiya/AndroidStudioProjects/PT_demo1) RunManager took 15 ms, libraryTable took 36 ms 
+2021-06-28 13:59:52,615 [ 440602]  ERROR - jediterm.terminal.TerminalMode - Mode EightBitInput is not implemented, setting to true 
+2021-06-28 13:59:52,618 [ 440605]  ERROR - jediterm.terminal.TerminalMode - Mode EightBitInput is not implemented, setting to true 
+2021-06-28 13:59:52,625 [ 440612]  ERROR - jediterm.terminal.TerminalMode - Mode EightBitInput is not implemented, setting to true 
+2021-06-28 14:00:04,666 [ 452653]   INFO - run.AndroidLogcatOutputCapture - stopCapture("samsung-sm_g570f-4210b3dbd8ec54bf") 
+2021-06-28 14:00:04,948 [ 452935]   INFO - run.AndroidLogcatOutputCapture - stopAll() 
+2021-06-28 14:00:10,366 [ 458353]   INFO - ild.invoker.GradleBuildInvoker - About to execute Gradle tasks: [:app:assembleDebug] 
+2021-06-28 14:00:10,390 [ 458377]   INFO - s.plugins.gradle.GradleManager - Instructing gradle to use java from /Applications/Android Studio.app/Contents/jre/jdk/Contents/Home 
+2021-06-28 14:00:10,394 [ 458381]   INFO - ild.invoker.GradleBuildInvoker - Build command line options: [-Pandroid.injected.invoked.from.ide=true, -Pandroid.injected.studio.version=10.4.1.2.201.8743.12.41.7042882, -Pandroid.injected.attribution.file.location=/var/folders/z3/7t9zr1r5559f2_dzk1v1j7c80000gn/T/1624869010393-0, -Pandroid.injected.build.api=26, -Pandroid.injected.build.density=xhdpi, -Pandroid.injected.build.abi=armeabi-v7a,armeabi] 
+2021-06-28 14:00:10,405 [ 458392]   INFO - xecution.GradleExecutionHelper - Passing command-line args to Gradle Tooling API: -Pandroid.injected.invoked.from.ide=true -Pandroid.injected.studio.version=10.4.1.2.201.8743.12.41.7042882 -Pandroid.injected.attribution.file.location=/var/folders/z3/7t9zr1r5559f2_dzk1v1j7c80000gn/T/1624869010393-0 -Pandroid.injected.build.api=26 -Pandroid.injected.build.density=xhdpi -Pandroid.injected.build.abi=armeabi-v7a,armeabi 
+2021-06-28 14:00:12,726 [ 460713]   INFO - ild.invoker.GradleBuildInvoker - Gradle build finished in 2 s 332 ms 
+2021-06-28 14:00:12,727 [ 460714]   INFO - a.gradle.run.MakeBeforeRunTask - Couldn't get post build models. 
+2021-06-28 14:00:12,727 [ 460714]   INFO - a.gradle.run.MakeBeforeRunTask - Gradle invocation complete, success = true 
+2021-06-28 14:00:12,902 [ 460889]   INFO - idea.run.AndroidProcessHandler - Adding device samsung-sm_g570f-4210b3dbd8ec54bf to monitor for launched app: com.example.pt_demo1 
+2021-06-28 14:00:12,912 [ 460899]   INFO - notification.NotificationGroup - Notification group LaunchTaskRunner is already registered 
+java.lang.Throwable
+	at com.intellij.notification.NotificationGroup.<init>(NotificationGroup.kt:48)
+	at com.intellij.notification.NotificationGroup.<init>(NotificationGroup.kt:28)
+	at com.intellij.notification.NotificationGroup.<init>(NotificationGroup.kt:36)
+	at com.intellij.notification.NotificationGroup.<init>(NotificationGroup.kt:36)
+	at com.intellij.notification.NotificationGroup$Companion.toolWindowGroup(NotificationGroup.kt:93)
+	at com.intellij.notification.NotificationGroup$Companion.toolWindowGroup$default(NotificationGroup.kt:92)
+	at com.intellij.notification.NotificationGroup.toolWindowGroup(NotificationGroup.kt)
+	at com.android.tools.idea.run.LaunchTaskRunner.run(LaunchTaskRunner.java:183)
+	at com.intellij.openapi.progress.impl.CoreProgressManager$TaskRunnable.run(CoreProgressManager.java:932)
+	at com.intellij.openapi.progress.impl.CoreProgressManager.lambda$runProcessWithProgressAsync$5(CoreProgressManager.java:434)
+	at com.intellij.openapi.progress.impl.CoreProgressManager$$Lambda$1465/0x0000000000000000.apply(Unknown Source)
+	at com.intellij.openapi.progress.impl.ProgressRunner.lambda$null$3(ProgressRunner.java:233)
+	at com.intellij.openapi.progress.impl.ProgressRunner$$Lambda$1089/0x0000000000000000.run(Unknown Source)
+	at com.intellij.openapi.progress.impl.CoreProgressManager.lambda$runProcess$2(CoreProgressManager.java:166)
+	at com.intellij.openapi.progress.impl.CoreProgressManager$$Lambda$155/0x0000000000000000.run(Unknown Source)
+	at com.intellij.openapi.progress.impl.CoreProgressManager.registerIndicatorAndRun(CoreProgressManager.java:627)
+	at com.intellij.openapi.progress.impl.CoreProgressManager.executeProcessUnderProgress(CoreProgressManager.java:572)
+	at com.intellij.openapi.progress.impl.ProgressManagerImpl.executeProcessUnderProgress(ProgressManagerImpl.java:61)
+	at com.intellij.openapi.progress.impl.CoreProgressManager.runProcess(CoreProgressManager.java:153)
+	at com.intellij.openapi.progress.impl.ProgressRunner.lambda$submit$4(ProgressRunner.java:233)
+	at com.intellij.openapi.progress.impl.ProgressRunner$$Lambda$1085/0x0000000000000000.get(Unknown Source)
+	at java.util.concurrent.CompletableFuture$AsyncSupply.run(CompletableFuture.java:1604)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:823)
+2021-06-28 14:00:12,916 [ 460903]   INFO - ools.idea.run.tasks.DeployTask - Installing application: com.example.pt_demo1 
+2021-06-28 14:00:13,194 [ 461181]   INFO - a.run.tasks.AbstractDeployTask - 1139484376ms TRC_BEG [481][481] : installer 
+2021-06-28 14:00:13,195 [ 461182]   INFO - a.run.tasks.AbstractDeployTask - 1139484377ms TRC_BEG [481][481] : Command Dump 
+2021-06-28 14:00:13,195 [ 461182]   INFO - a.run.tasks.AbstractDeployTask - 1139484377ms TRC_BEG [481][481] : get process ids 
+2021-06-28 14:00:13,195 [ 461182]   INFO - a.run.tasks.AbstractDeployTask - 1139484486ms TRC_END [481][481] :  
+2021-06-28 14:00:13,195 [ 461182]   INFO - a.run.tasks.AbstractDeployTask - 1139484486ms TRC_BEG [481][481] : CmdCommand::GetApksFromDump 
+2021-06-28 14:00:13,195 [ 461182]   INFO - a.run.tasks.AbstractDeployTask - 1139484546ms TRC_END [481][481] :  
+2021-06-28 14:00:13,195 [ 461182]   INFO - a.run.tasks.AbstractDeployTask - 1139484546ms TRC_BEG [481][481] : processing APK 
+2021-06-28 14:00:13,195 [ 461182]   INFO - a.run.tasks.AbstractDeployTask - 1139484546ms TRC_END [481][481] :  
+2021-06-28 14:00:13,195 [ 461182]   INFO - a.run.tasks.AbstractDeployTask - 1139484546ms TRC_END [481][481] :  
+2021-06-28 14:00:13,195 [ 461182]   INFO - a.run.tasks.AbstractDeployTask - 1139484546ms TRC_END [481][481] :  
+2021-06-28 14:00:13,323 [ 461310]   INFO - a.run.tasks.AbstractDeployTask - Install successfully finished in 406 ms.. App restart successful without requiring a re-install. 
+2021-06-28 14:00:13,903 [ 461890]   INFO - run.AndroidLogcatOutputCapture - startCapture("samsung-sm_g570f-4210b3dbd8ec54bf") 
+2021-06-28 14:01:28,331 [ 536318]   INFO - rationStore.ComponentStoreImpl - Saving Project (name=PT_demo1, containerState=ACTIVE, componentStore=/Users/kevalmajethiya/AndroidStudioProjects/PT_demo1) RunManager took 11 ms 
+2021-06-28 14:02:55,033 [ 623020]   INFO - run.AndroidLogcatOutputCapture - stopCapture("samsung-sm_g570f-4210b3dbd8ec54bf") 
+2021-06-28 14:02:55,034 [ 623021]   INFO - run.AndroidLogcatOutputCapture - stopAll() 
+2021-06-28 14:04:05,794 [ 693781]   INFO - ild.invoker.GradleBuildInvoker - About to execute Gradle tasks: [:app:assembleDebug] 
+2021-06-28 14:04:05,847 [ 693834]   INFO - s.plugins.gradle.GradleManager - Instructing gradle to use java from /Applications/Android Studio.app/Contents/jre/jdk/Contents/Home 
+2021-06-28 14:04:05,852 [ 693839]   INFO - ild.invoker.GradleBuildInvoker - Build command line options: [-Pandroid.injected.invoked.from.ide=true, -Pandroid.injected.studio.version=10.4.1.2.201.8743.12.41.7042882, -Pandroid.injected.attribution.file.location=/var/folders/z3/7t9zr1r5559f2_dzk1v1j7c80000gn/T/1624869245849-0, -Pandroid.injected.build.api=26, -Pandroid.injected.build.density=xhdpi, -Pandroid.injected.build.abi=armeabi-v7a,armeabi] 
+2021-06-28 14:04:05,859 [ 693846]   INFO - xecution.GradleExecutionHelper - Passing command-line args to Gradle Tooling API: -Pandroid.injected.invoked.from.ide=true -Pandroid.injected.studio.version=10.4.1.2.201.8743.12.41.7042882 -Pandroid.injected.attribution.file.location=/var/folders/z3/7t9zr1r5559f2_dzk1v1j7c80000gn/T/1624869245849-0 -Pandroid.injected.build.api=26 -Pandroid.injected.build.density=xhdpi -Pandroid.injected.build.abi=armeabi-v7a,armeabi 
+2021-06-28 14:04:09,289 [ 697276]   INFO - ild.invoker.GradleBuildInvoker - Gradle build finished in 3 s 437 ms 
+2021-06-28 14:04:09,291 [ 697278]   INFO - a.gradle.run.MakeBeforeRunTask - Couldn't get post build models. 
+2021-06-28 14:04:09,292 [ 697279]   INFO - a.gradle.run.MakeBeforeRunTask - Gradle invocation complete, success = true 
+2021-06-28 14:04:09,332 [ 697319]   INFO - run.AndroidLaunchTasksProvider - Using debugger: Auto 
+2021-06-28 14:04:09,655 [ 697642]   INFO - idea.run.AndroidProcessHandler - Adding device samsung-sm_g570f-4210b3dbd8ec54bf to monitor for launched app: com.example.pt_demo1 
+2021-06-28 14:04:09,660 [ 697647]   INFO - notification.NotificationGroup - Notification group LaunchTaskRunner is already registered 
+java.lang.Throwable
+	at com.intellij.notification.NotificationGroup.<init>(NotificationGroup.kt:48)
+	at com.intellij.notification.NotificationGroup.<init>(NotificationGroup.kt:28)
+	at com.intellij.notification.NotificationGroup.<init>(NotificationGroup.kt:36)
+	at com.intellij.notification.NotificationGroup.<init>(NotificationGroup.kt:36)
+	at com.intellij.notification.NotificationGroup$Companion.toolWindowGroup(NotificationGroup.kt:93)
+	at com.intellij.notification.NotificationGroup$Companion.toolWindowGroup$default(NotificationGroup.kt:92)
+	at com.intellij.notification.NotificationGroup.toolWindowGroup(NotificationGroup.kt)
+	at com.android.tools.idea.run.LaunchTaskRunner.run(LaunchTaskRunner.java:183)
+	at com.intellij.openapi.progress.impl.CoreProgressManager$TaskRunnable.run(CoreProgressManager.java:932)
+	at com.intellij.openapi.progress.impl.CoreProgressManager.lambda$runProcessWithProgressAsync$5(CoreProgressManager.java:434)
+	at com.intellij.openapi.progress.impl.CoreProgressManager$$Lambda$1465/0x0000000000000000.apply(Unknown Source)
+	at com.intellij.openapi.progress.impl.ProgressRunner.lambda$null$3(ProgressRunner.java:233)
+	at com.intellij.openapi.progress.impl.ProgressRunner$$Lambda$1089/0x0000000000000000.run(Unknown Source)
+	at com.intellij.openapi.progress.impl.CoreProgressManager.lambda$runProcess$2(CoreProgressManager.java:166)
+	at com.intellij.openapi.progress.impl.CoreProgressManager$$Lambda$155/0x0000000000000000.run(Unknown Source)
+	at com.intellij.openapi.progress.impl.CoreProgressManager.registerIndicatorAndRun(CoreProgressManager.java:627)
+	at com.intellij.openapi.progress.impl.CoreProgressManager.executeProcessUnderProgress(CoreProgressManager.java:572)
+	at com.intellij.openapi.progress.impl.ProgressManagerImpl.executeProcessUnderProgress(ProgressManagerImpl.java:61)
+	at com.intellij.openapi.progress.impl.CoreProgressManager.runProcess(CoreProgressManager.java:153)
+	at com.intellij.openapi.progress.impl.ProgressRunner.lambda$submit$4(ProgressRunner.java:233)
+	at com.intellij.openapi.progress.impl.ProgressRunner$$Lambda$1085/0x0000000000000000.get(Unknown Source)
+	at java.util.concurrent.CompletableFuture$AsyncSupply.run(CompletableFuture.java:1604)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:823)
+2021-06-28 14:04:09,662 [ 697649]   INFO - ools.idea.run.tasks.DeployTask - Installing application: com.example.pt_demo1 
+2021-06-28 14:04:10,148 [ 698135]   INFO - a.run.tasks.AbstractDeployTask - 1139721267ms TRC_BEG [7755][7755] : installer 
+2021-06-28 14:04:10,148 [ 698135]   INFO - a.run.tasks.AbstractDeployTask - 1139721268ms TRC_BEG [7755][7755] : Command Dump 
+2021-06-28 14:04:10,148 [ 698135]   INFO - a.run.tasks.AbstractDeployTask - 1139721268ms TRC_BEG [7755][7755] : get process ids 
+2021-06-28 14:04:10,148 [ 698135]   INFO - a.run.tasks.AbstractDeployTask - 1139721393ms LOG_ERR [7755][7755] : Could not get package user id: /system/bin/run-as: unknown package: com.example.pt_demo1
+ 
+2021-06-28 14:04:10,148 [ 698135]   INFO - a.run.tasks.AbstractDeployTask - 1139721395ms TRC_END [7755][7755] :  
+2021-06-28 14:04:10,148 [ 698135]   INFO - a.run.tasks.AbstractDeployTask - 1139721395ms TRC_BEG [7755][7755] : CmdCommand::GetApksFromDump 
+2021-06-28 14:04:10,148 [ 698135]   INFO - a.run.tasks.AbstractDeployTask - 1139721522ms TRC_END [7755][7755] :  
+2021-06-28 14:04:10,148 [ 698135]   INFO - a.run.tasks.AbstractDeployTask - 1139721522ms LOG_ERR [7755][7755] : Could not find apks for package: com.example.pt_demo1 
+2021-06-28 14:04:10,148 [ 698135]   INFO - a.run.tasks.AbstractDeployTask - 1139721522ms TRC_END [7755][7755] :  
+2021-06-28 14:04:10,148 [ 698135]   INFO - a.run.tasks.AbstractDeployTask - 1139721522ms TRC_END [7755][7755] :  
+2021-06-28 14:04:10,148 [ 698135]   INFO - a.run.tasks.AbstractDeployTask - DUMP_UNKNOWN_PACKAGE 
+2021-06-28 14:04:11,117 [ 699104]   INFO -            #com.android.ddmlib - Created install session 1120138185 with options -r -t --user current --dont-kill -S 4465091 
+2021-06-28 14:04:11,117 [ 699104]   INFO -            #com.android.ddmlib - Uploading APK /Users/kevalmajethiya/AndroidStudioProjects/PT_demo1/app/build/outputs/apk/debug/app-debug.apk to session 1120138185 
+2021-06-28 14:04:33,772 [ 721759]   INFO - a.run.tasks.AbstractDeployTask - Install successfully finished in 24 s 111 ms. 
+2021-06-28 14:04:35,256 [ 723243]   INFO - .tasks.ConnectJavaDebuggerTask - Attempting to connect debugger to port 51542 [client 9666] 
+2021-06-28 14:04:35,263 [ 723250]   INFO - run.AndroidLogcatOutputCapture - stopCapture("samsung-sm_g570f-4210b3dbd8ec54bf") 
+2021-06-28 14:04:35,263 [ 723250]   INFO - run.AndroidLogcatOutputCapture - stopAll() 
+2021-06-28 14:04:35,775 [ 723762]   INFO - .tasks.ConnectJavaDebuggerTask - captureLogcatOutput("samsung-sm_g570f-4210b3dbd8ec54bf") 
+2021-06-28 14:04:46,089 [ 734076]   WARN - ellij.openapi.ui.DialogWrapper - dialog minimum size is bigger than screen: 581x824
+    com.intellij.openapi.ui.impl.DialogWrapperPeerImpl$MyDialog$DialogRootPane
+      com.intellij.openapi.wm.impl.IdeGlassPaneImpl
+      com.intellij.ui.components.JBLayeredPane
+        javax.swing.JPanel
+          javax.swing.JPanel
+            ui.PushTemplateInput
+              javax.swing.JPanel
+                javax.swing.JLabel
+                com.intellij.openapi.ui.ComboBox
+                  com.intellij.ide.ui.laf.darcula.ui.DarculaComboBoxUI$1
+                javax.swing.JLabel
+                javax.swing.JTextField
+                javax.swing.JLabel
+                javax.swing.JTextField
+                javax.swing.JLabel
+                javax.swing.JTextField
+                javax.swing.JLabel
+                javax.swing.JTextField
+                javax.swing.JLabel
+                javax.swing.JTextField
+                javax.swing.JLabel
+                javax.swing.JTextField
+                javax.swing.JLabel
+                javax.swing.JTextField
+                javax.swing.JLabel
+                javax.swing.JTextField
+                javax.swing.JLabel
+                javax.swing.JTextField
+                javax.swing.JLabel
+                javax.swing.JTextField
+                javax.swing.JLabel
+                javax.swing.JTextField
+                javax.swing.JLabel
+                javax.swing.JTextField
+                javax.swing.JLabel
+                javax.swing.JTextField
+                javax.swing.JLabel
+                javax.swing.JTextField
+                javax.swing.JLabel
+                javax.swing.JTextField
+                javax.swing.JLabel
+                javax.swing.JTextField
+                javax.swing.JLabel
+                javax.swing.JTextField
+                javax.swing.JLabel
+                javax.swing.JTextField
+                javax.swing.JLabel
+                javax.swing.JTextField
+                javax.swing.JLabel
+                javax.swing.JTextField
+                javax.swing.JLabel
+                javax.swing.JTextField
+                javax.swing.JLabel
+                javax.swing.JTextField
+                javax.swing.JLabel
+                javax.swing.JTextField
+                javax.swing.JLabel
+                javax.swing.JTextField
+                javax.swing.JLabel
+                javax.swing.JTextField
+                javax.swing.JLabel
+                javax.swing.JTextField
+                javax.swing.JLabel
+                javax.swing.JTextField
+                javax.swing.JLabel
+                javax.swing.JTextField
+                javax.swing.JLabel
+                javax.swing.JTextField
+                javax.swing.JLabel
+                javax.swing.JTextField
+                javax.swing.JLabel
+                javax.swing.JTextField
+                javax.swing.JLabel
+                javax.swing.JTextField
+                javax.swing.JLabel
+                javax.swing.JTextField
+                javax.swing.JLabel
+                javax.swing.JTextField
+                javax.swing.JLabel
+                javax.swing.JTextField
+                javax.swing.JLabel
+                javax.swing.JTextField
+                javax.swing.JLabel
+                javax.swing.JTextField
+                javax.swing.JLabel
+                javax.swing.JTextField
+                javax.swing.JLabel
+                javax.swing.JTextField
+                javax.swing.JLabel
+                javax.swing.JTextField
+                javax.swing.JLabel
+                javax.swing.JTextField
+                javax.swing.JLabel
+                javax.swing.JTextField
+                javax.swing.JLabel
+                javax.swing.JTextField
+                javax.swing.JLabel
+                javax.swing.JTextField
+                javax.swing.JLabel
+                javax.swing.JTextField
+                javax.swing.JLabel
+                javax.swing.JTextField
+                javax.swing.JLabel
+                javax.swing.JTextField
+          javax.swing.JPanel
+            com.intellij.openapi.ui.DialogWrapper$ErrorText
+              com.intellij.ui.components.JBScrollPane
+                com.intellij.ui.components.JBViewport
+                  javax.swing.JLabel
+                com.intellij.ui.components.JBScrollBar
+                com.intellij.ui.components.JBScrollBar
+                com.intellij.ui.components.JBScrollPane$Corner
+                com.intellij.ui.components.JBScrollPane$Corner
+                com.intellij.ui.components.JBScrollPane$Corner
+                com.intellij.ui.components.JBScrollPane$Corner
+            com.intellij.openapi.ui.DialogWrapper$3
+              com.intellij.ui.components.panels.NonOpaquePanel
+                javax.swing.Box$Filler
+                com.intellij.ui.components.panels.NonOpaquePanel
+                  javax.swing.JButton
+                  javax.swing.Box$Filler
+                  javax.swing.JButton 
+2021-06-28 14:05:57,956 [ 805943]   INFO - rationStore.ComponentStoreImpl - Saving Project (name=PT_demo1, containerState=ACTIVE, componentStore=/Users/kevalmajethiya/AndroidStudioProjects/PT_demo1) RunManager took 18 ms, libraryTable took 19 ms, sourceFolderManager took 15 ms 
+2021-06-28 14:06:10,307 [ 818294]   INFO - .tasks.ConnectJavaDebuggerTask - Debugger-processWillTerminate: com.example.pt_demo1, willBeDestroyed=false 
+2021-06-28 14:06:10,312 [ 818299]   INFO - .tasks.ConnectJavaDebuggerTask - captureLogcatOutput("samsung-sm_g570f-4210b3dbd8ec54bf"): remove listener 
+2021-06-28 14:06:10,312 [ 818299]   INFO - .tasks.ConnectJavaDebuggerTask - Debugger-processTerminated: com.example.pt_demo1 
+2021-06-28 14:06:10,312 [ 818299]   INFO - .tasks.ConnectJavaDebuggerTask - Debugger detaching, leaving process alive: com.example.pt_demo1 
+2021-06-28 14:06:50,276 [ 858263]   INFO - ild.invoker.GradleBuildInvoker - About to execute Gradle tasks: [:app:assembleDebug] 
+2021-06-28 14:06:50,330 [ 858317]   INFO - s.plugins.gradle.GradleManager - Instructing gradle to use java from /Applications/Android Studio.app/Contents/jre/jdk/Contents/Home 
+2021-06-28 14:06:50,337 [ 858324]   INFO - ild.invoker.GradleBuildInvoker - Build command line options: [-Pandroid.injected.invoked.from.ide=true, -Pandroid.injected.studio.version=10.4.1.2.201.8743.12.41.7042882, -Pandroid.injected.attribution.file.location=/var/folders/z3/7t9zr1r5559f2_dzk1v1j7c80000gn/T/1624869410335-0] 
+2021-06-28 14:06:50,348 [ 858335]   INFO - xecution.GradleExecutionHelper - Passing command-line args to Gradle Tooling API: -Pandroid.injected.invoked.from.ide=true -Pandroid.injected.studio.version=10.4.1.2.201.8743.12.41.7042882 -Pandroid.injected.attribution.file.location=/var/folders/z3/7t9zr1r5559f2_dzk1v1j7c80000gn/T/1624869410335-0 
+2021-06-28 14:06:57,588 [ 865575]   INFO - ild.invoker.GradleBuildInvoker - Gradle build finished in 7 s 254 ms 
+2021-06-28 14:07:01,813 [ 869800]   INFO - rationStore.ComponentStoreImpl - Saving Project (name=PT_demo1, containerState=ACTIVE, componentStore=/Users/kevalmajethiya/AndroidStudioProjects/PT_demo1) Kotlin2JvmCompilerArguments took 24 ms, RunManager took 13 ms 
+2021-06-28 14:07:33,309 [ 901296]   INFO - ild.invoker.GradleBuildInvoker - About to execute Gradle tasks: [:app:assembleDebug] 
+2021-06-28 14:07:33,331 [ 901318]   INFO - s.plugins.gradle.GradleManager - Instructing gradle to use java from /Applications/Android Studio.app/Contents/jre/jdk/Contents/Home 
+2021-06-28 14:07:33,334 [ 901321]   INFO - ild.invoker.GradleBuildInvoker - Build command line options: [-Pandroid.injected.invoked.from.ide=true, -Pandroid.injected.studio.version=10.4.1.2.201.8743.12.41.7042882, -Pandroid.injected.attribution.file.location=/var/folders/z3/7t9zr1r5559f2_dzk1v1j7c80000gn/T/1624869453334-0] 
+2021-06-28 14:07:33,359 [ 901346]   INFO - xecution.GradleExecutionHelper - Passing command-line args to Gradle Tooling API: -Pandroid.injected.invoked.from.ide=true -Pandroid.injected.studio.version=10.4.1.2.201.8743.12.41.7042882 -Pandroid.injected.attribution.file.location=/var/folders/z3/7t9zr1r5559f2_dzk1v1j7c80000gn/T/1624869453334-0 
+2021-06-28 14:07:35,328 [ 903315]   INFO - ild.invoker.GradleBuildInvoker - Gradle build finished in 1 s 986 ms 
+2021-06-28 14:07:39,610 [ 907597]   INFO - ild.invoker.GradleBuildInvoker - About to execute Gradle tasks: [:app:assembleDebug] 
+2021-06-28 14:07:39,621 [ 907608]   INFO - s.plugins.gradle.GradleManager - Instructing gradle to use java from /Applications/Android Studio.app/Contents/jre/jdk/Contents/Home 
+2021-06-28 14:07:39,623 [ 907610]   INFO - ild.invoker.GradleBuildInvoker - Build command line options: [-Pandroid.injected.invoked.from.ide=true, -Pandroid.injected.studio.version=10.4.1.2.201.8743.12.41.7042882, -Pandroid.injected.attribution.file.location=/var/folders/z3/7t9zr1r5559f2_dzk1v1j7c80000gn/T/1624869459623-0, -Pandroid.injected.build.api=26, -Pandroid.injected.build.density=xhdpi, -Pandroid.injected.build.abi=armeabi-v7a,armeabi] 
+2021-06-28 14:07:39,634 [ 907621]   INFO - xecution.GradleExecutionHelper - Passing command-line args to Gradle Tooling API: -Pandroid.injected.invoked.from.ide=true -Pandroid.injected.studio.version=10.4.1.2.201.8743.12.41.7042882 -Pandroid.injected.attribution.file.location=/var/folders/z3/7t9zr1r5559f2_dzk1v1j7c80000gn/T/1624869459623-0 -Pandroid.injected.build.api=26 -Pandroid.injected.build.density=xhdpi -Pandroid.injected.build.abi=armeabi-v7a,armeabi 
+2021-06-28 14:07:44,765 [ 912752]   INFO - ild.invoker.GradleBuildInvoker - Gradle build finished in 5 s 139 ms 
+2021-06-28 14:07:44,790 [ 912777]   INFO - a.gradle.run.MakeBeforeRunTask - Couldn't get post build models. 
+2021-06-28 14:07:44,791 [ 912778]   INFO - a.gradle.run.MakeBeforeRunTask - Gradle invocation complete, success = true 
+2021-06-28 14:07:44,939 [ 912926]   INFO - idea.run.AndroidProcessHandler - Adding device samsung-sm_g570f-4210b3dbd8ec54bf to monitor for launched app: com.example.pt_demo1 
+2021-06-28 14:07:44,949 [ 912936]   INFO - notification.NotificationGroup - Notification group LaunchTaskRunner is already registered 
+java.lang.Throwable
+	at com.intellij.notification.NotificationGroup.<init>(NotificationGroup.kt:48)
+	at com.intellij.notification.NotificationGroup.<init>(NotificationGroup.kt:28)
+	at com.intellij.notification.NotificationGroup.<init>(NotificationGroup.kt:36)
+	at com.intellij.notification.NotificationGroup.<init>(NotificationGroup.kt:36)
+	at com.intellij.notification.NotificationGroup$Companion.toolWindowGroup(NotificationGroup.kt:93)
+	at com.intellij.notification.NotificationGroup$Companion.toolWindowGroup$default(NotificationGroup.kt:92)
+	at com.intellij.notification.NotificationGroup.toolWindowGroup(NotificationGroup.kt)
+	at com.android.tools.idea.run.LaunchTaskRunner.run(LaunchTaskRunner.java:183)
+	at com.intellij.openapi.progress.impl.CoreProgressManager$TaskRunnable.run(CoreProgressManager.java:932)
+	at com.intellij.openapi.progress.impl.CoreProgressManager.lambda$runProcessWithProgressAsync$5(CoreProgressManager.java:434)
+	at com.intellij.openapi.progress.impl.CoreProgressManager$$Lambda$1465/0x0000000000000000.apply(Unknown Source)
+	at com.intellij.openapi.progress.impl.ProgressRunner.lambda$null$3(ProgressRunner.java:233)
+	at com.intellij.openapi.progress.impl.ProgressRunner$$Lambda$1089/0x0000000000000000.run(Unknown Source)
+	at com.intellij.openapi.progress.impl.CoreProgressManager.lambda$runProcess$2(CoreProgressManager.java:166)
+	at com.intellij.openapi.progress.impl.CoreProgressManager$$Lambda$155/0x0000000000000000.run(Unknown Source)
+	at com.intellij.openapi.progress.impl.CoreProgressManager.registerIndicatorAndRun(CoreProgressManager.java:627)
+	at com.intellij.openapi.progress.impl.CoreProgressManager.executeProcessUnderProgress(CoreProgressManager.java:572)
+	at com.intellij.openapi.progress.impl.ProgressManagerImpl.executeProcessUnderProgress(ProgressManagerImpl.java:61)
+	at com.intellij.openapi.progress.impl.CoreProgressManager.runProcess(CoreProgressManager.java:153)
+	at com.intellij.openapi.progress.impl.ProgressRunner.lambda$submit$4(ProgressRunner.java:233)
+	at com.intellij.openapi.progress.impl.ProgressRunner$$Lambda$1085/0x0000000000000000.get(Unknown Source)
+	at java.util.concurrent.CompletableFuture$AsyncSupply.run(CompletableFuture.java:1604)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:823)
+2021-06-28 14:07:44,951 [ 912938]   INFO - ools.idea.run.tasks.DeployTask - Installing application: com.example.pt_demo1 
+2021-06-28 14:07:45,111 [ 913098]   INFO - a.run.tasks.AbstractDeployTask - 1139936405ms TRC_BEG [12232][12232] : installer 
+2021-06-28 14:07:45,111 [ 913098]   INFO - a.run.tasks.AbstractDeployTask - 1139936405ms TRC_BEG [12232][12232] : Command Dump 
+2021-06-28 14:07:45,112 [ 913099]   INFO - a.run.tasks.AbstractDeployTask - 1139936405ms TRC_BEG [12232][12232] : get process ids 
+2021-06-28 14:07:45,112 [ 913099]   INFO - a.run.tasks.AbstractDeployTask - 1139936431ms LOG_ERR [12232][12232] : Could not get package user id: /system/bin/run-as: unknown package: com.example.pt_demo1
+ 
+2021-06-28 14:07:45,112 [ 913099]   INFO - a.run.tasks.AbstractDeployTask - 1139936433ms TRC_END [12232][12232] :  
+2021-06-28 14:07:45,112 [ 913099]   INFO - a.run.tasks.AbstractDeployTask - 1139936433ms TRC_BEG [12232][12232] : CmdCommand::GetApksFromDump 
+2021-06-28 14:07:45,112 [ 913099]   INFO - a.run.tasks.AbstractDeployTask - 1139936490ms TRC_END [12232][12232] :  
+2021-06-28 14:07:45,112 [ 913099]   INFO - a.run.tasks.AbstractDeployTask - 1139936490ms LOG_ERR [12232][12232] : Could not find apks for package: com.example.pt_demo1 
+2021-06-28 14:07:45,112 [ 913099]   INFO - a.run.tasks.AbstractDeployTask - 1139936490ms TRC_END [12232][12232] :  
+2021-06-28 14:07:45,112 [ 913099]   INFO - a.run.tasks.AbstractDeployTask - 1139936490ms TRC_END [12232][12232] :  
+2021-06-28 14:07:45,112 [ 913099]   INFO - a.run.tasks.AbstractDeployTask - DUMP_UNKNOWN_PACKAGE 
+2021-06-28 14:07:45,489 [ 913476]   INFO -            #com.android.ddmlib - Created install session 1033078656 with options -r -t --user current --dont-kill -S 4310821 
+2021-06-28 14:07:45,489 [ 913476]   INFO -            #com.android.ddmlib - Uploading APK /Users/kevalmajethiya/AndroidStudioProjects/PT_demo1/app/build/outputs/apk/debug/app-debug.apk to session 1033078656 
+2021-06-28 14:08:02,266 [ 930253]   INFO - a.run.tasks.AbstractDeployTask - Install successfully finished in 17 s 315 ms. 
+2021-06-28 14:08:03,952 [ 931939]   INFO - run.AndroidLogcatOutputCapture - startCapture("samsung-sm_g570f-4210b3dbd8ec54bf") 
+2021-06-28 14:11:40,141 [1148128]   INFO - rationStore.ComponentStoreImpl - Saving Project (name=PT_demo1, containerState=ACTIVE, componentStore=/Users/kevalmajethiya/AndroidStudioProjects/PT_demo1) RunManager took 37 ms, libraryTable took 20 ms 
+2021-06-28 14:12:07,529 [1175516]   INFO - ild.invoker.GradleBuildInvoker - About to execute Gradle tasks: [:app:assembleDebug] 
+2021-06-28 14:12:07,581 [1175568]   INFO - s.plugins.gradle.GradleManager - Instructing gradle to use java from /Applications/Android Studio.app/Contents/jre/jdk/Contents/Home 
+2021-06-28 14:12:07,586 [1175573]   INFO - ild.invoker.GradleBuildInvoker - Build command line options: [-Pandroid.injected.invoked.from.ide=true, -Pandroid.injected.studio.version=10.4.1.2.201.8743.12.41.7042882, -Pandroid.injected.attribution.file.location=/var/folders/z3/7t9zr1r5559f2_dzk1v1j7c80000gn/T/1624869727585-0] 
+2021-06-28 14:12:07,601 [1175588]   INFO - xecution.GradleExecutionHelper - Passing command-line args to Gradle Tooling API: -Pandroid.injected.invoked.from.ide=true -Pandroid.injected.studio.version=10.4.1.2.201.8743.12.41.7042882 -Pandroid.injected.attribution.file.location=/var/folders/z3/7t9zr1r5559f2_dzk1v1j7c80000gn/T/1624869727585-0 
+2021-06-28 14:12:13,936 [1181923]   INFO - ild.invoker.GradleBuildInvoker - Gradle build finished in 6 s 352 ms 
+2021-06-28 14:12:19,157 [1187144]   INFO - run.AndroidLogcatOutputCapture - stopCapture("samsung-sm_g570f-4210b3dbd8ec54bf") 
+2021-06-28 14:12:19,355 [1187342]   INFO - run.AndroidLogcatOutputCapture - stopAll() 
+2021-06-28 14:12:27,403 [1195390]   INFO - rationStore.ComponentStoreImpl - Saving appFeatureUsageStatistics took 11 ms, FileTypeManager took 12 ms, HttpConfigurable took 12 ms, ProjectJdkTable took 11 ms 
+2021-06-28 14:12:27,507 [1195494]   INFO - rationStore.ComponentStoreImpl - Saving Project (name=PT_demo1, containerState=ACTIVE, componentStore=/Users/kevalmajethiya/AndroidStudioProjects/PT_demo1) RunManager took 18 ms, libraryTable took 31 ms 
+2021-06-28 14:12:54,304 [1222291]   INFO - ild.invoker.GradleBuildInvoker - About to execute Gradle tasks: [:app:assembleDebug] 
+2021-06-28 14:12:54,317 [1222304]   INFO - s.plugins.gradle.GradleManager - Instructing gradle to use java from /Applications/Android Studio.app/Contents/jre/jdk/Contents/Home 
+2021-06-28 14:12:54,318 [1222305]   INFO - ild.invoker.GradleBuildInvoker - Build command line options: [-Pandroid.injected.invoked.from.ide=true, -Pandroid.injected.studio.version=10.4.1.2.201.8743.12.41.7042882, -Pandroid.injected.attribution.file.location=/var/folders/z3/7t9zr1r5559f2_dzk1v1j7c80000gn/T/1624869774318-0] 
+2021-06-28 14:12:54,328 [1222315]   INFO - xecution.GradleExecutionHelper - Passing command-line args to Gradle Tooling API: -Pandroid.injected.invoked.from.ide=true -Pandroid.injected.studio.version=10.4.1.2.201.8743.12.41.7042882 -Pandroid.injected.attribution.file.location=/var/folders/z3/7t9zr1r5559f2_dzk1v1j7c80000gn/T/1624869774318-0 
+2021-06-28 14:12:55,539 [1223526]   INFO - ild.invoker.GradleBuildInvoker - Gradle build finished in 1 s 219 ms 
+2021-06-28 14:13:00,791 [1228778]   INFO - ild.invoker.GradleBuildInvoker - About to execute Gradle tasks: [:app:assembleDebug] 
+2021-06-28 14:13:00,804 [1228791]   INFO - s.plugins.gradle.GradleManager - Instructing gradle to use java from /Applications/Android Studio.app/Contents/jre/jdk/Contents/Home 
+2021-06-28 14:13:00,805 [1228792]   INFO - ild.invoker.GradleBuildInvoker - Build command line options: [-Pandroid.injected.invoked.from.ide=true, -Pandroid.injected.studio.version=10.4.1.2.201.8743.12.41.7042882, -Pandroid.injected.attribution.file.location=/var/folders/z3/7t9zr1r5559f2_dzk1v1j7c80000gn/T/1624869780805-0, -Pandroid.injected.build.api=26, -Pandroid.injected.build.density=xhdpi, -Pandroid.injected.build.abi=armeabi-v7a,armeabi] 
+2021-06-28 14:13:00,813 [1228800]   INFO - xecution.GradleExecutionHelper - Passing command-line args to Gradle Tooling API: -Pandroid.injected.invoked.from.ide=true -Pandroid.injected.studio.version=10.4.1.2.201.8743.12.41.7042882 -Pandroid.injected.attribution.file.location=/var/folders/z3/7t9zr1r5559f2_dzk1v1j7c80000gn/T/1624869780805-0 -Pandroid.injected.build.api=26 -Pandroid.injected.build.density=xhdpi -Pandroid.injected.build.abi=armeabi-v7a,armeabi 
+2021-06-28 14:13:06,019 [1234006]   INFO - ild.invoker.GradleBuildInvoker - Gradle build finished in 5 s 212 ms 
+2021-06-28 14:13:06,029 [1234016]   INFO - a.gradle.run.MakeBeforeRunTask - Couldn't get post build models. 
+2021-06-28 14:13:06,029 [1234016]   INFO - a.gradle.run.MakeBeforeRunTask - Gradle invocation complete, success = true 
+2021-06-28 14:13:06,192 [1234179]   INFO - idea.run.AndroidProcessHandler - Adding device samsung-sm_g570f-4210b3dbd8ec54bf to monitor for launched app: com.example.pt_demo1 
+2021-06-28 14:13:06,201 [1234188]   INFO - notification.NotificationGroup - Notification group LaunchTaskRunner is already registered 
+java.lang.Throwable
+	at com.intellij.notification.NotificationGroup.<init>(NotificationGroup.kt:48)
+	at com.intellij.notification.NotificationGroup.<init>(NotificationGroup.kt:28)
+	at com.intellij.notification.NotificationGroup.<init>(NotificationGroup.kt:36)
+	at com.intellij.notification.NotificationGroup.<init>(NotificationGroup.kt:36)
+	at com.intellij.notification.NotificationGroup$Companion.toolWindowGroup(NotificationGroup.kt:93)
+	at com.intellij.notification.NotificationGroup$Companion.toolWindowGroup$default(NotificationGroup.kt:92)
+	at com.intellij.notification.NotificationGroup.toolWindowGroup(NotificationGroup.kt)
+	at com.android.tools.idea.run.LaunchTaskRunner.run(LaunchTaskRunner.java:183)
+	at com.intellij.openapi.progress.impl.CoreProgressManager$TaskRunnable.run(CoreProgressManager.java:932)
+	at com.intellij.openapi.progress.impl.CoreProgressManager.lambda$runProcessWithProgressAsync$5(CoreProgressManager.java:434)
+	at com.intellij.openapi.progress.impl.CoreProgressManager$$Lambda$1465/0x0000000000000000.apply(Unknown Source)
+	at com.intellij.openapi.progress.impl.ProgressRunner.lambda$null$3(ProgressRunner.java:233)
+	at com.intellij.openapi.progress.impl.ProgressRunner$$Lambda$1089/0x0000000000000000.run(Unknown Source)
+	at com.intellij.openapi.progress.impl.CoreProgressManager.lambda$runProcess$2(CoreProgressManager.java:166)
+	at com.intellij.openapi.progress.impl.CoreProgressManager$$Lambda$155/0x0000000000000000.run(Unknown Source)
+	at com.intellij.openapi.progress.impl.CoreProgressManager.registerIndicatorAndRun(CoreProgressManager.java:627)
+	at com.intellij.openapi.progress.impl.CoreProgressManager.executeProcessUnderProgress(CoreProgressManager.java:572)
+	at com.intellij.openapi.progress.impl.ProgressManagerImpl.executeProcessUnderProgress(ProgressManagerImpl.java:61)
+	at com.intellij.openapi.progress.impl.CoreProgressManager.runProcess(CoreProgressManager.java:153)
+	at com.intellij.openapi.progress.impl.ProgressRunner.lambda$submit$4(ProgressRunner.java:233)
+	at com.intellij.openapi.progress.impl.ProgressRunner$$Lambda$1085/0x0000000000000000.get(Unknown Source)
+	at java.util.concurrent.CompletableFuture$AsyncSupply.run(CompletableFuture.java:1604)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:823)
+2021-06-28 14:13:06,204 [1234191]   INFO - ools.idea.run.tasks.DeployTask - Installing application: com.example.pt_demo1 
+2021-06-28 14:13:06,360 [1234347]   INFO - a.run.tasks.AbstractDeployTask - 1140257667ms TRC_BEG [14939][14939] : installer 
+2021-06-28 14:13:06,360 [1234347]   INFO - a.run.tasks.AbstractDeployTask - 1140257668ms TRC_BEG [14939][14939] : Command Dump 
+2021-06-28 14:13:06,360 [1234347]   INFO - a.run.tasks.AbstractDeployTask - 1140257668ms TRC_BEG [14939][14939] : get process ids 
+2021-06-28 14:13:06,360 [1234347]   INFO - a.run.tasks.AbstractDeployTask - 1140257694ms LOG_ERR [14939][14939] : Could not get package user id: /system/bin/run-as: unknown package: com.example.pt_demo1
+ 
+2021-06-28 14:13:06,360 [1234347]   INFO - a.run.tasks.AbstractDeployTask - 1140257695ms TRC_END [14939][14939] :  
+2021-06-28 14:13:06,360 [1234347]   INFO - a.run.tasks.AbstractDeployTask - 1140257696ms TRC_BEG [14939][14939] : CmdCommand::GetApksFromDump 
+2021-06-28 14:13:06,360 [1234347]   INFO - a.run.tasks.AbstractDeployTask - 1140257750ms TRC_END [14939][14939] :  
+2021-06-28 14:13:06,360 [1234347]   INFO - a.run.tasks.AbstractDeployTask - 1140257750ms LOG_ERR [14939][14939] : Could not find apks for package: com.example.pt_demo1 
+2021-06-28 14:13:06,360 [1234347]   INFO - a.run.tasks.AbstractDeployTask - 1140257750ms TRC_END [14939][14939] :  
+2021-06-28 14:13:06,361 [1234348]   INFO - a.run.tasks.AbstractDeployTask - 1140257750ms TRC_END [14939][14939] :  
+2021-06-28 14:13:06,361 [1234348]   INFO - a.run.tasks.AbstractDeployTask - DUMP_UNKNOWN_PACKAGE 
+2021-06-28 14:13:06,681 [1234668]   INFO -            #com.android.ddmlib - Created install session 2095238028 with options -r -t --user current --dont-kill -S 4310596 
+2021-06-28 14:13:06,681 [1234668]   INFO -            #com.android.ddmlib - Uploading APK /Users/kevalmajethiya/AndroidStudioProjects/PT_demo1/app/build/outputs/apk/debug/app-debug.apk to session 2095238028 
+2021-06-28 14:13:32,048 [1260035]   INFO - a.run.tasks.AbstractDeployTask - Install successfully finished in 25 s 840 ms. 
+2021-06-28 14:13:33,216 [1261203]   INFO - run.AndroidLogcatOutputCapture - startCapture("samsung-sm_g570f-4210b3dbd8ec54bf") 
+2021-06-28 14:14:20,448 [1308435]   INFO - rationStore.ComponentStoreImpl - Saving appTerminalOptionsProvider took 11 ms 
+2021-06-28 14:14:20,525 [1308512]   INFO - rationStore.ComponentStoreImpl - Saving Project (name=PT_demo1, containerState=ACTIVE, componentStore=/Users/kevalmajethiya/AndroidStudioProjects/PT_demo1) RunManager took 11 ms 
+2021-06-28 14:19:21,353 [1609340]   INFO - rationStore.ComponentStoreImpl - Saving Project (name=PT_demo1, containerState=ACTIVE, componentStore=/Users/kevalmajethiya/AndroidStudioProjects/PT_demo1) XDebuggerManager took 11 ms 
+2021-06-28 14:20:35,604 [1683591]   INFO -                         STDERR - Exception "java.lang.ClassNotFoundException: com.intellij.codeInsight.editorActions.ReferenceData"while constructing DataFlavor for: application/x-java-jvm-local-objectref; class=com.intellij.codeInsight.editorActions.ReferenceData 
+2021-06-28 14:20:35,605 [1683592]   INFO -                         STDERR - Exception "java.lang.ClassNotFoundException: com.intellij.codeInsight.editorActions.ReferenceData"while constructing DataFlavor for: application/x-java-jvm-local-objectref; class=com.intellij.codeInsight.editorActions.ReferenceData 
+2021-06-28 14:20:41,366 [1689353]   WARN - actions.CopyTBXReferenceAction - Cannot find TBX tool for IDE: AndroidStudio 
+2021-06-28 14:21:14,895 [1722882]   INFO - notification.NotificationGroup - Notification group Jidesh Nair is already registered 
+java.lang.Throwable
+	at com.intellij.notification.NotificationGroup.<init>(NotificationGroup.kt:48)
+	at com.intellij.notification.NotificationGroup.<init>(NotificationGroup.kt:28)
+	at com.intellij.notification.NotificationGroup.<init>(NotificationGroup.kt:36)
+	at com.intellij.notification.NotificationGroup.<init>(NotificationGroup.kt:36)
+	at com.intellij.notification.NotificationGroup.<init>(NotificationGroup.kt)
+	at ui.FCMApprovaPresenter$Companion$NOTIFICATION_GROUP$1.compute(FCMApprovaPresenter.kt:31)
+	at ui.FCMApprovaPresenter$Companion$NOTIFICATION_GROUP$1.compute(FCMApprovaPresenter.kt:28)
+	at com.intellij.openapi.util.NotNullLazyValue.getValue(NotNullLazyValue.java:38)
+	at ui.FCMApprovaPresenter$onOkClick$1$3.run(FCMApprovaPresenter.kt:138)
+	at com.intellij.openapi.application.TransactionGuardImpl$2.run(TransactionGuardImpl.java:201)
+	at com.intellij.openapi.application.impl.ApplicationImpl.runIntendedWriteActionOnCurrentThread(ApplicationImpl.java:831)
+	at com.intellij.openapi.application.impl.ApplicationImpl.lambda$invokeLater$4(ApplicationImpl.java:310)
+	at com.intellij.openapi.application.impl.ApplicationImpl$$Lambda$147/0x0000000000000000.run(Unknown Source)
+	at com.intellij.openapi.application.impl.FlushQueue.doRun(FlushQueue.java:80)
+	at com.intellij.openapi.application.impl.FlushQueue.runNextEvent(FlushQueue.java:128)
+	at com.intellij.openapi.application.impl.FlushQueue.flushNow(FlushQueue.java:46)
+	at com.intellij.openapi.application.impl.FlushQueue$FlushNow.run(FlushQueue.java:184)
+	at java.awt.event.InvocationEvent.dispatch(InvocationEvent.java:311)
+	at java.awt.EventQueue.dispatchEventImpl(EventQueue.java:758)
+	at java.awt.EventQueue.access$500(EventQueue.java:97)
+	at java.awt.EventQueue$3.run(EventQueue.java:709)
+	at java.awt.EventQueue$3.run(EventQueue.java:703)
+	at java.security.AccessController.doPrivileged(AccessController.java:708)
+	at java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:74)
+	at java.awt.EventQueue.dispatchEvent(EventQueue.java:728)
+	at com.intellij.ide.IdeEventQueue.defaultDispatchEvent(IdeEventQueue.java:974)
+	at com.intellij.ide.IdeEventQueue._dispatchEvent(IdeEventQueue.java:847)
+	at com.intellij.ide.IdeEventQueue.lambda$null$8(IdeEventQueue.java:449)
+	at com.intellij.ide.IdeEventQueue$$Lambda$420/0x0000000000000000.compute(Unknown Source)
+	at com.intellij.openapi.progress.impl.CoreProgressManager.computePrioritized(CoreProgressManager.java:741)
+	at com.intellij.ide.IdeEventQueue.lambda$dispatchEvent$9(IdeEventQueue.java:448)
+	at com.intellij.ide.IdeEventQueue$$Lambda$419/0x0000000000000000.run(Unknown Source)
+	at com.intellij.openapi.application.impl.ApplicationImpl.runIntendedWriteActionOnCurrentThread(ApplicationImpl.java:831)
+	at com.intellij.ide.IdeEventQueue.dispatchEvent(IdeEventQueue.java:496)
+	at java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.java:205)
+	at java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:116)
+	at java.awt.EventDispatchThread.pumpEventsForHierarchy(EventDispatchThread.java:105)
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:101)
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:93)
+	at java.awt.EventDispatchThread.run(EventDispatchThread.java:82)
+2021-06-28 14:21:14,946 [1722933]   INFO - e.project.sync.GradleSyncState - Started single-variant sync with Gradle for project 'PT_demo1'. 
+2021-06-28 14:21:15,046 [1723033]   INFO - e.project.sync.GradleSyncState - Sync already in progress for project 'PT_demo1'. 
+2021-06-28 14:21:15,181 [1723168]   INFO - s.plugins.gradle.GradleManager - Instructing gradle to use java from /Applications/Android Studio.app/Contents/jre/jdk/Contents/Home 
+2021-06-28 14:21:15,185 [1723172]   INFO - s.plugins.gradle.GradleManager - Instructing gradle to use java from /Applications/Android Studio.app/Contents/jre/jdk/Contents/Home 
+2021-06-28 14:21:15,329 [1723316]   INFO - oject.common.GradleInitScripts - init script file sync.studio.tooling contents "initscript {\n    dependencies {\n        classpath files(['/Applications/Android Studio.app/Contents/plugins/android/lib/android.jar', '/Applications/Android Studio.app/Contents/plugins/android/lib/android.jar', '/Applications/Android Studio.app/Contents/lib/kotlin-stdlib-1.3.72.jar'])\n    }\n}\nallprojects {\n    apply plugin: com.android.ide.gradle.model.builder.AndroidStudioToolingPlugin\n}\n" 
+2021-06-28 14:21:15,530 [1723517]   INFO - ration.services.NativeServices - Initialized native services in: /Users/kevalmajethiya/.gradle/native 
+2021-06-28 14:21:15,602 [1723589]   INFO - xecution.GradleExecutionHelper - Passing command-line args to Gradle Tooling API: -Didea.sync.active=true -Porg.gradle.kotlin.dsl.provider.cid=13000735040895 --init-script /private/var/folders/z3/7t9zr1r5559f2_dzk1v1j7c80000gn/T/sync.studio.tooling.gradle -Djava.awt.headless=true --stacktrace -Pandroid.injected.build.model.only=true -Pandroid.injected.build.model.only.advanced=true -Pandroid.injected.invoked.from.ide=true -Pandroid.injected.build.model.only.versioned=3 -Pandroid.injected.studio.version=10.4.1.2.201.8743.12.41.7042882 -Pandroid.injected.build.model.disable.src.download=true -Pidea.gradle.do.not.build.tasks=false -Dorg.gradle.internal.GradleProjectBuilderOptions=omit_all_tasks --init-script /private/var/folders/z3/7t9zr1r5559f2_dzk1v1j7c80000gn/T/ijinit.gradle 
+2021-06-28 14:21:29,577 [1737564]   INFO - testKnownPluginVersionProvider - 'gradle' plugin missing from the offline Maven repo, will use default 4.1.2 
+2021-06-28 14:21:30,235 [1738222]   INFO - System.util.ExternalSystemUtil - External project [/Users/kevalmajethiya/AndroidStudioProjects/PT_demo1] resolution task executed in 15186 ms. 
+2021-06-28 14:21:30,236 [1738223]   INFO - e.project.sync.GradleSyncState - Started setup of project 'PT_demo1'. 
+2021-06-28 14:21:30,598 [1738585]   INFO - notification.NotificationGroup - Notification group Jidesh Nair is already registered 
+java.lang.Throwable
+	at com.intellij.notification.NotificationGroup.<init>(NotificationGroup.kt:48)
+	at com.intellij.notification.NotificationGroup.<init>(NotificationGroup.kt:28)
+	at com.intellij.notification.NotificationGroup.<init>(NotificationGroup.kt:36)
+	at com.intellij.notification.NotificationGroup.<init>(NotificationGroup.kt:36)
+	at com.intellij.notification.NotificationGroup.<init>(NotificationGroup.kt)
+	at ui.CTApprovalPresenter$Companion$NOTIFICATION_GROUP$1.compute(CTApprovalPresenter.kt:32)
+	at ui.CTApprovalPresenter$Companion$NOTIFICATION_GROUP$1.compute(CTApprovalPresenter.kt:29)
+	at com.intellij.openapi.util.NotNullLazyValue.getValue(NotNullLazyValue.java:38)
+	at ui.CTApprovalPresenter$onOkClick$1$4.run(CTApprovalPresenter.kt:196)
+	at com.intellij.openapi.application.TransactionGuardImpl$2.run(TransactionGuardImpl.java:201)
+	at com.intellij.openapi.application.impl.ApplicationImpl.runIntendedWriteActionOnCurrentThread(ApplicationImpl.java:831)
+	at com.intellij.openapi.application.impl.ApplicationImpl.lambda$invokeLater$4(ApplicationImpl.java:310)
+	at com.intellij.openapi.application.impl.ApplicationImpl$$Lambda$147/0x0000000000000000.run(Unknown Source)
+	at com.intellij.openapi.application.impl.FlushQueue.doRun(FlushQueue.java:80)
+	at com.intellij.openapi.application.impl.FlushQueue.runNextEvent(FlushQueue.java:128)
+	at com.intellij.openapi.application.impl.FlushQueue.flushNow(FlushQueue.java:46)
+	at com.intellij.openapi.application.impl.FlushQueue$FlushNow.run(FlushQueue.java:184)
+	at java.awt.event.InvocationEvent.dispatch(InvocationEvent.java:311)
+	at java.awt.EventQueue.dispatchEventImpl(EventQueue.java:758)
+	at java.awt.EventQueue.access$500(EventQueue.java:97)
+	at java.awt.EventQueue$3.run(EventQueue.java:709)
+	at java.awt.EventQueue$3.run(EventQueue.java:703)
+	at java.security.AccessController.doPrivileged(AccessController.java:708)
+	at java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:74)
+	at java.awt.EventQueue.dispatchEvent(EventQueue.java:728)
+	at com.intellij.ide.IdeEventQueue.defaultDispatchEvent(IdeEventQueue.java:974)
+	at com.intellij.ide.IdeEventQueue._dispatchEvent(IdeEventQueue.java:847)
+	at com.intellij.ide.IdeEventQueue.lambda$null$8(IdeEventQueue.java:449)
+	at com.intellij.ide.IdeEventQueue$$Lambda$420/0x0000000000000000.compute(Unknown Source)
+	at com.intellij.openapi.progress.impl.CoreProgressManager.computePrioritized(CoreProgressManager.java:741)
+	at com.intellij.ide.IdeEventQueue.lambda$dispatchEvent$9(IdeEventQueue.java:448)
+	at com.intellij.ide.IdeEventQueue$$Lambda$419/0x0000000000000000.run(Unknown Source)
+	at com.intellij.openapi.application.impl.ApplicationImpl.runIntendedWriteActionOnCurrentThread(ApplicationImpl.java:831)
+	at com.intellij.ide.IdeEventQueue.dispatchEvent(IdeEventQueue.java:496)
+	at java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.java:205)
+	at java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:116)
+	at java.awt.EventDispatchThread.pumpEventsForHierarchy(EventDispatchThread.java:105)
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:101)
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:93)
+	at java.awt.EventDispatchThread.run(EventDispatchThread.java:82)
+2021-06-28 14:21:31,140 [1739127]   INFO - ge.ExternalProjectsDataStorage - Save external projects data in 393 ms 
+2021-06-28 14:21:31,298 [1739285]   INFO - rationStore.ComponentStoreImpl - Saving appwhatsNew took 19 ms 
+2021-06-28 14:21:31,683 [1739670]   INFO - a.AndroidGradleProjectResolver - Set Android SDK 'Android API 30 Platform' (/Users/kevalmajethiya/Library/Android/sdk) to module app 
+2021-06-28 14:21:31,692 [1739679]   INFO - a.AndroidGradleProjectResolver - Set Android SDK 'Android API 30 Platform' (/Users/kevalmajethiya/Library/Android/sdk) to module app 
+2021-06-28 14:21:32,002 [1739989]   INFO - testKnownPluginVersionProvider - 'gradle' plugin missing from the offline Maven repo, will use default 4.1.2 
+2021-06-28 14:21:32,010 [1739997]   INFO - .MemorySettingsPostSyncChecker - 64bits? : true, current: 512, available RAM: 8192 
+2021-06-28 14:21:32,010 [1739997]   INFO - .MemorySettingsPostSyncChecker - Skipped checking memory settings 
+2021-06-28 14:21:32,011 [1739998]   INFO - g.jetbrains.kotlin.idea.script - [kts] loading script definitions [] using cp:  
+2021-06-28 14:21:32,051 [1740038]   INFO - testKnownPluginVersionProvider - 'gradle' plugin missing from the offline Maven repo, will use default 4.1.2 
+2021-06-28 14:21:32,051 [1740038]   INFO - .MemorySettingsPostSyncChecker - 64bits? : true, current: 512, available RAM: 8192 
+2021-06-28 14:21:32,054 [1740041]   INFO - .MemorySettingsPostSyncChecker - Skipped checking memory settings 
+2021-06-28 14:21:32,089 [1740076]   INFO - s.plugins.gradle.GradleManager - Instructing gradle to use java from /Applications/Android Studio.app/Contents/jre/jdk/Contents/Home 
+2021-06-28 14:21:32,092 [1740079]   INFO - e.project.sync.GradleSyncState - Gradle sync finished in 17 s 146 ms 
+2021-06-28 14:21:32,148 [1740135]   INFO - penapi.project.DumbServiceImpl - Running dumb mode task: com.android.tools.idea.res.AndroidProjectRootListener$2@50d377d 
+2021-06-28 14:21:32,303 [1740290]   INFO - roid.tools.ndk.GradleWorkspace - Updating model took 0.003s 
+2021-06-28 14:21:32,325 [1740312]   INFO - penapi.project.DumbServiceImpl - Running dumb mode task: com.intellij.util.indexing.UnindexedFilesUpdater@9383efdb 
+2021-06-28 14:21:32,352 [1740339]   INFO - .diagnostic.PerformanceWatcher - Pushing properties took 26ms; general responsiveness: ok; EDT responsiveness: ok 
+2021-06-28 14:21:32,535 [1740522]   INFO - .diagnostic.PerformanceWatcher - Indexable file iteration took 182ms; general responsiveness: ok; EDT responsiveness: ok 
+2021-06-28 14:21:32,700 [1740687]   INFO - penapi.project.DumbServiceImpl - updateFinished 
+2021-06-28 14:21:32,701 [1740688]   INFO - g.FileBasedIndexProjectHandler - Has changed files: false; project=Project (name=PT_demo1, containerState=ACTIVE, componentStore=/Users/kevalmajethiya/AndroidStudioProjects/PT_demo1)  
+2021-06-28 14:21:38,312 [1746299]   INFO - run.AndroidLogcatOutputCapture - stopCapture("samsung-sm_g570f-4210b3dbd8ec54bf") 
+2021-06-28 14:21:38,536 [1746523]   INFO - run.AndroidLogcatOutputCapture - stopAll() 
+2021-06-28 14:21:53,473 [1761460]   INFO - ild.invoker.GradleBuildInvoker - About to execute Gradle tasks: [:app:assembleDebug] 
+2021-06-28 14:21:53,502 [1761489]   INFO - s.plugins.gradle.GradleManager - Instructing gradle to use java from /Applications/Android Studio.app/Contents/jre/jdk/Contents/Home 
+2021-06-28 14:21:53,504 [1761491]   INFO - ild.invoker.GradleBuildInvoker - Build command line options: [-Pandroid.injected.invoked.from.ide=true, -Pandroid.injected.studio.version=10.4.1.2.201.8743.12.41.7042882, -Pandroid.injected.attribution.file.location=/var/folders/z3/7t9zr1r5559f2_dzk1v1j7c80000gn/T/1624870313504-0] 
+2021-06-28 14:21:53,516 [1761503]   INFO - xecution.GradleExecutionHelper - Passing command-line args to Gradle Tooling API: -Pandroid.injected.invoked.from.ide=true -Pandroid.injected.studio.version=10.4.1.2.201.8743.12.41.7042882 -Pandroid.injected.attribution.file.location=/var/folders/z3/7t9zr1r5559f2_dzk1v1j7c80000gn/T/1624870313504-0 
+2021-06-28 14:21:59,199 [1767186]   INFO - ild.invoker.GradleBuildInvoker - Gradle build finished in 5 s 694 ms 
+2021-06-28 14:22:01,787 [1769774]   INFO - ild.invoker.GradleBuildInvoker - About to execute Gradle tasks: [:app:assembleDebug] 
+2021-06-28 14:22:01,796 [1769783]   INFO - s.plugins.gradle.GradleManager - Instructing gradle to use java from /Applications/Android Studio.app/Contents/jre/jdk/Contents/Home 
+2021-06-28 14:22:01,809 [1769796]   INFO - ild.invoker.GradleBuildInvoker - Build command line options: [-Pandroid.injected.invoked.from.ide=true, -Pandroid.injected.studio.version=10.4.1.2.201.8743.12.41.7042882, -Pandroid.injected.attribution.file.location=/var/folders/z3/7t9zr1r5559f2_dzk1v1j7c80000gn/T/1624870321797-0, -Pandroid.injected.build.api=26, -Pandroid.injected.build.density=xhdpi, -Pandroid.injected.build.abi=armeabi-v7a,armeabi] 
+2021-06-28 14:22:01,819 [1769806]   INFO - xecution.GradleExecutionHelper - Passing command-line args to Gradle Tooling API: -Pandroid.injected.invoked.from.ide=true -Pandroid.injected.studio.version=10.4.1.2.201.8743.12.41.7042882 -Pandroid.injected.attribution.file.location=/var/folders/z3/7t9zr1r5559f2_dzk1v1j7c80000gn/T/1624870321797-0 -Pandroid.injected.build.api=26 -Pandroid.injected.build.density=xhdpi -Pandroid.injected.build.abi=armeabi-v7a,armeabi 
+2021-06-28 14:22:07,381 [1775368]   INFO - ild.invoker.GradleBuildInvoker - Gradle build finished in 5 s 582 ms 
+2021-06-28 14:22:07,385 [1775372]   INFO - a.gradle.run.MakeBeforeRunTask - Couldn't get post build models. 
+2021-06-28 14:22:07,385 [1775372]   INFO - a.gradle.run.MakeBeforeRunTask - Gradle invocation complete, success = true 
+2021-06-28 14:22:07,551 [1775538]   INFO - idea.run.AndroidProcessHandler - Adding device samsung-sm_g570f-4210b3dbd8ec54bf to monitor for launched app: com.example.pt_demo1 
+2021-06-28 14:22:07,556 [1775543]   INFO - notification.NotificationGroup - Notification group LaunchTaskRunner is already registered 
+java.lang.Throwable
+	at com.intellij.notification.NotificationGroup.<init>(NotificationGroup.kt:48)
+	at com.intellij.notification.NotificationGroup.<init>(NotificationGroup.kt:28)
+	at com.intellij.notification.NotificationGroup.<init>(NotificationGroup.kt:36)
+	at com.intellij.notification.NotificationGroup.<init>(NotificationGroup.kt:36)
+	at com.intellij.notification.NotificationGroup$Companion.toolWindowGroup(NotificationGroup.kt:93)
+	at com.intellij.notification.NotificationGroup$Companion.toolWindowGroup$default(NotificationGroup.kt:92)
+	at com.intellij.notification.NotificationGroup.toolWindowGroup(NotificationGroup.kt)
+	at com.android.tools.idea.run.LaunchTaskRunner.run(LaunchTaskRunner.java:183)
+	at com.intellij.openapi.progress.impl.CoreProgressManager$TaskRunnable.run(CoreProgressManager.java:932)
+	at com.intellij.openapi.progress.impl.CoreProgressManager.lambda$runProcessWithProgressAsync$5(CoreProgressManager.java:434)
+	at com.intellij.openapi.progress.impl.CoreProgressManager$$Lambda$1465/0x0000000000000000.apply(Unknown Source)
+	at com.intellij.openapi.progress.impl.ProgressRunner.lambda$null$3(ProgressRunner.java:233)
+	at com.intellij.openapi.progress.impl.ProgressRunner$$Lambda$1089/0x0000000000000000.run(Unknown Source)
+	at com.intellij.openapi.progress.impl.CoreProgressManager.lambda$runProcess$2(CoreProgressManager.java:166)
+	at com.intellij.openapi.progress.impl.CoreProgressManager$$Lambda$155/0x0000000000000000.run(Unknown Source)
+	at com.intellij.openapi.progress.impl.CoreProgressManager.registerIndicatorAndRun(CoreProgressManager.java:627)
+	at com.intellij.openapi.progress.impl.CoreProgressManager.executeProcessUnderProgress(CoreProgressManager.java:572)
+	at com.intellij.openapi.progress.impl.ProgressManagerImpl.executeProcessUnderProgress(ProgressManagerImpl.java:61)
+	at com.intellij.openapi.progress.impl.CoreProgressManager.runProcess(CoreProgressManager.java:153)
+	at com.intellij.openapi.progress.impl.ProgressRunner.lambda$submit$4(ProgressRunner.java:233)
+	at com.intellij.openapi.progress.impl.ProgressRunner$$Lambda$1085/0x0000000000000000.get(Unknown Source)
+	at java.util.concurrent.CompletableFuture$AsyncSupply.run(CompletableFuture.java:1604)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:823)
+2021-06-28 14:22:07,558 [1775545]   INFO - ools.idea.run.tasks.DeployTask - Installing application: com.example.pt_demo1 
+2021-06-28 14:22:07,735 [1775722]   INFO - a.run.tasks.AbstractDeployTask - 1140799014ms TRC_BEG [17776][17776] : installer 
+2021-06-28 14:22:07,735 [1775722]   INFO - a.run.tasks.AbstractDeployTask - 1140799015ms TRC_BEG [17776][17776] : Command Dump 
+2021-06-28 14:22:07,735 [1775722]   INFO - a.run.tasks.AbstractDeployTask - 1140799015ms TRC_BEG [17776][17776] : get process ids 
+2021-06-28 14:22:07,735 [1775722]   INFO - a.run.tasks.AbstractDeployTask - 1140799048ms LOG_ERR [17776][17776] : Could not get package user id: /system/bin/run-as: unknown package: com.example.pt_demo1
+ 
+2021-06-28 14:22:07,735 [1775722]   INFO - a.run.tasks.AbstractDeployTask - 1140799049ms TRC_END [17776][17776] :  
+2021-06-28 14:22:07,735 [1775722]   INFO - a.run.tasks.AbstractDeployTask - 1140799049ms TRC_BEG [17776][17776] : CmdCommand::GetApksFromDump 
+2021-06-28 14:22:07,735 [1775722]   INFO - a.run.tasks.AbstractDeployTask - 1140799100ms TRC_END [17776][17776] :  
+2021-06-28 14:22:07,735 [1775722]   INFO - a.run.tasks.AbstractDeployTask - 1140799100ms LOG_ERR [17776][17776] : Could not find apks for package: com.example.pt_demo1 
+2021-06-28 14:22:07,736 [1775723]   INFO - a.run.tasks.AbstractDeployTask - 1140799101ms TRC_END [17776][17776] :  
+2021-06-28 14:22:07,736 [1775723]   INFO - a.run.tasks.AbstractDeployTask - 1140799101ms TRC_END [17776][17776] :  
+2021-06-28 14:22:07,736 [1775723]   INFO - a.run.tasks.AbstractDeployTask - DUMP_UNKNOWN_PACKAGE 
+2021-06-28 14:22:08,104 [1776091]   INFO -            #com.android.ddmlib - Created install session 1321822823 with options -r -t --user current --dont-kill -S 4310699 
+2021-06-28 14:22:08,104 [1776091]   INFO -            #com.android.ddmlib - Uploading APK /Users/kevalmajethiya/AndroidStudioProjects/PT_demo1/app/build/outputs/apk/debug/app-debug.apk to session 1321822823 
+2021-06-28 14:22:34,790 [1802777]   INFO - a.run.tasks.AbstractDeployTask - Install successfully finished in 27 s 233 ms. 
+2021-06-28 14:23:41,653 [1869640]   INFO - ools.idea.psi.TagToClassMapper - Building initial class map for android.view.View 
+2021-06-28 14:23:58,351 [1886338]   INFO - il.indexing.FileBasedIndexImpl - START INDEX SHUTDOWN 
+2021-06-28 14:23:58,597 [1886584]   INFO - tellij.psi.stubs.StubIndexImpl - StubIndexExtension-s were unloaded 
+2021-06-28 14:23:58,679 [1886666]   INFO - il.indexing.FileBasedIndexImpl - END INDEX SHUTDOWN 
+2021-06-28 14:23:58,679 [1886666]   INFO - newvfs.persistent.PersistentFS - VFS dispose started 
+2021-06-28 14:23:58,704 [1886691]   INFO - newvfs.persistent.PersistentFS - VFS dispose completed 
+2021-06-28 14:23:58,707 [1886694]   INFO - stubs.SerializationManagerImpl - START StubSerializationManager SHUTDOWN 
+2021-06-28 14:23:58,708 [1886695]   INFO - stubs.SerializationManagerImpl - END StubSerializationManager SHUTDOWN 
+2021-06-28 14:23:58,708 [1886695]   INFO -        #com.intellij.idea.Main - ------------------------------------------------------ IDE SHUTDOWN ------------------------------------------------------ 
+2021-06-28 14:23:58,744 [1886731]   INFO - org.jetbrains.io.BuiltInServer - web server stopped 
+2021-06-28 14:24:48,969 [      0]   INFO -        #com.intellij.idea.Main - ------------------------------------------------------ IDE STARTED ------------------------------------------------------ 
+2021-06-28 14:24:49,055 [     86]   INFO - .intellij.util.EnvironmentUtil - loading shell env: /bin/bash -l -i -c '/Applications/Android Studio.app/Contents/bin/printenv.py' '/private/var/folders/z3/7t9zr1r5559f2_dzk1v1j7c80000gn/T/intellij-shell-env.tmp' 
+2021-06-28 14:24:49,252 [    283]   INFO -        #com.intellij.idea.Main - IDE: Android Studio (build #AI-201.8743.12.41.7042882, 20 Dec 2020 06:09) 
+2021-06-28 14:24:49,252 [    283]   INFO -        #com.intellij.idea.Main - OS: Mac OS X (10.15.6, x86_64) 
+2021-06-28 14:24:49,252 [    283]   INFO -        #com.intellij.idea.Main - JRE: 1.8.0_292-b10 (AdoptOpenJDK) 
+2021-06-28 14:24:49,252 [    283]   INFO -        #com.intellij.idea.Main - JVM: openj9-0.26.0 (Eclipse OpenJ9 VM) 
+2021-06-28 14:24:49,253 [    284]   INFO -        #com.intellij.idea.Main - JVM Args: -Xoptionsfile=/Users/kevalmajethiya/Library/Java/JavaVirtualMachines/adopt-openj9-1.8.0_292/Contents/Home/jre/lib/default/options.default -Xlockword:mode=default,noLockword=java/lang/String,noLockword=java/util/MapEntry,noLockword=java/util/HashMap$Entry,noLockword=org/apache/harmony/luni/util/ModifiedMap$Entry,noLockword=java/util/Hashtable$Entry,noLockword=java/lang/invoke/MethodType,noLockword=java/lang/invoke/MethodHandle,noLockword=java/lang/invoke/CollectHandle,noLockword=java/lang/invoke/ConstructorHandle,noLockword=java/lang/invoke/ConvertHandle,noLockword=java/lang/invoke/ArgumentConversionHandle,noLockword=java/lang/invoke/AsTypeHandle,noLockword=java/lang/invoke/ExplicitCastHandle,noLockword=java/lang/invoke/FilterReturnHandle,noLockword=java/lang/invoke/DirectHandle,noLockword=java/lang/invoke/ReceiverBoundHandle,noLockword=java/lang/invoke/DynamicInvokerHandle,noLockword=java/lang/invoke/FieldHandle,noLockword=java/lang/invoke/FieldGetterHandle,noLockword=java/lang/invoke/FieldSetterHandle,noLockword=java/lang/invoke/StaticFieldGetterHandle,noLockword=java/lang/invoke/StaticFieldSetterHandle,noLockword=java/lang/invoke/IndirectHandle,noLockword=java/lang/invoke/InterfaceHandle,noLockword=java/lang/invoke/VirtualHandle,noLockword=java/lang/invoke/PrimitiveHandle,noLockword=java/lang/invoke/InvokeExactHandle,noLockword=java/lang/invoke/InvokeGenericHandle,noLockword=java/lang/invoke/VarargsCollectorHandle,noLockword=java/lang/invoke/ThunkTuple -Xjcl:jclse29 -Dcom.ibm.oti.vm.bootstrap.library.path=/Users/kevalmajethiya/Library/Java/JavaVirtualMachines/adopt-openj9-1.8.0_292/Contents/Home/jre/lib/default:/Users/kevalmajethiya/Library/Java/JavaVirtualMachines/adopt-openj9-1.8.0_292/Contents/Home/jre/lib -Dsun.boot.library.path=/Users/kevalmajethiya/Library/Java/JavaVirtualMachines/adopt-openj9-1.8.0_292/Contents/Home/jre/lib/default:/Users/kevalmajethiya/Library/Java/JavaVirtualMachines/adopt-openj9-1.8.0_292/Contents/Home/jre/lib -Djava.library.path=/Users/kevalmajethiya/Library/Java/JavaVirtualMachines/adopt-openj9-1.8.0_292/Contents/Home/jre/lib/default:/Users/kevalmajethiya/Library/Java/JavaVirtualMachines/adopt-openj9-1.8.0_292/Contents/Home/jre/lib:/usr/lib -Djava.home=/Users/kevalmajethiya/Library/Java/JavaVirtualMachines/adopt-openj9-1.8.0_292/Contents/Home/jre -Djava.ext.dirs=/Users/kevalmajethiya/Library/Java/JavaVirtualMachines/adopt-openj9-1.8.0_292/Contents/Home/jre/lib/ext -Duser.dir=/Applications/Android Studio.app/Contents/bin -Djava.class.path=. -Dapple.awt.fileDialogForDirectories=true -Dapple.laf.useScreenMenuBar=true -Didea.classpath.index.enabled=false -Didea.config.path=/Users/kevalmajethiya/Desktop/ClevrtapPluginWithFCM-master/build/idea-sandbox/config -Didea.is.internal=true -Didea.platform.prefix=AndroidStudio -Didea.plugins.path=/Users/kevalmajethiya/Desktop/ClevrtapPluginWithFCM-master/build/idea-sandbox/plugins -Didea.required.plugins.id=CleverTap.CleverTap -Didea.smooth.progress=false -Didea.system.path=/Users/kevalmajethiya/Desktop/ClevrtapPluginWithFCM-master/build/idea-sandbox/system -Xms256m -Xmx512m -Dfile.encoding=UTF-8 -Duser.country=GB -Duser.language=en -Duser.variant -ea -Djava.class.path=/Users/kevalmajethiya/Library/Java/JavaVirtualMachines/adopt-openj9-1.8.0_292/Contents/Home/lib/tools.jar:/Applications/Android Studio.app/Contents/lib/idea_rt.jar:/Applications/Android Studio.app/Contents/lib/idea.jar:/Applications/Android Studio.app/Contents/lib/bootstrap.jar:/Applications/Android Studio.app/Contents/lib/extensions.jar:/Applications/Android Studio.app/Contents/lib/util.jar:/Applications/Android Studio.app/Contents/lib/openapi.jar:/Applications/Android Studio.app/Contents/lib/trove4j.jar:/Applications/Android Studio.app/Contents/lib/jdom.jar:/Applications/Android Studio.app/Contents/lib/log4j.jar -Dsun.java.command=com.intellij.idea.Main -Dsun.java.launcher=SUN_STANDARD 
+2021-06-28 14:24:49,253 [    284]   INFO -        #com.intellij.idea.Main - ext: /Users/kevalmajethiya/Library/Java/JavaVirtualMachines/adopt-openj9-1.8.0_292/Contents/Home/jre/lib/ext: [traceformat.jar, sunec.jar, nashorn.jar, cldrdata.jar, dtfjview.jar, dnsns.jar, localedata.jar, sunjce_provider.jar, meta-index, dtfj.jar, sunpkcs11.jar, jaccess.jar, zipfs.jar] 
+2021-06-28 14:24:49,253 [    284]   INFO -        #com.intellij.idea.Main - library path: /Users/kevalmajethiya/Library/Java/JavaVirtualMachines/adopt-openj9-1.8.0_292/Contents/Home/jre/lib/default:/Users/kevalmajethiya/Library/Java/JavaVirtualMachines/adopt-openj9-1.8.0_292/Contents/Home/jre/lib:/usr/lib 
+2021-06-28 14:24:49,254 [    285]   INFO -        #com.intellij.idea.Main - boot library path: /Users/kevalmajethiya/Library/Java/JavaVirtualMachines/adopt-openj9-1.8.0_292/Contents/Home/jre/lib/default:/Users/kevalmajethiya/Library/Java/JavaVirtualMachines/adopt-openj9-1.8.0_292/Contents/Home/jre/lib 
+2021-06-28 14:24:49,254 [    285]   INFO -        #com.intellij.idea.Main - Locale=en_GB JNU=UTF-8 file.encoding=UTF-8 
+2021-06-28 14:24:49,388 [    419]   INFO - .intellij.util.EnvironmentUtil - shell environment loaded (13 vars) 
+2021-06-28 14:24:49,871 [    902]   INFO -        #com.intellij.idea.Main - JNA library (64-bit) loaded in 861 ms 
+2021-06-28 14:24:49,903 [    934]   INFO - ntellij.idea.ApplicationLoader - CPU cores: 4; ForkJoinPool.commonPool: java.util.concurrent.ForkJoinPool@ab06cda2[Running, parallelism = 3, size = 0, active = 0, running = 0, steals = 0, tasks = 0, submissions = 0]; factory: com.intellij.concurrency.IdeaForkJoinWorkerThreadFactory@ec55f264 
+2021-06-28 14:24:50,115 [   1146]   WARN - i.mac.MacOSApplicationProvider - No URL bundle (CFBundleURLTypes) is defined in the main bundle.
+To be able to open external links, specify protocols in the app layout section of the build file.
+Example: args.urlSchemes = ["your-protocol"] will handle following links: your-protocol://open?file=file&line=line 
+2021-06-28 14:24:50,506 [   1537]   INFO - llij.ide.plugins.PluginManager - Plugin com.intellij.java misses optional descriptor profiler-java.xml 
+2021-06-28 14:24:50,601 [   1632]   INFO - llij.ide.plugins.PluginManager - Plugin org.intellij.groovy misses optional descriptor duplicates-groovy.xml 
+2021-06-28 14:24:50,602 [   1633]   INFO - llij.ide.plugins.PluginManager - Plugin org.intellij.groovy misses optional descriptor duplicates-detection-groovy.xml 
+2021-06-28 14:24:50,698 [   1729]   INFO - llij.ide.plugins.PluginManager - Loaded bundled plugins: IDEA CORE (201.8743.12), com.intellij.platform.images (201.8743.12.41.7042882), JetBrains Repository Search (201.8743.12.41.7042882), Subversion (201.8743.12.41.7042882), Smali Support (201.8743.12.41.7042882), Configuration Script (201.8743.12.41.7042882), Copyright (201.8743.12.41.7042882), Java (201.8743.12.41.7042882), Git (201.8743.12.41.7042882), ChangeReminder (201.8743.12.41.7042882), Next File Prediction (201.8743.12.41.7042882), JUnit (201.8743.12.41.7042882), Layoutlib Native (201.8743.12.41.7042882), Layoutlib Standard (201.8743.12.41.7042882), Google Login (201.8743.12.41.7042882), Java IDE Customization (201.8743.12.41.7042882), Task Management (201.8743.12.41.7042882), GitHub (201.8743.12.41.7042882), IntelliLang (201.8743.12.41.7042882), TestNG (201.8743.12.41.7042882), Code Coverage for Java (201.8743.12.41.7042882), Java Stream Debugger (201.8743.12.41.7042882), Java Bytecode Decompiler (201.8743.12.41.7042882), Gradle (201.8743.12.41.7042882), Properties (201.8743.12.41.7042882), Java Internationalization (201.8743.12.41.7042882), Groovy (201.8743.12.41.7042882), Gradle-Java (201.8743.12.41.7042882), Kotlin (1.3.72-release-Studio4.1-5), Compose (201.8743.12.41.7042882), Google Cloud Tools Core (201.8743.12.41.7042882), Resource Bundle Editor (201.8743.12.41.7042882), Mercurial (201.8743.12.41.7042882), EditorConfig (201.8743.12.41.7042882), Terminal (201.8743.12.41.7042882), Android (10.4.1.2.201.8743.12.41.7042882), Android NDK Support (201.8743.12.41.7042882), Android APK Support (201.8743.12.41.7042882), Google Developers Samples (201.8743.12.41.7042882), Google Cloud Tools For Android Studio (201.8743.12.41.7042882), Test Recorder (201.8743.12.41.7042882), Firebase Services (201.8743.12.41.7042882), Firebase Testing (201.8743.12.41.7042882), App Links Assistant (201.8743.12.41.7042882), Firebase App Indexing (201.8743.12.41.7042882), Shell Script (201.8743.12.41.7042882), TextMate bundles (201.8743.12.41.7042882), YAML (201.8743.12.41.7042882), Settings Repository (201.8743.12.41.7042882) 
+2021-06-28 14:24:50,698 [   1729]   INFO - llij.ide.plugins.PluginManager - Loaded custom plugins: CleverTap Assistant (Beta) (0.3) 
+2021-06-28 14:24:51,637 [   2668]   INFO - m.intellij.ui.mac.touchbar.NST - touchbar-server isn't running, skip nst loading 
+2021-06-28 14:24:51,647 [   2678]   INFO - ellij.util.io.PagedFileStorage - lower=100; upper=428; buffer=10; max=428 
+2021-06-28 14:24:51,670 [   2701]   INFO - tellij.util.io.FileChannelUtil - interruptible FileChannel-s will be used for indexes 
+2021-06-28 14:24:51,670 [   2701]   INFO - tellij.util.io.FileChannelUtil - interruptible FileChannel-s will be used for indexes 
+2021-06-28 14:24:51,767 [   2798]   INFO - cation.options.RegistryManager - Registry values changed by user: external.system.auto.import.disabled = true 
+2021-06-28 14:24:52,054 [   3085]   WARN - Container.ComponentManagerImpl - Do not use constructor injection (requestorClass=com.android.tools.idea.AndroidInitialConfigurator) 
+2021-06-28 14:24:52,098 [   3129]   INFO - til.net.ssl.CertificateManager - Default SSL context initialized 
+2021-06-28 14:24:52,215 [   3246]   INFO - rains.ide.BuiltInServerManager - built-in server started, port 63343 
+2021-06-28 14:24:52,261 [   3292]   INFO - com.intellij.ide.ui.UISettings - Loaded: fontSize=12, fontScale=1.0; restored: fontSize=12, fontScale=1.0 
+2021-06-28 14:24:52,402 [   3433]   INFO - pi.util.registry.RegistryValue - Registry value 'external.system.auto.import.disabled' has changed to 'true' 
+2021-06-28 14:24:52,504 [   3535]   INFO - pl.local.NativeFileWatcherImpl - Starting file watcher: /Applications/Android Studio.app/Contents/bin/fsnotifier 
+2021-06-28 14:24:52,512 [   3543]   INFO - pl.local.NativeFileWatcherImpl - Native file watcher is operational. 
+2021-06-28 14:24:53,693 [   4724]   INFO - leBasedIndexDataInitialization - Initialization done: 1459 
+2021-06-28 14:24:53,979 [   5010]   INFO - exImpl$StubIndexInitialization - Initialization done: 286 
+2021-06-28 14:24:53,979 [   5010]   INFO - il.indexing.FileBasedIndexImpl - START INDEX SHUTDOWN 
+2021-06-28 14:24:54,055 [   5086]   INFO - gs.impl.UpdateCheckerComponent - channel: beta 
+2021-06-28 14:24:54,065 [   5096]   INFO - tellij.psi.stubs.StubIndexImpl - StubIndexExtension-s were unloaded 
+2021-06-28 14:24:54,074 [   5105]   INFO - il.indexing.FileBasedIndexImpl - END INDEX SHUTDOWN 
+2021-06-28 14:24:54,090 [   5121]   INFO - newvfs.persistent.PersistentFS - VFS dispose started 
+2021-06-28 14:24:54,095 [   5126]   INFO - newvfs.persistent.PersistentFS - VFS dispose completed 
+2021-06-28 14:24:54,095 [   5126]   INFO - stubs.SerializationManagerImpl - START StubSerializationManager SHUTDOWN 
+2021-06-28 14:24:54,095 [   5126]   INFO - stubs.SerializationManagerImpl - END StubSerializationManager SHUTDOWN 
+2021-06-28 14:24:54,095 [   5126]   INFO -        #com.intellij.idea.Main - ------------------------------------------------------ IDE SHUTDOWN ------------------------------------------------------ 
+2021-06-28 14:24:54,100 [   5131]   INFO - org.jetbrains.io.BuiltInServer - web server stopped 
+2021-06-28 14:25:07,448 [      0]   INFO -        #com.intellij.idea.Main - ------------------------------------------------------ IDE STARTED ------------------------------------------------------ 
+2021-06-28 14:25:07,521 [     73]   INFO - .intellij.util.EnvironmentUtil - loading shell env: /bin/bash -l -i -c '/Applications/Android Studio.app/Contents/bin/printenv.py' '/private/var/folders/z3/7t9zr1r5559f2_dzk1v1j7c80000gn/T/intellij-shell-env.tmp' 
+2021-06-28 14:25:07,660 [    212]   INFO -        #com.intellij.idea.Main - IDE: Android Studio (build #AI-201.8743.12.41.7042882, 20 Dec 2020 06:09) 
+2021-06-28 14:25:07,660 [    212]   INFO -        #com.intellij.idea.Main - OS: Mac OS X (10.15.6, x86_64) 
+2021-06-28 14:25:07,661 [    213]   INFO -        #com.intellij.idea.Main - JRE: 1.8.0_292-b10 (AdoptOpenJDK) 
+2021-06-28 14:25:07,661 [    213]   INFO -        #com.intellij.idea.Main - JVM: openj9-0.26.0 (Eclipse OpenJ9 VM) 
+2021-06-28 14:25:07,661 [    213]   INFO -        #com.intellij.idea.Main - JVM Args: -Xoptionsfile=/Users/kevalmajethiya/Library/Java/JavaVirtualMachines/adopt-openj9-1.8.0_292/Contents/Home/jre/lib/default/options.default -Xlockword:mode=default,noLockword=java/lang/String,noLockword=java/util/MapEntry,noLockword=java/util/HashMap$Entry,noLockword=org/apache/harmony/luni/util/ModifiedMap$Entry,noLockword=java/util/Hashtable$Entry,noLockword=java/lang/invoke/MethodType,noLockword=java/lang/invoke/MethodHandle,noLockword=java/lang/invoke/CollectHandle,noLockword=java/lang/invoke/ConstructorHandle,noLockword=java/lang/invoke/ConvertHandle,noLockword=java/lang/invoke/ArgumentConversionHandle,noLockword=java/lang/invoke/AsTypeHandle,noLockword=java/lang/invoke/ExplicitCastHandle,noLockword=java/lang/invoke/FilterReturnHandle,noLockword=java/lang/invoke/DirectHandle,noLockword=java/lang/invoke/ReceiverBoundHandle,noLockword=java/lang/invoke/DynamicInvokerHandle,noLockword=java/lang/invoke/FieldHandle,noLockword=java/lang/invoke/FieldGetterHandle,noLockword=java/lang/invoke/FieldSetterHandle,noLockword=java/lang/invoke/StaticFieldGetterHandle,noLockword=java/lang/invoke/StaticFieldSetterHandle,noLockword=java/lang/invoke/IndirectHandle,noLockword=java/lang/invoke/InterfaceHandle,noLockword=java/lang/invoke/VirtualHandle,noLockword=java/lang/invoke/PrimitiveHandle,noLockword=java/lang/invoke/InvokeExactHandle,noLockword=java/lang/invoke/InvokeGenericHandle,noLockword=java/lang/invoke/VarargsCollectorHandle,noLockword=java/lang/invoke/ThunkTuple -Xjcl:jclse29 -Dcom.ibm.oti.vm.bootstrap.library.path=/Users/kevalmajethiya/Library/Java/JavaVirtualMachines/adopt-openj9-1.8.0_292/Contents/Home/jre/lib/default:/Users/kevalmajethiya/Library/Java/JavaVirtualMachines/adopt-openj9-1.8.0_292/Contents/Home/jre/lib -Dsun.boot.library.path=/Users/kevalmajethiya/Library/Java/JavaVirtualMachines/adopt-openj9-1.8.0_292/Contents/Home/jre/lib/default:/Users/kevalmajethiya/Library/Java/JavaVirtualMachines/adopt-openj9-1.8.0_292/Contents/Home/jre/lib -Djava.library.path=/Users/kevalmajethiya/Library/Java/JavaVirtualMachines/adopt-openj9-1.8.0_292/Contents/Home/jre/lib/default:/Users/kevalmajethiya/Library/Java/JavaVirtualMachines/adopt-openj9-1.8.0_292/Contents/Home/jre/lib:/usr/lib -Djava.home=/Users/kevalmajethiya/Library/Java/JavaVirtualMachines/adopt-openj9-1.8.0_292/Contents/Home/jre -Djava.ext.dirs=/Users/kevalmajethiya/Library/Java/JavaVirtualMachines/adopt-openj9-1.8.0_292/Contents/Home/jre/lib/ext -Duser.dir=/Applications/Android Studio.app/Contents/bin -Djava.class.path=. -Dapple.awt.fileDialogForDirectories=true -Dapple.laf.useScreenMenuBar=true -Didea.classpath.index.enabled=false -Didea.config.path=/Users/kevalmajethiya/Desktop/ClevrtapPluginWithFCM-master/build/idea-sandbox/config -Didea.is.internal=true -Didea.platform.prefix=AndroidStudio -Didea.plugins.path=/Users/kevalmajethiya/Desktop/ClevrtapPluginWithFCM-master/build/idea-sandbox/plugins -Didea.required.plugins.id=CleverTap.CleverTap -Didea.smooth.progress=false -Didea.system.path=/Users/kevalmajethiya/Desktop/ClevrtapPluginWithFCM-master/build/idea-sandbox/system -Xms256m -Xmx512m -Dfile.encoding=UTF-8 -Duser.country=GB -Duser.language=en -Duser.variant -ea -Djava.class.path=/Users/kevalmajethiya/Library/Java/JavaVirtualMachines/adopt-openj9-1.8.0_292/Contents/Home/lib/tools.jar:/Applications/Android Studio.app/Contents/lib/idea_rt.jar:/Applications/Android Studio.app/Contents/lib/idea.jar:/Applications/Android Studio.app/Contents/lib/bootstrap.jar:/Applications/Android Studio.app/Contents/lib/extensions.jar:/Applications/Android Studio.app/Contents/lib/util.jar:/Applications/Android Studio.app/Contents/lib/openapi.jar:/Applications/Android Studio.app/Contents/lib/trove4j.jar:/Applications/Android Studio.app/Contents/lib/jdom.jar:/Applications/Android Studio.app/Contents/lib/log4j.jar -Dsun.java.command=com.intellij.idea.Main -Dsun.java.launcher=SUN_STANDARD 
+2021-06-28 14:25:07,662 [    214]   INFO -        #com.intellij.idea.Main - ext: /Users/kevalmajethiya/Library/Java/JavaVirtualMachines/adopt-openj9-1.8.0_292/Contents/Home/jre/lib/ext: [traceformat.jar, sunec.jar, nashorn.jar, cldrdata.jar, dtfjview.jar, dnsns.jar, localedata.jar, sunjce_provider.jar, meta-index, dtfj.jar, sunpkcs11.jar, jaccess.jar, zipfs.jar] 
+2021-06-28 14:25:07,662 [    214]   INFO -        #com.intellij.idea.Main - library path: /Users/kevalmajethiya/Library/Java/JavaVirtualMachines/adopt-openj9-1.8.0_292/Contents/Home/jre/lib/default:/Users/kevalmajethiya/Library/Java/JavaVirtualMachines/adopt-openj9-1.8.0_292/Contents/Home/jre/lib:/usr/lib 
+2021-06-28 14:25:07,662 [    214]   INFO -        #com.intellij.idea.Main - boot library path: /Users/kevalmajethiya/Library/Java/JavaVirtualMachines/adopt-openj9-1.8.0_292/Contents/Home/jre/lib/default:/Users/kevalmajethiya/Library/Java/JavaVirtualMachines/adopt-openj9-1.8.0_292/Contents/Home/jre/lib 
+2021-06-28 14:25:07,663 [    215]   INFO -        #com.intellij.idea.Main - Locale=en_GB JNU=UTF-8 file.encoding=UTF-8 
+2021-06-28 14:25:07,760 [    312]   INFO - .intellij.util.EnvironmentUtil - shell environment loaded (13 vars) 
+2021-06-28 14:25:08,058 [    610]   INFO - ntellij.idea.ApplicationLoader - CPU cores: 4; ForkJoinPool.commonPool: java.util.concurrent.ForkJoinPool@91b684e1[Running, parallelism = 3, size = 0, active = 0, running = 0, steals = 0, tasks = 0, submissions = 0]; factory: com.intellij.concurrency.IdeaForkJoinWorkerThreadFactory@fee57928 
+2021-06-28 14:25:08,296 [    848]   INFO -        #com.intellij.idea.Main - JNA library (64-bit) loaded in 786 ms 
+2021-06-28 14:25:08,342 [    894]   WARN - i.mac.MacOSApplicationProvider - No URL bundle (CFBundleURLTypes) is defined in the main bundle.
+To be able to open external links, specify protocols in the app layout section of the build file.
+Example: args.urlSchemes = ["your-protocol"] will handle following links: your-protocol://open?file=file&line=line 
+2021-06-28 14:25:08,934 [   1486]   INFO - llij.ide.plugins.PluginManager - Plugin com.intellij.java misses optional descriptor profiler-java.xml 
+2021-06-28 14:25:08,979 [   1531]   INFO - llij.ide.plugins.PluginManager - Plugin org.intellij.groovy misses optional descriptor duplicates-groovy.xml 
+2021-06-28 14:25:08,979 [   1531]   INFO - llij.ide.plugins.PluginManager - Plugin org.intellij.groovy misses optional descriptor duplicates-detection-groovy.xml 
+2021-06-28 14:25:09,095 [   1647]   INFO - llij.ide.plugins.PluginManager - Loaded bundled plugins: IDEA CORE (201.8743.12), com.intellij.platform.images (201.8743.12.41.7042882), JetBrains Repository Search (201.8743.12.41.7042882), Subversion (201.8743.12.41.7042882), Smali Support (201.8743.12.41.7042882), Configuration Script (201.8743.12.41.7042882), Copyright (201.8743.12.41.7042882), Java (201.8743.12.41.7042882), Git (201.8743.12.41.7042882), ChangeReminder (201.8743.12.41.7042882), Next File Prediction (201.8743.12.41.7042882), JUnit (201.8743.12.41.7042882), Layoutlib Native (201.8743.12.41.7042882), Layoutlib Standard (201.8743.12.41.7042882), Google Login (201.8743.12.41.7042882), Java IDE Customization (201.8743.12.41.7042882), Task Management (201.8743.12.41.7042882), GitHub (201.8743.12.41.7042882), IntelliLang (201.8743.12.41.7042882), TestNG (201.8743.12.41.7042882), Code Coverage for Java (201.8743.12.41.7042882), Java Stream Debugger (201.8743.12.41.7042882), Java Bytecode Decompiler (201.8743.12.41.7042882), Gradle (201.8743.12.41.7042882), Properties (201.8743.12.41.7042882), Java Internationalization (201.8743.12.41.7042882), Groovy (201.8743.12.41.7042882), Gradle-Java (201.8743.12.41.7042882), Kotlin (1.3.72-release-Studio4.1-5), Compose (201.8743.12.41.7042882), Google Cloud Tools Core (201.8743.12.41.7042882), Resource Bundle Editor (201.8743.12.41.7042882), Mercurial (201.8743.12.41.7042882), EditorConfig (201.8743.12.41.7042882), Terminal (201.8743.12.41.7042882), Android (10.4.1.2.201.8743.12.41.7042882), Android NDK Support (201.8743.12.41.7042882), Android APK Support (201.8743.12.41.7042882), Google Developers Samples (201.8743.12.41.7042882), Google Cloud Tools For Android Studio (201.8743.12.41.7042882), Test Recorder (201.8743.12.41.7042882), Firebase Services (201.8743.12.41.7042882), Firebase Testing (201.8743.12.41.7042882), App Links Assistant (201.8743.12.41.7042882), Firebase App Indexing (201.8743.12.41.7042882), Shell Script (201.8743.12.41.7042882), TextMate bundles (201.8743.12.41.7042882), YAML (201.8743.12.41.7042882), Settings Repository (201.8743.12.41.7042882) 
+2021-06-28 14:25:09,095 [   1647]   INFO - llij.ide.plugins.PluginManager - Loaded custom plugins: CleverTap Assistant (Beta) (0.3) 
+2021-06-28 14:25:09,839 [   2391]   INFO - m.intellij.ui.mac.touchbar.NST - touchbar-server isn't running, skip nst loading 
+2021-06-28 14:25:09,848 [   2400]   INFO - ellij.util.io.PagedFileStorage - lower=100; upper=428; buffer=10; max=428 
+2021-06-28 14:25:09,865 [   2417]   INFO - tellij.util.io.FileChannelUtil - interruptible FileChannel-s will be used for indexes 
+2021-06-28 14:25:09,865 [   2417]   INFO - tellij.util.io.FileChannelUtil - interruptible FileChannel-s will be used for indexes 
+2021-06-28 14:25:09,947 [   2499]   INFO - cation.options.RegistryManager - Registry values changed by user: external.system.auto.import.disabled = true 
+2021-06-28 14:25:10,249 [   2801]   WARN - Container.ComponentManagerImpl - Do not use constructor injection (requestorClass=com.android.tools.idea.AndroidInitialConfigurator) 
+2021-06-28 14:25:10,254 [   2806]   INFO - til.net.ssl.CertificateManager - Default SSL context initialized 
+2021-06-28 14:25:10,344 [   2896]   INFO - rains.ide.BuiltInServerManager - built-in server started, port 63343 
+2021-06-28 14:25:10,381 [   2933]   INFO - com.intellij.ide.ui.UISettings - Loaded: fontSize=12, fontScale=1.0; restored: fontSize=12, fontScale=1.0 
+2021-06-28 14:25:10,520 [   3072]   INFO - pi.util.registry.RegistryValue - Registry value 'external.system.auto.import.disabled' has changed to 'true' 
+2021-06-28 14:25:10,616 [   3168]   INFO - pl.local.NativeFileWatcherImpl - Starting file watcher: /Applications/Android Studio.app/Contents/bin/fsnotifier 
+2021-06-28 14:25:10,622 [   3174]   INFO - pl.local.NativeFileWatcherImpl - Native file watcher is operational. 
+2021-06-28 14:25:11,256 [   3808]   INFO - leBasedIndexDataInitialization - Initialization done: 889 
+2021-06-28 14:25:11,323 [   3875]   INFO - exImpl$StubIndexInitialization - Initialization done: 67 
+2021-06-28 14:25:11,621 [   4173]   INFO - gs.impl.UpdateCheckerComponent - channel: beta 
+2021-06-28 14:25:11,760 [   4312]   INFO - penapi.application.Experiments - Experimental features enabled for user: wsl.p9.support, wsl.p9.show.roots.in.file.chooser, inline.browse.button, linux.native.menu, recent.and.edited.files.together, show.create.new.element.in.popup, copy.reference.popup, new.large.text.file.viewer, property.value.inplace.editing, terminal.shell.command.handling 
+2021-06-28 14:25:11,805 [   4357]   INFO - lij.impl.ConversionServiceImpl - conversion will be performed because at least /Users/kevalmajethiya/AndroidStudioProjects/PT_demo1/.idea/workspace.xml is changed (oldLastModified=1624868499000, newLastModified=1624869682000 
+2021-06-28 14:25:12,074 [   4626]   WARN - nSystem.impl.ActionManagerImpl - keymap "Xcode" not found [Plugin: com.intellij] 
+2021-06-28 14:25:12,266 [   4818]   INFO - BridgeProjectLifecycleListener - Using legacy project model to open project 
+2021-06-28 14:25:13,467 [   6019]   WARN - nSystem.impl.ActionManagerImpl - keymap "ReSharper" not found [Plugin: com.android.tools.ndk] 
+2021-06-28 14:25:13,548 [   6100]   INFO - rojectCodeStyleSettingsManager - Initialized from default code style settings. 
+2021-06-28 14:25:13,565 [   6117]   INFO - CompilerWorkspaceConfiguration - Available processors: 4 
+2021-06-28 14:25:13,603 [   6155]   WARN - nsions.impl.ExtensionPointImpl - Extension to be removed not found: class org.jetbrains.plugins.gradle.execution.test.runner.TestClassGradleConfigurationProducer 
+2021-06-28 14:25:14,043 [   6595]   WARN - Container.ComponentManagerImpl - Do not use constructor injection (requestorClass=org.jetbrains.android.compose.AndroidComposeAutoDocumentation) 
+2021-06-28 14:25:14,300 [   6852]   WARN - Container.ComponentManagerImpl - Do not use constructor injection (requestorClass=com.android.tools.idea.apk.ApkProjectComponent) 
+2021-06-28 14:25:14,303 [   6855]   WARN - Container.ComponentManagerImpl - Do not use constructor injection (requestorClass=com.android.tools.idea.apk.issues.SetupIssueReporter) 
+2021-06-28 14:25:15,497 [   8049]   INFO - j.ide.script.IdeStartupScripts - 0 startup script(s) found 
+2021-06-28 14:25:15,599 [   8151]   INFO - artup.AndroidStudioInitializer - Failed to disable 'org.intellij.plugins.intelliLang.inject.groovy.GrConcatenationInjector' 
+2021-06-28 14:25:16,829 [   9381]   INFO - .deployment.AsyncDevicesGetter - adb not found 
+2021-06-28 14:25:17,974 [  10526]   INFO - penapi.project.DumbServiceImpl - Running dumb mode task: com.intellij.util.indexing.UnindexedFilesUpdater@a39a5d2d 
+2021-06-28 14:25:18,057 [  10609]   WARN - ugins.textmate.TextMateService - Missing builtin bundles, checked: 
+/Users/kevalmajethiya/Desktop/ClevrtapPluginWithFCM-master/build/idea-sandbox/plugins/textmate/lib/bundles
+/Applications/Android Studio.app/Contents/plugins/textmate/lib/bundles 
+2021-06-28 14:25:18,110 [  10662]   INFO - .diagnostic.PerformanceWatcher - Pushing properties took 127ms; general responsiveness: ok; EDT responsiveness: ok 
+2021-06-28 14:25:20,009 [  12561]   WARN - com.intellij.util.xmlb.Binding - no accessors for class org.jetbrains.kotlin.idea.highlighter.KotlinDefaultHighlightingSettingsProvider 
+2021-06-28 14:25:20,305 [  12857]   WARN - Container.ComponentManagerImpl - Do not use constructor injection (requestorClass=com.android.tools.idea.apk.symbols.DebugSymbolNotifications) 
+2021-06-28 14:25:21,656 [  14208]   WARN - Container.ComponentManagerImpl - Do not use constructor injection (requestorClass=com.android.tools.idea.apk.ApkWritingAccessProvider) 
+2021-06-28 14:25:22,063 [  14615]   INFO - .deployment.AsyncDevicesGetter - ADB is not connected 
+2021-06-28 14:25:22,065 [  14617]   INFO - roid.tools.idea.adb.AdbService - Initializing adb using: /Users/kevalmajethiya/Library/Android/sdk/platform-tools/adb 
+2021-06-28 14:25:22,170 [  14722]   INFO -            #com.android.ddmlib - Connected to adb for device monitoring 
+2021-06-28 14:25:22,364 [  14916]   INFO - roid.tools.idea.adb.AdbService - Successfully connected to adb 
+2021-06-28 14:25:23,266 [  15818]   WARN - openapi.wm.impl.ToolWindowImpl - ToolWindow icons should be 13x13. Please fix ToolWindow (ID:  Problems View) or icon jar:file:/Applications/Android%20Studio.app/Contents/lib/icons.jar!/general/warning.svg 
+2021-06-28 14:25:23,459 [  16011]   INFO - ge.ExternalProjectsDataStorage - Load external projects data in 2054 millis (read time: 2039) 
+2021-06-28 14:25:23,762 [  16314]   WARN - Container.ComponentManagerImpl - Do not use constructor injection (requestorClass=com.android.tools.idea.gradle.notification.GeneratedFileNotificationProvider) 
+2021-06-28 14:25:23,794 [  16346]   WARN - Container.ComponentManagerImpl - Do not use constructor injection (requestorClass=com.android.tools.idea.apk.editor.notification.ApkReloadNotificationProvider) 
+2021-06-28 14:25:23,985 [  16537]   INFO - ngd.lsp.ClangDaemonContextImpl - Using clangd from: /Applications/Android Studio.app/Contents/bin/clang/mac/clangd 
+2021-06-28 14:25:24,100 [  16652]   INFO - ProjectRootPostStartUpActivity - /Users/kevalmajethiya/AndroidStudioProjects/PT_demo1/.idea case-sensitivity: expected=false actual=false 
+2021-06-28 14:25:24,184 [  16736]   INFO - .diagnostic.PerformanceWatcher - Post-startup activities under progress took 3341ms; general responsiveness: ok; EDT responsiveness: 0/3 sluggish, 3/3 very slow 
+2021-06-28 14:25:24,881 [  17433]   INFO - tor.impl.FileEditorManagerImpl - Project opening took 12946 ms 
+2021-06-28 14:25:26,542 [  19094]   INFO - tellij.ide.SystemHealthMonitor - restored ignored PIPE handler 
+2021-06-28 14:25:29,697 [  22249]   INFO - .diagnostic.PerformanceWatcher - Indexable file iteration took 11583ms; general responsiveness: ok; EDT responsiveness: 2/11 sluggish, 3/11 very slow 
+2021-06-28 14:25:29,751 [  22303]   INFO - penapi.project.DumbServiceImpl - Running dumb mode task: com.jetbrains.cidr.lang.symbols.symtable.OCSymbolTablesBuildingActivity$1@e38f0221 
+2021-06-28 14:25:29,772 [  22324]   INFO -       #com.jetbrains.cidr.lang - Clearing symbols finished in 15 ms 
+2021-06-28 14:25:29,867 [  22419]   INFO -       #com.jetbrains.cidr.lang - Loading Module Maps finished in 69 ms 
+2021-06-28 14:25:29,869 [  22421]   INFO -       #com.jetbrains.cidr.lang - Loaded 0 module maps in 0 packs for 0 search roots 
+2021-06-28 14:25:29,900 [  22452]   INFO -       #com.jetbrains.cidr.lang - Building symbols in FAST mode, 0 source files from total 0 project files 
+2021-06-28 14:25:30,138 [  22690]   INFO -       #com.jetbrains.cidr.lang - Loading Module Maps finished in 340 ms 
+2021-06-28 14:25:30,143 [  22695]   INFO -       #com.jetbrains.cidr.lang - Loading Header Maps finished in 5 ms 
+2021-06-28 14:25:30,154 [  22706]   INFO -       #com.jetbrains.cidr.lang - Loaded 0 tables for 0 files (0 project files) 
+2021-06-28 14:25:30,154 [  22706]   INFO -       #com.jetbrains.cidr.lang - Building symbols for 0 source files 
+2021-06-28 14:25:30,161 [  22713]   INFO -       #com.jetbrains.cidr.lang - Updating Symbols finished in 3 ms 
+2021-06-28 14:25:30,161 [  22713]   INFO -       #com.jetbrains.cidr.lang - Building symbols for 0 unused headers 
+2021-06-28 14:25:30,161 [  22713]   INFO -       #com.jetbrains.cidr.lang - Updating Symbols finished in 0 ms 
+2021-06-28 14:25:30,161 [  22713]   INFO -       #com.jetbrains.cidr.lang - Updating Symbols finished in 0 ms 
+2021-06-28 14:25:30,164 [  22716]   INFO -       #com.jetbrains.cidr.lang - Saving modified symbols for 0 files (0 tables of total 0) 
+2021-06-28 14:25:30,165 [  22717]   INFO -       #com.jetbrains.cidr.lang - Saving symbols finished in 1 ms 
+2021-06-28 14:25:30,166 [  22718]   INFO -       #com.jetbrains.cidr.lang - Saved 0 module maps in 0 packs 
+2021-06-28 14:25:30,167 [  22719]   INFO -       #com.jetbrains.cidr.lang - Saving Module Maps finished in 2 ms 
+2021-06-28 14:25:30,171 [  22723]   INFO - penapi.project.DumbServiceImpl - updateFinished 
+2021-06-28 14:25:30,179 [  22731]   INFO - g.FileBasedIndexProjectHandler - Has changed files: false; project=Project (name=PT_demo1, containerState=ACTIVE, componentStore=/Users/kevalmajethiya/AndroidStudioProjects/PT_demo1)  
+2021-06-28 14:25:30,717 [  23269]   INFO - penapi.project.DumbServiceImpl - Running dumb mode task: com.android.tools.idea.res.ResourceFolderRepositoryFileCacheImpl$PruneTask@102e2f0f 
+2021-06-28 14:25:30,744 [  23296]   INFO - penapi.project.DumbServiceImpl - Running dumb mode task: com.android.tools.idea.res.ResourceFolderRepositoryFileCacheImpl$ManageLruProjectFilesTask@edabc7a0 
+2021-06-28 14:25:30,750 [  23302]   INFO - penapi.project.DumbServiceImpl - updateFinished 
+2021-06-28 14:25:30,751 [  23303]   INFO - g.FileBasedIndexProjectHandler - Has changed files: false; project=Project (name=PT_demo1, containerState=ACTIVE, componentStore=/Users/kevalmajethiya/AndroidStudioProjects/PT_demo1)  
+2021-06-28 14:25:30,918 [  23470]   INFO - penapi.project.DumbServiceImpl - Running dumb mode task: com.android.tools.idea.res.ResourceFolderRegistry$PopulateCachesTask@8e69cd02 
+2021-06-28 14:25:31,139 [  23691]   INFO - penapi.project.DumbServiceImpl - updateFinished 
+2021-06-28 14:25:31,140 [  23692]   INFO - g.FileBasedIndexProjectHandler - Has changed files: false; project=Project (name=PT_demo1, containerState=ACTIVE, componentStore=/Users/kevalmajethiya/AndroidStudioProjects/PT_demo1)  
+2021-06-28 14:25:31,166 [  23718]   INFO - idGradleProjectStartupActivity - Up-to-date models found in the cache. Not invoking Gradle sync. 
+2021-06-28 14:25:31,477 [  24029]   INFO - roid.tools.ndk.GradleWorkspace - Updating model took 0.204s 
+2021-06-28 14:25:32,984 [  25536]   WARN - dering.imagepool.ImagePoolImpl - 0 maxSize for Bucket. This Bucket will not be used. 
+2021-06-28 14:25:40,279 [  32831]   WARN - Container.ComponentManagerImpl - Do not use constructor injection (requestorClass=com.android.tools.idea.lang.androidSql.room.RoomDependencyChecker) 
+2021-06-28 14:25:55,137 [  47689]   INFO - ild.invoker.GradleBuildInvoker - About to execute Gradle tasks: [:app:assembleDebug] 
+2021-06-28 14:25:55,386 [  47938]   INFO - s.plugins.gradle.GradleManager - Instructing gradle to use java from /Applications/Android Studio.app/Contents/jre/jdk/Contents/Home 
+2021-06-28 14:25:55,479 [  48031]   INFO - ild.invoker.GradleBuildInvoker - Build command line options: [-Pandroid.injected.invoked.from.ide=true, -Pandroid.injected.studio.version=10.4.1.2.201.8743.12.41.7042882, -Pandroid.injected.attribution.file.location=/var/folders/z3/7t9zr1r5559f2_dzk1v1j7c80000gn/T/1624870555478-0] 
+2021-06-28 14:25:56,993 [  49545]   INFO - xecution.GradleExecutionHelper - Passing command-line args to Gradle Tooling API: -Pandroid.injected.invoked.from.ide=true -Pandroid.injected.studio.version=10.4.1.2.201.8743.12.41.7042882 -Pandroid.injected.attribution.file.location=/var/folders/z3/7t9zr1r5559f2_dzk1v1j7c80000gn/T/1624870555478-0 
+2021-06-28 14:26:26,183 [  78735]   INFO - ild.invoker.GradleBuildInvoker - Gradle build finished in 30 s 745 ms 
+2021-06-28 14:26:33,702 [  86254]   INFO -                         STDERR - Exception "java.lang.ClassNotFoundException: com.intellij.codeInsight.editorActions.ReferenceData"while constructing DataFlavor for: application/x-java-jvm-local-objectref; class=com.intellij.codeInsight.editorActions.ReferenceData 
+2021-06-28 14:26:33,702 [  86254]   INFO -                         STDERR - Exception "java.lang.ClassNotFoundException: com.intellij.codeInsight.editorActions.ReferenceData"while constructing DataFlavor for: application/x-java-jvm-local-objectref; class=com.intellij.codeInsight.editorActions.ReferenceData 
+2021-06-28 14:26:33,893 [  86445]   INFO - ild.invoker.GradleBuildInvoker - About to execute Gradle tasks: [:app:assembleDebug] 
+2021-06-28 14:26:33,905 [  86457]   INFO - s.plugins.gradle.GradleManager - Instructing gradle to use java from /Applications/Android Studio.app/Contents/jre/jdk/Contents/Home 
+2021-06-28 14:26:33,908 [  86460]   INFO - ild.invoker.GradleBuildInvoker - Build command line options: [-Pandroid.injected.invoked.from.ide=true, -Pandroid.injected.studio.version=10.4.1.2.201.8743.12.41.7042882, -Pandroid.injected.attribution.file.location=/var/folders/z3/7t9zr1r5559f2_dzk1v1j7c80000gn/T/1624870593907-0, -Pandroid.injected.build.api=26, -Pandroid.injected.build.density=xhdpi, -Pandroid.injected.build.abi=armeabi-v7a,armeabi] 
+2021-06-28 14:26:33,915 [  86467]   INFO - xecution.GradleExecutionHelper - Passing command-line args to Gradle Tooling API: -Pandroid.injected.invoked.from.ide=true -Pandroid.injected.studio.version=10.4.1.2.201.8743.12.41.7042882 -Pandroid.injected.attribution.file.location=/var/folders/z3/7t9zr1r5559f2_dzk1v1j7c80000gn/T/1624870593907-0 -Pandroid.injected.build.api=26 -Pandroid.injected.build.density=xhdpi -Pandroid.injected.build.abi=armeabi-v7a,armeabi 
+2021-06-28 14:26:41,068 [  93620]   INFO - ild.invoker.GradleBuildInvoker - Gradle build finished in 7 s 160 ms 
+2021-06-28 14:26:41,076 [  93628]   INFO - a.gradle.run.MakeBeforeRunTask - Couldn't get post build models. 
+2021-06-28 14:26:41,076 [  93628]   INFO - a.gradle.run.MakeBeforeRunTask - Gradle invocation complete, success = true 
+2021-06-28 14:26:41,358 [  93910]   INFO - idea.run.AndroidProcessHandler - Adding device samsung-sm_g570f-4210b3dbd8ec54bf to monitor for launched app: com.example.pt_demo1 
+2021-06-28 14:26:41,969 [  94521]   INFO - ools.idea.run.tasks.DeployTask - Installing application: com.example.pt_demo1 
+2021-06-28 14:26:42,194 [  94746]   INFO - a.run.tasks.AbstractDeployTask - 1141073439ms TRC_BEG [20807][20807] : installer 
+2021-06-28 14:26:42,194 [  94746]   INFO - a.run.tasks.AbstractDeployTask - 1141073440ms TRC_BEG [20807][20807] : Command Dump 
+2021-06-28 14:26:42,194 [  94746]   INFO - a.run.tasks.AbstractDeployTask - 1141073440ms TRC_BEG [20807][20807] : get process ids 
+2021-06-28 14:26:42,194 [  94746]   INFO - a.run.tasks.AbstractDeployTask - 1141073465ms LOG_ERR [20807][20807] : Could not get package user id: /system/bin/run-as: unknown package: com.example.pt_demo1
+ 
+2021-06-28 14:26:42,194 [  94746]   INFO - a.run.tasks.AbstractDeployTask - 1141073466ms TRC_END [20807][20807] :  
+2021-06-28 14:26:42,194 [  94746]   INFO - a.run.tasks.AbstractDeployTask - 1141073466ms TRC_BEG [20807][20807] : CmdCommand::GetApksFromDump 
+2021-06-28 14:26:42,194 [  94746]   INFO - a.run.tasks.AbstractDeployTask - 1141073520ms TRC_END [20807][20807] :  
+2021-06-28 14:26:42,195 [  94747]   INFO - a.run.tasks.AbstractDeployTask - 1141073520ms LOG_ERR [20807][20807] : Could not find apks for package: com.example.pt_demo1 
+2021-06-28 14:26:42,195 [  94747]   INFO - a.run.tasks.AbstractDeployTask - 1141073520ms TRC_END [20807][20807] :  
+2021-06-28 14:26:42,195 [  94747]   INFO - a.run.tasks.AbstractDeployTask - 1141073520ms TRC_END [20807][20807] :  
+2021-06-28 14:26:42,201 [  94753]   INFO - a.run.tasks.AbstractDeployTask - DUMP_UNKNOWN_PACKAGE 
+2021-06-28 14:26:42,526 [  95078]   INFO -            #com.android.ddmlib - Created install session 836095206 with options -r -t --user current --dont-kill -S 4310635 
+2021-06-28 14:26:42,526 [  95078]   INFO -            #com.android.ddmlib - Uploading APK /Users/kevalmajethiya/AndroidStudioProjects/PT_demo1/app/build/outputs/apk/debug/app-debug.apk to session 836095206 
+2021-06-28 14:26:52,136 [ 104688]   INFO - rationStore.ComponentStoreImpl - Saving appFileTypeManager took 37 ms 
+2021-06-28 14:26:52,946 [ 105498]   WARN - com.intellij.util.xmlb.Binding - no accessors for class com.android.build.attribution.data.SuppressedWarnings 
+2021-06-28 14:26:53,014 [ 105566]   INFO - rationStore.ComponentStoreImpl - Saving Project (name=PT_demo1, containerState=ACTIVE, componentStore=/Users/kevalmajethiya/AndroidStudioProjects/PT_demo1) RunManager took 15 ms, libraryTable took 17 ms 
+2021-06-28 14:26:53,016 [ 105568]   INFO - mponents.impl.stores.StoreUtil - saveProjectsAndApp took 1054 ms 
+2021-06-28 14:27:07,742 [ 120294]   INFO - a.run.tasks.AbstractDeployTask - Install successfully finished in 26 s 339 ms. 
+2021-06-28 14:27:09,391 [ 121943]   INFO - run.AndroidLogcatOutputCapture - startCapture("samsung-sm_g570f-4210b3dbd8ec54bf") 
+2021-06-28 14:27:09,490 [ 122042]   INFO - rationStore.ComponentStoreImpl - Saving appFileTypeManager took 102 ms 
+2021-06-28 14:27:09,576 [ 122128]   INFO - rationStore.ComponentStoreImpl - Saving Project (name=PT_demo1, containerState=ACTIVE, componentStore=/Users/kevalmajethiya/AndroidStudioProjects/PT_demo1) RunManager took 13 ms, libraryTable took 21 ms 
+2021-06-28 15:08:57,324 [2629876]   WARN - com.intellij.util.xmlb.Binding - no accessors for class org.jetbrains.kotlin.idea.scripting.gradle.GradleScriptInputsWatcher$Storage 
+2021-06-28 15:08:57,361 [2629913]   WARN - com.intellij.util.xmlb.Binding - no accessors for class org.jetbrains.kotlin.idea.core.script.configuration.utils.ScriptClassRootsStorage 
+2021-06-28 15:08:57,423 [2629975]   INFO - rationStore.ComponentStoreImpl - Saving Project (name=PT_demo1, containerState=ACTIVE, componentStore=/Users/kevalmajethiya/AndroidStudioProjects/PT_demo1) KotlinCommonCompilerArguments took 13 ms, RunManager took 12 ms, XDebuggerManager took 15 ms, sourceFolderManager took 15 ms 
+2021-06-28 15:09:06,273 [2638825]   INFO - rationStore.ComponentStoreImpl - Saving appFileTypeManager took 14 ms, NotificationConfiguration took 92 ms 
+2021-06-28 15:09:06,339 [2638891]   INFO - rationStore.ComponentStoreImpl - Saving Module: 'PT_demo1.app'ExternalSystem took 16 ms 
+2021-06-28 15:09:06,440 [2638992]   INFO - rationStore.ComponentStoreImpl - Saving Project (name=PT_demo1, containerState=ACTIVE, componentStore=/Users/kevalmajethiya/AndroidStudioProjects/PT_demo1) RunConfigurationProducerService took 11 ms, RunManager took 16 ms, libraryTable took 33 ms 
+2021-06-28 15:09:50,135 [2682687]   INFO - rationStore.ComponentStoreImpl - Saving Project (name=PT_demo1, containerState=ACTIVE, componentStore=/Users/kevalmajethiya/AndroidStudioProjects/PT_demo1) libraryTable took 14 ms 
+2021-06-28 15:12:58,858 [2871410]   INFO - rationStore.ComponentStoreImpl - Saving Project (name=PT_demo1, containerState=ACTIVE, componentStore=/Users/kevalmajethiya/AndroidStudioProjects/PT_demo1) GradleMigrationSettings took 37 ms 
+2021-06-28 15:14:04,672 [2937224]   INFO - rationStore.ComponentStoreImpl - Saving Project (name=PT_demo1, containerState=ACTIVE, componentStore=/Users/kevalmajethiya/AndroidStudioProjects/PT_demo1) Kotlin2JvmCompilerArguments took 14 ms, libraryTable took 11 ms, sourceFolderManager took 14 ms 
+2021-06-28 15:14:35,088 [2967640]   INFO - rationStore.ComponentStoreImpl - Saving Project (name=PT_demo1, containerState=ACTIVE, componentStore=/Users/kevalmajethiya/AndroidStudioProjects/PT_demo1) libraryTable took 12 ms 
+2021-06-28 15:21:41,447 [3393999]   INFO - run.AndroidLogcatOutputCapture - stopCapture("samsung-sm_g570f-4210b3dbd8ec54bf") 
+2021-06-28 15:21:41,449 [3394001]   INFO - run.AndroidLogcatOutputCapture - stopAll() 
+2021-06-28 15:22:47,094 [3459646]   INFO - rationStore.ComponentStoreImpl - Saving Project (name=PT_demo1, containerState=ACTIVE, componentStore=/Users/kevalmajethiya/AndroidStudioProjects/PT_demo1) RunManager took 15 ms 
+2021-06-28 15:22:48,520 [3461072]   INFO - ild.invoker.GradleBuildInvoker - About to execute Gradle tasks: [:app:assembleDebug] 
+2021-06-28 15:22:48,538 [3461090]   INFO - s.plugins.gradle.GradleManager - Instructing gradle to use java from /Applications/Android Studio.app/Contents/jre/jdk/Contents/Home 
+2021-06-28 15:22:48,541 [3461093]   INFO - ild.invoker.GradleBuildInvoker - Build command line options: [-Pandroid.injected.invoked.from.ide=true, -Pandroid.injected.studio.version=10.4.1.2.201.8743.12.41.7042882, -Pandroid.injected.attribution.file.location=/var/folders/z3/7t9zr1r5559f2_dzk1v1j7c80000gn/T/1624873968540-0, -Pandroid.injected.build.api=26, -Pandroid.injected.build.density=xhdpi, -Pandroid.injected.build.abi=armeabi-v7a,armeabi] 
+2021-06-28 15:22:48,551 [3461103]   INFO - xecution.GradleExecutionHelper - Passing command-line args to Gradle Tooling API: -Pandroid.injected.invoked.from.ide=true -Pandroid.injected.studio.version=10.4.1.2.201.8743.12.41.7042882 -Pandroid.injected.attribution.file.location=/var/folders/z3/7t9zr1r5559f2_dzk1v1j7c80000gn/T/1624873968540-0 -Pandroid.injected.build.api=26 -Pandroid.injected.build.density=xhdpi -Pandroid.injected.build.abi=armeabi-v7a,armeabi 
+2021-06-28 15:22:51,820 [3464372]   INFO - ild.invoker.GradleBuildInvoker - Gradle build finished in 3 s 278 ms 
+2021-06-28 15:22:51,821 [3464373]   INFO - a.gradle.run.MakeBeforeRunTask - Couldn't get post build models. 
+2021-06-28 15:22:51,821 [3464373]   INFO - a.gradle.run.MakeBeforeRunTask - Gradle invocation complete, success = true 
+2021-06-28 15:22:51,997 [3464549]   INFO - idea.run.AndroidProcessHandler - Adding device samsung-sm_g570f-4210b3dbd8ec54bf to monitor for launched app: com.example.pt_demo1 
+2021-06-28 15:22:52,003 [3464555]   INFO - notification.NotificationGroup - Notification group LaunchTaskRunner is already registered 
+java.lang.Throwable
+	at com.intellij.notification.NotificationGroup.<init>(NotificationGroup.kt:48)
+	at com.intellij.notification.NotificationGroup.<init>(NotificationGroup.kt:28)
+	at com.intellij.notification.NotificationGroup.<init>(NotificationGroup.kt:36)
+	at com.intellij.notification.NotificationGroup.<init>(NotificationGroup.kt:36)
+	at com.intellij.notification.NotificationGroup$Companion.toolWindowGroup(NotificationGroup.kt:93)
+	at com.intellij.notification.NotificationGroup$Companion.toolWindowGroup$default(NotificationGroup.kt:92)
+	at com.intellij.notification.NotificationGroup.toolWindowGroup(NotificationGroup.kt)
+	at com.android.tools.idea.run.LaunchTaskRunner.run(LaunchTaskRunner.java:183)
+	at com.intellij.openapi.progress.impl.CoreProgressManager$TaskRunnable.run(CoreProgressManager.java:932)
+	at com.intellij.openapi.progress.impl.CoreProgressManager.lambda$runProcessWithProgressAsync$5(CoreProgressManager.java:434)
+	at com.intellij.openapi.progress.impl.CoreProgressManager$$Lambda$1465/0x0000000000000000.apply(Unknown Source)
+	at com.intellij.openapi.progress.impl.ProgressRunner.lambda$null$3(ProgressRunner.java:233)
+	at com.intellij.openapi.progress.impl.ProgressRunner$$Lambda$1089/0x0000000000000000.run(Unknown Source)
+	at com.intellij.openapi.progress.impl.CoreProgressManager.lambda$runProcess$2(CoreProgressManager.java:166)
+	at com.intellij.openapi.progress.impl.CoreProgressManager$$Lambda$155/0x0000000000000000.run(Unknown Source)
+	at com.intellij.openapi.progress.impl.CoreProgressManager.registerIndicatorAndRun(CoreProgressManager.java:627)
+	at com.intellij.openapi.progress.impl.CoreProgressManager.executeProcessUnderProgress(CoreProgressManager.java:572)
+	at com.intellij.openapi.progress.impl.ProgressManagerImpl.executeProcessUnderProgress(ProgressManagerImpl.java:61)
+	at com.intellij.openapi.progress.impl.CoreProgressManager.runProcess(CoreProgressManager.java:153)
+	at com.intellij.openapi.progress.impl.ProgressRunner.lambda$submit$4(ProgressRunner.java:233)
+	at com.intellij.openapi.progress.impl.ProgressRunner$$Lambda$1085/0x0000000000000000.get(Unknown Source)
+	at java.util.concurrent.CompletableFuture$AsyncSupply.run(CompletableFuture.java:1604)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:823)
+2021-06-28 15:22:52,007 [3464559]   INFO - ools.idea.run.tasks.DeployTask - Installing application: com.example.pt_demo1 
+2021-06-28 15:22:52,190 [3464742]   INFO - a.run.tasks.AbstractDeployTask - 1144443486ms TRC_BEG [27484][27484] : installer 
+2021-06-28 15:22:52,191 [3464743]   INFO - a.run.tasks.AbstractDeployTask - 1144443488ms TRC_BEG [27484][27484] : Command Dump 
+2021-06-28 15:22:52,191 [3464743]   INFO - a.run.tasks.AbstractDeployTask - 1144443489ms TRC_BEG [27484][27484] : get process ids 
+2021-06-28 15:22:52,191 [3464743]   INFO - a.run.tasks.AbstractDeployTask - 1144443525ms LOG_ERR [27484][27484] : Could not get package user id: /system/bin/run-as: unknown package: com.example.pt_demo1
+ 
+2021-06-28 15:22:52,191 [3464743]   INFO - a.run.tasks.AbstractDeployTask - 1144443526ms TRC_END [27484][27484] :  
+2021-06-28 15:22:52,191 [3464743]   INFO - a.run.tasks.AbstractDeployTask - 1144443526ms TRC_BEG [27484][27484] : CmdCommand::GetApksFromDump 
+2021-06-28 15:22:52,191 [3464743]   INFO - a.run.tasks.AbstractDeployTask - 1144443579ms TRC_END [27484][27484] :  
+2021-06-28 15:22:52,191 [3464743]   INFO - a.run.tasks.AbstractDeployTask - 1144443579ms LOG_ERR [27484][27484] : Could not find apks for package: com.example.pt_demo1 
+2021-06-28 15:22:52,191 [3464743]   INFO - a.run.tasks.AbstractDeployTask - 1144443579ms TRC_END [27484][27484] :  
+2021-06-28 15:22:52,191 [3464743]   INFO - a.run.tasks.AbstractDeployTask - 1144443579ms TRC_END [27484][27484] :  
+2021-06-28 15:22:52,191 [3464743]   INFO - a.run.tasks.AbstractDeployTask - DUMP_UNKNOWN_PACKAGE 
+2021-06-28 15:22:52,613 [3465165]   INFO -            #com.android.ddmlib - Created install session 542557465 with options -r -t --user current --dont-kill -S 4310635 
+2021-06-28 15:22:52,614 [3465166]   INFO -            #com.android.ddmlib - Uploading APK /Users/kevalmajethiya/AndroidStudioProjects/PT_demo1/app/build/outputs/apk/debug/app-debug.apk to session 542557465 
+2021-06-28 15:23:17,446 [3489998]   INFO - a.run.tasks.AbstractDeployTask - Install successfully finished in 25 s 440 ms. 
+2021-06-28 15:23:19,042 [3491594]   INFO - run.AndroidLogcatOutputCapture - startCapture("samsung-sm_g570f-4210b3dbd8ec54bf") 
+2021-06-28 15:26:10,694 [3663246]  ERROR - jediterm.terminal.TerminalMode - Mode EightBitInput is not implemented, setting to true 
+2021-06-28 15:26:10,698 [3663250]  ERROR - jediterm.terminal.TerminalMode - Mode EightBitInput is not implemented, setting to true 
+2021-06-28 15:26:10,699 [3663251]  ERROR - jediterm.terminal.TerminalMode - Mode EightBitInput is not implemented, setting to true 
+2021-06-28 15:27:25,230 [3737782]   INFO -                         STDERR - Exception "java.lang.ClassNotFoundException: org.jetbrains.kotlin.idea.codeInsight.BasicKotlinReferenceTransferableData"while constructing DataFlavor for: application/x-java-jvm-local-objectref; class=org.jetbrains.kotlin.idea.codeInsight.BasicKotlinReferenceTransferableData 
+2021-06-28 15:27:25,232 [3737784]   INFO -                         STDERR - Exception "java.lang.ClassNotFoundException: org.jetbrains.kotlin.idea.codeInsight.BasicKotlinReferenceTransferableData"while constructing DataFlavor for: application/x-java-jvm-local-objectref; class=org.jetbrains.kotlin.idea.codeInsight.BasicKotlinReferenceTransferableData 
+2021-06-28 15:30:26,297 [3918849]   INFO - rationStore.ComponentStoreImpl - Saving Project (name=PT_demo1, containerState=ACTIVE, componentStore=/Users/kevalmajethiya/AndroidStudioProjects/PT_demo1) RunManager took 12 ms 

@@ -2,11 +2,9 @@ package ui
 
 import com.intellij.openapi.ui.ComboBox
 import util.Constants.FCM_PANEL
-import java.awt.Dimension
-import java.awt.GridBagConstraints
-import java.awt.GridBagLayout
-import java.awt.Insets
 import javax.swing.*
+import com.intellij.ui.components.JBScrollPane
+import java.awt.*
 
 
 class PushTemplateInput : JPanel() {
@@ -76,6 +74,9 @@ class PushTemplateInput : JPanel() {
     val label_pt_input_feedback= JLabel("Feedback")
     val label_pt_dismiss_on_click= JLabel("Dismiss notification on click")
 
+    val label_product_display_action = JLabel("Action Button Label Text")
+    val label_product_display_linear = JLabel("Linear Layout Template (\"true\"/\"false\")")
+    val label_product_display_action_clr = JLabel("Action Button Background Color in HEX")
 
 
 
@@ -138,14 +139,24 @@ class PushTemplateInput : JPanel() {
     val pt_input_auto_open_TextField= JTextField(20)
     val pt_input_feedback_TextField= JTextField(20)
     val pt_dismiss_on_click_TextField= JTextField(20)
-    
+
+    val product_display_action_TextField = JTextField(20)
+    val product_display_linear_TextField = JTextField(20)
+    val product_display_action_clr_TextField = JTextField(20)
+
+
 
     var template = arrayOf<String>("Basic","Auto Carousel","Manual Carousel","Rating","Product Catalog",
         "Five Icons","Timer","Video","Zero Bezel","Input Box")
     var template_value = ComboBox(template)
 
 
+    private val scroll = JBScrollPane(ScrollPaneConstants.VERTICAL_SCROLLBAR_AS_NEEDED)
+
+
+
     init {
+
 
 
         //labelPendingIntent.setToolTipText("This is a demo tooltip")
@@ -255,20 +266,6 @@ class PushTemplateInput : JPanel() {
 
         constraints.gridx = 0
         constraints.gridy = 7
-        label_bg.setToolTipText("Background Color")
-        label_bg.setIcon(icon)
-        label_bg.setHorizontalTextPosition(SwingConstants.LEFT)
-        label_bg.setVerticalTextPosition(SwingConstants.TOP)
-        label_bg.setVisible(false)
-        newPanel.add(label_bg, constraints)
-
-        constraints.gridx = 1
-        bg_TextField.setVisible(false)
-        newPanel.add(bg_TextField, constraints)
-
-
-        constraints.gridx = 0
-        constraints.gridy = 8
         label_big_img.setToolTipText("Image")
         label_big_img.setIcon(icon)
         label_big_img.setHorizontalTextPosition(SwingConstants.LEFT)
@@ -282,7 +279,7 @@ class PushTemplateInput : JPanel() {
 
 
         constraints.gridx = 0
-        constraints.gridy = 9
+        constraints.gridy = 8
         label_big_img_alt.setToolTipText("Image")
         label_big_img_alt.setIcon(icon)
         label_big_img_alt.setHorizontalTextPosition(SwingConstants.LEFT)
@@ -296,7 +293,7 @@ class PushTemplateInput : JPanel() {
 
 
         constraints.gridx = 0
-        constraints.gridy = 10
+        constraints.gridy = 9
         label_img1.setToolTipText("Select the appropriate location fetch mode.")
         label_img1.setIcon(icon)
         label_img1.setHorizontalTextPosition(SwingConstants.LEFT)
@@ -310,7 +307,7 @@ class PushTemplateInput : JPanel() {
 
 
         constraints.gridx = 0
-        constraints.gridy = 11
+        constraints.gridy = 10
         label_img2.setToolTipText("Select the appropriate location fetch mode.")
         label_img2.setIcon(icon)
         label_img2.setHorizontalTextPosition(SwingConstants.LEFT)
@@ -324,7 +321,7 @@ class PushTemplateInput : JPanel() {
 
 
         constraints.gridx = 0
-        constraints.gridy = 12
+        constraints.gridy = 11
         label_img3.setToolTipText("Select the appropriate location fetch mode.")
         label_img3.setIcon(icon)
         label_img3.setHorizontalTextPosition(SwingConstants.LEFT)
@@ -338,7 +335,7 @@ class PushTemplateInput : JPanel() {
 
 
         constraints.gridx = 0
-        constraints.gridy = 13
+        constraints.gridy = 12
         label_img4.setToolTipText("Select the appropriate location fetch mode.")
         label_img4.setIcon(icon)
         label_img4.setHorizontalTextPosition(SwingConstants.LEFT)
@@ -352,7 +349,7 @@ class PushTemplateInput : JPanel() {
 
 
         constraints.gridx = 0
-        constraints.gridy = 14
+        constraints.gridy = 13
         label_img5.setToolTipText("Select the appropriate location fetch mode.")
         label_img5.setIcon(icon)
         label_img5.setHorizontalTextPosition(SwingConstants.LEFT)
@@ -366,7 +363,7 @@ class PushTemplateInput : JPanel() {
 
 
         constraints.gridx = 0
-        constraints.gridy = 15
+        constraints.gridy = 14
         label_imgn.setToolTipText("Select the appropriate location fetch mode.")
         label_imgn.setIcon(icon)
         label_imgn.setHorizontalTextPosition(SwingConstants.LEFT)
@@ -380,7 +377,7 @@ class PushTemplateInput : JPanel() {
 
 
         constraints.gridx = 0
-        constraints.gridy = 16
+        constraints.gridy = 15
         label_pt_video_url.setToolTipText("Select the appropriate location fetch mode.")
         label_pt_video_url.setIcon(icon)
         label_pt_video_url.setHorizontalTextPosition(SwingConstants.LEFT)
@@ -394,7 +391,7 @@ class PushTemplateInput : JPanel() {
 
 
         constraints.gridx = 0
-        constraints.gridy = 17
+        constraints.gridy = 16
         label_bt1.setToolTipText("Select the appropriate location fetch mode.")
         label_bt1.setIcon(icon)
         label_bt1.setHorizontalTextPosition(SwingConstants.LEFT)
@@ -408,7 +405,7 @@ class PushTemplateInput : JPanel() {
 
 
         constraints.gridx = 0
-        constraints.gridy = 18
+        constraints.gridy = 17
         label_bt2.setToolTipText("Select the appropriate location fetch mode.")
         label_bt2.setIcon(icon)
         label_bt2.setHorizontalTextPosition(SwingConstants.LEFT)
@@ -422,7 +419,7 @@ class PushTemplateInput : JPanel() {
 
 
         constraints.gridx = 0
-        constraints.gridy = 19
+        constraints.gridy = 18
         label_bt3.setToolTipText("Select the appropriate location fetch mode.")
         label_bt3.setIcon(icon)
         label_bt3.setHorizontalTextPosition(SwingConstants.LEFT)
@@ -436,7 +433,7 @@ class PushTemplateInput : JPanel() {
 
 
         constraints.gridx = 0
-        constraints.gridy = 20
+        constraints.gridy = 19
         label_st1.setToolTipText("Select the appropriate location fetch mode.")
         label_st1.setIcon(icon)
         label_st1.setHorizontalTextPosition(SwingConstants.LEFT)
@@ -450,7 +447,7 @@ class PushTemplateInput : JPanel() {
 
 
         constraints.gridx = 0
-        constraints.gridy = 21
+        constraints.gridy = 20
         label_st2.setToolTipText("Select the appropriate location fetch mode.")
         label_st2.setIcon(icon)
         label_st2.setHorizontalTextPosition(SwingConstants.LEFT)
@@ -464,7 +461,7 @@ class PushTemplateInput : JPanel() {
 
 
         constraints.gridx = 0
-        constraints.gridy = 22
+        constraints.gridy = 21
         label_st3.setToolTipText("Select the appropriate location fetch mode.")
         label_st3.setIcon(icon)
         label_st3.setHorizontalTextPosition(SwingConstants.LEFT)
@@ -479,7 +476,7 @@ class PushTemplateInput : JPanel() {
 
 
         constraints.gridx = 0
-        constraints.gridy = 23
+        constraints.gridy = 22
         label_pt_small_view.setToolTipText("Icon")
         label_pt_small_view.setIcon(icon)
         label_pt_small_view.setHorizontalTextPosition(SwingConstants.LEFT)
@@ -493,7 +490,7 @@ class PushTemplateInput : JPanel() {
 
 
         constraints.gridx = 0
-        constraints.gridy = 24
+        constraints.gridy = 23
         label_ico.setToolTipText("Icon")
         label_ico.setIcon(icon)
         label_ico.setHorizontalTextPosition(SwingConstants.LEFT)
@@ -507,7 +504,7 @@ class PushTemplateInput : JPanel() {
 
 
         constraints.gridx = 0
-        constraints.gridy = 25
+        constraints.gridy = 24
         label_pt_event_name.setToolTipText("Icon")
         label_pt_event_name.setIcon(icon)
         label_pt_event_name.setHorizontalTextPosition(SwingConstants.LEFT)
@@ -521,7 +518,7 @@ class PushTemplateInput : JPanel() {
 
 
         constraints.gridx = 0
-        constraints.gridy = 26
+        constraints.gridy = 25
         label_pt_event_property1.setToolTipText("Icon")
         label_pt_event_property1.setIcon(icon)
         label_pt_event_property1.setHorizontalTextPosition(SwingConstants.LEFT)
@@ -535,7 +532,7 @@ class PushTemplateInput : JPanel() {
 
 
         constraints.gridx = 0
-        constraints.gridy = 27
+        constraints.gridy = 26
         label_pt_event_property2.setToolTipText("Icon")
         label_pt_event_property2.setIcon(icon)
         label_pt_event_property2.setHorizontalTextPosition(SwingConstants.LEFT)
@@ -550,7 +547,7 @@ class PushTemplateInput : JPanel() {
 
 
         constraints.gridx = 0
-        constraints.gridy = 28
+        constraints.gridy = 27
         label_pt_event_property3.setToolTipText("Icon")
         label_pt_event_property3.setIcon(icon)
         label_pt_event_property3.setHorizontalTextPosition(SwingConstants.LEFT)
@@ -565,7 +562,7 @@ class PushTemplateInput : JPanel() {
 
 
         constraints.gridx = 0
-        constraints.gridy = 29
+        constraints.gridy = 28
         label_pt_input_label.setToolTipText("Icon")
         label_pt_input_label.setIcon(icon)
         label_pt_input_label.setHorizontalTextPosition(SwingConstants.LEFT)
@@ -580,7 +577,7 @@ class PushTemplateInput : JPanel() {
 
 
         constraints.gridx = 0
-        constraints.gridy = 30
+        constraints.gridy = 29
         label_pt_input_auto_open.setToolTipText("Icon")
         label_pt_input_auto_open.setIcon(icon)
         label_pt_input_auto_open.setHorizontalTextPosition(SwingConstants.LEFT)
@@ -595,7 +592,7 @@ class PushTemplateInput : JPanel() {
 
 
         constraints.gridx = 0
-        constraints.gridy = 31
+        constraints.gridy = 30
         label_pt_input_feedback.setToolTipText("Icon")
         label_pt_input_feedback.setIcon(icon)
         label_pt_input_feedback.setHorizontalTextPosition(SwingConstants.LEFT)
@@ -610,7 +607,7 @@ class PushTemplateInput : JPanel() {
 
 
         constraints.gridx = 0
-        constraints.gridy = 32
+        constraints.gridy = 31
         label_pt_dismiss_on_click.setToolTipText("Icon")
         label_pt_dismiss_on_click.setIcon(icon)
         label_pt_dismiss_on_click.setHorizontalTextPosition(SwingConstants.LEFT)
@@ -625,7 +622,7 @@ class PushTemplateInput : JPanel() {
 
 
         constraints.gridx = 0
-        constraints.gridy = 33
+        constraints.gridy = 32
         label_default_dl.setToolTipText("Deep Link")
         label_default_dl.setIcon(icon)
         label_default_dl.setHorizontalTextPosition(SwingConstants.LEFT)
@@ -638,7 +635,7 @@ class PushTemplateInput : JPanel() {
         newPanel.add(default_dl_TextField, constraints)
 
         constraints.gridx = 0
-        constraints.gridy = 34
+        constraints.gridy = 33
         label_dl1.setToolTipText("Deep Link")
         label_dl1.setIcon(icon)
         label_dl1.setHorizontalTextPosition(SwingConstants.LEFT)
@@ -652,7 +649,7 @@ class PushTemplateInput : JPanel() {
 
 
         constraints.gridx = 0
-        constraints.gridy = 35
+        constraints.gridy = 34
         label_dl2.setToolTipText("Select the appropriate location fetch mode.")
         label_dl2.setIcon(icon)
         label_dl2.setHorizontalTextPosition(SwingConstants.LEFT)
@@ -666,7 +663,7 @@ class PushTemplateInput : JPanel() {
 
 
         constraints.gridx = 0
-        constraints.gridy = 36
+        constraints.gridy = 35
         label_dl3.setToolTipText("Select the appropriate location fetch mode.")
         label_dl3.setIcon(icon)
         label_dl3.setHorizontalTextPosition(SwingConstants.LEFT)
@@ -680,7 +677,7 @@ class PushTemplateInput : JPanel() {
 
 
         constraints.gridx = 0
-        constraints.gridy = 37
+        constraints.gridy = 36
         label_dl4.setToolTipText("Select the appropriate location fetch mode.")
         label_dl4.setIcon(icon)
         label_dl4.setHorizontalTextPosition(SwingConstants.LEFT)
@@ -694,7 +691,7 @@ class PushTemplateInput : JPanel() {
 
 
         constraints.gridx = 0
-        constraints.gridy = 38
+        constraints.gridy = 37
         label_dl5.setToolTipText("Select the appropriate location fetch mode.")
         label_dl5.setIcon(icon)
         label_dl5.setHorizontalTextPosition(SwingConstants.LEFT)
@@ -708,7 +705,7 @@ class PushTemplateInput : JPanel() {
 
 
         constraints.gridx = 0
-        constraints.gridy = 39
+        constraints.gridy = 38
         label_dln.setToolTipText("Select the appropriate location fetch mode.")
         label_dln.setIcon(icon)
         label_dln.setHorizontalTextPosition(SwingConstants.LEFT)
@@ -722,7 +719,7 @@ class PushTemplateInput : JPanel() {
 
 
         constraints.gridx = 0
-        constraints.gridy = 40
+        constraints.gridy = 39
         label_pt_price1.setToolTipText("Select the appropriate location fetch mode.")
         label_pt_price1.setIcon(icon)
         label_pt_price1.setHorizontalTextPosition(SwingConstants.LEFT)
@@ -736,7 +733,7 @@ class PushTemplateInput : JPanel() {
 
 
         constraints.gridx = 0
-        constraints.gridy = 41
+        constraints.gridy = 40
         label_pt_price2.setToolTipText("Select the appropriate location fetch mode.")
         label_pt_price2.setIcon(icon)
         label_pt_price2.setHorizontalTextPosition(SwingConstants.LEFT)
@@ -750,7 +747,7 @@ class PushTemplateInput : JPanel() {
 
 
         constraints.gridx = 0
-        constraints.gridy = 42
+        constraints.gridy = 41
         label_pt_price3.setToolTipText("Select the appropriate location fetch mode.")
         label_pt_price3.setIcon(icon)
         label_pt_price3.setHorizontalTextPosition(SwingConstants.LEFT)
@@ -764,7 +761,7 @@ class PushTemplateInput : JPanel() {
 
 
         constraints.gridx = 0
-        constraints.gridy = 43
+        constraints.gridy = 42
         label_timer_threshold.setToolTipText("Select the appropriate location fetch mode.")
         label_timer_threshold.setIcon(icon)
         label_timer_threshold.setHorizontalTextPosition(SwingConstants.LEFT)
@@ -779,7 +776,7 @@ class PushTemplateInput : JPanel() {
 
 
         constraints.gridx = 0
-        constraints.gridy = 44
+        constraints.gridy = 43
         label_timer_end.setToolTipText("Select the appropriate location fetch mode.")
         label_timer_end.setIcon(icon)
         label_timer_end.setHorizontalTextPosition(SwingConstants.LEFT)
@@ -792,9 +789,66 @@ class PushTemplateInput : JPanel() {
         newPanel.add(timer_end_TextField, constraints)
 
 
+        constraints.gridx = 0
+        constraints.gridy = 44
+        label_product_display_action.setToolTipText("Background Color")
+        label_product_display_action.setIcon(icon)
+        label_product_display_action.setHorizontalTextPosition(SwingConstants.LEFT)
+        label_product_display_action.setVerticalTextPosition(SwingConstants.TOP)
+        label_product_display_action.setVisible(false)
+        newPanel.add(label_product_display_action, constraints)
+
+        constraints.gridx = 1
+        product_display_action_TextField.setVisible(false)
+        newPanel.add(product_display_action_TextField, constraints)
+
 
         constraints.gridx = 0
         constraints.gridy = 45
+        label_product_display_linear.setToolTipText("Background Color")
+        label_product_display_linear.setIcon(icon)
+        label_product_display_linear.setHorizontalTextPosition(SwingConstants.LEFT)
+        label_product_display_linear.setVerticalTextPosition(SwingConstants.TOP)
+        label_product_display_linear.setVisible(false)
+        newPanel.add(label_product_display_linear, constraints)
+
+        constraints.gridx = 1
+        product_display_linear_TextField.setVisible(false)
+        newPanel.add(product_display_linear_TextField, constraints)
+
+
+        constraints.gridx = 0
+        constraints.gridy = 46
+        label_product_display_action_clr.setToolTipText("Background Color")
+        label_product_display_action_clr.setIcon(icon)
+        label_product_display_action_clr.setHorizontalTextPosition(SwingConstants.LEFT)
+        label_product_display_action_clr.setVerticalTextPosition(SwingConstants.TOP)
+        label_product_display_action_clr.setVisible(false)
+        newPanel.add(label_product_display_action_clr, constraints)
+
+        constraints.gridx = 1
+        product_display_action_clr_TextField.setVisible(false)
+        newPanel.add(product_display_action_clr_TextField, constraints)
+
+
+        constraints.gridx = 0
+        constraints.gridy = 47
+        label_bg.setToolTipText("Background Color")
+        label_bg.setIcon(icon)
+        label_bg.setHorizontalTextPosition(SwingConstants.LEFT)
+        label_bg.setVerticalTextPosition(SwingConstants.TOP)
+        label_bg.setVisible(false)
+        newPanel.add(label_bg, constraints)
+
+        constraints.gridx = 1
+        bg_TextField.setVisible(false)
+        newPanel.add(bg_TextField, constraints)
+
+
+
+
+        constraints.gridx = 0
+        constraints.gridy = 48
         label_titlte_clr.setToolTipText("Select the appropriate location fetch mode.")
         label_titlte_clr.setIcon(icon)
         label_titlte_clr.setHorizontalTextPosition(SwingConstants.LEFT)
@@ -809,7 +863,7 @@ class PushTemplateInput : JPanel() {
 
 
         constraints.gridx = 0
-        constraints.gridy = 46
+        constraints.gridy = 49
         label_msg_clr.setToolTipText("Select the appropriate location fetch mode.")
         label_msg_clr.setIcon(icon)
         label_msg_clr.setHorizontalTextPosition(SwingConstants.LEFT)
@@ -824,7 +878,7 @@ class PushTemplateInput : JPanel() {
 
 
         constraints.gridx = 0
-        constraints.gridy = 47
+        constraints.gridy = 50
         label_small_icon_clr.setToolTipText("Select the appropriate location fetch mode.")
         label_small_icon_clr.setIcon(icon)
         label_small_icon_clr.setHorizontalTextPosition(SwingConstants.LEFT)
@@ -846,10 +900,20 @@ class PushTemplateInput : JPanel() {
         )
 
         // add the panel to this frame
+
+        //newPanel.add(scroll)
         add(newPanel)
+//        scroll.add(newPanel)
+//        scroll.horizontalScrollBar
 
     }
     override fun getPreferredSize(): Dimension {
         return Dimension(800, 800)
     }
+
+//    override fun setAutoscrolls(autoscrolls: Boolean) {
+//        super.setAutoscrolls(true)
+//    }
+
+
 }

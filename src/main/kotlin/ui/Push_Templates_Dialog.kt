@@ -207,6 +207,11 @@ class Push_Templates_Dialog(var event: AnActionEvent) : DialogWrapper(true),  Ne
                 panelForPushTemplates.label_pt_price1.isVisible =true
                 panelForPushTemplates.label_pt_price2.isVisible =true
                 panelForPushTemplates.label_pt_price3.isVisible =true
+
+                panelForPushTemplates.label_product_display_action.isVisible=true
+                panelForPushTemplates.label_product_display_linear.isVisible=true
+                panelForPushTemplates.label_product_display_action_clr.isVisible=true
+
                 panelForPushTemplates.label_bg.isVisible = true
                 panelForPushTemplates.label_titlte_clr.isVisible = true
                 panelForPushTemplates.label_msg_clr.isVisible = true
@@ -232,6 +237,9 @@ class Push_Templates_Dialog(var event: AnActionEvent) : DialogWrapper(true),  Ne
                 panelForPushTemplates.pt_price1_TextField.isVisible = true
                 panelForPushTemplates.pt_price2_TextField.isVisible = true
                 panelForPushTemplates.pt_price3_TextField.isVisible = true
+                panelForPushTemplates.product_display_action_TextField.isVisible=true
+                panelForPushTemplates.product_display_linear_TextField.isVisible=true
+                panelForPushTemplates.product_display_action_clr_TextField.isVisible=true
                 panelForPushTemplates.bg_TextField.isVisible = true
                 panelForPushTemplates.titlte_clr_TextField.isVisible = true
                 panelForPushTemplates.msg_clr_TextField.isVisible = true
@@ -470,6 +478,9 @@ class Push_Templates_Dialog(var event: AnActionEvent) : DialogWrapper(true),  Ne
         panelForPushTemplates.label_titlte_clr.isVisible=false
         panelForPushTemplates.label_msg_clr.isVisible=false
         panelForPushTemplates.label_small_icon_clr.isVisible=false
+        panelForPushTemplates.label_product_display_action.isVisible=false
+        panelForPushTemplates.label_product_display_linear.isVisible=false
+        panelForPushTemplates.label_product_display_action_clr.isVisible=false
 
 
 
@@ -520,6 +531,9 @@ class Push_Templates_Dialog(var event: AnActionEvent) : DialogWrapper(true),  Ne
         panelForPushTemplates.titlte_clr_TextField.isVisible=false
         panelForPushTemplates.msg_clr_TextField.isVisible=false
         panelForPushTemplates.small_icon_clr_TextField.isVisible=false
+        panelForPushTemplates.product_display_action_TextField.isVisible=false
+        panelForPushTemplates.product_display_linear_TextField.isVisible=false
+        panelForPushTemplates.product_display_action_clr_TextField.isVisible=false
 
 
     }
@@ -547,7 +561,46 @@ class Push_Templates_Dialog(var event: AnActionEvent) : DialogWrapper(true),  Ne
             panelForPushTemplates.img1_TextField.text,
             panelForPushTemplates.img2_TextField.text,
             panelForPushTemplates.img3_TextField.text,
-            panelForPushTemplates.imgn_TextField.text
+            panelForPushTemplates.imgn_TextField.text,
+
+            panelForPushTemplates.default_dl_TextField.text,
+            panelForPushTemplates.dl3_TextField.text,
+            panelForPushTemplates.dl4_TextField.text,
+            panelForPushTemplates.dl5_TextField.text,
+
+            panelForPushTemplates.bt1_TextField.text,
+            panelForPushTemplates.bt2_TextField.text,
+            panelForPushTemplates.bt3_TextField.text,
+            panelForPushTemplates.st1_TextField.text,
+            panelForPushTemplates.st2_TextField.text,
+            panelForPushTemplates.st3_TextField.text,
+            panelForPushTemplates.pt_price1_TextField.text,
+            panelForPushTemplates.pt_price2_TextField.text,
+            panelForPushTemplates.pt_price3_TextField.text,
+            panelForPushTemplates.img4_TextField.text,
+            panelForPushTemplates.img5_TextField.text,
+
+            panelForPushTemplates.title_alt_TextField.text,
+            panelForPushTemplates.msg_alt_TextField.text,
+            panelForPushTemplates.big_img_alt_TextField.text,
+            panelForPushTemplates.timer_threshold_TextField.text,
+            panelForPushTemplates.timer_end_TextField.text,
+            panelForPushTemplates.pt_video_url_TextField.text,
+            panelForPushTemplates.pt_small_view_TextField.text,
+            panelForPushTemplates.pt_event_name_TextField.text,
+            panelForPushTemplates.pt_event_property1_TextField.text,
+            panelForPushTemplates.pt_event_property2_TextField.text,
+            panelForPushTemplates.pt_event_property3_TextField.text,
+            panelForPushTemplates.pt_input_label_TextField.text,
+            panelForPushTemplates.pt_input_auto_open_TextField.text,
+            panelForPushTemplates.pt_input_feedback_TextField.text,
+
+            panelForPushTemplates.product_display_action_TextField.text,
+            panelForPushTemplates.product_display_linear_TextField.text,
+            panelForPushTemplates.product_display_action_clr_TextField.text
+
+
+
 
 
 

@@ -10,8 +10,9 @@
         </description>
 
 
-    <idea-version since-build="182.0"/>
+    <idea-version since-build="211.*"/>
     <depends>com.intellij.modules.lang</depends>
+
     <depends>org.jetbrains.kotlin</depends>
 <!--    <depends>com.intellij.modules.platform</depends>-->
     <depends>org.jetbrains.android</depends>

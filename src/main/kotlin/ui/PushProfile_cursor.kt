@@ -9,13 +9,9 @@ import com.intellij.openapi.command.WriteCommandAction
 
 class PushProfile_cursor (var event: AnActionEvent)
 {
-//    private var projectBaseDir: VirtualFile? = null
-//    private var androidManifestfile: com.intellij.openapi.editor.Document? = null
-//    private var packagename:String=""
-//    private var launchingactivityname:String=""
 
     init {
-        //pushprofile()
+
         val project = event.getData(PlatformDataKeys.PROJECT)
         val editor  = event.getData(PlatformDataKeys.EDITOR)
         val selectionmodel = editor?.selectionModel

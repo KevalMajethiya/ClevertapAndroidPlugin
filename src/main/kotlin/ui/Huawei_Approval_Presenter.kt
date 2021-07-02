@@ -1,13 +1,7 @@
 package ui
 
-import com.intellij.notification.NotificationDisplayType
-import com.intellij.notification.NotificationGroup
-import com.intellij.notification.NotificationType
-import com.intellij.notification.Notifications
+import com.intellij.notification.*
 import com.intellij.openapi.actionSystem.AnActionEvent
-import com.intellij.openapi.application.ApplicationManager
-import com.intellij.openapi.application.ModalityState
-import com.intellij.openapi.util.NotNullLazyValue
 import data.file.CurrentPath
 import data.file.FileCreator
 import data.file.PackageExtractor
@@ -27,19 +21,6 @@ class Huawei_Approval_Presenter(
     private val moduleRepository: ModuleRepository,
     private val currentPathfcm: CurrentPath?
 ) {
-
-    companion object {
-        private val NOTIFICATION_GROUP = object :
-            NotNullLazyValue<NotificationGroup>() {
-            override fun compute(): NotificationGroup {
-                return NotificationGroup(
-                    Constants.DISPLAY_ID,
-                    NotificationDisplayType.BALLOON,
-                    true
-                )
-            }
-        }
-    }
 
     private var Huawei_Push:Huawei_Push?=null
     private var Huawei_Gradle_Manager:Huawei_Gradle_Manager?=null
@@ -83,26 +64,10 @@ class Huawei_Approval_Presenter(
 //                    }
 //                }
 
+                NotificationGroupManager.getInstance().getNotificationGroup("Display Notification")
+                    .createNotification(Constants.NOTIFICATION_TITLE,"Huawei Push has successfully been added.", NotificationType.INFORMATION)
+                    .notify(project)
 
-
-
-
-
-
-
-
-                ApplicationManager.getApplication()
-                    .invokeLater({
-                        Notifications.Bus.notify(
-                            NOTIFICATION_GROUP.value
-                                .createNotification(
-                                    Constants.NOTIFICATION_TITLE,
-                                    Constants.NOTIFICATION_CONTENT,
-                                    NotificationType.INFORMATION,
-                                    null
-                                )
-                        )
-                    }, ModalityState.NON_MODAL)
             } catch (e: FileNotFoundException) {
                 e.printStackTrace()
             }

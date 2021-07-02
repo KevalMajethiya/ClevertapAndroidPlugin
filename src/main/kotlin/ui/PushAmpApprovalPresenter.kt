@@ -1,5 +1,7 @@
 package ui
 
+import com.intellij.notification.NotificationGroupManager
+import com.intellij.notification.NotificationType
 import com.intellij.openapi.actionSystem.AnActionEvent
 import data.file.CurrentPath
 import data.file.FileCreator
@@ -8,6 +10,7 @@ import data.file.WriteActionDispatcher
 import data.repository.ModuleRepository
 import managers.Manager_PushAmp
 import managers.check_language
+import util.Constants
 import java.io.FileNotFoundException
 
 class PushAmpApprovalPresenter (
@@ -61,6 +64,11 @@ class PushAmpApprovalPresenter (
                         }
                     }
                 }
+
+                NotificationGroupManager.getInstance().getNotificationGroup("Display Notification")
+                    .createNotification(Constants.NOTIFICATION_TITLE,"Push Amplification has been successfully added.", NotificationType.INFORMATION)
+                    .notify(project)
+
             }
             catch (e: FileNotFoundException) {
                 e.printStackTrace()

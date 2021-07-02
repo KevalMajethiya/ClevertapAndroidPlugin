@@ -81,7 +81,4 @@ class XiomiInputPanel:JPanel() {
         add(newPanel)
     }
 
-//    override fun getPreferredSize(): Dimension? {
-//        return Dimension(800, 400)
-//    }
 }

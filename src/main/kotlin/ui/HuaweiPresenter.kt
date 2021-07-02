@@ -28,29 +28,13 @@ class HuaweiPresenter(
 
     fun onOkClick(
         event: AnActionEvent
-//        packageName: String,
-//        serviceNameText: String,
-//        pendingIntentText: String,
-//        contentTitleText: String,
-//        contentTextText: String,
-//        fcm_sender_id :String,
-//        dependencyVersionText: String,
-//        IsRadiobuttonrb1Selected: Boolean,
-//        IsRadiobuttonrb2Selected: Boolean,
-//        isNeedReadMeForInstructions: Boolean,
-//        moduleName: String
-        //fcm1: fcm1
     ) {
         event.project?.let { project ->
             val check= check_language(project)
             var lang= check.find_language()
 
             Huawei_Approval_Dialog(event).show()
-           // FCMApprovalDialog(event,serviceNameText,contentTitleText,fcm_sender_id,dependencyVersionText,IsRadiobuttonrb1Selected,IsRadiobuttonrb2Selected,lang).show()
 
-//            gradleManagerForfcm = GradleManager_for_fcm(project)
-//            manifestManagerForFCM = ManifestManager_forFCM(project)
-//            pushnotificationmanager= PushNotificationManager(project)
             try {
 
 

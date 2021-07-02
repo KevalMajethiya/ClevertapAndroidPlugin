@@ -23,6 +23,7 @@
 
     <extensions defaultExtensionNs="com.intellij">
         <!-- Add your extensions here -->
+        <notificationGroup id="Display Notification" displayType="BALLOON"/>
     </extensions>
 
     <actions>

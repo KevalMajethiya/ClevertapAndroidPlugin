@@ -1,13 +1,7 @@
 package ui
 
-import com.intellij.notification.NotificationDisplayType
-import com.intellij.notification.NotificationGroup
-import com.intellij.notification.NotificationType
-import com.intellij.notification.Notifications
+import com.intellij.notification.*
 import com.intellij.openapi.actionSystem.AnActionEvent
-import com.intellij.openapi.application.ApplicationManager
-import com.intellij.openapi.application.ModalityState
-import com.intellij.openapi.util.NotNullLazyValue
 import data.file.*
 import data.repository.ModuleRepository
 import managers.*
@@ -24,19 +18,6 @@ class CTApprovalPresenter(
     private val moduleRepository: ModuleRepository,
     private val currentPath: CurrentPath?
 ) {
-
-    companion object {
-        private val NOTIFICATION_GROUP = object :
-            NotNullLazyValue<NotificationGroup>() {
-            override fun compute(): NotificationGroup {
-                return NotificationGroup(
-                    Constants.DISPLAY_ID,
-                    NotificationDisplayType.BALLOON,
-                    true
-                )
-            }
-        }
-    }
 
     private var gradleManager: GradleManager? = null
     private var manifestManager: ManifestManager? = null
@@ -188,20 +169,9 @@ class CTApprovalPresenter(
 
 
 
-
-
-                ApplicationManager.getApplication()
-                    .invokeLater({
-                        Notifications.Bus.notify(
-                            NOTIFICATION_GROUP.value
-                                .createNotification(
-                                    Constants.NOTIFICATION_TITLE,
-                                    Constants.NOTIFICATION_CONTENT,
-                                    NotificationType.INFORMATION,
-                                    null
-                                )
-                        )
-                    }, ModalityState.NON_MODAL)
+                NotificationGroupManager.getInstance().getNotificationGroup("Display Notification")
+                    .createNotification(Constants.NOTIFICATION_TITLE,"Basic Clevertap integration has been  successfully completed.", NotificationType.INFORMATION)
+                    .notify(project)
             } catch (e: FileNotFoundException) {
                 e.printStackTrace()
             }

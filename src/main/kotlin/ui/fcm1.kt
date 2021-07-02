@@ -4,7 +4,7 @@ package ui
 import java.awt.Toolkit
 import java.awt.datatransfer.StringSelection
 import com.intellij.openapi.actionSystem.AnActionEvent
-import com.intellij.openapi.actionSystem.DataKeys
+import com.intellij.openapi.actionSystem.LangDataKeys
 import com.intellij.openapi.fileEditor.FileDocumentManager
 import com.intellij.openapi.module.ModuleUtil
 import com.intellij.openapi.project.Project
@@ -32,7 +32,7 @@ class fcm1(var event: AnActionEvent,private val project: Project) : DialogWrappe
 
     init {
         find_language()
-        val currentPath = event.getData(DataKeys.VIRTUAL_FILE)?.let {
+        val currentPath = event.getData(LangDataKeys.VIRTUAL_FILE)?.let {
             val module = ModuleUtil.findModuleForFile(it, event.project!!)?.name ?: Constants.DEFAULT_MODULE_NAME
             CurrentPathfcm(it.path, it.isDirectory, module)
         }

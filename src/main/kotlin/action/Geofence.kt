@@ -8,7 +8,7 @@ import ui.*
 class Geofence: AnAction() {
 
     override fun actionPerformed(event: AnActionEvent) {
-        //HuaweiPush(event)
+
         Geofence_Dialog(event).show()
     }
 }

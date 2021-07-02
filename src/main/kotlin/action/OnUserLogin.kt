@@ -6,8 +6,7 @@ import ui.*
 
 class OnUserLogin : AnAction() {
     override fun actionPerformed(event: AnActionEvent) {
-        // auditreportfile1(event).show()
-        //test(event)
+
         onUserLogin(event)
 
     }

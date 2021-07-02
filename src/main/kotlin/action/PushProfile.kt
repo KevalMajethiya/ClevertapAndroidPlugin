@@ -6,7 +6,6 @@ import ui.PushProfile
 
 class PushProfile : AnAction() {
     override fun actionPerformed(event: AnActionEvent) {
-        // auditreportfile1(event).show()
 
         PushProfile(event)
 

@@ -1,7 +1,7 @@
 package ui
 
 import com.intellij.openapi.actionSystem.AnActionEvent
-import com.intellij.openapi.actionSystem.DataKeys
+import com.intellij.openapi.actionSystem.LangDataKeys
 import com.intellij.openapi.module.ModuleUtil
 import com.intellij.openapi.ui.DialogWrapper
 import data.file.*
@@ -12,7 +12,7 @@ import javax.swing.JComponent
 
 class XiomiApprovalDialog(var event: AnActionEvent,appID : String,appKey : String): DialogWrapper(true),  NewScreenView {
 
-    private val panelForXiomi = XiomiInputPanel()
+    //private val panelForXiomi = XiomiInputPanel()
     private val panelForXiomi1 = XiomiApproval()
     private val presenter: XiomiApprovalPresenter
 
@@ -22,7 +22,7 @@ class XiomiApprovalDialog(var event: AnActionEvent,appID : String,appKey : Strin
     private var AppKey = appKey
 
     init {
-        val currentPath = event.getData(DataKeys.VIRTUAL_FILE)?.let {
+        val currentPath = event.getData(LangDataKeys.VIRTUAL_FILE)?.let {
             val module = ModuleUtil.findModuleForFile(it, event.project!!)?.name ?: Constants.DEFAULT_MODULE_NAME
             CurrentPath(it.path, it.isDirectory, module)
         }

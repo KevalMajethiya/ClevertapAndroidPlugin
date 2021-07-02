@@ -6,8 +6,7 @@ import ui.*
 
 class PushTemplates_initalization : AnAction() {
     override fun actionPerformed(event: AnActionEvent) {
-        // auditreportfile1(event).show()
-        //test(event)
+
         PushTemplates(event)
 
     }

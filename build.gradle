@@ -31,22 +31,12 @@ dependencies {
     testImplementation group: 'junit', name: 'junit', version: '4.13.2'
     testImplementation group:'org.mockito',name:'mockito-core',version:'3.11.2'
     testImplementation group:'com.nhaarman.mockitokotlin2',name:'mockito-kotlin',version:'2.2.0'
-//    testCompile 'junit:junit:4.12'
-//    testCompile "org.mockito:mockito-core:2.23.4"
-//    testCompile "com.nhaarman.mockitokotlin2:mockito-kotlin:2.0.0"
+
 }
 
 intellij {
     version = '2021.1.2'
-    plugins =['org.jetbrains.kotlin','org.jetbrains.android']
-    /// alternativeIdePath '/Applications/Android Studio 2.app'
-    //alternativeIdePath '/Applications/IntelliJ IDEA CE.app'
-    //alternativeIdePath '/Applications/Android Studio.app'
-//    alternativeIdePath '/Volumes/Project/Android Studio 4.0 Preview.app'
+    plugins = ['org.jetbrains.kotlin','org.jetbrains.android']
+
     updateSinceUntilBuild= false
 }
-
-//publishPlugin {
-//    username "Jidesh"
-//    password "Jidesh"
-//}

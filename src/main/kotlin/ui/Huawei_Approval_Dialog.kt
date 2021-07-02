@@ -1,7 +1,7 @@
 package ui
 
 import com.intellij.openapi.actionSystem.AnActionEvent
-import com.intellij.openapi.actionSystem.DataKeys
+import com.intellij.openapi.actionSystem.LangDataKeys
 import com.intellij.openapi.module.ModuleUtil
 import com.intellij.openapi.ui.DialogWrapper
 import data.file.*
@@ -20,7 +20,7 @@ class Huawei_Approval_Dialog(var event: AnActionEvent) : DialogWrapper(true),  N
     private var moduleName = ""
 
     init {
-        val currentPath = event.getData(DataKeys.VIRTUAL_FILE)?.let {
+        val currentPath = event.getData(LangDataKeys.VIRTUAL_FILE)?.let {
             val module = ModuleUtil.findModuleForFile(it, event.project!!)?.name ?: Constants.DEFAULT_MODULE_NAME
             CurrentPath(it.path, it.isDirectory, module)
         }

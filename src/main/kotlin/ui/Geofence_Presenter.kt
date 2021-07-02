@@ -1,16 +1,14 @@
 package ui
 
-import com.intellij.notification.NotificationDisplayType
-import com.intellij.notification.NotificationGroup
+
 import com.intellij.openapi.actionSystem.AnActionEvent
-import com.intellij.openapi.util.NotNullLazyValue
 import data.file.CurrentPath
 import data.file.FileCreator
 import data.file.PackageExtractor
 import data.file.WriteActionDispatcher
 import data.repository.ModuleRepository
 import managers.check_language
-import util.Constants
+
 
 class Geofence_Presenter(
     private val view: NewScreenView,
@@ -20,21 +18,6 @@ class Geofence_Presenter(
     private val moduleRepository: ModuleRepository,
     private val currentPath: CurrentPath?
 ) {
-
-    companion object {
-        private val NOTIFICATION_GROUP = object :
-            NotNullLazyValue<NotificationGroup>() {
-            override fun compute(): NotificationGroup {
-                return NotificationGroup(
-                    Constants.DISPLAY_ID,
-                    NotificationDisplayType.BALLOON,
-                    true
-                )
-            }
-        }
-    }
-
-
 
     fun onLoadView() {
         view.showPackage(packageExtractor.extractFromCurrentPath())
@@ -63,7 +46,6 @@ class Geofence_Presenter(
             val lang= check.find_language()
 
             Geofence_Approval_Dialog(event,log_value,location_accuracy_value,location_fetch_mode_value,Geofence_Monitoring_count,interval,fastest_interval,displacement,geofence_notification_responsiveness,enable_bglocation_y,enable_bglocation_n,lang).show()
-            // FCMApprovalDialog(event,serviceNameText,contentTitleText,fcm_sender_id,dependencyVersionText,IsRadiobuttonrb1Selected,IsRadiobuttonrb2Selected,lang).show()
 
         }
         view.close()

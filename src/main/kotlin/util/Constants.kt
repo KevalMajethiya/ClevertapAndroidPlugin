@@ -9,7 +9,6 @@ object Constants {
     const val Intalrefrerrer="com.android.installreferrer:installreferrer:2.1"
     // Title messages for the studio notification
     const val NOTIFICATION_TITLE = "Clevertap Notification"
-    const val NOTIFICATION_CONTENT = "Clevertap has been added successfully"
     const val DISPLAY_ID = "Jidesh Nair"
 
     // Error Titles

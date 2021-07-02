@@ -11,7 +11,7 @@ class UserEvents_cursor (var event: AnActionEvent)
 {
 
     init {
-        //user_events()
+
         val project = event.getData(PlatformDataKeys.PROJECT)
         val editor  = event.getData(PlatformDataKeys.EDITOR)
         val selectionmodel = editor?.selectionModel

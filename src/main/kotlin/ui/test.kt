@@ -1,14 +1,10 @@
 package ui
 
-import com.intellij.notification.NotificationType
-import com.intellij.notification.Notifications
 import com.intellij.openapi.actionSystem.AnActionEvent
-import com.intellij.openapi.application.ApplicationManager
-import com.intellij.openapi.application.ModalityState
 import managers.AuditreportManager
-import util.Constants
-import managers.*
-import util.Methods
+import managers.GradleManager_for_audit
+import managers.ManifestManager_audit
+import managers.createFCMfile
 import java.io.FileNotFoundException
 
 class test(var event: AnActionEvent) {
@@ -33,11 +29,6 @@ class test(var event: AnActionEvent) {
                     it.initapplicationclass()
 
                 }
-//                createFCMfile?.let{
-//
-//                    it.initapplicationclass(Methods.getFileContent1())
-//
-//                }
 
                 GradleManager_for_audit?.let {
                     if (it.initBuildGradle()) {

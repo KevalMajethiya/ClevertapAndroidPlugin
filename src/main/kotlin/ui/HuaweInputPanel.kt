@@ -12,18 +12,6 @@ import javax.swing.*
 
 class HuaweInputPanel :JPanel() {
 
-//    val fileContent = ClevertapInputPanel::class.java.getResource("/icons/hint.png")
-//    val icon = ImageIcon(fileContent)
-
-//    val clevertap_logo = ClevertapInputPanel::class.java.getResource("/icons/clevertap_logo.png")
-//    val c_img = ImageIcon(clevertap_logo)
-//    val img_label = JLabel()
-
-//    val console_img = ClevertapInputPanel::class.java.getResource("/icons/Huawei_SS.png")
-//    val registration_img = ImageIcon(console_img)
-//    val r_img_label = JLabel()
-
-
     private val introduction_label = JLabel("<html>"+"<b>"+"Introduction"+"</b>"+"<hr>"+"</html>")
     private val intro_content = JLabel("CleverTap Huawei Push SDK provides an out of the box service to use the Huwaei Push Kit.")
 
@@ -67,34 +55,6 @@ class HuaweInputPanel :JPanel() {
         //constraints.insets = Insets(inset, inset, inset, inset)
         constraints.insets = Insets(inset, inset, inset, inset)
 
-
-
-
-
-
-
-
-
-//        constraints.gridx = 0
-//        constraints.gridy = 2
-//        labelServiceName.setVisible(false)
-//        labelServiceName.setToolTipText("Enter FCM Service Name")
-//        labelServiceName.setIcon(icon)
-//        labelServiceName.setHorizontalTextPosition( SwingConstants.LEFT);
-//        labelServiceName.setVerticalTextPosition( SwingConstants.CENTER );
-//        newPanel.add(labelServiceName, constraints)
-//        constraints.gridx = 1
-//        serviceNameTextField.setVisible(false)
-//        newPanel.add(serviceNameTextField, constraints)
-
-
-//        constraints.gridx = 0
-//        constraints.gridy = 0
-//        img_label.setIcon(c_img)
-//        img_label.setHorizontalAlignment(JLabel.CENTER)
-//        img_label.setVerticalAlignment(JLabel.CENTER)
-//
-//        newPanel.add(img_label,constraints.fill)
 
 
         constraints.gridx = 0
@@ -144,19 +104,6 @@ class HuaweInputPanel :JPanel() {
         constraints.gridy = 6
         newPanel.add(enable_pushkit_content, constraints)
 
-//        constraints.gridx = 0
-//        constraints.gridy = 7
-//        r_img_label.setIcon(registration_img)
-//        r_img_label.setHorizontalAlignment(JLabel.CENTER)
-//        r_img_label.setVerticalAlignment(JLabel.CENTER)
-//
-//        newPanel.add(r_img_label,constraints)
-
-
-
-
-
-
 
         constraints.gridx = 0
         constraints.gridy = 8
@@ -192,9 +139,5 @@ class HuaweInputPanel :JPanel() {
 
 
     }
-//    override fun getPreferredSize(): Dimension? {
-//        return Dimension(800, 500)
-//    }
-
 
 }

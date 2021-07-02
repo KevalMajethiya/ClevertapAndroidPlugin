@@ -8,28 +8,7 @@ import data.file.*
 import data.repository.ModuleRepositoryImpl
 import data.repository.SourceRootRepositoryImpl
 import util.Constants
-import util.Constants.CONTENT_TEXT
-import util.Constants.CONTENT_TITLE
-import util.Constants.ChannelID_Name_FCM
-import util.Constants.DEPENDENCY_VERSION
-import util.Constants.DEPENDENCY_VERSION_VALUE
-import util.Constants.DEPENDENCY_VERSION_VALUE_FCM
-import util.Constants.FCM_PANEL
-import util.Constants.FCM_SERVICE_NAME
-import util.Constants.FCM_SERVICE_NAME_FCM
-import util.Constants.MY_FIREBASE_MESSAGING_SERVICE
-import util.Constants.MY_FIREBASE_MESSAGING_SERVICE_FCM
-import util.Constants.NEED_INSTRUCTION
-import util.Constants.NOTES_INSTRUCTION
-import util.Constants.PENDINGINTENT_ACTIVITY_NAME
-import util.Constants.PENDINGINTENT_ACTIVITY_NAME_FCM
 import javax.swing.*
-import javax.swing.BorderFactory
-import java.awt.GridBagConstraints
-import java.awt.Insets
-import java.awt.GridBagLayout
-import javax.swing.JPanel
-import javax.swing.JTextField
 import java.io.IOException
 import java.nio.file.*
 
@@ -70,15 +49,14 @@ class google_service_file(var event: AnActionEvent) : DialogWrapper(true), NewSc
             if (option == JFileChooser.APPROVE_OPTION)
             {
                 val file = fileChooser.selectedFile
-                val fname: String
-                fname = file.name
+                val fname: String = file.name
                 val fn = "google-services.json"
                 // String fnn="google-services.json";
                 // String fnn="google-services.json";
 
                 //label.setText("File Saved as: " + file.getName());
-                val project = event.getProject()
-                val sourcePath = project?.getBasePath()
+                val project = event.project
+                val sourcePath = project?.basePath
                // panelForFCM.label.setText(sourcePath)
                 //label.text = "File Saved as: " + file.path
                 val toFile = sourcePath +"/app/"+ file.name
@@ -96,9 +74,9 @@ class google_service_file(var event: AnActionEvent) : DialogWrapper(true), NewSc
                     {
                         // e.printStackTrace();
                     }
-                    panelForFCM.label.setText("Google Service file added")
+                    panelForFCM.label.text = "Google Service file added"
                 } else {
-                    panelForFCM.label.setText("You have selected wrong file")
+                    panelForFCM.label.text = "You have selected wrong file"
                 }
 
 
@@ -116,7 +94,7 @@ class google_service_file(var event: AnActionEvent) : DialogWrapper(true), NewSc
         return panelForFCM
     }
 
-    override fun close() = close(DialogWrapper.OK_EXIT_CODE)
+    override fun close() = close(OK_EXIT_CODE)
 
     override fun showPackage(packageName: String) {
         this.packageName = packageName

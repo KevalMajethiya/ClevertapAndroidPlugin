@@ -1,4 +1,5 @@
 package ui
+import com.intellij.openapi.ui.ComboBox
 import util.Constants.Exclude_files
 import util.Constants.DEPENDENCY_VERSION_VALUE
 import util.Constants.FCM_PANEL
@@ -27,16 +28,6 @@ import javax.swing.JRadioButton
 
 class ClevertapInputPanel : JPanel()
 {
-
-    //private val labelimg = JLabel()
-    //var pawnW = ImageIcon(javaClass.getResource(path))
-   // val file= File("/ClevrtapPluginWithFCM-master/images/hint.png").path
-   // val path= file
-    //var file1=File("hint.png")
-
-    //var path: String? = "/images/hint.png"
-
-    //var pawnW = ImageIcon(javaClass.getResource(path))
 
     private val fileContent = ClevertapInputPanel::class.java.getResource("/icons/hint.png")
     private val icon = ImageIcon(fileContent)
@@ -81,7 +72,7 @@ class ClevertapInputPanel : JPanel()
     val Exclude_filesTextField = JTextField(25)
     val application_classname_TextField = JTextField(25)
     var regions = arrayOf<String>("eu1","in1","sg1","sk1","us1")
-    var region_value = JComboBox(regions)
+    var region_value = ComboBox(regions)
 
 
 
@@ -101,26 +92,6 @@ class ClevertapInputPanel : JPanel()
         constraints.gridy = 0
         //labelServiceName.setIcon(icon)
 
-//        labelServiceName.addMouseListener(object : MouseAdapter() {
-//
-//
-//            override fun mouseClicked(e: MouseEvent)
-//            {
-//                Desktop.getDesktop().browse(URI("https://eu1.dashboard.clevertap.com/RZ7-Z94-K95Z/account-setup/account-details/overview"))
-//;
-//            }
-//
-//            override fun mouseExited(e: MouseEvent)
-//            {
-//
-//            }
-//
-//            override fun mouseEntered(e: MouseEvent)
-//            {
-//
-//            }
-//        })
-        //labelServiceName.verticalTextPosition(JLabel.RIGHT)
 
         labelServiceName.toolTipText = "CleverTap Dashboard -> Settings -> Project -> Project Id"
         labelServiceName.icon = icon

@@ -1,165 +1,106 @@
 <application>
   <component name="ActionsLocalSummary">
-    <data>
-      <entry key="$Delete">
-        <ActionSummary times="1" last="1624600945439" />
-      </entry>
-      <entry key="$SelectAll">
-        <ActionSummary times="6" last="1625046813467" />
-      </entry>
-      <entry key="$Undo">
-        <ActionSummary times="43" last="1625051414092" />
-      </entry>
-      <entry key="Android.RunAndroidAvdManager">
-        <ActionSummary times="3" last="1624623448310" />
-      </entry>
-      <entry key="CleanPlugin.ID1">
-        <ActionSummary times="2" last="1624870286568" />
-      </entry>
-      <entry key="CleanPlugin.ID2">
-        <ActionSummary times="1" last="1624870258266" />
-      </entry>
-      <entry key="CommentByLineComment">
-        <ActionSummary times="58" last="1625052238498" />
-      </entry>
-      <entry key="Debug">
-        <ActionSummary times="1" last="1624869245574" />
-      </entry>
-      <entry key="DeveloperServices.ConnectionAssistant">
-        <ActionSummary times="11" last="1625036762337" />
-      </entry>
-      <entry key="EditorBackSpace">
-        <ActionSummary times="2241" last="1625118190138" />
-      </entry>
-      <entry key="EditorChooseLookupItem">
-        <ActionSummary times="46" last="1625052253041" />
-      </entry>
-      <entry key="EditorCopy">
-        <ActionSummary times="56" last="1625053057361" />
-      </entry>
-      <entry key="EditorCut">
-        <ActionSummary times="17" last="1625050704074" />
-      </entry>
-      <entry key="EditorDown">
-        <ActionSummary times="109" last="1625051092721" />
-      </entry>
-      <entry key="EditorDownWithSelection">
-        <ActionSummary times="1060" last="1625052230521" />
-      </entry>
-      <entry key="EditorEnter">
-        <ActionSummary times="83" last="1625052280546" />
-      </entry>
-      <entry key="EditorLeft">
-        <ActionSummary times="105" last="1625052245601" />
-      </entry>
-      <entry key="EditorLeftWithSelection">
-        <ActionSummary times="707" last="1625052234963" />
-      </entry>
-      <entry key="EditorPaste">
-        <ActionSummary times="442" last="1625118327844" />
-      </entry>
-      <entry key="EditorRight">
-        <ActionSummary times="194" last="1625052263299" />
-      </entry>
-      <entry key="EditorRightWithSelection">
-        <ActionSummary times="1022" last="1625052275369" />
-      </entry>
-      <entry key="EditorSplitLine">
-        <ActionSummary times="4" last="1625051020653" />
-      </entry>
-      <entry key="EditorTab">
-        <ActionSummary times="13" last="1625047805602" />
-      </entry>
-      <entry key="EditorUp">
-        <ActionSummary times="36" last="1625117244341" />
-      </entry>
-      <entry key="EditorUpWithSelection">
-        <ActionSummary times="27" last="1625051104300" />
-      </entry>
-      <entry key="Find">
-        <ActionSummary times="2" last="1625041164197" />
-      </entry>
-      <entry key="Generate">
-        <ActionSummary times="31" last="1624357658368" />
-      </entry>
-      <entry key="HideAllWindows">
-        <ActionSummary times="1" last="1624602384414" />
-      </entry>
-      <entry key="MakeGradleProject">
-        <ActionSummary times="256" last="1625117932686" />
-      </entry>
-      <entry key="NewClass">
-        <ActionSummary times="1" last="1624359150425" />
-      </entry>
-      <entry key="Run">
-        <ActionSummary times="249" last="1625117950927" />
-      </entry>
-      <entry key="SearchEverywhere">
-        <ActionSummary times="1" last="1625050008899" />
-      </entry>
-      <entry key="ShowProjectStructureSettings">
-        <ActionSummary times="1" last="1625053053044" />
-      </entry>
-      <entry key="Stop">
-        <ActionSummary times="84" last="1625051692867" />
-      </entry>
-      <entry key="ToggleLineBreakpoint">
-        <ActionSummary times="7" last="1625046602766" />
-      </entry>
-      <entry key="WelcomeScreen.OpenProject">
-        <ActionSummary times="2" last="1623919709759" />
-      </entry>
-      <entry key="action.Search1">
-        <ActionSummary times="31" last="1624357659757" />
-      </entry>
-      <entry key="com.android.tools.idea.common.editor.DesignToolsSplitEditor$MyToolBarAction">
-        <ActionSummary times="2" last="1624601747224" />
-      </entry>
-      <entry key="com.android.tools.idea.gradle.project.sync.setup.post.MemorySettingsPostSyncChecker$2">
-        <ActionSummary times="1" last="1623919814175" />
-      </entry>
-      <entry key="com.android.tools.idea.logcat.LogcatConsoleActionsPostProcessor$ClearLogCatAction">
-        <ActionSummary times="2" last="1625117713294" />
-      </entry>
-      <entry key="com.android.tools.idea.run.deployment.SelectDeviceAction">
-        <ActionSummary times="1" last="1624602415294" />
-      </entry>
-      <entry key="com.intellij.codeInsight.daemon.impl.DaemonTooltipWithActionRenderer$addActionsRow$2">
-        <ActionSummary times="3" last="1625047883179" />
-      </entry>
-      <entry key="com.intellij.execution.impl.ConsoleViewImpl$BackSpaceHandler">
-        <ActionSummary times="15" last="1624278623933" />
-      </entry>
-      <entry key="com.intellij.execution.impl.ConsoleViewImpl$ClearThisConsoleAction">
-        <ActionSummary times="12" last="1625039518165" />
-      </entry>
-      <entry key="com.intellij.execution.impl.ConsoleViewImpl$EnterHandler">
-        <ActionSummary times="1" last="1624278576728" />
-      </entry>
-      <entry key="com.intellij.execution.impl.ConsoleViewImpl$PasteHandler">
-        <ActionSummary times="1" last="1624278575593" />
-      </entry>
-      <entry key="com.intellij.find.SearchTextArea$ClearAction">
-        <ActionSummary times="4" last="1625041173091" />
-      </entry>
-      <entry key="com.intellij.ide.ReopenProjectAction">
-        <ActionSummary times="39" last="1625047438712" />
-      </entry>
-      <entry key="com.intellij.openapi.wm.impl.ToolWindowHeader$HideAction">
-        <ActionSummary times="122" last="1625118216309" />
-      </entry>
-      <entry key="com.intellij.xdebugger.impl.breakpoints.RemoveBreakpointGutterIconAction">
-        <ActionSummary times="5" last="1625046855022" />
-      </entry>
-      <entry key="event1">
-        <ActionSummary times="2" last="1625033070015" />
-      </entry>
-      <entry key="eventproperties1">
-        <ActionSummary times="138" last="1625118247113" />
-      </entry>
-      <entry key="template.create.XMLValues XML File">
-        <ActionSummary times="2" last="1624600955919" />
-      </entry>
-    </data>
+    <e n="$SelectAll">
+      <i c="1" l="1625224939758" />
+    </e>
+    <e n="$Undo">
+      <i c="2" l="1625223411824" />
+    </e>
+    <e n="CleanPlugin.ID1">
+      <i c="1" l="1625210972659" />
+    </e>
+    <e n="CleanPlugin.ID2">
+      <i c="1" l="1625211027939" />
+    </e>
+    <e n="CommentByLineComment">
+      <i c="17" l="1625474336240" />
+    </e>
+    <e n="CompileDirty">
+      <i c="44" l="1625477719047" />
+    </e>
+    <e n="EditorBackSpace">
+      <i c="323" l="1625476622645" />
+    </e>
+    <e n="EditorChooseLookupItem">
+      <i c="1" l="1625476485565" />
+    </e>
+    <e n="EditorCopy">
+      <i c="11" l="1625475125579" />
+    </e>
+    <e n="EditorCut">
+      <i c="1" l="1625212278611" />
+    </e>
+    <e n="EditorDown">
+      <i c="7" l="1625225118921" />
+    </e>
+    <e n="EditorDownWithSelection">
+      <i c="880" l="1625474446750" />
+    </e>
+    <e n="EditorEnter">
+      <i c="10" l="1625474362008" />
+    </e>
+    <e n="EditorLeft">
+      <i c="28" l="1625474636861" />
+    </e>
+    <e n="EditorLeftWithSelection">
+      <i c="118" l="1625474447109" />
+    </e>
+    <e n="EditorPaste">
+      <i c="49" l="1625476971711" />
+    </e>
+    <e n="EditorRight">
+      <i c="8" l="1625476477970" />
+    </e>
+    <e n="EditorRightWithSelection">
+      <i c="245" l="1625475124916" />
+    </e>
+    <e n="EditorTab">
+      <i c="3" l="1625474507780" />
+    </e>
+    <e n="EditorUp">
+      <i c="1" l="1625225114220" />
+    </e>
+    <e n="EditorUpWithSelection">
+      <i c="74" l="1625467669011" />
+    </e>
+    <e n="Run">
+      <i c="31" l="1625477732413" />
+    </e>
+    <e n="ShowIntentionActions">
+      <i c="1" l="1625211334189" />
+    </e>
+    <e n="Stop">
+      <i c="11" l="1625478120270" />
+    </e>
+    <e n="WelcomeScreen.CreateNewProject">
+      <i c="3" l="1625210811884" />
+    </e>
+    <e n="WelcomeScreen.RemoveSelected">
+      <i c="1" l="1625210810863" />
+    </e>
+    <e n="com.android.tools.idea.run.deployment.SelectDeviceAction">
+      <i c="1" l="1625211674622" />
+    </e>
+    <e n="com.intellij.diagnostic.LowMemoryNotifier$2">
+      <i c="1" l="1625473763933" />
+    </e>
+    <e n="com.intellij.execution.actions.RunConfigurationsComboBoxAction$SelectTargetAction">
+      <i c="1" l="1625223877806" />
+    </e>
+    <e n="com.intellij.ide.ReopenProjectAction">
+      <i c="7" l="1625473693095" />
+    </e>
+    <e n="com.intellij.openapi.fileEditor.impl.tabActions.CloseTab">
+      <i c="4" l="1625211882283" />
+    </e>
+    <e n="com.intellij.openapi.wm.impl.ToolWindowHeader$HideAction">
+      <i c="18" l="1625477869690" />
+    </e>
+    <e n="event1">
+      <i c="1" l="1625212106212" />
+    </e>
+    <e n="eventproperties1">
+      <i c="19" l="1625476899669" />
+    </e>
   </component>
 </application>

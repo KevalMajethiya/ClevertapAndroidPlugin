@@ -16,23 +16,42 @@
         </entry>
         <entry key="$USER_HOME$/AndroidStudioProjects/PT_demo1">
           <value>
-            <RecentProjectMetaInfo opened="true" projectWorkspaceId="1tvTWCGhinApxDVHdDjBXmjD28W">
+            <RecentProjectMetaInfo frameTitle="PT_demo1 – AndroidManifest.xml [PT_demo1.app]" projectWorkspaceId="1tvTWCGhinApxDVHdDjBXmjD28W">
               <option name="binFolder" value="$APPLICATION_HOME_DIR$/bin" />
-              <option name="build" value="AI-201.8743.12.41.7042882" />
-              <option name="buildTimestamp" value="1608424763675" />
+              <option name="build" value="IC-211.7442.40" />
+              <option name="buildTimestamp" value="1622516690349" />
               <frame x="0" y="0" width="1280" height="800" fullScreen="true" />
-              <option name="productionCode" value="AI" />
-              <option name="projectOpenTimestamp" value="1625116775531" />
+              <option name="productionCode" value="IC" />
+              <option name="projectOpenTimestamp" value="1625209033234" />
+            </RecentProjectMetaInfo>
+          </value>
+        </entry>
+        <entry key="$USER_HOME$/IntelliJIDEAProjects/My">
+          <value>
+            <RecentProjectMetaInfo frameTitle="My – MainActivity.kt [My.app]" projectWorkspaceId="1ukUTg9lOyoHu1BF8vmQmuC5Hkf">
+              <option name="binFolder" value="$APPLICATION_HOME_DIR$/bin" />
+              <option name="build" value="IC-211.7442.40" />
+              <option name="buildTimestamp" value="1622516662867" />
+              <frame x="0" y="0" width="1280" height="800" fullScreen="true" />
+              <option name="productionCode" value="IC" />
+              <option name="projectOpenTimestamp" value="1625210673200" />
+            </RecentProjectMetaInfo>
+          </value>
+        </entry>
+        <entry key="$USER_HOME$/IntelliJIDEAProjects/PTTesting">
+          <value>
+            <RecentProjectMetaInfo frameTitle="PTTesting – MyActivity.java [PTTesting.app]" projectWorkspaceId="1ukY17AQpAdXOPL9fpmI7znqgNZ">
+              <option name="binFolder" value="$APPLICATION_HOME_DIR$/bin" />
+              <option name="build" value="IC-211.7442.40" />
+              <option name="buildTimestamp" value="1622516691868" />
+              <frame x="0" y="0" width="1280" height="800" fullScreen="true" />
+              <option name="productionCode" value="IC" />
+              <option name="projectOpenTimestamp" value="1625473696873" />
             </RecentProjectMetaInfo>
           </value>
         </entry>
       </map>
     </option>
-    <option name="recentPaths">
-      <list>
-        <option value="$USER_HOME$/AndroidStudioProjects/PT_demo1" />
-        <option value="$USER_HOME$/AndroidStudioProjects/Minal" />
-      </list>
-    </option>
+    <option name="lastProjectLocation" value="$USER_HOME$/IntelliJIDEAProjects" />
   </component>
 </application>

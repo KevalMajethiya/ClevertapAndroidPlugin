@@ -2,6 +2,9 @@ package ui
 
 import com.intellij.notification.*
 import com.intellij.openapi.actionSystem.AnActionEvent
+import com.intellij.openapi.application.ApplicationManager
+import com.intellij.openapi.application.ModalityState
+import com.intellij.openapi.util.NotNullLazyValue
 import data.file.*
 import data.repository.ModuleRepository
 import managers.*
@@ -18,6 +21,7 @@ class CTApprovalPresenter(
     private val moduleRepository: ModuleRepository,
     private val currentPath: CurrentPath?
 ) {
+
 
     private var gradleManager: GradleManager? = null
     private var manifestManager: ManifestManager? = null
@@ -169,8 +173,10 @@ class CTApprovalPresenter(
 
 
 
+
+
                 NotificationGroupManager.getInstance().getNotificationGroup("Display Notification")
-                    .createNotification(Constants.NOTIFICATION_TITLE,"Basic Clevertap integration has been  successfully completed.", NotificationType.INFORMATION)
+                    .createNotification(Constants.NOTIFICATION_TITLE,"Huawei Push has successfully been added.", NotificationType.INFORMATION)
                     .notify(project)
             } catch (e: FileNotFoundException) {
                 e.printStackTrace()

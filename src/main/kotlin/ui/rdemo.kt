@@ -17,9 +17,9 @@ internal class rdemo : JFrame(), ActionListener {
             //tf.setEnabled(true);
 //JOptionPane.showMessageDialog(this,"You are Male.");
         }
-        if (rb2.isSelected) {
+      //  if (rb2.isSelected) {
 //kj    rdJOptionPane.showMessageDialog(this,"You are Female.");
-        }
+       // }
     }
 
     companion object {

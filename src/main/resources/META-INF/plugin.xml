@@ -1,8 +1,8 @@
 
 <idea-plugin >
     <id>CleverTap.CleverTap</id>
-    <name>CleverTap Assistant (Beta)</name>
-    <vendor email="jideshnair8@gmail.com" >Clevertap</vendor>
+    <name>CleverTap Assistant </name>
+    <vendor email="jidesh@clevertap.com" >Clevertap</vendor>
 
         <description>Plugin helps to integrate Clevertap in your app in less then 5 minutes.
         It helps to install the CleverTap SDK, track your  user events,enrich user profiles,
@@ -10,20 +10,20 @@
         </description>
 
 
-    <idea-version since-build="211.*"/>
+    <idea-version since-build="202.*"/>
     <depends>com.intellij.modules.lang</depends>
+    <depends>com.intellij.modules.java</depends>
 
     <depends>org.jetbrains.kotlin</depends>
 <!--    <depends>com.intellij.modules.platform</depends>-->
     <depends>org.jetbrains.android</depends>
-<!--    <depends>com.intellij.modules.java</depends>-->
 <!--    <depends>com.intellij.modules.androidstudio</depends>-->
 
-    <version>0.1</version>
+    <version>0.2</version>
 
     <extensions defaultExtensionNs="com.intellij">
-        <!-- Add your extensions here -->
         <notificationGroup id="Display Notification" displayType="BALLOON"/>
+
     </extensions>
 
     <actions>
@@ -32,34 +32,34 @@
         <group id="inner" text="Clevertap Assistant" popup="true" icon="/icons/ctlogo2.png">
             <add-to-group group-id="NewGroup" anchor="after" relative-to-action="NewDir" />
             <action id="CleanPlugin.ID1" class="action.SearchAction" text="Basic Integration"
-                    description="Configure Clevertap."
+                    description="ConfigureClevertap."
                     use-shortcut-of="CleanPlugin.ID1" keymap="$default">
 
             </action>
             <action id="CleanPlugin.ID2" class="action.SearchAction_FCM" text="Push Notification"
-                description="Configure Clevertap."
+                description="ConfigureClevertap."
                 use-shortcut-of="CleanPlugin.ID2" keymap="$default">
 <!--                <keyboard-shortcut keymap="$default" first-keystroke="control alt p"/>-->
             </action>
             <action id="CleanPlugin.ID7" class="action.PushAmp" text="Push Amplification"
-                    description="Configure CleverTap."
+                    description="ConfigureCleverTap."
                     keymap="$default">
             </action>>
 
             <action id="CleanPlugin.ID4" class="action.XiomiPush" text="Xiaomi Push"
-                    description="Configure Clevertap."
+                    description="ConfigureClevertap."
                     keymap="$default">
             </action>
             <action id="CleanPlugin.ID5" class="action.HuaweiPush" text="Huawei Push"
-                    description="Configure Clevertap."
+                    description="ConfigureClevertap."
                     keymap="$default">
             </action>
             <action id="CleanPlugin.ID6" class="action.Geofence" text="Geofence"
-                    description="Configure Clevertap."
+                    description="ConfigureClevertap."
                     keymap="$default">
             </action>
             <action id="CleanPlugin.ID3" class="action.Auditreport" text="Audit Report"
-                    description="Configure Clevertap."
+                    description="ConfigureClevertap."
                     use-shortcut-of="CleanPlugin.ID3" keymap="$default">
 
                 <!-- <keyboard-shortcut keymap="$default" first-keystroke="control alt a"/>-->
@@ -73,26 +73,26 @@
         <action class="action.Auditreport"
                 id="action.Auditreport"
                 text="Audit Report"
-                description="Generating Audit Report">
+                description="GeneratingAuditReport">
             <add-to-group group-id="GenerateGroup" anchor="first"/>
         </action>
         <action class="action.UserEvents"
                 id="action.AccessorAction"
                 text="Clevertap Events"
-                description="Add Clevertap Events/User Properties">
+                description="AddClevertapEvents/UserProperties">
             <add-to-group group-id="GenerateGroup" anchor="first"/>
         </action>
 
         <action class="action.PushProfile"
                 id="action.AccessorAction_Userproperties"
                 text="Clevertap PushProfile"
-                description="Add Clevertap User Properties">
+                description="AddClevertapUserProperties">
             <add-to-group group-id="GenerateGroup" anchor="first"/>
         </action>
         <action class="action.OnUserLogin"
                 id="action.AccessorAction_Onuserlogin"
                 text="Clevertap OnuserLogin"
-                description="Add Clevertap Onuserlogin">
+                description="AddClevertapOnuserlogin">
             <add-to-group group-id="GenerateGroup" anchor="first"/>
         </action>
 
@@ -108,7 +108,7 @@
             </action>
             <action class="action.UserEventsWithProperties_cursor"
                     id="eventproperties"
-                    text="Events with properties"
+                    text="EventsWithProperties"
                     description="Demo">
 
             </action>
@@ -132,46 +132,47 @@
 
         <group id="pushtemplates" text="Push Templates" popup="true" icon="/icons/ctlogo3.png" >
             <add-to-group group-id="EditorPopupMenu" anchor="first" />
-            <action class="action.PushTemplates_initalization"
-                    id="event1"
-                    text="Integration"
-                    description="Demo1">
+<!--            <action class="action.PushTemplates_initalization"-->
+<!--                    id="event1"-->
+<!--                    text="Integration"-->
+<!--                    description="Demo1">-->
 
-            </action>
+<!--            </action>-->
             <action class="action.Push_Templates"
                     id="eventproperties1"
                     text="Test"
                     description="Demo2">
 
-            </action>
-            <action class="action.Stop_service"
-                    id="stop"
-                    text="Stop Service"
-                    description="stop">
 
             </action>
+<!--            <action class="action.Stop_service"-->
+<!--                    id="stop"-->
+<!--                    text="Stop Service"-->
+<!--                    description="Stop">-->
+
+<!--            </action>-->
         </group>
-        <group id="pushtemplates_demo" text="Push Templates" popup="true" icon="/icons/ctlogo3.png" >
-            <add-to-group group-id="EditorPopupMenu" anchor="first" />
-            <action class="action.Push_Templates_temp"
-                    id="basic"
-                    text="Basic"
-                    description="Demo1">
+<!--        <group id="pushtemplates_demo" text="Push Templates" popup="true" icon="/icons/ctlogo3.png" >-->
+<!--            <add-to-group group-id="EditorPopupMenu" anchor="first" />-->
+<!--            <action class="action.Push_Templates_temp"-->
+<!--                    id="basic"-->
+<!--                    text="Basic"-->
+<!--                    description="Demo1">-->
 
-            </action>
-            <action class="action.Push_Templates_temp"
-                    id="autocarousel"
-                    text="Auto Carousel"
-                    description="Demo2">
+<!--            </action>-->
+<!--            <action class="action.Push_Templates_temp"-->
+<!--                    id="autocarousel"-->
+<!--                    text="Auto Carousel"-->
+<!--                    description="Demo2">-->
 
-            </action>
-            <action class="action.Push_Templates_temp"
-                    id="manualcarousel"
-                    text="Manual Carousel"
-                    description="manualCarousel">
+<!--            </action>-->
+<!--            <action class="action.Push_Templates_temp"-->
+<!--                    id="manualcarousel"-->
+<!--                    text="Manual Carousel"-->
+<!--                    description="ManualCarousel">-->
 
-            </action>
-        </group>
+<!--            </action>-->
+<!--        </group>-->
 
             <action class="action.IntializeCleverTap_cursor"
                     id="intialize"
@@ -205,7 +206,7 @@
         <action class="action.start"
                 id="action.Search1"
                 text="Start Demo"
-                description="Start Demo">
+                description="StartDemo">
 
             <add-to-group group-id="GenerateGroup" anchor="first"/>
 

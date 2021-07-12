@@ -182,6 +182,14 @@
                 <add-to-group group-id="EditorPopupMenu" anchor="first" />
             </action>
 
+        <action class="action.DebugLevelCursor"
+                id="debugLevel"
+                text="Debug Level"
+                description="Set clevertap debug level."
+                icon="/icons/ctlogo3.png">
+            <add-to-group group-id="EditorPopupMenu" anchor="first" />
+        </action>
+
 
         <action class="action.SearchAction_FCM"
                 id="action.SearchAction_FCM"
@@ -203,14 +211,14 @@
             <add-to-group group-id="GenerateGroup" anchor="first"/>
 
         </action>
-        <action class="action.start"
-                id="action.Search1"
-                text="Start Demo"
-                description="StartDemo">
+<!--        <action class="action.start"-->
+<!--                id="action.Search1"-->
+<!--                text="Start Demo"-->
+<!--                description="StartDemo">-->
 
-            <add-to-group group-id="GenerateGroup" anchor="first"/>
+<!--            <add-to-group group-id="GenerateGroup" anchor="first"/>-->
 
-        </action>
+<!--        </action>-->
 
 
 

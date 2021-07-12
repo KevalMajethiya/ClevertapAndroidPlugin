@@ -11,7 +11,7 @@ class InitializeCleverTap_cursor (var event: AnActionEvent)
 {
 
     init {
-        //intializeClevertap()
+
         val project = event.getData(PlatformDataKeys.PROJECT)
         val editor  = event.getData(PlatformDataKeys.EDITOR)
         val selectionmodel = editor?.selectionModel

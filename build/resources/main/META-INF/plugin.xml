@@ -1,5 +1,5 @@
 <idea-plugin>
-  <id>CleverTap.CleverTap</id>
+  <id>CleverTap</id>
   <name>CleverTap Assistant</name>
   <vendor email="jidesh@clevertap.com">Clevertap</vendor>
   <description>Plugin helps to integrate Clevertap in your app in less then 5 minutes.
@@ -12,7 +12,7 @@
   <!--    <depends>com.intellij.modules.platform</depends>-->
   <depends>org.jetbrains.android</depends>
   <!--    <depends>com.intellij.modules.androidstudio</depends>-->
-  <version>0.4</version>
+  <version>1.0</version>
   <extensions defaultExtensionNs="com.intellij">
     <!--        <notificationGroup id="Display Notification" displayType="BALLOON"/>-->
   </extensions>

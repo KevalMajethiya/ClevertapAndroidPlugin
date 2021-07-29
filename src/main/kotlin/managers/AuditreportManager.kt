@@ -228,7 +228,7 @@ class AuditreportManager(private val project: Project)
 
     fun initiateauditreport() {
         checkinsertion()
-        var c= codeexist
+        //var c= codeexist
         // if(c==false) {
         // val opp=launchingactivityname
         val documentText =
@@ -315,7 +315,7 @@ class AuditreportManager(private val project: Project)
 
     fun initiateauditreport_kt() {
         checkinsertion()
-        var c= codeexist
+        //var c= codeexist
         // if(c==false) {
         // val opp=launchingactivityname
         val documentText =

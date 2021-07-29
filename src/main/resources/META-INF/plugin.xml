@@ -10,7 +10,8 @@
         </description>
 
 
-    <idea-version since-build="202.*"/>
+
+    <idea-version since-build="193.*"/>
     <depends>com.intellij.modules.lang</depends>
     <depends>com.intellij.modules.java</depends>
 
@@ -19,10 +20,10 @@
     <depends>org.jetbrains.android</depends>
 <!--    <depends>com.intellij.modules.androidstudio</depends>-->
 
-    <version>0.2</version>
+    <version>0.4</version>
 
     <extensions defaultExtensionNs="com.intellij">
-        <notificationGroup id="Display Notification" displayType="BALLOON"/>
+<!--        <notificationGroup id="Display Notification" displayType="BALLOON"/>-->
 
     </extensions>
 
@@ -124,6 +125,7 @@
             </action>
             <action class="action.PushProfile_cursor"
                     id="profilepush"
+
                     text="Profile Push"
                     description="Demo">
 
@@ -132,19 +134,30 @@
 
         <group id="pushtemplates" text="Push Templates" popup="true" icon="/icons/ctlogo3.png" >
             <add-to-group group-id="EditorPopupMenu" anchor="first" />
-<!--            <action class="action.PushTemplates_initalization"-->
-<!--                    id="event1"-->
-<!--                    text="Integration"-->
-<!--                    description="Demo1">-->
+            <action class="action.PushTemplates_initalization"
+                    id="event1"
+                    text="Integration"
+                    description="Demo1">
 
-<!--            </action>-->
+            </action>
+
+
+
+
+
             <action class="action.Push_Templates"
                     id="eventproperties1"
                     text="Test"
-                    description="Demo2">
-
+                    description="PushTemplates">
+<!--                    icon="/icons/ctlogo3.png">-->
+<!--                <add-to-group group-id="EditorPopupMenu" anchor="first" />-->
 
             </action>
+<!--        -->
+
+
+
+
 <!--            <action class="action.Stop_service"-->
 <!--                    id="stop"-->
 <!--                    text="Stop Service"-->
@@ -174,18 +187,19 @@
 <!--            </action>-->
 <!--        </group>-->
 
-            <action class="action.IntializeCleverTap_cursor"
-                    id="intialize"
-                    text="Initialize CleverTap "
-                    description="Intialize clevertap object"
-                    icon="/icons/ctlogo3.png">
-                <add-to-group group-id="EditorPopupMenu" anchor="first" />
-            </action>
+
 
         <action class="action.DebugLevelCursor"
                 id="debugLevel"
                 text="Debug Level"
                 description="Set clevertap debug level."
+                icon="/icons/ctlogo3.png">
+            <add-to-group group-id="EditorPopupMenu" anchor="first" />
+        </action>
+        <action class="action.IntializeCleverTap_cursor"
+                id="intialize"
+                text="Initialize CleverTap "
+                description="Intialize clevertap object"
                 icon="/icons/ctlogo3.png">
             <add-to-group group-id="EditorPopupMenu" anchor="first" />
         </action>

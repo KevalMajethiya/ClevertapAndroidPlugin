@@ -220,7 +220,6 @@ class Push_Templates_Dialog(var event: AnActionEvent) : DialogWrapper(true),  Ne
 
                 panelForPushTemplates.title_Textfield.isVisible = true
                 panelForPushTemplates.msg_TextField.isVisible = true
-                panelForPushTemplates.msg_summary_TextField.isVisible = true
                 panelForPushTemplates.subtitle_TextField.isVisible = true
                 panelForPushTemplates.img1_TextField.isVisible = true
                 panelForPushTemplates.img2_TextField.isVisible = true
@@ -412,7 +411,7 @@ class Push_Templates_Dialog(var event: AnActionEvent) : DialogWrapper(true),  Ne
                 panelForPushTemplates.pt_event_property2_TextField.isVisible = true
                 panelForPushTemplates.pt_event_property3_TextField.isVisible = true
                 panelForPushTemplates.pt_input_label_TextField.isVisible = true
-                panelForPushTemplates.label_pt_input_auto_open.isVisible = true
+                panelForPushTemplates.pt_input_auto_open_TextField.isVisible = true
                 panelForPushTemplates.pt_input_feedback_TextField.isVisible = true
                 panelForPushTemplates.dl1_TextField.isVisible = true
                 panelForPushTemplates.titlte_clr_TextField.isVisible = true

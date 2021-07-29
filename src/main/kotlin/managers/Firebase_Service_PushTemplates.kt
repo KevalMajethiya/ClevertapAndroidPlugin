@@ -78,7 +78,7 @@ class Firebase_Service_PushTemplates(private val project: Project) {
                             if (line2.contains("android:name")) {
                                 var ans = line2
                                 var b = ans.split(".")
-                                var c = b[1]
+                                //var c = b[1]
                                 var d = b[1].split("\"")
                                 var e = d[0]
                                 launchingactivityname = e
@@ -138,9 +138,9 @@ class Firebase_Service_PushTemplates(private val project: Project) {
         AndroidManifest()
         var fcm_name=firebase_receiver_class_name
         var fcm_path=fcm_name.replace(".","/")
-        val op=launchingactivityname
+        //val op=launchingactivityname
         var op1=packagename
-        var fa=final_ans
+        //var fa=final_ans
         var ans1=op1.replace(".","/")
         val basePath = project.basePath
         // projectBaseDir = LocalFileSystem.getInstance().findFileByPath(project.basePath +"/app/src/main/java/"+ ans1 + "/" + op + ".java")

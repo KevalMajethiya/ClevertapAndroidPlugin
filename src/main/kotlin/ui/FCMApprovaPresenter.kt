@@ -98,9 +98,9 @@ class FCMApprovaPresenter(
                     createFCMfile?.initapplicationclass( serviceNameText,contentTitleText)
                 }
 
-                NotificationGroupManager.getInstance().getNotificationGroup("Display Notification")
-                    .createNotification(Constants.NOTIFICATION_TITLE,"Push Notification has been successfully added.", NotificationType.INFORMATION)
-                    .notify(project)
+//                NotificationGroupManager.getInstance().getNotificationGroup("Display Notification")
+//                    .createNotification(Constants.NOTIFICATION_TITLE,"Push Notification has been successfully added.", NotificationType.INFORMATION)
+//                    .notify(project)
 
             } catch (e: FileNotFoundException) {
                 e.printStackTrace()

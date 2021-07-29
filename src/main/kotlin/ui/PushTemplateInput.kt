@@ -1,9 +1,14 @@
 package ui
 
 import com.intellij.openapi.ui.ComboBox
-import util.Constants.FCM_PANEL
-import javax.swing.*
+
 import com.intellij.ui.components.JBScrollPane
+import util.Constants.FCM_PANEL
+import java.awt.Dimension
+import java.awt.GridBagConstraints
+import java.awt.GridBagLayout
+import java.awt.Insets
+import javax.swing.*
 import java.awt.*
 
 
@@ -13,55 +18,55 @@ class PushTemplateInput : JPanel() {
 
     val label_template_type= JLabel("Select your Template")
 
-    val label_title = JLabel("Enter your Title *")
-    val label_msg = JLabel("Enter your Message *")
-    val label_msg_summary = JLabel("Enter Message line when Notification is expanded *")
+    val label_title = JLabel("Enter your Title ")
+    val label_msg = JLabel("Enter your Message ")
+    val label_msg_summary = JLabel("Enter Message line when Notification is expanded ")
     val label_subtitle= JLabel("Enter Subtitle")
-    val label_bg= JLabel("Enter Background Color in HEX *")
+    val label_bg= JLabel("Enter Background Color in HEX ")
     val label_big_img= JLabel("Enter the link for image")
-    val label_ico= JLabel("Enter the link for Large Icon")
-    val label_dl1= JLabel("Enter Deep Link")
+    val label_ico= JLabel("Enter the link for Icon")
+    val label_dl1= JLabel("Enter Deep Link 1")
     val label_titlte_clr= JLabel("Enter Title Color in HEX")
     val label_msg_clr= JLabel("Enter Message Color in HEX")
     val label_small_icon_clr= JLabel("Enter  Small Icon Color in HEX")
 
 
-    val label_img1= JLabel("Image 1 *")
-    val label_img2= JLabel("Image 2 *")
-    val label_img3= JLabel("Image 3 *")
-    val label_imgn= JLabel("Image N ")
+    val label_img1= JLabel("Enter link for Image 1")
+    val label_img2= JLabel("Enter link for Image 2")
+    val label_img3= JLabel("Enter link for Image 3")
+    val label_imgn= JLabel("Enter link for Image N")
 
 
-    val label_dl2= JLabel("Enter Deep Link")
-    val label_dln= JLabel("Enter Deep Link")
+    val label_dl2= JLabel("Enter Deep Link 2")
+    val label_dln= JLabel("Enter Deep Link n")
 
     val label_default_dl= JLabel("Enter Deep Link")
-    val label_dl3= JLabel("Enter Deep Link")
-    val label_dl4= JLabel("Enter Deep Link")
-    val label_dl5= JLabel("Enter Deep Link")
+    val label_dl3= JLabel("Enter Deep Link 3")
+    val label_dl4= JLabel("Enter Deep Link 4")
+    val label_dl5= JLabel("Enter Deep Link 5")
 
 
-    val label_bt1= JLabel("Big Text for first image")
-    val label_bt2= JLabel("Big Text for second image")
-    val label_bt3= JLabel("Big Text for third image")
-    val label_st1= JLabel("Small Text for first image")
-    val label_st2= JLabel("Small Text for second image")
-    val label_st3= JLabel("Small Text for third image")
-    val label_pt_price1= JLabel("Price for first image")
-    val label_pt_price2= JLabel("Price for second image")
-    val label_pt_price3= JLabel("Price for third image")
+    val label_bt1= JLabel("Enter Big Text for first image")
+    val label_bt2= JLabel("Enter Big Text for second image")
+    val label_bt3= JLabel("Enter Big Text for third image")
+    val label_st1= JLabel("Enter Small Text for first image")
+    val label_st2= JLabel("Enter Small Text for second image")
+    val label_st3= JLabel("Enter Small Text for third image")
+    val label_pt_price1= JLabel("Enter Price for first image")
+    val label_pt_price2= JLabel("Enter Price for second image")
+    val label_pt_price3= JLabel("Enter Price for third image")
 
-    val label_img4= JLabel("Image 4 *")
-    val label_img5= JLabel("Image 5 *")
+    val label_img4= JLabel("Enter link for Image 4")
+    val label_img5= JLabel("Enter link for Image 5")
 
 
-    val label_title_alt= JLabel("Title to show after timer expires")
-    val label_msg_alt = JLabel("Message to show after timer expires")
-    val label_big_img_alt= JLabel("Image to show when timer expires")
-    val label_timer_threshold= JLabel("Time Duration in seconds (Min 10)")
+    val label_title_alt= JLabel("Enter Title to show after timer expires")
+    val label_msg_alt = JLabel("Enter Message to show after timer expires")
+    val label_big_img_alt= JLabel("Enter Image link to show when timer expires")
+    val label_timer_threshold= JLabel("Enter Time Duration in seconds (Min 10)")
     val label_timer_end= JLabel("Epoch Timestamp to countdown to (for example, 1595871380)")
 
-    val label_pt_video_url= JLabel("Video URL")
+    val label_pt_video_url= JLabel("Enter Video URL")
 
     val label_pt_small_view= JLabel("Select text-only small view layout(text-only) ")
 
@@ -151,7 +156,10 @@ class PushTemplateInput : JPanel() {
     var template_value = ComboBox(template)
 
 
-    private val scroll = JBScrollPane(ScrollPaneConstants.VERTICAL_SCROLLBAR_AS_NEEDED)
+    //private val scroll = JBScrollPane(ScrollPaneConstants.VERTICAL_SCROLLBAR_AS_NEEDED)
+
+
+//    private val scroll1 =JScrollBar(JScrollBar.VERTICAL)
 
 
 
@@ -161,11 +169,20 @@ class PushTemplateInput : JPanel() {
 
         //labelPendingIntent.setToolTipText("This is a demo tooltip")
         val newPanel = JPanel(GridBagLayout())
+        //add(JScrollPane(newPanel))
+
+        //val scroll = JBScrollPane()
+
+        //val scrollBarPanel = JPanel()
+        //scrollBarPanel.add(scroll)
+        //add(JBScrollPane(newPanel))
+        //add(scroll)
 
         val inset = 6
         val constraints = GridBagConstraints()
         constraints.anchor = GridBagConstraints.WEST
         constraints.insets = Insets(inset, inset, inset, inset)
+
 
         // add components to the panel
         constraints.gridx = 0
@@ -893,7 +910,19 @@ class PushTemplateInput : JPanel() {
 
 
 
+        //newPanel.setSize(800,800)
+        //newPanel.getPreferredSize()
 
+        //newPanel.setPreferredSize(Dimension(1200,600))
+        val scroll = JScrollPane(newPanel)
+        scroll.setPreferredSize(Dimension(800,800))
+
+        //scroll.add(newPanel)
+        ///scroll.verticalScrollBar(ScrollPaneConstants.VERTICAL_SCROLLBAR_AS_NEEDED)
+
+
+
+        //scroll.setSize(800,800)
         // set border for the panel
         newPanel.border = BorderFactory.createTitledBorder(
             BorderFactory.createEtchedBorder(), FCM_PANEL
@@ -901,19 +930,16 @@ class PushTemplateInput : JPanel() {
 
         // add the panel to this frame
 
-        //newPanel.add(scroll)
-        add(newPanel)
-//        scroll.add(newPanel)
-//        scroll.horizontalScrollBar
+        add(scroll)
+        //add(newPanel)
+
 
     }
+
+
     override fun getPreferredSize(): Dimension {
         return Dimension(800, 800)
     }
-
-//    override fun setAutoscrolls(autoscrolls: Boolean) {
-//        super.setAutoscrolls(true)
-//    }
 
 
 }

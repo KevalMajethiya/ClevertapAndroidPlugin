@@ -1,6 +1,6 @@
 package ui
 
-import com.intellij.notification.NotificationGroupManager
+//import com.intellij.notification.NotificationGroupManager
 import com.intellij.notification.NotificationType
 import com.intellij.openapi.actionSystem.AnActionEvent
 import data.file.CurrentPath
@@ -62,9 +62,9 @@ class XiomiApprovalPresenter(
                     }
                 }
 
-                NotificationGroupManager.getInstance().getNotificationGroup("Display Notification")
-                    .createNotification(Constants.NOTIFICATION_TITLE,"Xiaomi Push has been successfully added.", NotificationType.INFORMATION)
-                    .notify(project)
+//                NotificationGroupManager.getInstance().getNotificationGroup("Display Notification")
+//                    .createNotification(Constants.NOTIFICATION_TITLE,"Xiaomi Push has been successfully added.", NotificationType.INFORMATION)
+//                    .notify(project)
 
             }
             catch (e: FileNotFoundException){

@@ -22,11 +22,13 @@ import java.util.stream.Stream
 class GradleManager_PushTemplates_Integration(private val project: Project) {
 
     private var buildGradle: Document? = null
-
+    private var buildGradleproject: Document? = null
     private var modules = arrayOf<Any>()
 
     private var projectBaseDir: VirtualFile? = null
-    private var codeexist:Boolean=false
+    private var PT_sdk:Boolean=false
+    private var maven_exist:Boolean=false
+    private var PT_dependency:Boolean=false
 
     @Throws(FileNotFoundException::class)
     fun initBuildGradle(): Boolean {
@@ -52,7 +54,7 @@ class GradleManager_PushTemplates_Integration(private val project: Project) {
         }
         gradleVirtualFilenew = projectBaseDir!!.findChild("build.gradle")
         if (gradleVirtualFile != null) {
-
+            buildGradleproject = FileDocumentManager.getInstance().getDocument(gradleVirtualFilenew!!)
             buildGradle = FileDocumentManager.getInstance().getDocument(gradleVirtualFile)
         }
         return true
@@ -92,19 +94,36 @@ class GradleManager_PushTemplates_Integration(private val project: Project) {
             var line = documentText[i]
             if(line.contains("implementation 'com.clevertap.android:push-templates"))
             {
-                codeexist=true
+                PT_sdk=true
+
+            }
+            if(line.contains("implementation 'com.github.KevalMajethiya:PushTemplateLibrary"))
+            {
+                PT_dependency=true
+
+            }
+        }
+        val documentTextnew=buildGradleproject!!.text.split("\n".toRegex()).dropLastWhile { it.isEmpty() }.toTypedArray()
+        for (i in documentTextnew.indices)
+        {
+            val line = documentTextnew[i]
+
+            if(line.contains("maven { url 'https://jitpack.io' }"))
+            {
+                maven_exist=true
 
             }
         }
     }
     fun addDependency( actionEvent: AnActionEvent) {
         checkbeforeinsertion()
-        if(codeexist==false) {
+       // if(codeexist==false) {
             val documentText = buildGradle!!.text.split("\n".toRegex()).dropLastWhile { it.isEmpty() }.toTypedArray()
-
+            val documentTextnew=buildGradleproject!!.text.split("\n".toRegex()).dropLastWhile { it.isEmpty() }.toTypedArray()
 
             val sb = StringBuilder()
             val sb2= StringBuilder()
+            val sb3= StringBuilder()
 
             for (i in documentText.indices) {
                 val line = documentText[i]
@@ -112,28 +131,86 @@ class GradleManager_PushTemplates_Integration(private val project: Project) {
                 sb
                     .append(line)
                     .append("\n")
-
-                if (line.contains(Constants.DEPENDENCIES)) {
-                    if (line.contains("{")) {
-                        sb
-                            .append("\timplementation 'com.clevertap.android:push-templates:0.0.8'")
-                            .append("   //added by CleverTap Assistant")
-                            .append("\n")
-                        codeexist=true
+                if(PT_sdk==false) {
+                    if (line.contains(Constants.DEPENDENCIES)) {
+                        if (line.contains("{")) {
+                            sb
+                                .append("\timplementation 'com.clevertap.android:push-templates:0.0.8'")
+                                .append("   //added by CleverTap Assistant")
+                                .append("\n")
+                            PT_sdk = true
+                        }
+                    }
+                }
+                if (PT_dependency == false){
+                    if (line.contains(Constants.DEPENDENCIES)) {
+                        if (line.contains("{")) {
+                            sb
+                                .append("\timplementation 'com.github.KevalMajethiya:PushTemplateLibrary:0.1.0'")
+                                .append("   //added by CleverTap Assistant")
+                                .append("\n")
+                            PT_dependency = true
+                        }
                     }
                 }
             }
+            for (i in documentTextnew.indices)
+            {
+                val line = documentTextnew[i]
+
+                sb2
+                    .append(line)
+                    .append("\n")
+                if(!maven_exist) {
+                    if (line.contains("allprojects {")) {
+                        for (j in i + 1..documentTextnew.size - 1) {
+
+                            val line1 = documentTextnew[j]
+                            sb3
+                                .append(line1)
+                                .append("\n")
+
+                            if (line1.contains("repositories {")) {
+                                sb3
+//                                .append(line1)
+//                                .append("\n")
+                                    .append("        maven { url 'https://jitpack.io' }")
+                                    .append("   //added by CleverTap Assistant")
+                                    .append("\n")
+                                maven_exist=true
 
 
-            // writeToProjectGradle(sb2,actionEvent)
+                            }
+
+
+                        }
+                        break
+
+                    }
+                }
+
+                //break
+
+            }
+
+
+
+            writeToProjectGradle(sb2,sb3,actionEvent)
             writeToGradle(sb, actionEvent)
-        }
+      //  }
     }
 
     private fun writeToGradle(stringBuilder: StringBuilder, actionEvent: AnActionEvent) {
         val application = ApplicationManager.getApplication()
         application.invokeLater {
             application.runWriteAction { buildGradle!!.setText(stringBuilder) }
+            syncProject(actionEvent)
+        }
+    }
+    private fun writeToProjectGradle(stringBuilder1: StringBuilder,stringBuilder2: StringBuilder, actionEvent: AnActionEvent) {
+        val application = ApplicationManager.getApplication()
+        application.invokeLater {
+            application.runWriteAction { buildGradleproject!!.setText(stringBuilder1.append(stringBuilder2)) }
             syncProject(actionEvent)
         }
     }

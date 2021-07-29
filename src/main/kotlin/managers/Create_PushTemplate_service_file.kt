@@ -57,7 +57,7 @@ class Create_PushTemplate_service_file(private val project: Project)
 
 
         val documentText = androidManifestfile!!.text.split("\n".toRegex()).dropLastWhile { it.isEmpty() }.toTypedArray()
-        val sb = StringBuilder()
+        //val sb = StringBuilder()
 
         for (i in documentText.indices) {
             val line = documentText[i]
@@ -86,7 +86,7 @@ class Create_PushTemplate_service_file(private val project: Project)
 
     fun initapplicationclass(){
         AndroidManifest()
-        val op=launchingactivityname
+        //val op=launchingactivityname
         var op1=packagename
         // val ans=pkg
         var ans1=op1.replace(".","/")

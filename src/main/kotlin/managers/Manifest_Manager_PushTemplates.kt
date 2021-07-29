@@ -15,10 +15,12 @@ class Manifest_Manager_PushTemplates(private val project: Project) {
     private var androidManifest: Document? = null
 
     private var projectBaseDir: VirtualFile? = null
-    private var PushTemplateMessagingService:Boolean=false
-    private var PTPushNotificationReceiver_service:Boolean=false
-    private var PTPushNotificationReceiver_receiver:Boolean=false
+    private var PTNotificationIntentService:Boolean=false
+    private var PTPushNotificationReceiver:Boolean=false
     private var PushTemplateReceiver:Boolean=false
+    private var PTPushNotificationReceiver_service:Boolean=false
+
+
     private var receiver:Boolean=false
 
 
@@ -47,17 +49,14 @@ class Manifest_Manager_PushTemplates(private val project: Project) {
         for (i in documentText.indices)
         {
             var line = documentText[i]
-            if(line.contains(" android:name=\"com.clevertap.pushtemplates.PushTemplateMessagingService\">"))
-            {
-                PushTemplateMessagingService=true
-            }
+
             if(line.contains("    android:name=\"com.clevertap.pushtemplates.PTNotificationIntentService\""))
             {
-                PTPushNotificationReceiver_service=true
+                PTNotificationIntentService=true
             }
             if(line.contains("android:name=\"com.clevertap.pushtemplates.PTPushNotificationReceiver\""))
             {
-                PTPushNotificationReceiver_receiver=true
+                PTPushNotificationReceiver=true
             }
             if(line.contains("android:name=\"com.clevertap.pushtemplates.PushTemplateReceiver\""))
             {
@@ -75,12 +74,12 @@ class Manifest_Manager_PushTemplates(private val project: Project) {
             val line = documentText[i]
 
 
-                if (line.contains(Constants.APPLICATION)) {
-                    if (line.contains("/")) {
-                    sb.append("\t\t<service android:name=\".Push_Templates.pushtemplate_service\" />")
-                    }
-                }
-                if (PushTemplateMessagingService == false) {
+//                if (line.contains(Constants.APPLICATION)) {
+//                    if (line.contains("/")) {
+//                    sb.append("\t\t<service android:name=\".Push_Templates.pushtemplate_service\" />")
+//                    }
+//                }
+                if (PTNotificationIntentService == false) {
                     if (line.contains(Constants.APPLICATION)) {
                         if (line.contains("/")) {
                             sb
@@ -100,7 +99,7 @@ class Manifest_Manager_PushTemplates(private val project: Project) {
                                 .append("\n")
                                 .append("         </service>")
                                 .append("\n")
-                            PushTemplateMessagingService = true
+                            PTNotificationIntentService = true
 
                         }
                     }
@@ -130,7 +129,7 @@ class Manifest_Manager_PushTemplates(private val project: Project) {
 //                    }
 //                }
 //            }
-            if (PTPushNotificationReceiver_receiver == false) {
+            if (PTPushNotificationReceiver == false) {
                 if (line.contains(Constants.APPLICATION)) {
                     if (line.contains("/")) {
                         sb
@@ -148,7 +147,7 @@ class Manifest_Manager_PushTemplates(private val project: Project) {
                             .append("\n")
                             .append("         </receiver>")
                             .append("\n")
-                        PTPushNotificationReceiver_receiver =true
+                        PTPushNotificationReceiver =true
 
 
                     }

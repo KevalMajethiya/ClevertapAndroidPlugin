@@ -274,7 +274,7 @@ class MyDeviceChooser(multipleSelection: Boolean,
                 SERIAL_COLUMN_INDEX -> return device.serialNumber
                 DEVICE_STATE_COLUMN_INDEX -> return getDeviceState(device)
                 //COMPATIBILITY_COLUMN_INDEX -> return LaunchCompatibilityCheckerImpl.create(myFacet).validate(ConnectedAndroidDevice(device, null))
-                COMPATIBILITY_COLUMN_INDEX -> return LaunchCompatibilityCheckerImpl.create(myFacet, null, null).validate(ConnectedAndroidDevice(device, null))
+                COMPATIBILITY_COLUMN_INDEX -> return LaunchCompatibilityCheckerImpl.create(myFacet, null, null)?.validate(ConnectedAndroidDevice(device, null))
             }
             return null
         }

@@ -1,10 +1,10 @@
 <application>
   <component name="DimensionService">
     <location key="WELCOME_SCREEN.0.0.1280.800" x="640" y="300" />
-    <size key="GridCell.Tab.0.left.0.0.1280.800" width="1238" height="194" />
-    <size key="GridCell.Tab.0.center.0.0.1280.800" width="1238" height="194" />
-    <size key="GridCell.Tab.0.right.0.0.1280.800" width="1238" height="194" />
-    <size key="GridCell.Tab.0.bottom.0.0.1280.800" width="1238" height="194" />
+    <size key="GridCell.Tab.0.left.0.0.1280.800" width="1238" height="170" />
+    <size key="GridCell.Tab.0.center.0.0.1280.800" width="1238" height="170" />
+    <size key="GridCell.Tab.0.right.0.0.1280.800" width="1238" height="170" />
+    <size key="GridCell.Tab.0.bottom.0.0.1280.800" width="1238" height="170" />
   </component>
   <component name="WindowManager">
     <frame x="0" y="0" width="1280" height="800" fullScreen="true" />
@@ -23,16 +23,21 @@
       <screen x="0" y="23" width="1280" height="716" />
     </state>
     <state x="428" y="111" key="FileChooserDialogImpl/0.23.1280.716" timestamp="1623919713954" />
-    <state x="640" y="361" width="800" height="600" key="WELCOME_SCREEN" timestamp="1625478129064">
-      <screen x="0" y="23" width="1280" height="715" />
+    <state x="880" y="622" width="400" height="180" key="ProcessPopupWindow" timestamp="1626159226192">
+      <screen x="0" y="0" width="1280" height="800" />
     </state>
-    <state x="639" y="348" key="WELCOME_SCREEN/0.23.1280.713" timestamp="1624515693852" />
-    <state x="640" y="361" width="800" height="600" key="WELCOME_SCREEN/0.23.1280.715" timestamp="1625478129064" />
-    <state x="640" y="361" width="800" height="600" key="WELCOME_SCREEN/0.23.1280.716" timestamp="1625225562241" />
+    <state x="880" y="622" width="400" height="180" key="ProcessPopupWindow/0.0.1280.800" timestamp="1626159226192" />
+    <state x="640" y="360" width="800" height="600" key="WELCOME_SCREEN" timestamp="1627367439376">
+      <screen x="0" y="23" width="1280" height="713" />
+    </state>
+    <state x="640" y="360" width="800" height="600" key="WELCOME_SCREEN/0.23.1280.713" timestamp="1627367439376" />
+    <state x="640" y="361" width="800" height="600" key="WELCOME_SCREEN/0.23.1280.715" timestamp="1626775791871" />
+    <state x="640" y="349" width="800" height="600" key="WELCOME_SCREEN/0.23.1280.716" timestamp="1626092469231" />
     <state x="639" y="351" key="WELCOME_SCREEN/0.23.1280.721" timestamp="1624861004274" />
-    <state x="0" y="23" width="1280" height="715" key="new project wizard" timestamp="1625210837328">
-      <screen x="0" y="23" width="1280" height="715" />
+    <state x="0" y="23" width="1280" height="715" key="new project wizard" timestamp="1626158685090">
+      <screen x="0" y="23" width="1280" height="713" />
     </state>
+    <state x="0" y="23" key="new project wizard/0.23.1280.713" timestamp="1626158685090" />
     <state x="0" y="23" width="1280" height="715" key="new project wizard/0.23.1280.715" timestamp="1625210837328" />
   </component>
 </application>

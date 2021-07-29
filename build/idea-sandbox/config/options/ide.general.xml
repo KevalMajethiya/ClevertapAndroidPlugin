@@ -1,5 +1,9 @@
 <application>
+  <component name="GeneralSettings">
+    <option name="confirmExit" value="false" />
+  </component>
   <component name="Registry">
     <entry key="external.system.auto.import.disabled" value="true" />
+    <entry key="java.completion.argument.hints.internal" value="false" />
   </component>
 </application>

@@ -10,8 +10,7 @@ import data.file.FileCreator
 import data.file.PackageExtractor
 import data.file.WriteActionDispatcher
 import data.repository.ModuleRepository
-import managers.Push_Templates_Test_Manager
-import managers.Rewriting_PT_service_file
+import managers.*
 import util.Constants
 import java.io.FileNotFoundException
 
@@ -27,7 +26,10 @@ class Push_Templates_Presenter(
 
 
     private var Push_Templates_Test_Manager:Push_Templates_Test_Manager?=null
-    private var Rewritng_PT_service_file:Rewriting_PT_service_file?=null
+//    private var Rewritng_PT_service_file:Rewriting_PT_service_file?=null
+//    private var Manifest_Manager_PushTemplates: Manifest_Manager_PushTemplates?=null
+//    private var GradleManager_PushTemplates_Integration: GradleManager_PushTemplates_Integration?=null
+
 
     fun onLoadView() {
         view.showPackage(packageExtractor.extractFromCurrentPath())
@@ -99,10 +101,28 @@ class Push_Templates_Presenter(
 //            Huawei_Push = Huawei_Push(project)
 //            Huawei_Gradle_Manager = Huawei_Gradle_Manager(project)
 //            ManifestManager_Huawei_Push= ManifestManager_Huawei_Push(project)
-              Push_Templates_Test_Manager= Push_Templates_Test_Manager(project)
-              Rewritng_PT_service_file = Rewriting_PT_service_file(project)
+//              Push_Templates_Test_Manager= Push_Templates_Test_Manager(project)
+//              Rewritng_PT_service_file = Rewriting_PT_service_file(project)
+//              Manifest_Manager_PushTemplates = Manifest_Manager_PushTemplates(project)
+//              GradleManager_PushTemplates_Integration= GradleManager_PushTemplates_Integration(project)
+
 //
             try {
+//                Manifest_Manager_PushTemplates?.let{
+//
+//                    if (it.initAndroidManifest()) {
+//
+//                        it.addMetaDataContent()
+//
+//                    }
+//
+//                }
+//                GradleManager_PushTemplates_Integration?.let{
+//                    if(it.initBuildGradle())
+//                    {
+//                        it.addDependency(event)
+//                    }
+//                }
 
                 AdbFacade.startDefaultActivity(project,template_type,title,message,msg_summary,subtitle,bg,
                     big_img,ico,dl1,titlte_clr,msg_clr,small_icon_clr,dl2,dln,img1,img2,img3,imgn,default_dl,
@@ -110,15 +130,15 @@ class Push_Templates_Presenter(
                     event_property1,event_property2,event_property3,input_label,input_auto_open,input_feedback,
                     product_display_action,product_display_linear,product_display_action_clr)
 
-                Push_Templates_Test_Manager?.let{
-                    //it.AndroidManifest()
-                    // if(it.initapplicationclass()){
-                    //it.initapplicationclass()
-                    //it.checkinsertion()
-                    if(it.initapplicationclass()){
-                        it.start_service()
-                    }
-                }
+//                Push_Templates_Test_Manager?.let{
+//                    //it.AndroidManifest()
+//                    // if(it.initapplicationclass()){
+//                    //it.initapplicationclass()
+//                    //it.checkinsertion()
+//                    if(it.initapplicationclass()){
+//                        it.start_service()
+//                    }
+//                }
 //                Rewritng_PT_service_file?.let{
 //                    //it.initapplicationclass(basic_temp_title,basic_temp_message,basic_temp_msg_summary,ico,)
 //                    if(it.initapplicationclass())
@@ -154,9 +174,9 @@ class Push_Templates_Presenter(
 
 
 
-                NotificationGroupManager.getInstance().getNotificationGroup("Display Notification")
-                    .createNotification(Constants.NOTIFICATION_TITLE," Push Template successfully rendered.", NotificationType.INFORMATION)
-                    .notify(project)
+//                NotificationGroupManager.getInstance().getNotificationGroup("Display Notification")
+//                    .createNotification(Constants.NOTIFICATION_TITLE," Push Template successfully rendered.", NotificationType.INFORMATION)
+//                    .notify(project)
             } catch (e: FileNotFoundException) {
                 e.printStackTrace()
             }

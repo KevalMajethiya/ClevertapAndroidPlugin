@@ -5,16 +5,16 @@
   <description>Plugin helps to integrate Clevertap in your app in less then 5 minutes.
         It helps to install the CleverTap SDK, track your  user events,enrich user profiles,
         send push notifications and see this information within the CleverTap dashboard .</description>
-  <idea-version since-build="202.*" />
+  <idea-version since-build="193.*" />
   <depends>com.intellij.modules.lang</depends>
   <depends>com.intellij.modules.java</depends>
   <depends>org.jetbrains.kotlin</depends>
   <!--    <depends>com.intellij.modules.platform</depends>-->
   <depends>org.jetbrains.android</depends>
   <!--    <depends>com.intellij.modules.androidstudio</depends>-->
-  <version>0.2</version>
+  <version>0.4</version>
   <extensions defaultExtensionNs="com.intellij">
-    <notificationGroup id="Display Notification" displayType="BALLOON" />
+    <!--        <notificationGroup id="Display Notification" displayType="BALLOON"/>-->
   </extensions>
   <actions>
     <group id="inner" text="Clevertap Assistant" popup="true" icon="/icons/ctlogo2.png">
@@ -56,12 +56,12 @@
     </group>
     <group id="pushtemplates" text="Push Templates" popup="true" icon="/icons/ctlogo3.png">
       <add-to-group group-id="EditorPopupMenu" anchor="first" />
-      <!--            <action class="action.PushTemplates_initalization"-->
-      <!--                    id="event1"-->
-      <!--                    text="Integration"-->
-      <!--                    description="Demo1">-->
-      <!--            </action>-->
-      <action class="action.Push_Templates" id="eventproperties1" text="Test" description="Demo2" />
+      <action class="action.PushTemplates_initalization" id="event1" text="Integration" description="Demo1" />
+      <action class="action.Push_Templates" id="eventproperties1" text="Test" description="PushTemplates">
+        <!--                    icon="/icons/ctlogo3.png">-->
+        <!--                <add-to-group group-id="EditorPopupMenu" anchor="first" />-->
+      </action>
+      <!--        -->
       <!--            <action class="action.Stop_service"-->
       <!--                    id="stop"-->
       <!--                    text="Stop Service"-->
@@ -86,6 +86,9 @@
     <!--                    description="ManualCarousel">-->
     <!--            </action>-->
     <!--        </group>-->
+    <action class="action.DebugLevelCursor" id="debugLevel" text="Debug Level" description="Set clevertap debug level." icon="/icons/ctlogo3.png">
+      <add-to-group group-id="EditorPopupMenu" anchor="first" />
+    </action>
     <action class="action.IntializeCleverTap_cursor" id="intialize" text="Initialize CleverTap " description="Intialize clevertap object" icon="/icons/ctlogo3.png">
       <add-to-group group-id="EditorPopupMenu" anchor="first" />
     </action>
@@ -95,9 +98,12 @@
     <action class="action.Demo" id="action.Search" text="Push Demo" description="Add FCM and Clevertap">
       <add-to-group group-id="GenerateGroup" anchor="first" />
     </action>
-    <action class="action.start" id="action.Search1" text="Start Demo" description="StartDemo">
-      <add-to-group group-id="GenerateGroup" anchor="first" />
-    </action>
+    <!--        <action class="action.start"-->
+    <!--                id="action.Search1"-->
+    <!--                text="Start Demo"-->
+    <!--                description="StartDemo">-->
+    <!--            <add-to-group group-id="GenerateGroup" anchor="first"/>-->
+    <!--        </action>-->
   </actions>
   <project-components>
     <component>

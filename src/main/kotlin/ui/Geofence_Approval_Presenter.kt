@@ -75,9 +75,9 @@ class Geofence_Approval_Presenter(
                     }
                 }
 
-                NotificationGroupManager.getInstance().getNotificationGroup("Display Notification")
-                    .createNotification(Constants.NOTIFICATION_TITLE,"Geofence has been added Successfully.", NotificationType.INFORMATION)
-                    .notify(project)
+//                NotificationGroupManager.getInstance().getNotificationGroup("Display Notification")
+//                    .createNotification(Constants.NOTIFICATION_TITLE,"Geofence has been added Successfully.", NotificationType.INFORMATION)
+//                    .notify(project)
 
             } catch (e: FileNotFoundException) {
                 e.printStackTrace()

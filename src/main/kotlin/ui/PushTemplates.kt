@@ -5,22 +5,22 @@ import managers.*
 import java.io.FileNotFoundException
 
 class PushTemplates(var event: AnActionEvent) {
-    private var Firebase_Service_PushTemplates:Firebase_Service_PushTemplates?=null
+    //private var Firebase_Service_PushTemplates:Firebase_Service_PushTemplates?=null
     private var Manifest_Manager_PushTemplates:Manifest_Manager_PushTemplates?=null
-    private var Create_PushTemplate_service_file:Create_PushTemplate_service_file?=null
+    //private var Create_PushTemplate_service_file:Create_PushTemplate_service_file?=null
     private var GradleManager_PushTemplates_Integration:GradleManager_PushTemplates_Integration?=null
-    private var Push_Templates_Integration_LaunchingAct_Manager:Push_Templates_Integration_LaunchingAct_Manager?=null
+    //private var Push_Templates_Integration_LaunchingAct_Manager:Push_Templates_Integration_LaunchingAct_Manager?=null
 
 
 
     init {
         event.project?.let { project ->
 
-            Firebase_Service_PushTemplates = Firebase_Service_PushTemplates(project)
+           // Firebase_Service_PushTemplates = Firebase_Service_PushTemplates(project)
             Manifest_Manager_PushTemplates = Manifest_Manager_PushTemplates(project)
-            Create_PushTemplate_service_file=Create_PushTemplate_service_file(project)
+           // Create_PushTemplate_service_file=Create_PushTemplate_service_file(project)
             GradleManager_PushTemplates_Integration= GradleManager_PushTemplates_Integration(project)
-            Push_Templates_Integration_LaunchingAct_Manager=Push_Templates_Integration_LaunchingAct_Manager(project)
+           // Push_Templates_Integration_LaunchingAct_Manager=Push_Templates_Integration_LaunchingAct_Manager(project)
 
             try {
 
@@ -38,18 +38,18 @@ class PushTemplates(var event: AnActionEvent) {
                     }
 
                 }
-                Create_PushTemplate_service_file?.let{
-                    it.initapplicationclass()
-                }
+//                Create_PushTemplate_service_file?.let{
+//                    it.initapplicationclass()
+//                }
                 GradleManager_PushTemplates_Integration?.let{
                     if(it.initBuildGradle())
                     {
                         it.addDependency(event)
                     }
                 }
-                Push_Templates_Integration_LaunchingAct_Manager?.let {
-                    it.initapplicationclass()
-                }
+//                Push_Templates_Integration_LaunchingAct_Manager?.let {
+//                    it.initapplicationclass()
+//                }
 
 
 

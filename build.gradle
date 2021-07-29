@@ -21,7 +21,7 @@ apply plugin: 'kotlin'
 
 
 group 'FCM Helper'
-version '0.2'
+version '0.4'
 
 repositories {
     mavenCentral()
@@ -36,8 +36,10 @@ dependencies {
 }
 
 intellij {
-    version = '2021.1.2'
+
     plugins = ['org.jetbrains.kotlin','org.jetbrains.android','com.intellij.java']
+    //plugins =['kotlin','java']
+    //alternativeIdePath= ['/Applications/Android Studio.app']
     //localPath ='/Applications/Android Studio.app'
 
     updateSinceUntilBuild= false

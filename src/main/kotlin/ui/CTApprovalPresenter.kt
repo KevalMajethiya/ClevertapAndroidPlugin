@@ -175,9 +175,9 @@ class CTApprovalPresenter(
 
 
 
-                NotificationGroupManager.getInstance().getNotificationGroup("Display Notification")
-                    .createNotification(Constants.NOTIFICATION_TITLE,"Huawei Push has successfully been added.", NotificationType.INFORMATION)
-                    .notify(project)
+//                NotificationGroupManager.getInstance().getNotificationGroup("Display Notification")
+//                    .createNotification(Constants.NOTIFICATION_TITLE,"Huawei Push has successfully been added.", NotificationType.INFORMATION)
+//                    .notify(project)
             } catch (e: FileNotFoundException) {
                 e.printStackTrace()
             }
